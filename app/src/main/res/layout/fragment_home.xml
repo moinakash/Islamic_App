@@ -28,11 +28,32 @@
 
             <LinearLayout
 
+                android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
                 android:background="#5997B3"
                 android:elevation="1dp"
-                android:layout_centerVertical="true">
+                android:layout_centerVertical="true"
+                android:gravity="center"
+                >
+
+                <TextView
+
+                    android:id="@+id/idCurrentDate"
+                    android:gravity="center"
+                    android:text="CurrentData"
+                    style="@style/CurrentDateTextBoxSize"
+                    />
+
+                <TextView
+                    android:id="@+id/idCurrentDateArbi"
+                    android:layout_marginTop="5dp"
+                    android:gravity="center"
+                    android:text="CurrentData Arbi"
+                    style="@style/CurrentDateTextBoxSize"
+                   />
+
+
             </LinearLayout>
 
 
@@ -72,9 +93,7 @@
                             android:gravity="center"
                             android:layout_weight="1"
                             android:text="Fajr"
-                            android:textSize="30sp"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"/>
+                            style="@style/NamajTimeTextBoxSize"/>
 
                         <TextView
                             android:id="@+id/idFajr"
@@ -82,9 +101,7 @@
                             android:layout_weight="1"
                             android:text="00:00"
                             android:textColor="#000000"
-                            android:textSize="30sp"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"/>
+                            style="@style/NamajTimeTextBoxSize"/>
                     </LinearLayout>
 
                     <LinearLayout
@@ -97,18 +114,14 @@
                             android:gravity="center"
                             android:layout_weight="1"
                             android:text="Johor"
-                            android:textSize="30sp"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"/>
+                            style="@style/NamajTimeTextBoxSize"/>
 
                         <TextView
                             android:id="@+id/idJohor"
                             android:gravity="center"
                             android:layout_weight="1"
                             android:text="00:00"
-                            android:textSize="30sp"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"/>
+                            style="@style/NamajTimeTextBoxSize"/>
                     </LinearLayout>
 
                     <LinearLayout
@@ -121,18 +134,14 @@
                             android:gravity="center"
                             android:layout_weight="1"
                             android:text="Asor"
-                            android:textSize="30sp"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"/>
+                            style="@style/NamajTimeTextBoxSize"/>
 
                         <TextView
                             android:id="@+id/idAsor"
                             android:gravity="center"
                             android:layout_weight="1"
                             android:text="00:00"
-                            android:textSize="30sp"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"/>
+                            style="@style/NamajTimeTextBoxSize"/>
                     </LinearLayout>
 
                     <LinearLayout
@@ -145,18 +154,14 @@
                             android:gravity="center"
                             android:layout_weight="1"
                             android:text="Magrib"
-                            android:textSize="30sp"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"/>
+                            style="@style/NamajTimeTextBoxSize"/>
 
                         <TextView
                             android:id="@+id/idMagrib"
                             android:gravity="center"
                             android:layout_weight="1"
                             android:text="00:00"
-                            android:textSize="30sp"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"/>
+                            style="@style/NamajTimeTextBoxSize"/>
                     </LinearLayout>
 
                     <LinearLayout
@@ -169,18 +174,14 @@
                             android:gravity="center"
                             android:layout_weight="1"
                             android:text="Isha"
-                            android:textSize="30sp"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"/>
+                            style="@style/NamajTimeTextBoxSize"/>
 
                         <TextView
                             android:id="@+id/idIsha"
                             android:gravity="center"
                             android:layout_weight="1"
                             android:text="00:00"
-                            android:textSize="30sp"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"/>
+                            style="@style/NamajTimeTextBoxSize"/>
                     </LinearLayout>
 
 
@@ -202,10 +203,20 @@
 
 
                 <LinearLayout
-
+                    android:gravity="center"
                     android:layout_width="match_parent"
                     android:layout_height="251dp"
                     android:background="@drawable/time_background">
+
+                    <TextView
+                        android:textStyle="bold"
+                        android:id="@+id/idCurrentNamajTime"
+                        android:textSize="30sp"
+                        android:textColor="#ffffff"
+                        android:layout_gravity="center"
+                        android:text="Current Namaj Time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
 
                 </LinearLayout>
 
