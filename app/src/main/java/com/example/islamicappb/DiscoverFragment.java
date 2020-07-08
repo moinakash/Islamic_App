@@ -1,5 +1,10 @@
 package com.example.islamicappb;
 
+import android.content.Context;
+import android.hardware.Sensor;
+import android.hardware.SensorEvent;
+import android.hardware.SensorEventListener;
+import android.hardware.SensorManager;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -7,36 +12,34 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.RotateAnimation;
+import android.widget.ImageView;
+import android.widget.TextView;
+import android.widget.Toast;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link DiscoverFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
-public class DiscoverFragment extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
+public class DiscoverFragment extends Fragment implements SensorEventListener {
+
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
-    // TODO: Rename and change types of parameters
+
     private String mParam1;
     private String mParam2;
 
+//    private ImageView MainImageDialer,MainImageQiblat;
+//    private TextView Teks_bawah ,Teks_atas;
+
+    ImageView ic_compus;
+    private static SensorManager sensorManager;
+    private static Sensor sensor;
+    private float currentDegree;
+
     public DiscoverFragment() {
-        // Required empty public constructor
+
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment DiscoverFragment.
-     */
-    // TODO: Rename and change types and number of parameters
     public static DiscoverFragment newInstance(String param1, String param2) {
         DiscoverFragment fragment = new DiscoverFragment();
         Bundle args = new Bundle();
@@ -58,7 +61,41 @@ public class DiscoverFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_discover, container, false);
+
+        View view = inflater.inflate(R.layout.fragment_discover, container, false);
+
+        ic_compus = view.findViewById(R.id.compus);
+        sensorManager =(SensorManager) getActivity().getSystemService(Context.SENSOR_SERVICE);
+        sensor =sensorManager.getDefaultSensor(Sensor.TYPE_ORIENTATION);
+
+        if(sensor != null)
+        {
+            sensorManager.registerListener(this,sensor,SensorManager.SENSOR_DELAY_FASTEST);
+
+        }else
+        {
+            Toast.makeText(getContext(), "not Supported", Toast.LENGTH_SHORT).show();
+        }
+
+
+
+
+        return view;
+    }
+
+    @Override
+    public void onSensorChanged(SensorEvent event) {
+        int degree = Math.round(event.values[0]);
+        RotateAnimation animation = new RotateAnimation(currentDegree, -degree, Animation.RELATIVE_TO_SELF,0.5f,
+                Animation.RELATIVE_TO_SELF,0.5f);
+        animation.setDuration(500);
+        animation.setFillAfter(true);
+        ic_compus.setAnimation(animation);
+        currentDegree= -degree;
+    }
+
+    @Override
+    public void onAccuracyChanged(Sensor sensor, int accuracy) {
+
     }
 }
