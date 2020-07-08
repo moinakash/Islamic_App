@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#6893C8"
+    tools:context=".HomeFragment">
+
+
+
+
+
+
+    <RelativeLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.cardview.widget.CardView
+
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="200dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="50dp">
+
+            <LinearLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:background="#5997B3"
+                android:elevation="1dp"
+                android:layout_centerVertical="true">
+            </LinearLayout>
+
+
+
+
+        </androidx.cardview.widget.CardView>
+
+
+        <RelativeLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.cardview.widget.CardView
+
+                android:layout_marginTop="230dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="15dp">
+
+                <LinearLayout
+
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="800dp"
+                    android:background="#E8E6E6"
+                    android:elevation="1dp"
+                    android:layout_centerVertical="true">
+
+                    <LinearLayout
+                        android:layout_marginTop="100dp"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:gravity="center"
+                            android:layout_weight="1"
+                            android:text="Fajr"
+                            android:textSize="30sp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:id="@+id/idFajr"
+                            android:gravity="center"
+                            android:layout_weight="1"
+                            android:text="00:00"
+                            android:textColor="#000000"
+                            android:textSize="30sp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_marginTop="20dp"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:gravity="center"
+                            android:layout_weight="1"
+                            android:text="Johor"
+                            android:textSize="30sp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:id="@+id/idJohor"
+                            android:gravity="center"
+                            android:layout_weight="1"
+                            android:text="00:00"
+                            android:textSize="30sp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_marginTop="20dp"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:gravity="center"
+                            android:layout_weight="1"
+                            android:text="Asor"
+                            android:textSize="30sp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:id="@+id/idAsor"
+                            android:gravity="center"
+                            android:layout_weight="1"
+                            android:text="00:00"
+                            android:textSize="30sp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_marginTop="20dp"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:gravity="center"
+                            android:layout_weight="1"
+                            android:text="Magrib"
+                            android:textSize="30sp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:id="@+id/idMagrib"
+                            android:gravity="center"
+                            android:layout_weight="1"
+                            android:text="00:00"
+                            android:textSize="30sp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_marginTop="20dp"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:gravity="center"
+                            android:layout_weight="1"
+                            android:text="Isha"
+                            android:textSize="30sp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:id="@+id/idIsha"
+                            android:gravity="center"
+                            android:layout_weight="1"
+                            android:text="00:00"
+                            android:textSize="30sp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+
+
+
+            </androidx.cardview.widget.CardView>
+
+            <LinearLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:layout_alignParentTop="true"
+                android:orientation="vertical">
+
+
+
+                <LinearLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="251dp"
+                    android:background="@drawable/time_background">
+
+                </LinearLayout>
+
+
+
+
+            </LinearLayout>
+        </RelativeLayout>
+
+
+
+
+    </RelativeLayout>
+
+
+
+
+
+
+
+
+    <!-- TODO: Update blank fragment layout -->
+<!--    <TextView-->
+<!--        android:id="@+id/idTv"-->
+<!--        android:layout_centerInParent="true"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:textSize="40sp"-->
+<!--        android:text="Home" />-->
+
+
+<!--    <TextView-->
+<!--        android:id="@+id/idTvv"-->
+<!--        android:layout_below="@+id/idTv"-->
+<!--        android:layout_centerInParent="true"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:textSize="40sp"-->
+<!--        android:text="Home" />-->
+
+
+</RelativeLayout>
