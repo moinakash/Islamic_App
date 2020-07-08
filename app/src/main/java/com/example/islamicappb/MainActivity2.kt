@@ -53,6 +53,7 @@ class MainActivity2 : AppCompatActivity() {
         intent.putExtra("esha", "" + prayerTimes.ishaa())
         intent.putExtra("sunrise", "" + prayerTimes.shuruq())
         startActivity(intent)
+        finish();
 
 //    }
 
