@@ -23,6 +23,8 @@ public class TimeTableFragment extends Fragment {
 
     TextView tvfojor, tvjohor, tvasor, tvmagrib, tvesha;
     TextView tvCurrentNTime, tvCurrentDate,tvCurrentArbiDate;
+    TextView tvCurrentLocation, tvNextTime,tvNamajTimeNUmber, tvNamajSeshSomoy;
+
 
     String text;
 
@@ -77,6 +79,11 @@ public class TimeTableFragment extends Fragment {
         tvCurrentNTime = view.findViewById(R.id.idCurrentNamajTime);
         tvCurrentDate = view.findViewById(R.id.idCurrentDate);
         tvCurrentArbiDate = view.findViewById(R.id.idCurrentDateArbi);
+
+        tvCurrentLocation = view.findViewById(R.id.idCurrentLocation);
+        tvNextTime = view.findViewById(R.id.idNextNamaj);
+        tvNamajTimeNUmber = view.findViewById(R.id.idNamajTimeInNumber);
+        tvNamajSeshSomoy = view.findViewById(R.id.idSeshSomoy);
 
         Locale locale = new Locale("bn");
         Locale.setDefault(locale);
@@ -164,6 +171,11 @@ public class TimeTableFragment extends Fragment {
         tvCurrentNTime.setText(""+CurrentNamajTime);
         tvCurrentDate.setText(dateTime);
       //  tvCurrentArbiDate.setText(text);
+
+        tvCurrentLocation.setText("");
+        tvNextTime.setText("");
+        tvNamajTimeNUmber.setText("");
+        tvNamajSeshSomoy.setText("");
 
         return view;
 

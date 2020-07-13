@@ -203,10 +203,28 @@
 
 
                 <LinearLayout
+                    android:orientation="vertical"
                     android:gravity="center"
                     android:layout_width="match_parent"
                     android:layout_height="251dp"
                     android:background="@drawable/time_background">
+
+                    <TextView
+                        android:textStyle="bold"
+                        android:textSize="20sp"
+                        android:textColor="#ffffff"
+                        android:text="Current Location"
+                        android:id="@+id/idCurrentLocation"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:textSize="20sp"
+                        android:textColor="#ffffff"
+                        android:text="Next Namaj"
+                        android:id="@+id/idNextNamaj"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
 
                     <TextView
                         android:textStyle="bold"
@@ -215,6 +233,22 @@
                         android:textColor="#ffffff"
                         android:layout_gravity="center"
                         android:text="Current Namaj Time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:textSize="20sp"
+                        android:textColor="#ffffff"
+                        android:text="Namaj Time Numbner"
+                        android:id="@+id/idNamajTimeInNumber"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:textSize="20sp"
+                        android:textColor="#ffffff"
+                        android:text="Namaj Sesh SOmoy"
+                        android:id="@+id/idSeshSomoy"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"/>
 
