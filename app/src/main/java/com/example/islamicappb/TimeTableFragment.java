@@ -165,14 +165,62 @@ public class TimeTableFragment extends Fragment {
 
 
         /////////////////////////////////////
-        
 
 
-        tvfojor.setText(fojorerTime);
-        tvjohor.setText(johorerTime);
-        tvasor.setText(asorerTime);
-        tvmagrib.setText(magriberTime);
-        tvesha.setText(esharTime);
+        ////fojor time bangla
+        Character [] array= new Character[fojorerTime.length()];
+
+        for (int i = 0; i < fojorerTime.length(); i++) {
+            array[i] = fojorerTime.charAt(i);
+        }
+        String fojorTimeBangla = ""+array[0]+""+array[1]+""+array[2]+""+array[3];
+
+
+
+
+
+        ////johor time bangla
+        Character [] johorarray= new Character[johorerTime.length()];
+
+        for (int i = 0; i < johorerTime.length(); i++) {
+            johorarray[i] = johorerTime.charAt(i);
+        }
+        String johorTimeBangla = ""+johorarray[0]+""+johorarray[1]+""+johorarray[2]+""+johorarray[3]+""+johorarray[4];
+
+
+
+
+        ////Asor time bangla
+        Character [] asorarray= new Character[asorerTime.length()];
+
+        for (int i = 0; i < johorerTime.length(); i++) {
+            asorarray[i] = johorerTime.charAt(i);
+        }
+        String asorTimeBangla = ""+asorarray[0]+""+asorarray[1]+""+asorarray[2]+""+asorarray[3]+""+asorarray[4];
+
+
+        ////magrib time bangla
+        Character [] magribarray= new Character[magriberTime.length()];
+
+        for (int i = 0; i < magriberTime.length(); i++) {
+            magribarray[i] = magriberTime.charAt(i);
+        }
+        String magribTimeBangla = ""+magribarray[0]+""+magribarray[1]+""+magribarray[2]+""+magribarray[3]+""+magribarray[4];
+
+
+        ////Esha time bangla
+        Character [] eshaarray= new Character[esharTime.length()];
+
+        for (int i = 0; i < esharTime.length(); i++) {
+            eshaarray[i] = esharTime.charAt(i);
+        }
+        String eshaTimeBangla = ""+eshaarray[0]+""+eshaarray[1]+""+eshaarray[2]+""+eshaarray[3]+""+eshaarray[4];
+
+        tvfojor.setText(fojorTimeBangla);
+        tvjohor.setText(johorTimeBangla);
+        tvasor.setText(asorTimeBangla);
+        tvmagrib.setText(magribTimeBangla);
+        tvesha.setText(eshaTimeBangla);
 
 
         tvCurrentNTime.setText(""+CurrentNamajTime);
