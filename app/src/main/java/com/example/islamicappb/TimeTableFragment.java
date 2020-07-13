@@ -175,6 +175,17 @@ public class TimeTableFragment extends Fragment {
         }
         String fojorTimeBangla = ""+array[0]+""+array[1]+""+array[2]+""+array[3];
 
+        fojorTimeBangla = fojorTimeBangla.replace("0", "০");
+        fojorTimeBangla = fojorTimeBangla.replace("1", "১");
+        fojorTimeBangla = fojorTimeBangla.replace("2", "২");
+        fojorTimeBangla = fojorTimeBangla.replace("3", "৩");
+        fojorTimeBangla = fojorTimeBangla.replace("4", "৪");
+        fojorTimeBangla = fojorTimeBangla.replace("5", "৫");
+        fojorTimeBangla = fojorTimeBangla.replace("6", "৬");
+        fojorTimeBangla = fojorTimeBangla.replace("7", "৭");
+        fojorTimeBangla = fojorTimeBangla.replace("8", "৮");
+        fojorTimeBangla = fojorTimeBangla.replace("9", "৯");
+
 
 
 
@@ -185,7 +196,25 @@ public class TimeTableFragment extends Fragment {
         for (int i = 0; i < johorerTime.length(); i++) {
             johorarray[i] = johorerTime.charAt(i);
         }
-        String johorTimeBangla = ""+johorarray[0]+""+johorarray[1]+""+johorarray[2]+""+johorarray[3]+""+johorarray[4];
+        String txtJohor = ""+johorarray[0]+""+johorarray[1];
+        int jInt = Integer.parseInt(txtJohor);
+        if (jInt>12){
+            jInt = jInt - 12;
+        }
+
+        String johorTimeBangla = ""+jInt+""+johorarray[2]+""+johorarray[3]+""+johorarray[4];
+//        String johorTimeBangla = ""+johorarray[0]+""+johorarray[1]+""+johorarray[2]+""+johorarray[3]+""+johorarray[4];
+
+        johorTimeBangla= johorTimeBangla.replace("0", "০");
+        johorTimeBangla= johorTimeBangla.replace("1", "১");
+        johorTimeBangla= johorTimeBangla.replace("2", "২");
+        johorTimeBangla= johorTimeBangla.replace("3", "৩");
+        johorTimeBangla= johorTimeBangla.replace("4", "৪");
+        johorTimeBangla= johorTimeBangla.replace("5", "৫");
+        johorTimeBangla= johorTimeBangla.replace("6", "৬");
+        johorTimeBangla= johorTimeBangla.replace("7", "৭");
+        johorTimeBangla= johorTimeBangla.replace("8", "৮");
+        johorTimeBangla= johorTimeBangla.replace("9", "৯");
 
 
 
@@ -193,10 +222,29 @@ public class TimeTableFragment extends Fragment {
         ////Asor time bangla
         Character [] asorarray= new Character[asorerTime.length()];
 
-        for (int i = 0; i < johorerTime.length(); i++) {
-            asorarray[i] = johorerTime.charAt(i);
+        for (int i = 0; i < asorerTime.length(); i++) {
+            asorarray[i] = asorerTime.charAt(i);
         }
-        String asorTimeBangla = ""+asorarray[0]+""+asorarray[1]+""+asorarray[2]+""+asorarray[3]+""+asorarray[4];
+
+        String txtAsor = ""+asorarray[0]+""+asorarray[1];
+        int aInt = Integer.parseInt(txtAsor);
+        if (aInt>12){
+            aInt = aInt - 12;
+        }
+
+        String asorTimeBangla = ""+aInt+""+asorarray[2]+""+asorarray[3]+""+asorarray[4];
+
+       // String asorTimeBangla = ""+asorarray[0]+""+asorarray[1]+""+asorarray[2]+""+asorarray[3]+""+asorarray[4];
+        asorTimeBangla= asorTimeBangla.replace("0", "০");
+        asorTimeBangla= asorTimeBangla.replace("1", "১");
+        asorTimeBangla= asorTimeBangla.replace("2", "২");
+        asorTimeBangla= asorTimeBangla.replace("3", "৩");
+        asorTimeBangla= asorTimeBangla.replace("4", "৪");
+        asorTimeBangla= asorTimeBangla.replace("5", "৫");
+        asorTimeBangla= asorTimeBangla.replace("6", "৬");
+        asorTimeBangla= asorTimeBangla.replace("7", "৭");
+        asorTimeBangla= asorTimeBangla.replace("8", "৮");
+        asorTimeBangla= asorTimeBangla.replace("9", "৯");
 
 
         ////magrib time bangla
@@ -205,8 +253,26 @@ public class TimeTableFragment extends Fragment {
         for (int i = 0; i < magriberTime.length(); i++) {
             magribarray[i] = magriberTime.charAt(i);
         }
-        String magribTimeBangla = ""+magribarray[0]+""+magribarray[1]+""+magribarray[2]+""+magribarray[3]+""+magribarray[4];
 
+        String txtMagrib = ""+magribarray[0]+""+magribarray[1];
+        int mInt = Integer.parseInt(txtMagrib);
+        if (mInt>12){
+            mInt = mInt - 12;
+        }
+
+        String magribTimeBangla = ""+mInt+""+magribarray[2]+""+magribarray[3]+""+magribarray[4];
+
+
+        magribTimeBangla= magribTimeBangla.replace("0", "০");
+        magribTimeBangla= magribTimeBangla.replace("1", "১");
+        magribTimeBangla= magribTimeBangla.replace("2", "২");
+        magribTimeBangla= magribTimeBangla.replace("3", "৩");
+        magribTimeBangla= magribTimeBangla.replace("4", "৪");
+        magribTimeBangla= magribTimeBangla.replace("5", "৫");
+        magribTimeBangla= magribTimeBangla.replace("6", "৬");
+        magribTimeBangla= magribTimeBangla.replace("7", "৭");
+        magribTimeBangla= magribTimeBangla.replace("8", "৮");
+        magribTimeBangla= magribTimeBangla.replace("9", "৯");
 
         ////Esha time bangla
         Character [] eshaarray= new Character[esharTime.length()];
@@ -214,7 +280,25 @@ public class TimeTableFragment extends Fragment {
         for (int i = 0; i < esharTime.length(); i++) {
             eshaarray[i] = esharTime.charAt(i);
         }
-        String eshaTimeBangla = ""+eshaarray[0]+""+eshaarray[1]+""+eshaarray[2]+""+eshaarray[3]+""+eshaarray[4];
+
+        String txtEsha = ""+eshaarray[0]+""+eshaarray[1];
+        int eInt = Integer.parseInt(txtEsha);
+        if (eInt>12){
+            eInt = eInt - 12;
+        }
+
+        String eshaTimeBangla = ""+eInt+""+eshaarray[2]+""+eshaarray[3]+""+eshaarray[4];
+        //String eshaTimeBangla = ""+eshaarray[0]+""+eshaarray[1]+""+eshaarray[2]+""+eshaarray[3]+""+eshaarray[4];
+        eshaTimeBangla= eshaTimeBangla.replace("0", "০");
+        eshaTimeBangla= eshaTimeBangla.replace("1", "১");
+        eshaTimeBangla= eshaTimeBangla.replace("2", "২");
+        eshaTimeBangla= eshaTimeBangla.replace("3", "৩");
+        eshaTimeBangla= eshaTimeBangla.replace("4", "৪");
+        eshaTimeBangla= eshaTimeBangla.replace("5", "৫");
+        eshaTimeBangla= eshaTimeBangla.replace("6", "৬");
+        eshaTimeBangla= eshaTimeBangla.replace("7", "৭");
+        eshaTimeBangla= eshaTimeBangla.replace("8", "৮");
+        eshaTimeBangla= eshaTimeBangla.replace("9", "৯");
 
         tvfojor.setText(fojorTimeBangla);
         tvjohor.setText(johorTimeBangla);
