@@ -23,12 +23,12 @@
         android:text="Sura"/>
 
     <Button
-        android:id="@+id/idHadisActivity"
+        android:id="@+id/idAllahNameBtn"
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:layout_gravity="center"
         android:gravity="center"
-        android:text="Hadis"/>
+        android:text="Al Asma Ul Husna "/>
 
 </LinearLayout>
 

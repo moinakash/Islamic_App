@@ -205,5 +205,22 @@ public class DatabaseHelper
     }
 
 
+    public Cursor ShowAllahName()
+    {
+        SQLiteDatabase db = this.getWritableDatabase();
+       // String FullSura = "SELECT * FROM allah_names ";
+
+//        ReadSuraActivity readSuraActivity = new ReadSuraActivity();
+//
+//        int valuee = readSuraActivity.getCategory();
+//        //Toast.makeText(myContext, "check "+valuee, Toast.LENGTH_SHORT).show();
+
+        String namequery = "SELECT * FROM allah_names ";
+
+        Cursor FullSuraCursor = db.rawQuery(namequery,null);
+        return FullSuraCursor;
+    }
+
+
 
 }

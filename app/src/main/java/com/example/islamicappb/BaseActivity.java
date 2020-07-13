@@ -79,7 +79,8 @@ public class BaseActivity extends AppCompatActivity {
 
         sunriseTimeR = sunriseTime.replace(":", "");
         sTime = Integer.parseInt(sunriseTimeR);
-        sTime= eTime/100;
+        sTime= sTime/100;
+
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -98,10 +99,12 @@ public class BaseActivity extends AppCompatActivity {
 
 
 
+
         if (cTime>fTime && cTime<sTime){
             BorPNamaj = "বর্তমান নামাজ";
             nextnamaj = "ফজর";
         }
+
         if (cTime>sTime && cTime<jTime){
 
             BorPNamaj = "বর্তমান নামাজ";

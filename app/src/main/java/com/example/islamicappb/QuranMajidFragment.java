@@ -17,7 +17,7 @@ import android.widget.Button;
  */
 public class QuranMajidFragment extends Fragment {
 
-    Button btnSura, btnDoa, btnHadis, btnNamajerNiom;
+    Button btnSura, btnDoa, btnAllahName, btnNamajerNiom;
 
     //changes
 
@@ -70,7 +70,7 @@ public class QuranMajidFragment extends Fragment {
 
 
         btnSura = view.findViewById(R.id.idSuraActivity);
-        btnHadis = view.findViewById(R.id.idHadisActivity);
+        btnAllahName = view.findViewById(R.id.idAllahNameBtn);
         btnDoa = view.findViewById(R.id.idDoaActivity);
         btnNamajerNiom = view.findViewById(R.id.idNiomActivity);
 
@@ -80,6 +80,15 @@ public class QuranMajidFragment extends Fragment {
 
                 Intent suraIntent = new Intent(getContext(),SuraActivity.class);
                 startActivity(suraIntent);
+            }
+        });
+
+        btnAllahName.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent AllahNameIntent = new Intent(getContext(),AllahNameActivity.class);
+                startActivity(AllahNameIntent);
             }
         });
 
