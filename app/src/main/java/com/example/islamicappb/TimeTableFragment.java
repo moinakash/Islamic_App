@@ -316,6 +316,25 @@ public class TimeTableFragment extends Fragment {
         tvNamajTimeNUmber.setText("");
         tvNamajSeshSomoy.setText("");
 
+
+        String matchString = tvCurrentNTime.getText().toString();
+
+
+
+        if (matchString.equals("ফজর")){
+            tvNamajTimeNUmber.setText(""+fojorTimeBangla);
+        } else if (matchString.equals("যোহর")){
+            tvNamajTimeNUmber.setText(""+johorTimeBangla);
+        } else if (matchString.equals("আসর")){
+            tvNamajTimeNUmber.setText(""+asorTimeBangla);
+        } else if (matchString.equals("মাগরিব")){
+            tvNamajTimeNUmber.setText(""+magribTimeBangla);
+        } else if (matchString.equals("এশা")){
+            tvNamajTimeNUmber.setText(""+eshaTimeBangla);
+        }
+
+
+
         return view;
 
 
