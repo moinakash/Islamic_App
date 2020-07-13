@@ -100,54 +100,121 @@ public class BaseActivity extends AppCompatActivity {
 
 
 
-        if (cTime>fTime && cTime<sTime){
-            BorPNamaj = "বর্তমান নামাজ";
-            nextnamaj = "ফজর";
+//        if (cTime>fTime && cTime<sTime){
+//            BorPNamaj = "বর্তমান নামাজ";
+//            nextnamaj = "ফজর";
+//        }
+//
+//        if (cTime>sTime && cTime<jTime){
+//
+//            BorPNamaj = "বর্তমান নামাজ";
+//            nextnamaj = "যোহর";
+//        }
+//        if (cTime>=jTime && cTime<(aTime-30)){
+//            BorPNamaj = "বর্তমান নামাজ";
+//            nextnamaj = "যোহর";
+//        }
+//        if (cTime>=(aTime-30) && cTime<aTime){
+//            BorPNamaj = "পরবর্তি নামাজ";
+//            nextnamaj = "আসর";
+//        }
+//        if (cTime>=aTime && cTime<(mTime-30)){
+//            BorPNamaj = "বর্তমান নামাজ";
+//            nextnamaj = "আসর";
+//        }
+//        if (cTime>=(mTime-20) && cTime<mTime){
+//            BorPNamaj = "পরবর্তি নামাজ";
+//            nextnamaj = "মাগরিব";
+//        }
+//
+//        if (cTime>=mTime && cTime<(mTime+20)){
+//            BorPNamaj = "বর্তমান নামাজ";
+//            nextnamaj = "মাগরিব";
+//        }
+//        if (cTime>=(mTime+20) && cTime<eTime){
+//             BorPNamaj = "পরবর্তি নামাজ";
+//             nextnamaj = "এশা";
+//        }
+//        if (cTime>=eTime && cTime<2345){
+//            BorPNamaj = "বর্তমান নামাজ";
+//            nextnamaj = "এশা";
+//        }
+//        if (cTime>=2345 && cTime<2359){
+//
+//            BorPNamaj = "পরবর্তি নামাজ";
+//            nextnamaj = "ফজর";
+//        }
+//        if (cTime>=0 && cTime<fTime){
+//
+//            BorPNamaj = "পরবর্তি নামাজ";
+//            nextnamaj = "ফজর";
+//        }
+
+        if (cTime>=fTime && cTime<sTime){
+            BorPNamaj= "বর্তমান নামাজ";
+            nextnamaj= "ফজর";
+
         }
 
-        if (cTime>sTime && cTime<jTime){
+        else if (cTime>=sTime && cTime<(sTime+23)){
+            BorPNamaj= "নামাজ পড়া নিষেধ";
+            nextnamaj= "নামাজ পড়া নিষেধ";
 
-            BorPNamaj = "বর্তমান নামাজ";
-            nextnamaj = "যোহর";
-        }
-        if (cTime>=jTime && cTime<(aTime-30)){
-            BorPNamaj = "বর্তমান নামাজ";
-            nextnamaj = "যোহর";
-        }
-        if (cTime>=(aTime-30) && cTime<aTime){
-            BorPNamaj = "পরবর্তি নামাজ";
-            nextnamaj = "আসর";
-        }
-        if (cTime>=aTime && cTime<(mTime-30)){
-            BorPNamaj = "বর্তমান নামাজ";
-            nextnamaj = "আসর";
-        }
-        if (cTime>=(mTime-20) && cTime<mTime){
-            BorPNamaj = "পরবর্তি নামাজ";
-            nextnamaj = "মাগরিব";
         }
 
-        if (cTime>=mTime && cTime<(mTime+20)){
-            BorPNamaj = "বর্তমান নামাজ";
-            nextnamaj = "মাগরিব";
-        }
-        if (cTime>=(mTime+20) && cTime<eTime){
-             BorPNamaj = "পরবর্তি নামাজ";
-             nextnamaj = "এশা";
-        }
-        if (cTime>=eTime && cTime<2345){
-            BorPNamaj = "বর্তমান নামাজ";
-            nextnamaj = "এশা";
-        }
-        if (cTime>=2345 && cTime<2359){
+        else if (cTime>=(sTime+23) && cTime<(jTime-5)){
+            BorPNamaj= "পরবর্তী নামাজ";
+            nextnamaj= "যোহর";
 
-            BorPNamaj = "পরবর্তি নামাজ";
-            nextnamaj = "ফজর";
         }
-        if (cTime>=0 && cTime<fTime){
 
-            BorPNamaj = "পরবর্তি নামাজ";
-            nextnamaj = "ফজর";
+        else if (cTime>=(jTime-5) && cTime<jTime){
+            BorPNamaj= "নামাজ পড়া নিষেধ";
+            nextnamaj= "নামাজ পড়া নিষেধ";
+
+        }
+
+        else if (cTime>=jTime && cTime<(aTime-20)){
+            BorPNamaj= "বর্তমান নামাজ";
+            nextnamaj= "যোহর";
+
+        }
+
+        else if (cTime>=aTime && cTime<(mTime-10)){
+            BorPNamaj= "বর্তমান নামাজ";
+            nextnamaj= "আসর";
+
+        }
+
+        else if (cTime>=(mTime-10) && cTime<mTime){
+            BorPNamaj= "নামাজ পড়া নিষেধ";
+            nextnamaj= "নামাজ পড়া নিষেধ";
+
+        }
+
+        else if (cTime>=mTime && cTime<(mTime+20)){
+            BorPNamaj= "বর্তমান নামাজ";
+            nextnamaj= "মাগরিব";
+
+        }
+
+
+        else if (cTime>=(mTime+20) && cTime<eTime){
+            BorPNamaj= "পরবর্তী নামাজ";
+            nextnamaj= "এশা";
+
+        }
+
+        else if (cTime>=eTime && cTime>0){
+            BorPNamaj= "বর্তমান নামাজ";
+            nextnamaj= "এশা";
+
+        }
+
+        else if (cTime>=0 && cTime<fTime){
+            BorPNamaj= "পরবর্তী নামাজ";
+            nextnamaj= "ফজর";
+
         }
 
 
