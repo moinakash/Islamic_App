@@ -25,7 +25,7 @@ public class BaseActivity extends AppCompatActivity {
      String myString2;
 
     String fajarTime, johorTime, asorTime, magribTime, eshaTime, sunriseTime, nextnamaj;
-    String fajarTimeR, johorTimeR, asorTimeR, magribTimeR, eshaTimeR, sunriseTimeR, nextnamajR;
+    String fajarTimeR, johorTimeR, asorTimeR, magribTimeR, eshaTimeR, sunriseTimeR, nextnamajR, BorPNamaj;
 
     int cTime, fTime, jTime, aTime, mTime, eTime, sTime;
 
@@ -99,41 +99,52 @@ public class BaseActivity extends AppCompatActivity {
 
 
         if (cTime>fTime && cTime<sTime){
-            nextnamaj = "Fojor namaj";
+            BorPNamaj = "বর্তমান নামাজ";
+            nextnamaj = "ফজর";
         }
         if (cTime>sTime && cTime<jTime){
 
-            nextnamaj = "poroborti namaj johor";
+            BorPNamaj = "বর্তমান নামাজ";
+            nextnamaj = "যোহর";
         }
         if (cTime>=jTime && cTime<(aTime-30)){
-            nextnamaj = "Johor namaj";
+            BorPNamaj = "বর্তমান নামাজ";
+            nextnamaj = "যোহর";
         }
         if (cTime>=(aTime-30) && cTime<aTime){
-            nextnamaj = "poroborti namaj asor";
+            BorPNamaj = "পরবর্তি নামাজ";
+            nextnamaj = "আসর";
         }
-        if (cTime>=aTime && cTime<(mTime-20)){
-            nextnamaj = "Asor namaj";
+        if (cTime>=aTime && cTime<(mTime-30)){
+            BorPNamaj = "বর্তমান নামাজ";
+            nextnamaj = "আসর";
         }
         if (cTime>=(mTime-20) && cTime<mTime){
-            nextnamaj = "poroborti namaj Magrib";
+            BorPNamaj = "পরবর্তি নামাজ";
+            nextnamaj = "মাগরিব";
         }
 
-        if (cTime>=mTime && cTime<(mTime+30)){
-            nextnamaj = "Magrib namaj";
+        if (cTime>=mTime && cTime<(mTime+20)){
+            BorPNamaj = "বর্তমান নামাজ";
+            nextnamaj = "মাগরিব";
         }
-        if (cTime>=(mTime+30) && cTime<eTime){
-             nextnamaj = "poroborti namaj Esha";
+        if (cTime>=(mTime+20) && cTime<eTime){
+             BorPNamaj = "পরবর্তি নামাজ";
+             nextnamaj = "এশা";
         }
         if (cTime>=eTime && cTime<2345){
-            nextnamaj = "Esha namaj";
+            BorPNamaj = "বর্তমান নামাজ";
+            nextnamaj = "এশা";
         }
         if (cTime>=2345 && cTime<2359){
 
-            nextnamaj = "poroborti namaj fojor";
+            BorPNamaj = "পরবর্তি নামাজ";
+            nextnamaj = "ফজর";
         }
         if (cTime>=0 && cTime<fTime){
 
-            nextnamaj = "poroborti namaj fojor";
+            BorPNamaj = "পরবর্তি নামাজ";
+            nextnamaj = "ফজর";
         }
 
 
@@ -196,6 +207,9 @@ public class BaseActivity extends AppCompatActivity {
     }
     public String currentNamajTime() {
         return nextnamaj;
+    }
+    public String bOrPNamajTime() {
+        return BorPNamaj;
     }
 
 

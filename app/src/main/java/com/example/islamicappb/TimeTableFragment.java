@@ -161,6 +161,13 @@ public class TimeTableFragment extends Fragment {
         String CurrentNamajTime = activity.currentNamajTime();
 
 
+        String BOrPNamajTime = activity.bOrPNamajTime();
+
+
+        /////////////////////////////////////
+        
+
+
         tvfojor.setText(fojorerTime);
         tvjohor.setText(johorerTime);
         tvasor.setText(asorerTime);
@@ -173,7 +180,7 @@ public class TimeTableFragment extends Fragment {
       //  tvCurrentArbiDate.setText(text);
 
         tvCurrentLocation.setText("");
-        tvNextTime.setText("");
+        tvNextTime.setText(""+BOrPNamajTime);
         tvNamajTimeNUmber.setText("");
         tvNamajSeshSomoy.setText("");
 

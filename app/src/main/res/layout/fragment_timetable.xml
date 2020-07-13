@@ -92,7 +92,7 @@
                         <TextView
                             android:gravity="center"
                             android:layout_weight="1"
-                            android:text="Fajr"
+                            android:text="ফজর"
                             style="@style/NamajTimeTextBoxSize"/>
 
                         <TextView
@@ -113,7 +113,7 @@
                         <TextView
                             android:gravity="center"
                             android:layout_weight="1"
-                            android:text="Johor"
+                            android:text="যোহর"
                             style="@style/NamajTimeTextBoxSize"/>
 
                         <TextView
@@ -133,7 +133,7 @@
                         <TextView
                             android:gravity="center"
                             android:layout_weight="1"
-                            android:text="Asor"
+                            android:text="আসর"
                             style="@style/NamajTimeTextBoxSize"/>
 
                         <TextView
@@ -153,7 +153,7 @@
                         <TextView
                             android:gravity="center"
                             android:layout_weight="1"
-                            android:text="Magrib"
+                            android:text="মাগরিব"
                             style="@style/NamajTimeTextBoxSize"/>
 
                         <TextView
@@ -173,7 +173,7 @@
                         <TextView
                             android:gravity="center"
                             android:layout_weight="1"
-                            android:text="Isha"
+                            android:text="এশা"
                             style="@style/NamajTimeTextBoxSize"/>
 
                         <TextView
