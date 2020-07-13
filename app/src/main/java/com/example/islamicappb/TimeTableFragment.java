@@ -332,8 +332,7 @@ public class TimeTableFragment extends Fragment {
         } else if (matchString.equals("এশা")){
             tvNamajTimeNUmber.setText(""+eshaTimeBangla);
         }
-
-
+        
 
         return view;
 
