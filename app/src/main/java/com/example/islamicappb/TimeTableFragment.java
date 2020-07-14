@@ -163,6 +163,8 @@ public class TimeTableFragment extends Fragment {
 
         String BOrPNamajTime = activity.bOrPNamajTime();
 
+        String NamajerSeshTime = activity.seshTimeOfNamaj();
+
 
         /////////////////////////////////////
 
@@ -307,14 +309,15 @@ public class TimeTableFragment extends Fragment {
         tvesha.setText(eshaTimeBangla);
 
 
+        tvNextTime.setText(""+BOrPNamajTime);
         tvCurrentNTime.setText(""+CurrentNamajTime);
         tvCurrentDate.setText(dateTime);
       //  tvCurrentArbiDate.setText(text);
 
         tvCurrentLocation.setText("");
-        tvNextTime.setText(""+BOrPNamajTime);
+
         tvNamajTimeNUmber.setText("");
-        tvNamajSeshSomoy.setText("");
+        tvNamajSeshSomoy.setText(""+NamajerSeshTime);
 
 
         String matchString = tvCurrentNTime.getText().toString();
@@ -331,6 +334,13 @@ public class TimeTableFragment extends Fragment {
             tvNamajTimeNUmber.setText(""+magribTimeBangla);
         } else if (matchString.equals("এশা")){
             tvNamajTimeNUmber.setText(""+eshaTimeBangla);
+        }
+
+        if (matchString.equals("পরবর্তী নামাজ যোহর")){
+            tvNamajTimeNUmber.setText(""+johorTimeBangla);
+        }
+        if (matchString.equals("পরবর্তী নামাজ মাগরিব")){
+            tvNamajTimeNUmber.setText(""+magribTimeBangla);
         }
 
 

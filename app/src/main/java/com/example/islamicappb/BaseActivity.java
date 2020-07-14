@@ -25,7 +25,7 @@ public class BaseActivity extends AppCompatActivity {
      String myString2;
 
     String fajarTime, johorTime, asorTime, magribTime, eshaTime, sunriseTime, nextnamaj;
-    String fajarTimeR, johorTimeR, asorTimeR, magribTimeR, eshaTimeR, sunriseTimeR, nextnamajR, BorPNamaj;
+    String fajarTimeR, johorTimeR, asorTimeR, magribTimeR, eshaTimeR, sunriseTimeR, nextnamajR, BorPNamaj, seShTime;
 
     int cTime, fTime, jTime, aTime, mTime, eTime, sTime;
 
@@ -100,59 +100,33 @@ public class BaseActivity extends AppCompatActivity {
 
 
 
-//        if (cTime>fTime && cTime<sTime){
-//            BorPNamaj = "বর্তমান নামাজ";
-//            nextnamaj = "ফজর";
-//        }
-//
-//        if (cTime>sTime && cTime<jTime){
-//
-//            BorPNamaj = "বর্তমান নামাজ";
-//            nextnamaj = "যোহর";
-//        }
-//        if (cTime>=jTime && cTime<(aTime-30)){
-//            BorPNamaj = "বর্তমান নামাজ";
-//            nextnamaj = "যোহর";
-//        }
-//        if (cTime>=(aTime-30) && cTime<aTime){
-//            BorPNamaj = "পরবর্তি নামাজ";
-//            nextnamaj = "আসর";
-//        }
-//        if (cTime>=aTime && cTime<(mTime-30)){
-//            BorPNamaj = "বর্তমান নামাজ";
-//            nextnamaj = "আসর";
-//        }
-//        if (cTime>=(mTime-20) && cTime<mTime){
-//            BorPNamaj = "পরবর্তি নামাজ";
-//            nextnamaj = "মাগরিব";
-//        }
-//
-//        if (cTime>=mTime && cTime<(mTime+20)){
-//            BorPNamaj = "বর্তমান নামাজ";
-//            nextnamaj = "মাগরিব";
-//        }
-//        if (cTime>=(mTime+20) && cTime<eTime){
-//             BorPNamaj = "পরবর্তি নামাজ";
-//             nextnamaj = "এশা";
-//        }
-//        if (cTime>=eTime && cTime<2345){
-//            BorPNamaj = "বর্তমান নামাজ";
-//            nextnamaj = "এশা";
-//        }
-//        if (cTime>=2345 && cTime<2359){
-//
-//            BorPNamaj = "পরবর্তি নামাজ";
-//            nextnamaj = "ফজর";
-//        }
-//        if (cTime>=0 && cTime<fTime){
-//
-//            BorPNamaj = "পরবর্তি নামাজ";
-//            nextnamaj = "ফজর";
-//        }
 
         if (cTime>=fTime && cTime<sTime){
             BorPNamaj= "বর্তমান নামাজ";
             nextnamaj= "ফজর";
+
+            ////////sesh time fojor
+
+            String fojorSeshTimeTxt = String.valueOf(sTime);
+
+            Character [] sesh_time_fojor_array= new Character[fojorSeshTimeTxt.length()];
+
+            for (int i = 0; i < fojorSeshTimeTxt.length(); i++) {
+                sesh_time_fojor_array[i] = fojorSeshTimeTxt.charAt(i);
+            }
+
+            seShTime = "নামাজের শেষ সময় "+sesh_time_fojor_array[0]+":"+sesh_time_fojor_array[1]+""+sesh_time_fojor_array[2];
+
+            seShTime= seShTime.replace("0", "০");
+            seShTime= seShTime.replace("1", "১");
+            seShTime= seShTime.replace("2", "২");
+            seShTime= seShTime.replace("3", "৩");
+            seShTime= seShTime.replace("4", "৪");
+            seShTime= seShTime.replace("5", "৫");
+            seShTime= seShTime.replace("6", "৬");
+            seShTime= seShTime.replace("7", "৭");
+            seShTime= seShTime.replace("8", "৮");
+            seShTime= seShTime.replace("9", "৯");
 
         }
 
@@ -160,17 +134,117 @@ public class BaseActivity extends AppCompatActivity {
             BorPNamaj= "নামাজ পড়া নিষেধ";
             nextnamaj= "পরবর্তী নামাজ যোহর";
 
+            /////////////////////////////////Suru time add korte hobe////////////////////////
+
+
+
+            //////////////////////////////sesh somoy////////////////////////////
+
+            String JohorSeshTimeTxt = String.valueOf(aTime);
+
+            Character [] sesh_time_johor_array= new Character[JohorSeshTimeTxt.length()];
+
+            for (int i = 0; i < JohorSeshTimeTxt.length(); i++) {
+                sesh_time_johor_array[i] = JohorSeshTimeTxt.charAt(i);
+            }
+
+            String convSt1 = ""+sesh_time_johor_array[0]+""+sesh_time_johor_array[1];
+
+            int convInt = Integer.parseInt(convSt1);
+            if (convInt>12){
+                convInt = convInt - 12;
+            }
+
+            convSt1 = String.valueOf(convInt);
+
+            seShTime = "নামাজের শেষ সময় "+convSt1+":"+sesh_time_johor_array[2]+""+sesh_time_johor_array[3];
+
+            seShTime= seShTime.replace("0", "০");
+            seShTime= seShTime.replace("1", "১");
+            seShTime= seShTime.replace("2", "২");
+            seShTime= seShTime.replace("3", "৩");
+            seShTime= seShTime.replace("4", "৪");
+            seShTime= seShTime.replace("5", "৫");
+            seShTime= seShTime.replace("6", "৬");
+            seShTime= seShTime.replace("7", "৭");
+            seShTime= seShTime.replace("8", "৮");
+            seShTime= seShTime.replace("9", "৯");
+
         }
 
         else if (cTime>=(sTime+23) && cTime<(jTime-5)){
             BorPNamaj= "পরবর্তী নামাজ";
             nextnamaj= "যোহর";
 
+            //////////////////////////////sesh somoy////////////////////////////
+
+            String JohorSeshTimeTxt = String.valueOf(aTime);
+
+            Character [] sesh_time_johor_array= new Character[JohorSeshTimeTxt.length()];
+
+            for (int i = 0; i < JohorSeshTimeTxt.length(); i++) {
+                sesh_time_johor_array[i] = JohorSeshTimeTxt.charAt(i);
+            }
+
+            String convSt1 = ""+sesh_time_johor_array[0]+""+sesh_time_johor_array[1];
+
+            int convInt = Integer.parseInt(convSt1);
+            if (convInt>12){
+                convInt = convInt - 12;
+            }
+
+            convSt1 = String.valueOf(convInt);
+
+            seShTime = "নামাজের শেষ সময় "+convSt1+":"+sesh_time_johor_array[2]+""+sesh_time_johor_array[3];
+
+            seShTime= seShTime.replace("0", "০");
+            seShTime= seShTime.replace("1", "১");
+            seShTime= seShTime.replace("2", "২");
+            seShTime= seShTime.replace("3", "৩");
+            seShTime= seShTime.replace("4", "৪");
+            seShTime= seShTime.replace("5", "৫");
+            seShTime= seShTime.replace("6", "৬");
+            seShTime= seShTime.replace("7", "৭");
+            seShTime= seShTime.replace("8", "৮");
+            seShTime= seShTime.replace("9", "৯");
+
         }
 
         else if (cTime>=(jTime-5) && cTime<jTime){
             BorPNamaj= "নামাজ পড়া নিষেধ";
-            nextnamaj= "পরবর্তি নামাজ যোহর";
+            nextnamaj= "পরবর্তী নামাজ যোহর";
+
+            //////////////////////////////sesh somoy////////////////////////////
+
+            String JohorSeshTimeTxt = String.valueOf(aTime);
+
+            Character [] sesh_time_johor_array= new Character[JohorSeshTimeTxt.length()];
+
+            for (int i = 0; i < JohorSeshTimeTxt.length(); i++) {
+                sesh_time_johor_array[i] = JohorSeshTimeTxt.charAt(i);
+            }
+
+            String convSt1 = ""+sesh_time_johor_array[0]+""+sesh_time_johor_array[1];
+
+            int convInt = Integer.parseInt(convSt1);
+            if (convInt>12){
+                convInt = convInt - 12;
+            }
+
+            convSt1 = String.valueOf(convInt);
+
+            seShTime = "নামাজের শেষ সময় "+convSt1+":"+sesh_time_johor_array[2]+""+sesh_time_johor_array[3];
+
+            seShTime= seShTime.replace("0", "০");
+            seShTime= seShTime.replace("1", "১");
+            seShTime= seShTime.replace("2", "২");
+            seShTime= seShTime.replace("3", "৩");
+            seShTime= seShTime.replace("4", "৪");
+            seShTime= seShTime.replace("5", "৫");
+            seShTime= seShTime.replace("6", "৬");
+            seShTime= seShTime.replace("7", "৭");
+            seShTime= seShTime.replace("8", "৮");
+            seShTime= seShTime.replace("9", "৯");
 
         }
 
@@ -178,11 +252,75 @@ public class BaseActivity extends AppCompatActivity {
             BorPNamaj= "বর্তমান নামাজ";
             nextnamaj= "যোহর";
 
+            //////////////////////////////sesh somoy////////////////////////////
+
+            String JohorSeshTimeTxt = String.valueOf(aTime);
+
+            Character [] sesh_time_johor_array= new Character[JohorSeshTimeTxt.length()];
+
+            for (int i = 0; i < JohorSeshTimeTxt.length(); i++) {
+                sesh_time_johor_array[i] = JohorSeshTimeTxt.charAt(i);
+            }
+
+            String convSt1 = ""+sesh_time_johor_array[0]+""+sesh_time_johor_array[1];
+
+            int convInt = Integer.parseInt(convSt1);
+            if (convInt>12){
+                convInt = convInt - 12;
+            }
+
+            convSt1 = String.valueOf(convInt);
+
+            seShTime = "নামাজের শেষ সময় "+convSt1+":"+sesh_time_johor_array[2]+""+sesh_time_johor_array[3];
+
+            seShTime= seShTime.replace("0", "০");
+            seShTime= seShTime.replace("1", "১");
+            seShTime= seShTime.replace("2", "২");
+            seShTime= seShTime.replace("3", "৩");
+            seShTime= seShTime.replace("4", "৪");
+            seShTime= seShTime.replace("5", "৫");
+            seShTime= seShTime.replace("6", "৬");
+            seShTime= seShTime.replace("7", "৭");
+            seShTime= seShTime.replace("8", "৮");
+            seShTime= seShTime.replace("9", "৯");
+
         }
 
         else if (cTime>=(aTime-20) && cTime<aTime){
             BorPNamaj= "পরবর্তী নামাজ";
             nextnamaj= "আসর";
+
+            //////////////////////////////sesh somoy////////////////////////////
+
+            String AsorerSeshTimeTxt = String.valueOf(mTime-10);
+
+            Character [] sesh_time_asor_array= new Character[AsorerSeshTimeTxt.length()];
+
+            for (int i = 0; i < AsorerSeshTimeTxt.length(); i++) {
+                sesh_time_asor_array[i] = AsorerSeshTimeTxt.charAt(i);
+            }
+
+            String convSt1 = ""+sesh_time_asor_array[0]+""+sesh_time_asor_array[1];
+
+            int convInt = Integer.parseInt(convSt1);
+            if (convInt>12){
+                convInt = convInt - 12;
+            }
+
+            convSt1 = String.valueOf(convInt);
+
+            seShTime = "নামাজের শেষ সময় "+convSt1+":"+sesh_time_asor_array[2]+""+sesh_time_asor_array[3];
+
+            seShTime= seShTime.replace("0", "০");
+            seShTime= seShTime.replace("1", "১");
+            seShTime= seShTime.replace("2", "২");
+            seShTime= seShTime.replace("3", "৩");
+            seShTime= seShTime.replace("4", "৪");
+            seShTime= seShTime.replace("5", "৫");
+            seShTime= seShTime.replace("6", "৬");
+            seShTime= seShTime.replace("7", "৭");
+            seShTime= seShTime.replace("8", "৮");
+            seShTime= seShTime.replace("9", "৯");
 
         }
 
@@ -190,17 +328,149 @@ public class BaseActivity extends AppCompatActivity {
             BorPNamaj= "বর্তমান নামাজ";
             nextnamaj= "আসর";
 
+            //////////////////////////////sesh somoy////////////////////////////
+
+            String AsorerSeshTimeTxt = String.valueOf(mTime-10);
+
+            Character [] sesh_time_asor_array= new Character[AsorerSeshTimeTxt.length()];
+
+            for (int i = 0; i < AsorerSeshTimeTxt.length(); i++) {
+                sesh_time_asor_array[i] = AsorerSeshTimeTxt.charAt(i);
+            }
+
+            String convSt1 = ""+sesh_time_asor_array[0]+""+sesh_time_asor_array[1];
+
+            int convInt = Integer.parseInt(convSt1);
+            if (convInt>12){
+                convInt = convInt - 12;
+            }
+
+            convSt1 = String.valueOf(convInt);
+
+            seShTime = "নামাজের শেষ সময় "+convSt1+":"+sesh_time_asor_array[2]+""+sesh_time_asor_array[3];
+
+            seShTime= seShTime.replace("0", "০");
+            seShTime= seShTime.replace("1", "১");
+            seShTime= seShTime.replace("2", "২");
+            seShTime= seShTime.replace("3", "৩");
+            seShTime= seShTime.replace("4", "৪");
+            seShTime= seShTime.replace("5", "৫");
+            seShTime= seShTime.replace("6", "৬");
+            seShTime= seShTime.replace("7", "৭");
+            seShTime= seShTime.replace("8", "৮");
+            seShTime= seShTime.replace("9", "৯");
+
         }
 
         else if (cTime>=(mTime-10) && cTime<mTime){
             BorPNamaj= "নামাজ পড়া নিষেধ";
-            nextnamaj= "পরবর্তি নামাজ মাগরিব";
+            nextnamaj= "পরবর্তী নামাজ মাগরিব";
+
+            //////////////////////////////sesh somoy////////////////////////////
+
+            String MagriberSeshTimeTxt = String.valueOf(mTime+20);
+
+            Character [] sesh_time_magrib_array= new Character[MagriberSeshTimeTxt.length()];
+
+            for (int i = 0; i < MagriberSeshTimeTxt.length(); i++) {
+                sesh_time_magrib_array[i] = MagriberSeshTimeTxt.charAt(i);
+            }
+
+
+
+
+            String convSt1 = ""+sesh_time_magrib_array[0]+""+sesh_time_magrib_array[1];
+
+            int convInt = Integer.parseInt(convSt1);
+            if (convInt>12){
+                convInt = convInt - 12;
+            }
+
+            String lastTwodigitString = ""+sesh_time_magrib_array[2]+""+sesh_time_magrib_array[3];
+
+            int lastTwodigitInt = Integer.parseInt(lastTwodigitString);
+
+            if (lastTwodigitInt>=60){
+                lastTwodigitInt = lastTwodigitInt - 60;
+                lastTwodigitString = String.valueOf(lastTwodigitInt);
+                convInt = convInt + 1;
+            }
+            if (lastTwodigitInt<10){
+
+                lastTwodigitString = "0"+lastTwodigitInt;
+
+            }
+
+            convSt1 = String.valueOf(convInt);
+
+            seShTime = "নামাজের শেষ সময় "+convSt1+":"+lastTwodigitString;
+
+            seShTime= seShTime.replace("0", "০");
+            seShTime= seShTime.replace("1", "১");
+            seShTime= seShTime.replace("2", "২");
+            seShTime= seShTime.replace("3", "৩");
+            seShTime= seShTime.replace("4", "৪");
+            seShTime= seShTime.replace("5", "৫");
+            seShTime= seShTime.replace("6", "৬");
+            seShTime= seShTime.replace("7", "৭");
+            seShTime= seShTime.replace("8", "৮");
+            seShTime= seShTime.replace("9", "৯");
 
         }
 
         else if (cTime>=mTime && cTime<(mTime+20)){
             BorPNamaj= "বর্তমান নামাজ";
             nextnamaj= "মাগরিব";
+
+            //////////////////////////////sesh somoy////////////////////////////
+
+            String MagriberSeshTimeTxt = String.valueOf(mTime+20);
+
+            Character [] sesh_time_magrib_array= new Character[MagriberSeshTimeTxt.length()];
+
+            for (int i = 0; i < MagriberSeshTimeTxt.length(); i++) {
+                sesh_time_magrib_array[i] = MagriberSeshTimeTxt.charAt(i);
+            }
+
+
+
+
+            String convSt1 = ""+sesh_time_magrib_array[0]+""+sesh_time_magrib_array[1];
+
+            int convInt = Integer.parseInt(convSt1);
+            if (convInt>12){
+                convInt = convInt - 12;
+            }
+
+            String lastTwodigitString = ""+sesh_time_magrib_array[2]+""+sesh_time_magrib_array[3];
+
+            int lastTwodigitInt = Integer.parseInt(lastTwodigitString);
+
+            if (lastTwodigitInt>=60){
+                lastTwodigitInt = lastTwodigitInt - 60;
+                lastTwodigitString = String.valueOf(lastTwodigitInt);
+                convInt = convInt + 1;
+            }
+            if (lastTwodigitInt<10){
+
+                lastTwodigitString = "0"+lastTwodigitInt;
+
+            }
+
+            convSt1 = String.valueOf(convInt);
+
+            seShTime = "নামাজের শেষ সময় "+convSt1+":"+lastTwodigitString;
+
+            seShTime= seShTime.replace("0", "০");
+            seShTime= seShTime.replace("1", "১");
+            seShTime= seShTime.replace("2", "২");
+            seShTime= seShTime.replace("3", "৩");
+            seShTime= seShTime.replace("4", "৪");
+            seShTime= seShTime.replace("5", "৫");
+            seShTime= seShTime.replace("6", "৬");
+            seShTime= seShTime.replace("7", "৭");
+            seShTime= seShTime.replace("8", "৮");
+            seShTime= seShTime.replace("9", "৯");
 
         }
 
@@ -209,17 +479,105 @@ public class BaseActivity extends AppCompatActivity {
             BorPNamaj= "পরবর্তী নামাজ";
             nextnamaj= "এশা";
 
+            //////////////////////////////sesh somoy////////////////////////////
+
+            String EsharSeshTimeTxt = "1200";
+
+            Character [] sesh_time_esha_array= new Character[EsharSeshTimeTxt.length()];
+
+            for (int i = 0; i < EsharSeshTimeTxt.length(); i++) {
+                sesh_time_esha_array[i] = EsharSeshTimeTxt.charAt(i);
+            }
+
+            String convSt1 = ""+sesh_time_esha_array[0]+""+sesh_time_esha_array[1];
+
+            int convInt = Integer.parseInt(convSt1);
+            if (convInt>12){
+                convInt = convInt - 12;
+            }
+
+            convSt1 = String.valueOf(convInt);
+
+            seShTime = "নামাজের শেষ সময় "+convSt1+":"+sesh_time_esha_array[2]+""+sesh_time_esha_array[3];
+
+            seShTime= seShTime.replace("0", "০");
+            seShTime= seShTime.replace("1", "১");
+            seShTime= seShTime.replace("2", "২");
+            seShTime= seShTime.replace("3", "৩");
+            seShTime= seShTime.replace("4", "৪");
+            seShTime= seShTime.replace("5", "৫");
+            seShTime= seShTime.replace("6", "৬");
+            seShTime= seShTime.replace("7", "৭");
+            seShTime= seShTime.replace("8", "৮");
+            seShTime= seShTime.replace("9", "৯");
+
         }
 
         else if (cTime>=eTime && cTime>0){
             BorPNamaj= "বর্তমান নামাজ";
             nextnamaj= "এশা";
 
+
+            //////////////////////////////sesh somoy////////////////////////////
+
+            String EsharSeshTimeTxt = "1200";
+
+            Character [] sesh_time_esha_array= new Character[EsharSeshTimeTxt.length()];
+
+            for (int i = 0; i < EsharSeshTimeTxt.length(); i++) {
+                sesh_time_esha_array[i] = EsharSeshTimeTxt.charAt(i);
+            }
+
+            String convSt1 = ""+sesh_time_esha_array[0]+""+sesh_time_esha_array[1];
+
+            int convInt = Integer.parseInt(convSt1);
+            if (convInt>12){
+                convInt = convInt - 12;
+            }
+
+            convSt1 = String.valueOf(convInt);
+
+            seShTime = "নামাজের শেষ সময় "+convSt1+":"+sesh_time_esha_array[2]+""+sesh_time_esha_array[3];
+
+            seShTime= seShTime.replace("0", "০");
+            seShTime= seShTime.replace("1", "১");
+            seShTime= seShTime.replace("2", "২");
+            seShTime= seShTime.replace("3", "৩");
+            seShTime= seShTime.replace("4", "৪");
+            seShTime= seShTime.replace("5", "৫");
+            seShTime= seShTime.replace("6", "৬");
+            seShTime= seShTime.replace("7", "৭");
+            seShTime= seShTime.replace("8", "৮");
+            seShTime= seShTime.replace("9", "৯");
+
         }
 
         else if (cTime>=0 && cTime<fTime){
             BorPNamaj= "পরবর্তী নামাজ";
             nextnamaj= "ফজর";
+
+            ////////sesh time fojor
+
+            String fojorSeshTimeTxt = String.valueOf(sTime);
+
+            Character [] sesh_time_fojor_array= new Character[fojorSeshTimeTxt.length()];
+
+            for (int i = 0; i < fojorSeshTimeTxt.length(); i++) {
+                sesh_time_fojor_array[i] = fojorSeshTimeTxt.charAt(i);
+            }
+
+            seShTime = "নামাজের শেষ সময় "+sesh_time_fojor_array[0]+":"+sesh_time_fojor_array[1]+""+sesh_time_fojor_array[2];
+
+            seShTime= seShTime.replace("0", "০");
+            seShTime= seShTime.replace("1", "১");
+            seShTime= seShTime.replace("2", "২");
+            seShTime= seShTime.replace("3", "৩");
+            seShTime= seShTime.replace("4", "৪");
+            seShTime= seShTime.replace("5", "৫");
+            seShTime= seShTime.replace("6", "৬");
+            seShTime= seShTime.replace("7", "৭");
+            seShTime= seShTime.replace("8", "৮");
+            seShTime= seShTime.replace("9", "৯");
 
         }
 
@@ -266,6 +624,8 @@ public class BaseActivity extends AppCompatActivity {
 
     }
 
+
+
     public String fojorData() {
         return fajarTime;
     }
@@ -288,6 +648,9 @@ public class BaseActivity extends AppCompatActivity {
         return BorPNamaj;
     }
 
+    public String seshTimeOfNamaj() {
+        return seShTime;
+    }
 
 
 
