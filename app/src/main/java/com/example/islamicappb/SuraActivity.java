@@ -6,8 +6,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -39,7 +41,12 @@ public class SuraActivity
     ListView list;
     List<SuraNameListPojo> suraNameListPojoList;
 
+    TextView tvLastSuraName;
+
     CustomSuraNameAdapter customSuraNameAdapter;
+
+
+
 
 
     @Override
@@ -49,11 +56,24 @@ public class SuraActivity
         setContentView(R.layout.activity_sura);
 
 
+        oncreate();
 
         // listView = findViewById(R.id.idListView);
 
 
         list = findViewById( R.id.idListView);
+        tvLastSuraName = findViewById( R.id.idLastSuraName);
+
+
+
+        SharedPreferences sharedPref = com.example.islamicappb.SuraActivity.this.getPreferences(Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPref.edit();
+
+        String defaultValue = sharedPref.getString("LastSuraName","");
+        //int highScore = sharedPref.getInt(getString(R.string.saved_high_score_key), defaultValue);
+
+
+        tvLastSuraName.setText(""+defaultValue);
 
 
 
@@ -64,6 +84,8 @@ public class SuraActivity
 
 
         data = new ArrayList<>();
+
+
         fetchData();
 
         loadData();
@@ -72,6 +94,41 @@ public class SuraActivity
 
 
 
+
+
+
+
+    }
+
+    public void oncreate(){
+        list = findViewById( R.id.idListView);
+        tvLastSuraName = findViewById( R.id.idLastSuraName);
+
+
+
+        SharedPreferences sharedPref = com.example.islamicappb.SuraActivity.this.getPreferences(Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPref.edit();
+
+        String defaultValue = sharedPref.getString("LastSuraName","");
+        //int highScore = sharedPref.getInt(getString(R.string.saved_high_score_key), defaultValue);
+
+
+        tvLastSuraName.setText(""+defaultValue);
+
+
+
+
+        db = new DatabaseHelper(this);
+
+        suraNameListPojoList = new ArrayList();
+
+
+        data = new ArrayList<>();
+
+
+        fetchData();
+
+        loadData();
 
     }
 
@@ -124,23 +181,23 @@ public class SuraActivity
 //        listView.setAdapter(adapter);
 
 
-        list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-
-                //  Toast.makeText( getApplicationContext(), suraNameListPojoList+ " is selected",Toast.LENGTH_SHORT).show();
-
-//                String se = (String) adapterView.getItemAtPosition(i);
+//        list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+//            @Override
+//            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
 //
-                int f = i+1;
-
-                Toast.makeText(getApplicationContext(), "Selected value : "+f, Toast.LENGTH_SHORT).show();
-
-                Intent intent = new Intent(getBaseContext(), ReadSuraActivity.class);
-                intent.putExtra("position", ""+f);
-                startActivity(intent);
-            }
-        });
+//                //  Toast.makeText( getApplicationContext(), suraNameListPojoList+ " is selected",Toast.LENGTH_SHORT).show();
+//
+////                String se = (String) adapterView.getItemAtPosition(i);
+////
+//                int f = i+1;
+//
+//                Toast.makeText(getApplicationContext(), "Selected value : "+f, Toast.LENGTH_SHORT).show();
+//
+//                Intent intent = new Intent(getBaseContext(), ReadSuraActivity.class);
+//                intent.putExtra("position", ""+f);
+//                startActivity(intent);
+//            }
+//        });
 
 
 
@@ -206,6 +263,28 @@ public class SuraActivity
                     @Override
                     public void onClick(View v) {
                         Log.e("main activity", "item clicked");
+
+                        ////////////////////////////////////sharePref//////////////////////////
+
+                        String LastRead = ""+suraNameListPojo.getSura_name_bangla();
+//
+//
+//                        editor.putString("LastSuraName",""+LastRead);
+//                        editor.apply();
+
+
+                        SharedPreferences sharedPref = com.example.islamicappb.SuraActivity.this.getPreferences(Context.MODE_PRIVATE);
+                        SharedPreferences.Editor editor = sharedPref.edit();
+
+                        editor.putString("LastSuraName", ""+LastRead);
+                        editor.commit();
+
+
+
+
+
+
+
 
                         Toast.makeText(getContext(), ""+suraNameListPojo.getSura_name_bangla(), Toast.LENGTH_SHORT).show();
 
@@ -274,4 +353,16 @@ public class SuraActivity
     }
 
 
+    @Override
+    protected void onPause() {
+        super.onPause();
+
+        oncreate();
+    }
+
+    @Override
+    protected void onPostResume() {
+        super.onPostResume();
+        oncreate();
+    }
 }

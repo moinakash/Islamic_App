@@ -29,6 +29,7 @@
         android:layout_height="wrap_content"/>
 
     <TextView
+        android:id="@+id/idLastSuraName"
             android:textColor="@android:color/white"
             android:layout_marginTop="5dp"
             android:textStyle="bold"
