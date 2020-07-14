@@ -158,7 +158,7 @@ public class BaseActivity extends AppCompatActivity {
 
         else if (cTime>=sTime && cTime<(sTime+23)){
             BorPNamaj= "নামাজ পড়া নিষেধ";
-            nextnamaj= "নামাজ পড়া নিষেধ";
+            nextnamaj= "পরবর্তী নামাজ যোহর";
 
         }
 
@@ -170,13 +170,19 @@ public class BaseActivity extends AppCompatActivity {
 
         else if (cTime>=(jTime-5) && cTime<jTime){
             BorPNamaj= "নামাজ পড়া নিষেধ";
-            nextnamaj= "নামাজ পড়া নিষেধ";
+            nextnamaj= "পরবর্তি নামাজ যোহর";
 
         }
 
         else if (cTime>=jTime && cTime<(aTime-20)){
             BorPNamaj= "বর্তমান নামাজ";
             nextnamaj= "যোহর";
+
+        }
+
+        else if (cTime>=(aTime-20) && cTime<aTime){
+            BorPNamaj= "পরবর্তী নামাজ";
+            nextnamaj= "আসর";
 
         }
 
@@ -188,7 +194,7 @@ public class BaseActivity extends AppCompatActivity {
 
         else if (cTime>=(mTime-10) && cTime<mTime){
             BorPNamaj= "নামাজ পড়া নিষেধ";
-            nextnamaj= "নামাজ পড়া নিষেধ";
+            nextnamaj= "পরবর্তি নামাজ মাগরিব";
 
         }
 
