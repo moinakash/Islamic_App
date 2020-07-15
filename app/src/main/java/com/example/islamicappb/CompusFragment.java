@@ -15,11 +15,10 @@ import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.RotateAnimation;
 import android.widget.ImageView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 
-public class DiscoverFragment extends Fragment implements SensorEventListener {
+public class CompusFragment extends Fragment implements SensorEventListener {
 
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
@@ -36,12 +35,12 @@ public class DiscoverFragment extends Fragment implements SensorEventListener {
     private static Sensor sensor;
     private float currentDegree;
 
-    public DiscoverFragment() {
+    public CompusFragment() {
 
     }
 
-    public static DiscoverFragment newInstance(String param1, String param2) {
-        DiscoverFragment fragment = new DiscoverFragment();
+    public static CompusFragment newInstance(String param1, String param2) {
+        CompusFragment fragment = new CompusFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -62,7 +61,7 @@ public class DiscoverFragment extends Fragment implements SensorEventListener {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        View view = inflater.inflate(R.layout.fragment_discover, container, false);
+        View view = inflater.inflate(R.layout.fragment_compus, container, false);
 
         ic_compus = view.findViewById(R.id.compus);
         sensorManager =(SensorManager) getActivity().getSystemService(Context.SENSOR_SERVICE);

@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TasbihFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.example.gifclick.MainActivity"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:orientation="vertical">
+
+
+        <Button
+            android:id="@+id/idSound"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="turn on Sound"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+
+            <Button
+                android:layout_marginLeft="10dp"
+                android:id="@+id/id33"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="33"
+                android:layout_gravity="center"
+                android:textSize="20dp"
+                android:gravity="center" />
+
+            <Button
+                android:layout_marginLeft="10dp"
+                android:id="@+id/id99"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="99"
+                android:layout_gravity="center"
+                android:textSize="20dp"
+                android:gravity="center" />
+            <Button
+                android:layout_marginLeft="10dp"
+                android:id="@+id/idReset"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="reset"
+                android:layout_gravity="center"
+                android:textSize="20dp"
+                android:gravity="center" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="center"
+            android:gravity="center">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/idCurrentCount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="00"
+                    android:layout_gravity="center"
+                    android:textSize="50dp"
+                    android:gravity="center" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="/"
+                    android:layout_gravity="center"
+                    android:textSize="50dp"
+                    android:gravity="center" />
+                <TextView
+                    android:id="@+id/idCountSet"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="33"
+                    android:layout_gravity="center"
+                    android:textSize="50dp"
+                    android:gravity="center" />
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Total Count: "
+                    android:textSize="30dp"/>
+                <TextView
+                    android:id="@+id/idtotalCount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="00"
+                    android:textSize="30dp"/>
+
+                <Button
+                    android:id="@+id/idttlr"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="R"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+        <ImageView
+            android:id="@+id/idImage"
+            android:src="@drawable/tasbih"
+            android:layout_width="wrap_content"
+            android:layout_height="200dp"/>
+
+
+        <pl.droidsonroids.gif.GifImageView
+
+            android:visibility="gone"
+            android:id="@+id/idGif"
+            android:src="@drawable/tasbih"
+            android:layout_width="wrap_content"
+            android:layout_height="200dp"/>
+
+        <Button
+            android:id="@+id/idButton"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+</FrameLayout>

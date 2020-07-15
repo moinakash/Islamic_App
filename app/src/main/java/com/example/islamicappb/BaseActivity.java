@@ -596,14 +596,14 @@ public class BaseActivity extends AppCompatActivity {
                         break;
 
                     case  R.id.discover:
-                        fragment = new DiscoverFragment();
+                        fragment = new CompusFragment();
                         break;
 
                     case  R.id.account:
                         fragment = new QuranMajidFragment();
                         break;
                     case  R.id.account2:
-                        fragment = new DiscoverFragment();
+                        fragment = new TasbihFragment();
                         break;
                     case  R.id.account3:
                         fragment = new TimeTableFragment();
