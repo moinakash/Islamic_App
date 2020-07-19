@@ -302,11 +302,11 @@ public class TimeTableFragment extends Fragment {
         eshaTimeBangla= eshaTimeBangla.replace("8", "৮");
         eshaTimeBangla= eshaTimeBangla.replace("9", "৯");
 
-        tvfojor.setText(fojorTimeBangla);
+        tvfojor.setText("০"+fojorTimeBangla);
         tvjohor.setText(johorTimeBangla);
-        tvasor.setText(asorTimeBangla);
-        tvmagrib.setText(magribTimeBangla);
-        tvesha.setText(eshaTimeBangla);
+        tvasor.setText("০"+asorTimeBangla);
+        tvmagrib.setText("০"+magribTimeBangla);
+        tvesha.setText("০"+eshaTimeBangla);
 
 
         tvNextTime.setText(""+BOrPNamajTime);

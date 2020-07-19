@@ -9,6 +9,7 @@ import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -30,7 +31,7 @@ public class CompusFragment extends Fragment implements SensorEventListener {
 //    private ImageView MainImageDialer,MainImageQiblat;
 //    private TextView Teks_bawah ,Teks_atas;
 
-    ImageView ic_compus;
+    ImageView ic_compus,imageView;
     private static SensorManager sensorManager;
     private static Sensor sensor;
     private float currentDegree;
@@ -63,10 +64,12 @@ public class CompusFragment extends Fragment implements SensorEventListener {
 
         View view = inflater.inflate(R.layout.fragment_compus, container, false);
 
+        imageView = view.findViewById(R.id.img);
         ic_compus = view.findViewById(R.id.compus);
         sensorManager =(SensorManager) getActivity().getSystemService(Context.SENSOR_SERVICE);
         sensor =sensorManager.getDefaultSensor(Sensor.TYPE_ORIENTATION);
 
+        thread();
         if(sensor != null)
         {
             sensorManager.registerListener(this,sensor,SensorManager.SENSOR_DELAY_FASTEST);
@@ -97,4 +100,22 @@ public class CompusFragment extends Fragment implements SensorEventListener {
     public void onAccuracyChanged(Sensor sensor, int accuracy) {
 
     }
+
+    private void thread() {
+
+
+
+        final Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                imageView.setVisibility(View.GONE);
+                ic_compus.setVisibility(View.VISIBLE);
+
+
+            }
+        }, 100);
+
+    }
+
 }

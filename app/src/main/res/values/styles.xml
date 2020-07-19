@@ -34,4 +34,12 @@
 
     </style>
 
+
+    <style name="image_values">
+        <item name="android:layout_height">30dp</item>
+        <item name="android:layout_width">30dp</item>
+        <item name="android:background">@drawable/balltwo</item>
+        <item name="android:layout_alignParentBottom">true</item>
+    </style>
+
 </resources>

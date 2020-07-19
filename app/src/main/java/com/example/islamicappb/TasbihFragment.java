@@ -9,9 +9,12 @@ import androidx.fragment.app.Fragment;
 
 import android.os.Handler;
 import android.os.Vibrator;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -29,10 +32,13 @@ public class TasbihFragment extends Fragment {
     Button button, btnReset, btn33, btn99, btnttlr, btnSound;
     TextView tvCurrentCounter, tvSetCount, tvTotalcount;
 
+    ImageView img_pearl, img_pearl_1, img_pearl_2, img_pearl_3, img_pearl_4, img_pearl_6, img_pearl_7, img_pearl_8, img_pearl_9;
+
 
 
     int currentcounter =0;
-    int countset = 33;
+    private int countset = 33;
+    private final int constent = 33;
     int totalcount =0;
     int SoundInt = 0;
     String defaultValue;
@@ -66,6 +72,8 @@ public class TasbihFragment extends Fragment {
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
+
+            Log.d("countset", "onClick: "+countset);
         }
     }
 
@@ -75,8 +83,6 @@ public class TasbihFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_tasbih, container, false);
 
 
-        imageView = view.findViewById(R.id.idImage);
-        gifImageView = view.findViewById(R.id.idGif);
         button = view.findViewById(R.id.idButton);
         btnReset = view.findViewById(R.id.idReset);
         tvCurrentCounter = view.findViewById(R.id.idCurrentCount);
@@ -86,14 +92,76 @@ public class TasbihFragment extends Fragment {
         tvSetCount = view.findViewById(R.id.idCountSet);
         tvTotalcount = view.findViewById(R.id.idtotalCount);
         btnttlr = view.findViewById(R.id.idttlr);
+        img_pearl = view.findViewById(R.id.id_pearl);
+        img_pearl_1 = view.findViewById(R.id.id_pearl_1);
+        img_pearl_2 = view.findViewById(R.id.id_pearl_2);
+        img_pearl_3 = view.findViewById(R.id.id_pearl_3);
+        img_pearl_4 = view.findViewById(R.id.id_pearl_4);
+        img_pearl_6 = view.findViewById(R.id.id_pearl_6);
+        img_pearl_7 = view.findViewById(R.id.id_pearl_7);
+        img_pearl_8 = view.findViewById(R.id.id_pearl_8);
+        img_pearl_9 = view.findViewById(R.id.id_pearl_9);
+
 
         SharedPreferences sharedPref = getActivity().getPreferences(Context.MODE_PRIVATE);
         currentcounter = sharedPref.getInt("Count",0);
-        countset = sharedPref.getInt("CountSet",0);
+        countset = sharedPref.getInt("CountSet",33);
         totalcount = sharedPref.getInt("TotalCount",0);
         SoundInt = sharedPref.getInt("Soundintt",0);
-        tvCurrentCounter.setText(""+ currentcounter);
-        tvTotalcount.setText(""+ totalcount);
+
+        /////////////////////////////////////////////////////////
+        String CC = String.valueOf(currentcounter);
+
+        CC= CC.replace("0", "০");
+        CC= CC.replace("1", "১");
+        CC= CC.replace("2", "২");
+        CC= CC.replace("3", "৩");
+        CC= CC.replace("4", "৪");
+        CC= CC.replace("5", "৫");
+        CC= CC.replace("6", "৬");
+        CC= CC.replace("7", "৭");
+        CC= CC.replace("8", "৮");
+        CC= CC.replace("9", "৯");
+
+
+        tvCurrentCounter.setText(""+CC);
+        //tvCurrentCounter.setText(""+ currentcounter);
+        /////////////////////////////////////////////////////////////////////
+
+        String tC = String.valueOf(totalcount);
+
+        tC= tC.replace("0", "০");
+        tC= tC.replace("1", "১");
+        tC= tC.replace("2", "২");
+        tC= tC.replace("3", "৩");
+        tC= tC.replace("4", "৪");
+        tC= tC.replace("5", "৫");
+        tC= tC.replace("6", "৬");
+        tC= tC.replace("7", "৭");
+        tC= tC.replace("8", "৮");
+        tC= tC.replace("9", "৯");
+
+        tvTotalcount.setText(""+tC);
+
+        //tvTotalcount.setText(""+ totalcount);
+        //
+        // //////////////////////////////////////
+
+        String cS = String.valueOf(countset);
+
+        cS= cS.replace("0", "০");
+        cS= cS.replace("1", "১");
+        cS= cS.replace("2", "২");
+        cS= cS.replace("3", "৩");
+        cS= cS.replace("4", "৪");
+        cS= cS.replace("5", "৫");
+        cS= cS.replace("6", "৬");
+        cS= cS.replace("7", "৭");
+        cS= cS.replace("8", "৮");
+        cS= cS.replace("9", "৯");
+
+
+        tvSetCount.setText(""+cS);
 
 
 
@@ -118,6 +186,8 @@ public class TasbihFragment extends Fragment {
                 editor.putInt("Soundintt", Integer.parseInt(""+ SoundInt));
                 editor.commit();
 
+
+
             }
         });
 
@@ -125,12 +195,28 @@ public class TasbihFragment extends Fragment {
         btn33.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                tvSetCount.setText("33");
+                tvSetCount.setText("৩৩");
 
                 if (countset>33){
                     if (currentcounter>33){
-                        tvCurrentCounter.setText(""+(currentcounter%33));
                         currentcounter = currentcounter%33;
+
+                        String CC = String.valueOf(currentcounter);
+
+                        CC= CC.replace("0", "০");
+                        CC= CC.replace("1", "১");
+                        CC= CC.replace("2", "২");
+                        CC= CC.replace("3", "৩");
+                        CC= CC.replace("4", "৪");
+                        CC= CC.replace("5", "৫");
+                        CC= CC.replace("6", "৬");
+                        CC= CC.replace("7", "৭");
+                        CC= CC.replace("8", "৮");
+                        CC= CC.replace("9", "৯");
+
+
+                        tvCurrentCounter.setText(""+CC);
+
                     }
 
                 }
@@ -155,7 +241,10 @@ public class TasbihFragment extends Fragment {
         btn99.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                tvSetCount.setText("99");
+
+
+
+                tvSetCount.setText("৯৯");
                 countset = 99;
                 SharedPreferences sharedPref = getActivity().getPreferences(Context.MODE_PRIVATE);
                 SharedPreferences.Editor editor = sharedPref.edit();
@@ -208,6 +297,7 @@ public class TasbihFragment extends Fragment {
                 if (currentcounter == countset){
                     currentcounter = 0;
                 }
+                Log.d("countset", "onClick: "+countset);
 
 //                else if(currentcounter>countset){
 //                    currentcounter = currentcounter%countset;
@@ -227,12 +317,42 @@ public class TasbihFragment extends Fragment {
 
                 //defaultValue = sharedPref.getString("LastSuraName","");
 
-                tvCurrentCounter.setText(""+ currentcounter);
-                tvTotalcount.setText(""+totalcount);
+                String CC = String.valueOf(currentcounter);
+
+                CC= CC.replace("0", "০");
+                CC= CC.replace("1", "১");
+                CC= CC.replace("2", "২");
+                CC= CC.replace("3", "৩");
+                CC= CC.replace("4", "৪");
+                CC= CC.replace("5", "৫");
+                CC= CC.replace("6", "৬");
+                CC= CC.replace("7", "৭");
+                CC= CC.replace("8", "৮");
+                CC= CC.replace("9", "৯");
+
+                tvCurrentCounter.setText(""+CC);
+
+                //tvCurrentCounter.setText(""+ currentcounter);
+
+                String tC = String.valueOf(totalcount);
+
+                tC= tC.replace("0", "০");
+                tC= tC.replace("1", "১");
+                tC= tC.replace("2", "২");
+                tC= tC.replace("3", "৩");
+                tC= tC.replace("4", "৪");
+                tC= tC.replace("5", "৫");
+                tC= tC.replace("6", "৬");
+                tC= tC.replace("7", "৭");
+                tC= tC.replace("8", "৮");
+                tC= tC.replace("9", "৯");
+
+                tvTotalcount.setText(""+tC);
 
 
+                startAnimation();
 
-                thread();
+              //  thread();
 
             }
         });
@@ -251,7 +371,20 @@ public class TasbihFragment extends Fragment {
 
                 //defaultValue = sharedPref.getString("LastSuraName","");
 
-                tvCurrentCounter.setText(""+ currentcounter);
+                String CC = String.valueOf(currentcounter);
+
+                CC= CC.replace("0", "০");
+                CC= CC.replace("1", "১");
+                CC= CC.replace("2", "২");
+                CC= CC.replace("3", "৩");
+                CC= CC.replace("4", "৪");
+                CC= CC.replace("5", "৫");
+                CC= CC.replace("6", "৬");
+                CC= CC.replace("7", "৭");
+                CC= CC.replace("8", "৮");
+                CC= CC.replace("9", "৯");
+
+                tvCurrentCounter.setText(""+CC);
 
 
             }
@@ -273,8 +406,21 @@ public class TasbihFragment extends Fragment {
 
                 //defaultValue = sharedPref.getString("LastSuraName","");
 
-                tvCurrentCounter.setText(""+ currentcounter);
-                tvTotalcount.setText(""+ totalcount);
+                String CC = String.valueOf(currentcounter);
+
+                CC= CC.replace("0", "০");
+                CC= CC.replace("1", "১");
+                CC= CC.replace("2", "২");
+                CC= CC.replace("3", "৩");
+                CC= CC.replace("4", "৪");
+                CC= CC.replace("5", "৫");
+                CC= CC.replace("6", "৬");
+                CC= CC.replace("7", "৭");
+                CC= CC.replace("8", "৮");
+                CC= CC.replace("9", "৯");
+
+                tvCurrentCounter.setText(""+CC);
+                tvTotalcount.setText(""+CC);
 
 
             }
@@ -284,7 +430,7 @@ public class TasbihFragment extends Fragment {
 
 
 
-
+        Log.d("countset", "onClick: "+countset);
 
 
         return view;
@@ -292,22 +438,41 @@ public class TasbihFragment extends Fragment {
 
     private void thread() {
 
-        imageView.setVisibility(View.GONE);
+//        imageView.setVisibility(View.GONE);
+//
+//        gifImageView.setVisibility(View.VISIBLE);
+//
+//
+//        final Handler handler = new Handler();
+//        handler.postDelayed(new Runnable() {
+//            @Override
+//            public void run() {
+//                imageView.setVisibility(View.VISIBLE);
+//
+//                gifImageView.setVisibility(View.GONE);
+//
+//
+//            }
+//        }, 200);
 
-        gifImageView.setVisibility(View.VISIBLE);
+    }
 
 
-        final Handler handler = new Handler();
-        handler.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                imageView.setVisibility(View.VISIBLE);
+    private void startAnimation(){
+        Animation animation = AnimationUtils.loadAnimation(getActivity(),R.anim.anim);
+        Animation animation1 = AnimationUtils.loadAnimation(getActivity(),R.anim.animone);
+        Animation animations = AnimationUtils.loadAnimation(getActivity(),R.anim.anims);
+        Animation animation2 = AnimationUtils.loadAnimation(getActivity(),R.anim.animtow);
 
-                gifImageView.setVisibility(View.GONE);
-
-
-            }
-        }, 200);
+        img_pearl.startAnimation(animation);
+        img_pearl_1.startAnimation(animations);
+        img_pearl_2.startAnimation(animation1);
+        img_pearl_3.startAnimation(animation1);
+        img_pearl_4.startAnimation(animation2);
+        img_pearl_6.startAnimation(animation1);
+        img_pearl_7.startAnimation(animation1);
+        img_pearl_8.startAnimation(animation1);
+        img_pearl_9.startAnimation(animation1);
 
     }
 
