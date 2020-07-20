@@ -38,6 +38,8 @@ public class TimeTableFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
+    
+
     public TimeTableFragment() {
         // Required empty public constructor
     }

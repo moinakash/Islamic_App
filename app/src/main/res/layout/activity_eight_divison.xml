@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".EightDivisonActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_gravity="center">
+
+        <Button
+            android:id="@+id/idDhaka"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ঢাকা"/>
+
+
+        <Button
+            android:id="@+id/idChottogram"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="চট্টগ্রাম"/>
+
+        <Button
+            android:id="@+id/idRajshahi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="রাজশাহী"/>
+
+        <Button
+            android:id="@+id/idKhulna"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="খুলনা"/>
+
+
+        <Button
+            android:id="@+id/idBorishal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="বরিশাল"/>
+
+        <Button
+            android:id="@+id/idShylet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="সিলেট"/>
+
+        <Button
+            android:id="@+id/idRangpur"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="রংপুর"/>
+
+
+        <Button
+            android:id="@+id/idMoymonshing"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ময়মনসিংহ"/>
+
+
+
+
+
+    </LinearLayout>
+
+</ScrollView>
