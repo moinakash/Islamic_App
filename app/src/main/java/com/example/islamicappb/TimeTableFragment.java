@@ -8,6 +8,7 @@ import android.os.Bundle;
 import androidx.annotation.RequiresApi;
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -28,6 +29,7 @@ public class TimeTableFragment extends Fragment {
 
     String text;
 
+    String fojorTimeBangla,johorTimeBangla,asorTimeBangla,magribTimeBangla,eshaTimeBangla;
 
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
@@ -164,10 +166,15 @@ public class TimeTableFragment extends Fragment {
         String BOrPNamajTime = activity.bOrPNamajTime();
 
         String NamajerSeshTime = activity.seshTimeOfNamaj();
+        String LocatString = activity.LocationString();
+
+        Log.e("jhamela",""+activity.johorData());
+       //TODO
 
 
         /////////////////////////////////////
 
+        tvCurrentLocation.setText(""+LocatString);
 
         ////fojor time bangla
         Character [] array= new Character[fojorerTime.length()];
@@ -175,7 +182,7 @@ public class TimeTableFragment extends Fragment {
         for (int i = 0; i < fojorerTime.length(); i++) {
             array[i] = fojorerTime.charAt(i);
         }
-        String fojorTimeBangla = ""+array[0]+""+array[1]+""+array[2]+""+array[3];
+        fojorTimeBangla = ""+array[0]+""+array[1]+""+array[2]+""+array[3];
 
         fojorTimeBangla = fojorTimeBangla.replace("0", "০");
         fojorTimeBangla = fojorTimeBangla.replace("1", "১");
@@ -204,7 +211,7 @@ public class TimeTableFragment extends Fragment {
             jInt = jInt - 12;
         }
 
-        String johorTimeBangla = ""+jInt+""+johorarray[2]+""+johorarray[3]+""+johorarray[4];
+        johorTimeBangla = ""+jInt+""+johorarray[2]+""+johorarray[3]+""+johorarray[4];
 //        String johorTimeBangla = ""+johorarray[0]+""+johorarray[1]+""+johorarray[2]+""+johorarray[3]+""+johorarray[4];
 
         johorTimeBangla= johorTimeBangla.replace("0", "০");
@@ -234,7 +241,7 @@ public class TimeTableFragment extends Fragment {
             aInt = aInt - 12;
         }
 
-        String asorTimeBangla = ""+aInt+""+asorarray[2]+""+asorarray[3]+""+asorarray[4];
+        asorTimeBangla = ""+aInt+""+asorarray[2]+""+asorarray[3]+""+asorarray[4];
 
        // String asorTimeBangla = ""+asorarray[0]+""+asorarray[1]+""+asorarray[2]+""+asorarray[3]+""+asorarray[4];
         asorTimeBangla= asorTimeBangla.replace("0", "০");
@@ -262,7 +269,7 @@ public class TimeTableFragment extends Fragment {
             mInt = mInt - 12;
         }
 
-        String magribTimeBangla = ""+mInt+""+magribarray[2]+""+magribarray[3]+""+magribarray[4];
+      magribTimeBangla = ""+mInt+""+magribarray[2]+""+magribarray[3]+""+magribarray[4];
 
 
         magribTimeBangla= magribTimeBangla.replace("0", "০");
@@ -289,7 +296,7 @@ public class TimeTableFragment extends Fragment {
             eInt = eInt - 12;
         }
 
-        String eshaTimeBangla = ""+eInt+""+eshaarray[2]+""+eshaarray[3]+""+eshaarray[4];
+        eshaTimeBangla = ""+eInt+""+eshaarray[2]+""+eshaarray[3]+""+eshaarray[4];
         //String eshaTimeBangla = ""+eshaarray[0]+""+eshaarray[1]+""+eshaarray[2]+""+eshaarray[3]+""+eshaarray[4];
         eshaTimeBangla= eshaTimeBangla.replace("0", "০");
         eshaTimeBangla= eshaTimeBangla.replace("1", "১");
@@ -314,7 +321,7 @@ public class TimeTableFragment extends Fragment {
         tvCurrentDate.setText(dateTime);
       //  tvCurrentArbiDate.setText(text);
 
-        tvCurrentLocation.setText("");
+        tvCurrentLocation.setText(""+LocatString);
 
         tvNamajTimeNUmber.setText("");
         tvNamajSeshSomoy.setText(""+NamajerSeshTime);
@@ -348,4 +355,26 @@ public class TimeTableFragment extends Fragment {
 
 
     }
+
+    public String getFojorTimeBangla(){
+
+        return fojorTimeBangla;
+    }
+    public String getJohorTimeBangla(){
+
+        return johorTimeBangla;
+    }
+    public String getAsorTimeBangla(){
+
+        return asorTimeBangla;
+    }
+    public String getMagribTimeBangla(){
+
+        return magribTimeBangla;
+    }
+    public String getEshaTimeBangla(){
+
+        return eshaTimeBangla;
+    }
+
 }

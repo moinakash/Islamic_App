@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 
@@ -25,9 +26,13 @@ public class BaseActivity extends AppCompatActivity {
      String myString2;
 
     String fajarTime, johorTime, asorTime, magribTime, eshaTime, sunriseTime, nextnamaj;
-    String fajarTimeR, johorTimeR, asorTimeR, magribTimeR, eshaTimeR, sunriseTimeR, nextnamajR, BorPNamaj, seShTime;
+    String fajarTimeR, johorTimeR, asorTimeR, magribTimeR, eshaTimeR, sunriseTimeR, nextnamajR, BorPNamaj, seShTime, LocString;
 
     int cTime, fTime, jTime, aTime, mTime, eTime, sTime;
+
+    int test = 12;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +48,8 @@ public class BaseActivity extends AppCompatActivity {
 
 
 
+
+
         myString2 = "hello2";
 
         fajarTime = getIntent().getExtras().getString("fajor");
@@ -51,6 +58,8 @@ public class BaseActivity extends AppCompatActivity {
         magribTime = getIntent().getExtras().getString("magrib");
         eshaTime = getIntent().getExtras().getString("esha");
         sunriseTime = getIntent().getExtras().getString("sunrise");
+        LocString = getIntent().getExtras().getString("Location");
+        Log.e("Location",LocString);
 
 
         fajarTimeR = fajarTime.replace(":", "");
@@ -626,7 +635,7 @@ public class BaseActivity extends AppCompatActivity {
 
 
 
-    public String fojorData() {
+    public  String fojorData() {
         return fajarTime;
     }
     public String johorData() {
@@ -652,6 +661,13 @@ public class BaseActivity extends AppCompatActivity {
         return seShTime;
     }
 
+    public String LocationString() {
+        return LocString;
+    }
 
+public int getTest(){
+
+        return test;
+}
 
 }

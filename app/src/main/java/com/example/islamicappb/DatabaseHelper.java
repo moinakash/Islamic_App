@@ -195,7 +195,13 @@ public class DatabaseHelper
 
         ReadSuraActivity readSuraActivity = new ReadSuraActivity();
 
+
+
+
         int valuee = readSuraActivity.getCategory();
+
+        Log.e("Johor",""+valuee);
+
         //Toast.makeText(myContext, "check "+valuee, Toast.LENGTH_SHORT).show();
 
         String query = "SELECT * FROM quran_verses where sura_id ="+valuee;

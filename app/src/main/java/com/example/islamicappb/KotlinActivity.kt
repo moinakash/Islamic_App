@@ -1,6 +1,8 @@
 package com.example.islamicappb
 
 import android.content.Intent
+import android.location.LocationListener
+import android.location.LocationManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -13,13 +15,27 @@ import java.sql.DriverManager
 import java.util.*
 
 class KotlinActivity : AppCompatActivity() {
+
+
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_kotlin)
 
+        //////////////////////////////////////////////////////////////////////////////////////////
+
+
+        var Lat: String = intent.getStringExtra("latitude")
+        var Lon: String = intent.getStringExtra("longitude")
+        var Loc: String = intent.getStringExtra("Locc")
+
+
+        /////////////////////////////////////////////////////////
+
 
         val today = SimpleDate(GregorianCalendar())
-        val location = Location(23.777176, 90.399452, 6.0, 0)
+        val location = Location(Lat.toDouble(), Lon.toDouble(), 6.0, 0)
         val azan = Azan(location, Method.KARACHI_HANAF)
         val prayerTimes = azan.getPrayerTimes(today)
         val imsaak = azan.getImsaak(today)
@@ -52,10 +68,14 @@ class KotlinActivity : AppCompatActivity() {
         intent.putExtra("magrib", "" + prayerTimes.maghrib())
         intent.putExtra("esha", "" + prayerTimes.ishaa())
         intent.putExtra("sunrise", "" + prayerTimes.shuruq())
+        intent.putExtra("Location", "" +Loc)
         startActivity(intent)
         finish();
 
 //    }
 
+
+
     }
 }
+

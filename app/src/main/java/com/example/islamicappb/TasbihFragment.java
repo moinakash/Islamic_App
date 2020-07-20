@@ -19,7 +19,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import pl.droidsonroids.gif.GifImageView;
+
 
 
 public class TasbihFragment extends Fragment {
@@ -27,7 +27,7 @@ public class TasbihFragment extends Fragment {
 
 
 
-    GifImageView gifImageView;
+
     ImageView imageView;
     Button button, btnReset, btn33, btn99, btnttlr, btnSound;
     TextView tvCurrentCounter, tvSetCount, tvTotalcount;
