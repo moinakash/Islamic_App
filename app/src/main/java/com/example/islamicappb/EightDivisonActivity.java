@@ -6,6 +6,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
@@ -14,7 +15,7 @@ public class EightDivisonActivity extends AppCompatActivity {
 
     Button btnDhaka, btnChotto, btnRaj, btnKhul, btnBari, btnShy, btnRang, btnMoy;
 
-    String latt = "", lonn ="", locString="";
+    String latt = "", lonn ="", locString ="";
 
     SharedPreferences sharedPref;
 
@@ -45,6 +46,8 @@ public class EightDivisonActivity extends AppCompatActivity {
             in.putExtra("latitude", latt);
             in.putExtra("longitude", lonn);
             in.putExtra("Locc", locString);
+
+            Log.e("locat",""+locString);
 
             startActivity(in);
             finish();

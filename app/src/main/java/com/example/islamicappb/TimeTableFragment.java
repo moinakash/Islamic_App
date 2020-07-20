@@ -1,5 +1,7 @@
 package com.example.islamicappb;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.icu.text.SimpleDateFormat;
 import android.icu.util.Calendar;
 import android.os.Build;
@@ -38,7 +40,7 @@ public class TimeTableFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    
+
 
     public TimeTableFragment() {
         // Required empty public constructor
@@ -170,13 +172,29 @@ public class TimeTableFragment extends Fragment {
         String NamajerSeshTime = activity.seshTimeOfNamaj();
         String LocatString = activity.LocationString();
 
+        ///////////////////////////////////////////////////////////////////////////////////////////
+        SharedPreferences sharedPref = getActivity().getPreferences(Context.MODE_PRIVATE);
+
+        if (!LocatString.isEmpty()){
+            sharedPref = getActivity().getPreferences(Context.MODE_PRIVATE);
+            SharedPreferences.Editor editor = sharedPref.edit();
+            editor.putString("sthan", ""+LocatString);
+            editor.commit();
+        }
+
+        LocatString = sharedPref.getString("sthan","");
+
+
+        ///////////////////////////////////////////////////////////////////
+
+
         Log.e("jhamela",""+activity.johorData());
        //TODO
 
 
         /////////////////////////////////////
 
-        tvCurrentLocation.setText(""+LocatString);
+
 
         ////fojor time bangla
         Character [] array= new Character[fojorerTime.length()];
@@ -322,6 +340,9 @@ public class TimeTableFragment extends Fragment {
         tvCurrentNTime.setText(""+CurrentNamajTime);
         tvCurrentDate.setText(dateTime);
       //  tvCurrentArbiDate.setText(text);
+
+
+        //LocatString = sharedPref.getString("sthan","");
 
         tvCurrentLocation.setText(""+LocatString);
 

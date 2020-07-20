@@ -1,12 +1,11 @@
 package com.example.islamicappb
 
 import android.content.Intent
-import android.location.LocationListener
-import android.location.LocationManager
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 import com.azan.Azan
 import com.azan.Method
 import com.azan.astrologicalCalc.Location
@@ -31,6 +30,7 @@ class KotlinActivity : AppCompatActivity() {
         var Loc: String = intent.getStringExtra("Locc")
 
 
+        Log.e("locat", "" + Loc)
         /////////////////////////////////////////////////////////
 
 
