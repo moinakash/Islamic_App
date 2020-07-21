@@ -358,7 +358,44 @@ public class TimeTableFragment extends Fragment {
         tvCurrentDate.setText(dateTime);
       //  tvCurrentArbiDate.setText(text);
 
+
+        //////////////////////////////////////////////////////////////////////////
         tvCurrentLocation.setText(""+LocatString);
+
+        SharedPreferences sharedPrefMM = getActivity().getSharedPreferences("mm",0);
+
+        sharedPrefMM = getActivity().getSharedPreferences("mm",0);
+
+        String kk = "0";
+        SharedPreferences.Editor editor = sharedPrefMM.edit();
+        editor.putString("key", kk);
+
+        editor.commit();
+
+        final SharedPreferences finalSharedPrefMM = sharedPrefMM;
+        tvCurrentLocation.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+
+
+                String kk = "1";
+                SharedPreferences.Editor editor = finalSharedPrefMM.edit();
+                editor.putString("key", kk);
+
+                editor.commit();
+
+                Intent go = new Intent(getContext(),EightDivisonActivity.class);
+                startActivity(go);
+            }
+        });
+
+        ////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
 
         tvNamajTimeNUmber.setText("");
         tvNamajSeshSomoy.setText(""+NamajerSeshTime);

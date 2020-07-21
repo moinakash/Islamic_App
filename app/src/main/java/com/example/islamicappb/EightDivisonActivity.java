@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 public class EightDivisonActivity extends AppCompatActivity {
 
@@ -18,6 +19,8 @@ public class EightDivisonActivity extends AppCompatActivity {
     String latt = "", lonn ="", locString ="";
 
     SharedPreferences sharedPref;
+
+    String ff;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,17 +44,34 @@ public class EightDivisonActivity extends AppCompatActivity {
         lonn = sharedPref.getString("lonSp","");
         locString = sharedPref.getString("locString","");
 
-        if (!latt.equals("")){
-            Intent in = new Intent(EightDivisonActivity.this,KotlinActivity.class);
-            in.putExtra("latitude", latt);
-            in.putExtra("longitude", lonn);
-            in.putExtra("Locc", locString);
 
-            Log.e("locat",""+locString);
 
-            startActivity(in);
-            finish();
+        /////////////////////////////////////////////////////////////////
+        SharedPreferences sharedPrefMM = getSharedPreferences("mm",Context.MODE_PRIVATE);
+        ff = sharedPrefMM.getString("key","");
+        if (ff.equals("1")){
+            Toast.makeText(this, "Done", Toast.LENGTH_SHORT).show();
+        }else {
+
+
+
+            if (!latt.equals("")){
+                Intent in = new Intent(EightDivisonActivity.this,KotlinActivity.class);
+                in.putExtra("latitude", latt);
+                in.putExtra("longitude", lonn);
+                in.putExtra("Locc", locString);
+
+                Log.e("locat",""+locString);
+
+                startActivity(in);
+                finish();
+            }
+
         }
+        ///////////////////////////////////////////////////////////////////////////////////////////
+
+
+
 
 
         ///////////////////////////////////////////////////////////////////////////////
