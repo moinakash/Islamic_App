@@ -101,6 +101,7 @@ public class EightDivisonActivity extends AppCompatActivity {
                 startActivity(in);
 
 
+                finish();
 
             }
         });
@@ -109,9 +110,9 @@ public class EightDivisonActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
+
                 latt = ""+22.341900;
                 lonn = ""+91.815536;
-
                 locString = "চট্টগ্রাম";
 
                 sharedPref = EightDivisonActivity.this.getPreferences(Context.MODE_PRIVATE);
@@ -119,13 +120,18 @@ public class EightDivisonActivity extends AppCompatActivity {
                 editor.putString("latSp", ""+latt);
                 editor.putString("lonSp", ""+lonn);
                 editor.putString("Locc", ""+locString);
+
                 editor.commit();
 
+
                 Intent in = new Intent(EightDivisonActivity.this,KotlinActivity.class);
-                in.putExtra("Username", latt);
-                in.putExtra("Password", lonn);
+                in.putExtra("latitude", latt);
+                in.putExtra("longitude", lonn);
                 in.putExtra("Locc", ""+locString);
                 startActivity(in);
+
+
+                finish();
 
             }
         });
@@ -136,7 +142,6 @@ public class EightDivisonActivity extends AppCompatActivity {
 
                 latt = ""+24.006355;
                 lonn = ""+89.249298;
-
                 locString = "রাজশাহী";
 
                 sharedPref = EightDivisonActivity.this.getPreferences(Context.MODE_PRIVATE);
@@ -144,14 +149,18 @@ public class EightDivisonActivity extends AppCompatActivity {
                 editor.putString("latSp", ""+latt);
                 editor.putString("lonSp", ""+lonn);
                 editor.putString("Locc", ""+locString);
+
                 editor.commit();
 
 
                 Intent in = new Intent(EightDivisonActivity.this,KotlinActivity.class);
-                in.putExtra("Username", latt);
-                in.putExtra("Password", lonn);
+                in.putExtra("latitude", latt);
+                in.putExtra("longitude", lonn);
                 in.putExtra("Locc", ""+locString);
                 startActivity(in);
+
+                finish();
+
             }
         });
 
@@ -159,9 +168,9 @@ public class EightDivisonActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
+
                 latt = ""+22.820000;
                 lonn = ""+89.550003;
-
                 locString = "খুলনা";
 
                 sharedPref = EightDivisonActivity.this.getPreferences(Context.MODE_PRIVATE);
@@ -169,14 +178,18 @@ public class EightDivisonActivity extends AppCompatActivity {
                 editor.putString("latSp", ""+latt);
                 editor.putString("lonSp", ""+lonn);
                 editor.putString("Locc", ""+locString);
+
                 editor.commit();
 
 
                 Intent in = new Intent(EightDivisonActivity.this,KotlinActivity.class);
-                in.putExtra("Username", latt);
-                in.putExtra("Password", lonn);
+                in.putExtra("latitude", latt);
+                in.putExtra("longitude", lonn);
                 in.putExtra("Locc", ""+locString);
                 startActivity(in);
+
+                finish();
+
             }
         });
 
@@ -188,20 +201,22 @@ public class EightDivisonActivity extends AppCompatActivity {
                 lonn = ""+90.222122;
                 locString = "বরিশাল";
 
-
                 sharedPref = EightDivisonActivity.this.getPreferences(Context.MODE_PRIVATE);
                 SharedPreferences.Editor editor = sharedPref.edit();
                 editor.putString("latSp", ""+latt);
                 editor.putString("lonSp", ""+lonn);
                 editor.putString("Locc", ""+locString);
+
                 editor.commit();
 
 
                 Intent in = new Intent(EightDivisonActivity.this,KotlinActivity.class);
-                in.putExtra("Username", latt);
-                in.putExtra("Password", lonn);
+                in.putExtra("latitude", latt);
+                in.putExtra("longitude", lonn);
                 in.putExtra("Locc", ""+locString);
                 startActivity(in);
+                finish();
+
             }
         });
 
@@ -213,19 +228,25 @@ public class EightDivisonActivity extends AppCompatActivity {
                 lonn = ""+91.880722;
                 locString = "সিলেট";
 
+
                 sharedPref = EightDivisonActivity.this.getPreferences(Context.MODE_PRIVATE);
                 SharedPreferences.Editor editor = sharedPref.edit();
                 editor.putString("latSp", ""+latt);
                 editor.putString("lonSp", ""+lonn);
                 editor.putString("Locc", ""+locString);
+
                 editor.commit();
 
 
                 Intent in = new Intent(EightDivisonActivity.this,KotlinActivity.class);
-                in.putExtra("Username", latt);
-                in.putExtra("Password", lonn);
+                in.putExtra("latitude", latt);
+                in.putExtra("longitude", lonn);
                 in.putExtra("Locc", ""+locString);
                 startActivity(in);
+
+
+                finish();
+
 
             }
         });
@@ -238,19 +259,24 @@ public class EightDivisonActivity extends AppCompatActivity {
                 lonn = ""+89.275589;
                 locString = "রংপুর";
 
+
                 sharedPref = EightDivisonActivity.this.getPreferences(Context.MODE_PRIVATE);
                 SharedPreferences.Editor editor = sharedPref.edit();
                 editor.putString("latSp", ""+latt);
                 editor.putString("lonSp", ""+lonn);
                 editor.putString("Locc", ""+locString);
+
                 editor.commit();
 
 
                 Intent in = new Intent(EightDivisonActivity.this,KotlinActivity.class);
-                in.putExtra("Username", latt);
-                in.putExtra("Password", lonn);
+                in.putExtra("latitude", latt);
+                in.putExtra("longitude", lonn);
                 in.putExtra("Locc", ""+locString);
                 startActivity(in);
+                finish();
+
+
             }
         });
 
@@ -258,23 +284,31 @@ public class EightDivisonActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
+
+
                 latt = ""+24.743448;
                 lonn = ""+90.398384;
                 locString = "ময়মনসিংহ";
+
 
                 sharedPref = EightDivisonActivity.this.getPreferences(Context.MODE_PRIVATE);
                 SharedPreferences.Editor editor = sharedPref.edit();
                 editor.putString("latSp", ""+latt);
                 editor.putString("lonSp", ""+lonn);
                 editor.putString("Locc", ""+locString);
+
                 editor.commit();
 
 
                 Intent in = new Intent(EightDivisonActivity.this,KotlinActivity.class);
-                in.putExtra("Username", latt);
-                in.putExtra("Password", lonn);
+                in.putExtra("latitude", latt);
+                in.putExtra("longitude", lonn);
                 in.putExtra("Locc", ""+locString);
                 startActivity(in);
+
+                finish();
+
+
             }
         });
     }

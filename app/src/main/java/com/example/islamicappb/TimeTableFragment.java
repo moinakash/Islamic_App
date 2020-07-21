@@ -387,6 +387,7 @@ public class TimeTableFragment extends Fragment {
 
                 Intent go = new Intent(getContext(),EightDivisonActivity.class);
                 startActivity(go);
+                getActivity().finish();
             }
         });
 
