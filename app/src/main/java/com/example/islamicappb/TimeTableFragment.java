@@ -1,6 +1,8 @@
 package com.example.islamicappb;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.icu.text.SimpleDateFormat;
 import android.icu.util.Calendar;
 import android.os.Build;
@@ -174,13 +176,30 @@ public class TimeTableFragment extends Fragment {
         String NamajerSeshTime = activity.seshTimeOfNamaj();
         String LocatString = activity.LocationString();
 
+
+        ///////////////////////////////////////////////////////////////////////////////////////////
+        SharedPreferences sharedPref = getActivity().getPreferences(Context.MODE_PRIVATE);
+
+        if (!LocatString.isEmpty()){
+            sharedPref = getActivity().getPreferences(Context.MODE_PRIVATE);
+            SharedPreferences.Editor editor = sharedPref.edit();
+            editor.putString("sthan", ""+LocatString);
+            editor.commit();
+        }
+
+        LocatString = sharedPref.getString("sthan","");
+
+
+        ///////////////////////////////////////////////////////////////////
+
+
         Log.e("jhamela",""+activity.johorData());
        //TODO
 
 
         /////////////////////////////////////
 
-        tvCurrentLocation.setText(""+LocatString);
+       // tvCurrentLocation.setText(""+LocatString);
 
         ////fojor time bangla
         Character [] array= new Character[fojorerTime.length()];
