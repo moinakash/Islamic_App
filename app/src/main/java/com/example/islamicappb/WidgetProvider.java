@@ -6,6 +6,7 @@ import android.appwidget.AppWidgetProvider;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
@@ -13,6 +14,8 @@ import android.view.Gravity;
 import android.widget.BaseAdapter;
 import android.widget.RemoteViews;
 import android.widget.Toast;
+
+import io.paperdb.Paper;
 
 
 /**
@@ -27,6 +30,8 @@ public class WidgetProvider extends AppWidgetProvider {
     public static final String EXTRA_CLICKED_FILE = "EXTRA_CLICKED_FILE";
 
     public static final String ACTION_WIDGET_UPDATE = "android.appwidget.action.APPWIDGET_UPDATE";
+
+    SharedPreferences sharedPreferences;
 
 
 
@@ -45,17 +50,25 @@ public class WidgetProvider extends AppWidgetProvider {
     public void onUpdate(Context context, AppWidgetManager appWidgetManager, int[] appWidgetIds) {
 
 
+        Paper.init(context);
+
 
         for (int appWidgetId : appWidgetIds) {
             RemoteViews rv = new RemoteViews(context.getPackageName(), R.layout.widget_layout);
 
 
+            String Fajr = Paper.book().read("FajorPB");
+            String Johor = Paper.book().read("JohorPB");
+            String Asor = Paper.book().read("AsorPB");
+            String Magrib = Paper.book().read("MagribPB");
+            String Esha = Paper.book().read("IshaPB");
 
-            rv.setTextViewText(R.id.idFojorW,"Fajor : ");
-            rv.setTextViewText(R.id.idJohorW,"Farhad");
-            rv.setTextViewText(R.id.idAsorW,"Farhad");
-            rv.setTextViewText(R.id.idMagribW,"Farhad");
-            rv.setTextViewText(R.id.idIshaW,"Farhad");
+
+            rv.setTextViewText(R.id.idFojorW,"Fajor : "+Fajr);
+            rv.setTextViewText(R.id.idJohorW,"Johor : "+Johor);
+            rv.setTextViewText(R.id.idAsorW,"Asor : "+Asor );
+            rv.setTextViewText(R.id.idMagribW,"Magrib : "+Magrib);
+            rv.setTextViewText(R.id.idIshaW,"Esha : "+Esha);
 
             // Setup intent which points to the WidgetService which will provide the views for this collection.
             Intent intent = new Intent(context, WidgetService.class);
@@ -88,9 +101,18 @@ public class WidgetProvider extends AppWidgetProvider {
         }
     }
 
+
     @Override
     public void onReceive(Context context, Intent intent) {
         super.onReceive(context, intent);
+
+
+
+        BaseActivity activity =new BaseActivity();
+
+        String Fajr = activity.fojorData();
+
+        Log.d("TAG", "Widget : "+Fajr);
 
         switch (intent.getAction()) {
             case LIST_ITEM_CLICKED_ACTION:

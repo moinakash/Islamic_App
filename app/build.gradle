@@ -43,4 +43,6 @@ dependencies {
 
     implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.19'
 
+    implementation 'io.paperdb:paperdb:2.7.1'
+
 }

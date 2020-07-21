@@ -1,5 +1,6 @@
 package com.example.islamicappb;
 
+import android.content.Intent;
 import android.icu.text.SimpleDateFormat;
 import android.icu.util.Calendar;
 import android.os.Build;
@@ -18,6 +19,8 @@ import java.time.LocalDate;
 import java.time.chrono.HijrahChronology;
 import java.time.chrono.HijrahDate;
 import java.util.Locale;
+
+import io.paperdb.Paper;
 
 
 public class TimeTableFragment extends Fragment {
@@ -73,6 +76,7 @@ public class TimeTableFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_timetable, container, false);
 
 
+        Paper.init(getContext());
 
         tvfojor = view.findViewById(R.id.idFajr);
         tvjohor = view.findViewById(R.id.idJohor);
@@ -316,6 +320,18 @@ public class TimeTableFragment extends Fragment {
         tvasor.setText("০"+asorTimeBangla);
         tvmagrib.setText("০"+magribTimeBangla);
         tvesha.setText("০"+eshaTimeBangla);
+
+        Paper.book().write("FajorPB",tvfojor.getText().toString());
+        Paper.book().write("JohorPB",tvjohor.getText().toString());
+        Paper.book().write("AsorPB",tvasor.getText().toString());
+        Paper.book().write("MagribPB",tvmagrib.getText().toString());
+        Paper.book().write("IshaPB",tvesha.getText().toString());
+
+
+//        Intent intent = new Intent(getContext(), WidgetProvider.class);
+//        intent.putExtra("hello","102");
+//     //   intent.putExtra(NextActivity.PLAYERS, players);
+//        startActivity(intent);
 
 
         tvNextTime.setText(""+BOrPNamajTime);

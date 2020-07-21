@@ -26,7 +26,7 @@
             android:theme="@style/AppBar" />
         <activity android:name=".BaseActivity" />
         <activity android:name=".EightDivisonActivity">
-            <intent-filter>EightDivisonActivity
+            <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />

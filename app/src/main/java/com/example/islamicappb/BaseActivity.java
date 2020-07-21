@@ -15,6 +15,8 @@ import com.ismaeldivita.chipnavigation.ChipNavigationBar;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
+import io.paperdb.Paper;
+
 public class BaseActivity extends AppCompatActivity {
 
     ChipNavigationBar BottomNav;
@@ -28,9 +30,9 @@ public class BaseActivity extends AppCompatActivity {
     String fajarTime, johorTime, asorTime, magribTime, eshaTime, sunriseTime, nextnamaj;
     String fajarTimeR, johorTimeR, asorTimeR, magribTimeR, eshaTimeR, sunriseTimeR, nextnamajR, BorPNamaj, seShTime, LocString;
 
-    int cTime, fTime, jTime, aTime, mTime, eTime, sTime;
+    int  cTime, fTime, jTime, aTime, mTime, eTime, sTime;
 
-    int test = 12;
+    int test;
 
 
 
@@ -38,6 +40,16 @@ public class BaseActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_base);
+
+        Paper.init(this);
+
+
+        onCreateM();
+    }
+
+
+    public void onCreateM(){
+
 
         BottomNav = findViewById(R.id.bottom_nav);
 
@@ -65,6 +77,12 @@ public class BaseActivity extends AppCompatActivity {
         fajarTimeR = fajarTime.replace(":", "");
         fTime = Integer.parseInt(fajarTimeR);
         fTime= fTime/100;
+        test = fTime;
+
+        Log.d("TAG", "onCreate: "+test);
+
+
+
 
 
         johorTimeR = johorTime.replace(":", "");
@@ -634,8 +652,10 @@ public class BaseActivity extends AppCompatActivity {
     }
 
 
-
     public  String fojorData() {
+
+        Log.d("TAG", "fojorData: "+fajarTime );
+
         return fajarTime;
     }
     public String johorData() {
@@ -669,5 +689,30 @@ public int getTest(){
 
         return test;
 }
+
+
+  public int getfTime(){
+
+   Log.d("TAG", "onUpdate: "+fTime);
+
+
+        return test;
+  }
+    public int getjTime(){
+
+        return jTime;
+    }
+    public int getaTime(){
+
+        return aTime;
+    }
+    public int getmTime(){
+
+        return mTime;
+    }
+    public int geteTime(){
+
+        return eTime;
+    }
 
 }
