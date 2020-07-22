@@ -291,6 +291,7 @@ public class SuraActivity
 
                         Intent intent = new Intent(getBaseContext(), ReadSuraActivity.class);
                         intent.putExtra("position", ""+suraNameListPojo.getSura_number());
+                        intent.putExtra("suraName", ""+suraNameListPojo.getSura_name_bangla());
                         startActivity(intent);
 
 

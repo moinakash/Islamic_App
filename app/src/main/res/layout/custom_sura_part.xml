@@ -6,16 +6,56 @@
     >
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         >
+
+
+        <LinearLayout
+            android:gravity="right"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="7dp"
+            android:layout_marginRight="20dp"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageButton
+                android:id="@+id/idSuraShare"
+                android:layout_marginRight="10dp"
+                android:layout_gravity="right"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@drawable/ic_baseline_share_24" />
+
+
+            <ImageButton
+                android:id="@+id/idSuraCopy"
+                android:layout_marginRight="10dp"
+                android:layout_gravity="right"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@drawable/ic_baseline_file_copy_24" />
+
+
+            <ImageButton
+                android:id="@+id/idSuraBookmark"
+                android:layout_gravity="right"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@drawable/ic_baseline_bookmark_border_24" />
+
+
+        </LinearLayout>
+
         <TextView
 
+            android:gravity="right"
             android:textStyle="bold"
             android:textSize="35sp"
             android:id="@+id/idSuraArbi"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Name"
             android:textColor="#000"
