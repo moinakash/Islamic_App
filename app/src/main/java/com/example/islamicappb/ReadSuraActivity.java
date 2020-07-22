@@ -77,7 +77,7 @@ public class ReadSuraActivity extends AppCompatActivity {
         }else {
             while (cursor.moveToNext()){
 
-                suraLinePart1.add(new SuraLinePart(""+cursor.getString(7),""+cursor.getString(9),""+cursor.getString(10)));
+                suraLinePart1.add(new SuraLinePart(""+cursor.getString(7),""+cursor.getString(9),""+cursor.getString(10),""+cursor.getString(4)));
 
 
                 //               listData.add(cursor.getString(6));
@@ -130,6 +130,8 @@ public class ReadSuraActivity extends AppCompatActivity {
                 ImageButton Bookmark = (ImageButton) customView.findViewById(R.id.idSuraBookmark);
                 ImageButton Share = (ImageButton) customView.findViewById(R.id.idSuraShare);
 
+                TextView AyatNumber = (TextView) customView.findViewById(R.id.idAyatNumber);
+                AyatNumber.setText(suraLinePart1.getSura_number());
                 TextView SuraName = (TextView) customView.findViewById(R.id.idSuraArbi);
                 SuraName.setText(suraLinePart1.getSura_arbi());
 

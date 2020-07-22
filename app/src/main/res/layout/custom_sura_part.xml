@@ -50,6 +50,14 @@
         </LinearLayout>
 
         <TextView
+            android:layout_marginLeft="5dp"
+            android:text="1"
+            android:id="@+id/idAyatNumber"
+            android:textSize="20sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
 
             android:gravity="right"
             android:textStyle="bold"
