@@ -40,27 +40,27 @@ public class BookmarkAdapter extends ArrayAdapter<BookmarkPojoClass> {
 
 
 
-        BookmarkPojoClass bookmarkPojoClass =bookmarkPojoClasses.get(position);
+        BookmarkPojoClass bookmarkPojoClass1 =bookmarkPojoClasses.get(position);
 
 
-        if(bookmarkPojoClass !=null) {
+        if(bookmarkPojoClass1 !=null) {
 
             TextView AyatNumber = (TextView) customView.findViewById(R.id.idAyatNumber);
-            AyatNumber.setText(bookmarkPojoClass.getAyat_number());
+            AyatNumber.setText(bookmarkPojoClass1.getAyat_number());
 
 
             TextView SuraName = (TextView) customView.findViewById(R.id.idSuraName);
-            SuraName.setText(bookmarkPojoClass.getSura_name());
+            SuraName.setText(bookmarkPojoClass1.getSura_name());
 
             TextView AyatArbi = (TextView) customView.findViewById(R.id.idAyatArbi);
-            AyatArbi.setText(bookmarkPojoClass.getSura_arbi_line());
+            AyatArbi.setText(bookmarkPojoClass1.getSura_arbi_line());
 
 
             TextView AyatBangla = (TextView) customView.findViewById(R.id.idAyatBangla);
-            AyatBangla.setText(bookmarkPojoClass.getSura_spelling_line());
+            AyatBangla.setText(bookmarkPojoClass1.getSura_spelling_line());
 
             TextView AyatMeaning = (TextView) customView.findViewById(R.id.idAyatBanglaMeaning);
-            AyatMeaning.setText(bookmarkPojoClass.getSura_meaning_line());
+            AyatMeaning.setText(bookmarkPojoClass1.getSura_meaning_line());
 
 
         }
