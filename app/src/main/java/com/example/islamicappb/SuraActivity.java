@@ -8,6 +8,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.util.Log;
@@ -48,6 +49,7 @@ public class SuraActivity
 
 
 
+    MyDatabasehelper myDatabasehelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -55,7 +57,8 @@ public class SuraActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sura);
 
-
+        myDatabasehelper = new MyDatabasehelper(this);
+        SQLiteDatabase sqLiteDatabase = myDatabasehelper.getWritableDatabase();
         oncreate();
 
         // listView = findViewById(R.id.idListView);
