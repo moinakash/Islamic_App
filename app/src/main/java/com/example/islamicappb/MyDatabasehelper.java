@@ -19,15 +19,17 @@ public class MyDatabasehelper extends SQLiteOpenHelper {
     private SQLiteDatabase myDataBase;
 
 
-    private static final String DATABASE_NAME = "Student.db";
-    private static final String TABLE_NAME = "student_details";
+    private static final String DATABASE_NAME = "LocalDatabase.db";
+    private static final String TABLE_NAME = "bookmark_details";
     private static final String ID = "_id";
-    private static final String NAME = "Name";
-    private static final String ARBI = "arbi";
-    private static final String BANGLA = "bangla";
+    private static final String SURANAME = "SuraName";
+    private static final String AYATNUMBER = "AyatNumber";
+    private static final String ARBIAYAT = "ArbiAyat";
+    private static final String SPELLING = "Spelling";
+    private static final String MEANING = "Meaning";
     private static final int VERSION_NUMBER = 2
             ;
-    private static final String CREATE_TABLE = "CREATE TABLE "+TABLE_NAME+"( "+ID+" INTEGER PRIMARY KEY AUTOINCREMENT, "+NAME+" VERCHCHAR(255), "+ ARBI +" VERCHCHAR(255), "+ BANGLA +" VARCHAR(15) ); ";
+    private static final String CREATE_TABLE = "CREATE TABLE "+TABLE_NAME+"( "+ID+" INTEGER PRIMARY KEY AUTOINCREMENT, "+ SURANAME +" VERCHCHAR(255), "+ AYATNUMBER +" VARCHAR(15), "+ ARBIAYAT+" VARCHAR(15), "+ SPELLING +" VARCHAR(255), "+ MEANING+" VARCHAR(255) ); ";
     private static final String DROP_TABLE = "DROP TABLE IF EXISTS "+TABLE_NAME;
     private static final String SELECT_ALL = "SELECT * FROM "+TABLE_NAME;
 
@@ -80,13 +82,15 @@ public class MyDatabasehelper extends SQLiteOpenHelper {
 
     }
 
-    public long insertData(String name, String arbi, String bangla)
+    public long insertData(String SuraName, String AyatNumbe, String ArbiAyat, String Spelling, String Meaning)
     {
         SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
-        contentValues.put(NAME,name);
-        contentValues.put(ARBI,arbi);
-        contentValues.put(BANGLA,bangla);
+        contentValues.put(SURANAME,SuraName);
+        contentValues.put(AYATNUMBER,AyatNumbe);
+        contentValues.put(ARBIAYAT,ArbiAyat);
+        contentValues.put(SPELLING,Spelling);
+        contentValues.put(MEANING,Meaning);
 
         long rowId = sqLiteDatabase.insert(TABLE_NAME,null,contentValues);
 
@@ -104,9 +108,9 @@ public class MyDatabasehelper extends SQLiteOpenHelper {
         SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put(ID,id);
-        contentValues.put(NAME,name);
-        contentValues.put(ARBI,age);
-        contentValues.put(BANGLA,gender);
+        contentValues.put(SURANAME,name);
+        contentValues.put(AYATNUMBER,age);
+        contentValues.put(ARBIAYAT,gender);
 
          sqLiteDatabase.update(TABLE_NAME,contentValues,ID+" = ?",new String[]{id});
         return true;

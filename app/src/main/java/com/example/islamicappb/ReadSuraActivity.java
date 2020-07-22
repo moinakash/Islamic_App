@@ -179,12 +179,14 @@ public class ReadSuraActivity extends AppCompatActivity {
                         String SuraName = getIntent().getStringExtra("suraName");
 
                         String name = ""+SuraName;
-                        String arbi = ""+suraLinePart1.getSura_arbi();
-                        String bangla = ""+suraLinePart1.getSura_bangla();
+                        String ayatnumber = ""+suraLinePart1.getSura_arbi();
+                        String ayat = ""+suraLinePart1.getSura_bangla();
+                        String spelling = ""+suraLinePart1.getSura_bangla();
+                        String meaning = ""+suraLinePart1.getSura_bangla();
                         String id = "";
 
 
-                        long rowId =  myDatabasehelper.insertData(name,arbi,bangla);
+                        long rowId =  myDatabasehelper.insertData(name,ayatnumber,ayat,spelling,meaning);
 
                         if (rowId==-1)
                         {
