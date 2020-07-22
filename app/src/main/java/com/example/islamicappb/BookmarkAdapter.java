@@ -39,6 +39,8 @@ public class BookmarkAdapter extends ArrayAdapter<BookmarkPojoClass> {
         }
 
 
+        
+
 
         BookmarkPojoClass bookmarkPojoClass1 =bookmarkPojoClasses.get(position);
 
