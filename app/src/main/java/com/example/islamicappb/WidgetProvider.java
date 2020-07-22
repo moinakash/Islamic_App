@@ -49,7 +49,6 @@ public class WidgetProvider extends AppWidgetProvider {
     @Override
     public void onUpdate(Context context, AppWidgetManager appWidgetManager, int[] appWidgetIds) {
 
-
         Paper.init(context);
 
 
@@ -108,11 +107,6 @@ public class WidgetProvider extends AppWidgetProvider {
 
 
 
-        BaseActivity activity =new BaseActivity();
-
-        String Fajr = activity.fojorData();
-
-        Log.d("TAG", "Widget : "+Fajr);
 
         switch (intent.getAction()) {
             case LIST_ITEM_CLICKED_ACTION:
