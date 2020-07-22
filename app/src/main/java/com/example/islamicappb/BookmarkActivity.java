@@ -12,6 +12,8 @@ public class BookmarkActivity extends AppCompatActivity {
 
     ListView LV;
 
+    BookmarkAdapter bookmarkAdapter;
+
 
 
     @Override
@@ -23,17 +25,6 @@ public class BookmarkActivity extends AppCompatActivity {
 
         ArrayList<String> listData = new ArrayList<>();
 
-        listData.add("1");
-        listData.add("2");
-        listData.add("3");
-        listData.add("4");
-        listData.add("4");
-        listData.add("4");
-        listData.add("4");
-        listData.add("4");
-        listData.add("4");
-        listData.add("4");
-        listData.add("4");
 
 
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,R.layout.bookmark_list_item,R.id.list_item,listData);
