@@ -4,9 +4,12 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
 import android.content.ClipboardManager;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -16,8 +19,11 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageButton;
 import android.widget.ListView;
+import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,17 +34,21 @@ public class ReadSuraActivity extends AppCompatActivity {
 
     String sessionId;
     public static int pvalue = 1;
-
     DatabaseHelper db;
-
     private ListView listView2;
-
-
     List<SuraLinePart> suraLinePart1;
 
     SuraLineAdapter suraLineAdapter;
 
     MyDatabasehelper myDatabasehelper;
+
+    FloatingActionButton floatingActionButton;
+
+    public int sizeInt = 12;
+
+    public String seekvalue;
+
+
 
 
     @Override
@@ -55,6 +65,7 @@ public class ReadSuraActivity extends AppCompatActivity {
         pvalue =  Integer.parseInt(sessionId);
 
 
+        floatingActionButton = findViewById(R.id.idfloatingActionButton);
 
         listView2 = findViewById(R.id.idListView2);
         suraLinePart1 = new ArrayList();
@@ -79,19 +90,12 @@ public class ReadSuraActivity extends AppCompatActivity {
 
                 suraLinePart1.add(new SuraLinePart(""+cursor.getString(7),""+cursor.getString(9),""+cursor.getString(10),""+cursor.getString(4)));
 
-
-                //               listData.add(cursor.getString(6));
-//                listData.add(cursor.getString(0)+" \t"+cursor.getString(2));
-//                listData.add(cursor.getString(0)+" \t"+cursor.getString(3));
             }
         }
 
 
         suraLineAdapter = new SuraLineAdapter(this,R.layout.custom_sura_part, suraLinePart1);
         listView2.setAdapter(suraLineAdapter);
-
-//        final ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,R.layout.list_item,R.id.idTextView,listData);
-//        listView2.setAdapter(adapter);
 
     }
 
@@ -100,6 +104,8 @@ public class ReadSuraActivity extends AppCompatActivity {
 
         private List<SuraLinePart> suraLinePart;
         private Context context;
+
+        TextView SuraName;
 
         public SuraLineAdapter(@NonNull Context context, int textViewResourceId, List<SuraLinePart> suraLinePart) {
             super(context, textViewResourceId, suraLinePart);
@@ -132,8 +138,13 @@ public class ReadSuraActivity extends AppCompatActivity {
 
                 TextView AyatNumber = (TextView) customView.findViewById(R.id.idAyatNumber);
                 AyatNumber.setText(suraLinePart1.getSura_number());
-                TextView SuraName = (TextView) customView.findViewById(R.id.idSuraArbi);
+
+                SuraName = (TextView) customView.findViewById(R.id.idSuraArbi);
                 SuraName.setText(suraLinePart1.getSura_arbi());
+
+
+                ///////////////////////////////////////////////////////
+
 
 
 
@@ -144,6 +155,23 @@ public class ReadSuraActivity extends AppCompatActivity {
                 SuraNameMeaning.setText(suraLinePart1.getSura_bangla_meaning());
 
 
+                SharedPreferences spf = getSharedPreferences("SeekValueP",Context.MODE_PRIVATE);
+                seekvalue = spf.getString("skv","12");
+                sizeInt = Integer.parseInt(seekvalue);
+                SuraName.setTextSize(pxFromDp(sizeInt, ReadSuraActivity.this));
+                AyatNumber.setTextSize(pxFromDp(sizeInt, ReadSuraActivity.this));
+                SuraNameBangla.setTextSize(pxFromDp(sizeInt, ReadSuraActivity.this));
+                SuraNameMeaning.setTextSize(pxFromDp(sizeInt, ReadSuraActivity.this));
+
+                floatingActionButton.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+
+                        ShowDialog();
+
+
+                    }
+                });
 
                 Copy.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -196,17 +224,6 @@ public class ReadSuraActivity extends AppCompatActivity {
                             long rowId =  myDatabasehelper.insertData(name,ayatnumber,ayat,spelling,meaning);
                         }
 
-
-
-
-//                        if (rowId==-1)
-//                        {
-//                            //Toast.makeText(this, "failed ", Toast.LENGTH_SHORT).show();
-//
-//                        }
-//                        else {
-//                            // Toast.makeText(this, "ssfl "+rowId, Toast.LENGTH_SHORT).show();
-//                        }
                     }
                 });
 
@@ -220,6 +237,69 @@ public class ReadSuraActivity extends AppCompatActivity {
         }
     }
 
+
+    public static float pxFromDp(float dp, Context mContext) {
+        return dp * mContext.getResources().getDisplayMetrics().density;
+    }
+
+
+
+    public void ShowDialog()
+    {
+        final AlertDialog.Builder popDialog = new AlertDialog.Builder(this);
+        final SeekBar seek = new SeekBar(this);
+        seek.setMax(100);
+        popDialog.setIcon(android.R.drawable.btn_star_big_on);
+        popDialog.setTitle("Text size: ");
+        popDialog.setView(seek);
+
+        SharedPreferences spf = getSharedPreferences("SeekValueP",Context.MODE_PRIVATE);
+        seekvalue = spf.getString("skv","12");
+        seek.setProgress(Integer.parseInt(seekvalue));
+
+        seek.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser){
+                sizeInt = progress;
+                String kk;
+                kk = String.valueOf(sizeInt);
+                //SuraName.setTextSize(pxFromDp(sizeInt, ReadSuraActivity.this));
+                SharedPreferences spf = getSharedPreferences("SeekValueP",Context.MODE_PRIVATE);
+                SharedPreferences.Editor editor = spf.edit();
+                editor.putString("skv",kk);
+                editor.commit();
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {            }
+
+            public void onStopTrackingTouch(SeekBar seekBar) { finish();  startActivity(getIntent());            }
+
+        });
+
+// Button OK
+
+//        popDialog.setPositiveButton("OK",
+//
+//                new DialogInterface.OnClickListener() {
+//
+//                    public void onClick(DialogInterface dialog, int which) {
+//
+//
+//                        dialog.dismiss();
+//
+//                    }
+//
+//                });
+
+
+        popDialog.setMessage("farhad");
+
+
+        popDialog.create();
+
+        popDialog.show();
+
+    }
 
 
 
