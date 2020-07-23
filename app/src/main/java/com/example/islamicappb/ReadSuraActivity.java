@@ -269,6 +269,7 @@ public class ReadSuraActivity extends AppCompatActivity {
                 editor.commit();
             }
 
+
             @Override
             public void onStartTrackingTouch(SeekBar seekBar) {            }
 
