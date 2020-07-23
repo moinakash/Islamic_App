@@ -179,10 +179,10 @@ public class ReadSuraActivity extends AppCompatActivity {
                         String SuraName = getIntent().getStringExtra("suraName");
 
                         String name = ""+SuraName;
-                        String ayatnumber = ""+suraLinePart1.getSura_arbi();
-                        String ayat = ""+suraLinePart1.getSura_bangla();
+                        String ayatnumber = ""+suraLinePart1.getSura_number();
+                        String ayat = ""+suraLinePart1.getSura_arbi();
                         String spelling = ""+suraLinePart1.getSura_bangla();
-                        String meaning = ""+suraLinePart1.getSura_bangla();
+                        String meaning = ""+suraLinePart1.getSura_bangla_meaning();
                         String id = "";
 
 

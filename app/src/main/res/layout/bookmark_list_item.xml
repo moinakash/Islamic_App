@@ -4,6 +4,12 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
+    <Button
+        android:background="@drawable/ic_baseline_delete_24"
+        android:id="@+id/idDeleteBookmark"
+        android:layout_width="30dp"
+        android:layout_height="30dp"/>
+
     <TextView
         android:textSize="30sp"
         android:id="@+id/idAyatNumber"

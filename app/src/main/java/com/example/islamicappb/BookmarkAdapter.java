@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -18,8 +19,8 @@ public class BookmarkAdapter extends ArrayAdapter<BookmarkPojoClass> {
     private Context context;
 
 
-    public BookmarkAdapter(@NonNull Context context, int textViewResourceId, @NonNull List<BookmarkPojoClass> objects) {
-        super(context, textViewResourceId, objects);
+    public BookmarkAdapter(@NonNull Context context, int textViewResourceId, List<BookmarkPojoClass> bookmarkPojoClasses) {
+        super(context, textViewResourceId, bookmarkPojoClasses);
 
         this.context = context;
         this.bookmarkPojoClasses = bookmarkPojoClasses;
@@ -39,13 +40,15 @@ public class BookmarkAdapter extends ArrayAdapter<BookmarkPojoClass> {
         }
 
 
-        
+
 
 
         BookmarkPojoClass bookmarkPojoClass1 =bookmarkPojoClasses.get(position);
 
 
         if(bookmarkPojoClass1 !=null) {
+
+            Button Delete = (Button) customView.findViewById(R.id.idDeleteBookmark);
 
             TextView AyatNumber = (TextView) customView.findViewById(R.id.idAyatNumber);
             AyatNumber.setText(bookmarkPojoClass1.getAyat_number());
@@ -63,6 +66,14 @@ public class BookmarkAdapter extends ArrayAdapter<BookmarkPojoClass> {
 
             TextView AyatMeaning = (TextView) customView.findViewById(R.id.idAyatBanglaMeaning);
             AyatMeaning.setText(bookmarkPojoClass1.getSura_meaning_line());
+
+            Delete.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+                    
+                }
+            });
 
 
         }
