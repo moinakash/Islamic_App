@@ -83,6 +83,8 @@ public class TasbihFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_tasbih, container, false);
 
 
+
+
         button = view.findViewById(R.id.idButton);
         btnReset = view.findViewById(R.id.idReset);
         tvCurrentCounter = view.findViewById(R.id.idCurrentCount);
@@ -263,6 +265,12 @@ public class TasbihFragment extends Fragment {
             @Override
             public void onClick(View view) {
 
+                final Animation myAnim = AnimationUtils.loadAnimation(getActivity(), R.anim.bounce);
+                MyBounceInterpolator interpolator = new MyBounceInterpolator(0.2, 20);
+                myAnim.setInterpolator(interpolator);
+
+                button.startAnimation(myAnim);
+
 
                 if (SoundInt == 1){
 
@@ -430,6 +438,7 @@ public class TasbihFragment extends Fragment {
 
 
 
+
         Log.d("countset", "onClick: "+countset);
 
 
@@ -476,5 +485,20 @@ public class TasbihFragment extends Fragment {
 
     }
 
+
+    class MyBounceInterpolator implements android.view.animation.Interpolator {
+        private double mAmplitude = 1;
+        private double mFrequency = 10;
+
+        MyBounceInterpolator(double amplitude, double frequency) {
+            mAmplitude = amplitude;
+            mFrequency = frequency;
+        }
+
+        public float getInterpolation(float time) {
+            return (float) (-1 * Math.pow(Math.E, -time/ mAmplitude) *
+                    Math.cos(mFrequency * time) + 1);
+        }
+    }
 
 }
