@@ -42,7 +42,7 @@
             android:layout_height="150dp"
             android:layout_gravity="center"
             android:gravity="center"
-            android:text="Doa"/>
+            android:text="BookMarks"/>
 
         <Button
             android:id="@+id/idNiomActivity"
