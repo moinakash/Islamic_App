@@ -186,16 +186,25 @@ public class ReadSuraActivity extends AppCompatActivity {
                         String id = "";
 
 
-                        long rowId =  myDatabasehelper.insertData(name,ayatnumber,ayat,spelling,meaning);
+                        Boolean result = myDatabasehelper.findThis(ayat);
 
-                        if (rowId==-1)
-                        {
-                            //Toast.makeText(this, "failed ", Toast.LENGTH_SHORT).show();
+                        if (result==true){
 
+                        }else {
+                            long rowId =  myDatabasehelper.insertData(name,ayatnumber,ayat,spelling,meaning);
                         }
-                        else {
-                            // Toast.makeText(this, "ssfl "+rowId, Toast.LENGTH_SHORT).show();
-                        }
+
+
+
+
+//                        if (rowId==-1)
+//                        {
+//                            //Toast.makeText(this, "failed ", Toast.LENGTH_SHORT).show();
+//
+//                        }
+//                        else {
+//                            // Toast.makeText(this, "ssfl "+rowId, Toast.LENGTH_SHORT).show();
+//                        }
                     }
                 });
 

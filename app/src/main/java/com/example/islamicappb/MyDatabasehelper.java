@@ -119,7 +119,7 @@ public class MyDatabasehelper extends SQLiteOpenHelper {
     public int deleteData(String id)
     {
         SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
-        return sqLiteDatabase.delete(TABLE_NAME,ID+" = ?",new String[]{ id });
+        return sqLiteDatabase.delete(TABLE_NAME,ARBIAYAT+" = ?",new String[]{ id });
     }
 
     public Cursor showAllData()
@@ -127,6 +127,29 @@ public class MyDatabasehelper extends SQLiteOpenHelper {
         SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
         Cursor cursor = sqLiteDatabase.rawQuery("SELECT * FROM "+TABLE_NAME,null);
         return cursor;
+    }
+
+
+    public Boolean findThis(String Ayat)
+    {
+        SQLiteDatabase sqLiteDatabase = this.getReadableDatabase();
+        Cursor cursor = sqLiteDatabase.rawQuery("SELECT * FROM "+TABLE_NAME,null);
+        Boolean result = false;
+
+        if (cursor.getCount()==0){
+            Toast.makeText(context, "not found", Toast.LENGTH_SHORT).show();
+        }else {
+            while (cursor.moveToNext()){
+                String ayat = cursor.getString(3);
+
+                if (ayat.equals(Ayat)){
+                    result = true;
+                    break;
+                }
+            }
+        }
+
+        return result;
     }
 
 

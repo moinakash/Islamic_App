@@ -1,12 +1,15 @@
 package com.example.islamicappb;
 
 import android.content.Context;
+import android.database.sqlite.SQLiteDatabase;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -18,6 +21,7 @@ public class BookmarkAdapter extends ArrayAdapter<BookmarkPojoClass> {
     private List<BookmarkPojoClass> bookmarkPojoClasses;
     private Context context;
 
+    MyDatabasehelper myDatabasehelper;
 
     public BookmarkAdapter(@NonNull Context context, int textViewResourceId, List<BookmarkPojoClass> bookmarkPojoClasses) {
         super(context, textViewResourceId, bookmarkPojoClasses);
@@ -43,7 +47,7 @@ public class BookmarkAdapter extends ArrayAdapter<BookmarkPojoClass> {
 
 
 
-        BookmarkPojoClass bookmarkPojoClass1 =bookmarkPojoClasses.get(position);
+        final BookmarkPojoClass bookmarkPojoClass1 =bookmarkPojoClasses.get(position);
 
 
         if(bookmarkPojoClass1 !=null) {
@@ -71,6 +75,24 @@ public class BookmarkAdapter extends ArrayAdapter<BookmarkPojoClass> {
                 @Override
                 public void onClick(View v) {
 
+                    myDatabasehelper = new MyDatabasehelper(context);
+                    SQLiteDatabase sqLiteDatabase = myDatabasehelper.getWritableDatabase();
+
+                    String ayat = ""+bookmarkPojoClass1.getSura_arbi_line();
+                    Log.e("arbiayat",""+ayat);
+
+                    int value = myDatabasehelper.deleteData(ayat);
+
+//                    if (value>0) {
+//                        Toast.makeText(context, "Not Deleted", Toast.LENGTH_SHORT).show();
+//                    } else {
+//                         //ayat = myDatabasehelper.deleteData(ayat);
+//                        Toast.makeText(context, "deletd", Toast.LENGTH_SHORT).show();
+//                    }
+
+
+//                    context.finish();
+//                    context.startActivity();
                     
                 }
             });
