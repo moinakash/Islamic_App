@@ -189,8 +189,10 @@ public class ReadSuraActivity extends AppCompatActivity {
                         Boolean result = myDatabasehelper.findThis(ayat);
 
                         if (result==true){
+                            Toast.makeText(ReadSuraActivity.this, "already Exist", Toast.LENGTH_SHORT).show();
 
                         }else {
+                            Toast.makeText(ReadSuraActivity.this, "added", Toast.LENGTH_SHORT).show();
                             long rowId =  myDatabasehelper.insertData(name,ayatnumber,ayat,spelling,meaning);
                         }
 

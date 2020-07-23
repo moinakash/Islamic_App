@@ -16,6 +16,7 @@ import androidx.annotation.Nullable;
 
 import java.util.List;
 
+/*
 public class BookmarkAdapter extends ArrayAdapter<BookmarkPojoClass> {
 
     private List<BookmarkPojoClass> bookmarkPojoClasses;
@@ -108,3 +109,4 @@ public class BookmarkAdapter extends ArrayAdapter<BookmarkPojoClass> {
 }
 
 
+*/
