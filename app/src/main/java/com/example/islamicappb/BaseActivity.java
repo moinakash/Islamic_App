@@ -142,7 +142,7 @@ public class BaseActivity extends AppCompatActivity {
                 sesh_time_fojor_array[i] = fojorSeshTimeTxt.charAt(i);
             }
 
-            seShTime = "নামাজের শেষ সময় "+sesh_time_fojor_array[0]+":"+sesh_time_fojor_array[1]+""+sesh_time_fojor_array[2];
+            seShTime = ""+sesh_time_fojor_array[0]+":"+sesh_time_fojor_array[1]+""+sesh_time_fojor_array[2];
 
             seShTime= seShTime.replace("0", "০");
             seShTime= seShTime.replace("1", "১");
@@ -184,7 +184,7 @@ public class BaseActivity extends AppCompatActivity {
 
             convSt1 = String.valueOf(convInt);
 
-            seShTime = "নামাজের শেষ সময় "+convSt1+":"+sesh_time_johor_array[2]+""+sesh_time_johor_array[3];
+            seShTime = ""+convSt1+":"+sesh_time_johor_array[2]+""+sesh_time_johor_array[3];
 
             seShTime= seShTime.replace("0", "০");
             seShTime= seShTime.replace("1", "১");
@@ -222,7 +222,7 @@ public class BaseActivity extends AppCompatActivity {
 
             convSt1 = String.valueOf(convInt);
 
-            seShTime = "নামাজের শেষ সময় "+convSt1+":"+sesh_time_johor_array[2]+""+sesh_time_johor_array[3];
+            seShTime = ""+convSt1+":"+sesh_time_johor_array[2]+""+sesh_time_johor_array[3];
 
             seShTime= seShTime.replace("0", "০");
             seShTime= seShTime.replace("1", "১");
@@ -260,7 +260,7 @@ public class BaseActivity extends AppCompatActivity {
 
             convSt1 = String.valueOf(convInt);
 
-            seShTime = "নামাজের শেষ সময় "+convSt1+":"+sesh_time_johor_array[2]+""+sesh_time_johor_array[3];
+            seShTime = ""+convSt1+":"+sesh_time_johor_array[2]+""+sesh_time_johor_array[3];
 
             seShTime= seShTime.replace("0", "০");
             seShTime= seShTime.replace("1", "১");
@@ -298,7 +298,7 @@ public class BaseActivity extends AppCompatActivity {
 
             convSt1 = String.valueOf(convInt);
 
-            seShTime = "নামাজের শেষ সময় "+convSt1+":"+sesh_time_johor_array[2]+""+sesh_time_johor_array[3];
+            seShTime = ""+convSt1+":"+sesh_time_johor_array[2]+""+sesh_time_johor_array[3];
 
             seShTime= seShTime.replace("0", "০");
             seShTime= seShTime.replace("1", "১");
@@ -336,9 +336,9 @@ public class BaseActivity extends AppCompatActivity {
 
             convSt1 = String.valueOf(convInt);
 
-            seShTime = "নামাজের শেষ সময় "+convSt1+":"+sesh_time_asor_array[2]+""+sesh_time_asor_array[3];
+            seShTime = ""+convSt1+":"+sesh_time_asor_array[2]+""+sesh_time_asor_array[3];
 
-            seShTime= seShTime.replace("0", "০");
+            seShTime= seShTime.replace("0", "০" );
             seShTime= seShTime.replace("1", "১");
             seShTime= seShTime.replace("2", "২");
             seShTime= seShTime.replace("3", "৩");
@@ -374,7 +374,7 @@ public class BaseActivity extends AppCompatActivity {
 
             convSt1 = String.valueOf(convInt);
 
-            seShTime = "নামাজের শেষ সময় "+convSt1+":"+sesh_time_asor_array[2]+""+sesh_time_asor_array[3];
+            seShTime = ""+convSt1+":"+sesh_time_asor_array[2]+""+sesh_time_asor_array[3];
 
             seShTime= seShTime.replace("0", "০");
             seShTime= seShTime.replace("1", "১");
@@ -430,7 +430,7 @@ public class BaseActivity extends AppCompatActivity {
 
             convSt1 = String.valueOf(convInt);
 
-            seShTime = "নামাজের শেষ সময় "+convSt1+":"+lastTwodigitString;
+            seShTime = ""+convSt1+":"+lastTwodigitString;
 
             seShTime= seShTime.replace("0", "০");
             seShTime= seShTime.replace("1", "১");
@@ -486,7 +486,7 @@ public class BaseActivity extends AppCompatActivity {
 
             convSt1 = String.valueOf(convInt);
 
-            seShTime = "নামাজের শেষ সময় "+convSt1+":"+lastTwodigitString;
+            seShTime = ""+convSt1+":"+lastTwodigitString;
 
             seShTime= seShTime.replace("0", "০");
             seShTime= seShTime.replace("1", "১");
@@ -525,7 +525,7 @@ public class BaseActivity extends AppCompatActivity {
 
             convSt1 = String.valueOf(convInt);
 
-            seShTime = "নামাজের শেষ সময় "+convSt1+":"+sesh_time_esha_array[2]+""+sesh_time_esha_array[3];
+            seShTime = ""+convSt1+":"+sesh_time_esha_array[2]+""+sesh_time_esha_array[3];
 
             seShTime= seShTime.replace("0", "০");
             seShTime= seShTime.replace("1", "১");
@@ -564,7 +564,7 @@ public class BaseActivity extends AppCompatActivity {
 
             convSt1 = String.valueOf(convInt);
 
-            seShTime = "নামাজের শেষ সময় "+convSt1+":"+sesh_time_esha_array[2]+""+sesh_time_esha_array[3];
+            seShTime = ""+convSt1+":"+sesh_time_esha_array[2]+""+sesh_time_esha_array[3];
 
             seShTime= seShTime.replace("0", "০");
             seShTime= seShTime.replace("1", "১");
@@ -593,7 +593,7 @@ public class BaseActivity extends AppCompatActivity {
                 sesh_time_fojor_array[i] = fojorSeshTimeTxt.charAt(i);
             }
 
-            seShTime = "নামাজের শেষ সময় "+sesh_time_fojor_array[0]+":"+sesh_time_fojor_array[1]+""+sesh_time_fojor_array[2];
+            seShTime = ""+sesh_time_fojor_array[0]+":"+sesh_time_fojor_array[1]+""+sesh_time_fojor_array[2];
 
             seShTime= seShTime.replace("0", "০");
             seShTime= seShTime.replace("1", "১");
