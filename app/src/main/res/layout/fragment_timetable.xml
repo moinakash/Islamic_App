@@ -102,6 +102,14 @@
                             android:text="00:00"
                             android:textColor="#000000"
                             style="@style/NamajTimeTextBoxSize"/>
+
+                        <ImageButton
+                            android:id="@+id/idAlarmFojor"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/ic_baseline_alarm_add_24"
+                            android:layout_marginRight="10dp"/>
+
                     </LinearLayout>
 
                     <LinearLayout
@@ -122,6 +130,14 @@
                             android:layout_weight="1"
                             android:text="00:00"
                             style="@style/NamajTimeTextBoxSize"/>
+
+                        <ImageButton
+                            android:id="@+id/idAlarmJohor"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/ic_baseline_alarm_add_24"
+                            android:layout_marginRight="10dp"/>
+
                     </LinearLayout>
 
                     <LinearLayout
@@ -142,6 +158,14 @@
                             android:layout_weight="1"
                             android:text="00:00"
                             style="@style/NamajTimeTextBoxSize"/>
+
+                        <ImageButton
+                            android:id="@+id/idAlarmAsor"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/ic_baseline_alarm_add_24"
+                            android:layout_marginRight="10dp"/>
+
                     </LinearLayout>
 
                     <LinearLayout
@@ -162,6 +186,14 @@
                             android:layout_weight="1"
                             android:text="00:00"
                             style="@style/NamajTimeTextBoxSize"/>
+
+                        <ImageButton
+                            android:id="@+id/idAlarmMagrib"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/ic_baseline_alarm_add_24"
+                            android:layout_marginRight="10dp"/>
+
                     </LinearLayout>
 
                     <LinearLayout
@@ -182,6 +214,14 @@
                             android:layout_weight="1"
                             android:text="00:00"
                             style="@style/NamajTimeTextBoxSize"/>
+
+                        <ImageButton
+                            android:id="@+id/idAlarmEsha"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/ic_baseline_alarm_add_24"
+                            android:layout_marginRight="10dp"/>
+
                     </LinearLayout>
 
 

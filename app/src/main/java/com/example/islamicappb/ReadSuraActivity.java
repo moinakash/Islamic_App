@@ -2,6 +2,7 @@ package com.example.islamicappb;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.AlertDialog;
@@ -12,6 +13,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -156,14 +158,21 @@ public class ReadSuraActivity extends AppCompatActivity {
 
 
                 SharedPreferences spf = getSharedPreferences("SeekValueP",Context.MODE_PRIVATE);
-                seekvalue = spf.getString("skv","12");
+                seekvalue = spf.getString("skv","15");
                 sizeInt = Integer.parseInt(seekvalue);
-                SuraName.setTextSize(pxFromDp(sizeInt, ReadSuraActivity.this));
-                AyatNumber.setTextSize(pxFromDp(sizeInt, ReadSuraActivity.this));
-                SuraNameBangla.setTextSize(pxFromDp(sizeInt, ReadSuraActivity.this));
-                SuraNameMeaning.setTextSize(pxFromDp(sizeInt, ReadSuraActivity.this));
+
+                if (sizeInt<12){
+                    sizeInt = 12;
+                }
+                //SuraName.setTextSize(pxFromDp((sizeInt+3), ReadSuraActivity.this));
+                SuraName.setTextSize(dpToSp((sizeInt+3), ReadSuraActivity.this));
+                AyatNumber.setTextSize(dpToSp(sizeInt, ReadSuraActivity.this));
+                SuraNameBangla.setTextSize(dpToSp(sizeInt, ReadSuraActivity.this));
+                SuraNameMeaning.setTextSize(dpToSp(sizeInt, ReadSuraActivity.this));
+               // SuraNameMeaning.setTextSize(pxFromDp(sizeInt, ReadSuraActivity.this));
 
                 floatingActionButton.setOnClickListener(new View.OnClickListener() {
+                    //@RequiresApi(api = Build.VERSION_CODES.O)
                     @Override
                     public void onClick(View view) {
 
@@ -242,19 +251,25 @@ public class ReadSuraActivity extends AppCompatActivity {
         return dp * mContext.getResources().getDisplayMetrics().density;
     }
 
+    public static int dpToSp(float dp, Context context) {
+        return (int) (pxFromDp(dp, context) / context.getResources().getDisplayMetrics().scaledDensity);
+    }
 
 
+
+   // @RequiresApi(api = Build.VERSION_CODES.O)
     public void ShowDialog()
     {
         final AlertDialog.Builder popDialog = new AlertDialog.Builder(this);
         final SeekBar seek = new SeekBar(this);
-        seek.setMax(100);
+        seek.setMax(20);
+        //seek.setMin(5);
         popDialog.setIcon(android.R.drawable.btn_star_big_on);
         popDialog.setTitle("Text size: ");
         popDialog.setView(seek);
 
         SharedPreferences spf = getSharedPreferences("SeekValueP",Context.MODE_PRIVATE);
-        seekvalue = spf.getString("skv","12");
+        seekvalue = spf.getString("skv","15");
         seek.setProgress(Integer.parseInt(seekvalue));
 
         seek.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {

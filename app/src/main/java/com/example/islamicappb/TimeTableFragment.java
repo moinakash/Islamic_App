@@ -11,10 +11,12 @@ import android.os.Bundle;
 import androidx.annotation.RequiresApi;
 import androidx.fragment.app.Fragment;
 
+import android.provider.AlarmClock;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import java.time.LocalDate;
@@ -30,6 +32,8 @@ public class TimeTableFragment extends Fragment {
     TextView tvfojor, tvjohor, tvasor, tvmagrib, tvesha;
     TextView tvCurrentNTime, tvCurrentDate,tvCurrentArbiDate;
     TextView tvCurrentLocation, tvNextTime,tvNamajTimeNUmber, tvNamajSeshSomoy;
+
+    ImageButton ibFojor, ibJohor, ibAsor, ibMagrib, ibEsha;
 
 
     String text;
@@ -94,6 +98,12 @@ public class TimeTableFragment extends Fragment {
         tvNextTime = view.findViewById(R.id.idNextNamaj);
         tvNamajTimeNUmber = view.findViewById(R.id.idNamajTimeInNumber);
         tvNamajSeshSomoy = view.findViewById(R.id.idSeshSomoy);
+
+        ibFojor = view.findViewById(R.id.idAlarmFojor);
+        ibJohor = view.findViewById(R.id.idAlarmJohor);
+        ibAsor = view.findViewById(R.id.idAlarmAsor);
+        ibMagrib = view.findViewById(R.id.idAlarmMagrib);
+        ibEsha = view.findViewById(R.id.idAlarmEsha);
 
         Locale locale = new Locale("bn");
         Locale.setDefault(locale);
@@ -209,6 +219,12 @@ public class TimeTableFragment extends Fragment {
         }
         fojorTimeBangla = ""+array[0]+""+array[1]+""+array[2]+""+array[3];
 
+        String SfHour = ""+array[0];
+        String SfMinute = ""+array[2]+""+array[3];
+        final int fHour = Integer.parseInt(SfHour);
+        final int fMinute = Integer.parseInt(SfMinute);
+
+
         fojorTimeBangla = fojorTimeBangla.replace("0", "০");
         fojorTimeBangla = fojorTimeBangla.replace("1", "১");
         fojorTimeBangla = fojorTimeBangla.replace("2", "২");
@@ -232,12 +248,20 @@ public class TimeTableFragment extends Fragment {
         }
         String txtJohor = ""+johorarray[0]+""+johorarray[1];
         int jInt = Integer.parseInt(txtJohor);
+        int jhInt = jInt;
         if (jInt>12){
             jInt = jInt - 12;
         }
 
         johorTimeBangla = ""+jInt+""+johorarray[2]+""+johorarray[3]+""+johorarray[4];
-//        String johorTimeBangla = ""+johorarray[0]+""+johorarray[1]+""+johorarray[2]+""+johorarray[3]+""+johorarray[4];
+
+
+
+        //String SjHour = ""+array[0]+""+array[1];
+        String SjMinute = ""+johorarray[3]+""+johorarray[4];
+
+        final int jHour = jhInt;
+        final int jMinute = Integer.parseInt(SjMinute);
 
         johorTimeBangla= johorTimeBangla.replace("0", "০");
         johorTimeBangla= johorTimeBangla.replace("1", "১");
@@ -262,11 +286,18 @@ public class TimeTableFragment extends Fragment {
 
         String txtAsor = ""+asorarray[0]+""+asorarray[1];
         int aInt = Integer.parseInt(txtAsor);
+        int asInt = aInt;
         if (aInt>12){
             aInt = aInt - 12;
         }
 
         asorTimeBangla = ""+aInt+""+asorarray[2]+""+asorarray[3]+""+asorarray[4];
+
+
+        //String SfHour = ""+array[0]+""+array[1];
+        String SaMinute = ""+asorarray[3]+""+asorarray[4];
+        final int aHour = asInt;
+        final int aMinute = Integer.parseInt(SaMinute);
 
        // String asorTimeBangla = ""+asorarray[0]+""+asorarray[1]+""+asorarray[2]+""+asorarray[3]+""+asorarray[4];
         asorTimeBangla= asorTimeBangla.replace("0", "০");
@@ -290,11 +321,17 @@ public class TimeTableFragment extends Fragment {
 
         String txtMagrib = ""+magribarray[0]+""+magribarray[1];
         int mInt = Integer.parseInt(txtMagrib);
+        int mgInt = mInt;
         if (mInt>12){
             mInt = mInt - 12;
         }
 
       magribTimeBangla = ""+mInt+""+magribarray[2]+""+magribarray[3]+""+magribarray[4];
+
+        //String SfHour = ""+array[0]+""+array[1];
+        String SmMinute = ""+magribarray[3]+""+magribarray[4];
+        final int mHour = mgInt;
+        final int mMinute = Integer.parseInt(SmMinute);
 
 
         magribTimeBangla= magribTimeBangla.replace("0", "০");
@@ -317,11 +354,17 @@ public class TimeTableFragment extends Fragment {
 
         String txtEsha = ""+eshaarray[0]+""+eshaarray[1];
         int eInt = Integer.parseInt(txtEsha);
+        int ehInt = eInt;
         if (eInt>12){
             eInt = eInt - 12;
         }
 
         eshaTimeBangla = ""+eInt+""+eshaarray[2]+""+eshaarray[3]+""+eshaarray[4];
+
+       // String SfHour = ""+array[0]+""+array[1];
+        String SeMinute = ""+eshaarray[3]+""+eshaarray[4];
+        final int eHour = ehInt;
+        final int eMinute = Integer.parseInt(SeMinute);
         //String eshaTimeBangla = ""+eshaarray[0]+""+eshaarray[1]+""+eshaarray[2]+""+eshaarray[3]+""+eshaarray[4];
         eshaTimeBangla= eshaTimeBangla.replace("0", "০");
         eshaTimeBangla= eshaTimeBangla.replace("1", "১");
@@ -351,6 +394,66 @@ public class TimeTableFragment extends Fragment {
 //        intent.putExtra("hello","102");
 //     //   intent.putExtra(NextActivity.PLAYERS, players);
 //        startActivity(intent);
+
+        ibFojor.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent i = new Intent(AlarmClock.ACTION_SET_ALARM);
+                i.putExtra(AlarmClock.EXTRA_MESSAGE, "ফজরের নামাজের সময় হয়েছে");
+                i.putExtra(AlarmClock.EXTRA_HOUR, fHour);
+                i.putExtra(AlarmClock.EXTRA_MINUTES, fMinute);
+                startActivity(i);
+
+            }
+        });
+        ibJohor.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(AlarmClock.ACTION_SET_ALARM);
+                i.putExtra(AlarmClock.EXTRA_MESSAGE, "যোহরের নামাজের সময় হয়েছে");
+                i.putExtra(AlarmClock.EXTRA_HOUR, jHour);
+                i.putExtra(AlarmClock.EXTRA_MINUTES, jMinute);
+                startActivity(i);
+
+            }
+        });
+        ibAsor.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent i = new Intent(AlarmClock.ACTION_SET_ALARM);
+                i.putExtra(AlarmClock.EXTRA_MESSAGE, "আসরের নামাজের সময় হয়েছে");
+                i.putExtra(AlarmClock.EXTRA_HOUR, aHour);
+                i.putExtra(AlarmClock.EXTRA_MINUTES, aMinute);
+                startActivity(i);
+
+            }
+        });
+        ibMagrib.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent i = new Intent(AlarmClock.ACTION_SET_ALARM);
+                i.putExtra(AlarmClock.EXTRA_MESSAGE, "মাগরিবের নামাজের সময় হয়েছে");
+                i.putExtra(AlarmClock.EXTRA_HOUR, mHour);
+                i.putExtra(AlarmClock.EXTRA_MINUTES, mMinute);
+                startActivity(i);
+
+            }
+        });
+        ibEsha.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent i = new Intent(AlarmClock.ACTION_SET_ALARM);
+                i.putExtra(AlarmClock.EXTRA_MESSAGE, "এশার নামাজের সময় হয়েছে");
+                i.putExtra(AlarmClock.EXTRA_HOUR, eHour);
+                i.putExtra(AlarmClock.EXTRA_MINUTES, eMinute);
+                startActivity(i);
+
+            }
+        });
 
 
         tvNextTime.setText(""+BOrPNamajTime);
