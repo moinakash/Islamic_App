@@ -103,7 +103,7 @@ public class TasbihFragment extends Fragment {
         img_pearl_7 = view.findViewById(R.id.id_pearl_7);
         img_pearl_8 = view.findViewById(R.id.id_pearl_8);
         img_pearl_9 = view.findViewById(R.id.id_pearl_9);
-        
+
 
 
 
@@ -114,7 +114,7 @@ public class TasbihFragment extends Fragment {
         SoundInt = sharedPref.getInt("Soundintt",0);
 
 
-        btn33.setText(""+countset);
+
 
 
 
@@ -173,6 +173,8 @@ public class TasbihFragment extends Fragment {
         tvSetCount.setText(""+cS);
 
 
+
+        btn33.setText(""+cS);
 
         btnSound.setOnClickListener(new View.OnClickListener() {
             @Override
