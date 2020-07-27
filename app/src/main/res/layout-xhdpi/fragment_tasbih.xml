@@ -42,15 +42,15 @@
                 android:text="৩৩"
                 android:textSize="20dp" />
 
-            <Button
-                android:id="@+id/id99"
-                android:layout_width="wrap_content"
-                android:layout_height="50dp"
-                android:layout_gravity="center"
-                android:layout_marginLeft="10dp"
-                android:gravity="center"
-                android:text="৯৯"
-                android:textSize="20dp" />
+            <!--            <Button-->
+            <!--                android:id="@+id/id99"-->
+            <!--                android:layout_width="wrap_content"-->
+            <!--                android:layout_height="50dp"-->
+            <!--                android:layout_gravity="center"-->
+            <!--                android:layout_marginLeft="10dp"-->
+            <!--                android:gravity="center"-->
+            <!--                android:text="৯৯"-->
+            <!--                android:textSize="20dp" />-->
 
             <Button
                 android:id="@+id/idReset"

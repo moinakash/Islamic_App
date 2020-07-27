@@ -17,6 +17,7 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 
@@ -29,7 +30,8 @@ public class TasbihFragment extends Fragment {
 
 
     ImageView imageView;
-    Button button, btnReset, btn33, btn99, btnttlr, btnSound;
+    Button button,btn33, btn99, btnSound;
+    LinearLayout btnttlr,btnReset;
     TextView tvCurrentCounter, tvSetCount, tvTotalcount;
 
     ImageView img_pearl, img_pearl_1, img_pearl_2, img_pearl_3, img_pearl_4, img_pearl_6, img_pearl_7, img_pearl_8, img_pearl_9;
