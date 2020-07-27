@@ -5,6 +5,7 @@ import android.content.SharedPreferences;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
 import android.os.Handler;
@@ -16,6 +17,7 @@ import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -29,12 +31,14 @@ public class TasbihFragment extends Fragment {
 
 
 
-    ImageView imageView;
+    ImageView btn33;
     Button button ;
-    LinearLayout btnttlr,btnReset,btn33,btnSound;
+    LinearLayout btnttlr,btnReset,btnSound;
     TextView tvCurrentCounter, tvSetCount, tvTotalcount;
 
     ImageView img_pearl, img_pearl_1, img_pearl_2, img_pearl_3, img_pearl_4, img_pearl_6, img_pearl_7, img_pearl_8, img_pearl_9;
+
+    ImageView ibbtn33img;
 
 
 
@@ -105,6 +109,7 @@ public class TasbihFragment extends Fragment {
         img_pearl_7 = view.findViewById(R.id.id_pearl_7);
         img_pearl_8 = view.findViewById(R.id.id_pearl_8);
         img_pearl_9 = view.findViewById(R.id.id_pearl_9);
+//        ibbtn33img = view.findViewById(R.id.idbtn33img);
 
 
 
@@ -185,6 +190,7 @@ public class TasbihFragment extends Fragment {
                 if (SoundInt == 0){
                     SoundInt = 1;
 
+
                  //   btnSound.setText("Sound Mode");
 
                 }else if (SoundInt == 1){
@@ -214,6 +220,12 @@ public class TasbihFragment extends Fragment {
                 String condi = tvSetCount.getText().toString();
 
                 if (condi.equals("৯৯")){
+
+
+                    btn33.setImageResource(R.drawable.button33);
+
+
+
 
                     tvSetCount.setText("৩৩");
 
@@ -256,6 +268,11 @@ public class TasbihFragment extends Fragment {
                 }
 
                 else if (condi.equals("৩৩")){
+
+
+
+                    btn33.setImageResource(R.drawable.button99);
+
 
                     tvSetCount.setText("৯৯");
                    // btn33.setText("৯৯");

@@ -2,6 +2,7 @@ package com.example.islamicappb;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.pm.ActivityInfo;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.widget.ListView;
@@ -21,6 +22,7 @@ public class AllahNameActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         setContentView(R.layout.activity_allah_name);
 
         list = findViewById( R.id.idAllahNamelist);

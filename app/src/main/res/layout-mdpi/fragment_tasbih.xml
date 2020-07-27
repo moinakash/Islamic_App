@@ -121,7 +121,7 @@
 
                         <LinearLayout
 
-                            android:id="@+id/id33"
+
                             android:gravity="center"
                             android:layout_gravity="center"
 
@@ -132,6 +132,7 @@
 
                             <ImageView
 
+                                android:id="@+id/id33"
                                 android:layout_gravity="center"
                                 android:scaleX="1.2"
                                 android:scaleY="1.2"

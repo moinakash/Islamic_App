@@ -110,22 +110,19 @@
                     <LinearLayout
 
 
-                        android:id="@+id/id33"
                         android:gravity="center"
                         android:layout_gravity="center"
-
                         android:background="@drawable/green_shape"
                         android:layout_width="match_parent"
                         android:layout_height="40sp">
 
 
                         <ImageView
-
+                            android:id="@+id/id33"
 
                             android:layout_gravity="center"
                             android:scaleX="1.2"
                             android:scaleY="1.2"
-
                             android:scaleType="centerCrop"
                             android:background="@drawable/button33"
                             android:layout_width="wrap_content"
