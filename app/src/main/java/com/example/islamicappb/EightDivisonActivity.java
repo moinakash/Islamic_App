@@ -91,7 +91,8 @@ public class EightDivisonActivity extends AppCompatActivity {
         SharedPreferences sharedPrefMM = getSharedPreferences("mm",Context.MODE_PRIVATE);
         ff = sharedPrefMM.getString("key","");
         if (ff.equals("1")){
-            Toast.makeText(this, "Done", Toast.LENGTH_SHORT).show();
+
+
         }else {
 
 
@@ -393,7 +394,8 @@ public class EightDivisonActivity extends AppCompatActivity {
         arrayList_Dhaka = new ArrayList<>();
         final Cursor cursorDhaka = db.showDhaka();
         if (cursorDhaka.getCount() == 0) {
-            Toast.makeText(this, "No data available", Toast.LENGTH_SHORT).show();
+
+
         } else {
             while (cursorDhaka.moveToNext()) {
                 arrayList_Dhaka.add(cursorDhaka.getString(3));
@@ -408,7 +410,7 @@ public class EightDivisonActivity extends AppCompatActivity {
         arrayList_Chita = new ArrayList<>();
         final Cursor cursor_Chita = db.showChit();
         if (cursor_Chita.getCount() == 0) {
-            Toast.makeText(this, "No data available", Toast.LENGTH_SHORT).show();
+
         } else {
             while (cursor_Chita.moveToNext()) {
                 arrayList_Chita.add(cursor_Chita.getString(3));
@@ -420,7 +422,7 @@ public class EightDivisonActivity extends AppCompatActivity {
         arrayList_bari = new ArrayList<>();
         final Cursor cursor_bari = db.showBari();
         if (cursor_bari.getCount() == 0) {
-            Toast.makeText(this, "No data available", Toast.LENGTH_SHORT).show();
+
         } else {
             while (cursor_bari.moveToNext()) {
                 arrayList_bari.add(cursor_bari.getString(3));
@@ -431,7 +433,7 @@ public class EightDivisonActivity extends AppCompatActivity {
         arrayList_Khul = new ArrayList<>();
         final Cursor cursor_Khul = db.shoeKhul();
         if (cursor_Khul.getCount() == 0) {
-            Toast.makeText(this, "No data available", Toast.LENGTH_SHORT).show();
+
         } else {
             while (cursor_Khul.moveToNext()) {
                 arrayList_Khul.add(cursor_Khul.getString(3));
@@ -443,7 +445,7 @@ public class EightDivisonActivity extends AppCompatActivity {
         arrayList_Raj = new ArrayList<>();
         final Cursor cursor_Raj = db.showRaj();
         if (cursor_Raj.getCount() == 0) {
-            Toast.makeText(this, "No data available", Toast.LENGTH_SHORT).show();
+
         } else {
             while (cursor_Raj.moveToNext()) {
                 arrayList_Raj.add(cursor_Raj.getString(3));
@@ -455,7 +457,7 @@ public class EightDivisonActivity extends AppCompatActivity {
         arrayList_Rang = new ArrayList<>();
         final Cursor cursor_Rong = db.showRong();
         if (cursor_Rong.getCount() == 0) {
-            Toast.makeText(this, "No data available", Toast.LENGTH_SHORT).show();
+
         } else {
             while (cursor_Rong.moveToNext()) {
                 arrayList_Rang.add(cursor_Rong.getString(3));
@@ -470,7 +472,7 @@ public class EightDivisonActivity extends AppCompatActivity {
         int a = 7;
         final Cursor cursor_Sy = db.showSy(a);
         if (cursor_Sy.getCount() == 0) {
-            Toast.makeText(this, "No data available", Toast.LENGTH_SHORT).show();
+
         } else {
             while (cursor_Sy.moveToNext()) {
                 arrayList_Sy.add(cursor_Sy.getString(3));
@@ -523,7 +525,7 @@ public class EightDivisonActivity extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
 
-                Toast.makeText(getApplicationContext(), ""+adapterView.getItemAtPosition(i).toString(), Toast.LENGTH_SHORT).show();
+//                Toast.makeText(getApplicationContext(), ""+adapterView.getItemAtPosition(i).toString(), Toast.LENGTH_SHORT).show();
 
                 placeName = ""+adapterView.getItemAtPosition(i).toString();
 
@@ -873,8 +875,7 @@ public class EightDivisonActivity extends AppCompatActivity {
                 latitude = latC;
 
                 longitude = lonC;
-                Toast.makeText(EightDivisonActivity.this, ""+latitude, Toast.LENGTH_SHORT).show();
-                Toast.makeText(EightDivisonActivity.this, ""+longitude, Toast.LENGTH_SHORT).show();
+
             }
 
             @Override

@@ -56,9 +56,9 @@ public class MyDatabasehelper extends SQLiteOpenHelper {
 
         try{
             sqLiteDatabase.execSQL(CREATE_TABLE);
-            Toast.makeText(context, "Database created : ", Toast.LENGTH_SHORT).show();
+
         }catch (Exception e){
-            Toast.makeText(context, "Exception: "+e, Toast.LENGTH_SHORT).show();
+
         }
 
         
@@ -69,12 +69,11 @@ public class MyDatabasehelper extends SQLiteOpenHelper {
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
 
         try{
-            Toast.makeText(context, "onUpgrade Called : ", Toast.LENGTH_SHORT).show();
+
             sqLiteDatabase.execSQL(DROP_TABLE);
             onCreate(sqLiteDatabase);
 
         }catch (Exception e){
-            Toast.makeText(context, "Exception: "+e, Toast.LENGTH_SHORT).show();
 
         }
 
@@ -137,7 +136,7 @@ public class MyDatabasehelper extends SQLiteOpenHelper {
         Boolean result = false;
 
         if (cursor.getCount()==0){
-            Toast.makeText(context, "not found", Toast.LENGTH_SHORT).show();
+
         }else {
             while (cursor.moveToNext()){
                 String ayat = cursor.getString(3);

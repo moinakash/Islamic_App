@@ -56,7 +56,7 @@ public class BookmarkActivity extends AppCompatActivity {
         cursor = myDatabasehelper.showAllData();
 
         if(cursor.getCount() == 0){
-            Toast.makeText(this, "No data available", Toast.LENGTH_SHORT).show();
+//            Toast.makeText(this, "No data available", Toast.LENGTH_SHORT).show();
         }else {
             while (cursor.moveToNext()){
 
@@ -161,6 +161,9 @@ public class BookmarkActivity extends AppCompatActivity {
                         Log.e("arbiayat",""+ayat);
 
                         int value = myDatabasehelper.deleteData(ayat);
+
+                        Toast.makeText(context, "মুছে ফেলা হয়েছে", Toast.LENGTH_SHORT).show();
+
 
 //                    if (value>0) {
 //                        Toast.makeText(context, "Not Deleted", Toast.LENGTH_SHORT).show();

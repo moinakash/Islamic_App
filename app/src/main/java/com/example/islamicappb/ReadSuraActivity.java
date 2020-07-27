@@ -88,7 +88,7 @@ public class ReadSuraActivity extends AppCompatActivity {
 
 
         if(cursor.getCount() == 0){
-            Toast.makeText(this, "No data available", Toast.LENGTH_SHORT).show();
+
         }else {
             while (cursor.moveToNext()){
 
@@ -188,7 +188,7 @@ public class ReadSuraActivity extends AppCompatActivity {
                     @Override
                     public void onClick(View view) {
 
-                        Toast.makeText(getContext(), "copied", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getContext(), "অনুলিপি করা হয়েছে", Toast.LENGTH_SHORT).show();
 
                         ClipboardManager cm = (ClipboardManager) context
                                 .getSystemService(Context.CLIPBOARD_SERVICE);
@@ -228,10 +228,10 @@ public class ReadSuraActivity extends AppCompatActivity {
                         Boolean result = myDatabasehelper.findThis(ayat);
 
                         if (result==true){
-                            Toast.makeText(ReadSuraActivity.this, "already Exist", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(ReadSuraActivity.this, "বাক্য জমা হয়েছে", Toast.LENGTH_SHORT).show();
 
                         }else {
-                            Toast.makeText(ReadSuraActivity.this, "added", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(ReadSuraActivity.this, "বাক্য জমা হয়েছে", Toast.LENGTH_SHORT).show();
                             long rowId =  myDatabasehelper.insertData(name,ayatnumber,ayat,spelling,meaning);
                         }
 
