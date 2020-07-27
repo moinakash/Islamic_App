@@ -228,5 +228,79 @@ public class DatabaseHelper
     }
 
 
+    public Cursor showDiv(){
+        SQLiteDatabase db = this.getWritableDatabase();
+        String FullSura = "SELECT * FROM sura ";
+
+        String query = "SELECT * FROM divisions ";
+
+        Cursor FullSuraCursor = db.rawQuery(query,null);
+        return FullSuraCursor;
+    }
+
+    public Cursor showDhaka(){
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        String query = "SELECT * FROM districts where division_id = 3";
+
+        Cursor FullSuraCursor = db.rawQuery(query,null);
+        return FullSuraCursor;
+    }
+
+    public Cursor showChit(){
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        String query = "SELECT * FROM districts where division_id = 2";
+
+        Cursor FullSuraCursor = db.rawQuery(query,null);
+        return FullSuraCursor;
+    }
+
+    public Cursor showBari(){
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        String query = "SELECT * FROM districts where division_id = 1";
+
+        Cursor FullSuraCursor = db.rawQuery(query,null);
+        return FullSuraCursor;
+    }
+
+    public Cursor shoeKhul(){
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        String query = "SELECT * FROM districts where division_id = 4";
+
+        Cursor FullSuraCursor = db.rawQuery(query,null);
+        return FullSuraCursor;
+    }
+
+    public Cursor showRaj(){
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        String query = "SELECT * FROM districts where division_id = 5";
+
+        Cursor FullSuraCursor = db.rawQuery(query,null);
+        return FullSuraCursor;
+    }
+
+    public Cursor showRong(){
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        String query = "SELECT * FROM districts where division_id = 6";
+
+        Cursor FullSuraCursor = db.rawQuery(query,null);
+        return FullSuraCursor;
+    }
+
+    public Cursor showSy(int a){
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        String query = "SELECT * FROM districts where division_id = "+a;
+
+        Cursor FullSuraCursor = db.rawQuery(query,null);
+        return FullSuraCursor;
+    }
+
+
 
 }
