@@ -31,9 +31,9 @@ public class TasbihFragment extends Fragment {
 
 
 
-    ImageView btn33;
+    ImageView btn33, btnSound;
     Button button ;
-    LinearLayout btnttlr,btnReset,btnSound;
+    LinearLayout btnttlr,btnReset;
     TextView tvCurrentCounter, tvSetCount, tvTotalcount;
 
     ImageView img_pearl, img_pearl_1, img_pearl_2, img_pearl_3, img_pearl_4, img_pearl_6, img_pearl_7, img_pearl_8, img_pearl_9;
@@ -96,7 +96,7 @@ public class TasbihFragment extends Fragment {
         tvCurrentCounter = view.findViewById(R.id.idCurrentCount);
         btn33 = view.findViewById(R.id.id33);
         //btn99 = view.findViewById(R.id.id99);
-        btnSound = (LinearLayout) view.findViewById(R.id.idSound);
+        btnSound =  view.findViewById(R.id.idSound);
         tvSetCount = view.findViewById(R.id.idCountSet);
         tvTotalcount = view.findViewById(R.id.idtotalCount);
         btnttlr = view.findViewById(R.id.idttlr);
@@ -120,6 +120,19 @@ public class TasbihFragment extends Fragment {
         totalcount = sharedPref.getInt("TotalCount",0);
         SoundInt = sharedPref.getInt("Soundintt",0);
 
+        if (SoundInt == 0){
+            btnSound.setImageResource(R.drawable.sound_off_mode);
+        }else if (SoundInt == 1){
+            btnSound.setImageResource(R.drawable.sound_on_mode);
+        }else if (SoundInt == 2){
+            btnSound.setImageResource(R.drawable.vibret_on_mode);
+        }
+
+        if (countset==33){
+            btn33.setImageResource(R.drawable.button33);
+        }else if (countset==99){
+            btn33.setImageResource(R.drawable.button99);
+        }
 
 
 
@@ -190,14 +203,16 @@ public class TasbihFragment extends Fragment {
                 if (SoundInt == 0){
                     SoundInt = 1;
 
-
+                    btnSound.setImageResource(R.drawable.sound_on_mode);
                  //   btnSound.setText("Sound Mode");
 
                 }else if (SoundInt == 1){
                     SoundInt = 2;
+                    btnSound.setImageResource(R.drawable.vibret_on_mode);
                    // btnSound.setText("Vibrator Mode");
                 }else if (SoundInt == 2){
                     SoundInt = 0;
+                    btnSound.setImageResource(R.drawable.sound_off_mode);
                  //   btnSound.setText("sound off mode");
                 }
 

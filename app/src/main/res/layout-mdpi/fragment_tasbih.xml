@@ -86,13 +86,14 @@
 
                         <LinearLayout
 
-                            android:id="@+id/idSound"
+
                             android:background="@drawable/green_shape_fill"
                             android:layout_width="match_parent"
                             android:layout_height="40dp">
 
                             <ImageView
 
+                                android:id="@+id/idSound"
                                 android:scaleX="0.9"
                                 android:scaleY="0.9"
                                 android:scaleType="centerCrop"
