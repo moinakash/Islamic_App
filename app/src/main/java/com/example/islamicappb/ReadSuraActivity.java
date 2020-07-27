@@ -228,10 +228,10 @@ public class ReadSuraActivity extends AppCompatActivity {
                         Boolean result = myDatabasehelper.findThis(ayat);
 
                         if (result==true){
-                            Toast.makeText(ReadSuraActivity.this, "বাক্য জমা হয়েছে", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(ReadSuraActivity.this, "আয়াত জমা হয়েছে", Toast.LENGTH_SHORT).show();
 
                         }else {
-                            Toast.makeText(ReadSuraActivity.this, "বাক্য জমা হয়েছে", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(ReadSuraActivity.this, "আয়াত জমা হয়েছে", Toast.LENGTH_SHORT).show();
                             long rowId =  myDatabasehelper.insertData(name,ayatnumber,ayat,spelling,meaning);
                         }
 

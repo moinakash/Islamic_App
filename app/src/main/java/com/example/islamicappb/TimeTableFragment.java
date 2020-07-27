@@ -40,6 +40,9 @@ public class TimeTableFragment extends Fragment {
 
     String fojorTimeBangla,johorTimeBangla,asorTimeBangla,magribTimeBangla,eshaTimeBangla;
 
+    String year, month, day;
+    int ii;
+
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
@@ -159,7 +162,31 @@ public class TimeTableFragment extends Fragment {
             text = text.replace("-১০-", "শওয়াল");
             text = text.replace("-১১-", ",জিলক্বদ,");
             text = text.replace("-১২-", "জিলহজ্জ");
-            tvCurrentArbiDate.setText(text+" হিঃ");
+
+
+
+
+
+            Character [] text_array= new Character[text.length()];
+
+            int i;
+            for ( i = 0; i < text.length(); i++) {
+                text_array[i] = text.charAt(i);
+                ii = i;
+            }
+
+            year = ""+text_array[0]+""+text_array[1]+""+text_array[2]+""+text_array[3]+""+text_array[4];
+            day = ""+text_array[(ii-1)]+""+text_array[(ii)];
+
+            String txtf = "";
+            for ( i = 5; i < (ii-1); i++){
+               // text_array[i] = text.charAt(k);
+
+                txtf = ""+txtf+""+text_array[i];
+
+            }
+
+            tvCurrentArbiDate.setText(day+" "+txtf+""+year);
 
         }
 
