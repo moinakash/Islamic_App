@@ -89,7 +89,7 @@ public class TasbihFragment extends Fragment {
         btnReset = view.findViewById(R.id.idReset);
         tvCurrentCounter = view.findViewById(R.id.idCurrentCount);
         btn33 = view.findViewById(R.id.id33);
-        btn99 = view.findViewById(R.id.id99);
+        //btn99 = view.findViewById(R.id.id99);
         btnSound = view.findViewById(R.id.idSound);
         tvSetCount = view.findViewById(R.id.idCountSet);
         tvTotalcount = view.findViewById(R.id.idtotalCount);
@@ -103,6 +103,8 @@ public class TasbihFragment extends Fragment {
         img_pearl_7 = view.findViewById(R.id.id_pearl_7);
         img_pearl_8 = view.findViewById(R.id.id_pearl_8);
         img_pearl_9 = view.findViewById(R.id.id_pearl_9);
+        
+
 
 
         SharedPreferences sharedPref = getActivity().getPreferences(Context.MODE_PRIVATE);
@@ -110,6 +112,11 @@ public class TasbihFragment extends Fragment {
         countset = sharedPref.getInt("CountSet",33);
         totalcount = sharedPref.getInt("TotalCount",0);
         SoundInt = sharedPref.getInt("Soundintt",0);
+
+
+        btn33.setText(""+countset);
+
+
 
         /////////////////////////////////////////////////////////
         String CC = String.valueOf(currentcounter);
@@ -197,42 +204,65 @@ public class TasbihFragment extends Fragment {
         btn33.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                tvSetCount.setText("৩৩");
-
-                if (countset>33){
-                    if (currentcounter>33){
-                        currentcounter = currentcounter%33;
-
-                        String CC = String.valueOf(currentcounter);
-
-                        CC= CC.replace("0", "০");
-                        CC= CC.replace("1", "১");
-                        CC= CC.replace("2", "২");
-                        CC= CC.replace("3", "৩");
-                        CC= CC.replace("4", "৪");
-                        CC= CC.replace("5", "৫");
-                        CC= CC.replace("6", "৬");
-                        CC= CC.replace("7", "৭");
-                        CC= CC.replace("8", "৮");
-                        CC= CC.replace("9", "৯");
 
 
-                        tvCurrentCounter.setText(""+CC);
+                String condi = tvSetCount.getText().toString();
+
+                if (condi.equals("৯৯")){
+
+                    tvSetCount.setText("৩৩");
+
+                    if (countset>33){
+                        if (currentcounter>33){
+                            currentcounter = currentcounter%33;
+
+                            String CC = String.valueOf(currentcounter);
+
+                            CC= CC.replace("0", "০");
+                            CC= CC.replace("1", "১");
+                            CC= CC.replace("2", "২");
+                            CC= CC.replace("3", "৩");
+                            CC= CC.replace("4", "৪");
+                            CC= CC.replace("5", "৫");
+                            CC= CC.replace("6", "৬");
+                            CC= CC.replace("7", "৭");
+                            CC= CC.replace("8", "৮");
+                            CC= CC.replace("9", "৯");
+
+
+                            tvCurrentCounter.setText(""+CC);
+
+                        }
 
                     }
 
+                    btn33.setText("৩৩");
+
+
+                    countset = 33;
+                    SharedPreferences sharedPref = getActivity().getPreferences(Context.MODE_PRIVATE);
+                    SharedPreferences.Editor editor = sharedPref.edit();
+                    editor.putInt("CountSet", Integer.parseInt(""+ countset));
+                    editor.putInt("TotalCount", Integer.parseInt(""+ totalcount));
+                    editor.putInt("Count", Integer.parseInt(""+ currentcounter));
+                    editor.commit();
+
+
+                }
+
+                else if (condi.equals("৩৩")){
+
+                    tvSetCount.setText("৯৯");
+                    btn33.setText("৯৯");
+                    countset = 99;
+                    SharedPreferences sharedPref = getActivity().getPreferences(Context.MODE_PRIVATE);
+                    SharedPreferences.Editor editor = sharedPref.edit();
+                    editor.putInt("CountSet", Integer.parseInt(""+ countset));
+                    editor.commit();
                 }
 
 
 
-                countset = 33;
-                SharedPreferences sharedPref = getActivity().getPreferences(Context.MODE_PRIVATE);
-                SharedPreferences.Editor editor = sharedPref.edit();
-                editor.putInt("CountSet", Integer.parseInt(""+ countset));
-                editor.putInt("TotalCount", Integer.parseInt(""+ totalcount));
-                editor.putInt("Count", Integer.parseInt(""+ currentcounter));
-                editor.commit();
-
 
 
 
@@ -240,20 +270,15 @@ public class TasbihFragment extends Fragment {
             }
         });
 
-        btn99.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-
-
-                tvSetCount.setText("৯৯");
-                countset = 99;
-                SharedPreferences sharedPref = getActivity().getPreferences(Context.MODE_PRIVATE);
-                SharedPreferences.Editor editor = sharedPref.edit();
-                editor.putInt("CountSet", Integer.parseInt(""+ countset));
-                editor.commit();
-            }
-        });
+//        btn99.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//
+//
+//
+//
+//            }
+//        });
 
 
         mp = MediaPlayer.create(getActivity(), R.raw.metaltick);
