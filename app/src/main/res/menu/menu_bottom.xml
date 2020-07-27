@@ -5,40 +5,40 @@
 
     <item
         android:id="@+id/home"
-        android:icon="@drawable/ic_home"
-        android:title="Home"
-        app:cnb_backgroundColor="#ff785b"
+        android:icon="@drawable/home_pray"
+        android:title="সময়"
+        app:cnb_backgroundColor="@color/bottom_nav_option"
         app:cnb_iconColor="#fff"
         app:cnb_textColor="#fff" />
 
     <item
         android:id="@+id/discover"
-        android:icon="@drawable/ic_discover"
-        android:title="Discover"
-        app:cnb_backgroundColor="#ff785b"
+        android:icon="@drawable/kaba"
+        android:title="কিবলা"
+        app:cnb_backgroundColor="@color/bottom_nav_option"
         app:cnb_iconColor="#fff"
         app:cnb_textColor="#fff" />
 
     <item
         android:id="@+id/account"
-        android:icon="@drawable/ic_account"
-        android:title="Account"
-        app:cnb_backgroundColor="#ff785b"
+        android:icon="@drawable/quran_w"
+        android:title="কুরআন"
+        app:cnb_backgroundColor="@color/bottom_nav_option"
         app:cnb_iconColor="#fff"
         app:cnb_textColor="#fff" />
 
     <item
         android:id="@+id/account2"
-        android:icon="@drawable/ic_discover"
-        android:title="Discover"
-        app:cnb_backgroundColor="#ff785b"
+        android:icon="@drawable/tasbih"
+        android:title="তসবিহ"
+        app:cnb_backgroundColor="@color/bottom_nav_option"
         app:cnb_iconColor="#fff"
         app:cnb_textColor="#fff"/>
     <item
         android:id="@+id/account3"
         android:icon="@drawable/ic_home"
         android:title="Home"
-        app:cnb_backgroundColor="#ff785b"
+        app:cnb_backgroundColor="@color/bottom_nav_option"
         app:cnb_iconColor="#fff"
         app:cnb_textColor="#fff" />
 </menu>

@@ -30,7 +30,7 @@ import io.paperdb.Paper;
 public class TimeTableFragment extends Fragment {
 
     TextView tvfojor, tvjohor, tvasor, tvmagrib, tvesha;
-    TextView tvCurrentNTime, tvCurrentDate,tvCurrentArbiDate;
+    TextView tvCurrentNTime, tvCurrentDate,tvCurrentArbiDate ,MidBorber;
     TextView tvCurrentLocation, tvNextTime,tvNamajTimeNUmber, tvNamajSeshSomoy;
 
     ImageButton ibFojor, ibJohor, ibAsor, ibMagrib, ibEsha;
@@ -93,6 +93,7 @@ public class TimeTableFragment extends Fragment {
         tvCurrentNTime = view.findViewById(R.id.idCurrentNamajTime);
         tvCurrentDate = view.findViewById(R.id.idCurrentDate);
         tvCurrentArbiDate = view.findViewById(R.id.idCurrentDateArbi);
+        MidBorber = view.findViewById(R.id.idMidBorder);
 
         tvCurrentLocation = view.findViewById(R.id.idCurrentLocation);
         tvNextTime = view.findViewById(R.id.idNextNamaj);
@@ -165,6 +166,7 @@ public class TimeTableFragment extends Fragment {
         if (android.os.Build.VERSION.SDK_INT <= android.os.Build.VERSION_CODES.O) {
             text = "Its only for android orio";
            tvCurrentArbiDate.setVisibility(View.GONE);
+           MidBorber.setVisibility(View.GONE);
 
         }
 

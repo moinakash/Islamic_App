@@ -9,10 +9,24 @@
 
     <ImageView
 
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scaleType="fitXY"
+        android:src="@drawable/qibla_head_background"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ImageView
+
         android:id="@+id/img"
-        android:layout_width="250dp"
-        android:layout_height="250dp"
-        android:src="@drawable/compus"
+        android:layout_width="320dp"
+        android:layout_height="320dp"
+        android:src="@drawable/qibla_compus"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -21,9 +35,9 @@
     <ImageView
         android:visibility="gone"
         android:id="@+id/compus"
-        android:layout_width="250dp"
-        android:layout_height="250dp"
-        android:src="@drawable/compus"
+        android:layout_width="320dp"
+        android:layout_height="320dp"
+        android:src="@drawable/qibla_compus"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
