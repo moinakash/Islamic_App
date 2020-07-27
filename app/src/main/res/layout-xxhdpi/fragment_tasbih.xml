@@ -75,19 +75,20 @@
 
                     <LinearLayout
 
+                        android:id="@+id/idSound"
                         android:background="@drawable/green_shape"
                         android:layout_width="match_parent"
                         android:layout_height="40sp">
 
-                        <Button
+                        <ImageView
 
-                            android:id="@+id/idSound"
+
                             android:scaleType="centerCrop"
                             android:background="@drawable/sound_off_mode"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content">
 
-                        </Button>
+                        </ImageView>
 
                     </LinearLayout>
 
@@ -109,6 +110,7 @@
                     <LinearLayout
 
 
+                        android:id="@+id/id33"
                         android:gravity="center"
                         android:layout_gravity="center"
 
@@ -117,9 +119,9 @@
                         android:layout_height="40sp">
 
 
-                        <Button
+                        <ImageView
 
-                            android:id="@+id/id33"
+
                             android:layout_gravity="center"
                             android:scaleX="1.2"
                             android:scaleY="1.2"
@@ -129,7 +131,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content">
 
-                        </Button>
+                        </ImageView>
 
 
 
