@@ -18,13 +18,13 @@
         android:gravity="center_vertical"
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="120dp"
-        android:background="@drawable/last_read">
+        android:layout_height="80dp"
+        android:background="@color/base_color">
     <TextView
         android:textStyle="bold"
         android:textColor="@android:color/white"
         android:textSize="18sp"
-        android:text="Last Read"
+        android:text="সর্বশেষ পড়েছেন"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
@@ -34,7 +34,7 @@
             android:layout_marginTop="5dp"
             android:textStyle="bold"
             android:textSize="25sp"
-            android:text="Last Read"
+            android:text="................"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
     </LinearLayout>
@@ -49,7 +49,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:dividerHeight="1dp"
-        android:divider="#104781"
+        android:divider="#00FFFFFF"
+
         android:listSelector="#65DDCB"></ListView>
 
 </LinearLayout>

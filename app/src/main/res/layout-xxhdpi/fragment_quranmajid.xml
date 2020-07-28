@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/quran_mazid_bg">
+
+
+
+    <LinearLayout
+        android:layout_marginTop="40dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:orientation="vertical"
+        >
+
+        <!-- TODO: Update blank fragment layout -->
+        <LinearLayout
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <Button
+                android:textSize="17sp"
+                android:textColor="@android:color/white"
+                android:layout_margin="5dp"
+                android:id="@+id/idSuraActivity"
+                android:layout_width="110dp"
+                android:layout_height="110dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="কুরআন\nমাজীদ"
+                android:background="@drawable/quran_button"/>
+
+            <Button
+                android:textSize="17sp"
+                android:textColor="@android:color/white"
+                android:layout_margin="5dp"
+                android:id="@+id/idAllahNameBtn"
+                android:layout_width="110dp"
+                android:layout_height="110dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="আল্লাহর\nগুনবাচক\nনাম সমূহ"
+                android:background="@drawable/quran_button"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <Button
+                android:textSize="17sp"
+                android:textColor="@android:color/white"
+                android:layout_margin="5dp"
+                android:id="@+id/idBookmarkActivity"
+                android:layout_width="110dp"
+                android:layout_height="110dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="পুস্তক নিশানা"
+                android:background="@drawable/quran_button"/>
+
+            <Button
+                android:textSize="17sp"
+                android:textColor="@android:color/white"
+                android:layout_margin="5dp"
+                android:id="@+id/idKalimaActivity"
+                android:layout_width="110dp"
+                android:layout_height="110dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="কালিমা"
+                android:background="@drawable/quran_button"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <Button
+                android:id="@+id/idHadis"
+                android:textSize="17sp"
+                android:textColor="@android:color/white"
+                android:layout_margin="5dp"
+                android:layout_width="230dp"
+                android:layout_height="90dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="প্রয়োজনীয় হাদীস সমূহ"
+                android:background="@drawable/quran_button_2"/>
+
+
+        </LinearLayout>
+
+
+
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/bottom_nav"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/rounded"
+
+        android:orientation="vertical"
+        android:padding="8dp" />
+</RelativeLayout>
+

@@ -11,7 +11,7 @@
         android:id="@+id/idListView2"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:divider="#104781"
+        android:divider="#00FFFFFF"
         android:dividerHeight="1dp"
         android:listSelector="#65DDCB">
 

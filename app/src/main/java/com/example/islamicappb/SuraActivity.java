@@ -168,7 +168,7 @@ public class SuraActivity
         }else {
             while (cursor.moveToNext()){
 
-                suraNameListPojoList.add(new SuraNameListPojo(""+cursor.getString(0),""+cursor.getString(1),""+cursor.getString(3),""+cursor.getString(2)));
+                suraNameListPojoList.add(new SuraNameListPojo(""+cursor.getString(0),""+cursor.getString(1),""+cursor.getString(3),""+cursor.getString(2),"("+cursor.getString(7)+")",""+cursor.getString(8)));
 
 
                 //    listData.add(cursor.getString(0)+" \t"+cursor.getString(1));
@@ -263,6 +263,12 @@ public class SuraActivity
 
                 TextView SuraNameArbi = (TextView) customView.findViewById(R.id.idSuraNameArbi);
                 SuraNameArbi.setText(suraNameListPojo.getSura_name_arbi());
+
+                TextView Sura_total_ayat = (TextView) customView.findViewById(R.id.idSura_total_Ayat);
+                Sura_total_ayat.setText(suraNameListPojo.getSura_total_ayat());
+
+                TextView Sura_place = (TextView) customView.findViewById(R.id.idSuraPlace);
+                Sura_place.setText(suraNameListPojo.getSura_place());
 
                 customView.setOnClickListener(new View.OnClickListener() {
                     @Override
