@@ -168,7 +168,7 @@ public class SuraActivity
         }else {
             while (cursor.moveToNext()){
 
-                suraNameListPojoList.add(new SuraNameListPojo(""+cursor.getString(0),""+cursor.getString(1),""+cursor.getString(3),""+cursor.getString(2),"("+cursor.getString(7)+")",""+cursor.getString(8)));
+                suraNameListPojoList.add(new SuraNameListPojo(""+cursor.getString(0),""+cursor.getString(1),""+cursor.getString(3),""+cursor.getString(2),"("+cursor.getString(7)+")",""+cursor.getString(9)));
 
 
                 //    listData.add(cursor.getString(0)+" \t"+cursor.getString(1));
