@@ -87,10 +87,11 @@
 
                     <TextView
 
+
                         android:layout_marginLeft="4dp"
                         android:textStyle="bold"
-                        android:layout_gravity="left"
-                        android:gravity="left"
+                        android:layout_gravity="bottom"
+                        android:gravity="bottom"
                         android:id="@+id/idSura_total_Ayat"
                         android:text="(117)"
                         android:textSize="15sp"
