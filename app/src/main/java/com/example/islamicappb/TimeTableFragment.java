@@ -180,13 +180,14 @@ public class TimeTableFragment extends Fragment {
 
             String txtf = "";
             for ( i = 5; i < (ii-1); i++){
-               // text_array[i] = text.charAt(k);
+               
 
                 txtf = ""+txtf+""+text_array[i];
 
             }
 
             tvCurrentArbiDate.setText(day+" "+txtf+""+year);
+
 
         }
 

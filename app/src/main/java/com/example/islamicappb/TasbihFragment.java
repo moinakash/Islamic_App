@@ -328,7 +328,7 @@ public class TasbihFragment extends Fragment {
             public void onClick(View view) {
 
                 final Animation myAnim = AnimationUtils.loadAnimation(getActivity(), R.anim.bounce);
-                MyBounceInterpolator interpolator = new MyBounceInterpolator(0.2, 20);
+                MyBounceInterpolator interpolator = new MyBounceInterpolator(.1, 12);
                 myAnim.setInterpolator(interpolator);
 
                 button.startAnimation(myAnim);
