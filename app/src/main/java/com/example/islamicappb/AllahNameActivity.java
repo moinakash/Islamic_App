@@ -196,7 +196,21 @@ public class AllahNameActivity extends AppCompatActivity {
 
                         mp = MediaPlayer.create(AllahNameActivity.this, audios[position]);
 
-                        mp.start();
+                        try {
+                            if (mp.isPlaying()){
+                                mp.stop();
+                                mp.release();
+
+                                //problem in release
+                                mp = MediaPlayer.create(getContext(),audios[position]);
+                            } mp.start();
+
+                        }catch (Exception e){
+                            e.printStackTrace();
+                        }
+
+
+//                        mp.start();
 
                         PLayButton.setVisibility(View.GONE);
                         PLayButton2.setVisibility(View.VISIBLE);
