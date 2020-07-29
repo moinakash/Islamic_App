@@ -192,7 +192,7 @@ public class ReadSuraActivity extends AppCompatActivity {
 
                         ClipboardManager cm = (ClipboardManager) context
                                 .getSystemService(Context.CLIPBOARD_SERVICE);
-                        cm.setText(""+suraLinePart1.getSura_bangla()+"\n"+""+suraLinePart1.getSura_arbi());
+                        cm.setText(""+suraLinePart1.getSura_bangla()+"\n"+""+suraLinePart1.getSura_arbi()+""+suraLinePart1.getSura_bangla_meaning());
 
                     }
                 });
@@ -203,7 +203,7 @@ public class ReadSuraActivity extends AppCompatActivity {
 
                         Intent sendIntent = new Intent();
                         sendIntent.setAction(Intent.ACTION_SEND);
-                        sendIntent.putExtra(Intent.EXTRA_TEXT, ""+suraLinePart1.getSura_arbi()+"\n"+suraLinePart1.getSura_bangla());
+                        sendIntent.putExtra(Intent.EXTRA_TEXT, ""+suraLinePart1.getSura_arbi()+"\n"+suraLinePart1.getSura_bangla()+""+suraLinePart1.getSura_bangla_meaning());
                         sendIntent.setType("text/plain");
 
                         Intent shareIntent = Intent.createChooser(sendIntent, null);

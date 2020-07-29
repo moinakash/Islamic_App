@@ -102,7 +102,7 @@ public class QuranMajidFragment extends Fragment {
                 startActivity(AllahNameIntent);
             }
         });
-        btBookmark.setOnClickListener(new View.OnClickListener() {
+        btnKalima.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 

@@ -1,3 +1,4 @@
+/*
 package com.example.islamicappb;
 
 import android.content.Context;
@@ -67,6 +68,10 @@ public class AllahNameAdapter extends ArrayAdapter<AllahNamePojoClass> {
             TextView SuraNameMeaning = (TextView) customView.findViewById(R.id.idAllah_ArbiName);
             SuraNameMeaning.setText(allahNamePojoClass.getAllah_name_arbi());
 
+            TextView AllahName_number = (TextView) customView.findViewById(R.id.name_number);
+            AllahName_number.setText(allahNamePojoClass.getAllah_name_number());
+
+
 
 
         }
@@ -78,3 +83,4 @@ public class AllahNameAdapter extends ArrayAdapter<AllahNamePojoClass> {
 
 
 }
+*/
