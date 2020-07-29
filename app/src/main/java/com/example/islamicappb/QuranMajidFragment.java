@@ -106,7 +106,7 @@ public class QuranMajidFragment extends Fragment {
             @Override
             public void onClick(View view) {
 
-                Intent KalimaIntent = new Intent(getContext(),KalemaActivity.class);
+                Intent KalimaIntent = new Intent(getContext(), KalimaActivity.class);
                 startActivity(KalimaIntent);
             }
         });

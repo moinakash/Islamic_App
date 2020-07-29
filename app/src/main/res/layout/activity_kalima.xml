@@ -4,18 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".KalemaActivity"
-    android:orientation="vertical">
+    tools:context=".KalimaActivity">
 
-
-
-
-    <ListView
-        android:id="@+id/idListView"
+    <ExpandableListView
+        android:id="@+id/expandableListView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:dividerHeight="1dp"
-        android:divider="#104781"
-        android:listSelector="#65DDCB"></ListView>
+        android:divider="@android:color/darker_gray"
+        android:dividerHeight="0.5dp"
+        android:groupIndicator="@null" />
 
 </LinearLayout>
