@@ -301,6 +301,13 @@ public class DatabaseHelper
         return FullSuraCursor;
     }
 
+    public Cursor KalemaData(){
+
+        SQLiteDatabase db = this.getWritableDatabase();
+        String KQuery = "SELECT * FROM kalema ";
+        Cursor kaleName = db.rawQuery(KQuery,null);
+        return kaleName;
+    }
 
 
 }
