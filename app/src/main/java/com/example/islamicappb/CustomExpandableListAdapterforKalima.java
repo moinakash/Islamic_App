@@ -58,49 +58,6 @@ public class CustomExpandableListAdapterforKalima extends BaseExpandableListAdap
         textKalimaUccharon.setText(""+ pojoClassForKalima.getUccharontext());
         textkalimaOrtho.setText(""+ pojoClassForKalima.getOrtho());
 
- /////////////////////////////////////////////
-       // textView.setText(""+pojoClass.getNumero());
-
-        ////////////////////////////////////////////////////////////
-
-//        layoutLlamar.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Toast.makeText(v.getContext(), "Llamamos a: "
-//                        + pojoClass.getNumero(), Toast.LENGTH_SHORT).show();
-//
-//
-//            }
-//        });
-//
-//        layoutMensaje.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Toast.makeText(v.getContext(), "Mensaje para: "
-//                        + pojoClass.getCorreo(), Toast.LENGTH_SHORT).show();
-//            }
-//        });
-//
-//        layoutVideollamada.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Toast.makeText(v.getContext(), "Videollamada a: "
-//                        + pojoClass.getNumero(), Toast.LENGTH_SHORT).show();
-//            }
-//        });
-//
-//        layoutInfo.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//
-//                List<String> index = new ArrayList<>(expandableListDetalles.keySet());
-//
-//                Toast.makeText(v.getContext(), "Info de: "
-//                        + index.get(groupPosition) + " Direccion: "
-//                        + pojoClass.getDireccion(), Toast.LENGTH_SHORT).show();
-//            }
-//        });
-
 
         Animation animation = AnimationUtils.loadAnimation(context, android.R.anim.fade_in);
         convertView.startAnimation(animation);

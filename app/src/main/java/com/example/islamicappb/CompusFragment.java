@@ -76,7 +76,7 @@ public class CompusFragment extends Fragment implements SensorEventListener {
 
         }else
         {
-            Toast.makeText(getContext(), "দুখিঃত, আপনার মোবাইলে কম্পাস সেনসর নেই।", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getContext(), "দুঃখিত, আপনার মোবাইলে কম্পাস সেন্সর নেই।", Toast.LENGTH_SHORT).show();
         }
 
 

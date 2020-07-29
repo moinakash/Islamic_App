@@ -430,7 +430,7 @@ public class TimeTableFragment extends Fragment {
             public void onClick(View view) {
 
                 Intent i = new Intent(AlarmClock.ACTION_SET_ALARM);
-                i.putExtra(AlarmClock.EXTRA_MESSAGE, "ফজরের নামাজের সময় হয়েছে");
+                i.putExtra(AlarmClock.EXTRA_MESSAGE, "ফজরের ওয়াক্ত শুরু");
                 i.putExtra(AlarmClock.EXTRA_HOUR, fHour);
                 i.putExtra(AlarmClock.EXTRA_MINUTES, fMinute);
                 startActivity(i);
@@ -441,7 +441,7 @@ public class TimeTableFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(AlarmClock.ACTION_SET_ALARM);
-                i.putExtra(AlarmClock.EXTRA_MESSAGE, "যোহরের নামাজের সময় হয়েছে");
+                i.putExtra(AlarmClock.EXTRA_MESSAGE, "যোহরের ওয়াক্ত শুরু");
                 i.putExtra(AlarmClock.EXTRA_HOUR, jHour);
                 i.putExtra(AlarmClock.EXTRA_MINUTES, jMinute);
                 startActivity(i);
@@ -453,7 +453,7 @@ public class TimeTableFragment extends Fragment {
             public void onClick(View view) {
 
                 Intent i = new Intent(AlarmClock.ACTION_SET_ALARM);
-                i.putExtra(AlarmClock.EXTRA_MESSAGE, "আসরের নামাজের সময় হয়েছে");
+                i.putExtra(AlarmClock.EXTRA_MESSAGE, "আসরের ওয়াক্ত শুরু");
                 i.putExtra(AlarmClock.EXTRA_HOUR, aHour);
                 i.putExtra(AlarmClock.EXTRA_MINUTES, aMinute);
                 startActivity(i);
@@ -465,7 +465,7 @@ public class TimeTableFragment extends Fragment {
             public void onClick(View view) {
 
                 Intent i = new Intent(AlarmClock.ACTION_SET_ALARM);
-                i.putExtra(AlarmClock.EXTRA_MESSAGE, "মাগরিবের নামাজের সময় হয়েছে");
+                i.putExtra(AlarmClock.EXTRA_MESSAGE, "মাগরিবের ওয়াক্ত শুরু");
                 i.putExtra(AlarmClock.EXTRA_HOUR, mHour);
                 i.putExtra(AlarmClock.EXTRA_MINUTES, mMinute);
                 startActivity(i);
@@ -477,7 +477,7 @@ public class TimeTableFragment extends Fragment {
             public void onClick(View view) {
 
                 Intent i = new Intent(AlarmClock.ACTION_SET_ALARM);
-                i.putExtra(AlarmClock.EXTRA_MESSAGE, "এশার নামাজের সময় হয়েছে");
+                i.putExtra(AlarmClock.EXTRA_MESSAGE, "এশার ওয়াক্ত শুরু");
                 i.putExtra(AlarmClock.EXTRA_HOUR, eHour);
                 i.putExtra(AlarmClock.EXTRA_MINUTES, eMinute);
                 startActivity(i);
