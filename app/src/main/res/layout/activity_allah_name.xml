@@ -13,6 +13,7 @@
         android:layout_height="match_parent"
         android:dividerHeight="1dp"
         android:divider="#00FFFFFF"
+        android:clickable="true"
         ></ListView>
 
 

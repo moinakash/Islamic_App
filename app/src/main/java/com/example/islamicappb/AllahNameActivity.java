@@ -5,10 +5,12 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.database.Cursor;
 import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -117,6 +119,7 @@ public class AllahNameActivity extends AppCompatActivity {
         private List<AllahNamePojoClass> allahNamePojoClassList;
         private Context context;
 
+        Thread splashTread;
 
         public AllahNameAdapter(@NonNull Context context, int textViewResourceId, List<AllahNamePojoClass> allahNamePojoClassList) {
             super(context, textViewResourceId, allahNamePojoClassList);
@@ -149,6 +152,9 @@ public class AllahNameActivity extends AppCompatActivity {
 
             }
 
+
+
+
             final AllahNamePojoClass allahNamePojoClass = allahNamePojoClassList.get(position);
 
 
@@ -168,12 +174,14 @@ public class AllahNameActivity extends AppCompatActivity {
                 AllahName_number.setText(allahNamePojoClass.getAllah_name_number());
 
 
-                ImageButton PLayButton = (ImageButton) customView.findViewById(R.id.idPlay_button);
+                final ImageButton PLayButton = (ImageButton) customView.findViewById(R.id.idPlay_button);
+                final ImageButton PLayButton2 = (ImageButton) customView.findViewById(R.id.idPlay_button2);
                 PLayButton.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
 
-                        int [] audios = {R.raw.ar_rahman_01,R.raw.ar_rahim_02,R.raw.al_malik_03,R.raw.al_quddus_04,R.raw.as_salam_05,R.raw.al_mumin_06,R.raw.al_muhaymin_07,R.raw.al_aziz_08,R.raw.al_jabbar_09,R.raw.al_mutakabbir_10,
+
+                        final int [] audios = {R.raw.ar_rahman_01,R.raw.ar_rahim_02,R.raw.al_malik_03,R.raw.al_quddus_04,R.raw.as_salam_05,R.raw.al_mumin_06,R.raw.al_muhaymin_07,R.raw.al_aziz_08,R.raw.al_jabbar_09,R.raw.al_mutakabbir_10,
                                 R.raw.al_khaliq_11,R.raw.al_bari_12,R.raw.al_musawwir_13,R.raw.al_ghaffar_14,R.raw.al_qahhar_15,R.raw.al_wahhab_16,R.raw.ar_razzaq_17,R.raw.al_fattah_18,R.raw.al_alim_19,R.raw.al_qabid_20,
                                 R.raw.al_basit_21,R.raw.al_khafid_22,R.raw.ar_rafi_23,R.raw.al_muizz_24,R.raw.al_mudhill_25,R.raw.as_sami_26,R.raw.al_basir_27,R.raw.al_hakam_28,R.raw.al_adl_29,R.raw.al_latif_30,
                                 R.raw.al_khabir_31,R.raw.al_halim_32,R.raw.al_azim_33,R.raw.al_ghafur_34,R.raw.ash_shakur_35,R.raw.al_ali_36,R.raw.al_kabir_37,R.raw.al_hafiz_38,R.raw.al_muqit_39,R.raw.al_hasib_40,
@@ -185,12 +193,31 @@ public class AllahNameActivity extends AppCompatActivity {
                                 R.raw.ad_darr_91,R.raw.an_nafi_92,R.raw.an_nur_93,R.raw.al_hadi_94,R.raw.al_badi_95,R.raw.al_baqi_96,R.raw.al_warith_97,R.raw.ar_rashid_98,R.raw.as_sabur_99};
 
 
-//               getResources().getIntArray(R.array.Allah_name_audio);
 
                         mp = MediaPlayer.create(AllahNameActivity.this, audios[position]);
+
                         mp.start();
 
+                        PLayButton.setVisibility(View.GONE);
+                        PLayButton2.setVisibility(View.VISIBLE);
+
+                          final Handler handler = new Handler();
+                        handler.postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+
+                                PLayButton2.setVisibility(View.GONE);
+                                   PLayButton.setVisibility(View.VISIBLE);
+
+
+
+                            }
+                        }, 3000);
+
+
                     }
+
+
                 });
 
 
@@ -203,6 +230,8 @@ public class AllahNameActivity extends AppCompatActivity {
 
 
     }
+
+
 
 
 
