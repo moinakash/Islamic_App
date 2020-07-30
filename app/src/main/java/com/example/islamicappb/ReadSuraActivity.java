@@ -118,6 +118,16 @@ public class ReadSuraActivity extends AppCompatActivity {
 
         }
 
+        @Override
+        public int getCount() {
+            return suraLinePart.size();
+        }
+
+        @Override
+        public long getItemId(int position) {
+            return position;
+        }
+
         @NonNull
         @Override
         public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {

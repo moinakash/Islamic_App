@@ -63,7 +63,7 @@
                 android:layout_height="90dp"
                 android:layout_gravity="center"
                 android:gravity="center"
-                android:text="পুস্তক\nনিশানা"
+                android:text="পবুকমার্ক"
                 android:background="@drawable/quran_button"/>
 
             <Button

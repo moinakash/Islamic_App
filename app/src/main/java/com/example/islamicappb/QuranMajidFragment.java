@@ -72,7 +72,7 @@ public class QuranMajidFragment extends Fragment {
         btnSura = view.findViewById(R.id.idSuraActivity);
         btnAllahName = view.findViewById(R.id.idAllahNameBtn);
         btBookmark = view.findViewById(R.id.idBookmarkActivity);
-        btnNamajerNiom = view.findViewById(R.id.idNiomActivity);
+        /*btnNamajerNiom = view.findViewById(R.id.idNiomActivity);*/
         btnKalima = view.findViewById(R.id.idKalimaActivity);
 
         btnSura.setOnClickListener(new View.OnClickListener() {
