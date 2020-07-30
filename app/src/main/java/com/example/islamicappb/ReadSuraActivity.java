@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.app.AlertDialog;
 import android.content.ClipboardManager;
@@ -33,7 +34,7 @@ import java.util.List;
 
 
 public class ReadSuraActivity extends AppCompatActivity {
-
+    private Toolbar mToolbar;
 
     String sessionId;
     public static int pvalue = 1;
@@ -59,7 +60,7 @@ public class ReadSuraActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         setContentView(R.layout.activity_read_sura);
-
+        ToolBar();
         myDatabasehelper = new MyDatabasehelper(this);
         SQLiteDatabase sqLiteDatabase = myDatabasehelper.getWritableDatabase();
 
@@ -334,6 +335,24 @@ public class ReadSuraActivity extends AppCompatActivity {
     public int getCategory() {
 
         return pvalue;
+    }
+
+    private void ToolBar() {
+
+        mToolbar = findViewById( R.id.SuraName_toolbar );
+        TextView mTitle = (TextView) mToolbar.findViewById(R.id.toolbar_title);
+
+        String SuraName = getIntent().getStringExtra("suraName");
+
+        String name = ""+SuraName;
+
+        //toolbar name ==>
+        mTitle.setText(""+SuraName);
+        setSupportActionBar( mToolbar );
+
+        getSupportActionBar().setDisplayShowTitleEnabled( false );
+        getSupportActionBar().setDisplayHomeAsUpEnabled( true );
+
     }
 
 }
