@@ -3,6 +3,7 @@ package com.example.islamicappb;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.content.Context;
 import android.content.Intent;
@@ -50,10 +51,8 @@ public class SuraActivity
 
     CustomSuraNameAdapter customSuraNameAdapter;
 
-
-
-
     MyDatabasehelper myDatabasehelper;
+    private Toolbar mToolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -111,6 +110,8 @@ public class SuraActivity
     public void oncreate(){
         list = findViewById( R.id.idListView);
         tvLastSuraName = findViewById( R.id.idLastSuraName);
+
+        ToolBar();
 
 
 
@@ -373,5 +374,19 @@ public class SuraActivity
         oncreate();
     }
 
+
+    private void ToolBar() {
+
+        mToolbar = findViewById( R.id.QuranMazid_toolbar );
+        TextView mTitle = (TextView) mToolbar.findViewById(R.id.toolbar_title);
+
+        //toolbar name ==>
+        mTitle.setText("কুরআন মাজীদ");
+        setSupportActionBar( mToolbar );
+
+        getSupportActionBar().setDisplayShowTitleEnabled( false );
+        getSupportActionBar().setDisplayHomeAsUpEnabled( true );
+
+    }
 
 }

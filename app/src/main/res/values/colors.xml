@@ -7,4 +7,6 @@
     <color name="base_color">#2ac17e</color>
     <color name="bottom_nav_option">#10a161</color>
     <color name="base_color_lowOpacity">#9E8AD8B5</color>
+
+    <color name="CardViewColor">#f0fff8</color>
 </resources>

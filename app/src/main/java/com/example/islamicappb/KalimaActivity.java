@@ -3,6 +3,7 @@ package com.example.islamicappb;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.content.Context;
 import android.database.Cursor;
@@ -30,13 +31,17 @@ public class KalimaActivity extends AppCompatActivity {
     private HashMap<String, PojoClassForKalima> listaContactos;
     private int lastExpandedPosition = -1;
 
+    private Toolbar mToolbar;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_kalima);
 
+        ToolBar();
         init();
+
 
         expandableListView.setAdapter(expandableListAdapter);
 
@@ -123,6 +128,24 @@ public class KalimaActivity extends AppCompatActivity {
 
 
         return listaC;
+    }
+
+    private void ToolBar() {
+
+        mToolbar = findViewById( R.id.kalima_toolbar );
+        TextView mTitle = (TextView) mToolbar.findViewById(R.id.toolbar_title);
+
+
+
+
+
+        //toolbar name ==>
+        mTitle.setText("কালিমা");
+        setSupportActionBar( mToolbar );
+
+        getSupportActionBar().setDisplayShowTitleEnabled( false );
+        getSupportActionBar().setDisplayHomeAsUpEnabled( true );
+
     }
 
 }

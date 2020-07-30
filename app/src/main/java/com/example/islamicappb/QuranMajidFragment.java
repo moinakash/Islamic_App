@@ -114,4 +114,6 @@ public class QuranMajidFragment extends Fragment {
         return view;
 
     }
+
+
 }

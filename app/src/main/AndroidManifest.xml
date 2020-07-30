@@ -19,14 +19,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".KalimaActivity"></activity>
+        <activity android:name=".KalimaActivity"
+            android:parentActivityName=".KotlinActivity"></activity>
         <activity android:name=".KotlinActivity" />
         <activity android:name=".BookmarkActivity" />
         <activity android:name=".AllahNameActivity" />
-        <activity android:name=".ReadSuraActivity" />
+        <activity android:name=".ReadSuraActivity"
+            android:parentActivityName=".SuraActivity" />
         <activity
             android:name=".SuraActivity"
-            android:theme="@style/AppBar" />
+            android:parentActivityName=".KotlinActivity" />
         <activity android:name=".BaseActivity" />
         <activity android:name=".EightDivisonActivity">
             <intent-filter>

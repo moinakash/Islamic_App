@@ -16,6 +16,7 @@
         android:layout_height="wrap_content">
 
         <LinearLayout
+            android:background="@color/CardViewColor"
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
@@ -25,21 +26,22 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-                <androidx.cardview.widget.CardView
-                    android:layout_marginTop="10dp"
-                    android:layout_marginBottom="7dp"
-                    android:layout_marginRight="20dp"
+              <!--  <androidx.cardview.widget.CardView
+
                     android:layout_gravity="center"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    app:cardCornerRadius="10dp">
+                    app:cardCornerRadius="10dp">-->
                     <LinearLayout
 
+                        android:background="@drawable/bookmark_shape"
                         android:gravity="left"
-
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="7dp"
+                        android:layout_marginRight="20dp"
                         android:orientation="horizontal"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content">
+                        android:layout_width="190dp"
+                        android:layout_height="30dp">
 
 
 
@@ -51,7 +53,7 @@
                             android:layout_height="wrap_content">
 
                             <TextView
-                                android:layout_marginLeft="15dp"
+                                android:layout_marginLeft="25dp"
                                 android:id="@+id/idSuraName"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
@@ -59,8 +61,8 @@
                                 android:gravity="center"
                                 android:text="আল ফাতিহা"
                                 android:textStyle="bold"
-                                android:textColor="@android:color/black"
-                                android:textSize="12sp" />
+                                android:textColor="@android:color/white"
+                                android:textSize="13sp" />
 
                             <TextView
 
@@ -70,8 +72,8 @@
                                 android:layout_gravity="center"
                                 android:gravity="center"
                                 android:text="আয়াত নং-"
-                                android:textColor="@android:color/black"
-                                android:textSize="12sp" />
+                                android:textColor="@android:color/white"
+                                android:textSize="13sp" />
 
                             <TextView
 
@@ -82,8 +84,8 @@
                                 android:layout_gravity="center"
                                 android:gravity="center"
                                 android:text="১"
-                                android:textColor="@android:color/black"
-                                android:textSize="12sp" />
+                                android:textColor="@android:color/white"
+                                android:textSize="13sp" />
 
 
                         </LinearLayout>
@@ -91,7 +93,7 @@
 
 
                     </LinearLayout>
-                </androidx.cardview.widget.CardView>
+        <!--        </androidx.cardview.widget.CardView>-->
 
 
                 <LinearLayout
