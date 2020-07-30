@@ -6,6 +6,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
@@ -23,7 +25,7 @@ public class BaseActivity extends AppCompatActivity {
     ChipNavigationBar BottomNav;
     FragmentManager fragmentManager;
 
-
+private AlertDialog.Builder alertDialogBuilder;
 
 //    final String myString = "hello";
      String myString2;
@@ -715,6 +717,44 @@ public int getTest(){
     public int geteTime(){
 
         return eTime;
+    }
+
+    @Override
+    public void onBackPressed() {
+
+        alertDialogBuilder = new AlertDialog.Builder(BaseActivity.this);
+
+        //for setting title
+        alertDialogBuilder.setTitle("Warning");
+
+        //for setting the message
+        alertDialogBuilder.setMessage("Do you want to exit?");
+
+        //for setting the icon
+        /*alertDialogBuilder.setIcon(R.drawable.trash);*/
+
+        alertDialogBuilder.setCancelable(false);
+
+        alertDialogBuilder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                //exit
+                finish();
+            }
+        });
+
+        alertDialogBuilder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+
+                dialog.cancel();
+
+            }
+        });
+
+        AlertDialog alertDialog = alertDialogBuilder.create();
+        alertDialog.show();
+
     }
 
 }

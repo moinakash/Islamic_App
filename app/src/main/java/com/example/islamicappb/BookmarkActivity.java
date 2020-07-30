@@ -3,9 +3,12 @@ package com.example.islamicappb;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
+import android.app.AlertDialog;
 import android.content.ClipboardManager;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.database.Cursor;
@@ -15,6 +18,8 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -37,13 +42,16 @@ public class BookmarkActivity extends AppCompatActivity {
     List<BookmarkPojoClass> bookmarkPojoClasses;
     BookmarkAdapter bookmarkAdapter;
 
+    private Toolbar mToolbar;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         setContentView(R.layout.activity_bookmark);
-
+        ToolBar();
         bookmarkPojoClasses = new ArrayList();
+
 
         listView = findViewById(R.id.idListView);
 
@@ -79,6 +87,7 @@ public class BookmarkActivity extends AppCompatActivity {
         listView.setAdapter(bookmarkAdapter);
 
 
+
 //        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 //            @Override
 //            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
@@ -102,8 +111,11 @@ public class BookmarkActivity extends AppCompatActivity {
 
         private List<BookmarkPojoClass> bookmarkPojoClasses;
         private Context context;
+        BookmarkAdapter bookmarkAdapter;
 
         MyDatabasehelper myDatabasehelper;
+
+        private AlertDialog.Builder alertDialogBuilder;
 
         public BookmarkAdapter(@NonNull Context context, int textViewResourceId, List<BookmarkPojoClass> bookmarkPojoClasses) {
             super(context, textViewResourceId, bookmarkPojoClasses);
@@ -113,6 +125,8 @@ public class BookmarkActivity extends AppCompatActivity {
 
 
         }
+
+
 
         @NonNull
         @Override
@@ -134,9 +148,9 @@ public class BookmarkActivity extends AppCompatActivity {
 
             if(bookmarkPojoClass1 !=null) {
 
-                ImageButton Delete = (ImageButton) customView.findViewById(R.id.idDeleteBookmark);
-                ImageButton Copy = (ImageButton) customView.findViewById(R.id.idCopyAyat);
-                ImageButton Share = (ImageButton) customView.findViewById(R.id.idShareAyat);
+                final ImageButton Delete = (ImageButton) customView.findViewById(R.id.idDeleteBookmark);
+                final ImageButton Copy = (ImageButton) customView.findViewById(R.id.idCopyAyat);
+                final ImageButton Share = (ImageButton) customView.findViewById(R.id.idShareAyat);
 
                 TextView AyatNumber = (TextView) customView.findViewById(R.id.idAyatNumber);
                 AyatNumber.setText(bookmarkPojoClass1.getAyat_number());
@@ -159,25 +173,77 @@ public class BookmarkActivity extends AppCompatActivity {
                     @Override
                     public void onClick(View v) {
 
-                        myDatabasehelper = new MyDatabasehelper(context);
-                        SQLiteDatabase sqLiteDatabase = myDatabasehelper.getWritableDatabase();
+                        final Animation myAnim = AnimationUtils.loadAnimation(getContext(), R.anim.bounce);
+                        MyBounceInterpolator interpolator = new MyBounceInterpolator(.1, 12);
+                        myAnim.setInterpolator(interpolator);
 
-                        String ayat = ""+bookmarkPojoClass1.getSura_arbi_line();
-                        Log.e("arbiayat",""+ayat);
+                        Delete.startAnimation(myAnim);
 
-                        int value = myDatabasehelper.deleteData(ayat);
+                        alertDialogBuilder = new AlertDialog.Builder(BookmarkActivity.this);
 
-                        Toast.makeText(context, "মুছে ফেলা হয়েছে", Toast.LENGTH_SHORT).show();
+                        //for setting title
+                        alertDialogBuilder.setTitle("Warning");
 
-                    finish();
-                    startActivity(getIntent());
+                        //for setting the message
+                        alertDialogBuilder.setMessage("Do you want to DELETE this?");
 
-                    }
+                        //for setting the icon
+                        alertDialogBuilder.setIcon(R.drawable.trash);
+
+                        alertDialogBuilder.setCancelable(false);
+
+                        alertDialogBuilder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+
+
+                                //delete
+
+
+                                myDatabasehelper = new MyDatabasehelper(context);
+                                SQLiteDatabase sqLiteDatabase = myDatabasehelper.getWritableDatabase();
+
+                                String ayat = ""+bookmarkPojoClass1.getSura_arbi_line();
+                                Log.e("arbiayat",""+ayat);
+
+                                int value = myDatabasehelper.deleteData(ayat);
+
+                                Toast.makeText(context, "মুছে ফেলা হয়েছে", Toast.LENGTH_SHORT).show();
+
+
+                                /*  listView.notifyAll();
+                                bookmarkAdapter.notifyDataSetChanged();*/
+
+                                finish();
+                                startActivity(getIntent());
+
+                            }
+                        });
+
+                        alertDialogBuilder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+
+                                dialog.cancel();
+
+                            }
+                        });
+
+                        AlertDialog alertDialog = alertDialogBuilder.create();
+                        alertDialog.show();
+
+           }
                 });
 
                 Copy.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
+
+                        final Animation myAnim = AnimationUtils.loadAnimation(getContext(), R.anim.bounce);
+                        MyBounceInterpolator interpolator = new MyBounceInterpolator(.1, 12);
+                        myAnim.setInterpolator(interpolator);
+
+                        Copy.startAnimation(myAnim);
 
                         Toast.makeText(getContext(), "অনুলিপি করা হয়েছে", Toast.LENGTH_SHORT).show();
 
@@ -191,6 +257,12 @@ public class BookmarkActivity extends AppCompatActivity {
                 Share.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
+
+                        final Animation myAnim = AnimationUtils.loadAnimation(getContext(), R.anim.bounce);
+                        MyBounceInterpolator interpolator = new MyBounceInterpolator(.1, 12);
+                        myAnim.setInterpolator(interpolator);
+
+                        Share.startAnimation(myAnim);
 
                         Intent sendIntent = new Intent();
                         sendIntent.setAction(Intent.ACTION_SEND);
@@ -212,9 +284,40 @@ public class BookmarkActivity extends AppCompatActivity {
 
     }
 
+    private void ToolBar() {
+
+        mToolbar = findViewById( R.id.Bookmark_toolbar );
+        TextView mTitle = (TextView) mToolbar.findViewById(R.id.toolbar_title);
 
 
 
+
+
+        //toolbar name ==>
+        mTitle.setText("বুকমার্ক");
+        setSupportActionBar( mToolbar );
+
+        getSupportActionBar().setDisplayShowTitleEnabled( false );
+        getSupportActionBar().setDisplayHomeAsUpEnabled( true );
+
+    }
+
+
+
+    class MyBounceInterpolator implements android.view.animation.Interpolator {
+        private double mAmplitude = 1;
+        private double mFrequency = 10;
+
+        MyBounceInterpolator(double amplitude, double frequency) {
+            mAmplitude = amplitude;
+            mFrequency = frequency;
+        }
+
+        public float getInterpolation(float time) {
+            return (float) (-1 * Math.pow(Math.E, -time/ mAmplitude) *
+                    Math.cos(mFrequency * time) + 1);
+        }
+    }
 
 
 }

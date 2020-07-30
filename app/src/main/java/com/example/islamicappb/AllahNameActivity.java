@@ -3,6 +3,7 @@ package com.example.islamicappb;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.content.Context;
 import android.content.Intent;
@@ -33,6 +34,8 @@ public class AllahNameActivity extends AppCompatActivity {
     DatabaseHelper db;
     MediaPlayer mp;
 
+    private Toolbar mToolbar;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +43,7 @@ public class AllahNameActivity extends AppCompatActivity {
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         setContentView(R.layout.activity_allah_name);
 
+        ToolBar();
         list = findViewById( R.id.idAllahNamelist);
 
         db = new DatabaseHelper(this);
@@ -245,6 +249,23 @@ public class AllahNameActivity extends AppCompatActivity {
 
     }
 
+    private void ToolBar() {
+
+        mToolbar = findViewById( R.id.AllahName_toolbar );
+        TextView mTitle = (TextView) mToolbar.findViewById(R.id.toolbar_title);
+
+
+
+
+
+        //toolbar name ==>
+        mTitle.setText("আল্লাহর গুণবাচক নাম সমূহ");
+        setSupportActionBar( mToolbar );
+
+        getSupportActionBar().setDisplayShowTitleEnabled( false );
+        getSupportActionBar().setDisplayHomeAsUpEnabled( true );
+
+    }
 
 
 

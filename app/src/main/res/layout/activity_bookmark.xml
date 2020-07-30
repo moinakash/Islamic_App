@@ -4,7 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".BookmarkActivity">
+    tools:context=".BookmarkActivity"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <include layout="@layout/app_bar_layout"
+            android:id="@+id/Bookmark_toolbar"/>
+    </LinearLayout>
 
     <ListView
         android:id="@+id/idListView"

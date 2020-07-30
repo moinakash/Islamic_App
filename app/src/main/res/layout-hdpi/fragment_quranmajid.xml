@@ -45,7 +45,7 @@
                 android:layout_height="90dp"
                 android:layout_gravity="center"
                 android:gravity="center"
-                android:text="আল্লাহর\nগুনবাচক\nনাম সমূহ"
+                android:text="আল্লাহর\nগুণবাচক\nনাম সমূহ"
                 android:background="@drawable/quran_button"/>
 
         </LinearLayout>

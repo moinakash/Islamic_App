@@ -76,12 +76,14 @@
                     <LinearLayout
 
 
-                        android:background="@drawable/sound_off_mode"
+                        android:background="@drawable/green_shape_fill"
                         android:layout_width="match_parent"
                         android:layout_height="40sp">
 
                         <ImageView
 
+                            android:scaleX="0.9"
+                            android:scaleY="0.9"
                             android:id="@+id/idSound"
                             android:scaleType="centerCrop"
                             android:background="@drawable/sound_off_mode"

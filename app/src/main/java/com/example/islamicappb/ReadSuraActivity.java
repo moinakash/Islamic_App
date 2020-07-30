@@ -20,6 +20,8 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.ArrayAdapter;
 import android.widget.ImageButton;
 import android.widget.ListView;
@@ -148,9 +150,9 @@ public class ReadSuraActivity extends AppCompatActivity {
             if(suraLinePart1 !=null)
             {
 
-                ImageButton Copy = (ImageButton) customView.findViewById(R.id.idSuraCopy);
-                ImageButton Bookmark = (ImageButton) customView.findViewById(R.id.idSuraBookmark);
-                ImageButton Share = (ImageButton) customView.findViewById(R.id.idSuraShare);
+                final ImageButton Copy = (ImageButton) customView.findViewById(R.id.idSuraCopy);
+                final ImageButton Bookmark = (ImageButton) customView.findViewById(R.id.idSuraBookmark);
+                final ImageButton Share = (ImageButton) customView.findViewById(R.id.idSuraShare);
 
                 TextView AyatNumber = (TextView) customView.findViewById(R.id.idAyatNumber);
                 AyatNumber.setText(suraLinePart1.getSura_number());
@@ -200,6 +202,12 @@ public class ReadSuraActivity extends AppCompatActivity {
                     @Override
                     public void onClick(View view) {
 
+                        final Animation myAnim = AnimationUtils.loadAnimation(getContext(), R.anim.bounce);
+                        MyBounceInterpolator interpolator = new MyBounceInterpolator(.1, 12);
+                        myAnim.setInterpolator(interpolator);
+
+                        Copy.startAnimation(myAnim);
+
                         Toast.makeText(getContext(), "অনুলিপি করা হয়েছে", Toast.LENGTH_SHORT).show();
 
                         ClipboardManager cm = (ClipboardManager) context
@@ -212,6 +220,12 @@ public class ReadSuraActivity extends AppCompatActivity {
                 Share.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
+
+                        final Animation myAnim = AnimationUtils.loadAnimation(getContext(), R.anim.bounce);
+                        MyBounceInterpolator interpolator = new MyBounceInterpolator(.1, 12);
+                        myAnim.setInterpolator(interpolator);
+
+                        Share.startAnimation(myAnim);
 
                         Intent sendIntent = new Intent();
                         sendIntent.setAction(Intent.ACTION_SEND);
@@ -226,6 +240,12 @@ public class ReadSuraActivity extends AppCompatActivity {
                 Bookmark.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
+
+                        final Animation myAnim = AnimationUtils.loadAnimation(getContext(), R.anim.bounce);
+                        MyBounceInterpolator interpolator = new MyBounceInterpolator(.1, 12);
+                        myAnim.setInterpolator(interpolator);
+
+                        Bookmark.startAnimation(myAnim);
 
                         String SuraName = getIntent().getStringExtra("suraName");
 
@@ -354,6 +374,22 @@ public class ReadSuraActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayShowTitleEnabled( false );
         getSupportActionBar().setDisplayHomeAsUpEnabled( true );
 
+    }
+
+
+    class MyBounceInterpolator implements android.view.animation.Interpolator {
+        private double mAmplitude = 1;
+        private double mFrequency = 10;
+
+        MyBounceInterpolator(double amplitude, double frequency) {
+            mAmplitude = amplitude;
+            mFrequency = frequency;
+        }
+
+        public float getInterpolation(float time) {
+            return (float) (-1 * Math.pow(Math.E, -time/ mAmplitude) *
+                    Math.cos(mFrequency * time) + 1);
+        }
     }
 
 }

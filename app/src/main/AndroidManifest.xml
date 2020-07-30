@@ -22,8 +22,10 @@
         <activity android:name=".KalimaActivity"
             android:parentActivityName=".KotlinActivity"></activity>
         <activity android:name=".KotlinActivity" />
-        <activity android:name=".BookmarkActivity" />
-        <activity android:name=".AllahNameActivity" />
+        <activity android:name=".BookmarkActivity"
+            android:parentActivityName=".KotlinActivity"/>
+        <activity android:name=".AllahNameActivity"
+            android:parentActivityName=".KotlinActivity"/>
         <activity android:name=".ReadSuraActivity"
             android:parentActivityName=".SuraActivity" />
         <activity
