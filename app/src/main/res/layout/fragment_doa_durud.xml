@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:background="#208C4B"
+    tools:context=".DoaDurudFragment">
+
+    <Button
+        android:id="@+id/idNamajerNiom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:padding="10dp"
+        android:text="নামাজের নিয়ম"
+        android:background="#D1EDD5"/>
+
+    <Button
+        android:id="@+id/idBiseshNamaj"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:padding="10dp"
+        android:text="বিশেষ নামাজ"
+        android:background="#D1EDD5"/>
+
+    <Button
+        android:id="@+id/idMonajaterNiom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:padding="10dp"
+        android:text="মোনাজাতের নিয়ম"
+        android:background="#D1EDD5"/>
+
+    <Button
+        android:id="@+id/idForojOSunnot"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:padding="10dp"
+        android:text="ফরজ ও সুন্নত নামাজের পার্থক্য"
+        android:background="#D1EDD5"/>
+
+    <Button
+        android:id="@+id/idDoaoDurud"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:padding="10dp"
+        android:text="দোয়া ও দুরুদ"
+        android:background="#D1EDD5"/>
+
+    <Button
+        android:id="@+id/idTaharat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:padding="10dp"
+        android:text="তাহারাত"
+        android:background="#D1EDD5"/>
+
+    <Button
+        android:id="@+id/idShoriot"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:padding="10dp"
+        android:text="শরীয়াতের বিভিন্ন প্রয়োজনীয় শব্দ"
+        android:background="#D1EDD5"/>
+
+
+
+</LinearLayout>

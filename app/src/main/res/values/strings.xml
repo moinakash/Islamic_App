@@ -3,7 +3,7 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
-   <!-- <string-array name="Allah_name_audio">
+    <!-- <string-array name="Allah_name_audio">
         <item>R.raw.metaltick</item>
         <item>R.raw.ar_rahman_01</item>
         <item>R.raw.metaltick</item>
@@ -11,7 +11,6 @@
         <item>R.raw.metaltick</item>
         <item>R.raw.metaltick</item>
      </string-array>-->
-
 
 
 </resources>

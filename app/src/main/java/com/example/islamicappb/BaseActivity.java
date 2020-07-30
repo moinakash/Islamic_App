@@ -635,7 +635,7 @@ public class BaseActivity extends AppCompatActivity {
                         fragment = new TasbihFragment();
                         break;
                     case  R.id.account3:
-                        fragment = new TimeTableFragment();
+                        fragment = new DoaDurudFragment();
                         break;
 
                 }
