@@ -4,7 +4,9 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.ClipboardManager;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -133,6 +135,8 @@ public class BookmarkActivity extends AppCompatActivity {
             if(bookmarkPojoClass1 !=null) {
 
                 ImageButton Delete = (ImageButton) customView.findViewById(R.id.idDeleteBookmark);
+                ImageButton Copy = (ImageButton) customView.findViewById(R.id.idCopyAyat);
+                ImageButton Share = (ImageButton) customView.findViewById(R.id.idShareAyat);
 
                 TextView AyatNumber = (TextView) customView.findViewById(R.id.idAyatNumber);
                 AyatNumber.setText(bookmarkPojoClass1.getAyat_number());
@@ -165,18 +169,36 @@ public class BookmarkActivity extends AppCompatActivity {
 
                         Toast.makeText(context, "মুছে ফেলা হয়েছে", Toast.LENGTH_SHORT).show();
 
-
-//                    if (value>0) {
-//                        Toast.makeText(context, "Not Deleted", Toast.LENGTH_SHORT).show();
-//                    } else {
-//                         //ayat = myDatabasehelper.deleteData(ayat);
-//                        Toast.makeText(context, "deletd", Toast.LENGTH_SHORT).show();
-//                    }
-
-
                     finish();
                     startActivity(getIntent());
 
+                    }
+                });
+
+                Copy.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+
+                        Toast.makeText(getContext(), "অনুলিপি করা হয়েছে", Toast.LENGTH_SHORT).show();
+
+                        ClipboardManager cm = (ClipboardManager) context
+                                .getSystemService(Context.CLIPBOARD_SERVICE);
+                        cm.setText(""+bookmarkPojoClass1.getSura_name()+" আয়াত নং- "+bookmarkPojoClass1.getAyat_number()+"\n"+""+bookmarkPojoClass1.getSura_arbi_line()+""+bookmarkPojoClass1.getSura_spelling_line()+""+bookmarkPojoClass1.getSura_meaning_line());
+
+                    }
+                });
+
+                Share.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+
+                        Intent sendIntent = new Intent();
+                        sendIntent.setAction(Intent.ACTION_SEND);
+                        sendIntent.putExtra(Intent.EXTRA_TEXT, ""+bookmarkPojoClass1.getSura_name()+" আয়াত নং- "+bookmarkPojoClass1.getAyat_number()+"\n"+""+bookmarkPojoClass1.getSura_arbi_line()+""+bookmarkPojoClass1.getSura_spelling_line()+""+bookmarkPojoClass1.getSura_meaning_line());
+                        sendIntent.setType("text/plain");
+
+                        Intent shareIntent = Intent.createChooser(sendIntent, null);
+                        startActivity(shareIntent);
                     }
                 });
 

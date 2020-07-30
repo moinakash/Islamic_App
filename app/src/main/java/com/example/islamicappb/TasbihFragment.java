@@ -240,8 +240,6 @@ public class TasbihFragment extends Fragment {
                     btn33.setImageResource(R.drawable.button33);
 
 
-
-
                     tvSetCount.setText("৩৩");
 
                     if (countset>33){

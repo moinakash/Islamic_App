@@ -105,7 +105,7 @@
                     android:orientation="horizontal">
 
                     <ImageButton
-                        android:id="@+id/idSuraShare"
+                        android:id="@+id/idShareAyat"
                         android:layout_width="20dp"
                         android:layout_height="20dp"
                         android:layout_gravity="right"
@@ -115,7 +115,7 @@
 
                     <ImageButton
                         android:layout_marginLeft="5dp"
-                        android:id="@+id/idSuraCopy"
+                        android:id="@+id/idCopyAyat"
                         android:layout_width="20dp"
                         android:layout_height="20dp"
                         android:layout_gravity="right"
