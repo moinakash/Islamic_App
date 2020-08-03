@@ -53,4 +53,58 @@
         <item name="android:layout_alignParentBottom">true</item>
     </style>
 
+
+
+    <style name="Namaj_Niom_layout_Size_XXXhdpi">
+
+        <item name="android:layout_width">70dp</item>
+        <item name="android:layout_height">70dp</item>
+
+    </style>
+
+    <style name="Namaj_Niom_layout_Size_XXhdpi">
+
+        <item name="android:layout_width">60dp</item>
+        <item name="android:layout_height">60dp</item>
+
+    </style>
+
+    <style name="Namaj_Niom_layout_Size_Xhdpi">
+
+        <item name="android:layout_width">55dp</item>
+        <item name="android:layout_height">55dp</item>
+
+    </style>
+
+    <style name="Namaj_niom_icon">
+        <item name="android:background">@drawable/ayat_number</item>
+    </style>
+
+    <style name="Doa_durud">
+        <item name="android:background">@drawable/ayat_number</item>
+    </style>
+
+    <style name="Bishesh_namaj">
+        <item name="android:background">@drawable/ayat_number</item>
+    </style>
+
+    <style name="Namajer_parthokko">
+        <item name="android:background">@drawable/ayat_number</item>
+    </style>
+
+
+    <style name="Monajat">
+        <item name="android:background">@drawable/ayat_number</item>
+    </style>
+
+    <style name="Vibinno_shobdo">
+        <item name="android:background">@drawable/ayat_number</item>
+    </style>
+
+
+    <style name="Taharat">
+        <item name="android:background">@drawable/ayat_number</item>
+    </style>
+
+
 </resources>

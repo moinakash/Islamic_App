@@ -15,7 +15,10 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
+
+import com.jaredrummler.materialspinner.MaterialSpinner;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -32,7 +35,9 @@ public class EightDivisonActivity extends AppCompatActivity {
     String ff;
 
 
-    Spinner spDiv, spDis;
+/*    Spinner  spDis;*/
+
+    MaterialSpinner spDiv,spDis;
 
     DatabaseHelper db;
     ArrayList<String> arrayList_div;
@@ -43,7 +48,7 @@ public class EightDivisonActivity extends AppCompatActivity {
     ArrayAdapter<String> arrayAdapter_Dis;
     ArrayAdapter<String> arrayAdapter_Latlon;
 
-    String placeName;
+    String placeName = "";
 
     Double latitude, longitude, latC, lonC;
 
@@ -51,7 +56,7 @@ public class EightDivisonActivity extends AppCompatActivity {
 
     int lat, lon;
 
-    ImageButton ibNextbutton;
+    TextView ibNextbutton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -110,217 +115,13 @@ public class EightDivisonActivity extends AppCompatActivity {
             }
 
         }
-        ///////////////////////////////////////////////////////////////////////////////////////////
 
 
+        if (placeName.equals("")){
 
-
-
-        ///////////////////////////////////////////////////////////////////////////////
-
-
-//        btnDhaka.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//
-//                latt = ""+23.777176;
-//                lonn = ""+90.399452;
-//                locString = "ঢাকা";
-//
-//                sharedPref = EightDivisonActivity.this.getPreferences(Context.MODE_PRIVATE);
-//                SharedPreferences.Editor editor = sharedPref.edit();
-//                editor.putString("latSp", ""+latt);
-//                editor.putString("lonSp", ""+lonn);
-//                editor.putString("Locc", ""+locString);
-//
-//                editor.commit();
-//
-//
-//                Intent in = new Intent(EightDivisonActivity.this,KotlinActivity.class);
-//                in.putExtra("latitude", latt);
-//                in.putExtra("longitude", lonn);
-//                in.putExtra("Locc", ""+locString);
-//                startActivity(in);
-//
-//
-//                finish();
-//
-//            }
-//        });
-//
-//        btnChotto.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//
-//
-//                latt = ""+22.341900;
-//                lonn = ""+91.815536;
-//                locString = "চট্টগ্রাম";
-//
-//                sharedPref = EightDivisonActivity.this.getPreferences(Context.MODE_PRIVATE);
-//                SharedPreferences.Editor editor = sharedPref.edit();
-//                editor.putString("latSp", ""+latt);
-//                editor.putString("lonSp", ""+lonn);
-//                editor.putString("Locc", ""+locString);
-//
-//                editor.commit();
-//
-//
-//                Intent in = new Intent(EightDivisonActivity.this,KotlinActivity.class);
-//                in.putExtra("latitude", latt);
-//                in.putExtra("longitude", lonn);
-//                in.putExtra("Locc", ""+locString);
-//                startActivity(in);
-//
-//
-//                finish();
-//
-//            }
-//        });
-//
-//        btnRaj.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//
-//                latt = ""+24.006355;
-//                lonn = ""+89.249298;
-//                locString = "রাজশাহী";
-//
-//                sharedPref = EightDivisonActivity.this.getPreferences(Context.MODE_PRIVATE);
-//                SharedPreferences.Editor editor = sharedPref.edit();
-//                editor.putString("latSp", ""+latt);
-//                editor.putString("lonSp", ""+lonn);
-//                editor.putString("Locc", ""+locString);
-//
-//                editor.commit();
-//
-//
-//                Intent in = new Intent(EightDivisonActivity.this,KotlinActivity.class);
-//                in.putExtra("latitude", latt);
-//                in.putExtra("longitude", lonn);
-//                in.putExtra("Locc", ""+locString);
-//                startActivity(in);
-//
-//                finish();
-//
-//            }
-//        });
-//
-//        btnKhul.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//
-//
-//                latt = ""+22.820000;
-//                lonn = ""+89.550003;
-//                locString = "খুলনা";
-//
-//                sharedPref = EightDivisonActivity.this.getPreferences(Context.MODE_PRIVATE);
-//                SharedPreferences.Editor editor = sharedPref.edit();
-//                editor.putString("latSp", ""+latt);
-//                editor.putString("lonSp", ""+lonn);
-//                editor.putString("Locc", ""+locString);
-//
-//                editor.commit();
-//
-//
-//                Intent in = new Intent(EightDivisonActivity.this,KotlinActivity.class);
-//                in.putExtra("latitude", latt);
-//                in.putExtra("longitude", lonn);
-//                in.putExtra("Locc", ""+locString);
-//                startActivity(in);
-//
-//                finish();
-//
-//            }
-//        });
-//
-//        btnBari.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//
-//                latt = ""+22.974237;
-//                lonn = ""+90.222122;
-//                locString = "বরিশাল";
-//
-//                sharedPref = EightDivisonActivity.this.getPreferences(Context.MODE_PRIVATE);
-//                SharedPreferences.Editor editor = sharedPref.edit();
-//                editor.putString("latSp", ""+latt);
-//                editor.putString("lonSp", ""+lonn);
-//                editor.putString("Locc", ""+locString);
-//
-//                editor.commit();
-//
-//
-//                Intent in = new Intent(EightDivisonActivity.this,KotlinActivity.class);
-//                in.putExtra("latitude", latt);
-//                in.putExtra("longitude", lonn);
-//                in.putExtra("Locc", ""+locString);
-//                startActivity(in);
-//                finish();
-//
-//            }
-//        });
-//
-//        btnShy.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//
-//                latt = ""+24.886436;
-//                lonn = ""+91.880722;
-//                locString = "সিলেট";
-//
-//
-//                sharedPref = EightDivisonActivity.this.getPreferences(Context.MODE_PRIVATE);
-//                SharedPreferences.Editor editor = sharedPref.edit();
-//                editor.putString("latSp", ""+latt);
-//                editor.putString("lonSp", ""+lonn);
-//                editor.putString("Locc", ""+locString);
-//
-//                editor.commit();
-//
-//
-//                Intent in = new Intent(EightDivisonActivity.this,KotlinActivity.class);
-//                in.putExtra("latitude", latt);
-//                in.putExtra("longitude", lonn);
-//                in.putExtra("Locc", ""+locString);
-//                startActivity(in);
-//
-//
-//                finish();
-//
-//
-//            }
-//        });
-//
-//        btnRang.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//
-//                latt = ""+25.744860;
-//                lonn = ""+89.275589;
-//                locString = "রংপুর";
-//
-//
-//                sharedPref = EightDivisonActivity.this.getPreferences(Context.MODE_PRIVATE);
-//                SharedPreferences.Editor editor = sharedPref.edit();
-//                editor.putString("latSp", ""+latt);
-//                editor.putString("lonSp", ""+lonn);
-//                editor.putString("Locc", ""+locString);
-//
-//                editor.commit();
-//
-//
-//                Intent in = new Intent(EightDivisonActivity.this,KotlinActivity.class);
-//                in.putExtra("latitude", latt);
-//                in.putExtra("longitude", lonn);
-//                in.putExtra("Locc", ""+locString);
-//                startActivity(in);
-//                finish();
-//
-//
-//            }
-//        });
+        }else {
+            ibNextbutton.setVisibility(View.VISIBLE);
+        }
 
         ibNextbutton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -480,9 +281,9 @@ public class EightDivisonActivity extends AppCompatActivity {
         }
 
 
-        spDiv.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+        spDiv.setOnItemSelectedListener(new MaterialSpinner.OnItemSelectedListener<String>() {
+
+            @Override public void onItemSelected(MaterialSpinner view, int i, long id, String item) {
                 if (i==0){
                     arrayAdapter_Dis = new ArrayAdapter(getApplicationContext(), R.layout.support_simple_spinner_dropdown_item, arrayList_Dhaka);
                     spDis.setAdapter(arrayAdapter_Dis);
@@ -513,37 +314,25 @@ public class EightDivisonActivity extends AppCompatActivity {
                 }
             }
 
-            @Override
+     /*       @Override
             public void onNothingSelected(AdapterView<?> adapterView) {
 
-            }
+            }*/
 
 
         });
 
-        spDis.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+        spDis.setOnItemSelectedListener(new MaterialSpinner.OnItemSelectedListener<String>() {
+
+            @Override public void onItemSelected(MaterialSpinner view, int i, long id, String item) {
 
 //                Toast.makeText(getApplicationContext(), ""+adapterView.getItemAtPosition(i).toString(), Toast.LENGTH_SHORT).show();
 
-                placeName = ""+adapterView.getItemAtPosition(i).toString();
+//              /*  placeName = ""+adapterView.getItemAtPosition(i).toString(*/);
 
-//                String str;
-//                arrayList_lat = new ArrayList<>();
-//
-//                //placeName = "Dhaka";
-//                final Cursor cursor_lat = db.latlon(placeName);
-//
-//                if (cursor_lat.getCount() == 0) {
-//                    Toast.makeText(getApplicationContext(), "No data available", Toast.LENGTH_SHORT).show();
-//                } else {
-//                    while (cursor_lat.moveToNext()) {
-//                        arrayList_lat.add(cursor_lat.getString(5));
-//                        //str = cursor.getString(cursor.getColumnIndex("lat"));
-//                        //Toast.makeText(getApplicationContext(), ""+str, Toast.LENGTH_SHORT).show();
-//                    }
-//                }
+        placeName = ""+item;
+
+
 
 
                 switch(placeName) {
@@ -876,12 +665,14 @@ public class EightDivisonActivity extends AppCompatActivity {
 
                 longitude = lonC;
 
+                if (placeName.equals("")){
+
+                }else {
+                    ibNextbutton.setVisibility(View.VISIBLE);
+                }
+
             }
 
-            @Override
-            public void onNothingSelected(AdapterView<?> adapterView) {
-
-            }
 
 
         });
