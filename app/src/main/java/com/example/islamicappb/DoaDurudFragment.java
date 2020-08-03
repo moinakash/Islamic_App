@@ -63,7 +63,7 @@ public class DoaDurudFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_doa_durud, container, false);
+        View view = inflater.inflate(R.layout.fragment_namaj_niom, container, false);
 
         btnNamajerNiom = view.findViewById(R.id.idNamajerNiom);
         btnBisheshNamaj = view.findViewById(R.id.idBiseshNamaj);

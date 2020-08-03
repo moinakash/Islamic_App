@@ -9,7 +9,7 @@
 
 
     <LinearLayout
-        android:layout_marginTop="0dp"
+        android:layout_marginTop="40dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
 
@@ -31,7 +31,7 @@
                 android:layout_weight="1"
                 android:id="@+id/idNamajerNiom"
                 android:layout_margin="10dp"
-                android:layout_gravity="center"
+
                 android:gravity="center"
                 android:orientation="vertical"
                 android:layout_width="match_parent"
@@ -72,7 +72,7 @@
                 android:layout_weight="1"
                 android:id="@+id/idDoaoDurud"
                 android:layout_margin="10dp"
-                android:layout_gravity="center"
+
                 android:gravity="center"
                 android:orientation="vertical"
                 android:layout_width="match_parent"
@@ -111,7 +111,7 @@
                 android:layout_weight="1"
                 android:id="@+id/idBiseshNamaj"
                 android:layout_margin="10dp"
-                android:layout_gravity="center"
+
                 android:gravity="center"
                 android:orientation="vertical"
                 android:layout_width="match_parent"
@@ -160,10 +160,10 @@
                 android:layout_weight="1"
                 android:id="@+id/idForojOSunnot"
                 android:layout_margin="10dp"
-                android:layout_gravity="center"
+
                 android:gravity="center"
                 android:orientation="vertical"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
                 <LinearLayout
@@ -198,10 +198,10 @@
                 android:layout_weight="1"
                 android:id="@+id/idMonajaterNiom"
                 android:layout_margin="10dp"
-                android:layout_gravity="center"
+
                 android:gravity="center"
                 android:orientation="vertical"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
                 <LinearLayout
@@ -237,10 +237,10 @@
                 android:id="@+id/idShoriot"
                 android:layout_margin="10dp"
 
-                android:layout_gravity="center"
+
                 android:gravity="center"
                 android:orientation="vertical"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
                 <LinearLayout
@@ -276,18 +276,20 @@
         </LinearLayout>
 
         <LinearLayout
-
-            android:layout_width="wrap_content"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
             <LinearLayout
+                android:layout_weight="1"
                 android:id="@+id/idTaharat"
                 android:layout_margin="10dp"
-                android:layout_gravity="center"
+
                 android:gravity="center"
                 android:orientation="vertical"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
                 <LinearLayout
@@ -309,6 +311,81 @@
 
                 <TextView
                     android:text="তাহারাত"
+                    android:textStyle="bold"
+                    android:textSize="11sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_weight="1"
+
+                android:layout_margin="10dp"
+
+                android:gravity="center"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:textSize="16sp"
+                    android:layout_margin="5dp"
+                    style="@style/Namaj_Niom_layout_Size_Xhdpi"
+                    android:background="@drawable/quran_button"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        style="@style/Rojar_somoy"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <TextView
+                    android:text="রোজার সময় সূচী"
+                    android:textStyle="bold"
+                    android:textSize="11sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_weight="1"
+
+                android:layout_margin="10dp"
+
+                android:gravity="center"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:textSize="16sp"
+                    android:layout_margin="5dp"
+                    style="@style/Namaj_Niom_layout_Size_Xhdpi"
+                    android:background="@drawable/quran_button"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        style="@style/Location"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <TextView
+                    android:gravity="center"
+                    android:text="স্থান নির্বাচন করুন"
                     android:textStyle="bold"
                     android:textSize="11sp"
                     android:layout_width="wrap_content"

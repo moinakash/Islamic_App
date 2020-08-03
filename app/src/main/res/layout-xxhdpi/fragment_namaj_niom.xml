@@ -21,8 +21,8 @@
         <!-- TODO: Update blank fragment layout -->
         <LinearLayout
 
-            android:layout_marginRight="10dp"
-            android:layout_marginLeft="10dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
@@ -42,7 +42,7 @@
 
                     android:textSize="16sp"
                     android:layout_margin="5dp"
-                    style="@style/Namaj_Niom_layout_Size_Xhdpi"
+                    style="@style/Namaj_Niom_layout_Size_XXhdpi"
                     android:background="@drawable/quran_button"
                     android:orientation="horizontal">
 
@@ -61,7 +61,7 @@
                 <TextView
                     android:text="নামাজের নিয়ম"
                     android:textStyle="bold"
-                    android:textSize="11sp"
+                    android:textSize="13sp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
 
@@ -83,7 +83,7 @@
 
                     android:layout_margin="5dp"
 
-                    style="@style/Namaj_Niom_layout_Size_Xhdpi"
+                    style="@style/Namaj_Niom_layout_Size_XXhdpi"
 
                     android:background="@drawable/quran_button"
                     android:orientation="horizontal">
@@ -100,7 +100,7 @@
                 <TextView
                     android:text="দোয়া ও দুরূদ"
                     android:textStyle="bold"
-                    android:textSize="11sp"
+                    android:textSize="13sp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
 
@@ -121,7 +121,7 @@
                     android:textSize="16sp"
 
                     android:layout_margin="5dp"
-                    style="@style/Namaj_Niom_layout_Size_Xhdpi"
+                    style="@style/Namaj_Niom_layout_Size_XXhdpi"
                     android:background="@drawable/quran_button"
                     android:orientation="horizontal">
 
@@ -138,7 +138,7 @@
                 <TextView
                     android:text="বিশেষ নামাজ"
                     android:textStyle="bold"
-                    android:textSize="11sp"
+                    android:textSize="13sp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
 
@@ -150,8 +150,8 @@
 
         <LinearLayout
 
-            android:layout_marginRight="10dp"
-            android:layout_marginLeft="10dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
@@ -163,14 +163,14 @@
                 android:layout_gravity="center"
                 android:gravity="center"
                 android:orientation="vertical"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
                 <LinearLayout
                     android:textSize="16sp"
 
                     android:layout_margin="5dp"
-                    style="@style/Namaj_Niom_layout_Size_Xhdpi"
+                    style="@style/Namaj_Niom_layout_Size_XXhdpi"
                     android:background="@drawable/quran_button"
                     android:orientation="horizontal">
 
@@ -187,7 +187,7 @@
                     android:gravity="center"
                     android:text="ফরজ ও সুন্নত\nনামাজের পার্থক্য"
                     android:textStyle="bold"
-                    android:textSize="11sp"
+                    android:textSize="13sp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
 
@@ -201,14 +201,14 @@
                 android:layout_gravity="center"
                 android:gravity="center"
                 android:orientation="vertical"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
                 <LinearLayout
                     android:textSize="16sp"
 
                     android:layout_margin="5dp"
-                    style="@style/Namaj_Niom_layout_Size_Xhdpi"
+                    style="@style/Namaj_Niom_layout_Size_XXhdpi"
                     android:background="@drawable/quran_button"
                     android:orientation="horizontal">
 
@@ -226,7 +226,7 @@
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:text="মোনাজাতের\nনিয়ম"
-                    android:textSize="11sp"
+                    android:textSize="13sp"
                     android:textStyle="bold" />
 
 
@@ -240,14 +240,14 @@
                 android:layout_gravity="center"
                 android:gravity="center"
                 android:orientation="vertical"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
                 <LinearLayout
                     android:textSize="15sp"
 
                     android:layout_margin="5dp"
-                    style="@style/Namaj_Niom_layout_Size_Xhdpi"
+                    style="@style/Namaj_Niom_layout_Size_XXhdpi"
                     android:background="@drawable/quran_button"
                     android:orientation="horizontal">
 
@@ -265,7 +265,7 @@
                     android:gravity="center"
                     android:text="শরীয়তের বিভিন্ন\nপ্রয়োজনীয় শব্দ"
                     android:textStyle="bold"
-                    android:textSize="11sp"
+                    android:textSize="13sp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
 
@@ -277,23 +277,26 @@
 
         <LinearLayout
 
-            android:layout_width="wrap_content"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
             <LinearLayout
+                android:layout_weight="1"
                 android:id="@+id/idTaharat"
                 android:layout_margin="10dp"
                 android:layout_gravity="center"
                 android:gravity="center"
                 android:orientation="vertical"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
                 <LinearLayout
                     android:textSize="16sp"
                     android:layout_margin="5dp"
-                    style="@style/Namaj_Niom_layout_Size_Xhdpi"
+                    style="@style/Namaj_Niom_layout_Size_XXhdpi"
                     android:background="@drawable/quran_button"
                     android:orientation="horizontal">
 
@@ -310,7 +313,83 @@
                 <TextView
                     android:text="তাহারাত"
                     android:textStyle="bold"
-                    android:textSize="11sp"
+                    android:textSize="13sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_weight="1"
+
+                android:layout_margin="10dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:textSize="16sp"
+                    android:layout_margin="5dp"
+                    style="@style/Namaj_Niom_layout_Size_XXhdpi"
+                    android:background="@drawable/quran_button"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        style="@style/Rojar_somoy"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <TextView
+                    android:gravity="center"
+                    android:text="রোজার সময় সূচী"
+                    android:textStyle="bold"
+                    android:textSize="13sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_weight="1"
+
+                android:layout_margin="10dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:textSize="16sp"
+                    android:layout_margin="5dp"
+                    style="@style/Namaj_Niom_layout_Size_XXhdpi"
+                    android:background="@drawable/quran_button"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        style="@style/Location"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <TextView
+                    android:gravity="center"
+                    android:text="স্থান নির্বাচন করুন"
+                    android:textStyle="bold"
+                    android:textSize="13sp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
 
@@ -319,6 +398,8 @@
 
 
         </LinearLayout>
+
+
 
 
 

@@ -34,7 +34,7 @@
         android:id="@+id/expandableListView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:divider="@android:color/darker_gray"
+        android:divider="@android:color/white"
         android:dividerHeight="0.5dp"
         android:groupIndicator="@null"
         android:padding="5dp"/>

@@ -5,9 +5,37 @@
     android:layout_height="wrap_content"
     android:gravity="center|start"
     android:orientation="horizontal"
-    android:padding="16dp">
+    android:padding="5dp">
 
-    <ImageView
+    <RelativeLayout
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/expanded_bg" />
+
+        <TextView
+
+
+            android:layout_centerHorizontal="true"
+            android:id="@+id/idKalimaNaaam"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_centerVertical="true"
+            android:text="111-111-111"
+            android:textColor="@android:color/white"
+            android:textSize="18sp" />
+
+
+    </RelativeLayout>
+
+
+    <!--<ImageView
         android:layout_width="42dp"
         android:layout_height="42dp"
         android:layout_marginEnd="16dp"
@@ -19,14 +47,14 @@
         android:gravity="center|start"
         android:orientation="vertical">
 
-<!--        <TextView-->
-<!--            android:id="@+id/idKalimaName"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_weight="1"-->
-<!--            android:text="Juan"-->
-<!--            android:textSize="16sp"-->
-<!--            android:textStyle="bold" />-->
+&lt;!&ndash;        <TextView&ndash;&gt;
+&lt;!&ndash;            android:id="@+id/idKalimaName"&ndash;&gt;
+&lt;!&ndash;            android:layout_width="wrap_content"&ndash;&gt;
+&lt;!&ndash;            android:layout_height="wrap_content"&ndash;&gt;
+&lt;!&ndash;            android:layout_weight="1"&ndash;&gt;
+&lt;!&ndash;            android:text="Juan"&ndash;&gt;
+&lt;!&ndash;            android:textSize="16sp"&ndash;&gt;
+&lt;!&ndash;            android:textStyle="bold" />&ndash;&gt;
 
 
         <TextView
@@ -36,5 +64,5 @@
             android:layout_weight="1"
             android:text="111-111-111" />
 
-    </LinearLayout>
+    </LinearLayout>-->
 </LinearLayout>
