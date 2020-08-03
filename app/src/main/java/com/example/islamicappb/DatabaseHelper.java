@@ -309,5 +309,13 @@ public class DatabaseHelper
         return kaleName;
     }
 
+    public Cursor HadisData(){
+
+        SQLiteDatabase db = this.getWritableDatabase();
+        String HQuery = "SELECT * FROM hadistype ";
+        Cursor HadisName = db.rawQuery(HQuery,null);
+        return HadisName;
+    }
+
 
 }

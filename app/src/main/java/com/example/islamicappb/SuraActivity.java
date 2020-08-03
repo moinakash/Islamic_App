@@ -82,9 +82,6 @@ public class SuraActivity
 
         tvLastSuraName.setText(""+defaultValue);
 
-
-
-
         db = new DatabaseHelper(this);
 
         suraNameListPojoList = new ArrayList();
@@ -96,14 +93,6 @@ public class SuraActivity
         fetchData();
 
         loadData();
-
-
-
-
-
-
-
-
 
     }
 
@@ -123,9 +112,6 @@ public class SuraActivity
 
 
         tvLastSuraName.setText(""+defaultValue);
-
-
-
 
         db = new DatabaseHelper(this);
 
@@ -158,11 +144,6 @@ public class SuraActivity
 
     public void loadData() {
 
-        //  ArrayList<String> listData = new ArrayList<>();
-
-
-
-
 
 
         Cursor cursor = db.showAllData();
@@ -175,38 +156,12 @@ public class SuraActivity
                 suraNameListPojoList.add(new SuraNameListPojo(""+cursor.getString(0),""+cursor.getString(1),""+cursor.getString(3),""+cursor.getString(2),"("+cursor.getString(7)+")",""+cursor.getString(9)));
 
 
-                //    listData.add(cursor.getString(0)+" \t"+cursor.getString(1));
-//                listData.add(cursor.getString(0)+" \t"+cursor.getString(2));
-//                listData.add(cursor.getString(0)+" \t"+cursor.getString(3));
             }
         }
 
 
         customSuraNameAdapter = new CustomSuraNameAdapter(this,R.layout.custom_suraname_layout, suraNameListPojoList);
         list.setAdapter(customSuraNameAdapter);
-
-
-//        final ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,R.layout.list_item,R.id.idTextView,listData);
-//        listView.setAdapter(adapter);
-
-
-//        list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-//            @Override
-//            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-//
-//                //  Toast.makeText( getApplicationContext(), suraNameListPojoList+ " is selected",Toast.LENGTH_SHORT).show();
-//
-////                String se = (String) adapterView.getItemAtPosition(i);
-////
-//                int f = i+1;
-//
-//                Toast.makeText(getApplicationContext(), "Selected value : "+f, Toast.LENGTH_SHORT).show();
-//
-//                Intent intent = new Intent(getBaseContext(), ReadSuraActivity.class);
-//                intent.putExtra("position", ""+f);
-//                startActivity(intent);
-//            }
-//        });
 
 
 
