@@ -84,7 +84,17 @@ public class DoaDurudFragment extends Fragment {
         btnBisheshNamaj.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent in = new Intent(getContext(), NamajerNiomActivity.class);
+                Intent in = new Intent(getContext(), BisheshNamajActivity.class);
+                in.putExtra("shoriot","1");
+                startActivity(in);
+            }
+        });
+
+        btnMonajaterNiom.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent in = new Intent(getContext(), BisheshNamajActivity.class);
+                in.putExtra("shoriot","2");
                 startActivity(in);
             }
         });
@@ -92,7 +102,8 @@ public class DoaDurudFragment extends Fragment {
         btnForojOSunnot.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent in = new Intent(getContext(), NamajerNiomActivity.class);
+                Intent in = new Intent(getContext(), BisheshNamajActivity.class);
+                in.putExtra("shoriot","3");
                 startActivity(in);
             }
         });
@@ -100,7 +111,8 @@ public class DoaDurudFragment extends Fragment {
         btnDoaODurud.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent in = new Intent(getContext(), NamajerNiomActivity.class);
+                Intent in = new Intent(getContext(), BisheshNamajActivity.class);
+                in.putExtra("shoriot","4");
                 startActivity(in);
             }
         });
@@ -108,7 +120,8 @@ public class DoaDurudFragment extends Fragment {
         btnTaharat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent in = new Intent(getContext(), NamajerNiomActivity.class);
+                Intent in = new Intent(getContext(), BisheshNamajActivity.class);
+                in.putExtra("shoriot","5");
                 startActivity(in);
             }
         });
@@ -116,10 +129,13 @@ public class DoaDurudFragment extends Fragment {
         btnShoriyot.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent in = new Intent(getContext(), NamajerNiomActivity.class);
+                Intent in = new Intent(getContext(), BisheshNamajActivity.class);
+                in.putExtra("shoriot","6");
                 startActivity(in);
             }
         });
+
+
 
 
 
