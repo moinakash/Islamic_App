@@ -12,10 +12,13 @@
     <ImageView
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="10dp"
         android:src="@drawable/tasbih_header_bg"
         android:layout_width="match_parent"
-        android:layout_height="220dp"
+        android:layout_height="160dp"
+
+        android:scaleY=".9"
+        android:scaleX=".9"
         android:scaleType="centerCrop"/>
 
 
