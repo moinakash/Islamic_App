@@ -118,7 +118,7 @@ public class ReadSuraActivity extends AppCompatActivity {
             super(context, textViewResourceId, suraLinePart);
             this.context = context;
             this.suraLinePart = suraLinePart;
-            
+
 
         }
 

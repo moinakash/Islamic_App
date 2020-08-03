@@ -1,5 +1,6 @@
 package com.example.islamicappb;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -70,6 +71,55 @@ public class DoaDurudFragment extends Fragment {
         btnDoaODurud = view.findViewById(R.id.idDoaoDurud);
         btnTaharat = view.findViewById(R.id.idTaharat);
         btnShoriyot = view.findViewById(R.id.idShoriot);
+
+
+        btnNamajerNiom.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent in = new Intent(getContext(), NamajerNiomActivity.class);
+                startActivity(in);
+            }
+        });
+
+        btnBisheshNamaj.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent in = new Intent(getContext(), NamajerNiomActivity.class);
+                startActivity(in);
+            }
+        });
+
+        btnForojOSunnot.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent in = new Intent(getContext(), NamajerNiomActivity.class);
+                startActivity(in);
+            }
+        });
+
+        btnDoaODurud.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent in = new Intent(getContext(), NamajerNiomActivity.class);
+                startActivity(in);
+            }
+        });
+
+        btnTaharat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent in = new Intent(getContext(), NamajerNiomActivity.class);
+                startActivity(in);
+            }
+        });
+
+        btnShoriyot.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent in = new Intent(getContext(), NamajerNiomActivity.class);
+                startActivity(in);
+            }
+        });
 
 
 
