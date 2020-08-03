@@ -43,7 +43,7 @@ public class EightDivisonActivity extends AppCompatActivity {
     ArrayList<String> arrayList_div;
     ArrayAdapter<String> arrayAdapter_div;
 
-    ArrayList<String> arrayList_Dhaka, arrayList_Chita, arrayList_bari, arrayList_Khul, arrayList_Raj, arrayList_Rang, arrayList_Sy, arrayList_lat, arrayList_lon;
+    ArrayList<String>  arrayList_blank, arrayList_Dhaka, arrayList_Chita, arrayList_bari, arrayList_Khul, arrayList_Raj, arrayList_Rang, arrayList_Sy, arrayList_lat, arrayList_lon;
 
     ArrayAdapter<String> arrayAdapter_Dis;
     ArrayAdapter<String> arrayAdapter_Latlon;
@@ -192,6 +192,9 @@ public class EightDivisonActivity extends AppCompatActivity {
 
         /////////////////////////////////////////////////////////
 
+        arrayList_blank = new ArrayList<>();
+        arrayList_blank.add("");
+
         arrayList_Dhaka = new ArrayList<>();
         final Cursor cursorDhaka = db.showDhaka();
         if (cursorDhaka.getCount() == 0) {
@@ -209,6 +212,7 @@ public class EightDivisonActivity extends AppCompatActivity {
 
 
         arrayList_Chita = new ArrayList<>();
+
         final Cursor cursor_Chita = db.showChit();
         if (cursor_Chita.getCount() == 0) {
 
@@ -285,30 +289,34 @@ public class EightDivisonActivity extends AppCompatActivity {
 
             @Override public void onItemSelected(MaterialSpinner view, int i, long id, String item) {
                 if (i==0){
-                    arrayAdapter_Dis = new ArrayAdapter(getApplicationContext(), R.layout.support_simple_spinner_dropdown_item, arrayList_Dhaka);
+                    arrayAdapter_Dis = new ArrayAdapter(getApplicationContext(), R.layout.support_simple_spinner_dropdown_item, arrayList_blank);
                     spDis.setAdapter(arrayAdapter_Dis);
                 }
                 if (i==1){
-                    arrayAdapter_Dis = new ArrayAdapter(getApplicationContext(), R.layout.support_simple_spinner_dropdown_item, arrayList_Chita);
+                    arrayAdapter_Dis = new ArrayAdapter(getApplicationContext(), R.layout.support_simple_spinner_dropdown_item, arrayList_Dhaka);
                     spDis.setAdapter(arrayAdapter_Dis);
                 }
                 if (i==2){
-                    arrayAdapter_Dis = new ArrayAdapter(getApplicationContext(), R.layout.support_simple_spinner_dropdown_item, (List) arrayList_bari);
+                    arrayAdapter_Dis = new ArrayAdapter(getApplicationContext(), R.layout.support_simple_spinner_dropdown_item, arrayList_Chita);
                     spDis.setAdapter(arrayAdapter_Dis);
                 }
                 if (i==3){
-                    arrayAdapter_Dis = new ArrayAdapter(getApplicationContext(), R.layout.support_simple_spinner_dropdown_item, (List) arrayList_Khul);
+                    arrayAdapter_Dis = new ArrayAdapter(getApplicationContext(), R.layout.support_simple_spinner_dropdown_item, (List) arrayList_bari);
                     spDis.setAdapter(arrayAdapter_Dis);
                 }
                 if (i==4){
-                    arrayAdapter_Dis = new ArrayAdapter(getApplicationContext(), R.layout.support_simple_spinner_dropdown_item, (List) arrayList_Raj);
+                    arrayAdapter_Dis = new ArrayAdapter(getApplicationContext(), R.layout.support_simple_spinner_dropdown_item, (List) arrayList_Khul);
                     spDis.setAdapter(arrayAdapter_Dis);
                 }
                 if (i==5){
-                    arrayAdapter_Dis = new ArrayAdapter(getApplicationContext(), R.layout.support_simple_spinner_dropdown_item, (List) arrayList_Rang);
+                    arrayAdapter_Dis = new ArrayAdapter(getApplicationContext(), R.layout.support_simple_spinner_dropdown_item, (List) arrayList_Raj);
                     spDis.setAdapter(arrayAdapter_Dis);
                 }
                 if (i==6){
+                    arrayAdapter_Dis = new ArrayAdapter(getApplicationContext(), R.layout.support_simple_spinner_dropdown_item, (List) arrayList_Rang);
+                    spDis.setAdapter(arrayAdapter_Dis);
+                }
+                if (i==7){
                     arrayAdapter_Dis = new ArrayAdapter(getApplicationContext(), R.layout.support_simple_spinner_dropdown_item, (List) arrayList_Sy);
                     spDis.setAdapter(arrayAdapter_Dis);
                 }
