@@ -49,6 +49,7 @@ public class HadisTypeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hadis_type);
 
+        ToolBar();
 
 
         myDatabasehelper = new MyDatabasehelper(this);
@@ -187,11 +188,15 @@ public class HadisTypeActivity extends AppCompatActivity {
 
     private void ToolBar() {
 
-        mToolbar = findViewById( R.id.QuranMazid_toolbar );
+        mToolbar = findViewById( R.id.SuraName_toolbar );
         TextView mTitle = (TextView) mToolbar.findViewById(R.id.toolbar_title);
 
+        String HadisTypeName = getIntent().getStringExtra("typename");
+
+        String name = ""+HadisTypeName;
+
         //toolbar name ==>
-        mTitle.setText("কুরআন মাজীদ");
+        mTitle.setText("হাদীস");
         setSupportActionBar( mToolbar );
 
         getSupportActionBar().setDisplayShowTitleEnabled( false );

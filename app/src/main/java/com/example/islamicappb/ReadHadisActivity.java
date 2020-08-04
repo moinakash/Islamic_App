@@ -235,7 +235,6 @@ public class ReadHadisActivity extends AppCompatActivity {
 
         String HadisTypeName = getIntent().getStringExtra("typename");
 
-        String name = ""+HadisTypeName;
 
         //toolbar name ==>
         mTitle.setText(""+HadisTypeName);
