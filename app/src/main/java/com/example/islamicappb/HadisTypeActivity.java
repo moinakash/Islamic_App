@@ -111,8 +111,6 @@ public class HadisTypeActivity extends AppCompatActivity {
         list.setAdapter(customHadisTypeAdapter);
 
 
-
-
     }
 
 
@@ -159,8 +157,6 @@ public class HadisTypeActivity extends AppCompatActivity {
                 TextView HadisType = (TextView) customView.findViewById(R.id.idhadisType);
                 HadisType.setText(hadisTypePojoList.getHadisType());
 
-
-
                 customView.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -174,9 +170,7 @@ public class HadisTypeActivity extends AppCompatActivity {
 
             return customView;
 
-
         }
-
 
     }
 

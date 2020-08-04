@@ -317,5 +317,13 @@ public class DatabaseHelper
         return HadisName;
     }
 
+    public Cursor Hadis(int k){
+
+        SQLiteDatabase db = this.getWritableDatabase();
+        String HQuery = "SELECT * FROM hadis where = "+k;
+        Cursor Hadis = db.rawQuery(HQuery,null);
+        return Hadis;
+    }
+
 
 }

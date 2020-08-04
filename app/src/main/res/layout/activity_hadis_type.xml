@@ -16,6 +16,7 @@
         android:layout_height="match_parent"
         android:dividerHeight="1dp"
         android:divider="#00FFFFFF"
+        android:layout_gravity="center"
 
         android:listSelector="#65DDCB"></ListView>
 
