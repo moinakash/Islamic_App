@@ -26,7 +26,6 @@ import java.util.List;
 public class EightDivisonActivity extends AppCompatActivity {
 
 
-    Button btnDhaka, btnChotto, btnRaj, btnKhul, btnBari, btnShy, btnRang, btnMoy;
 
     String latt = "", lonn ="", locString ="";
 
@@ -43,7 +42,7 @@ public class EightDivisonActivity extends AppCompatActivity {
     ArrayList<String> arrayList_div;
     ArrayAdapter<String> arrayAdapter_div;
 
-    ArrayList<String>  arrayList_blank, arrayList_Dhaka, arrayList_Chita, arrayList_bari, arrayList_Khul, arrayList_Raj, arrayList_Rang, arrayList_Sy, arrayList_lat, arrayList_lon;
+    ArrayList<String>  arrayList_Moy, arrayList_Dhaka, arrayList_Chita, arrayList_bari, arrayList_Khul, arrayList_Raj, arrayList_Rang, arrayList_Sy, arrayList_lat, arrayList_lon;
 
     ArrayAdapter<String> arrayAdapter_Dis;
     ArrayAdapter<String> arrayAdapter_Latlon;
@@ -64,19 +63,12 @@ public class EightDivisonActivity extends AppCompatActivity {
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         setContentView(R.layout.activity_eight_divison);
 
-//        btnDhaka = findViewById(R.id.idDhaka);
-//        btnChotto = findViewById(R.id.idChottogram);
-//        btnRaj = findViewById(R.id.idRajshahi);
-//        btnKhul = findViewById(R.id.idKhulna);
-//        btnBari = findViewById(R.id.idBorishal);
-//        btnShy = findViewById(R.id.idShylet);
-//        btnRang = findViewById(R.id.idRangpur);
-//        btnMoy = findViewById(R.id.idMoymonshing);
+
 
         spDiv = findViewById(R.id.idDivision);
         spDis = findViewById(R.id.idDistrict);
         ibNextbutton = findViewById(R.id.idNextButton);
-        arrayList_div = new ArrayList<>();
+
         db = new DatabaseHelper(this);
 
         fetchData();
@@ -180,9 +172,20 @@ public class EightDivisonActivity extends AppCompatActivity {
             Toast.makeText(this, "No data available", Toast.LENGTH_SHORT).show();
         } else {
             while (cursor.moveToNext()) {
-                arrayList_div.add(cursor.getString(3));
+
             }
         }
+
+        arrayList_div = new ArrayList<>();
+        arrayList_div.add("");
+        arrayList_div.add("ঢাকা");
+        arrayList_div.add("চট্টগ্রাম");
+        arrayList_div.add("রাজশাহী");
+        arrayList_div.add("রাজশাহী");
+        arrayList_div.add("বরিশাল");
+        arrayList_div.add("সিলেট");
+        arrayList_div.add("রংপুর");
+        arrayList_div.add("ময়মনসিংহ");
 
         arrayAdapter_div = new ArrayAdapter(this, R.layout.support_simple_spinner_dropdown_item, arrayList_div);
         spDiv.setAdapter(arrayAdapter_div);
@@ -192,106 +195,100 @@ public class EightDivisonActivity extends AppCompatActivity {
 
         /////////////////////////////////////////////////////////
 
-        arrayList_blank = new ArrayList<>();
-        arrayList_blank.add("");
 
         arrayList_Dhaka = new ArrayList<>();
-        final Cursor cursorDhaka = db.showDhaka();
-        if (cursorDhaka.getCount() == 0) {
+        arrayList_Dhaka.add("ঢাকা");
+        arrayList_Dhaka.add("কিশোরগঞ্জ");
+        arrayList_Dhaka.add("গাজীপুর");
+        arrayList_Dhaka.add("গোপালগঞ্জ");
+        arrayList_Dhaka.add("টাঙ্গাইল");
+        arrayList_Dhaka.add("নরসিংদী");
+        arrayList_Dhaka.add("নারায়ণগঞ্জ");
+        arrayList_Dhaka.add("ফরিদপুর");
+        arrayList_Dhaka.add("মাদারীপুর");
+        arrayList_Dhaka.add("মানিকগঞ্জ");
+        arrayList_Dhaka.add("মুন্সিগঞ্জ");
+        arrayList_Dhaka.add("রাজবাড়ী");
+        arrayList_Dhaka.add("শরীয়তপুর");
 
-
-        } else {
-            while (cursorDhaka.moveToNext()) {
-                arrayList_Dhaka.add(cursorDhaka.getString(3));
-            }
-        }
-
-//        arrayAdapter_Dis = new ArrayAdapter(MainActivity.this, R.layout.support_simple_spinner_dropdown_item, (List) arrayList_Dhaka);
-//        spDis.setAdapter(arrayAdapter_Dis);
 
 
 
         arrayList_Chita = new ArrayList<>();
-
-        final Cursor cursor_Chita = db.showChit();
-        if (cursor_Chita.getCount() == 0) {
-
-        } else {
-            while (cursor_Chita.moveToNext()) {
-                arrayList_Chita.add(cursor_Chita.getString(3));
-            }
-        }
-
-
-
-        arrayList_bari = new ArrayList<>();
-        final Cursor cursor_bari = db.showBari();
-        if (cursor_bari.getCount() == 0) {
-
-        } else {
-            while (cursor_bari.moveToNext()) {
-                arrayList_bari.add(cursor_bari.getString(3));
-            }
-        }
-
-
-        arrayList_Khul = new ArrayList<>();
-        final Cursor cursor_Khul = db.shoeKhul();
-        if (cursor_Khul.getCount() == 0) {
-
-        } else {
-            while (cursor_Khul.moveToNext()) {
-                arrayList_Khul.add(cursor_Khul.getString(3));
-            }
-        }
+        arrayList_Chita.add("চট্টগ্রাম");
+        arrayList_Chita.add("ব্রাহ্মণবাড়িয়া");
+        arrayList_Chita.add("কুমিল্লা");
+        arrayList_Chita.add("চাঁদপুর");
+        arrayList_Chita.add("লক্ষ্মীপুর");
+        arrayList_Chita.add("নোয়াখালী");
+        arrayList_Chita.add("ফেনী");
+        arrayList_Chita.add("খাগড়াছড়ি");
+        arrayList_Chita.add("রাঙ্গামাটি");
+        arrayList_Chita.add("বান্দরবান");
+        arrayList_Chita.add("কক্সবাজার");
 
 
 
         arrayList_Raj = new ArrayList<>();
-        final Cursor cursor_Raj = db.showRaj();
-        if (cursor_Raj.getCount() == 0) {
-
-        } else {
-            while (cursor_Raj.moveToNext()) {
-                arrayList_Raj.add(cursor_Raj.getString(3));
-            }
-        }
-
-
-
-        arrayList_Rang = new ArrayList<>();
-        final Cursor cursor_Rong = db.showRong();
-        if (cursor_Rong.getCount() == 0) {
-
-        } else {
-            while (cursor_Rong.moveToNext()) {
-                arrayList_Rang.add(cursor_Rong.getString(3));
-            }
-        }
+        arrayList_Raj.add("রাজশাহী");
+        arrayList_Raj.add("চাঁপাইনবাবগঞ্জ");
+        arrayList_Raj.add("জয়পুরহাট");
+        arrayList_Raj.add("নওগাঁ");
+        arrayList_Raj.add("নাটোর");
+        arrayList_Raj.add("পাবনা");
+        arrayList_Raj.add("বগুড়া");
+        arrayList_Raj.add("সিরাজগঞ্জ");
 
 
+        arrayList_Khul = new ArrayList<>();
+        arrayList_Khul.add("খুলনা");
+        arrayList_Khul.add("কুষ্টিয়া");
+        arrayList_Khul.add("চুয়াডাঙ্গা");
+        arrayList_Khul.add("ঝিনাইদহ");
+        arrayList_Khul.add("নড়াইল");
+        arrayList_Khul.add("বাগেরহাট");
+        arrayList_Khul.add("মাগুরা");
+        arrayList_Khul.add("মেহেরপুর");
+        arrayList_Khul.add("যশোর");
+        arrayList_Khul.add("সাতক্ষীরা");
 
+
+        arrayList_bari = new ArrayList<>();
+        arrayList_bari.add("বরিশাল");
+        arrayList_bari.add("পটুয়াখালী");
+        arrayList_bari.add("ভোলা");
+        arrayList_bari.add("পিরোজপুর");
+        arrayList_bari.add("বরগুনা");
+        arrayList_bari.add("ঝালকাঠি");
 
 
         arrayList_Sy = new ArrayList<>();
-        int a = 7;
-        final Cursor cursor_Sy = db.showSy(a);
-        if (cursor_Sy.getCount() == 0) {
+        arrayList_Sy.add("সিলেট");
+        arrayList_Sy.add("মৌলভীবাজার");
+        arrayList_Sy.add("সুনামগঞ্জ");
+        arrayList_Sy.add("হবিগঞ্জ");
 
-        } else {
-            while (cursor_Sy.moveToNext()) {
-                arrayList_Sy.add(cursor_Sy.getString(3));
-            }
-        }
+        arrayList_Rang = new ArrayList<>();
+        arrayList_Rang.add("রংপুর");
+        arrayList_Rang.add("কুড়িগ্রাম");
+        arrayList_Rang.add("গাইবান্ধা");
+        arrayList_Rang.add("ঠাকুরগাঁও");
+        arrayList_Rang.add("দিনাজপুর");
+        arrayList_Rang.add("নীলফামারী");
+        arrayList_Rang.add("পঞ্চগড়");
+        arrayList_Rang.add("লালমনিরহাট");
+
+        arrayList_Moy = new ArrayList<>();
+        arrayList_Moy.add("ময়মনসিংহ");
+        arrayList_Moy.add("জামালপুর");
+        arrayList_Moy.add("নেত্রকোনা");
+        arrayList_Moy.add("শেরপুর");
 
 
         spDiv.setOnItemSelectedListener(new MaterialSpinner.OnItemSelectedListener<String>() {
 
             @Override public void onItemSelected(MaterialSpinner view, int i, long id, String item) {
-                if (i==0){
-                    arrayAdapter_Dis = new ArrayAdapter(getApplicationContext(), R.layout.support_simple_spinner_dropdown_item, arrayList_blank);
-                    spDis.setAdapter(arrayAdapter_Dis);
-                }
+
                 if (i==1){
                     arrayAdapter_Dis = new ArrayAdapter(getApplicationContext(), R.layout.support_simple_spinner_dropdown_item, arrayList_Dhaka);
                     spDis.setAdapter(arrayAdapter_Dis);
@@ -301,7 +298,7 @@ public class EightDivisonActivity extends AppCompatActivity {
                     spDis.setAdapter(arrayAdapter_Dis);
                 }
                 if (i==3){
-                    arrayAdapter_Dis = new ArrayAdapter(getApplicationContext(), R.layout.support_simple_spinner_dropdown_item, (List) arrayList_bari);
+                    arrayAdapter_Dis = new ArrayAdapter(getApplicationContext(), R.layout.support_simple_spinner_dropdown_item, (List) arrayList_Raj);
                     spDis.setAdapter(arrayAdapter_Dis);
                 }
                 if (i==4){
@@ -309,15 +306,19 @@ public class EightDivisonActivity extends AppCompatActivity {
                     spDis.setAdapter(arrayAdapter_Dis);
                 }
                 if (i==5){
-                    arrayAdapter_Dis = new ArrayAdapter(getApplicationContext(), R.layout.support_simple_spinner_dropdown_item, (List) arrayList_Raj);
+                    arrayAdapter_Dis = new ArrayAdapter(getApplicationContext(), R.layout.support_simple_spinner_dropdown_item, (List) arrayList_bari);
                     spDis.setAdapter(arrayAdapter_Dis);
                 }
                 if (i==6){
-                    arrayAdapter_Dis = new ArrayAdapter(getApplicationContext(), R.layout.support_simple_spinner_dropdown_item, (List) arrayList_Rang);
+                    arrayAdapter_Dis = new ArrayAdapter(getApplicationContext(), R.layout.support_simple_spinner_dropdown_item, (List) arrayList_Sy);
                     spDis.setAdapter(arrayAdapter_Dis);
                 }
                 if (i==7){
-                    arrayAdapter_Dis = new ArrayAdapter(getApplicationContext(), R.layout.support_simple_spinner_dropdown_item, (List) arrayList_Sy);
+                    arrayAdapter_Dis = new ArrayAdapter(getApplicationContext(), R.layout.support_simple_spinner_dropdown_item, (List) arrayList_Rang);
+                    spDis.setAdapter(arrayAdapter_Dis);
+                }
+                if (i==8){
+                    arrayAdapter_Dis = new ArrayAdapter(getApplicationContext(), R.layout.support_simple_spinner_dropdown_item, (List) arrayList_Moy);
                     spDis.setAdapter(arrayAdapter_Dis);
                 }
             }
@@ -408,7 +409,7 @@ public class EightDivisonActivity extends AppCompatActivity {
                         latC = 24.870955;
                         lonC = 90.727887;
                         break;
-                    case "রাজবাড়ি":
+                    case "রাজবাড়ী":
 
                         latC = 23.7574305;
                         lonC = 89.6444665;
@@ -563,7 +564,7 @@ public class EightDivisonActivity extends AppCompatActivity {
                         latC = 23.4682747;
                         lonC = 91.1788135;
                         break;
-                    case "কক্স বাজার":
+                    case "কক্সবাজার":
 
                         latC = 21.439464;
                         lonC = 92.007732;
@@ -662,6 +663,12 @@ public class EightDivisonActivity extends AppCompatActivity {
 
                         latC = 22.315481;
                         lonC = 89.111453;
+                        break;
+
+                    case "চাঁপাইনবাবগঞ্জ":
+
+                        latC = 24.741311;
+                        lonC = 88.291207;
                         break;
 
                     default:
