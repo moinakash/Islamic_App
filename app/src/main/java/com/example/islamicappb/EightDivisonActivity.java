@@ -90,6 +90,15 @@ public class EightDivisonActivity extends AppCompatActivity {
         if (ff.equals("1")){
 
 
+
+            sharedPrefMM = this.getSharedPreferences("mm",0);
+
+            String kk = "0";
+            SharedPreferences.Editor editor = sharedPrefMM.edit();
+            editor.putString("key", kk);
+
+            editor.commit();
+
         }else {
 
 
