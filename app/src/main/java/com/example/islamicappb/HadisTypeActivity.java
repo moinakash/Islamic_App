@@ -90,6 +90,7 @@ public class HadisTypeActivity extends AppCompatActivity {
 
     }
 
+    
 
     public void loadData() {
 
