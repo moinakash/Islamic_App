@@ -86,13 +86,13 @@
                         android:background="@drawable/copy_icon" />
 
 
-                    <ImageButton
-                        android:layout_marginLeft="5dp"
-                        android:id="@+id/idSuraBookmark"
-                        android:layout_width="20dp"
-                        android:layout_height="20dp"
-                        android:layout_gravity="right"
-                        android:background="@drawable/bookmark_icon" />
+<!--                    <ImageButton-->
+<!--                        android:layout_marginLeft="5dp"-->
+<!--                        android:id="@+id/idSuraBookmark"-->
+<!--                        android:layout_width="20dp"-->
+<!--                        android:layout_height="20dp"-->
+<!--                        android:layout_gravity="right"-->
+<!--                        android:background="@drawable/bookmark_icon" />-->
 
 
                 </LinearLayout>

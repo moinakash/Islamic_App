@@ -169,6 +169,49 @@ public class ReadHadisActivity extends AppCompatActivity {
                 TextView hadisutso = (TextView) customView.findViewById(R.id.idSuraBanglaMeaning);
                 hadisutso.setText(hadisLinePart1.getHadis_utso());
 
+
+
+                /////////////////////////////////////////////////////////////////////////
+                Copy.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+
+                        final Animation myAnim = AnimationUtils.loadAnimation(getContext(), R.anim.bounce);
+                        MyBounceInterpolator interpolator = new MyBounceInterpolator(.1, 12);
+                        myAnim.setInterpolator(interpolator);
+
+                        Copy.startAnimation(myAnim);
+
+                        Toast.makeText(getContext(), "অনুলিপি করা হয়েছে", Toast.LENGTH_SHORT).show();
+
+                        ClipboardManager cm = (ClipboardManager) context
+                                .getSystemService(Context.CLIPBOARD_SERVICE);
+                        cm.setText(""+hadisLinePart1.getHadis_arbi()+"\n"+""+hadisLinePart1.getHadis_bangla()+""+hadisLinePart1.getHadis_utso());
+
+                    }
+                });
+
+                Share.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+
+                        final Animation myAnim = AnimationUtils.loadAnimation(getContext(), R.anim.bounce);
+                        MyBounceInterpolator interpolator = new MyBounceInterpolator(.1, 12);
+                        myAnim.setInterpolator(interpolator);
+
+                        Share.startAnimation(myAnim);
+
+                        Intent sendIntent = new Intent();
+                        sendIntent.setAction(Intent.ACTION_SEND);
+                        sendIntent.putExtra(Intent.EXTRA_TEXT, ""+hadisLinePart1.getHadis_arbi()+"\n"+hadisLinePart1.getHadis_bangla()+""+hadisLinePart1.getHadis_utso());
+                        sendIntent.setType("text/plain");
+
+                        Intent shareIntent = Intent.createChooser(sendIntent, null);
+                        startActivity(shareIntent);
+                    }
+                });
+
+
             }
 
             return customView;
@@ -203,6 +246,19 @@ public class ReadHadisActivity extends AppCompatActivity {
 
     }
 
+    class MyBounceInterpolator implements android.view.animation.Interpolator {
+        private double mAmplitude = 1;
+        private double mFrequency = 10;
 
+        MyBounceInterpolator(double amplitude, double frequency) {
+            mAmplitude = amplitude;
+            mFrequency = frequency;
+        }
+
+        public float getInterpolation(float time) {
+            return (float) (-1 * Math.pow(Math.E, -time/ mAmplitude) *
+                    Math.cos(mFrequency * time) + 1);
+        }
+    }
 
 }
