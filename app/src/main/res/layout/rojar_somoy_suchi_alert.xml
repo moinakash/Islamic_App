@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:padding="16dp"
+    >
+
+    <ImageView
+        android:id="@+id/img"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/tasbih_header_bg"
+        android:translationY="-0dp" />
+
+    <TextView
+        android:gravity="center"
+        android:id="@+id/sahari"
+        android:textColor="@android:color/black"
+        android:layout_below="@+id/img"
+        android:textSize="15sp"
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="শেষ সময়"
+        />
+
+    <TextView
+        android:gravity="center"
+        android:id="@+id/sahari_sesh_somoy"
+        android:textColor="@android:color/black"
+        android:layout_below="@+id/sahari"
+        android:textSize="15sp"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="শেষ সময়"
+        />
+
+
+    <TextView
+        android:gravity="center"
+       android:id="@+id/iftari"
+        android:textColor="@android:color/black"
+        android:layout_below="@+id/sahari_sesh_somoy"
+        android:textSize="15sp"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="ইফতারির সময়"
+        />
+
+    <TextView
+        android:gravity="center"
+        android:id="@+id/iftarir_somoy"
+        android:textColor="@android:color/black"
+        android:layout_below="@+id/iftari"
+        android:textSize="15sp"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="ইফতারির সময়"
+        />
+
+    <Button
+        android:layout_below="@id/iftarir_somoy"
+        android:layout_margin="20dp"
+        android:layout_weight="1"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Exit"
+
+        android:id="@+id/exit"
+        />
+
+
+
+
+
+
+</RelativeLayout>

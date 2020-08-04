@@ -182,17 +182,17 @@ public class BookmarkActivity extends AppCompatActivity {
                         alertDialogBuilder = new AlertDialog.Builder(BookmarkActivity.this);
 
                         //for setting title
-                        alertDialogBuilder.setTitle("Warning");
+                        alertDialogBuilder.setTitle("সতর্ক বার্তা");
 
                         //for setting the message
-                        alertDialogBuilder.setMessage("Do you want to DELETE this?");
+                        alertDialogBuilder.setMessage("আপনি কি আয়াতটি মুছে ফেলতে চান?");
 
                         //for setting the icon
                         alertDialogBuilder.setIcon(R.drawable.trash);
 
                         alertDialogBuilder.setCancelable(false);
 
-                        alertDialogBuilder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                        alertDialogBuilder.setPositiveButton("হ্যা", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
 
@@ -220,7 +220,7 @@ public class BookmarkActivity extends AppCompatActivity {
                             }
                         });
 
-                        alertDialogBuilder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+                        alertDialogBuilder.setNegativeButton("না", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
 

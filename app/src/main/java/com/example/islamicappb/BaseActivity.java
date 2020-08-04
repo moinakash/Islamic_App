@@ -12,6 +12,11 @@ import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.ismaeldivita.chipnavigation.ChipNavigationBar;
 
@@ -722,20 +727,76 @@ public int getTest(){
     @Override
     public void onBackPressed() {
 
-        alertDialogBuilder = new AlertDialog.Builder(BaseActivity.this);
+        showDialog();
 
-        //for setting title
-        alertDialogBuilder.setTitle("Warning");
+
+
+    }
+
+
+    void showDialog() {
+
+
+
+
+        final LayoutInflater inflater = LayoutInflater.from(this);
+        View view = inflater.inflate(R.layout.alert_dialog, null);
+
+        final AlertDialog alertDialog = new AlertDialog.Builder(this)
+                .setView(view)
+                .create();
+
+        ImageView image = view.findViewById(R.id.img);
+
+        Button acceptButton = view.findViewById(R.id.acceptButton);
+        Button cancelButton = view.findViewById(R.id.cancelButton);
+        TextView textView = view.findViewById(R.id.text);
+
+        textView.setText("আপনি কি প্রস্থান করতে চান");
+
+        cancelButton.setText("না");
+        acceptButton.setText("হ্যা");
+
+        acceptButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                finish();
+            }
+        });
+
+        cancelButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                alertDialog.cancel();
+
+            }
+        });
+
+
+
+        alertDialog.show();
+
+
+
+    }
+
+
+    /* alertDialogBuilder = new AlertDialog.Builder(BaseActivity.this);
+
+     *//*        //for setting title
+        alertDialogBuilder.setTitle("");*//*
 
         //for setting the message
-        alertDialogBuilder.setMessage("Do you want to exit?");
+        alertDialogBuilder.setMessage("আপনি কি প্রস্থান করতে চান");
 
         //for setting the icon
-        /*alertDialogBuilder.setIcon(R.drawable.trash);*/
+        *//*alertDialogBuilder.setIcon(R.drawable.trash);*//*
 
         alertDialogBuilder.setCancelable(false);
 
-        alertDialogBuilder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+        alertDialogBuilder.setPositiveButton("হ্যা", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 //exit
@@ -743,7 +804,7 @@ public int getTest(){
             }
         });
 
-        alertDialogBuilder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+        alertDialogBuilder.setNegativeButton("না", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
 
@@ -754,7 +815,6 @@ public int getTest(){
 
         AlertDialog alertDialog = alertDialogBuilder.create();
         alertDialog.show();
-
-    }
+*/
 
 }

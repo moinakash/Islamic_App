@@ -1,5 +1,6 @@
 package com.example.islamicappb;
 
+import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -11,7 +12,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -20,7 +23,7 @@ import android.widget.LinearLayout;
  */
 public class DoaDurudFragment extends Fragment {
 
-    LinearLayout btnNamajerNiom, btnBisheshNamaj, btnMonajaterNiom, btnForojOSunnot,btnDoaODurud, btnTaharat, btnShoriyot, btnGoLoc;
+    LinearLayout btnNamajerNiom, btnBisheshNamaj, btnMonajaterNiom, btnForojOSunnot,btnDoaODurud, btnTaharat, btnShoriyot, btnGoLoc, btnRojarSomoy;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -75,6 +78,7 @@ public class DoaDurudFragment extends Fragment {
         btnTaharat = view.findViewById(R.id.idTaharat);
         btnShoriyot = view.findViewById(R.id.idShoriot);
         btnGoLoc = view.findViewById(R.id.idGoLocation);
+        btnRojarSomoy = view.findViewById(R.id.idRojar_somoy_suchi);
 
 
         btnNamajerNiom.setOnClickListener(new View.OnClickListener() {
@@ -139,6 +143,14 @@ public class DoaDurudFragment extends Fragment {
             }
         });
 
+        btnRojarSomoy.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                showDialog();
+            }
+        });
+
         SharedPreferences sharedPrefMM = getActivity().getSharedPreferences("mm",0);
 
         sharedPrefMM = getActivity().getSharedPreferences("mm",0);
@@ -174,5 +186,46 @@ public class DoaDurudFragment extends Fragment {
 
 
         return view;
+    }
+
+
+
+
+    void showDialog() {
+
+
+
+
+        final LayoutInflater inflater = LayoutInflater.from(getContext());
+        View view = inflater.inflate(R.layout.rojar_somoy_suchi_alert, null);
+
+        final AlertDialog alertDialog = new AlertDialog.Builder(getContext())
+                .setView(view)
+                .create();
+
+        ImageView image = view.findViewById(R.id.img);
+
+        TextView Saharir_shesh_somoy = view.findViewById(R.id.sahari_sesh_somoy);
+        TextView Iftarir_somoy = view.findViewById(R.id.iftarir_somoy);
+        Button Exit = view.findViewById(R.id.exit);
+
+        Exit.setText("ঠিক আছে");
+
+        Saharir_shesh_somoy.setText("----");
+        Iftarir_somoy.setText("----");
+
+        Exit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                alertDialog.cancel();
+            }
+        });
+
+
+        alertDialog.show();
+
+
+
     }
 }

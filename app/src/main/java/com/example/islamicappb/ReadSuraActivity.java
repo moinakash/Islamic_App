@@ -15,6 +15,7 @@ import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.graphics.PorterDuff;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -298,9 +299,16 @@ public class ReadSuraActivity extends AppCompatActivity {
         final SeekBar seek = new SeekBar(this);
         seek.setMax(20);
         //seek.setMin(5);
-        popDialog.setIcon(android.R.drawable.btn_star_big_on);
-        popDialog.setTitle("Text size: ");
+        /*popDialog.setIcon(android.R.drawable.btn_star_big_on);*/
+        popDialog.setTitle("ফন্ট সাইজ");
         popDialog.setView(seek);
+
+      /*  if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
+            seek.setOutlineSpotShadowColor(getResources().getColor(R.color.base_color));
+        }
+*/
+        seek.getProgressDrawable().setColorFilter(getResources().getColor(R.color.base_color), PorterDuff.Mode.MULTIPLY);
+        seek.getThumb().setColorFilter(getResources().getColor(R.color.bottom_nav_option), PorterDuff.Mode.SRC_ATOP);
 
         SharedPreferences spf = getSharedPreferences("SeekValueP",Context.MODE_PRIVATE);
         seekvalue = spf.getString("skv","15");
@@ -326,23 +334,10 @@ public class ReadSuraActivity extends AppCompatActivity {
 
         });
 
-// Button OK
-
-//        popDialog.setPositiveButton("OK",
-//
-//                new DialogInterface.OnClickListener() {
-//
-//                    public void onClick(DialogInterface dialog, int which) {
-//
-//
-//                        dialog.dismiss();
-//
-//                    }
-//
-//                });
 
 
-        popDialog.setMessage("farhad");
+
+        popDialog.setMessage("ফন্ট সাইজ পরিবর্তন করুন");
 
 
         popDialog.create();

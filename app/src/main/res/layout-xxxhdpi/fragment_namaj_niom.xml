@@ -186,7 +186,7 @@
 
                 <TextView
                     android:gravity="center"
-                    android:text="ফরজ ও সুন্নত\nনামাজের পার্থক্য"
+                    android:text="নামাজের পার্থক্য"
                     android:textStyle="bold"
                     android:textSize="13sp"
                     android:layout_width="wrap_content"
@@ -264,7 +264,7 @@
 
                 <TextView
                     android:gravity="center"
-                    android:text="শরীয়তের বিভিন্ন\nপ্রয়োজনীয় শব্দ"
+                    android:text="শরীয়তের শব্দার্থ"
                     android:textStyle="bold"
                     android:textSize="13sp"
                     android:layout_width="wrap_content"
@@ -321,6 +321,7 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/idRojar_somoy_suchi"
                 android:layout_weight="1"
 
                 android:layout_margin="10dp"
