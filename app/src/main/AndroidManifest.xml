@@ -12,7 +12,6 @@
     <uses-permission android:name="android.permission.SET_ALARM" />
     <uses-permission android:name="com.android.alarm.permission.SET_ALARM" />
 
-
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -20,8 +19,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".BisheshNamajActivity"
-            android:parentActivityName=".KotlinActivity"></activity>
+        <activity android:name=".ReadHadisActivity"></activity>
+        <activity
+            android:name=".BisheshNamajActivity"
+            android:parentActivityName=".KotlinActivity" />
         <activity android:name=".NamajerNiomActivity" />
         <activity
             android:name=".KalimaActivity"
@@ -36,8 +37,7 @@
         <activity
             android:name=".ReadSuraActivity"
             android:parentActivityName=".SuraActivity" />
-        <activity
-            android:name=".HadisTypeActivity" />
+        <activity android:name=".HadisTypeActivity" />
         <activity
             android:name=".SuraActivity"
             android:parentActivityName=".KotlinActivity" />

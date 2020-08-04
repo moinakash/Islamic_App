@@ -320,7 +320,7 @@ public class DatabaseHelper
     public Cursor Hadis(int k){
 
         SQLiteDatabase db = this.getWritableDatabase();
-        String HQuery = "SELECT * FROM hadis where = "+k;
+        String HQuery = "SELECT * FROM hadis where unic_id= "+k;
         Cursor Hadis = db.rawQuery(HQuery,null);
         return Hadis;
     }

@@ -22,6 +22,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.SearchView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -41,6 +42,7 @@ public class HadisTypeActivity extends AppCompatActivity {
 
     MyDatabasehelper myDatabasehelper;
     private Toolbar mToolbar;
+    int k;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -101,7 +103,7 @@ public class HadisTypeActivity extends AppCompatActivity {
         }else {
             while (cursor.moveToNext()){
 
-                hadisTypePojoList2.add(new HadisTypePojoList(""+cursor.getString(1)));
+                hadisTypePojoList2.add(new HadisTypePojoList(""+cursor.getString(1),""+cursor.getString(0)));
 
 
             }
@@ -162,6 +164,11 @@ public class HadisTypeActivity extends AppCompatActivity {
                     @Override
                     public void onClick(View v) {
                         Log.e("main activity", "item clicked");
+
+                        Intent intent = new Intent(getBaseContext(), ReadHadisActivity.class);
+                        intent.putExtra("typename",""+hadisTypePojoList.getHadisType());
+                        intent.putExtra("position", ""+hadisTypePojoList.getHadisType_Id());
+                        startActivity(intent);
 
 
                     }
