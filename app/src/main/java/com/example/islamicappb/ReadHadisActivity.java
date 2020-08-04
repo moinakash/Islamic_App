@@ -111,7 +111,7 @@ public class ReadHadisActivity extends AppCompatActivity {
         private List<HadisLinePart> hadisLinePart;
         private Context context;
 
-        TextView SuraName;
+        TextView HadisArbi;
 
         public HadisLineAdapter(@NonNull Context context, int textViewResourceId, List<HadisLinePart> hadisLinePart) {
             super(context, textViewResourceId, hadisLinePart);
@@ -153,28 +153,21 @@ public class ReadHadisActivity extends AppCompatActivity {
                 final ImageButton Bookmark = (ImageButton) customView.findViewById(R.id.idSuraBookmark);
                 final ImageButton Share = (ImageButton) customView.findViewById(R.id.idSuraShare);
 
-                TextView AyatNumber = (TextView) customView.findViewById(R.id.idAyatNumber);
-                AyatNumber.setText(hadisLinePart1.getHadis_index());
+                TextView Number = (TextView) customView.findViewById(R.id.idAyatNumber);
+                Number.setText(hadisLinePart1.getHadis_index());
 
-                SuraName = (TextView) customView.findViewById(R.id.idSuraArbi);
-                SuraName.setText(hadisLinePart1.getHadis_arbi());
+                HadisArbi = (TextView) customView.findViewById(R.id.idSuraArbi);
+                HadisArbi.setText(hadisLinePart1.getHadis_arbi());
 
 
                 ///////////////////////////////////////////////////////
 
 
+                final TextView hadisBangla = (TextView) customView.findViewById(R.id.idSuraBangla);
+                hadisBangla.setText(hadisLinePart1.getHadis_bangla());
 
-
-                final TextView SuraNameBangla = (TextView) customView.findViewById(R.id.idSuraBangla);
-                SuraNameBangla.setText(hadisLinePart1.getHadis_bangla());
-
-                TextView SuraNameMeaning = (TextView) customView.findViewById(R.id.idSuraBanglaMeaning);
-                SuraNameMeaning.setText(hadisLinePart1.getHadis_utso());
-
-
-
-
-
+                TextView hadisutso = (TextView) customView.findViewById(R.id.idSuraBanglaMeaning);
+                hadisutso.setText(hadisLinePart1.getHadis_utso());
 
             }
 
