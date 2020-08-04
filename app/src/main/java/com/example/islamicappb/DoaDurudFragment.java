@@ -1,9 +1,12 @@
 package com.example.islamicappb;
 
 import android.app.AlertDialog;
+import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -196,21 +199,23 @@ public class DoaDurudFragment extends Fragment {
 
 
 
-
+/*
         final LayoutInflater inflater = LayoutInflater.from(getContext());
-        View view = inflater.inflate(R.layout.rojar_somoy_suchi_alert, null);
+        View view = inflater.inflate(R.layout.rojar_somoy_suchi_alert, null);*/
 
-        final AlertDialog alertDialog = new AlertDialog.Builder(getContext())
-                .setView(view)
-                .create();
+        final Dialog alertDialog = new Dialog(getContext());
 
-        ImageView image = view.findViewById(R.id.img);
+        alertDialog.setContentView(R.layout.rojar_somoy_suchi_alert);
 
-        TextView Saharir_shesh_somoy = view.findViewById(R.id.sahari_sesh_somoy);
-        TextView Iftarir_somoy = view.findViewById(R.id.iftarir_somoy);
-        Button Exit = view.findViewById(R.id.exit);
+        alertDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
 
-        Exit.setText("ঠিক আছে");
+        ImageView image = alertDialog.findViewById(R.id.img);
+
+        TextView Saharir_shesh_somoy = alertDialog.findViewById(R.id.sahari_sesh_somoy);
+        TextView Iftarir_somoy = alertDialog.findViewById(R.id.iftarir_somoy);
+        TextView Exit = alertDialog.findViewById(R.id.exit);
+
+        Exit.setText("X");
 
         BaseActivity activity = (BaseActivity) getActivity();
         String fojorerTime = activity.fojorData();

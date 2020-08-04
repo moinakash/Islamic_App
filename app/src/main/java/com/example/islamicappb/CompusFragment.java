@@ -1,6 +1,9 @@
 package com.example.islamicappb;
 
+import android.app.Dialog;
 import android.content.Context;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
@@ -16,6 +19,7 @@ import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.RotateAnimation;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 
@@ -77,6 +81,8 @@ public class CompusFragment extends Fragment implements SensorEventListener {
         }else
         {
             Toast.makeText(getContext(), "দুঃখিত, আপনার মোবাইলে কম্পাস সেন্সর নেই।", Toast.LENGTH_SHORT).show();
+
+            showDialog();
         }
 
 
@@ -115,6 +121,54 @@ public class CompusFragment extends Fragment implements SensorEventListener {
 
             }
         }, 100);
+
+    }
+
+
+    void showDialog() {
+
+
+
+/*
+        final LayoutInflater inflater = LayoutInflater.from(getContext());
+        View view = inflater.inflate(R.layout.rojar_somoy_suchi_alert, null);*/
+
+        final Dialog alertDialog = new Dialog(getContext());
+
+        alertDialog.setContentView(R.layout.rojar_somoy_suchi_alert);
+
+        alertDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+
+        ImageView image = alertDialog.findViewById(R.id.img);
+        image.setVisibility(View.GONE);
+
+        TextView Saharir_shesh_somoy = alertDialog.findViewById(R.id.sahari_sesh_somoy);
+        TextView Iftarir_somoy = alertDialog.findViewById(R.id.iftarir_somoy);
+        TextView Sahari = alertDialog.findViewById(R.id.sahari);
+        TextView Iftari = alertDialog.findViewById(R.id.iftari);
+        TextView Exit = alertDialog.findViewById(R.id.exit);
+
+
+
+        Saharir_shesh_somoy.setText("দুঃখিত, আপনার মোবাইলে কম্পাস সেন্সর নেই।");
+        Iftarir_somoy.setVisibility(View.GONE);
+        Sahari.setVisibility(View.GONE);
+        Iftari.setVisibility(View.GONE);
+        Exit.setVisibility(View.GONE);
+
+
+        Exit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                alertDialog.cancel();
+            }
+        });
+
+
+        alertDialog.show();
+
+
 
     }
 
