@@ -325,5 +325,13 @@ public class DatabaseHelper
         return Hadis;
     }
 
+    public Cursor namajerNiom(){
+
+        SQLiteDatabase db = this.getWritableDatabase();
+        String HQuery = "SELECT * FROM namajerforojtwo ";
+        Cursor HadisName = db.rawQuery(HQuery,null);
+        return HadisName;
+    }
+
 
 }

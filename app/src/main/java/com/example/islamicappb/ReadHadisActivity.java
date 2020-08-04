@@ -13,6 +13,7 @@ import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.graphics.PorterDuff;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -212,6 +213,33 @@ public class ReadHadisActivity extends AppCompatActivity {
                 });
 
 
+
+                SharedPreferences spf = getSharedPreferences("SeekValueP",Context.MODE_PRIVATE);
+                seekvalue = spf.getString("skv","15");
+                sizeInt = Integer.parseInt(seekvalue);
+
+                if (sizeInt<12){
+                    sizeInt = 12;
+                }
+                //SuraName.setTextSize(pxFromDp((sizeInt+3), ReadSuraActivity.this));
+
+                HadisArbi.setTextSize(dpToSp(sizeInt, ReadHadisActivity.this));
+                hadisBangla.setTextSize(dpToSp(sizeInt, ReadHadisActivity.this));
+                hadisutso.setTextSize(dpToSp(sizeInt, ReadHadisActivity.this));
+
+
+                floatingActionButton.setOnClickListener(new View.OnClickListener() {
+                    //@RequiresApi(api = Build.VERSION_CODES.O)
+                    @Override
+                    public void onClick(View view) {
+
+                        ShowDialog();
+
+
+                    }
+                });
+
+
             }
 
             return customView;
@@ -259,5 +287,62 @@ public class ReadHadisActivity extends AppCompatActivity {
                     Math.cos(mFrequency * time) + 1);
         }
     }
+
+    public void ShowDialog()
+    {
+        final AlertDialog.Builder popDialog = new AlertDialog.Builder(this);
+        final SeekBar seek = new SeekBar(this);
+        seek.setMax(25);
+
+        popDialog.setTitle("ফন্ট সাইজ");
+        popDialog.setView(seek);
+
+        seek.getProgressDrawable().setColorFilter(getResources().getColor(R.color.base_color), PorterDuff.Mode.MULTIPLY);
+        seek.getThumb().setColorFilter(getResources().getColor(R.color.bottom_nav_option), PorterDuff.Mode.SRC_ATOP);
+
+        SharedPreferences spf = getSharedPreferences("SeekValueP",Context.MODE_PRIVATE);
+        seekvalue = spf.getString("skv","15");
+        seek.setProgress(Integer.parseInt(seekvalue));
+
+        seek.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser){
+                sizeInt = progress;
+                String kk;
+                kk = String.valueOf(sizeInt);
+                //SuraName.setTextSize(pxFromDp(sizeInt, ReadSuraActivity.this));
+                SharedPreferences spf = getSharedPreferences("SeekValueP",Context.MODE_PRIVATE);
+                SharedPreferences.Editor editor = spf.edit();
+                editor.putString("skv",kk);
+                editor.commit();
+            }
+
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {            }
+
+            public void onStopTrackingTouch(SeekBar seekBar) { finish();  startActivity(getIntent());            }
+
+        });
+
+
+
+
+        popDialog.setMessage("ফন্ট সাইজ পরিবর্তন করুন");
+
+
+        popDialog.create();
+
+        popDialog.show();
+
+    }
+
+    public static float pxFromDp(float dp, Context mContext) {
+        return dp * mContext.getResources().getDisplayMetrics().density;
+    }
+
+    public static int dpToSp(float dp, Context context) {
+        return (int) (pxFromDp(dp, context) / context.getResources().getDisplayMetrics().scaledDensity);
+    }
+
 
 }

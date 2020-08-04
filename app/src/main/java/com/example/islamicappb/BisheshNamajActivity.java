@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -30,6 +31,8 @@ public class BisheshNamajActivity extends AppCompatActivity {
 
     TextView tvDetailss;
     ScrollView scrollView1;
+    DatabaseHelper db;
+    String str;
 
 
     @Override
@@ -66,6 +69,14 @@ public class BisheshNamajActivity extends AppCompatActivity {
                     lastExpandedPosition = groupPosition;
                 }
             });
+        }else if (ff.equals("0")){
+            db = new DatabaseHelper(this);
+            Cursor cursor = db.namajerNiom();
+
+            if (cursor.moveToFirst()) {
+                str = cursor.getString(cursor.getColumnIndex("niom"));
+            }
+            tvDetailss.setText(""+str);
         }
         else if (ff.equals("2")){
 
@@ -417,6 +428,8 @@ public class BisheshNamajActivity extends AppCompatActivity {
         }
         else if (ff.equals("6")){
             mTitle.setText("শরীয়তের বিভিন্ন প্রয়োজনীয় শব্দ");
+        }else if (ff.equals("0")){
+            mTitle.setText("নামাজের নিয়ম");
         }
 
         setSupportActionBar( mToolbar );

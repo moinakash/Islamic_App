@@ -84,7 +84,8 @@ public class DoaDurudFragment extends Fragment {
         btnNamajerNiom.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent in = new Intent(getContext(), NamajerNiomActivity.class);
+                Intent in = new Intent(getContext(), BisheshNamajActivity.class);
+                in.putExtra("shoriot","0");
                 startActivity(in);
             }
         });
