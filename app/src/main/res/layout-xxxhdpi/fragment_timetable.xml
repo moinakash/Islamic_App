@@ -298,8 +298,8 @@
 
                         android:id="@+id/idAlarmFojor"
 
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
                         android:layout_gravity="center"
                         android:layout_marginRight="30dp"
                         android:background="@drawable/ic_baseline_add_alarm_24" />
@@ -363,8 +363,8 @@
 
                         android:id="@+id/idAlarmJohor"
 
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
                         android:layout_gravity="center"
                         android:layout_marginRight="30dp"
                         android:background="@drawable/ic_baseline_add_alarm_24" />
@@ -431,8 +431,8 @@
                         android:layout_gravity="center"
 
                         android:id="@+id/idAlarmAsor"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
                         android:background="@drawable/ic_baseline_add_alarm_24"
                         android:layout_marginRight="30dp"/>
 
@@ -499,8 +499,8 @@
                         android:layout_gravity="center"
 
                         android:id="@+id/idAlarmMagrib"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
                         android:background="@drawable/ic_baseline_add_alarm_24"
                         android:layout_marginRight="30dp"/>
 
@@ -566,8 +566,8 @@
                         android:layout_gravity="center"
 
                         android:id="@+id/idAlarmEsha"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
                         android:background="@drawable/ic_baseline_add_alarm_24"
                         android:layout_marginRight="30dp"/>
 

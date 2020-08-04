@@ -116,12 +116,12 @@
 
     <style name="Rojar_somoy">
         <item name="android:layout_margin">10dp</item>
-        <item name="android:background">@drawable/taharat</item>
+        <item name="android:background">@drawable/rojar_somoy</item>
     </style>
 
     <style name="Location">
         <item name="android:layout_margin">10dp</item>
-        <item name="android:background">@drawable/taharat</item>
+        <item name="android:background">@drawable/location_white_icon</item>
     </style>
 
 </resources>
