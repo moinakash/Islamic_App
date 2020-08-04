@@ -24,7 +24,7 @@
         android:layout_marginTop="20dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="শেষ সময়"
+        android:text="সেহরীর শেষ সময়"
         />
 
     <TextView
@@ -36,7 +36,7 @@
         android:layout_marginTop="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="শেষ সময়"
+        android:text=""
         />
 
 

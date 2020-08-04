@@ -48,6 +48,12 @@ class KotlinActivity : AppCompatActivity() {
         DriverManager.println("Asr --->" + prayerTimes.assr())
         DriverManager.println("Maghrib --->" + prayerTimes.maghrib())
         DriverManager.println("ISHA  --->" + prayerTimes.ishaa())
+        DriverManager.println("day  --->" + today.day )
+
+        Log.d("msg",""+today.day)
+        Log.e("msg",""+today)
+
+
 
         DriverManager.println("----------------------------------------")
 

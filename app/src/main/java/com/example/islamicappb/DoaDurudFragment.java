@@ -211,8 +211,74 @@ public class DoaDurudFragment extends Fragment {
 
         Exit.setText("ঠিক আছে");
 
-        Saharir_shesh_somoy.setText("----");
-        Iftarir_somoy.setText("----");
+        BaseActivity activity = (BaseActivity) getActivity();
+        String fojorerTime = activity.fojorData();
+
+
+        Character [] array= new Character[fojorerTime.length()];
+
+        for (int i = 0; i < fojorerTime.length(); i++) {
+            array[i] = fojorerTime.charAt(i);
+        }
+        String fojorTimeBangla = ""+array[0]+""+array[1]+""+array[2]+""+array[3];
+
+        String SfHour = ""+array[0];
+        String SfMinute = ""+array[2]+""+array[3];
+        final int fHour = Integer.parseInt(SfHour);
+        final int fMinute = Integer.parseInt(SfMinute);
+
+
+        fojorTimeBangla = fojorTimeBangla.replace("0", "০");
+        fojorTimeBangla = fojorTimeBangla.replace("1", "১");
+        fojorTimeBangla = fojorTimeBangla.replace("2", "২");
+        fojorTimeBangla = fojorTimeBangla.replace("3", "৩");
+        fojorTimeBangla = fojorTimeBangla.replace("4", "৪");
+        fojorTimeBangla = fojorTimeBangla.replace("5", "৫");
+        fojorTimeBangla = fojorTimeBangla.replace("6", "৬");
+        fojorTimeBangla = fojorTimeBangla.replace("7", "৭");
+        fojorTimeBangla = fojorTimeBangla.replace("8", "৮");
+        fojorTimeBangla = fojorTimeBangla.replace("9", "৯");
+
+        Saharir_shesh_somoy.setText(""+fojorTimeBangla);
+
+
+
+        String magriberTime = activity.magribData();
+
+        Character [] magribarray= new Character[magriberTime.length()];
+
+        for (int i = 0; i < magriberTime.length(); i++) {
+            magribarray[i] = magriberTime.charAt(i);
+        }
+
+        String txtMagrib = ""+magribarray[0]+""+magribarray[1];
+        int mInt = Integer.parseInt(txtMagrib);
+        int mgInt = mInt;
+        if (mInt>12){
+            mInt = mInt - 12;
+        }
+
+        String magribTimeBangla = ""+mInt+""+magribarray[2]+""+magribarray[3]+""+magribarray[4];
+
+        //String SfHour = ""+array[0]+""+array[1];
+        String SmMinute = ""+magribarray[3]+""+magribarray[4];
+        final int mHour = mgInt;
+        final int mMinute = Integer.parseInt(SmMinute);
+
+
+        magribTimeBangla= magribTimeBangla.replace("0", "০");
+        magribTimeBangla= magribTimeBangla.replace("1", "১");
+        magribTimeBangla= magribTimeBangla.replace("2", "২");
+        magribTimeBangla= magribTimeBangla.replace("3", "৩");
+        magribTimeBangla= magribTimeBangla.replace("4", "৪");
+        magribTimeBangla= magribTimeBangla.replace("5", "৫");
+        magribTimeBangla= magribTimeBangla.replace("6", "৬");
+        magribTimeBangla= magribTimeBangla.replace("7", "৭");
+        magribTimeBangla= magribTimeBangla.replace("8", "৮");
+        magribTimeBangla= magribTimeBangla.replace("9", "৯");
+
+
+        Iftarir_somoy.setText(""+magribTimeBangla);
 
         Exit.setOnClickListener(new View.OnClickListener() {
             @Override
