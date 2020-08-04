@@ -358,7 +358,7 @@
 
             <LinearLayout
                 android:layout_weight="1"
-
+                android:id="@+id/idGoLocation"
                 android:layout_margin="10dp"
 
                 android:gravity="center"

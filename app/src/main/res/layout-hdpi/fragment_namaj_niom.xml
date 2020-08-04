@@ -359,6 +359,7 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/idGoLocation"
                 android:layout_weight="1"
 
                 android:layout_margin="10dp"

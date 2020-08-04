@@ -1,6 +1,8 @@
 package com.example.islamicappb;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -18,7 +20,7 @@ import android.widget.LinearLayout;
  */
 public class DoaDurudFragment extends Fragment {
 
-    LinearLayout btnNamajerNiom, btnBisheshNamaj, btnMonajaterNiom, btnForojOSunnot,btnDoaODurud, btnTaharat, btnShoriyot;
+    LinearLayout btnNamajerNiom, btnBisheshNamaj, btnMonajaterNiom, btnForojOSunnot,btnDoaODurud, btnTaharat, btnShoriyot, btnGoLoc;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -72,6 +74,7 @@ public class DoaDurudFragment extends Fragment {
         btnDoaODurud = view.findViewById(R.id.idDoaoDurud);
         btnTaharat = view.findViewById(R.id.idTaharat);
         btnShoriyot = view.findViewById(R.id.idShoriot);
+        btnGoLoc = view.findViewById(R.id.idGoLocation);
 
 
         btnNamajerNiom.setOnClickListener(new View.OnClickListener() {
@@ -135,6 +138,35 @@ public class DoaDurudFragment extends Fragment {
                 startActivity(in);
             }
         });
+
+        SharedPreferences sharedPrefMM = getActivity().getSharedPreferences("mm",0);
+
+        sharedPrefMM = getActivity().getSharedPreferences("mm",0);
+
+        String kk = "0";
+        SharedPreferences.Editor editor = sharedPrefMM.edit();
+        editor.putString("key", kk);
+
+        editor.commit();
+
+        final SharedPreferences finalSharedPrefMM = sharedPrefMM;
+
+        btnGoLoc.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                String kk = "1";
+                SharedPreferences.Editor editor = finalSharedPrefMM.edit();
+                editor.putString("key", kk);
+
+                editor.commit();
+
+                Intent go = new Intent(getContext(),EightDivisonActivity.class);
+                startActivity(go);
+                getActivity().finish();
+            }
+        });
+
 
 
 
