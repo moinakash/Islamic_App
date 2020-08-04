@@ -260,7 +260,7 @@ public class ReadSuraActivity extends AppCompatActivity {
                         Boolean result = myDatabasehelper.findThis(ayat);
 
                         if (result==true){
-                            Toast.makeText(ReadSuraActivity.this, "আয়াত সংরক্ষিত হয়েছে", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(ReadSuraActivity.this, "আয়াত সংরক্ষিত আছে", Toast.LENGTH_SHORT).show();
 
                         }else {
                             Toast.makeText(ReadSuraActivity.this, "আয়াত সংরক্ষিত হয়েছে", Toast.LENGTH_SHORT).show();
