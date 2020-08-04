@@ -18,6 +18,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.time.LocalDate;
 import java.time.chrono.HijrahChronology;
@@ -433,6 +434,7 @@ public class TimeTableFragment extends Fragment {
                 i.putExtra(AlarmClock.EXTRA_MESSAGE, "ফজরের ওয়াক্ত শুরু");
                 i.putExtra(AlarmClock.EXTRA_HOUR, fHour);
                 i.putExtra(AlarmClock.EXTRA_MINUTES, fMinute);
+                Toast.makeText(getContext(), "সম্পূর্ন হয়েছে", Toast.LENGTH_SHORT).show();
                 startActivity(i);
 
             }
@@ -444,6 +446,7 @@ public class TimeTableFragment extends Fragment {
                 i.putExtra(AlarmClock.EXTRA_MESSAGE, "যোহরের ওয়াক্ত শুরু");
                 i.putExtra(AlarmClock.EXTRA_HOUR, jHour);
                 i.putExtra(AlarmClock.EXTRA_MINUTES, jMinute);
+                Toast.makeText(getContext(), "সম্পূর্ন হয়েছে", Toast.LENGTH_SHORT).show();
                 startActivity(i);
 
             }
@@ -456,6 +459,7 @@ public class TimeTableFragment extends Fragment {
                 i.putExtra(AlarmClock.EXTRA_MESSAGE, "আসরের ওয়াক্ত শুরু");
                 i.putExtra(AlarmClock.EXTRA_HOUR, aHour);
                 i.putExtra(AlarmClock.EXTRA_MINUTES, aMinute);
+                Toast.makeText(getContext(), "সম্পূর্ন হয়েছে", Toast.LENGTH_SHORT).show();
                 startActivity(i);
 
             }
@@ -468,6 +472,7 @@ public class TimeTableFragment extends Fragment {
                 i.putExtra(AlarmClock.EXTRA_MESSAGE, "মাগরিবের ওয়াক্ত শুরু");
                 i.putExtra(AlarmClock.EXTRA_HOUR, mHour);
                 i.putExtra(AlarmClock.EXTRA_MINUTES, mMinute);
+                Toast.makeText(getContext(), "সম্পূর্ন হয়েছে", Toast.LENGTH_SHORT).show();
                 startActivity(i);
 
             }
@@ -480,6 +485,7 @@ public class TimeTableFragment extends Fragment {
                 i.putExtra(AlarmClock.EXTRA_MESSAGE, "এশার ওয়াক্ত শুরু");
                 i.putExtra(AlarmClock.EXTRA_HOUR, eHour);
                 i.putExtra(AlarmClock.EXTRA_MINUTES, eMinute);
+                Toast.makeText(getContext(), "সম্পূর্ন হয়েছে", Toast.LENGTH_SHORT).show();
                 startActivity(i);
 
             }
