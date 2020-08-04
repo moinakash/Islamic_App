@@ -67,7 +67,7 @@ public class BookmarkActivity extends AppCompatActivity {
         cursor = myDatabasehelper.showAllData();
 
         if(cursor.getCount() == 0){
-//            Toast.makeText(this, "No data available", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "কিছু বুকমার্ক করা হয়নি", Toast.LENGTH_SHORT).show();
         }else {
             while (cursor.moveToNext()){
 
@@ -288,8 +288,6 @@ public class BookmarkActivity extends AppCompatActivity {
 
         mToolbar = findViewById( R.id.Bookmark_toolbar );
         TextView mTitle = (TextView) mToolbar.findViewById(R.id.toolbar_title);
-
-
 
 
 
