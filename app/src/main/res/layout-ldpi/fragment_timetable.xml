@@ -14,7 +14,10 @@
         android:src="@drawable/background"
         android:layout_width="match_parent"
         android:layout_height="300dp"
-        android:translationY="-75dp"
+        android:scaleType="centerCrop"
+        android:scaleX="1"
+        android:scaleY=".8"
+        android:translationY="-90dp"
         />
 
     <!-- <ImageView

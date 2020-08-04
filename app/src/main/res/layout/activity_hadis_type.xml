@@ -10,6 +10,19 @@
     android:orientation="vertical"
     tools:context=".HadisTypeActivity">
 
+
+    <ImageView
+        android:padding="10dp"
+        android:id="@+id/img"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/tasbih_header_bg"
+        android:translationY="-0dp"
+        android:layout_marginBottom="5dp"
+
+        />
+
     <ListView
         android:id="@+id/idListView"
         android:layout_width="match_parent"

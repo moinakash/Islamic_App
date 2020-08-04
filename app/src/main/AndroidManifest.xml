@@ -37,7 +37,8 @@
         <activity
             android:name=".ReadSuraActivity"
             android:parentActivityName=".SuraActivity" />
-        <activity android:name=".HadisTypeActivity" />
+        <activity android:name=".HadisTypeActivity"
+            />
         <activity
             android:name=".SuraActivity"
             android:parentActivityName=".KotlinActivity" />
