@@ -56,11 +56,19 @@ public class WidgetProvider extends AppWidgetProvider {
             RemoteViews rv = new RemoteViews(context.getPackageName(), R.layout.widget_layout);
 
 
-            String Fajr = Paper.book().read("FajorPB");
-            String Johor = Paper.book().read("JohorPB");
-            String Asor = Paper.book().read("AsorPB");
-            String Magrib = Paper.book().read("MagribPB");
-            String Esha = Paper.book().read("IshaPB");
+//            String Fajr = Paper.book().read("FajorPB");
+//            String Johor = Paper.book().read("JohorPB");
+//            String Asor = Paper.book().read("AsorPB");
+//            String Magrib = Paper.book().read("MagribPB");
+//            String Esha = Paper.book().read("IshaPB");
+
+
+            SharedPreferences sharedPrefMM = context.getSharedPreferences("mm",Context.MODE_PRIVATE);
+            String Fajr = sharedPrefMM.getString("fw","");
+            String Johor = sharedPrefMM.getString("jw","");
+            String Asor = sharedPrefMM.getString("aw","");
+            String Magrib = sharedPrefMM.getString("mw","");
+            String Esha = sharedPrefMM.getString("ew","");
 
 
             rv.setTextViewText(R.id.idFojorW,"Fajor : "+Fajr);

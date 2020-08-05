@@ -414,6 +414,21 @@ public class TimeTableFragment extends Fragment {
         tvmagrib.setText("০"+magribTimeBangla);
         tvesha.setText("০"+eshaTimeBangla);
 
+        SharedPreferences sharedPrefWidget = getActivity().getSharedPreferences("WidgetMM",0);
+
+        sharedPrefWidget = getActivity().getSharedPreferences("mm",0);
+
+
+
+        SharedPreferences.Editor editorWidget = sharedPrefWidget.edit();
+        editorWidget.putString("fw", "০"+fojorTimeBangla);
+        editorWidget.putString("jw", ""+johorTimeBangla);
+        editorWidget.putString("aw", "০"+asorTimeBangla);
+        editorWidget.putString("mw", "০"+magribTimeBangla);
+        editorWidget.putString("ew", "০"+eshaTimeBangla);
+
+        editorWidget.commit();
+
         Paper.book().write("FajorPB",tvfojor.getText().toString());
         Paper.book().write("JohorPB",tvjohor.getText().toString());
         Paper.book().write("AsorPB",tvasor.getText().toString());
