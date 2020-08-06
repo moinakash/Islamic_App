@@ -28,6 +28,7 @@ import java.time.chrono.HijrahDate;
 import java.util.Locale;
 
 import io.paperdb.Paper;
+import pl.droidsonroids.gif.GifImageView;
 
 
 public class TimeTableFragment extends Fragment {
@@ -38,7 +39,7 @@ public class TimeTableFragment extends Fragment {
 
     ImageButton ibFojor, ibJohor, ibAsor, ibMagrib, ibEsha;
 
-    ImageView Heading_background;
+    GifImageView Heading_background;
     LinearLayout Fjr_stroke_bg, Jhr_stroke_bg,Asr_stroke_bg, Mgrb_stroke_bg,Isha_stroke_bg;
 
 
