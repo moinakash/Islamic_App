@@ -400,11 +400,12 @@ public class BisheshNamajActivity extends AppCompatActivity {
     private void ToolBar() {
 
         mToolbar = findViewById( R.id.kalima_toolbar );
-        TextView mTitle = (TextView) mToolbar.findViewById(R.id.toolbar_title);
+ /*       TextView mTitle = (TextView) mToolbar.findViewById(R.id.toolbar_title);*/
 
 
 
 
+/*
 
         //toolbar name ==>
         if (ff.equals("1")){
@@ -427,6 +428,7 @@ public class BisheshNamajActivity extends AppCompatActivity {
         }else if (ff.equals("0")){
             mTitle.setText("নামাজের নিয়ম");
         }
+*/
 
         setSupportActionBar( mToolbar );
 

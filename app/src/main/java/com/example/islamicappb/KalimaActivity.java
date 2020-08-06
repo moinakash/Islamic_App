@@ -133,14 +133,14 @@ public class KalimaActivity extends AppCompatActivity {
     private void ToolBar() {
 
         mToolbar = findViewById( R.id.kalima_toolbar );
-        TextView mTitle = (TextView) mToolbar.findViewById(R.id.toolbar_title);
+      /*  TextView mTitle = (TextView) mToolbar.findViewById(R.id.toolbar_title);
 
 
 
 
 
         //toolbar name ==>
-        mTitle.setText("কালিমা");
+        mTitle.setText("কালিমা");*/
         setSupportActionBar( mToolbar );
 
         getSupportActionBar().setDisplayShowTitleEnabled( false );

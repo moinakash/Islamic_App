@@ -5,10 +5,11 @@
     android:layout_height="wrap_content"
     android:gravity="center|start"
     android:orientation="horizontal"
-    android:padding="5dp">
+    android:padding="5dp"
+    android:layout_marginTop="10dp">
 
     <RelativeLayout
-        android:layout_marginTop="10dp"
+
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
@@ -21,6 +22,7 @@
         <TextView
 
 
+
             android:layout_centerHorizontal="true"
             android:id="@+id/idKalimaNaaam"
             android:layout_width="match_parent"
@@ -28,8 +30,9 @@
             android:gravity="center"
             android:layout_centerVertical="true"
             android:text="111-111-111"
-            android:textColor="@android:color/white"
-            android:textSize="18sp" />
+            android:textStyle="bold"
+            android:textColor="@color/bottom_nav_option"
+            android:textSize="16sp" />
 
 
     </RelativeLayout>

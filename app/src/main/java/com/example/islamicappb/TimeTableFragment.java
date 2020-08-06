@@ -17,6 +17,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -35,6 +37,9 @@ public class TimeTableFragment extends Fragment {
     TextView tvCurrentLocation, tvNextTime,tvNamajTimeNUmber, tvNamajSeshSomoy;
 
     ImageButton ibFojor, ibJohor, ibAsor, ibMagrib, ibEsha;
+
+    ImageView Heading_background;
+    LinearLayout Fjr_stroke_bg, Jhr_stroke_bg,Asr_stroke_bg, Mgrb_stroke_bg,Isha_stroke_bg;
 
 
     String text;
@@ -93,6 +98,14 @@ public class TimeTableFragment extends Fragment {
         tvasor = view.findViewById(R.id.idAsor);
         tvmagrib = view.findViewById(R.id.idMagrib);
         tvesha = view.findViewById(R.id.idIsha);
+
+        Heading_background = view.findViewById(R.id.idHeadingBackground);
+
+        Fjr_stroke_bg = view.findViewById(R.id.idFojorStrokeBG);
+        Jhr_stroke_bg = view.findViewById(R.id.idJohorStrokeBG);
+        Asr_stroke_bg = view.findViewById(R.id.idAsorStrokeBG);
+        Mgrb_stroke_bg = view.findViewById(R.id.idMagribStrokeBG);
+        Isha_stroke_bg = view.findViewById(R.id.idIshaStrokeBG);
 
         tvCurrentNTime = view.findViewById(R.id.idCurrentNamajTime);
         tvCurrentDate = view.findViewById(R.id.idCurrentDate);

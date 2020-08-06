@@ -7,35 +7,14 @@
     android:background="#231c1f">
 
 
+    <!--<ImageView
 
-    <ImageView
-
-        android:src="@drawable/background"
+        android:src="@drawable/johor_background"
         android:layout_width="match_parent"
-        android:layout_height="300dp"
-        android:scaleType="centerCrop"
-        android:scaleX="1"
-        android:scaleY=".8"
-        android:translationY="-90dp"
-        />
+        android:layout_height="310dp"
+        android:scaleType="fitXY"
+        android:translationY="-18dp"/>-->
 
-
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="320dp"
-        android:background="#ffffff" />
-
-
-    <com.ismaeldivita.chipnavigation.ChipNavigationBar
-        android:id="@+id/bottom_nav"
-        android:layout_width="match_parent"
-        android:layout_height="65dp"
-        android:layout_alignParentBottom="true"
-        android:background="@drawable/rounded"
-        android:elevation="16dp"
-        android:padding="8dp"
-        app:cnb_menuResource="@menu/menu_bottom" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -43,203 +22,285 @@
 
 
         <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/home_curve_background"
-            android:scaleX="1.05"
-            android:translationX="-6dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/idNamajTimeInNumber"
-            app:layout_constraintVertical_bias="0.065" />
 
-        <TextView
-            android:id="@+id/idNextNamaj"
+            android:id="@+id/idHeadingBackground"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="বর্তমান নামাজ"
-            android:textColor="@android:color/white"
-            android:textSize="20sp"
+
+            android:layout_height="310dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/johor_background"
+            android:translationY="-19dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.034" />
+            app:layout_constraintVertical_bias="0.0" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="140dp"
+            android:layout_height="78dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/somoy_heading_tab"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/idCurrentNamajTime"
-            android:layout_width="match_parent"
+            android:layout_width="80dp"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="যোহর"
-            android:textColor="@android:color/white"
-            android:textSize="30sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.083" />
+            android:gravity="right"
+            android:text="মাগরিব"
+            android:textColor="@android:color/black"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView"
+            app:layout_constraintEnd_toEndOf="@+id/imageView"
+            app:layout_constraintHorizontal_bias="0.382"
+            app:layout_constraintStart_toStartOf="@+id/imageView"
+            app:layout_constraintTop_toTopOf="@+id/imageView"
+            app:layout_constraintVertical_bias="0.204" />
 
         <TextView
             android:id="@+id/idNamajTimeInNumber"
-            android:layout_width="match_parent"
+            android:layout_width="50dp"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="১২.০৩"
-            android:textColor="@android:color/white"
-            android:textSize="19sp"
+            android:gravity="right"
+            android:text="০৪ঃ৪৩"
+            android:textColor="@android:color/black"
+            android:textSize="15sp"
             android:textStyle="normal"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView"
+            app:layout_constraintEnd_toEndOf="@+id/imageView"
+            app:layout_constraintHorizontal_bias="0.549"
+            app:layout_constraintStart_toStartOf="@+id/imageView"
+            app:layout_constraintTop_toBottomOf="@+id/idCurrentNamajTime"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="95dp"
+            android:layout_height="25dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginRight="5dp"
+            android:background="@drawable/green_shape"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.132" />
+            app:layout_constraintHorizontal_bias="0.898"
+            app:layout_constraintStart_toEndOf="@+id/imageView"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginStart="4dp"
+
+
+            android:layout_marginLeft="4dp"
+            android:background="@drawable/location_black"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView2"
+            app:layout_constraintStart_toStartOf="@+id/imageView2"
+            app:layout_constraintTop_toTopOf="@+id/imageView2" />
+
+
+        <!--        @+id/imageView2-->
+
 
         <TextView
-
             android:id="@+id/idCurrentLocation"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:background="@drawable/green_shape"
-
-            android:gravity="center"
-            android:paddingLeft="15dp"
-            android:paddingTop="2dp"
-            android:paddingRight="15dp"
-            android:paddingBottom="2dp"
+            android:layout_marginLeft="5dp"
             android:text="ময়মনসিংহ"
             android:textColor="@android:color/black"
-
-            android:textSize="15sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
-            app:layout_constraintStart_toStartOf="@+id/idNextNamaj"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.186" />
+            android:textSize="13sp"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView2"
+            app:layout_constraintEnd_toEndOf="@+id/imageView2"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/imageView3"
+            app:layout_constraintTop_toTopOf="@+id/imageView2"
+            app:layout_constraintVertical_bias="0.285" />
 
         <TextView
-            android:id="@+id/textView4"
+            android:id="@+id/textView3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:elevation="5dp"
             android:gravity="right"
             android:paddingRight="15dp"
             android:text="শেষ ওয়াক্ত"
             android:textColor="@android:color/black"
-            android:textSize="18sp"
+            android:textSize="16sp"
             android:textStyle="normal"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.243" />
+            app:layout_constraintTop_toTopOf="@+id/imageView4"
+            app:layout_constraintVertical_bias="0.05" />
 
         <TextView
             android:id="@+id/idSeshSomoy"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:elevation="5dp"
             android:gravity="right"
             android:paddingRight="20dp"
             android:text="০৪ঃ৪৩"
             android:textColor="@android:color/black"
-            android:textSize="18sp"
+            android:textSize="16sp"
             android:textStyle="normal"
             android:translationY="-1dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.275" />
+            app:layout_constraintTop_toTopOf="@+id/imageView4"
+            app:layout_constraintVertical_bias="0.087" />
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cardView"
+        <ImageView
+            android:id="@+id/imageView4"
             android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_marginLeft="45dp"
-            android:layout_marginRight="45dp"
-            app:cardCornerRadius="5dp"
+            android:layout_height="175dp"
+            android:background="@drawable/home_curve_background"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
+
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.349">
+            app:layout_constraintVertical_bias="0.370" />
 
-            <LinearLayout
-
-                android:gravity="center"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@color/base_color">
-
-                <TextView
-                    android:layout_gravity="center"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-
-                    android:text="xxhdpi_layout"
-                    android:textSize="20sp" />
-
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="#ffffff"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView4"
+            app:layout_constraintVertical_bias="0.0" />
 
         <LinearLayout
 
-            android:gravity="center"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="40dp"
-            android:layout_marginRight="40dp"
             android:orientation="horizontal"
-            app:layout_constraintBottom_toTopOf="@+id/cardView1"
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginLeft="45dp"
+            android:layout_marginRight="45dp"
+            android:background="@color/base_color"
+            android:elevation="5dp"
+            android:gravity="center"
+            app:layout_constraintBottom_toBottomOf="@+id/cardView"
+            app:layout_constraintEnd_toEndOf="@+id/cardView"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="@+id/cardView"
+            app:layout_constraintTop_toTopOf="@+id/cardView"
+            app:layout_constraintVertical_bias="0.0">
+
+
+
+
+            <TextView
+                android:id="@+id/idNextNamaj"
+                android:textColor="@android:color/white"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+
+                android:elevation="5dp"
+                android:text="বর্তমান নামাজ"
+                android:textSize="15sp" />
+
+
+            <TextView
+
+                android:textColor="@android:color/white"
+                android:id="@+id/idCurrentNamajTime2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="5dp"
+                android:elevation="5dp"
+                android:text="মাগরিব"
+                android:textSize="15sp"
+                />
+
+        </LinearLayout>
+
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_marginLeft="45dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="45dp"
+            app:cardCornerRadius="5dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/cardView"
-            app:layout_constraintVertical_bias="0.093">
+            app:layout_constraintTop_toBottomOf="@+id/idSeshSomoy">
+
+
+        </androidx.cardview.widget.CardView>
+
+
+        <LinearLayout
+
+            android:id="@+id/id_date"
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="40dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cardView">
 
 
             <TextView
                 android:id="@+id/idCurrentDate"
-                android:textStyle="bold"
-                android:textSize="15sp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:text="২১ জুলাই ২০২০" />
+                android:text="২১ জুলাই ২০২০"
+                android:textSize="15sp"
+                android:textStyle="bold" />
 
             <TextView
 
                 android:id="@+id/idMidBorder"
-                android:textStyle="bold"
-                android:textSize="15sp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:text="|" />
+                android:text="|"
+                android:textSize="15sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/idCurrentDateArbi"
-                android:textStyle="bold"
-                android:textSize="15sp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:text="২১ জুলাই ২০২০" />
+                android:text="২১ জুলাই ২০২০"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
 
         </LinearLayout>
 
@@ -247,61 +308,64 @@
         <androidx.cardview.widget.CardView
 
             android:id="@+id/cardView1"
+
             android:layout_width="match_parent"
-            android:layout_height="35dp"
+            android:layout_height="30dp"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
+
+
             app:cardCornerRadius="5dp"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/cardView3"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.6"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/cardView"
-            app:layout_constraintVertical_bias="0.161">
+            app:layout_constraintTop_toBottomOf="@+id/id_date"
+            app:layout_constraintVertical_bias="0.766">
 
 
             <LinearLayout
-
-
-                android:gravity="center_horizontal"
-                android:layout_gravity="center_horizontal"
-                android:orientation="horizontal"
-                android:background="@drawable/timetable_shape"
+                android:id="@+id/idFojorStrokeBG"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:background="@drawable/time_table_gray"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal"
 
+                android:paddingTop="4dp"
+                android:paddingBottom="4dp">
 
 
                 <TextView
 
-                    android:paddingLeft="30dp"
-                    android:gravity="left"
+                    style="@style/NamajTimeTextBoxSize"
                     android:layout_weight="1"
-                    android:text="ফজর"
-                    style="@style/NamajTimeTextBoxSize"/>
+                    android:gravity="left"
+                    android:paddingLeft="30dp"
+                    android:text="ফজর" />
 
                 <TextView
 
                     android:id="@+id/idFajr"
-                    android:gravity="center"
+                    style="@style/NamajTimeTextBoxSize"
                     android:layout_weight="1"
+                    android:gravity="center"
                     android:text="00:00"
-                    android:textColor="#000000"
-                    style="@style/NamajTimeTextBoxSize"/>
+                    android:textColor="#000000" />
 
                 <LinearLayout
-                    android:gravity="right"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_weight="1"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:gravity="right">
 
                     <ImageButton
 
                         android:id="@+id/idAlarmFojor"
 
-                        android:layout_width="25dp"
-                        android:layout_height="25dp"
+                        android:layout_width="18dp"
+                        android:layout_height="18dp"
                         android:layout_gravity="center"
                         android:layout_marginRight="30dp"
                         android:background="@drawable/ic_baseline_add_alarm_24" />
@@ -309,6 +373,69 @@
                 </LinearLayout>
 
 
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView2"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_marginLeft="20dp"
+
+            android:layout_marginRight="20dp"
+            app:cardCornerRadius="5dp"
+            app:layout_constraintBottom_toTopOf="@+id/cardView4"
+            app:layout_constraintEnd_toEndOf="parent"
+
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/id_date"
+            app:layout_constraintVertical_bias="0.921">
+
+
+            <LinearLayout
+                android:id="@+id/idAsorStrokeBG"
+                android:paddingTop="4dp"
+                android:paddingBottom="4dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/timetable_shape"
+                android:orientation="horizontal">
+
+
+                <TextView
+                    style="@style/NamajTimeTextBoxSize"
+                    android:layout_weight="1"
+                    android:gravity="left"
+                    android:paddingLeft="30dp"
+                    android:text="আসর" />
+
+                <TextView
+                    android:id="@+id/idAsor"
+                    style="@style/NamajTimeTextBoxSize"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="00:00"
+                    android:textColor="#000000" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:gravity="right">
+
+                    <ImageButton
+
+                        android:id="@+id/idAlarmAsor"
+
+                        android:layout_width="18dp"
+                        android:layout_height="18dp"
+                        android:layout_gravity="center"
+                        android:layout_marginRight="30dp"
+                        android:background="@drawable/ic_baseline_add_alarm_24" />
+
+                </LinearLayout>
 
 
             </LinearLayout>
@@ -316,58 +443,57 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
-            android:layout_marginTop="5dp"
-            android:id="@+id/cardView2"
-            android:layout_marginRight="20dp"
-            android:layout_marginLeft="20dp"
+            android:id="@+id/cardView3"
             android:layout_width="match_parent"
-            android:layout_height="35dp"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_height="30dp"
+
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            app:cardCornerRadius="5dp"
+            app:layout_constraintBottom_toTopOf="@+id/cardView2"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/cardView1"
-            app:layout_constraintVertical_bias="0.022"
-            app:cardCornerRadius="5dp">
-
+            app:layout_constraintTop_toBottomOf="@+id/id_date"
+            app:layout_constraintVertical_bias="0.866">
 
             <LinearLayout
-
-
-                android:orientation="horizontal"
-                android:background="@drawable/timetable_shape"
+                android:id="@+id/idJohorStrokeBG"
+                android:paddingTop="4dp"
+                android:paddingBottom="4dp"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
+                android:layout_height="match_parent"
+                android:background="@drawable/time_table_gray"
+                android:orientation="horizontal">
 
 
                 <TextView
-                    android:paddingLeft="30dp"
-                    android:gravity="left"
+                    style="@style/NamajTimeTextBoxSize"
                     android:layout_weight="1"
-                    android:text="যোহর"
-                    style="@style/NamajTimeTextBoxSize"/>
+                    android:gravity="left"
+                    android:paddingLeft="30dp"
+                    android:text="যোহর" />
 
                 <TextView
                     android:id="@+id/idJohor"
-                    android:gravity="center"
+                    style="@style/NamajTimeTextBoxSize"
                     android:layout_weight="1"
+                    android:gravity="center"
                     android:text="00:00"
-                    android:textColor="#000000"
-                    style="@style/NamajTimeTextBoxSize"/>
+                    android:textColor="#000000" />
 
                 <LinearLayout
-                    android:gravity="right"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_weight="1"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:gravity="right">
 
                     <ImageButton
 
                         android:id="@+id/idAlarmJohor"
 
-                        android:layout_width="25dp"
-                        android:layout_height="25dp"
+                        android:layout_width="18dp"
+                        android:layout_height="18dp"
                         android:layout_gravity="center"
                         android:layout_marginRight="30dp"
                         android:background="@drawable/ic_baseline_add_alarm_24" />
@@ -375,101 +501,33 @@
                 </LinearLayout>
 
 
-
-
-            </LinearLayout>
-
-
-
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:layout_marginTop="5dp"
-            android:id="@+id/cardView3"
-            android:layout_marginRight="20dp"
-            android:layout_marginLeft="20dp"
-            android:layout_width="match_parent"
-            android:layout_height="35dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/cardView2"
-            app:layout_constraintVertical_bias="0.022"
-            app:cardCornerRadius="5dp">
-
-            <LinearLayout
-
-
-                android:orientation="horizontal"
-                android:background="@drawable/timetable_shape"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-
-
-                <TextView
-                    android:paddingLeft="30dp"
-                    android:gravity="left"
-                    android:layout_weight="1"
-                    android:text="আসর"
-                    style="@style/NamajTimeTextBoxSize"/>
-
-                <TextView
-                    android:id="@+id/idAsor"
-                    android:gravity="center"
-                    android:layout_weight="1"
-                    android:text="00:00"
-                    android:textColor="#000000"
-                    style="@style/NamajTimeTextBoxSize"/>
-
-                <LinearLayout
-                    android:gravity="right"
-                    android:layout_gravity="center"
-                    android:layout_weight="1"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <ImageButton
-
-                        android:layout_gravity="center"
-
-                        android:id="@+id/idAlarmAsor"
-                        android:layout_width="25dp"
-                        android:layout_height="25dp"
-                        android:background="@drawable/ic_baseline_add_alarm_24"
-                        android:layout_marginRight="30dp"/>
-
-                </LinearLayout>
-
-
-
-
             </LinearLayout>
 
 
         </androidx.cardview.widget.CardView>
 
-
         <androidx.cardview.widget.CardView
-            android:layout_marginTop="5dp"
-            android:layout_marginRight="20dp"
-            android:layout_marginLeft="20dp"
             android:id="@+id/cardView4"
             android:layout_width="match_parent"
-            android:layout_height="35dp"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_height="30dp"
+            android:layout_marginLeft="20dp"
+
+            android:layout_marginRight="20dp"
+
+            app:cardCornerRadius="5dp"
+            app:layout_constraintBottom_toTopOf="@+id/cardView5"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/cardView3"
-            app:layout_constraintVertical_bias="0.022"
-            app:cardCornerRadius="5dp">
+            app:layout_constraintTop_toBottomOf="@+id/id_date"
+            app:layout_constraintVertical_bias="0.917">
 
 
             <LinearLayout
-
-
+                android:id="@+id/idMagribStrokeBG"
+                android:paddingTop="4dp"
+                android:paddingBottom="4dp"
                 android:orientation="horizontal"
-                android:background="@drawable/timetable_shape"
+                android:background="@drawable/time_table_gray"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
@@ -502,8 +560,8 @@
                         android:layout_gravity="center"
 
                         android:id="@+id/idAlarmMagrib"
-                        android:layout_width="25dp"
-                        android:layout_height="25dp"
+                        android:layout_width="18dp"
+                        android:layout_height="18dp"
                         android:background="@drawable/ic_baseline_add_alarm_24"
                         android:layout_marginRight="30dp"/>
 
@@ -513,81 +571,94 @@
 
 
             </LinearLayout>
-
 
 
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
-            android:layout_marginTop="5dp"
             android:id="@+id/cardView5"
-            android:layout_marginRight="20dp"
-            android:layout_marginLeft="20dp"
             android:layout_width="match_parent"
-            android:layout_height="35dp"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_height="30dp"
+            android:layout_marginLeft="20dp"
+
+            android:layout_marginRight="20dp"
+
+
+            app:cardCornerRadius="5dp"
+            app:layout_constraintBottom_toTopOf="@+id/bottom_nav"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.575"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/cardView4"
-            app:layout_constraintVertical_bias="0.022"
-            app:cardCornerRadius="5dp">
-
-
+            app:layout_constraintTop_toBottomOf="@+id/id_date"
+            app:layout_constraintVertical_bias="0.861">
 
             <LinearLayout
-
-
-                android:orientation="horizontal"
-                android:background="@drawable/timetable_shape"
+                android:id="@+id/idIshaStrokeBG"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:paddingTop="4dp"
+                android:background="@drawable/time_table_gray"
+                android:paddingBottom="4dp">
 
 
                 <TextView
-                    android:paddingLeft="30dp"
-                    android:gravity="left"
+                    style="@style/NamajTimeTextBoxSize"
                     android:layout_weight="1"
-                    android:text="এশা"
-                    style="@style/NamajTimeTextBoxSize"/>
+                    android:gravity="left"
+                    android:paddingLeft="30dp"
+                    android:text="এশা" />
 
                 <TextView
                     android:id="@+id/idIsha"
-                    android:gravity="center"
+                    style="@style/NamajTimeTextBoxSize"
                     android:layout_weight="1"
+                    android:gravity="center"
                     android:text="00:00"
-                    android:textColor="#000000"
-                    style="@style/NamajTimeTextBoxSize"/>
+                    android:textColor="#000000" />
 
                 <LinearLayout
 
-                    android:gravity="right"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_weight="1"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:gravity="right">
 
                     <ImageButton
 
-                        android:layout_gravity="center"
-
                         android:id="@+id/idAlarmEsha"
-                        android:layout_width="25dp"
-                        android:layout_height="25dp"
-                        android:background="@drawable/ic_baseline_add_alarm_24"
-                        android:layout_marginRight="30dp"/>
+
+                        android:layout_width="18dp"
+                        android:layout_height="18dp"
+                        android:layout_gravity="center"
+                        android:layout_marginRight="30dp"
+                        android:background="@drawable/ic_baseline_add_alarm_24" />
 
                 </LinearLayout>
 
 
-
-
             </LinearLayout>
-
 
         </androidx.cardview.widget.CardView>
 
+        <LinearLayout
+            android:id="@+id/bottom_nav"
+            android:layout_width="match_parent"
+            android:layout_height="65dp"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/rounded"
+            android:elevation="16dp"
+            android:orientation="vertical"
+            android:padding="8dp"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView5"
+            app:layout_constraintStart_toStartOf="parent"></LinearLayout>
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
 
 </RelativeLayout>
