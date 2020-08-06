@@ -105,6 +105,8 @@ public class WidgetProvider extends AppWidgetProvider {
            // rv.setPendingIntentTemplate(R.id.widget_list, toastPendingIntent);
 
             appWidgetManager.updateAppWidget(appWidgetId, rv);
+            appWidgetId = intent.getIntExtra(AppWidgetManager.EXTRA_APPWIDGET_ID, AppWidgetManager.INVALID_APPWIDGET_ID);
+            AppWidgetManager.getInstance(context).notifyAppWidgetViewDataChanged(appWidgetId, R.id.idFojorW);
         }
     }
 
@@ -125,7 +127,7 @@ public class WidgetProvider extends AppWidgetProvider {
                 break;
             case REFRESH_WIDGET_ACTION:
                 int appWidgetId = intent.getIntExtra(AppWidgetManager.EXTRA_APPWIDGET_ID, AppWidgetManager.INVALID_APPWIDGET_ID);
-               // AppWidgetManager.getInstance(context).notifyAppWidgetViewDataChanged(appWidgetId, R.id.widget_list);
+                AppWidgetManager.getInstance(context).notifyAppWidgetViewDataChanged(appWidgetId, R.id.idFojorW);
 
                 Toast toast2 = Toast.makeText(context, "REFRESH_WIDGET_ACTION", Toast.LENGTH_SHORT);
                 toast2.setGravity(Gravity.CENTER, 0, 0);
@@ -134,7 +136,7 @@ public class WidgetProvider extends AppWidgetProvider {
             case ACTION_WIDGET_UPDATE:
                 AppWidgetManager appWidgetManager = AppWidgetManager.getInstance(context);
                 int appWidgetIds[] = appWidgetManager.getAppWidgetIds(new ComponentName(context, WidgetProvider.class));
-//                appWidgetManager.notifyAppWidgetViewDataChanged(appWidgetIds, R.id.widget_list);
+                appWidgetManager.notifyAppWidgetViewDataChanged(appWidgetIds, R.id.idFojorW);
                 break;
         }
     }

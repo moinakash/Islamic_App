@@ -34,7 +34,7 @@ import pl.droidsonroids.gif.GifImageView;
 public class TimeTableFragment extends Fragment {
 
     TextView tvfojor, tvjohor, tvasor, tvmagrib, tvesha;
-    TextView tvCurrentNTime, tvCurrentDate,tvCurrentArbiDate ,MidBorber;
+    TextView tvCurrentNTime, tvCurrentNTime2, tvCurrentDate,tvCurrentArbiDate ,MidBorber;
     TextView tvCurrentLocation, tvNextTime,tvNamajTimeNUmber, tvNamajSeshSomoy;
 
     ImageButton ibFojor, ibJohor, ibAsor, ibMagrib, ibEsha;
@@ -109,6 +109,7 @@ public class TimeTableFragment extends Fragment {
         Isha_stroke_bg = view.findViewById(R.id.idIshaStrokeBG);
 
         tvCurrentNTime = view.findViewById(R.id.idCurrentNamajTime);
+        tvCurrentNTime2 = view.findViewById(R.id.idCurrentNamajTime2);
         tvCurrentDate = view.findViewById(R.id.idCurrentDate);
         tvCurrentArbiDate = view.findViewById(R.id.idCurrentDateArbi);
         MidBorber = view.findViewById(R.id.idMidBorder);
@@ -573,17 +574,59 @@ public class TimeTableFragment extends Fragment {
         String matchString = tvCurrentNTime.getText().toString();
 
 
+//        R.drawable.timetable_shape
+
 
         if (matchString.equals("ফজর")){
             tvNamajTimeNUmber.setText(""+fojorTimeBangla);
+
+            Fjr_stroke_bg.setBackground(getContext().getResources().getDrawable(R.drawable.timetable_shape));
+            Jhr_stroke_bg.setBackground(getContext().getResources().getDrawable(R.drawable.time_table_gray));
+            Asr_stroke_bg.setBackground(getContext().getResources().getDrawable(R.drawable.time_table_gray));
+            Mgrb_stroke_bg.setBackground(getContext().getResources().getDrawable(R.drawable.time_table_gray));
+            Isha_stroke_bg.setBackground(getContext().getResources().getDrawable(R.drawable.time_table_gray));
+           // tvCurrentNTime2.setText(tvCurrentNTime.getText().toString());
+
         } else if (matchString.equals("যোহর")){
             tvNamajTimeNUmber.setText(""+johorTimeBangla);
+
+            Fjr_stroke_bg.setBackground(getContext().getResources().getDrawable(R.drawable.time_table_gray));
+            Jhr_stroke_bg.setBackground(getContext().getResources().getDrawable(R.drawable.timetable_shape));
+            Asr_stroke_bg.setBackground(getContext().getResources().getDrawable(R.drawable.time_table_gray));
+            Mgrb_stroke_bg.setBackground(getContext().getResources().getDrawable(R.drawable.time_table_gray));
+            Isha_stroke_bg.setBackground(getContext().getResources().getDrawable(R.drawable.time_table_gray));
+           // tvCurrentNTime2.setText(tvCurrentNTime.getText().toString());
+
         } else if (matchString.equals("আসর")){
             tvNamajTimeNUmber.setText(""+asorTimeBangla);
+
+            Fjr_stroke_bg.setBackground(getContext().getResources().getDrawable(R.drawable.time_table_gray));
+            Jhr_stroke_bg.setBackground(getContext().getResources().getDrawable(R.drawable.time_table_gray));
+            Asr_stroke_bg.setBackground(getContext().getResources().getDrawable(R.drawable.timetable_shape));
+            Mgrb_stroke_bg.setBackground(getContext().getResources().getDrawable(R.drawable.time_table_gray));
+            Isha_stroke_bg.setBackground(getContext().getResources().getDrawable(R.drawable.time_table_gray));
+           // tvCurrentNTime2.setText(tvCurrentNTime.getText().toString());
+
         } else if (matchString.equals("মাগরিব")){
             tvNamajTimeNUmber.setText(""+magribTimeBangla);
+
+            Fjr_stroke_bg.setBackground(getContext().getResources().getDrawable(R.drawable.time_table_gray));
+            Jhr_stroke_bg.setBackground(getContext().getResources().getDrawable(R.drawable.time_table_gray));
+            Asr_stroke_bg.setBackground(getContext().getResources().getDrawable(R.drawable.time_table_gray));
+            Mgrb_stroke_bg.setBackground(getContext().getResources().getDrawable(R.drawable.timetable_shape));
+            Isha_stroke_bg.setBackground(getContext().getResources().getDrawable(R.drawable.time_table_gray));
+           // tvCurrentNTime2.setText(tvCurrentNTime.getText().toString());
+
         } else if (matchString.equals("এশা")){
             tvNamajTimeNUmber.setText(""+eshaTimeBangla);
+
+            Fjr_stroke_bg.setBackground(getContext().getResources().getDrawable(R.drawable.time_table_gray));
+            Jhr_stroke_bg.setBackground(getContext().getResources().getDrawable(R.drawable.time_table_gray));
+            Asr_stroke_bg.setBackground(getContext().getResources().getDrawable(R.drawable.time_table_gray));
+            Mgrb_stroke_bg.setBackground(getContext().getResources().getDrawable(R.drawable.time_table_gray));
+            Isha_stroke_bg.setBackground(getContext().getResources().getDrawable(R.drawable.timetable_shape));
+            //tvCurrentNTime2.setText(tvCurrentNTime.getText().toString());
+
         }
 
         if (matchString.equals("পরবর্তী নামাজ যোহর")){

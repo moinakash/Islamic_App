@@ -35,7 +35,7 @@ private AlertDialog.Builder alertDialogBuilder;
 //    final String myString = "hello";
      String myString2;
 
-    String fajarTime, johorTime, asorTime, magribTime, eshaTime, sunriseTime, nextnamaj;
+    String fajarTime, johorTime, asorTime, magribTime, eshaTime, sunriseTime, nextnamaj, MiddleString;
     String fajarTimeR, johorTimeR, asorTimeR, magribTimeR, eshaTimeR, sunriseTimeR, nextnamajR, BorPNamaj, seShTime, LocString;
 
     int  cTime, fTime, jTime, aTime, mTime, eTime, sTime;
@@ -138,8 +138,9 @@ private AlertDialog.Builder alertDialogBuilder;
 
 
         if (cTime>=fTime && cTime<sTime){
-            BorPNamaj= "বর্তমান নামাজ";
+            BorPNamaj= "বর্তমান নামাজ ফজর";
             nextnamaj= "ফজর";
+
 
             ////////sesh time fojor
 
@@ -167,8 +168,10 @@ private AlertDialog.Builder alertDialogBuilder;
         }
 
         else if (cTime>=sTime && cTime<(sTime+23)){
-            BorPNamaj= "নামাজ পড়া নিষেধ";
-            nextnamaj= "পরবর্তী নামাজ যোহর";
+            BorPNamaj= "নামাজ পড়ার নিষিদ্ধ সময় চলছে";
+            nextnamaj= "যোহর";
+
+            //MiddleString = "বর্তমান নামাজ ফজর";
 
             /////////////////////////////////Suru time add korte hobe////////////////////////
 
@@ -209,7 +212,7 @@ private AlertDialog.Builder alertDialogBuilder;
         }
 
         else if (cTime>=(sTime+23) && cTime<(jTime-5)){
-            BorPNamaj= "পরবর্তী নামাজ";
+            BorPNamaj= "পরবর্তি নামাজ যোহর";
             nextnamaj= "যোহর";
 
             //////////////////////////////sesh somoy////////////////////////////
@@ -247,8 +250,8 @@ private AlertDialog.Builder alertDialogBuilder;
         }
 
         else if (cTime>=(jTime-5) && cTime<jTime){
-            BorPNamaj= "নামাজ পড়া নিষেধ";
-            nextnamaj= "পরবর্তী নামাজ যোহর";
+            BorPNamaj= "নামাজ পড়ার নিষিদ্ধ সময় চলছে";
+            nextnamaj= "যোহর";
 
             //////////////////////////////sesh somoy////////////////////////////
 
@@ -285,7 +288,7 @@ private AlertDialog.Builder alertDialogBuilder;
         }
 
         else if (cTime>=jTime && cTime<(aTime-20)){
-            BorPNamaj= "বর্তমান নামাজ";
+            BorPNamaj= "বর্তমান নামাজ যোহর";
             nextnamaj= "যোহর";
 
             //////////////////////////////sesh somoy////////////////////////////
@@ -323,7 +326,7 @@ private AlertDialog.Builder alertDialogBuilder;
         }
 
         else if (cTime>=(aTime-20) && cTime<aTime){
-            BorPNamaj= "পরবর্তী নামাজ";
+            BorPNamaj= "পরবর্তি নামাজ আসর";
             nextnamaj= "আসর";
 
             //////////////////////////////sesh somoy////////////////////////////
@@ -361,7 +364,7 @@ private AlertDialog.Builder alertDialogBuilder;
         }
 
         else if (cTime>=aTime && cTime<(mTime-10)){
-            BorPNamaj= "বর্তমান নামাজ";
+            BorPNamaj= "বর্তমান নামাজ আসর";
             nextnamaj= "আসর";
 
             //////////////////////////////sesh somoy////////////////////////////
@@ -399,8 +402,8 @@ private AlertDialog.Builder alertDialogBuilder;
         }
 
         else if (cTime>=(mTime-10) && cTime<mTime){
-            BorPNamaj= "নামাজ পড়া নিষেধ";
-            nextnamaj= "পরবর্তী নামাজ মাগরিব";
+            BorPNamaj= "নামাজ পড়ার নিষিদ্ধ সময় চলছে";
+            nextnamaj= "মাগরিব";
 
             //////////////////////////////sesh somoy////////////////////////////
 
@@ -455,7 +458,7 @@ private AlertDialog.Builder alertDialogBuilder;
         }
 
         else if (cTime>=mTime && cTime<(mTime+20)){
-            BorPNamaj= "বর্তমান নামাজ";
+            BorPNamaj= "বর্তমান নামাজ মাগরিব";
             nextnamaj= "মাগরিব";
 
             //////////////////////////////sesh somoy////////////////////////////
@@ -512,7 +515,7 @@ private AlertDialog.Builder alertDialogBuilder;
 
 
         else if (cTime>=(mTime+20) && cTime<eTime){
-            BorPNamaj= "পরবর্তী নামাজ";
+            BorPNamaj= "পরবর্তি নামাজ এশা";
             nextnamaj= "এশা";
 
             //////////////////////////////sesh somoy////////////////////////////
@@ -550,7 +553,7 @@ private AlertDialog.Builder alertDialogBuilder;
         }
 
         else if (cTime>=eTime && cTime>0){
-            BorPNamaj= "বর্তমান নামাজ";
+            BorPNamaj= "বর্তমান নামাজ এশা";
             nextnamaj= "এশা";
 
 
@@ -589,7 +592,7 @@ private AlertDialog.Builder alertDialogBuilder;
         }
 
         else if (cTime>=0 && cTime<fTime){
-            BorPNamaj= "পরবর্তী নামাজ";
+            BorPNamaj= "পরবর্তি নামাজ ফজর";
             nextnamaj= "ফজর";
 
             ////////sesh time fojor

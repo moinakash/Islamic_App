@@ -2,6 +2,7 @@ package com.example.islamicappb;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.SystemClock;
 import android.widget.RemoteViews;
 import android.widget.RemoteViewsService;
 
@@ -119,6 +120,8 @@ public final class WidgetService extends RemoteViewsService {
                 WidgetItem item = new WidgetItem("mLabel: " + i + " id: " + random.nextInt(), "mFile: " + i);
                 mWidgetItems.add(item);
             }
+
+            SystemClock.sleep(100);
         }
     }
 }
