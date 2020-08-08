@@ -32,7 +32,7 @@ public class BisheshNamajActivity extends AppCompatActivity {
     TextView tvDetailss;
     ScrollView scrollView1;
     DatabaseHelper db;
-    String str, Test1;
+    String str, kaja;
 
 
     @Override
@@ -82,10 +82,7 @@ public class BisheshNamajActivity extends AppCompatActivity {
         }
         else if (ff.equals("2")){
 
-            tvDetailss.setText("মুনাজাতের নিয়ম\n" +
-                    "১, দুয়া করার সময় দুই হাতের মাঝে সামান্য ফাঁক রাখতে হবে। আঙুলগুলোর মাঝে স্বাভাবিক পরিমাণে ফাঁক থাকবে।\n" +
-                    "২, দুয়া করার সময় হাত বুক পর্যন্ত তুলতে হবে এবং হাতের তালু চেহারার দিকে থাকবে। দৃষ্টি দুই হাতের মধ্যবর্তী স্থানের দিকে থাকবে।\n" +
-                    "৩, হাত মুখের কাছে নেওয়া যাবে না। হাতের তালু খোলা রাখতে হবে, গুঠানো যাবে না।");
+
         }
         else if (ff.equals("3")){
 
