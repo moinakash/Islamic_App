@@ -12,5 +12,9 @@
         <item>R.raw.metaltick</item>
      </string-array>-->
 
+    <string name="test1">
+
+    </string>
+
 
 </resources>
