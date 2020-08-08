@@ -36,7 +36,7 @@ public class EightDivisonActivity extends AppCompatActivity {
 
 /*    Spinner  spDis;*/
 
-    MaterialSpinner spDiv,spDis;
+    Spinner spDiv,spDis;
 
     DatabaseHelper db;
     ArrayList<String> arrayList_div;
@@ -294,9 +294,10 @@ public class EightDivisonActivity extends AppCompatActivity {
         arrayList_Moy.add("শেরপুর");
 
 
-        spDiv.setOnItemSelectedListener(new MaterialSpinner.OnItemSelectedListener<String>() {
+        spDiv.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
 
-            @Override public void onItemSelected(MaterialSpinner view, int i, long id, String item) {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
 
                 if (i==1){
                     arrayAdapter_Dis = new ArrayAdapter(getApplicationContext(), R.layout.support_simple_spinner_dropdown_item, arrayList_Dhaka);
@@ -332,23 +333,31 @@ public class EightDivisonActivity extends AppCompatActivity {
                 }
             }
 
-     /*       @Override
+            @Override
             public void onNothingSelected(AdapterView<?> adapterView) {
 
-            }*/
+            }
+
+
+
 
 
         });
 
-        spDis.setOnItemSelectedListener(new MaterialSpinner.OnItemSelectedListener<String>() {
+        spDis.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
 
-            @Override public void onItemSelected(MaterialSpinner view, int i, long id, String item) {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+
+
+
+
 
 //                Toast.makeText(getApplicationContext(), ""+adapterView.getItemAtPosition(i).toString(), Toast.LENGTH_SHORT).show();
 
-//              /*  placeName = ""+adapterView.getItemAtPosition(i).toString(*/);
+               placeName = ""+adapterView.getItemAtPosition(i).toString();
 
-        placeName = ""+item;
+       // placeName = ""+item;
 
 
 
@@ -696,6 +705,13 @@ public class EightDivisonActivity extends AppCompatActivity {
                 }
 
             }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+
+
 
 
 

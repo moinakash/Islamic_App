@@ -42,8 +42,15 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="15dp"/>-->
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/timetable_shape"
+        android:gravity="center"
+        android:layout_margin="15dp">
 
-    <com.jaredrummler.materialspinner.MaterialSpinner
+
+    <Spinner
 
         android:layout_margin="15dp"
         android:id="@+id/idDivision"
@@ -55,6 +62,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
        />
+
+    </LinearLayout>
 
 
     <TextView
@@ -75,7 +84,14 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="15dp"/>-->
 
-    <com.jaredrummler.materialspinner.MaterialSpinner
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/timetable_shape"
+        android:gravity="center"
+        android:layout_margin="15dp">
+
+    <Spinner
         android:layout_margin="15dp"
         android:id="@+id/idDistrict"
         android:textColor="@android:color/white"
@@ -85,6 +101,8 @@
         android:backgroundTint="@color/base_color"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
+
+    </LinearLayout>
 
 
     <TextView
