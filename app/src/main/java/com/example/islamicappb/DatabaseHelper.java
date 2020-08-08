@@ -348,4 +348,12 @@ public class DatabaseHelper
         return HadisName;
     }
 
+    public Cursor amoldata(){
+
+        SQLiteDatabase db = this.getWritableDatabase();
+        String HQuery = "SELECT * FROM amol ";
+        Cursor HadisName = db.rawQuery(HQuery,null);
+        return HadisName;
+    }
+
 }
