@@ -105,8 +105,8 @@ public class DoaDurudFragment extends Fragment {
         btnMonajaterNiom.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent in = new Intent(getContext(), BisheshNamajActivity.class);
-                in.putExtra("shoriot","2");
+                Intent in = new Intent(getContext(), Amol_Activity.class);
+             //   in.putExtra("shoriot","2");
                 startActivity(in);
             }
         });

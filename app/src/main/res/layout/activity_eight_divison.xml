@@ -44,7 +44,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:background="@drawable/timetable_shape"
         android:gravity="center"
         android:layout_margin="15dp">
@@ -54,13 +54,13 @@
 
         android:layout_margin="15dp"
         android:id="@+id/idDivision"
-        android:textSize="18sp"
+        android:textSize="15sp"
         android:gravity="center"
         app:ms_background_selector="@color/base_color"
         android:textColor="@android:color/white"
         android:backgroundTint="@color/base_color"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
        />
 
     </LinearLayout>
@@ -91,16 +91,23 @@
         android:gravity="center"
         android:layout_margin="15dp">
 
+
+
     <Spinner
         android:layout_margin="15dp"
         android:id="@+id/idDistrict"
-        android:textColor="@android:color/white"
         android:textSize="18sp"
         android:gravity="center"
+
         app:ms_background_selector="@color/base_color"
+        android:textColor="@android:color/white"
         android:backgroundTint="@color/base_color"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
+
+
+
+
 
     </LinearLayout>
 

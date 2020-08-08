@@ -14,14 +14,16 @@
 
     <application
         android:allowBackup="true"
-        android:largeHeap="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:largeHeap="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ReadHadisActivity"
-            android:parentActivityName=".HadisTypeActivity"/>
+        <activity android:name=".Amol_Activity"></activity>
+        <activity
+            android:name=".ReadHadisActivity"
+            android:parentActivityName=".HadisTypeActivity" />
         <activity
             android:name=".BisheshNamajActivity"
             android:parentActivityName=".KotlinActivity" />
@@ -39,8 +41,9 @@
         <activity
             android:name=".ReadSuraActivity"
             android:parentActivityName=".SuraActivity" />
-        <activity android:name=".HadisTypeActivity"
-            android:parentActivityName=".KotlinActivity"/>
+        <activity
+            android:name=".HadisTypeActivity"
+            android:parentActivityName=".KotlinActivity" />
         <activity
             android:name=".SuraActivity"
             android:parentActivityName=".KotlinActivity" />
@@ -52,8 +55,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-   <!--     <service
+        <!--
+     <service
             android:name=".WidgetService"
             android:exported="false"
             android:permission="android.permission.BIND_REMOTEVIEWS" />
@@ -69,34 +72,31 @@
             <meta-data
                 android:name="android.appwidget.provider"
                 android:resource="@xml/appwidget_info" />
-        </receiver>-->
-
-
+        </receiver>
+        -->
         <activity
             android:name=".MainActivity"
-            android:launchMode="singleTop">
+            android:launchMode="singleTop"></activity>
 
-        </activity>
         <receiver android:name=".ExampleAppWidgetProvider">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
             </intent-filter>
+
             <meta-data
                 android:name="android.appwidget.provider"
                 android:resource="@xml/example_appwidget_info" />
         </receiver>
+
         <activity android:name=".ExampleAppWidgetConfig">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_CONFIGURE" />
             </intent-filter>
         </activity>
+
         <service
             android:name=".ExampleWidgetService"
             android:permission="android.permission.BIND_REMOTEVIEWS" />
-
-
-
-
     </application>
 
 </manifest>

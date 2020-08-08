@@ -67,6 +67,19 @@ public class EightDivisonActivity extends AppCompatActivity {
 
         spDiv = findViewById(R.id.idDivision);
         spDis = findViewById(R.id.idDistrict);
+
+/*            <Spinner
+        android:layout_margin="15dp"
+        android:id="@+id/idDistrict"
+        android:textSize="18sp"
+        android:gravity="center"
+        app:ms_background_selector="@color/base_color"
+        android:textColor="@android:color/white"
+        android:backgroundTint="@color/base_color"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>*/
+
+
         ibNextbutton = findViewById(R.id.idNextButton);
 
         db = new DatabaseHelper(this);

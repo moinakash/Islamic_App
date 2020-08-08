@@ -225,7 +225,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:text="মোনাজাতের\nনিয়ম"
+                    android:text="আমল\nসমূহ"
                     android:textSize="11sp"
                     android:textStyle="bold" />
 
@@ -311,7 +311,9 @@
                 </LinearLayout>
 
                 <TextView
-                    android:text="তাহারাত"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="তাহারাত\n(পবিত্রতা)"
                     android:textStyle="bold"
                     android:textSize="11sp"
                     android:layout_width="wrap_content"

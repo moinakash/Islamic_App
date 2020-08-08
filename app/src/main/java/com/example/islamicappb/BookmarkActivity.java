@@ -17,6 +17,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.text.Html;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -30,6 +31,8 @@ import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.codesgood.views.JustifiedTextView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -162,15 +165,15 @@ public class BookmarkActivity extends AppCompatActivity {
                 TextView SuraName = (TextView) customView.findViewById(R.id.idSuraName);
                 SuraName.setText(bookmarkPojoClass1.getSura_name());
 
-                TextView AyatArbi = (TextView) customView.findViewById(R.id.idAyatArbi);
-                AyatArbi.setText(bookmarkPojoClass1.getSura_arbi_line());
+                JustifiedTextView AyatArbi = (JustifiedTextView) customView.findViewById(R.id.idAyatArbi);
+                AyatArbi.setText(Html.fromHtml(bookmarkPojoClass1.getSura_arbi_line()));
 
 
-                TextView AyatBangla = (TextView) customView.findViewById(R.id.idAyatBangla);
-                AyatBangla.setText(bookmarkPojoClass1.getSura_spelling_line());
+                JustifiedTextView AyatBangla = (JustifiedTextView) customView.findViewById(R.id.idAyatBangla);
+                AyatBangla.setText(Html.fromHtml(bookmarkPojoClass1.getSura_spelling_line()));
 
-                TextView AyatMeaning = (TextView) customView.findViewById(R.id.idAyatBanglaMeaning);
-                AyatMeaning.setText(bookmarkPojoClass1.getSura_meaning_line());
+                JustifiedTextView AyatMeaning = (JustifiedTextView) customView.findViewById(R.id.idAyatBanglaMeaning);
+                AyatMeaning.setText(Html.fromHtml(bookmarkPojoClass1.getSura_meaning_line()));
 
                 Delete.setOnClickListener(new View.OnClickListener() {
                     @Override
