@@ -5,8 +5,8 @@
         android:layout_width="match_parent"
         android:layout_height="90dp"
         android:background="@drawable/qibla_head_background"
-
-        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+        android:theme="@style/AppBar"
+        >
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"

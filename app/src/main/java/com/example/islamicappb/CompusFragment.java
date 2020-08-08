@@ -18,6 +18,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.RotateAnimation;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -80,7 +81,7 @@ public class CompusFragment extends Fragment implements SensorEventListener {
 
         }else
         {
-            Toast.makeText(getContext(), "দুঃখিত, আপনার মোবাইলে কম্পাস সেন্সর নেই।", Toast.LENGTH_SHORT).show();
+           /* Toast.makeText(getContext(), "দুঃখিত, আপনার মোবাইলে কম্পাস সেন্সর নেই।", Toast.LENGTH_SHORT).show();*/
 
             showDialog();
         }
@@ -135,40 +136,25 @@ public class CompusFragment extends Fragment implements SensorEventListener {
 
         final Dialog alertDialog = new Dialog(getContext());
 
-        alertDialog.setContentView(R.layout.rojar_somoy_suchi_alert);
+        alertDialog.setContentView(R.layout.qibla_alert_layout);
 
         alertDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
 
-        ImageView image = alertDialog.findViewById(R.id.img);
-        image.setVisibility(View.GONE);
-
-        TextView Saharir_shesh_somoy = alertDialog.findViewById(R.id.sahari_sesh_somoy);
-        TextView Iftarir_somoy = alertDialog.findViewById(R.id.iftarir_somoy);
-        TextView Sahari = alertDialog.findViewById(R.id.sahari);
-        TextView Iftari = alertDialog.findViewById(R.id.iftari);
-        TextView Exit = alertDialog.findViewById(R.id.exit);
 
 
+        TextView text = alertDialog.findViewById(R.id.idText);
+        Button button = alertDialog.findViewById(R.id.idButton);
 
-        Saharir_shesh_somoy.setText("দুঃখিত, আপনার মোবাইলে কম্পাস সেন্সর নেই।");
-        Iftarir_somoy.setVisibility(View.GONE);
-        Sahari.setVisibility(View.GONE);
-        Iftari.setVisibility(View.GONE);
-        Exit.setVisibility(View.GONE);
+        text.setText("দুঃখিত, আপনার মোবাইলে কম্পাস সেন্সর নেই, এজন্য এই ফিচারটি ব্যবহার করা সম্ভব হচ্ছে না।");
 
-
-        Exit.setOnClickListener(new View.OnClickListener() {
+        button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                alertDialog.cancel();
+                alertDialog.dismiss();
             }
         });
 
-
         alertDialog.show();
-
-
 
     }
 

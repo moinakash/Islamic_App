@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.app.AlertDialog;
+import android.app.Dialog;
 import android.content.ClipboardManager;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -13,6 +14,8 @@ import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -179,26 +182,35 @@ public class BookmarkActivity extends AppCompatActivity {
 
                         Delete.startAnimation(myAnim);
 
-                        alertDialogBuilder = new AlertDialog.Builder(BookmarkActivity.this);
 
-                        //for setting title
-                        alertDialogBuilder.setTitle("সতর্ক বার্তা");
+                        final Dialog alertDialog = new Dialog(BookmarkActivity.this);
 
-                        //for setting the message
-                        alertDialogBuilder.setMessage("আপনি কি আয়াতটি মুছে ফেলতে চান?");
+                        alertDialog.setContentView(R.layout.delete_alert_dialog);
 
-                        //for setting the icon
-                        alertDialogBuilder.setIcon(R.drawable.trash);
+                        alertDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
 
-                        alertDialogBuilder.setCancelable(false);
 
-                        alertDialogBuilder.setPositiveButton("হ্যা", new DialogInterface.OnClickListener() {
+
+                        TextView text = alertDialog.findViewById(R.id.idText);
+                        Button NO = alertDialog.findViewById(R.id.idButtonNo);
+                        Button OK = alertDialog.findViewById(R.id.idButtonOk);
+
+                        text.setText("আপনি কি আয়াতটি মুছে ফেলতে চান?");
+
+                        NO.setOnClickListener(new View.OnClickListener() {
                             @Override
-                            public void onClick(DialogInterface dialog, int which) {
+                            public void onClick(View v) {
+                                alertDialog.dismiss();
+                            }
+                        });
+
+
+                        OK.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
 
 
                                 //delete
-
 
                                 myDatabasehelper = new MyDatabasehelper(context);
                                 SQLiteDatabase sqLiteDatabase = myDatabasehelper.getWritableDatabase();
@@ -216,20 +228,8 @@ public class BookmarkActivity extends AppCompatActivity {
 
                                 finish();
                                 startActivity(getIntent());
-
                             }
                         });
-
-                        alertDialogBuilder.setNegativeButton("না", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-
-                                dialog.cancel();
-
-                            }
-                        });
-
-                        AlertDialog alertDialog = alertDialogBuilder.create();
                         alertDialog.show();
 
            }
@@ -316,6 +316,8 @@ public class BookmarkActivity extends AppCompatActivity {
                     Math.cos(mFrequency * time) + 1);
         }
     }
+
+
 
 
 }
