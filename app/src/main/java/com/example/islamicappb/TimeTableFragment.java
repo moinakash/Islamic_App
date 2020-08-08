@@ -40,7 +40,7 @@ public class TimeTableFragment extends Fragment {
     ImageButton ibFojor, ibJohor, ibAsor, ibMagrib, ibEsha;
 
     GifImageView Heading_background;
-    LinearLayout Fjr_stroke_bg, Jhr_stroke_bg,Asr_stroke_bg, Mgrb_stroke_bg,Isha_stroke_bg;
+    LinearLayout Fjr_stroke_bg, Jhr_stroke_bg,Asr_stroke_bg, Mgrb_stroke_bg,Isha_stroke_bg, timetablebg;
 
 
     String text;
@@ -107,6 +107,8 @@ public class TimeTableFragment extends Fragment {
         Asr_stroke_bg = view.findViewById(R.id.idAsorStrokeBG);
         Mgrb_stroke_bg = view.findViewById(R.id.idMagribStrokeBG);
         Isha_stroke_bg = view.findViewById(R.id.idIshaStrokeBG);
+
+        timetablebg = view.findViewById(R.id.linearLayout_currenttime_bg);
 
         tvCurrentNTime = view.findViewById(R.id.idCurrentNamajTime);
         tvCurrentNTime2 = view.findViewById(R.id.idCurrentNamajTime2);
@@ -629,11 +631,10 @@ public class TimeTableFragment extends Fragment {
 
         }
 
-        if (matchString.equals("পরবর্তী নামাজ যোহর")){
-            tvNamajTimeNUmber.setText(""+johorTimeBangla);
-        }
-        if (matchString.equals("পরবর্তী নামাজ মাগরিব")){
-            tvNamajTimeNUmber.setText(""+magribTimeBangla);
+
+
+        if (tvNextTime.getText().toString().equals("নামাজ পড়ার নিষিদ্ধ সময় চলছে")){
+            timetablebg.setBackground(getContext().getResources().getDrawable(R.drawable.red_bg));
         }
 
 

@@ -5,6 +5,7 @@
     <color name="colorAccent">#03DAC5</color>
 
     <color name="base_color">#2ac17e</color>
+    <color name="red_color">#EC1010</color>
     <color name="bottom_nav_option">#10a161</color>
     <color name="base_color_lowOpacity">#9E8AD8B5</color>
     <color name="base_color_mid_opacity">#E62AC17E</color>

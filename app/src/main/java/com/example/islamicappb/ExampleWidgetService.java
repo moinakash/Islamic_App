@@ -22,8 +22,11 @@ public class ExampleWidgetService extends RemoteViewsService {
         private int appWidgetId;
 
 
-        private String[] exampleData = {"one ", "two", "three", "four",
-                "five", "six", "seven", "eight", "nine", "ten"};
+        private String[] exampleData = {"one "};
+        private String[] exampleData2 = {"one "};
+        private String[] exampleData3 = {"one "};
+        private String[] exampleData4 = {"one "};
+        private String[] exampleData5 = {"one "};
         ExampleWidgetItemFactory(Context context, Intent intent) {
             this.context = context;
             this.appWidgetId = intent.getIntExtra(AppWidgetManager.EXTRA_APPWIDGET_ID,
@@ -40,11 +43,22 @@ public class ExampleWidgetService extends RemoteViewsService {
             Date date = new Date();
             String timeFormatted = DateFormat.getTimeInstance(DateFormat.SHORT).format(date);
 
-            SharedPreferences sharedPrefMM = getApplicationContext().getSharedPreferences("mm", Context.MODE_PRIVATE);
-            String Fajr = sharedPrefMM.getString("fw","");
-            Log.e("lkj",""+Fajr);
+//            SharedPreferences sharedPrefMM = getApplicationContext().getSharedPreferences("mm", Context.MODE_PRIVATE);
+//            String Fajr = sharedPrefMM.getString("fw","");
+//            Log.e("lkj",""+Fajr);
 
-            exampleData = new String[]{"one\n"+Fajr};
+            SharedPreferences sharedPrefMM = context.getSharedPreferences("mm",Context.MODE_PRIVATE);
+            String Fajr = sharedPrefMM.getString("fw","");
+            String Johor = sharedPrefMM.getString("jw","");
+            String Asor = sharedPrefMM.getString("aw","");
+            String Magrib = sharedPrefMM.getString("mw","");
+            String Esha = sharedPrefMM.getString("ew","");
+
+            exampleData = new String[]{""+Fajr};
+            exampleData2 = new String[]{""+Johor};
+            exampleData3 = new String[]{""+Asor};
+            exampleData4 = new String[]{""+Magrib};
+            exampleData5 = new String[]{""+Esha};
             SystemClock.sleep(3000);
         }
         @Override
@@ -59,6 +73,10 @@ public class ExampleWidgetService extends RemoteViewsService {
         public RemoteViews getViewAt(int position) {
             RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.example_widget_item);
             views.setTextViewText(R.id.example_widget_item_text, exampleData[position]);
+            views.setTextViewText(R.id.example_widget_item_text2, exampleData2[position]);
+            views.setTextViewText(R.id.example_widget_item_text3, exampleData3[position]);
+            views.setTextViewText(R.id.example_widget_item_text4, exampleData4[position]);
+            views.setTextViewText(R.id.example_widget_item_text5, exampleData5[position]);
             Intent fillIntent = new Intent();
             fillIntent.putExtra(AppWidgetManager.EXTRA_APPWIDGET_ID, appWidgetId);
             views.setOnClickFillInIntent(R.id.example_widget_item_text, fillIntent);
