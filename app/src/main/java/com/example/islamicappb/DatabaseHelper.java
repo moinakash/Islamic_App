@@ -333,5 +333,19 @@ public class DatabaseHelper
         return HadisName;
     }
 
+    public Cursor taharat(){
+
+        SQLiteDatabase db = this.getWritableDatabase();
+        String HQuery = "SELECT * FROM taharat ";
+        Cursor HadisName = db.rawQuery(HQuery,null);
+        return HadisName;
+    }
+    public Cursor forojosunnot(){
+
+        SQLiteDatabase db = this.getWritableDatabase();
+        String HQuery = "SELECT * FROM namajerparthokko ";
+        Cursor HadisName = db.rawQuery(HQuery,null);
+        return HadisName;
+    }
 
 }
