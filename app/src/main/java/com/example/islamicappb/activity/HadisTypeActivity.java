@@ -18,9 +18,9 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import com.example.islamicappb.database.DatabaseHelper;
+import com.example.islamicappb.DatabaseHelper;
 import com.example.islamicappb.pojo_classes.HadisTypePojoList;
-import com.example.islamicappb.database.MyDatabasehelper;
+import com.example.islamicappb.MyDatabasehelper;
 import com.example.islamicappb.R;
 
 import java.util.ArrayList;

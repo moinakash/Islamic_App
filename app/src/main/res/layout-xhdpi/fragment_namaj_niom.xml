@@ -350,6 +350,8 @@
                 </LinearLayout>
 
                 <TextView
+                    android:layout_gravity="center"
+                    android:gravity="center"
                     android:text="@string/roajr_somoysuchi"
                     android:textStyle="bold"
                     android:textSize="11sp"

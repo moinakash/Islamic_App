@@ -27,8 +27,8 @@ import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.islamicappb.database.DatabaseHelper;
-import com.example.islamicappb.database.MyDatabasehelper;
+import com.example.islamicappb.DatabaseHelper;
+import com.example.islamicappb.MyDatabasehelper;
 import com.example.islamicappb.R;
 import com.example.islamicappb.SuraLinePartPojo;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;

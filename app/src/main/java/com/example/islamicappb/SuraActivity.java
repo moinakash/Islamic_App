@@ -25,8 +25,6 @@ import android.widget.SearchView;
 import android.widget.TextView;
 
 import com.example.islamicappb.activity.ReadSuraActivity;
-import com.example.islamicappb.database.DatabaseHelper;
-import com.example.islamicappb.database.MyDatabasehelper;
 
 import java.util.ArrayList;
 import java.util.List;

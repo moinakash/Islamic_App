@@ -16,9 +16,8 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.example.islamicappb.database.DatabaseHelper;
+import com.example.islamicappb.DatabaseHelper;
 import com.example.islamicappb.R;
 import com.gun0912.tedpermission.PermissionListener;
 import com.gun0912.tedpermission.TedPermission;
@@ -719,13 +718,13 @@ public class EightDivisonActivity extends AppCompatActivity {
         PermissionListener permissionListener = new PermissionListener() {
             @Override
             public void onPermissionGranted() {
-                Toast.makeText(EightDivisonActivity.this,"Permisson granted",Toast.LENGTH_SHORT).show();
+//                Toast.makeText(EightDivisonActivity.this,"Permisson granted",Toast.LENGTH_SHORT).show();
             }
 
             @Override
             public void onPermissionDenied(List<String> deniedPermissions) {
 
-                Toast.makeText(EightDivisonActivity.this, "Permission Denied", Toast.LENGTH_SHORT).show();
+//                Toast.makeText(EightDivisonActivity.this, "Permission Denied", Toast.LENGTH_SHORT).show();
             }
         };
 

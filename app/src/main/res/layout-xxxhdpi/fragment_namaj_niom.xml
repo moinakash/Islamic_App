@@ -313,7 +313,7 @@
                 <TextView
                     android:layout_gravity="center"
                     android:gravity="center"
-                    android:text="তাহারাত\n(পবিত্রতা)"
+                    android:text="@string/taharat"
                     android:textStyle="bold"
                     android:textSize="13sp"
                     android:layout_width="wrap_content"
@@ -352,7 +352,7 @@
 
                 <TextView
                     android:gravity="center"
-                    android:text="রোজার সময় সূচী"
+                    android:text="@string/roajr_somoysuchi"
                     android:textStyle="bold"
                     android:textSize="13sp"
                     android:layout_width="wrap_content"
@@ -390,7 +390,7 @@
 
                 <TextView
                     android:gravity="center"
-                    android:text="স্থান নির্বাচন করুন"
+                    android:text="@string/locationText"
                     android:textStyle="bold"
                     android:textSize="13sp"
                     android:layout_width="wrap_content"

@@ -63,15 +63,15 @@ public class ExampleAppWidgetProvider extends AppWidgetProvider {
     }
     @Override
     public void onDeleted(Context context, int[] appWidgetIds) {
-        Toast.makeText(context, "onDeleted", Toast.LENGTH_SHORT).show();
+//        Toast.makeText(context, "onDeleted", Toast.LENGTH_SHORT).show();
     }
     @Override
     public void onEnabled(Context context) {
-        Toast.makeText(context, "onEnabled", Toast.LENGTH_SHORT).show();
+//        Toast.makeText(context, "onEnabled", Toast.LENGTH_SHORT).show();
     }
     @Override
     public void onDisabled(Context context) {
-        Toast.makeText(context, "onDisabled", Toast.LENGTH_SHORT).show();
+//        Toast.makeText(context, "onDisabled", Toast.LENGTH_SHORT).show();
     }
     @Override
     public void onReceive(Context context, Intent intent) {

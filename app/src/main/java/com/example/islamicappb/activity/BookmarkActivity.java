@@ -32,7 +32,7 @@ import android.widget.Toast;
 
 import com.codesgood.views.JustifiedTextView;
 import com.example.islamicappb.pojo_classes.BookmarkPojoClass;
-import com.example.islamicappb.database.MyDatabasehelper;
+import com.example.islamicappb.MyDatabasehelper;
 import com.example.islamicappb.R;
 
 import java.util.ArrayList;

@@ -14,7 +14,7 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 
 import com.example.islamicappb.Adapters.kalimaExpandableAdapter;
-import com.example.islamicappb.database.DatabaseHelper;
+import com.example.islamicappb.DatabaseHelper;
 import com.example.islamicappb.pojo_classes.PojoClassForKalima;
 import com.example.islamicappb.R;
 
