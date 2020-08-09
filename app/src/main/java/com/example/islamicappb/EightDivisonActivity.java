@@ -2,6 +2,7 @@ package com.example.islamicappb;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -18,6 +19,8 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.gun0912.tedpermission.PermissionListener;
+import com.gun0912.tedpermission.TedPermission;
 import com.jaredrummler.materialspinner.MaterialSpinner;
 
 import java.util.ArrayList;
@@ -63,6 +66,7 @@ public class EightDivisonActivity extends AppCompatActivity {
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         setContentView(R.layout.activity_eight_divison);
 
+        checkPermission();
 
 
         spDiv = findViewById(R.id.idDivision);
@@ -84,7 +88,7 @@ public class EightDivisonActivity extends AppCompatActivity {
 
         db = new DatabaseHelper(this);
 
-        fetchData();
+
         loadData();
 
 
@@ -142,6 +146,7 @@ public class EightDivisonActivity extends AppCompatActivity {
             public void onClick(View view) {
 
 
+                checkPermission();
 
                 latt = String.valueOf(latC);
                 lonn = String.valueOf(lonC);
@@ -172,31 +177,10 @@ public class EightDivisonActivity extends AppCompatActivity {
 
 
 
-    public void fetchData()
-    {
 
-        db = new DatabaseHelper(this);
-        try {
-            db.createDataBase();
-            db.openDataBase();
-        }
-        catch (Exception e) {
-            e.printStackTrace();
-        }
-
-    }
 
     public void loadData() {
 
-        final Cursor cursor = db.showDiv();
-
-        if (cursor.getCount() == 0) {
-            Toast.makeText(this, "No data available", Toast.LENGTH_SHORT).show();
-        } else {
-            while (cursor.moveToNext()) {
-
-            }
-        }
 
         arrayList_div = new ArrayList<>();
         arrayList_div.add("");
@@ -724,15 +708,29 @@ public class EightDivisonActivity extends AppCompatActivity {
 
             }
 
-
-
-
-
         });
 
+    }
 
+    public void checkPermission(){
+        PermissionListener permissionListener = new PermissionListener() {
+            @Override
+            public void onPermissionGranted() {
+                Toast.makeText(EightDivisonActivity.this,"Permisson granted",Toast.LENGTH_SHORT).show();
+            }
 
+            @Override
+            public void onPermissionDenied(List<String> deniedPermissions) {
 
+                Toast.makeText(EightDivisonActivity.this, "Permission Denied", Toast.LENGTH_SHORT).show();
+            }
+        };
 
+        TedPermission.with(EightDivisonActivity.this)
+                .setPermissionListener(permissionListener)
+                .setDeniedMessage("Need Storage permission. Please give manually")
+                .setGotoSettingButtonText("setting")
+                .setPermissions(Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE)
+                .check();
     }
 }

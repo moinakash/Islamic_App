@@ -219,19 +219,6 @@
                 android:textSize="14sp" />
 
 
-            <TextView
-
-                android:textColor="@android:color/white"
-                android:id="@+id/idCurrentNamajTime2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginLeft="5dp"
-                android:elevation="5dp"
-                android:text="মাগরিব"
-                android:textSize="15sp"
-                />
-
         </LinearLayout>
 
 
