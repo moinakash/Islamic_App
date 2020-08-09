@@ -22,6 +22,7 @@ public class ExampleWidgetService extends RemoteViewsService {
     class ExampleWidgetItemFactory implements RemoteViewsFactory {
         private Context context;
         private int appWidgetId;
+        
 
 
         private String[] exampleData = {"one "};
