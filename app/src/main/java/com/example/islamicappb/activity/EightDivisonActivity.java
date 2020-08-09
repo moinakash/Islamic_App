@@ -1,11 +1,14 @@
 package com.example.islamicappb.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
+import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
+import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.util.Log;
@@ -18,6 +21,8 @@ import android.widget.Toast;
 
 import com.example.islamicappb.DatabaseHelper;
 import com.example.islamicappb.R;
+import com.gun0912.tedpermission.PermissionListener;
+import com.gun0912.tedpermission.TedPermission;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -67,23 +72,15 @@ public class EightDivisonActivity extends AppCompatActivity {
         spDiv = findViewById(R.id.idDivision);
         spDis = findViewById(R.id.idDistrict);
 
-/*            <Spinner
-        android:layout_margin="15dp"
-        android:id="@+id/idDistrict"
-        android:textSize="18sp"
-        android:gravity="center"
-        app:ms_background_selector="@color/base_color"
-        android:textColor="@android:color/white"
-        android:backgroundTint="@color/base_color"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>*/
+
+        checkPermission();
 
 
         ibNextbutton = findViewById(R.id.idNextButton);
 
         db = new DatabaseHelper(this);
 
-        fetchData();
+
         loadData();
 
 
@@ -142,27 +139,42 @@ public class EightDivisonActivity extends AppCompatActivity {
 
 
 
-                latt = String.valueOf(latC);
-                lonn = String.valueOf(lonC);
-                locString = placeName;
 
 
-                sharedPref = EightDivisonActivity.this.getPreferences(Context.MODE_PRIVATE);
-                SharedPreferences.Editor editor = sharedPref.edit();
-                editor.putString("latSp", ""+latt);
-                editor.putString("lonSp", ""+lonn);
-                editor.putString("Locc", ""+locString);
+                if (ContextCompat.checkSelfPermission(
+                        getApplicationContext(), Manifest.permission.READ_EXTERNAL_STORAGE) ==
+                        PackageManager.PERMISSION_GRANTED) {
 
-                editor.commit();
+                    latt = String.valueOf(latC);
+                    lonn = String.valueOf(lonC);
+                    locString = placeName;
 
 
-                Intent in = new Intent(EightDivisonActivity.this,KotlinActivity.class);
-                in.putExtra("latitude", latt);
-                in.putExtra("longitude", lonn);
-                in.putExtra("Locc", ""+locString);
-                startActivity(in);
+                    sharedPref = EightDivisonActivity.this.getPreferences(Context.MODE_PRIVATE);
+                    SharedPreferences.Editor editor = sharedPref.edit();
+                    editor.putString("latSp", ""+latt);
+                    editor.putString("lonSp", ""+lonn);
+                    editor.putString("Locc", ""+locString);
 
-                finish();
+                    editor.commit();
+
+
+                    Intent in = new Intent(EightDivisonActivity.this,KotlinActivity.class);
+                    in.putExtra("latitude", latt);
+                    in.putExtra("longitude", lonn);
+                    in.putExtra("Locc", ""+locString);
+                    startActivity(in);
+
+                    finish();
+
+
+                }else {
+//                    Toast.makeText(getApplicationContext(), "No", Toast.LENGTH_SHORT).show();
+                    checkPermission();
+
+                }
+
+
 
 
             }
@@ -171,31 +183,10 @@ public class EightDivisonActivity extends AppCompatActivity {
 
 
 
-    public void fetchData()
-    {
-
-        db = new DatabaseHelper(this);
-        try {
-            db.createDataBase();
-            db.openDataBase();
-        }
-        catch (Exception e) {
-            e.printStackTrace();
-        }
-
-    }
 
     public void loadData() {
 
-        final Cursor cursor = db.showDiv();
 
-        if (cursor.getCount() == 0) {
-            Toast.makeText(this, "No data available", Toast.LENGTH_SHORT).show();
-        } else {
-            while (cursor.moveToNext()) {
-
-            }
-        }
 
         arrayList_div = new ArrayList<>();
         arrayList_div.add("");
@@ -722,16 +713,28 @@ public class EightDivisonActivity extends AppCompatActivity {
             public void onNothingSelected(AdapterView<?> adapterView) {
 
             }
-
-
-
-
-
         });
+    }
 
+    public void checkPermission(){
+        PermissionListener permissionListener = new PermissionListener() {
+            @Override
+            public void onPermissionGranted() {
+                Toast.makeText(EightDivisonActivity.this,"Permisson granted",Toast.LENGTH_SHORT).show();
+            }
 
+            @Override
+            public void onPermissionDenied(List<String> deniedPermissions) {
 
+                Toast.makeText(EightDivisonActivity.this, "Permission Denied", Toast.LENGTH_SHORT).show();
+            }
+        };
 
-
+        TedPermission.with(EightDivisonActivity.this)
+                .setPermissionListener(permissionListener)
+                .setDeniedMessage("Need Storage permission. Please give manually")
+                .setGotoSettingButtonText("setting")
+                .setPermissions(Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE)
+                .check();
     }
 }
