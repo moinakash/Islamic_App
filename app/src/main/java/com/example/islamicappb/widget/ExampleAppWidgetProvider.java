@@ -14,7 +14,7 @@ import android.widget.Toast;
 import com.example.islamicappb.R;
 import com.example.islamicappb.activity.MainActivity;
 
-public class WidgetProvider extends AppWidgetProvider {
+public class ExampleAppWidgetProvider extends AppWidgetProvider {
     public static final String ACTION_REFRESH = "actionRefresh";
     public static final String KEY_BUTTON_TEXT = "keyButtonText";
     public static final String SHARED_PREFS = "prefs";
@@ -26,10 +26,10 @@ public class WidgetProvider extends AppWidgetProvider {
                     0, buttonIntent, 0);
             SharedPreferences prefs = context.getSharedPreferences(SHARED_PREFS, Context.MODE_PRIVATE);
             String buttonText = prefs.getString(KEY_BUTTON_TEXT + appWidgetId, "Press me");
-            Intent serviceIntent = new Intent(context, WidgetService.class);
+            Intent serviceIntent = new Intent(context, ExampleWidgetService.class);
             serviceIntent.putExtra(AppWidgetManager.EXTRA_APPWIDGET_ID, appWidgetId);
             serviceIntent.setData(Uri.parse(serviceIntent.toUri(Intent.URI_INTENT_SCHEME)));
-            Intent clickIntent = new Intent(context, WidgetProvider.class);
+            Intent clickIntent = new Intent(context, ExampleAppWidgetProvider.class);
             clickIntent.setAction(ACTION_REFRESH);
             PendingIntent clickPendingIntent = PendingIntent.getBroadcast(context,
                     0, clickIntent, 0);

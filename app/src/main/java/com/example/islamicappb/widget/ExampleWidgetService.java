@@ -14,7 +14,7 @@ import com.example.islamicappb.R;
 import java.text.DateFormat;
 import java.util.Date;
 
-public class WidgetService extends RemoteViewsService {
+public class ExampleWidgetService extends RemoteViewsService {
     @Override
     public RemoteViewsFactory onGetViewFactory(Intent intent) {
         return new ExampleWidgetItemFactory(getApplicationContext(), intent);
