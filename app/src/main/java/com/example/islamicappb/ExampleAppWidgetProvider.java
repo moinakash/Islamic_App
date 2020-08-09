@@ -11,6 +11,8 @@ import android.os.Bundle;
 import android.widget.RemoteViews;
 import android.widget.Toast;
 
+import com.example.islamicappb.activity.MainActivity;
+
 public class ExampleAppWidgetProvider extends AppWidgetProvider {
     public static final String ACTION_REFRESH = "actionRefresh";
     public static final String KEY_BUTTON_TEXT = "keyButtonText";

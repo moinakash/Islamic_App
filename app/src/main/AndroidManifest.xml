@@ -20,35 +20,35 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Amol_Activity"></activity>
+        <activity android:name=".activity.Amol_Activity"></activity>
         <activity
-            android:name=".ReadHadisActivity"
-            android:parentActivityName=".HadisTypeActivity" />
+            android:name=".activity.ReadHadisActivity"
+            android:parentActivityName=".activity.HadisTypeActivity" />
         <activity
-            android:name=".BisheshNamajActivity"
-            android:parentActivityName=".KotlinActivity" />
+            android:name=".activity.BisheshNamajActivity"
+            android:parentActivityName=".activity.KotlinActivity" />
         <activity android:name=".NamajerNiomActivity" />
         <activity
-            android:name=".KalimaActivity"
-            android:parentActivityName=".KotlinActivity" />
-        <activity android:name=".KotlinActivity" />
+            android:name=".activity.KalimaActivity"
+            android:parentActivityName=".activity.KotlinActivity" />
+        <activity android:name=".activity.KotlinActivity" />
         <activity
             android:name=".BookmarkActivity"
-            android:parentActivityName=".KotlinActivity" />
+            android:parentActivityName=".activity.KotlinActivity" />
         <activity
-            android:name=".AllahNameActivity"
-            android:parentActivityName=".KotlinActivity" />
+            android:name=".activity.AllahNameActivity"
+            android:parentActivityName=".activity.KotlinActivity" />
         <activity
-            android:name=".ReadSuraActivity"
+            android:name=".activity.ReadSuraActivity"
             android:parentActivityName=".SuraActivity" />
         <activity
-            android:name=".HadisTypeActivity"
-            android:parentActivityName=".KotlinActivity" />
+            android:name=".activity.HadisTypeActivity"
+            android:parentActivityName=".activity.KotlinActivity" />
         <activity
             android:name=".SuraActivity"
-            android:parentActivityName=".KotlinActivity" />
-        <activity android:name=".BaseActivity" />
-        <activity android:name=".EightDivisonActivity">
+            android:parentActivityName=".activity.KotlinActivity" />
+        <activity android:name=".activity.BaseActivity" />
+        <activity android:name=".activity.EightDivisonActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -75,7 +75,7 @@
         </receiver>
         -->
         <activity
-            android:name=".MainActivity"
+            android:name=".activity.MainActivity"
             android:launchMode="singleTop"></activity>
 
         <receiver android:name=".ExampleAppWidgetProvider">

@@ -1,4 +1,4 @@
-package com.example.islamicappb;
+package com.example.islamicappb.activity;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -8,6 +8,8 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.islamicappb.R;
 
 public class MainActivity extends AppCompatActivity {
 

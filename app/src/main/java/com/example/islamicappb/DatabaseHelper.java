@@ -9,6 +9,8 @@ import android.database.sqlite.SQLiteException;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
+import com.example.islamicappb.activity.ReadSuraActivity;
+
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;

@@ -8,7 +8,7 @@
     android:gravity="center"
 
     android:orientation="vertical"
-    tools:context=".HadisTypeActivity">
+    tools:context=".activity.HadisTypeActivity">
 
     <LinearLayout
         android:id="@+id/appbar"

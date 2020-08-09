@@ -1,4 +1,4 @@
-package com.example.islamicappb;
+package com.example.islamicappb.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -18,6 +18,12 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.islamicappb.CompusFragment;
+import com.example.islamicappb.DoaDurudFragment;
+import com.example.islamicappb.QuranMajidFragment;
+import com.example.islamicappb.R;
+import com.example.islamicappb.TasbihFragment;
+import com.example.islamicappb.TimeTableFragment;
 import com.ismaeldivita.chipnavigation.ChipNavigationBar;
 
 import java.text.SimpleDateFormat;

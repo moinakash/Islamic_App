@@ -12,6 +12,8 @@ import android.widget.RemoteViews;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.islamicappb.activity.MainActivity;
+
 import static com.example.islamicappb.ExampleAppWidgetProvider.ACTION_REFRESH;
 
 public class ExampleAppWidgetConfig extends AppCompatActivity {

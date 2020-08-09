@@ -1,4 +1,4 @@
-package com.example.islamicappb;
+package com.example.islamicappb.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -12,13 +12,12 @@ import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.ImageButton;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.jaredrummler.materialspinner.MaterialSpinner;
+import com.example.islamicappb.DatabaseHelper;
+import com.example.islamicappb.R;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -117,7 +116,7 @@ public class EightDivisonActivity extends AppCompatActivity {
 
 
             if (!latt.equals("")){
-                Intent in = new Intent(EightDivisonActivity.this,KotlinActivity.class);
+                Intent in = new Intent(EightDivisonActivity.this, KotlinActivity.class);
                 in.putExtra("latitude", latt);
                 in.putExtra("longitude", lonn);
                 in.putExtra("Locc", locString);
