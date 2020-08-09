@@ -732,8 +732,9 @@ public class EightDivisonActivity extends AppCompatActivity {
 
         TedPermission.with(EightDivisonActivity.this)
                 .setPermissionListener(permissionListener)
-                .setDeniedMessage("Need Storage permission. Please give manually")
-                .setGotoSettingButtonText("setting")
+                .setDeniedMessage("স্টোরেজের অনুমতি প্রয়োজন। অনুগ্রহ করে ম্যানুয়ালি দিন।")
+                .setGotoSettingButtonText("সেটিংস")
+                .setDeniedCloseButtonText("বাতিল করুন")
                 .setPermissions(Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE)
                 .check();
     }
