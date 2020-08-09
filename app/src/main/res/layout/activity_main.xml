@@ -7,7 +7,7 @@
     android:layout_gravity="center"
     android:gravity="center"
     android:orientation="vertical"
-    tools:context=".activity.MainActivity">
+    tools:context=".MainActivity">
 
     <EditText
         android:id="@+id/idEd"

@@ -118,6 +118,15 @@
 </string>
     <string name="eid3">৪, ইমাম তাকবীরে তাশরীক পড়ার কথা ভুলে গেলে মুক্তাদিরা উচ্চস্বরে তাকবীরে তাশরীক পড়া শুরু করবে। ইমামের অপেক্ষায় বসে থাকা যাবে না। ফরজ নামাজ একা শেষ করলেও তাকবীরে তাশরীক পড়তে হবে।
 </string>
+    <string name="namajer_niom">নামাজের নিয়ম</string>
+    <string name="doa_durud">দোয়া ও দুরূদ</string>
+    <string name="bisesh_namaj">বিশেষ নামাজ</string>
+    <string name="namajer_parthokko">নামাজের\nপার্থক্য</string>
+    <string name="amol">আমল\nসমূহ</string>
+    <string name="shoriot_shobdartho">শরীয়তের\nশব্দার্থ</string>
+    <string name="taharat">তাহারাত\n(পবিত্রতা)</string>
+    <string name="roajr_somoysuchi">রোজার সময়\nসূচী</string>
+    <string name="locationText">অবস্থান\nনির্বাচন</string>
 
 
 </resources>
