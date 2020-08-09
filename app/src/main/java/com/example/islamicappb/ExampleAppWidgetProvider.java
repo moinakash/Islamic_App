@@ -1,4 +1,4 @@
-package com.example.islamicappb.widget;
+package com.example.islamicappb;
 
 import android.app.PendingIntent;
 import android.appwidget.AppWidgetManager;
@@ -10,9 +10,6 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.widget.RemoteViews;
 import android.widget.Toast;
-
-import com.example.islamicappb.R;
-import com.example.islamicappb.activity.MainActivity;
 
 public class ExampleAppWidgetProvider extends AppWidgetProvider {
     public static final String ACTION_REFRESH = "actionRefresh";

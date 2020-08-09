@@ -1,4 +1,4 @@
-package com.example.islamicappb.widget;
+package com.example.islamicappb;
 
 import android.app.PendingIntent;
 import android.appwidget.AppWidgetManager;
@@ -12,10 +12,7 @@ import android.widget.RemoteViews;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.islamicappb.R;
-import com.example.islamicappb.activity.MainActivity;
-
-import static com.example.islamicappb.widget.ExampleAppWidgetProvider.ACTION_REFRESH;
+import static com.example.islamicappb.ExampleAppWidgetProvider.ACTION_REFRESH;
 
 public class ExampleAppWidgetConfig extends AppCompatActivity {
     public static final String SHARED_PREFS = "prefs";

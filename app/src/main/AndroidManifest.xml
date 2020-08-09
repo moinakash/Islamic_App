@@ -75,10 +75,10 @@
         </receiver>
         -->
         <activity
-            android:name=".activity.MainActivity"
+            android:name=".MainActivity"
             android:launchMode="singleTop"></activity>
 
-        <receiver android:name=".widget.ExampleAppWidgetProvider">
+        <receiver android:name=".ExampleAppWidgetProvider">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
             </intent-filter>
@@ -88,14 +88,14 @@
                 android:resource="@xml/example_appwidget_info" />
         </receiver>
 
-        <activity android:name=".widget.ExampleAppWidgetConfig">
+        <activity android:name=".ExampleAppWidgetConfig">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_CONFIGURE" />
             </intent-filter>
         </activity>
 
         <service
-            android:name=".widget.ExampleWidgetService"
+            android:name=".ExampleWidgetService"
             android:permission="android.permission.BIND_REMOTEVIEWS" />
     </application>
 

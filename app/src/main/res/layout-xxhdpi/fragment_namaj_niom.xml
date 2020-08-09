@@ -59,7 +59,7 @@
 
 
                 <TextView
-                    android:text="নামাজের নিয়ম"
+                    android:text="@string/namajer_niom"
                     android:textStyle="bold"
                     android:textSize="13sp"
                     android:layout_width="wrap_content"
@@ -98,7 +98,7 @@
                 </LinearLayout>
 
                 <TextView
-                    android:text="দোয়া ও দুরূদ"
+                    android:text="@string/doa_durud"
                     android:textStyle="bold"
                     android:textSize="13sp"
                     android:layout_width="wrap_content"
@@ -136,7 +136,7 @@
                 </LinearLayout>
 
                 <TextView
-                    android:text="বিশেষ নামাজ"
+                    android:text="@string/bisesh_namaj"
                     android:textStyle="bold"
                     android:textSize="13sp"
                     android:layout_width="wrap_content"
@@ -185,7 +185,7 @@
 
                 <TextView
                     android:gravity="center"
-                    android:text="নামাজের পার্থক্য"
+                    android:text="@string/namajer_parthokko"
                     android:textStyle="bold"
                     android:textSize="13sp"
                     android:layout_width="wrap_content"
@@ -225,7 +225,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:text="আমল\nসমূহ"
+                    android:text="@string/amol"
                     android:textSize="13sp"
                     android:textStyle="bold" />
 
@@ -263,7 +263,7 @@
 
                 <TextView
                     android:gravity="center"
-                    android:text="শরীয়তের শব্দার্থ"
+                    android:text="@string/shoriot_shobdartho"
                     android:textStyle="bold"
                     android:textSize="13sp"
                     android:layout_width="wrap_content"
@@ -313,7 +313,7 @@
                 <TextView
                     android:layout_gravity="center"
                     android:gravity="center"
-                    android:text="তাহারাত\n(পবিত্রতা)"
+                    android:text="@string/taharat"
                     android:textStyle="bold"
                     android:textSize="13sp"
                     android:layout_width="wrap_content"
@@ -352,7 +352,7 @@
 
                 <TextView
                     android:gravity="center"
-                    android:text="রোজার সময় সূচী"
+                    android:text="@string/roajr_somoysuchi"
                     android:textStyle="bold"
                     android:textSize="13sp"
                     android:layout_width="wrap_content"
@@ -390,7 +390,7 @@
 
                 <TextView
                     android:gravity="center"
-                    android:text="স্থান নির্বাচন করুন"
+                    android:text="@string/locationText"
                     android:textStyle="bold"
                     android:textSize="13sp"
                     android:layout_width="wrap_content"

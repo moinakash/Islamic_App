@@ -4,33 +4,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
+    android:gravity="center_horizontal"
     android:orientation="vertical"
-    android:layout_gravity="center"
-    android:padding="10dp"
-    android:background="@drawable/quran_mazid_bg"
-    tools:context=".widget.ExampleAppWidgetConfig">
-
+    tools:context=".ExampleAppWidgetConfig">
     <EditText
         android:id="@+id/edit_text_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
-
-<!--    <TextView-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_gravity="center"-->
-<!--        android:gravity="center"-->
-<!--        android:padding="30dp"-->
-<!--        android:layout_margin="30dp"-->
-<!--        android:textSize="25dp"-->
-<!--        android:text="এ্যাপ উইজেট প্রতিদিনের নামাজের ওয়াক্ত দেখাবে এবং ডাটা পরিবর্তন হলে ৩০ মিনিট পর পর আপডেট হবে"/>-->
-
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:hint="Button text" />
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:onClick="confirmConfiguration"
-        android:text="ঠিক আছে" />
-
-
+        android:text="Confirm" />
 </LinearLayout>
