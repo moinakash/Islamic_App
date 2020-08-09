@@ -1,8 +1,6 @@
 package com.example.islamicappb;
 
-import android.app.AlertDialog;
 import android.app.Dialog;
-import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
@@ -14,10 +12,14 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import com.example.islamicappb.activity.Amol_Activity;
+import com.example.islamicappb.activity.BaseActivity;
+import com.example.islamicappb.activity.BisheshNamajActivity;
+import com.example.islamicappb.activity.EightDivisonActivity;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -177,7 +179,7 @@ public class DoaDurudFragment extends Fragment {
 
                 editor.commit();
 
-                Intent go = new Intent(getContext(),EightDivisonActivity.class);
+                Intent go = new Intent(getContext(), EightDivisonActivity.class);
                 startActivity(go);
 
 

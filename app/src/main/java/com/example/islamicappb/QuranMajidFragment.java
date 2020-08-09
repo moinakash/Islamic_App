@@ -10,6 +10,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+import com.example.islamicappb.activity.AllahNameActivity;
+import com.example.islamicappb.activity.HadisTypeActivity;
+import com.example.islamicappb.activity.KalimaActivity;
+
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link QuranMajidFragment#newInstance} factory method to
@@ -89,7 +93,7 @@ public class QuranMajidFragment extends Fragment {
             @Override
             public void onClick(View view) {
 
-                Intent AllahNameIntent = new Intent(getContext(),AllahNameActivity.class);
+                Intent AllahNameIntent = new Intent(getContext(), AllahNameActivity.class);
                 startActivity(AllahNameIntent);
             }
         });

@@ -1,4 +1,4 @@
-package com.example.islamicappb;
+package com.example.islamicappb.activity;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -21,6 +21,10 @@ import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.islamicappb.AllahNamePojoClass;
+import com.example.islamicappb.DatabaseHelper;
+import com.example.islamicappb.R;
 
 import java.util.ArrayList;
 import java.util.List;

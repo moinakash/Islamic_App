@@ -1,4 +1,4 @@
-package com.example.islamicappb;
+package com.example.islamicappb.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -12,6 +12,11 @@ import android.widget.ExpandableListAdapter;
 import android.widget.ExpandableListView;
 import android.widget.ScrollView;
 import android.widget.TextView;
+
+import com.example.islamicappb.CustomExpandableListAdapterforKalima;
+import com.example.islamicappb.DatabaseHelper;
+import com.example.islamicappb.PojoClassForKalima;
+import com.example.islamicappb.R;
 
 import java.util.ArrayList;
 import java.util.HashMap;

@@ -1,4 +1,4 @@
-package com.example.islamicappb
+package com.example.islamicappb.activity
 
 import android.content.Intent
 import android.os.Bundle
@@ -10,6 +10,7 @@ import com.azan.Azan
 import com.azan.Method
 import com.azan.astrologicalCalc.Location
 import com.azan.astrologicalCalc.SimpleDate
+import com.example.islamicappb.R
 import java.sql.DriverManager
 import java.util.*
 
