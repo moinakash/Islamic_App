@@ -1,4 +1,4 @@
-package com.example.islamicappb;
+package com.example.islamicappb.fragments;
 
 import android.content.Context;
 import android.content.Intent;
@@ -21,6 +21,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.islamicappb.R;
 import com.example.islamicappb.activity.BaseActivity;
 import com.example.islamicappb.activity.EightDivisonActivity;
 
@@ -50,6 +51,9 @@ public class TimeTableFragment extends Fragment {
     String fojorTimeBangla,johorTimeBangla,asorTimeBangla,magribTimeBangla,eshaTimeBangla;
 
     String year, month, day;
+
+    String AlermSetToast;
+
     int ii;
 
     private static final String ARG_PARAM1 = "param1";
@@ -95,6 +99,8 @@ public class TimeTableFragment extends Fragment {
 
 
         Paper.init(getContext());
+
+        AlermSetToast = getResources().getString(R.string.Alerm_Set_Toast);
 
         tvfojor = view.findViewById(R.id.idFajr);
         tvjohor = view.findViewById(R.id.idJohor);
@@ -468,7 +474,7 @@ public class TimeTableFragment extends Fragment {
                 i.putExtra(AlarmClock.EXTRA_MESSAGE, "ফজরের ওয়াক্ত শুরু");
                 i.putExtra(AlarmClock.EXTRA_HOUR, fHour);
                 i.putExtra(AlarmClock.EXTRA_MINUTES, fMinute);
-                Toast.makeText(getContext(), "সম্পূর্ন হয়েছে", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(), ""+AlermSetToast, Toast.LENGTH_SHORT).show();
                 startActivity(i);
 
             }
@@ -480,7 +486,7 @@ public class TimeTableFragment extends Fragment {
                 i.putExtra(AlarmClock.EXTRA_MESSAGE, "যোহরের ওয়াক্ত শুরু");
                 i.putExtra(AlarmClock.EXTRA_HOUR, jHour);
                 i.putExtra(AlarmClock.EXTRA_MINUTES, jMinute);
-                Toast.makeText(getContext(), "সম্পূর্ন হয়েছে", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(), ""+AlermSetToast, Toast.LENGTH_SHORT).show();
                 startActivity(i);
 
             }
@@ -493,7 +499,7 @@ public class TimeTableFragment extends Fragment {
                 i.putExtra(AlarmClock.EXTRA_MESSAGE, "আসরের ওয়াক্ত শুরু");
                 i.putExtra(AlarmClock.EXTRA_HOUR, aHour);
                 i.putExtra(AlarmClock.EXTRA_MINUTES, aMinute);
-                Toast.makeText(getContext(), "সম্পূর্ন হয়েছে", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(), ""+AlermSetToast, Toast.LENGTH_SHORT).show();
                 startActivity(i);
 
             }
@@ -506,7 +512,7 @@ public class TimeTableFragment extends Fragment {
                 i.putExtra(AlarmClock.EXTRA_MESSAGE, "মাগরিবের ওয়াক্ত শুরু");
                 i.putExtra(AlarmClock.EXTRA_HOUR, mHour);
                 i.putExtra(AlarmClock.EXTRA_MINUTES, mMinute);
-                Toast.makeText(getContext(), "সম্পূর্ন হয়েছে", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(), ""+AlermSetToast, Toast.LENGTH_SHORT).show();
                 startActivity(i);
 
             }
@@ -519,7 +525,7 @@ public class TimeTableFragment extends Fragment {
                 i.putExtra(AlarmClock.EXTRA_MESSAGE, "এশার ওয়াক্ত শুরু");
                 i.putExtra(AlarmClock.EXTRA_HOUR, eHour);
                 i.putExtra(AlarmClock.EXTRA_MINUTES, eMinute);
-                Toast.makeText(getContext(), "সম্পূর্ন হয়েছে", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(), ""+AlermSetToast, Toast.LENGTH_SHORT).show();
                 startActivity(i);
 
             }

@@ -1,4 +1,4 @@
-package com.example.islamicappb;
+package com.example.islamicappb.fragments;
 
 import android.app.Dialog;
 import android.content.Context;
@@ -21,7 +21,8 @@ import android.view.animation.RotateAnimation;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
+
+import com.example.islamicappb.R;
 
 
 public class CompusFragment extends Fragment implements SensorEventListener {

@@ -13,9 +13,9 @@ import android.widget.ExpandableListView;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
-import com.example.islamicappb.CustomExpandableListAdapterforKalima;
-import com.example.islamicappb.DatabaseHelper;
-import com.example.islamicappb.PojoClassForKalima;
+import com.example.islamicappb.Adapters.kalimaExpandableAdapter;
+import com.example.islamicappb.database.DatabaseHelper;
+import com.example.islamicappb.pojo_classes.PojoClassForKalima;
 import com.example.islamicappb.R;
 
 import java.util.ArrayList;
@@ -125,7 +125,7 @@ public class BisheshNamajActivity extends AppCompatActivity {
         this.expandableListView = findViewById(R.id.expandableListView);
         this.listaContactos = getContactos();
         this.expandableListNombres = new ArrayList<>(listaContactos.keySet());
-        this.expandableListAdapter = new CustomExpandableListAdapterforKalima(this,
+        this.expandableListAdapter = new kalimaExpandableAdapter(this,
                 expandableListNombres, listaContactos);
 
     }

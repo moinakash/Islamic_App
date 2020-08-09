@@ -1,4 +1,4 @@
-package com.example.islamicappb;
+package com.example.islamicappb.Adapters;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -9,18 +9,21 @@ import android.view.animation.AnimationUtils;
 import android.widget.BaseExpandableListAdapter;
 import android.widget.TextView;
 
+import com.example.islamicappb.R;
+import com.example.islamicappb.pojo_classes.PojoClassForKalima;
+
 import java.util.HashMap;
 import java.util.List;
 
-public class CustomExpandableListAdapterforKalima extends BaseExpandableListAdapter {
+public class kalimaExpandableAdapter extends BaseExpandableListAdapter {
 
     private Context context;
     private List<String> title;
     private HashMap<String, PojoClassForKalima> expandableListDetalles;
 
-    public CustomExpandableListAdapterforKalima(Context context,
-                                                List<String> title,
-                                                HashMap<String, PojoClassForKalima> expandableListDetalles) {
+    public kalimaExpandableAdapter(Context context,
+                                   List<String> title,
+                                   HashMap<String, PojoClassForKalima> expandableListDetalles) {
 
 
         this.context = context;

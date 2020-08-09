@@ -11,22 +11,20 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.islamicappb.AmolPojoClass;
-import com.example.islamicappb.DatabaseHelper;
-import com.example.islamicappb.MyDatabasehelper;
+import com.example.islamicappb.pojo_classes.AmolPojoClass;
+import com.example.islamicappb.database.DatabaseHelper;
+import com.example.islamicappb.database.MyDatabasehelper;
 import com.example.islamicappb.R;
 
 import java.util.ArrayList;

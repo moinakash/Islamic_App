@@ -1,13 +1,13 @@
-package com.example.islamicappb;
+package com.example.islamicappb.pojo_classes;
 
-public class HadisLinePart {
+public class HadisLinePartPojo {
 
     String hadis_arbi;
     String hadis_bangla;
     String hadis_utso;
     String hadis_index;
 
-    public HadisLinePart(String hadis_arbi, String hadis_bangla, String hadis_utso, String hadis_index) {
+    public HadisLinePartPojo(String hadis_arbi, String hadis_bangla, String hadis_utso, String hadis_index) {
         this.hadis_arbi = hadis_arbi;
         this.hadis_bangla = hadis_bangla;
         this.hadis_utso = hadis_utso;

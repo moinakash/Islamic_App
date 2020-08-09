@@ -27,13 +27,13 @@
         <activity
             android:name=".activity.BisheshNamajActivity"
             android:parentActivityName=".activity.KotlinActivity" />
-        <activity android:name=".NamajerNiomActivity" />
+        <activity android:name=".activity.NamajerNiomActivity" />
         <activity
             android:name=".activity.KalimaActivity"
             android:parentActivityName=".activity.KotlinActivity" />
         <activity android:name=".activity.KotlinActivity" />
         <activity
-            android:name=".BookmarkActivity"
+            android:name=".activity.BookmarkActivity"
             android:parentActivityName=".activity.KotlinActivity" />
         <activity
             android:name=".activity.AllahNameActivity"
@@ -78,7 +78,7 @@
             android:name=".activity.MainActivity"
             android:launchMode="singleTop"></activity>
 
-        <receiver android:name=".ExampleAppWidgetProvider">
+        <receiver android:name=".widget.WidgetProvider">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
             </intent-filter>
@@ -88,14 +88,14 @@
                 android:resource="@xml/example_appwidget_info" />
         </receiver>
 
-        <activity android:name=".ExampleAppWidgetConfig">
+        <activity android:name=".widget.WidgetConfig">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_CONFIGURE" />
             </intent-filter>
         </activity>
 
         <service
-            android:name=".ExampleWidgetService"
+            android:name=".widget.WidgetService"
             android:permission="android.permission.BIND_REMOTEVIEWS" />
     </application>
 

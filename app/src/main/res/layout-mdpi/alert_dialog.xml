@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center_horizontal"
-    android:padding="16dp"
+    android:padding="30dp"
     >
 
     <ImageView
@@ -20,45 +20,44 @@
         android:id="@+id/text"
         android:textColor="@android:color/black"
         android:layout_below="@+id/img"
-        android:textSize="15sp"
-        android:layout_marginTop="10dp"
+        android:textSize="20sp"
+        android:layout_marginTop="15dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Lorem Ipsum is simply dummy text "
 
         />
 
-    <LinearLayout
-        android:layout_below="@+id/text"
-        android:layout_gravity="center"
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
 
-        <Button
-            android:layout_margin="20dp"
-            android:layout_weight="1"
-
+        <LinearLayout
+            android:layout_below="@+id/text"
+            android:orientation="horizontal"
+            android:layout_marginTop="15dp"
+            android:gravity="center"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Accept"
-            style="@style/Widget.AppCompat.Button.Colored"
-            android:id="@+id/acceptButton"
-            />
-        <Button
-            android:layout_margin="20dp"
-            android:layout_weight="1"
+            android:layout_height="wrap_content">
 
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Cancel"
+            <Button
+                android:id="@+id/cancelButton"
+                android:layout_gravity="right"
+                android:textColor="@android:color/white"
+                android:background="@drawable/green_shape_fill"
+                android:textSize="15sp"
+                android:text="না"
+                android:layout_width="80dp"
+                android:layout_height="50dp"/>
 
-            android:id="@+id/cancelButton"
-            />
-<!--        style="@style/Widget.AppCompat.Button.Borderless.Colored"-->
-
-    </LinearLayout>
-
+            <Button
+                android:layout_marginLeft="40dp"
+                android:id="@+id/acceptButton"
+                android:layout_gravity="right"
+                android:background="@drawable/timetable_shape"
+                android:textColor="@color/base_color"
+                android:textSize="15sp"
+                android:text="হ্যাঁ"
+                android:layout_width="80dp"
+                android:layout_height="50dp"/>
+        </LinearLayout>
 
 
 

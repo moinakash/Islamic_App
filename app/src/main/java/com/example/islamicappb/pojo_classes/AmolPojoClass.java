@@ -1,4 +1,4 @@
-package com.example.islamicappb;
+package com.example.islamicappb.pojo_classes;
 
 public class AmolPojoClass {
 

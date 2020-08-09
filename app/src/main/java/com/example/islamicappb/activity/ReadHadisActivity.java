@@ -27,9 +27,9 @@ import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.islamicappb.DatabaseHelper;
-import com.example.islamicappb.HadisLinePart;
-import com.example.islamicappb.MyDatabasehelper;
+import com.example.islamicappb.database.DatabaseHelper;
+import com.example.islamicappb.pojo_classes.HadisLinePartPojo;
+import com.example.islamicappb.database.MyDatabasehelper;
 import com.example.islamicappb.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
@@ -44,7 +44,7 @@ public class ReadHadisActivity extends AppCompatActivity {
     public static int pvalue = 1;
     DatabaseHelper db;
     private ListView listView2;
-    List<HadisLinePart> hadisLinePart1;
+    List<HadisLinePartPojo> hadisLinePartPojo1;
 
     HadisLineAdapter hadisLineAdapter;
 
@@ -76,7 +76,7 @@ public class ReadHadisActivity extends AppCompatActivity {
         floatingActionButton = findViewById(R.id.idfloatingActionButton);
 
         listView2 = findViewById(R.id.idListViewHadis);
-        hadisLinePart1 = new ArrayList();
+        hadisLinePartPojo1 = new ArrayList();
 
         db = new DatabaseHelper(this);
 
@@ -99,36 +99,36 @@ public class ReadHadisActivity extends AppCompatActivity {
         }else {
             while (cursor.moveToNext()){
 
-                hadisLinePart1.add(new HadisLinePart(""+cursor.getString(4),""+cursor.getString(5),""+cursor.getString(6),""+cursor.getString(1)));
+                hadisLinePartPojo1.add(new HadisLinePartPojo(""+cursor.getString(4),""+cursor.getString(5),""+cursor.getString(6),""+cursor.getString(1)));
 
             }
         }
 
 
-        hadisLineAdapter = new HadisLineAdapter(this,R.layout.custom_sura_part,hadisLinePart1);
+        hadisLineAdapter = new HadisLineAdapter(this,R.layout.custom_sura_part, hadisLinePartPojo1);
         listView2.setAdapter(hadisLineAdapter);
 
     }
 
 
-    public class HadisLineAdapter extends ArrayAdapter<HadisLinePart> {
+    public class HadisLineAdapter extends ArrayAdapter<HadisLinePartPojo> {
 
-        private List<HadisLinePart> hadisLinePart;
+        private List<HadisLinePartPojo> hadisLinePartPojo;
         private Context context;
 
         TextView HadisArbi;
 
-        public HadisLineAdapter(@NonNull Context context, int textViewResourceId, List<HadisLinePart> hadisLinePart) {
-            super(context, textViewResourceId, hadisLinePart);
+        public HadisLineAdapter(@NonNull Context context, int textViewResourceId, List<HadisLinePartPojo> hadisLinePartPojo) {
+            super(context, textViewResourceId, hadisLinePartPojo);
             this.context = context;
-            this.hadisLinePart = hadisLinePart;
+            this.hadisLinePartPojo = hadisLinePartPojo;
 
 
         }
 
         @Override
         public int getCount() {
-            return hadisLinePart.size();
+            return hadisLinePartPojo.size();
         }
 
         @Override
@@ -148,10 +148,10 @@ public class ReadHadisActivity extends AppCompatActivity {
 
             }
 
-            final HadisLinePart hadisLinePart1 = hadisLinePart.get(position);
+            final HadisLinePartPojo hadisLinePartPojo1 = hadisLinePartPojo.get(position);
 
 
-            if(hadisLinePart1 !=null)
+            if(hadisLinePartPojo1 !=null)
             {
 
                 final ImageButton Copy = (ImageButton) customView.findViewById(R.id.idSuraCopy);
@@ -159,20 +159,20 @@ public class ReadHadisActivity extends AppCompatActivity {
                 final ImageButton Share = (ImageButton) customView.findViewById(R.id.idSuraShare);
 
                 TextView Number = (TextView) customView.findViewById(R.id.idAyatNumber);
-                Number.setText(hadisLinePart1.getHadis_index());
+                Number.setText(hadisLinePartPojo1.getHadis_index());
 
                 HadisArbi = (TextView) customView.findViewById(R.id.idSuraArbi);
-                HadisArbi.setText(hadisLinePart1.getHadis_arbi());
+                HadisArbi.setText(hadisLinePartPojo1.getHadis_arbi());
 
 
                 ///////////////////////////////////////////////////////
 
 
                 final TextView hadisBangla = (TextView) customView.findViewById(R.id.idSuraBangla);
-                hadisBangla.setText(hadisLinePart1.getHadis_bangla());
+                hadisBangla.setText(hadisLinePartPojo1.getHadis_bangla());
 
                 TextView hadisutso = (TextView) customView.findViewById(R.id.idSuraBanglaMeaning);
-                hadisutso.setText(hadisLinePart1.getHadis_utso());
+                hadisutso.setText(hadisLinePartPojo1.getHadis_utso());
 
 
 
@@ -191,7 +191,7 @@ public class ReadHadisActivity extends AppCompatActivity {
 
                         ClipboardManager cm = (ClipboardManager) context
                                 .getSystemService(Context.CLIPBOARD_SERVICE);
-                        cm.setText(""+hadisLinePart1.getHadis_arbi()+"\n"+""+hadisLinePart1.getHadis_bangla()+""+hadisLinePart1.getHadis_utso());
+                        cm.setText(""+ hadisLinePartPojo1.getHadis_arbi()+"\n"+""+ hadisLinePartPojo1.getHadis_bangla()+""+ hadisLinePartPojo1.getHadis_utso());
 
                     }
                 });
@@ -208,7 +208,7 @@ public class ReadHadisActivity extends AppCompatActivity {
 
                         Intent sendIntent = new Intent();
                         sendIntent.setAction(Intent.ACTION_SEND);
-                        sendIntent.putExtra(Intent.EXTRA_TEXT, ""+hadisLinePart1.getHadis_arbi()+"\n"+hadisLinePart1.getHadis_bangla()+""+hadisLinePart1.getHadis_utso());
+                        sendIntent.putExtra(Intent.EXTRA_TEXT, ""+ hadisLinePartPojo1.getHadis_arbi()+"\n"+ hadisLinePartPojo1.getHadis_bangla()+""+ hadisLinePartPojo1.getHadis_utso());
                         sendIntent.setType("text/plain");
 
                         Intent shareIntent = Intent.createChooser(sendIntent, null);

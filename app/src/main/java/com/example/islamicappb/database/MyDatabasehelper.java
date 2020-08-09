@@ -1,4 +1,4 @@
-package com.example.islamicappb;
+package com.example.islamicappb.database;
 
 import android.content.ContentValues;
 import android.content.Context;

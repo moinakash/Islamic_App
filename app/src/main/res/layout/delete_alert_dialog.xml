@@ -75,7 +75,7 @@
                         android:background="@drawable/timetable_shape"
                         android:textColor="@color/base_color"
                         android:textSize="15sp"
-                        android:text="হ্যা"
+                        android:text="হ্যাঁ"
                         android:layout_width="50dp"
                         android:layout_height="50dp"/>
                 </LinearLayout>

@@ -1,4 +1,4 @@
-package com.example.islamicappb;
+package com.example.islamicappb.Adapters;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -10,17 +10,20 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
+import com.example.islamicappb.R;
+import com.example.islamicappb.SuraLinePartPojo;
+
 import java.util.List;
 
-public class SuraLineAdapter extends ArrayAdapter<SuraLinePart> {
+public class SuraLineAdapter extends ArrayAdapter<SuraLinePartPojo> {
 
-    private List<SuraLinePart> suraLinePart;
+    private List<SuraLinePartPojo> suraLinePartPojo;
     private Context context;
 
-    public SuraLineAdapter(@NonNull Context context, int textViewResourceId, List<SuraLinePart> suraLinePart) {
-        super(context, textViewResourceId, suraLinePart);
+    public SuraLineAdapter(@NonNull Context context, int textViewResourceId, List<SuraLinePartPojo> suraLinePartPojo) {
+        super(context, textViewResourceId, suraLinePartPojo);
         this.context = context;
-        this.suraLinePart = suraLinePart;
+        this.suraLinePartPojo = suraLinePartPojo;
 
     }
 
@@ -36,22 +39,22 @@ public class SuraLineAdapter extends ArrayAdapter<SuraLinePart> {
 
             }
 
-            SuraLinePart suraLinePart1 = suraLinePart.get(position);
+            SuraLinePartPojo suraLinePartPojo1 = suraLinePartPojo.get(position);
 
 
-            if(suraLinePart1 !=null)
+            if(suraLinePartPojo1 !=null)
             {
 
                 TextView SuraName = (TextView) customView.findViewById(R.id.idSuraArbi);
-                SuraName.setText(suraLinePart1.getSura_arbi());
+                SuraName.setText(suraLinePartPojo1.getSura_arbi());
 
 
 
                 TextView SuraNameBangla = (TextView) customView.findViewById(R.id.idSuraBangla);
-                SuraNameBangla.setText(suraLinePart1.getSura_bangla());
+                SuraNameBangla.setText(suraLinePartPojo1.getSura_bangla());
 
                 TextView SuraNameMeaning = (TextView) customView.findViewById(R.id.idSuraBanglaMeaning);
-                SuraNameMeaning.setText(suraLinePart1.getSura_bangla_meaning());
+                SuraNameMeaning.setText(suraLinePartPojo1.getSura_bangla_meaning());
 
 
 

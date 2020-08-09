@@ -1,4 +1,4 @@
-package com.example.islamicappb;
+package com.example.islamicappb.widget;
 
 import android.app.PendingIntent;
 import android.appwidget.AppWidgetManager;
@@ -12,11 +12,12 @@ import android.widget.RemoteViews;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.islamicappb.R;
 import com.example.islamicappb.activity.MainActivity;
 
-import static com.example.islamicappb.ExampleAppWidgetProvider.ACTION_REFRESH;
+import static com.example.islamicappb.widget.WidgetProvider.ACTION_REFRESH;
 
-public class ExampleAppWidgetConfig extends AppCompatActivity {
+public class WidgetConfig extends AppCompatActivity {
     public static final String SHARED_PREFS = "prefs";
     public static final String KEY_BUTTON_TEXT = "keyButtonText";
     private int appWidgetId = AppWidgetManager.INVALID_APPWIDGET_ID;
@@ -45,10 +46,10 @@ public class ExampleAppWidgetConfig extends AppCompatActivity {
         PendingIntent buttonPendingIntent = PendingIntent.getActivity(this,
                 0, buttonIntent, 0);
         String buttonText = editTextButton.getText().toString();
-        Intent serviceIntent = new Intent(this, ExampleWidgetService.class);
+        Intent serviceIntent = new Intent(this, WidgetService.class);
         serviceIntent.putExtra(AppWidgetManager.EXTRA_APPWIDGET_ID, appWidgetId);
         serviceIntent.setData(Uri.parse(serviceIntent.toUri(Intent.URI_INTENT_SCHEME)));
-        Intent clickIntent = new Intent(this, ExampleAppWidgetProvider.class);
+        Intent clickIntent = new Intent(this, WidgetProvider.class);
         clickIntent.setAction(ACTION_REFRESH);
         PendingIntent clickPendingIntent = PendingIntent.getBroadcast(this,
                 0, clickIntent, 0);

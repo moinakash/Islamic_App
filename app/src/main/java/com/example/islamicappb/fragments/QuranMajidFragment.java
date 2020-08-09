@@ -1,4 +1,4 @@
-package com.example.islamicappb;
+package com.example.islamicappb.fragments;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,6 +10,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+import com.example.islamicappb.activity.BookmarkActivity;
+import com.example.islamicappb.R;
+import com.example.islamicappb.SuraActivity;
 import com.example.islamicappb.activity.AllahNameActivity;
 import com.example.islamicappb.activity.HadisTypeActivity;
 import com.example.islamicappb.activity.KalimaActivity;
@@ -84,7 +87,7 @@ public class QuranMajidFragment extends Fragment {
             @Override
             public void onClick(View view) {
 
-                Intent suraIntent = new Intent(getContext(),SuraActivity.class);
+                Intent suraIntent = new Intent(getContext(), SuraActivity.class);
                 startActivity(suraIntent);
             }
         });
@@ -103,7 +106,7 @@ public class QuranMajidFragment extends Fragment {
             @Override
             public void onClick(View view) {
 
-                Intent AllahNameIntent = new Intent(getContext(),BookmarkActivity.class);
+                Intent AllahNameIntent = new Intent(getContext(), BookmarkActivity.class);
                 startActivity(AllahNameIntent);
             }
         });

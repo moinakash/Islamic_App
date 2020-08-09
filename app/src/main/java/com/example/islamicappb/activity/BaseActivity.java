@@ -7,8 +7,6 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
 import android.app.AlertDialog;
-import android.content.DialogInterface;
-import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.util.Log;
@@ -18,12 +16,12 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.islamicappb.CompusFragment;
-import com.example.islamicappb.DoaDurudFragment;
-import com.example.islamicappb.QuranMajidFragment;
+import com.example.islamicappb.fragments.CompusFragment;
+import com.example.islamicappb.fragments.DoaDurudFragment;
+import com.example.islamicappb.fragments.QuranMajidFragment;
 import com.example.islamicappb.R;
-import com.example.islamicappb.TasbihFragment;
-import com.example.islamicappb.TimeTableFragment;
+import com.example.islamicappb.fragments.TasbihFragment;
+import com.example.islamicappb.fragments.TimeTableFragment;
 import com.ismaeldivita.chipnavigation.ChipNavigationBar;
 
 import java.text.SimpleDateFormat;
@@ -761,10 +759,10 @@ public int getTest(){
         Button cancelButton = view.findViewById(R.id.cancelButton);
         TextView textView = view.findViewById(R.id.text);
 
-        textView.setText("আপনি কি প্রস্থান করতে চান");
+        textView.setText("আপনি কি প্রস্থান করতে চান?");
 
         cancelButton.setText("না");
-        acceptButton.setText("হ্যা");
+        acceptButton.setText("হ্যাঁ");
 
         acceptButton.setOnClickListener(new View.OnClickListener() {
             @Override

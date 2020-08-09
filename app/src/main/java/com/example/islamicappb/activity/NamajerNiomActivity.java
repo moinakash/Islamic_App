@@ -1,8 +1,10 @@
-package com.example.islamicappb;
+package com.example.islamicappb.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.example.islamicappb.R;
 
 public class NamajerNiomActivity extends AppCompatActivity {
 

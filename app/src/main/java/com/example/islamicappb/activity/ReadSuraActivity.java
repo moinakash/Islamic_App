@@ -2,21 +2,18 @@ package com.example.islamicappb.activity;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.app.AlertDialog;
 import android.content.ClipboardManager;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.PorterDuff;
-import android.os.Build;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -30,10 +27,10 @@ import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.islamicappb.DatabaseHelper;
-import com.example.islamicappb.MyDatabasehelper;
+import com.example.islamicappb.database.DatabaseHelper;
+import com.example.islamicappb.database.MyDatabasehelper;
 import com.example.islamicappb.R;
-import com.example.islamicappb.SuraLinePart;
+import com.example.islamicappb.SuraLinePartPojo;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
@@ -47,7 +44,7 @@ public class ReadSuraActivity extends AppCompatActivity {
     public static int pvalue = 1;
     DatabaseHelper db;
     private ListView listView2;
-    List<SuraLinePart> suraLinePart1;
+    List<SuraLinePartPojo> suraLinePartPojo1;
 
     SuraLineAdapter suraLineAdapter;
 
@@ -80,7 +77,7 @@ public class ReadSuraActivity extends AppCompatActivity {
         floatingActionButton = findViewById(R.id.idfloatingActionButton);
 
         listView2 = findViewById(R.id.idListView2);
-        suraLinePart1 = new ArrayList();
+        suraLinePartPojo1 = new ArrayList();
 
         db = new DatabaseHelper(this);
 
@@ -100,36 +97,36 @@ public class ReadSuraActivity extends AppCompatActivity {
         }else {
             while (cursor.moveToNext()){
 
-                suraLinePart1.add(new SuraLinePart(""+cursor.getString(7),""+cursor.getString(9),""+cursor.getString(10),""+cursor.getString(4)));
+                suraLinePartPojo1.add(new SuraLinePartPojo(""+cursor.getString(7),""+cursor.getString(9),""+cursor.getString(10),""+cursor.getString(4)));
 
             }
         }
 
 
-        suraLineAdapter = new SuraLineAdapter(this,R.layout.custom_sura_part, suraLinePart1);
+        suraLineAdapter = new SuraLineAdapter(this,R.layout.custom_sura_part, suraLinePartPojo1);
         listView2.setAdapter(suraLineAdapter);
 
     }
 
 
-    public class SuraLineAdapter extends ArrayAdapter<SuraLinePart> {
+    public class SuraLineAdapter extends ArrayAdapter<SuraLinePartPojo> {
 
-        private List<SuraLinePart> suraLinePart;
+        private List<SuraLinePartPojo> suraLinePartPojo;
         private Context context;
 
         TextView SuraName;
 
-        public SuraLineAdapter(@NonNull Context context, int textViewResourceId, List<SuraLinePart> suraLinePart) {
-            super(context, textViewResourceId, suraLinePart);
+        public SuraLineAdapter(@NonNull Context context, int textViewResourceId, List<SuraLinePartPojo> suraLinePartPojo) {
+            super(context, textViewResourceId, suraLinePartPojo);
             this.context = context;
-            this.suraLinePart = suraLinePart;
+            this.suraLinePartPojo = suraLinePartPojo;
 
 
         }
 
         @Override
         public int getCount() {
-            return suraLinePart.size();
+            return suraLinePartPojo.size();
         }
 
         @Override
@@ -149,10 +146,10 @@ public class ReadSuraActivity extends AppCompatActivity {
 
             }
 
-            final SuraLinePart suraLinePart1 = suraLinePart.get(position);
+            final SuraLinePartPojo suraLinePartPojo1 = suraLinePartPojo.get(position);
 
 
-            if(suraLinePart1 !=null)
+            if(suraLinePartPojo1 !=null)
             {
 
                 final ImageButton Copy = (ImageButton) customView.findViewById(R.id.idSuraCopy);
@@ -160,10 +157,10 @@ public class ReadSuraActivity extends AppCompatActivity {
                 final ImageButton Share = (ImageButton) customView.findViewById(R.id.idSuraShare);
 
                 TextView AyatNumber = (TextView) customView.findViewById(R.id.idAyatNumber);
-                AyatNumber.setText(suraLinePart1.getSura_number());
+                AyatNumber.setText(suraLinePartPojo1.getSura_number());
 
                 SuraName = (TextView) customView.findViewById(R.id.idSuraArbi);
-                SuraName.setText(suraLinePart1.getSura_arbi());
+                SuraName.setText(suraLinePartPojo1.getSura_arbi());
 
 
                 ///////////////////////////////////////////////////////
@@ -172,10 +169,10 @@ public class ReadSuraActivity extends AppCompatActivity {
 
 
                 final TextView SuraNameBangla = (TextView) customView.findViewById(R.id.idSuraBangla);
-                SuraNameBangla.setText(suraLinePart1.getSura_bangla());
+                SuraNameBangla.setText(suraLinePartPojo1.getSura_bangla());
 
                 TextView SuraNameMeaning = (TextView) customView.findViewById(R.id.idSuraBanglaMeaning);
-                SuraNameMeaning.setText(suraLinePart1.getSura_bangla_meaning());
+                SuraNameMeaning.setText(suraLinePartPojo1.getSura_bangla_meaning());
 
 
                 SharedPreferences spf = getSharedPreferences("SeekValueP",Context.MODE_PRIVATE);
@@ -217,7 +214,7 @@ public class ReadSuraActivity extends AppCompatActivity {
 
                         ClipboardManager cm = (ClipboardManager) context
                                 .getSystemService(Context.CLIPBOARD_SERVICE);
-                        cm.setText(""+suraLinePart1.getSura_bangla()+"\n"+""+suraLinePart1.getSura_arbi()+""+suraLinePart1.getSura_bangla_meaning());
+                        cm.setText(""+ suraLinePartPojo1.getSura_bangla()+"\n"+""+ suraLinePartPojo1.getSura_arbi()+""+ suraLinePartPojo1.getSura_bangla_meaning());
 
                     }
                 });
@@ -234,7 +231,7 @@ public class ReadSuraActivity extends AppCompatActivity {
 
                         Intent sendIntent = new Intent();
                         sendIntent.setAction(Intent.ACTION_SEND);
-                        sendIntent.putExtra(Intent.EXTRA_TEXT, ""+suraLinePart1.getSura_arbi()+"\n"+suraLinePart1.getSura_bangla()+""+suraLinePart1.getSura_bangla_meaning());
+                        sendIntent.putExtra(Intent.EXTRA_TEXT, ""+ suraLinePartPojo1.getSura_arbi()+"\n"+ suraLinePartPojo1.getSura_bangla()+""+ suraLinePartPojo1.getSura_bangla_meaning());
                         sendIntent.setType("text/plain");
 
                         Intent shareIntent = Intent.createChooser(sendIntent, null);
@@ -255,10 +252,10 @@ public class ReadSuraActivity extends AppCompatActivity {
                         String SuraName = getIntent().getStringExtra("suraName");
 
                         String name = ""+SuraName;
-                        String ayatnumber = ""+suraLinePart1.getSura_number();
-                        String ayat = ""+suraLinePart1.getSura_arbi();
-                        String spelling = ""+suraLinePart1.getSura_bangla();
-                        String meaning = ""+suraLinePart1.getSura_bangla_meaning();
+                        String ayatnumber = ""+ suraLinePartPojo1.getSura_number();
+                        String ayat = ""+ suraLinePartPojo1.getSura_arbi();
+                        String spelling = ""+ suraLinePartPojo1.getSura_bangla();
+                        String meaning = ""+ suraLinePartPojo1.getSura_bangla_meaning();
                         String id = "";
 
 

@@ -9,7 +9,6 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
 import android.content.pm.PackageManager;
-import android.database.Cursor;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -19,7 +18,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.islamicappb.DatabaseHelper;
+import com.example.islamicappb.database.DatabaseHelper;
 import com.example.islamicappb.R;
 import com.gun0912.tedpermission.PermissionListener;
 import com.gun0912.tedpermission.TedPermission;
@@ -732,7 +731,7 @@ public class EightDivisonActivity extends AppCompatActivity {
 
         TedPermission.with(EightDivisonActivity.this)
                 .setPermissionListener(permissionListener)
-                .setDeniedMessage("স্টোরেজের অনুমতি প্রয়োজন। অনুগ্রহ করে ম্যানুয়ালি দিন।")
+                .setDeniedMessage("এপ-নাম পরিচালনার জন্য আপনার ডিভাইসের স্টোরেজ অনুমতির প্রয়োজন। অনুগ্রহ পূর্বক সেটিংস থেকে অনুমতি প্রদান করুন।")
                 .setGotoSettingButtonText("সেটিংস")
                 .setDeniedCloseButtonText("বাতিল করুন")
                 .setPermissions(Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE)

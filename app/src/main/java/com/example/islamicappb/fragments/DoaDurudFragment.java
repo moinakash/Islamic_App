@@ -1,4 +1,4 @@
-package com.example.islamicappb;
+package com.example.islamicappb.fragments;
 
 import android.app.Dialog;
 import android.content.Intent;
@@ -16,6 +16,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.example.islamicappb.R;
 import com.example.islamicappb.activity.Amol_Activity;
 import com.example.islamicappb.activity.BaseActivity;
 import com.example.islamicappb.activity.BisheshNamajActivity;

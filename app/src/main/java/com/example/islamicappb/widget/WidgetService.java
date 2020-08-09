@@ -1,4 +1,4 @@
-package com.example.islamicappb;
+package com.example.islamicappb.widget;
 
 import android.appwidget.AppWidgetManager;
 import android.content.Context;
@@ -9,10 +9,12 @@ import android.util.Log;
 import android.widget.RemoteViews;
 import android.widget.RemoteViewsService;
 
+import com.example.islamicappb.R;
+
 import java.text.DateFormat;
 import java.util.Date;
 
-public class ExampleWidgetService extends RemoteViewsService {
+public class WidgetService extends RemoteViewsService {
     @Override
     public RemoteViewsFactory onGetViewFactory(Intent intent) {
         return new ExampleWidgetItemFactory(getApplicationContext(), intent);

@@ -6,7 +6,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.content.Context;
-import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.database.Cursor;
 import android.media.MediaPlayer;
@@ -15,15 +14,13 @@ import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.example.islamicappb.AllahNamePojoClass;
-import com.example.islamicappb.DatabaseHelper;
+import com.example.islamicappb.pojo_classes.AllahNamePojoClass;
+import com.example.islamicappb.database.DatabaseHelper;
 import com.example.islamicappb.R;
 
 import java.util.ArrayList;

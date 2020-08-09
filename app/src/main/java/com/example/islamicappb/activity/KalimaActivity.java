@@ -1,26 +1,14 @@
 package com.example.islamicappb.activity;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
-import android.content.Context;
-import android.database.Cursor;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.ExpandableListAdapter;
 import android.widget.ExpandableListView;
-import android.widget.ListView;
-import android.widget.TextView;
-import android.widget.Toast;
 
-import com.example.islamicappb.CustomExpandableListAdapterforKalima;
-import com.example.islamicappb.PojoClassForKalima;
+import com.example.islamicappb.Adapters.kalimaExpandableAdapter;
+import com.example.islamicappb.pojo_classes.PojoClassForKalima;
 import com.example.islamicappb.R;
 
 import java.util.ArrayList;
@@ -89,7 +77,7 @@ public class KalimaActivity extends AppCompatActivity {
         this.expandableListView = findViewById(R.id.expandableListView);
         this.listaContactos = getContactos();
         this.expandableListNombres = new ArrayList<>(listaContactos.keySet());
-        this.expandableListAdapter = new CustomExpandableListAdapterforKalima(this,
+        this.expandableListAdapter = new kalimaExpandableAdapter(this,
                 expandableListNombres, listaContactos);
 
     }

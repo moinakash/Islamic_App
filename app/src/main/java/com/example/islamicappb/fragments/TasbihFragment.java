@@ -1,4 +1,4 @@
-package com.example.islamicappb;
+package com.example.islamicappb.fragments;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -22,7 +22,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-
+import com.example.islamicappb.R;
 
 
 public class TasbihFragment extends Fragment {

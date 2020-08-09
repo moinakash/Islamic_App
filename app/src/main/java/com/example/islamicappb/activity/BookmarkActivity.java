@@ -1,4 +1,4 @@
-package com.example.islamicappb;
+package com.example.islamicappb.activity;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -9,7 +9,6 @@ import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.ClipboardManager;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.database.Cursor;
@@ -24,7 +23,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -33,6 +31,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.codesgood.views.JustifiedTextView;
+import com.example.islamicappb.pojo_classes.BookmarkPojoClass;
+import com.example.islamicappb.database.MyDatabasehelper;
+import com.example.islamicappb.R;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -73,7 +74,7 @@ public class BookmarkActivity extends AppCompatActivity {
         cursor = myDatabasehelper.showAllData();
 
         if(cursor.getCount() == 0){
-            Toast.makeText(this, "কিছু বুকমার্ক করা হয়নি", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "বুকমার্ক তথ্য উপলব্ধ নয়।", Toast.LENGTH_SHORT).show();
         }else {
             while (cursor.moveToNext()){
 
