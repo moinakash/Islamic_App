@@ -82,7 +82,7 @@ public class ExampleWidgetService extends RemoteViewsService {
             views.setTextViewText(R.id.example_widget_item_text3, exampleData3[position]);
             views.setTextViewText(R.id.example_widget_item_text4, exampleData4[position]);
             views.setTextViewText(R.id.example_widget_item_text5, exampleData5[position]);
-           // views.setTextViewText(R.id.example_widget_item_text6, exampleData6[position]);
+            views.setTextViewText(R.id.example_widget_item_text6, exampleData6[position]);
             Intent fillIntent = new Intent();
             fillIntent.putExtra(AppWidgetManager.EXTRA_APPWIDGET_ID, appWidgetId);
             views.setOnClickFillInIntent(R.id.example_widget_item_text, fillIntent);

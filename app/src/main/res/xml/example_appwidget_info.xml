@@ -7,7 +7,7 @@
     android:minHeight="550px"
 
     android:updatePeriodMillis="1800000"
-    android:resizeMode="horizontal|vertical"
+
     android:widgetCategory="home_screen|keyguard"
     android:previewImage="@drawable/widget_bg"
     android:initialKeyguardLayout="@drawable/johor_background"/>
