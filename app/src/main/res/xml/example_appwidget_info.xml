@@ -3,10 +3,12 @@
     android:autoAdvanceViewId="@id/example_widget_stack_view"
     android:configure="com.example.islamicappb.ExampleAppWidgetConfig"
     android:initialLayout="@layout/example_widget"
-    android:minWidth="750px"
-    android:minHeight="375px"
- android:minResizeHeight="375px"
-android:minResizeWidth="750px"
+    android:minWidth="900px"
+    android:minHeight="550px"
+
     android:updatePeriodMillis="1800000"
-    android:widgetCategory="home_screen|keyguard" />
+    android:resizeMode="horizontal|vertical"
+    android:widgetCategory="home_screen|keyguard"
+    android:previewImage="@drawable/widget_bg"
+    android:initialKeyguardLayout="@drawable/johor_background"/>
 
