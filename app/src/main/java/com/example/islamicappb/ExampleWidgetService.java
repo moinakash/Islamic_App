@@ -24,12 +24,12 @@ public class ExampleWidgetService extends RemoteViewsService {
         private int appWidgetId;
 
 
-
         private String[] exampleData = {"one "};
         private String[] exampleData2 = {"one "};
         private String[] exampleData3 = {"one "};
         private String[] exampleData4 = {"one "};
         private String[] exampleData5 = {"one "};
+        private String[] exampleData6 = {"one "};
         ExampleWidgetItemFactory(Context context, Intent intent) {
             this.context = context;
             this.appWidgetId = intent.getIntExtra(AppWidgetManager.EXTRA_APPWIDGET_ID,
@@ -56,13 +56,14 @@ public class ExampleWidgetService extends RemoteViewsService {
             String Asor = sharedPrefMM.getString("aw","--");
             String Magrib = sharedPrefMM.getString("mw","--");
             String Esha = sharedPrefMM.getString("ew","--");
-            String location = sharedPrefMM.getString("lc","--");
+            String Location = sharedPrefMM.getString("lc","--");
 
             exampleData = new String[]{""+Fajr};
             exampleData2 = new String[]{""+Johor};
             exampleData3 = new String[]{""+Asor};
             exampleData4 = new String[]{""+Magrib};
             exampleData5 = new String[]{""+Esha};
+            exampleData6 = new String[]{""+Location};
             SystemClock.sleep(3000);
         }
         @Override
@@ -81,6 +82,7 @@ public class ExampleWidgetService extends RemoteViewsService {
             views.setTextViewText(R.id.example_widget_item_text3, exampleData3[position]);
             views.setTextViewText(R.id.example_widget_item_text4, exampleData4[position]);
             views.setTextViewText(R.id.example_widget_item_text5, exampleData5[position]);
+           // views.setTextViewText(R.id.example_widget_item_text6, exampleData6[position]);
             Intent fillIntent = new Intent();
             fillIntent.putExtra(AppWidgetManager.EXTRA_APPWIDGET_ID, appWidgetId);
             views.setOnClickFillInIntent(R.id.example_widget_item_text, fillIntent);
