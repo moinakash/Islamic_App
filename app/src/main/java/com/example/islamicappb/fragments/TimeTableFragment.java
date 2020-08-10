@@ -206,7 +206,7 @@ public class TimeTableFragment extends Fragment {
 
             String txtf = "";
             for ( i = 5; i < (ii-1); i++){
-               
+
 
                 txtf = ""+txtf+""+text_array[i];
 
@@ -672,5 +672,7 @@ public class TimeTableFragment extends Fragment {
 
         return eshaTimeBangla;
     }
+
+
 
 }

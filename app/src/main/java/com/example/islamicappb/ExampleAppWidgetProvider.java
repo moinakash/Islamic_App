@@ -11,6 +11,8 @@ import android.os.Bundle;
 import android.widget.RemoteViews;
 import android.widget.Toast;
 
+import com.example.islamicappb.activity.EightDivisonActivity;
+
 public class ExampleAppWidgetProvider extends AppWidgetProvider {
     public static final String ACTION_REFRESH = "actionRefresh";
     public static final String KEY_BUTTON_TEXT = "keyButtonText";
@@ -30,9 +32,14 @@ public class ExampleAppWidgetProvider extends AppWidgetProvider {
             clickIntent.setAction(ACTION_REFRESH);
             PendingIntent clickPendingIntent = PendingIntent.getBroadcast(context,
                     0, clickIntent, 0);
-            RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.example_widget);
-//            views.setOnClickPendingIntent(R.id.example_widget_button, buttonPendingIntent);
-//            views.setCharSequence(R.id.example_widget_button, "setText", buttonText);
+
+            Intent intenttoapp = new Intent(context, EightDivisonActivity.class);
+            PendingIntent pendingIntent2 = PendingIntent.getActivity(context, 1, intenttoapp, 0);
+            RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.example_widget_item);
+            views.setOnClickPendingIntent(R.id.example_widget_button, pendingIntent2);
+
+
+
             views.setRemoteAdapter(R.id.example_widget_stack_view, serviceIntent);
             views.setEmptyView(R.id.example_widget_stack_view, R.id.example_widget_empty_view);
             views.setPendingIntentTemplate(R.id.example_widget_stack_view, clickPendingIntent);

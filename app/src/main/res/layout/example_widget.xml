@@ -4,10 +4,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center_horizontal"
+    android:id="@+id/idWidgetCLickF"
     android:orientation="vertical">
 
-    <FrameLayout
 
+    <FrameLayout
+        android:id="@+id/example_widget_button"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
         <StackView
