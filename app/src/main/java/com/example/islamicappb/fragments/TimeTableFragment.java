@@ -451,6 +451,7 @@ public class TimeTableFragment extends Fragment {
         editorWidget.putString("aw", "০"+asorTimeBangla);
         editorWidget.putString("mw", "০"+magribTimeBangla);
         editorWidget.putString("ew", "০"+eshaTimeBangla);
+        editorWidget.putString("lc", ""+LocatString);
 
         editorWidget.commit();
 

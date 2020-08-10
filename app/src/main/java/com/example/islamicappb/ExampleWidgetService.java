@@ -56,6 +56,7 @@ public class ExampleWidgetService extends RemoteViewsService {
             String Asor = sharedPrefMM.getString("aw","--");
             String Magrib = sharedPrefMM.getString("mw","--");
             String Esha = sharedPrefMM.getString("ew","--");
+            String location = sharedPrefMM.getString("lc","--");
 
             exampleData = new String[]{""+Fajr};
             exampleData2 = new String[]{""+Johor};
