@@ -113,11 +113,7 @@ public class BisheshNamajActivity extends AppCompatActivity {
             }
             tvDetailss.setText("" + str);
 
-
         }
-
-
-
 
     }
 
