@@ -1,18 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="240dp"
-    android:layout_height="175dp"
-    android:background="@drawable/widget_bg"
-    android:gravity="bottom"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:layout_gravity="center"
+    android:gravity="center"
     android:orientation="vertical">
+
+    <LinearLayout
+        android:background="@drawable/widget_bg"
+        android:gravity="bottom"
+        android:layout_gravity="center"
+        android:layout_width="750px"
+        android:layout_height="375px">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_marginLeft="5dp">
+        android:layout_margin="5dp">
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -23,12 +28,13 @@
             android:layout_marginLeft="2dp">
 
             <TextView
-                android:layout_width="wrap_content"
+
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="bottom"
+                android:gravity="center"
                 android:text="ফজর"
                 android:textColor="@android:color/black"
-                android:textSize="13sp"
+                android:textSize="13px"
                 android:textStyle="bold"
                 android:layout_marginBottom="2dp"
 
@@ -37,13 +43,13 @@
 
             <TextView
                 android:id="@+id/example_widget_item_text"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="bottom"
+                android:gravity="center"
                 android:text="Item"
                 android:textColor="@android:color/black"
-                android:textSize="13sp"
-                android:textStyle="bold"
+                android:textSize="13px"
+
                 android:layout_marginBottom="2dp"
                 />
 
@@ -63,12 +69,12 @@
             android:layout_marginLeft="2dp">
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="bottom"
+                android:gravity="center"
                 android:text="যোহর"
                 android:textColor="@android:color/black"
-                android:textSize="13sp"
+                android:textSize="13px"
                 android:textStyle="bold"
                 android:layout_marginBottom="2dp"
 
@@ -77,13 +83,13 @@
 
             <TextView
                 android:id="@+id/example_widget_item_text2"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="bottom"
+                android:gravity="center"
                 android:text="Item"
                 android:textColor="@android:color/black"
-                android:textSize="13sp"
-                android:textStyle="bold"
+                android:textSize="13px"
+
                 android:layout_marginBottom="2dp"
                 />
 
@@ -99,12 +105,12 @@
             android:layout_marginLeft="2dp">
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="bottom"
+                android:gravity="center"
                 android:text="আসর"
                 android:textColor="@android:color/black"
-                android:textSize="13sp"
+                android:textSize="13px"
                 android:textStyle="bold"
                 android:layout_marginBottom="2dp"
 
@@ -113,13 +119,12 @@
 
             <TextView
                 android:id="@+id/example_widget_item_text3"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="bottom"
+                android:gravity="center"
                 android:text="Item"
                 android:textColor="@android:color/black"
-                android:textSize="13sp"
-                android:textStyle="bold"
+                android:textSize="13px"
                 android:layout_marginBottom="2dp"
                 />
 
@@ -135,12 +140,12 @@
             android:layout_marginLeft="2dp">
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="bottom"
+                android:gravity="center"
                 android:text="মাগরিব"
                 android:textColor="@android:color/black"
-                android:textSize="13sp"
+                android:textSize="13px"
                 android:textStyle="bold"
                 android:layout_marginBottom="2dp"
 
@@ -149,13 +154,13 @@
 
             <TextView
                 android:id="@+id/example_widget_item_text4"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="bottom"
+                android:gravity="center"
                 android:text="Item"
                 android:textColor="@android:color/black"
-                android:textSize="13sp"
-                android:textStyle="bold"
+                android:textSize="13px"
+
                 android:layout_marginBottom="2dp"
                 />
 
@@ -171,12 +176,12 @@
             android:layout_marginLeft="2dp">
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="bottom"
+                android:gravity="center"
                 android:text="এশা"
                 android:textColor="@android:color/black"
-                android:textSize="13sp"
+                android:textSize="13px"
                 android:textStyle="bold"
                 android:layout_gravity="center"
                 android:layout_marginBottom="2dp"
@@ -186,18 +191,20 @@
 
             <TextView
                 android:id="@+id/example_widget_item_text5"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="bottom"
+                android:gravity="center"
                 android:text="Item"
                 android:textColor="@android:color/black"
-                android:textSize="13sp"
-                android:textStyle="bold"
+                android:textSize="13px"
+
                 android:layout_marginBottom="2dp"
                 />
 
 
         </LinearLayout>
+
+    </LinearLayout>
 
     </LinearLayout>
 

@@ -5,6 +5,19 @@
 
     <string name="Alerm_Set_Toast">আপনার কাঙ্ক্ষিত ওয়াক্তে এলার্ম প্রদান করা হয়েছে।</string>
 
+    <string name="namajer_niom">নামাজের নিয়ম</string>
+    <string name="doa_durud">দোয়া ও দুরূদ</string>
+    <string name="bisesh_namaj">বিশেষ নামাজ</string>
+    <string name="namajer_parthokko">নামাজের\nপার্থক্য</string>
+    <string name="amol">আমল\nসমূহ</string>
+    <string name="shoriot_shobdartho">শরীয়তের\nশব্দার্থ</string>
+    <string name="taharat">তাহারাত\n(পবিত্রতা)</string>
+    <string name="roajr_somoysuchi">রোজার সময়\nসূচী</string>
+    <string name="locationText">অবস্থান\nনির্বাচন</string>
+    <string name="App_Widget_Confrm_Text">এপ-নাম এর Widget আপনার অবস্থান অনুযায়ী প্রতি ওয়াক্তের নামজের সময়
+        প্রদর্শন করে এবং প্রতি ৩০ মিনিট অন্তর অন্তর হালনাগাদ হয়।</string>
+
+
     <!-- <string-array name="Allah_name_audio">
         <item>R.raw.metaltick</item>
         <item>R.raw.ar_rahman_01</item>
@@ -118,15 +131,6 @@
 </string>
     <string name="eid3">৪, ইমাম তাকবীরে তাশরীক পড়ার কথা ভুলে গেলে মুক্তাদিরা উচ্চস্বরে তাকবীরে তাশরীক পড়া শুরু করবে। ইমামের অপেক্ষায় বসে থাকা যাবে না। ফরজ নামাজ একা শেষ করলেও তাকবীরে তাশরীক পড়তে হবে।
 </string>
-    <string name="namajer_niom">নামাজের নিয়ম</string>
-    <string name="doa_durud">দোয়া ও দুরূদ</string>
-    <string name="bisesh_namaj">বিশেষ নামাজ</string>
-    <string name="namajer_parthokko">নামাজের\nপার্থক্য</string>
-    <string name="amol">আমল\nসমূহ</string>
-    <string name="shoriot_shobdartho">শরীয়তের\nশব্দার্থ</string>
-    <string name="taharat">তাহারাত\n(পবিত্রতা)</string>
-    <string name="roajr_somoysuchi">রোজার সময়\nসূচী</string>
-    <string name="locationText">অবস্থান\nনির্বাচন</string>
 
 
 </resources>

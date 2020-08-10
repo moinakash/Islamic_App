@@ -184,7 +184,7 @@ public class ReadSuraActivity extends AppCompatActivity {
                 }
                 //SuraName.setTextSize(pxFromDp((sizeInt+3), ReadSuraActivity.this));
                 SuraName.setTextSize(dpToSp((sizeInt+3), ReadSuraActivity.this));
-                AyatNumber.setTextSize(dpToSp(sizeInt, ReadSuraActivity.this));
+//                AyatNumber.setTextSize(dpToSp(sizeInt, ReadSuraActivity.this));
                 SuraNameBangla.setTextSize(dpToSp(sizeInt, ReadSuraActivity.this));
                 SuraNameMeaning.setTextSize(dpToSp(sizeInt, ReadSuraActivity.this));
                // SuraNameMeaning.setTextSize(pxFromDp(sizeInt, ReadSuraActivity.this));

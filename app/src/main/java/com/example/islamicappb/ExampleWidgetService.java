@@ -51,11 +51,11 @@ public class ExampleWidgetService extends RemoteViewsService {
 //            Log.e("lkj",""+Fajr);
 
             SharedPreferences sharedPrefMM = context.getSharedPreferences("mm",Context.MODE_PRIVATE);
-            String Fajr = sharedPrefMM.getString("fw","");
-            String Johor = sharedPrefMM.getString("jw","");
-            String Asor = sharedPrefMM.getString("aw","");
-            String Magrib = sharedPrefMM.getString("mw","");
-            String Esha = sharedPrefMM.getString("ew","");
+            String Fajr = sharedPrefMM.getString("fw","--");
+            String Johor = sharedPrefMM.getString("jw","--");
+            String Asor = sharedPrefMM.getString("aw","--");
+            String Magrib = sharedPrefMM.getString("mw","--");
+            String Esha = sharedPrefMM.getString("ew","--");
 
             exampleData = new String[]{""+Fajr};
             exampleData2 = new String[]{""+Johor};

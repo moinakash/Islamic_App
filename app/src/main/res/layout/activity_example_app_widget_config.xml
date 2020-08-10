@@ -28,7 +28,7 @@
         android:padding="30dp"
         android:layout_margin="30dp"
         android:textSize="25dp"
-        android:text="এ্যাপ উইজেট প্রতিদিনের নামাজের ওয়াক্ত দেখাবে এবং ডাটা পরিবর্তন হলে ৩০ মিনিট পর পর আপডেট হবে"/>
+        android:text="@string/App_Widget_Confrm_Text"/>
 
     <Button
         android:layout_width="wrap_content"
