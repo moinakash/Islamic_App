@@ -7,7 +7,7 @@
     android:orientation="vertical">
 
     <RelativeLayout
-        android:id="@+id/idWidgetCLick"
+        android:id="@+id/example_widget_button"
         android:background="@drawable/widget_bg"
         android:gravity="bottom"
         android:layout_gravity="center"
