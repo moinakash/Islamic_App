@@ -31,6 +31,7 @@ import java.time.chrono.HijrahDate;
 import java.util.Locale;
 
 import io.paperdb.Paper;
+import pl.droidsonroids.gif.GifDrawable;
 import pl.droidsonroids.gif.GifImageView;
 
 
@@ -591,6 +592,11 @@ public class TimeTableFragment extends Fragment {
         if (matchString.equals("ফজর")){
             tvNamajTimeNUmber.setText(""+fojorTimeBangla);
 
+           // Heading_background.setBackground(getContext().getResources().getDrawable(R.drawable.fajor_bg));
+            Heading_background.setImageResource(R.drawable.fajor_bg);
+
+            //Heading_background = new GifDrawable( getResources(), R.drawable.fajor_bg );
+
             Fjr_stroke_bg.setBackground(getContext().getResources().getDrawable(R.drawable.timetable_shape));
             Jhr_stroke_bg.setBackground(getContext().getResources().getDrawable(R.drawable.time_table_gray));
             Asr_stroke_bg.setBackground(getContext().getResources().getDrawable(R.drawable.time_table_gray));
@@ -600,7 +606,7 @@ public class TimeTableFragment extends Fragment {
 
         } else if (matchString.equals("যোহর")){
             tvNamajTimeNUmber.setText(""+johorTimeBangla);
-
+            Heading_background.setImageResource(R.drawable.johor_bg);
             Fjr_stroke_bg.setBackground(getContext().getResources().getDrawable(R.drawable.time_table_gray));
             Jhr_stroke_bg.setBackground(getContext().getResources().getDrawable(R.drawable.timetable_shape));
             Asr_stroke_bg.setBackground(getContext().getResources().getDrawable(R.drawable.time_table_gray));
@@ -610,7 +616,7 @@ public class TimeTableFragment extends Fragment {
 
         } else if (matchString.equals("আসর")){
             tvNamajTimeNUmber.setText(""+asorTimeBangla);
-
+            Heading_background.setImageResource(R.drawable.asor_bg);
             Fjr_stroke_bg.setBackground(getContext().getResources().getDrawable(R.drawable.time_table_gray));
             Jhr_stroke_bg.setBackground(getContext().getResources().getDrawable(R.drawable.time_table_gray));
             Asr_stroke_bg.setBackground(getContext().getResources().getDrawable(R.drawable.timetable_shape));
@@ -620,7 +626,7 @@ public class TimeTableFragment extends Fragment {
 
         } else if (matchString.equals("মাগরিব")){
             tvNamajTimeNUmber.setText(""+magribTimeBangla);
-
+            Heading_background.setImageResource(R.drawable.magrib_bg);
             Fjr_stroke_bg.setBackground(getContext().getResources().getDrawable(R.drawable.time_table_gray));
             Jhr_stroke_bg.setBackground(getContext().getResources().getDrawable(R.drawable.time_table_gray));
             Asr_stroke_bg.setBackground(getContext().getResources().getDrawable(R.drawable.time_table_gray));
@@ -630,7 +636,7 @@ public class TimeTableFragment extends Fragment {
 
         } else if (matchString.equals("এশা")){
             tvNamajTimeNUmber.setText(""+eshaTimeBangla);
-
+            Heading_background.setImageResource(R.drawable.esha_bg);
             Fjr_stroke_bg.setBackground(getContext().getResources().getDrawable(R.drawable.time_table_gray));
             Jhr_stroke_bg.setBackground(getContext().getResources().getDrawable(R.drawable.time_table_gray));
             Asr_stroke_bg.setBackground(getContext().getResources().getDrawable(R.drawable.time_table_gray));

@@ -218,7 +218,7 @@ public class DoaDurudFragment extends Fragment {
         TextView Iftarir_somoy = alertDialog.findViewById(R.id.iftarir_somoy);
         TextView Exit = alertDialog.findViewById(R.id.exit);
 
-        Exit.setText("X");
+
 
         BaseActivity activity = (BaseActivity) getActivity();
         String fojorerTime = activity.fojorData();

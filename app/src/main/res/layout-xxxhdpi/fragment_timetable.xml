@@ -27,7 +27,7 @@
 
             android:layout_height="310dp"
             android:scaleType="centerCrop"
-            android:src="@drawable/asor_background"
+            android:src="@drawable/johor_background"
             android:translationY="-19dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
