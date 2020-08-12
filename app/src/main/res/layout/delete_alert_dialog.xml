@@ -22,7 +22,7 @@
                     android:layout_height="wrap_content">
                 <ImageView
                     android:layout_gravity="center"
-                    android:background="@drawable/trash"
+                    android:background="@drawable/trash_black"
                     android:layout_width="70dp"
                     android:layout_height="70dp"/>
 

@@ -8,8 +8,92 @@
     android:orientation="vertical"
     android:layout_gravity="center"
     android:padding="10dp"
-    android:background="@drawable/quran_mazid_bg"
     tools:context=".ExampleAppWidgetConfig">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:background="@android:color/transparent"
+        >
+
+
+
+        <androidx.cardview.widget.CardView
+
+            app:cardCornerRadius="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_margin="10dp"
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <ImageView
+
+                    android:id="@+id/img"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/tasbih_header_bg"
+                    android:translationY="-0dp" />
+
+
+
+                <TextView
+                    android:gravity="center"
+                    android:id="@+id/sahari"
+                    android:textColor="@android:color/black"
+
+                    android:layout_margin="10dp"
+                    android:textSize="15sp"
+                    android:layout_marginTop="25dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/App_Widget_Confrm_Text"
+                    android:layout_marginBottom="20dp"
+                    />
+
+
+
+
+                <LinearLayout
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp">
+
+                    <Button
+                        android:layout_marginTop="5dp"
+                        android:textColor="@android:color/white"
+                        android:background="@drawable/green_shape_fill"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:onClick="confirmConfiguration"
+                        android:text="ঠিক আছে" />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+        </androidx.cardview.widget.CardView>
+
+
+
+
+
+
+
+
+
+    </RelativeLayout>
+
     <EditText
         android:id="@+id/edit_text_button"
         android:layout_width="1dp"
@@ -19,19 +103,7 @@
         android:visibility="gone"/>
 
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:gravity="center"
-        android:padding="30dp"
-        android:layout_margin="30dp"
-        android:textSize="25dp"
-        android:text="@string/App_Widget_Confrm_Text"/>
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="confirmConfiguration"
-        android:text="ঠিক আছে" />
+
 </LinearLayout>
+
