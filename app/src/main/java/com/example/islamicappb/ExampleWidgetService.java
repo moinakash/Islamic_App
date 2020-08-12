@@ -28,6 +28,7 @@ public class ExampleWidgetService extends RemoteViewsService {
         private String[] exampleData2 = {"one "};
         private String[] exampleData3 = {"one "};
         private String[] exampleData4 = {"one "};
+
         private String[] exampleData5 = {"one "};
         private String[] exampleData6 = {"one "};
         ExampleWidgetItemFactory(Context context, Intent intent) {

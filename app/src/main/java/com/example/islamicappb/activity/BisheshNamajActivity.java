@@ -5,9 +5,15 @@ import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
 import android.database.Cursor;
+import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
+import android.text.Html;
+import android.text.Spanned;
 import android.util.Log;
 import android.view.View;
+import android.webkit.WebSettings;
+import android.webkit.WebView;
 import android.widget.ExpandableListAdapter;
 import android.widget.ExpandableListView;
 import android.widget.ScrollView;
@@ -38,15 +44,16 @@ public class BisheshNamajActivity extends AppCompatActivity {
     ScrollView scrollView1;
     DatabaseHelper db;
     String str, kaja1;
-
+    WebView webView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bishesh_namaj);
 
-        tvDetailss = findViewById(R.id.idDetailsTv);
-        scrollView1 = findViewById(R.id.idScrollView1);
+//        tvDetailss = findViewById(R.id.idDetailsTv);
+//        scrollView1 = findViewById(R.id.idScrollView1);
+        webView = findViewById(R.id.idWebView);
 
         Intent intent = getIntent();
         ff = intent.getExtras().getString("shoriot");
@@ -65,7 +72,7 @@ public class BisheshNamajActivity extends AppCompatActivity {
 
         if (ff.equals("1") || ff.equals("6") || ff.equals("4")){
 
-            scrollView1.setVisibility(View.GONE);
+            webView.setVisibility(View.GONE);
 
             expandableListView.setAdapter(expandableListAdapter);
 
@@ -79,13 +86,11 @@ public class BisheshNamajActivity extends AppCompatActivity {
                 }
             });
         }else if (ff.equals("0")){
-            db = new DatabaseHelper(this);
-            Cursor cursor = db.namajerNiom();
 
-            if (cursor.moveToFirst()) {
-                str = cursor.getString(cursor.getColumnIndex("niom"));
-            }
-            tvDetailss.setText(""+str);
+            WebSettings webSettings = webView.getSettings();
+            webSettings.setJavaScriptEnabled(true);
+            webView.loadUrl("file:///android_asset/namajerniom.html");
+            webView.setBackgroundColor(Color.TRANSPARENT);
         }
         else if (ff.equals("2")){
 
@@ -93,25 +98,20 @@ public class BisheshNamajActivity extends AppCompatActivity {
         }
         else if (ff.equals("3")){
 
-            db = new DatabaseHelper(this);
-            Cursor cursor = db.forojosunnot();
-
-            if (cursor.moveToFirst()) {
-                str = cursor.getString(cursor.getColumnIndex("details"));
-            }
-            tvDetailss.setText("" + str);
+            WebSettings webSettings = webView.getSettings();
+            webSettings.setJavaScriptEnabled(true);
+            webView.loadUrl("file:///android_asset/forojosunnot.html");
+            webView.setBackgroundColor(Color.TRANSPARENT);
 
 
         }
         else if (ff.equals("5")) {
 
-            db = new DatabaseHelper(this);
-            Cursor cursor = db.taharat();
 
-            if (cursor.moveToFirst()) {
-                str = cursor.getString(cursor.getColumnIndex("description"));
-            }
-            tvDetailss.setText("" + str);
+            WebSettings webSettings = webView.getSettings();
+            webSettings.setJavaScriptEnabled(true);
+            webView.loadUrl("file:///android_asset/taharathtml.html");
+            webView.setBackgroundColor(Color.TRANSPARENT);
 
         }
 
@@ -299,6 +299,14 @@ public class BisheshNamajActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayShowTitleEnabled( false );
         getSupportActionBar().setDisplayHomeAsUpEnabled( true );
 
+    }
+
+    private Spanned getSpannedText(String text) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+            return Html.fromHtml(text, Html.FROM_HTML_MODE_COMPACT);
+        } else {
+            return Html.fromHtml(text);
+        }
     }
 
 }
