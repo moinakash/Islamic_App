@@ -191,7 +191,7 @@ public class EightDivisonActivity extends AppCompatActivity {
         arrayList_div.add("ঢাকা");
         arrayList_div.add("চট্টগ্রাম");
         arrayList_div.add("রাজশাহী");
-        arrayList_div.add("রাজশাহী");
+        arrayList_div.add("খুলনা");
         arrayList_div.add("বরিশাল");
         arrayList_div.add("সিলেট");
         arrayList_div.add("রংপুর");

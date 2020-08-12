@@ -20,7 +20,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.Amol_Activity"></activity>
+        <activity android:name=".activity.Amol_Activity"
+            android:parentActivityName=".activity.KotlinActivity"></activity>
         <activity
             android:name=".activity.ReadHadisActivity"
             android:parentActivityName=".activity.HadisTypeActivity" />
