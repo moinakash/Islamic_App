@@ -18,6 +18,14 @@
             android:id="@+id/SuraName_toolbar"/>
     </LinearLayout>
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
     <ImageView
         android:padding="10dp"
@@ -40,5 +48,10 @@
         android:layout_gravity="center"
 
         android:listSelector="#65DDCB"></ListView>
+
+    </LinearLayout>
+
+    </ScrollView>
+
 
 </LinearLayout>

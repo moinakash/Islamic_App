@@ -19,6 +19,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.example.islamicappb.DatabaseHelper;
+import com.example.islamicappb.Helper;
 import com.example.islamicappb.pojo_classes.HadisTypePojoList;
 import com.example.islamicappb.MyDatabasehelper;
 import com.example.islamicappb.R;
@@ -112,7 +113,7 @@ public class HadisTypeActivity extends AppCompatActivity {
 
         customHadisTypeAdapter = new CustomHadisTypeAdapter(this,R.layout.custom_suraname_layout, hadisTypePojoList2);
         list.setAdapter(customHadisTypeAdapter);
-
+        Helper.getListViewSize(list);
 
     }
 

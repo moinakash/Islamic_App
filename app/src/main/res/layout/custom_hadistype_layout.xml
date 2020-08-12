@@ -28,37 +28,32 @@
         >
 
         <LinearLayout
-            android:background="@color/CardViewColor"
+            android:background="@drawable/expanded_bg"
             android:layout_gravity="center_vertical"
             android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="55dp">
 
 
-            <LinearLayout
+<!--            <LinearLayout
                 android:layout_weight="1"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="10dp"
-
                 android:gravity="center"
                 android:layout_gravity="center"
                 android:background="@drawable/ayat_number_bg"
-
                 android:layout_width="70dp"
                 android:layout_height="wrap_content">
-
-
-
-            </LinearLayout>
+            </LinearLayout>-->
 
             <LinearLayout
+                android:gravity="center"
+                android:layout_gravity="center"
                 android:layout_weight="1"
-
                 android:layout_marginLeft="10dp"
                 android:orientation="vertical"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="10dp"
-
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
@@ -70,6 +65,8 @@
                     android:text="Hadis-Bangla"
                     android:textSize="16sp"
                     android:textStyle="bold"
+
+                    android:textColor="@android:color/white"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
 
@@ -78,21 +75,17 @@
 
             </LinearLayout>
 
-            <LinearLayout
+     <!--       <LinearLayout
                 android:layout_weight="1"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="10dp"
-
                 android:gravity="center"
                 android:layout_gravity="center"
                 android:background="@drawable/ayat_number_bg"
                 android:rotation="180"
                 android:layout_width="70dp"
                 android:layout_height="wrap_content">
-
-
-
-            </LinearLayout>
+            </LinearLayout>-->
 
         </LinearLayout>
 

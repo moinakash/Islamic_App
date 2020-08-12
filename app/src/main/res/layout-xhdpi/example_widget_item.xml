@@ -16,7 +16,30 @@
 
         <LinearLayout
             android:layout_marginTop="10dp"
-            android:layout_marginRight="10dp"
+            android:layout_marginLeft="25dp"
+            android:gravity="left"
+            android:orientation="horizontal"
+
+
+            android:layout_alignParentTop="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+
+                android:layout_gravity="center_vertical"
+                android:layout_marginTop="1dp"
+                android:background="@drawable/logo_white_widget"
+                android:layout_width="40dp"
+                android:layout_height="40dp"/>
+
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="25dp"
             android:gravity="right"
             android:orientation="horizontal"
 
