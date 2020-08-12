@@ -24,6 +24,10 @@
         <item name="windowActionBarOverlay">true</item>
     </style>
 
+    <style name="Theme.MyFancyTheme" parent="android:Theme.Holo">
+        <item name="android:homeAsUpIndicator">@drawable/back</item>
+    </style>
+
     <style name="NamajTimeTextBoxSize">
         <item name="android:textStyle">normal</item>
         <item name="android:textSize">15sp</item>

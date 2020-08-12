@@ -8,6 +8,7 @@ import android.widget.ExpandableListAdapter;
 import android.widget.ExpandableListView;
 
 import com.example.islamicappb.Adapters.kalimaExpandableAdapter;
+import com.example.islamicappb.Helper;
 import com.example.islamicappb.pojo_classes.PojoClassForKalima;
 import com.example.islamicappb.R;
 
@@ -36,6 +37,7 @@ public class KalimaActivity extends AppCompatActivity {
 
 
         expandableListView.setAdapter(expandableListAdapter);
+       // Helper.getListViewSize(expandableListView);
 
         expandableListView.setOnGroupExpandListener( new ExpandableListView.OnGroupExpandListener() {
             @Override
@@ -136,7 +138,7 @@ public class KalimaActivity extends AppCompatActivity {
         setSupportActionBar( mToolbar );
 
         getSupportActionBar().setDisplayShowTitleEnabled( false );
-        getSupportActionBar().setDisplayHomeAsUpEnabled( true );
+        getSupportActionBar().setDisplayHomeAsUpEnabled( false );
 
     }
 

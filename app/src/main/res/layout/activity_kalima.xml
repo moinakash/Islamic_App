@@ -5,22 +5,60 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".activity.KalimaActivity"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    >
 
     <LinearLayout
         android:id="@+id/appbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-        <include layout="@layout/app_bar_layout_two"
+        <include layout="@layout/app_bar_layout_three"
             android:id="@+id/kalima_toolbar"/>
     </LinearLayout>
 
+<!--    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">-->
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+<!--
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/kalima_header_bg"
+        />
+
+    <ImageView
+
+        android:translationY="-25dp"
+        android:layout_gravity="center"
+        android:layout_width="270dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:src="@drawable/kalima_body_bg"
+        />
+-->
+
+
     <ExpandableListView
+
         android:id="@+id/expandableListView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:divider="@android:color/white"
         android:dividerHeight="0.5dp"
         android:groupIndicator="@null" />
+
+    </LinearLayout>
+
+    <!--</ScrollView>-->
+
 
 </LinearLayout>

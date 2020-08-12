@@ -83,7 +83,7 @@ public class kalimaExpandableAdapter extends BaseExpandableListAdapter {
             LayoutInflater layoutInflater = (LayoutInflater) this.context
                     .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
-            convertView = layoutInflater.inflate(R.layout.list_group, null);
+            convertView = layoutInflater.inflate(R.layout.custom_kalima_name_list_item, null);
 
         }
 

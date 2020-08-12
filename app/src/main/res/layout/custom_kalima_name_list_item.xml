@@ -3,21 +3,25 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:gravity="center|start"
+
     android:orientation="horizontal"
     android:padding="5dp"
     android:layout_marginTop="10dp">
 
     <RelativeLayout
 
+        android:layout_marginTop="5dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="50dp">
 
         <ImageView
 
+            android:scaleType="fitXY"
+
+
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/expanded_bg" />
+            android:layout_height="50dp"
+            android:src="@drawable/expanded_bg" />
 
         <TextView
 
@@ -31,7 +35,7 @@
             android:layout_centerVertical="true"
             android:text="111-111-111"
             android:textStyle="bold"
-            android:textColor="@color/bottom_nav_option"
+            android:textColor="@android:color/white"
             android:textSize="16sp" />
 
 

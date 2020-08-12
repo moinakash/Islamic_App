@@ -159,6 +159,8 @@ public class SuraActivity
         customSuraNameAdapter = new CustomSuraNameAdapter(this,R.layout.custom_suraname_layout, suraNameListPojoList);
         list.setAdapter(customSuraNameAdapter);
 
+        Helper.getListViewSize(list);
+
 
 
     }

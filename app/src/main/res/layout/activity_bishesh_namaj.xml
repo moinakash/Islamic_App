@@ -6,7 +6,9 @@
     android:layout_height="match_parent"
     tools:context=".activity.BisheshNamajActivity"
     android:background="#f0fff8"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:gravity="center"
+    android:layout_gravity="center">
 
     <LinearLayout
         android:id="@+id/appbar"
@@ -53,6 +55,7 @@
         android:layout_marginBottom="10dp"/>
 
     <ExpandableListView
+        android:layout_gravity="center"
         android:id="@+id/expandableListView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
