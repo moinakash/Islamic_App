@@ -6,6 +6,14 @@
     android:layout_height="match_parent"
     android:background="@drawable/quran_mazid_bg">
 
+    <ImageView
+        android:id="@+id/idInformation"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_alignParentRight="true"
+        android:background="@drawable/ic_baseline_info_24"
+        android:layout_width="50dp"
+        android:layout_height="50dp"/>
 
 
     <LinearLayout
