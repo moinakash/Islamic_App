@@ -14,8 +14,8 @@
     <string name="taharat">তাহারাত\n(পবিত্রতা)</string>
     <string name="roajr_somoysuchi">রোজার সময়\nসূচী</string>
     <string name="locationText">অবস্থান\nনির্বাচন</string>
-    <string name="App_Widget_Confrm_Text">এপ-নাম এর Widget আপনার অবস্থান অনুযায়ী প্রতি ওয়াক্তের নামজের সময়
-        প্রদর্শন করে এবং প্রতি ৩০ মিনিট অন্তর অন্তর হালনাগাদ হয়।</string>
+    <string name="App_Widget_Confrm_Text">আদ-দ্বীন এপ্লিকেশনের Widget টি আপনার অবস্থান অনুযায়ী প্রতি ওয়াক্তের নামাজের সময়
+        প্রদর্শন করে এবং প্রতি ৩০ মিনিট অন্তর-অন্তর হালনাগাদ হয়।</string>
 
 
     <!-- <string-array name="Allah_name_audio">

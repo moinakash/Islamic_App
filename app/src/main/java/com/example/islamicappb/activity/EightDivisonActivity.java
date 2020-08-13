@@ -730,7 +730,7 @@ public class EightDivisonActivity extends AppCompatActivity {
 
         TedPermission.with(EightDivisonActivity.this)
                 .setPermissionListener(permissionListener)
-                .setDeniedMessage("এপ-নাম পরিচালনার জন্য আপনার ডিভাইসের স্টোরেজ অনুমতির প্রয়োজন। অনুগ্রহ পূর্বক সেটিংস থেকে অনুমতি প্রদান করুন।")
+                .setDeniedMessage("আদ-দ্বীন এপ্লিকেশন পরিচালনার জন্য আপনার ডিভাইসের স্টোরেজ অনুমতির প্রয়োজন। অনুগ্রহ পূর্বক সেটিংস থেকে অনুমতি প্রদান করুন।")
                 .setGotoSettingButtonText("সেটিংস")
                 .setDeniedCloseButtonText("বাতিল করুন")
                 .setPermissions(Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE)
