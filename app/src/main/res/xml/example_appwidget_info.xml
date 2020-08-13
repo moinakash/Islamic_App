@@ -9,6 +9,6 @@
     android:updatePeriodMillis="1800000"
 
     android:widgetCategory="home_screen|keyguard"
-    android:previewImage="@drawable/widget_bg"
-    android:initialKeyguardLayout="@drawable/johor_background"/>
+    android:previewImage="@drawable/widget_show_case"
+    android:initialKeyguardLayout="@drawable/widget_show_case"/>
 

@@ -21,11 +21,12 @@
             android:id="@+id/example_widget_empty_view"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@android:color/darker_gray"
+            android:background="@drawable/widget_bg"
             android:gravity="center"
-            android:text="Empty"
+
             android:textColor="@android:color/white"
             android:textSize="20sp"
             android:textStyle="bold" />
+
     </FrameLayout>
 </LinearLayout>
