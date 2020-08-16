@@ -49,6 +49,7 @@ public class SuraActivity
 
     MyDatabasehelper myDatabasehelper;
     private Toolbar mToolbar;
+    String defaultValue="         -";
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -72,7 +73,9 @@ public class SuraActivity
         SharedPreferences sharedPref = com.example.islamicappb.SuraActivity.this.getPreferences(Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPref.edit();
 
-        String defaultValue = sharedPref.getString("LastSuraName","");
+
+
+        defaultValue = sharedPref.getString("LastSuraName","         -");
         //int highScore = sharedPref.getInt(getString(R.string.saved_high_score_key), defaultValue);
 
 
@@ -103,7 +106,7 @@ public class SuraActivity
         SharedPreferences sharedPref = com.example.islamicappb.SuraActivity.this.getPreferences(Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPref.edit();
 
-        String defaultValue = sharedPref.getString("LastSuraName","");
+        String defaultValue = sharedPref.getString("LastSuraName","         -");
         //int highScore = sharedPref.getInt(getString(R.string.saved_high_score_key), defaultValue);
 
 
