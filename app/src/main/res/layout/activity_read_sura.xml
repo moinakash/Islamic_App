@@ -15,8 +15,25 @@
             android:id="@+id/SuraName_toolbar"/>
     </LinearLayout>
 
+
+    <LinearLayout
+        android:id="@+id/idBismillah"
+        android:layout_below="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/idtvBismillah"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="30dp"
+            android:text="بِسۡمِ اللهِ الرَّحۡمٰنِ الرَّحِيۡمِ"/>
+    </LinearLayout>
+
     <ListView
-       android:layout_below="@+id/appbar"
+       android:layout_below="@+id/idBismillah"
         android:id="@+id/idListView2"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

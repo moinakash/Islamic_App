@@ -56,6 +56,8 @@ public class ReadSuraActivity extends AppCompatActivity {
 
     public String seekvalue;
 
+    TextView tvBismillah;
+
 
 
 
@@ -64,9 +66,12 @@ public class ReadSuraActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         setContentView(R.layout.activity_read_sura);
+        tvBismillah = findViewById(R.id.idtvBismillah);
         ToolBar();
         myDatabasehelper = new MyDatabasehelper(this);
         SQLiteDatabase sqLiteDatabase = myDatabasehelper.getWritableDatabase();
+
+
 
 
         sessionId = getIntent().getStringExtra("position");
@@ -364,6 +369,15 @@ public class ReadSuraActivity extends AppCompatActivity {
         String name = ""+SuraName;
 
         //toolbar name ==>
+        if (SuraName.equals("আল ফাতিহা"))
+        {
+            tvBismillah.setVisibility(View.GONE);
+        }
+        if (SuraName.equals("আত-তাওবাহ্\u200C"))
+        {
+            tvBismillah.setVisibility(View.GONE);
+        }
+
         mTitle.setText(""+SuraName);
         setSupportActionBar( mToolbar );
 
