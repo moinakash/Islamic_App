@@ -22,6 +22,7 @@ import com.example.islamicappb.fragments.QuranMajidFragment;
 import com.example.islamicappb.R;
 import com.example.islamicappb.fragments.TasbihFragment;
 import com.example.islamicappb.fragments.TimeTableFragment;
+import com.example.islamicappb.pojo_classes.ConverterClass;
 import com.ismaeldivita.chipnavigation.ChipNavigationBar;
 
 import java.text.SimpleDateFormat;
@@ -33,6 +34,8 @@ public class BaseActivity extends AppCompatActivity {
 
     ChipNavigationBar BottomNav;
     FragmentManager fragmentManager;
+
+    ConverterClass converterClass;
 
 private AlertDialog.Builder alertDialogBuilder;
 
@@ -55,6 +58,8 @@ private AlertDialog.Builder alertDialogBuilder;
         setContentView(R.layout.activity_base);
 
         Paper.init(this);
+
+        converterClass = new ConverterClass(this);
 
 
         onCreateM();
@@ -158,16 +163,18 @@ private AlertDialog.Builder alertDialogBuilder;
 
             seShTime = ""+sesh_time_fojor_array[0]+":"+sesh_time_fojor_array[1]+""+sesh_time_fojor_array[2];
 
-            seShTime= seShTime.replace("0", "০");
-            seShTime= seShTime.replace("1", "১");
-            seShTime= seShTime.replace("2", "২");
-            seShTime= seShTime.replace("3", "৩");
-            seShTime= seShTime.replace("4", "৪");
-            seShTime= seShTime.replace("5", "৫");
-            seShTime= seShTime.replace("6", "৬");
-            seShTime= seShTime.replace("7", "৭");
-            seShTime= seShTime.replace("8", "৮");
-            seShTime= seShTime.replace("9", "৯");
+            seShTime = converterClass.covertS(seShTime);
+
+//            seShTime= seShTime.replace("0", "০");
+//            seShTime= seShTime.replace("1", "১");
+//            seShTime= seShTime.replace("2", "২");
+//            seShTime= seShTime.replace("3", "৩");
+//            seShTime= seShTime.replace("4", "৪");
+//            seShTime= seShTime.replace("5", "৫");
+//            seShTime= seShTime.replace("6", "৬");
+//            seShTime= seShTime.replace("7", "৭");
+//            seShTime= seShTime.replace("8", "৮");
+//            seShTime= seShTime.replace("9", "৯");
 
         }
 
@@ -202,16 +209,18 @@ private AlertDialog.Builder alertDialogBuilder;
 
             seShTime = ""+convSt1+":"+sesh_time_johor_array[2]+""+sesh_time_johor_array[3];
 
-            seShTime= seShTime.replace("0", "০");
-            seShTime= seShTime.replace("1", "১");
-            seShTime= seShTime.replace("2", "২");
-            seShTime= seShTime.replace("3", "৩");
-            seShTime= seShTime.replace("4", "৪");
-            seShTime= seShTime.replace("5", "৫");
-            seShTime= seShTime.replace("6", "৬");
-            seShTime= seShTime.replace("7", "৭");
-            seShTime= seShTime.replace("8", "৮");
-            seShTime= seShTime.replace("9", "৯");
+//            seShTime= seShTime.replace("0", "০");
+//            seShTime= seShTime.replace("1", "১");
+//            seShTime= seShTime.replace("2", "২");
+//            seShTime= seShTime.replace("3", "৩");
+//            seShTime= seShTime.replace("4", "৪");
+//            seShTime= seShTime.replace("5", "৫");
+//            seShTime= seShTime.replace("6", "৬");
+//            seShTime= seShTime.replace("7", "৭");
+//            seShTime= seShTime.replace("8", "৮");
+//            seShTime= seShTime.replace("9", "৯");
+
+            seShTime = converterClass.covertS(seShTime);
 
         }
 
@@ -240,16 +249,18 @@ private AlertDialog.Builder alertDialogBuilder;
 
             seShTime = ""+convSt1+":"+sesh_time_johor_array[2]+""+sesh_time_johor_array[3];
 
-            seShTime= seShTime.replace("0", "০");
-            seShTime= seShTime.replace("1", "১");
-            seShTime= seShTime.replace("2", "২");
-            seShTime= seShTime.replace("3", "৩");
-            seShTime= seShTime.replace("4", "৪");
-            seShTime= seShTime.replace("5", "৫");
-            seShTime= seShTime.replace("6", "৬");
-            seShTime= seShTime.replace("7", "৭");
-            seShTime= seShTime.replace("8", "৮");
-            seShTime= seShTime.replace("9", "৯");
+            seShTime = converterClass.covertS(seShTime);
+
+//            seShTime= seShTime.replace("0", "০");
+//            seShTime= seShTime.replace("1", "১");
+//            seShTime= seShTime.replace("2", "২");
+//            seShTime= seShTime.replace("3", "৩");
+//            seShTime= seShTime.replace("4", "৪");
+//            seShTime= seShTime.replace("5", "৫");
+//            seShTime= seShTime.replace("6", "৬");
+//            seShTime= seShTime.replace("7", "৭");
+//            seShTime= seShTime.replace("8", "৮");
+//            seShTime= seShTime.replace("9", "৯");
 
         }
 
@@ -277,17 +288,18 @@ private AlertDialog.Builder alertDialogBuilder;
             convSt1 = String.valueOf(convInt);
 
             seShTime = ""+convSt1+":"+sesh_time_johor_array[2]+""+sesh_time_johor_array[3];
+            seShTime = converterClass.covertS(seShTime);
 
-            seShTime= seShTime.replace("0", "০");
-            seShTime= seShTime.replace("1", "১");
-            seShTime= seShTime.replace("2", "২");
-            seShTime= seShTime.replace("3", "৩");
-            seShTime= seShTime.replace("4", "৪");
-            seShTime= seShTime.replace("5", "৫");
-            seShTime= seShTime.replace("6", "৬");
-            seShTime= seShTime.replace("7", "৭");
-            seShTime= seShTime.replace("8", "৮");
-            seShTime= seShTime.replace("9", "৯");
+//            seShTime= seShTime.replace("0", "০");
+//            seShTime= seShTime.replace("1", "১");
+//            seShTime= seShTime.replace("2", "২");
+//            seShTime= seShTime.replace("3", "৩");
+//            seShTime= seShTime.replace("4", "৪");
+//            seShTime= seShTime.replace("5", "৫");
+//            seShTime= seShTime.replace("6", "৬");
+//            seShTime= seShTime.replace("7", "৭");
+//            seShTime= seShTime.replace("8", "৮");
+//            seShTime= seShTime.replace("9", "৯");
 
         }
 
@@ -315,17 +327,18 @@ private AlertDialog.Builder alertDialogBuilder;
             convSt1 = String.valueOf(convInt);
 
             seShTime = ""+convSt1+":"+sesh_time_johor_array[2]+""+sesh_time_johor_array[3];
+            seShTime = converterClass.covertS(seShTime);
 
-            seShTime= seShTime.replace("0", "০");
-            seShTime= seShTime.replace("1", "১");
-            seShTime= seShTime.replace("2", "২");
-            seShTime= seShTime.replace("3", "৩");
-            seShTime= seShTime.replace("4", "৪");
-            seShTime= seShTime.replace("5", "৫");
-            seShTime= seShTime.replace("6", "৬");
-            seShTime= seShTime.replace("7", "৭");
-            seShTime= seShTime.replace("8", "৮");
-            seShTime= seShTime.replace("9", "৯");
+//            seShTime= seShTime.replace("0", "০");
+//            seShTime= seShTime.replace("1", "১");
+//            seShTime= seShTime.replace("2", "২");
+//            seShTime= seShTime.replace("3", "৩");
+//            seShTime= seShTime.replace("4", "৪");
+//            seShTime= seShTime.replace("5", "৫");
+//            seShTime= seShTime.replace("6", "৬");
+//            seShTime= seShTime.replace("7", "৭");
+//            seShTime= seShTime.replace("8", "৮");
+//            seShTime= seShTime.replace("9", "৯");
 
         }
 
@@ -353,17 +366,18 @@ private AlertDialog.Builder alertDialogBuilder;
             convSt1 = String.valueOf(convInt);
 
             seShTime = ""+convSt1+":"+sesh_time_asor_array[2]+""+sesh_time_asor_array[3];
+            seShTime = converterClass.covertS(seShTime);
 
-            seShTime= seShTime.replace("0", "০" );
-            seShTime= seShTime.replace("1", "১");
-            seShTime= seShTime.replace("2", "২");
-            seShTime= seShTime.replace("3", "৩");
-            seShTime= seShTime.replace("4", "৪");
-            seShTime= seShTime.replace("5", "৫");
-            seShTime= seShTime.replace("6", "৬");
-            seShTime= seShTime.replace("7", "৭");
-            seShTime= seShTime.replace("8", "৮");
-            seShTime= seShTime.replace("9", "৯");
+//            seShTime= seShTime.replace("0", "০" );
+//            seShTime= seShTime.replace("1", "১");
+//            seShTime= seShTime.replace("2", "২");
+//            seShTime= seShTime.replace("3", "৩");
+//            seShTime= seShTime.replace("4", "৪");
+//            seShTime= seShTime.replace("5", "৫");
+//            seShTime= seShTime.replace("6", "৬");
+//            seShTime= seShTime.replace("7", "৭");
+//            seShTime= seShTime.replace("8", "৮");
+//            seShTime= seShTime.replace("9", "৯");
 
         }
 
@@ -391,17 +405,18 @@ private AlertDialog.Builder alertDialogBuilder;
             convSt1 = String.valueOf(convInt);
 
             seShTime = ""+convSt1+":"+sesh_time_asor_array[2]+""+sesh_time_asor_array[3];
+            seShTime = converterClass.covertS(seShTime);
 
-            seShTime= seShTime.replace("0", "০");
-            seShTime= seShTime.replace("1", "১");
-            seShTime= seShTime.replace("2", "২");
-            seShTime= seShTime.replace("3", "৩");
-            seShTime= seShTime.replace("4", "৪");
-            seShTime= seShTime.replace("5", "৫");
-            seShTime= seShTime.replace("6", "৬");
-            seShTime= seShTime.replace("7", "৭");
-            seShTime= seShTime.replace("8", "৮");
-            seShTime= seShTime.replace("9", "৯");
+//            seShTime= seShTime.replace("0", "০");
+//            seShTime= seShTime.replace("1", "১");
+//            seShTime= seShTime.replace("2", "২");
+//            seShTime= seShTime.replace("3", "৩");
+//            seShTime= seShTime.replace("4", "৪");
+//            seShTime= seShTime.replace("5", "৫");
+//            seShTime= seShTime.replace("6", "৬");
+//            seShTime= seShTime.replace("7", "৭");
+//            seShTime= seShTime.replace("8", "৮");
+//            seShTime= seShTime.replace("9", "৯");
 
         }
 
@@ -447,17 +462,18 @@ private AlertDialog.Builder alertDialogBuilder;
             convSt1 = String.valueOf(convInt);
 
             seShTime = ""+convSt1+":"+lastTwodigitString;
+            seShTime = converterClass.covertS(seShTime);
 
-            seShTime= seShTime.replace("0", "০");
-            seShTime= seShTime.replace("1", "১");
-            seShTime= seShTime.replace("2", "২");
-            seShTime= seShTime.replace("3", "৩");
-            seShTime= seShTime.replace("4", "৪");
-            seShTime= seShTime.replace("5", "৫");
-            seShTime= seShTime.replace("6", "৬");
-            seShTime= seShTime.replace("7", "৭");
-            seShTime= seShTime.replace("8", "৮");
-            seShTime= seShTime.replace("9", "৯");
+//            seShTime= seShTime.replace("0", "০");
+//            seShTime= seShTime.replace("1", "১");
+//            seShTime= seShTime.replace("2", "২");
+//            seShTime= seShTime.replace("3", "৩");
+//            seShTime= seShTime.replace("4", "৪");
+//            seShTime= seShTime.replace("5", "৫");
+//            seShTime= seShTime.replace("6", "৬");
+//            seShTime= seShTime.replace("7", "৭");
+//            seShTime= seShTime.replace("8", "৮");
+//            seShTime= seShTime.replace("9", "৯");
 
         }
 
@@ -503,17 +519,18 @@ private AlertDialog.Builder alertDialogBuilder;
             convSt1 = String.valueOf(convInt);
 
             seShTime = ""+convSt1+":"+lastTwodigitString;
+            seShTime = converterClass.covertS(seShTime);
 
-            seShTime= seShTime.replace("0", "০");
-            seShTime= seShTime.replace("1", "১");
-            seShTime= seShTime.replace("2", "২");
-            seShTime= seShTime.replace("3", "৩");
-            seShTime= seShTime.replace("4", "৪");
-            seShTime= seShTime.replace("5", "৫");
-            seShTime= seShTime.replace("6", "৬");
-            seShTime= seShTime.replace("7", "৭");
-            seShTime= seShTime.replace("8", "৮");
-            seShTime= seShTime.replace("9", "৯");
+//            seShTime= seShTime.replace("0", "০");
+//            seShTime= seShTime.replace("1", "১");
+//            seShTime= seShTime.replace("2", "২");
+//            seShTime= seShTime.replace("3", "৩");
+//            seShTime= seShTime.replace("4", "৪");
+//            seShTime= seShTime.replace("5", "৫");
+//            seShTime= seShTime.replace("6", "৬");
+//            seShTime= seShTime.replace("7", "৭");
+//            seShTime= seShTime.replace("8", "৮");
+//            seShTime= seShTime.replace("9", "৯");
 
         }
 
@@ -542,17 +559,18 @@ private AlertDialog.Builder alertDialogBuilder;
             convSt1 = String.valueOf(convInt);
 
             seShTime = ""+convSt1+":"+sesh_time_esha_array[2]+""+sesh_time_esha_array[3];
+            seShTime = converterClass.covertS(seShTime);
 
-            seShTime= seShTime.replace("0", "০");
-            seShTime= seShTime.replace("1", "১");
-            seShTime= seShTime.replace("2", "২");
-            seShTime= seShTime.replace("3", "৩");
-            seShTime= seShTime.replace("4", "৪");
-            seShTime= seShTime.replace("5", "৫");
-            seShTime= seShTime.replace("6", "৬");
-            seShTime= seShTime.replace("7", "৭");
-            seShTime= seShTime.replace("8", "৮");
-            seShTime= seShTime.replace("9", "৯");
+//            seShTime= seShTime.replace("0", "০");
+//            seShTime= seShTime.replace("1", "১");
+//            seShTime= seShTime.replace("2", "২");
+//            seShTime= seShTime.replace("3", "৩");
+//            seShTime= seShTime.replace("4", "৪");
+//            seShTime= seShTime.replace("5", "৫");
+//            seShTime= seShTime.replace("6", "৬");
+//            seShTime= seShTime.replace("7", "৭");
+//            seShTime= seShTime.replace("8", "৮");
+//            seShTime= seShTime.replace("9", "৯");
 
         }
 
@@ -581,17 +599,18 @@ private AlertDialog.Builder alertDialogBuilder;
             convSt1 = String.valueOf(convInt);
 
             seShTime = ""+convSt1+":"+sesh_time_esha_array[2]+""+sesh_time_esha_array[3];
+            seShTime = converterClass.covertS(seShTime);
 
-            seShTime= seShTime.replace("0", "০");
-            seShTime= seShTime.replace("1", "১");
-            seShTime= seShTime.replace("2", "২");
-            seShTime= seShTime.replace("3", "৩");
-            seShTime= seShTime.replace("4", "৪");
-            seShTime= seShTime.replace("5", "৫");
-            seShTime= seShTime.replace("6", "৬");
-            seShTime= seShTime.replace("7", "৭");
-            seShTime= seShTime.replace("8", "৮");
-            seShTime= seShTime.replace("9", "৯");
+//            seShTime= seShTime.replace("0", "০");
+//            seShTime= seShTime.replace("1", "১");
+//            seShTime= seShTime.replace("2", "২");
+//            seShTime= seShTime.replace("3", "৩");
+//            seShTime= seShTime.replace("4", "৪");
+//            seShTime= seShTime.replace("5", "৫");
+//            seShTime= seShTime.replace("6", "৬");
+//            seShTime= seShTime.replace("7", "৭");
+//            seShTime= seShTime.replace("8", "৮");
+//            seShTime= seShTime.replace("9", "৯");
 
         }
 
@@ -610,17 +629,18 @@ private AlertDialog.Builder alertDialogBuilder;
             }
 
             seShTime = ""+sesh_time_fojor_array[0]+":"+sesh_time_fojor_array[1]+""+sesh_time_fojor_array[2];
+            seShTime = converterClass.covertS(seShTime);
 
-            seShTime= seShTime.replace("0", "০");
-            seShTime= seShTime.replace("1", "১");
-            seShTime= seShTime.replace("2", "২");
-            seShTime= seShTime.replace("3", "৩");
-            seShTime= seShTime.replace("4", "৪");
-            seShTime= seShTime.replace("5", "৫");
-            seShTime= seShTime.replace("6", "৬");
-            seShTime= seShTime.replace("7", "৭");
-            seShTime= seShTime.replace("8", "৮");
-            seShTime= seShTime.replace("9", "৯");
+//            seShTime= seShTime.replace("0", "০");
+//            seShTime= seShTime.replace("1", "১");
+//            seShTime= seShTime.replace("2", "২");
+//            seShTime= seShTime.replace("3", "৩");
+//            seShTime= seShTime.replace("4", "৪");
+//            seShTime= seShTime.replace("5", "৫");
+//            seShTime= seShTime.replace("6", "৬");
+//            seShTime= seShTime.replace("7", "৭");
+//            seShTime= seShTime.replace("8", "৮");
+//            seShTime= seShTime.replace("9", "৯");
 
         }
 

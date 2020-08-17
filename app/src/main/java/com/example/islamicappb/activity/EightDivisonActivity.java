@@ -165,7 +165,7 @@ public class EightDivisonActivity extends AppCompatActivity {
                     startActivity(in);
 
                     if (JJ==1){
-                        Toast.makeText(getApplicationContext(), "আপনার অবস্থান অনুযায়ী নামাজের সময় সফলভাবে হালনাগাদ করা হয়েছে", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "আপনার অবস্থান অনুযায়ী ওয়াক্তের সময় সফলভাবে হালনাগাদ করা হয়েছে", Toast.LENGTH_SHORT).show();
 
                     }
                      finish();
