@@ -216,7 +216,7 @@ private AlertDialog.Builder alertDialogBuilder;
         }
 
         else if (cTime>=(sTime+23) && cTime<(jTime-5)){
-            BorPNamaj= "পরবর্তি নামাজ যোহর";
+            BorPNamaj= "পরবর্তী নামাজ যোহর";
             nextnamaj= "যোহর";
 
             //////////////////////////////sesh somoy////////////////////////////
@@ -330,7 +330,7 @@ private AlertDialog.Builder alertDialogBuilder;
         }
 
         else if (cTime>=(aTime-20) && cTime<aTime){
-            BorPNamaj= "পরবর্তি নামাজ আসর";
+            BorPNamaj= "পরবর্তী নামাজ আসর";
             nextnamaj= "আসর";
 
             //////////////////////////////sesh somoy////////////////////////////
@@ -519,7 +519,7 @@ private AlertDialog.Builder alertDialogBuilder;
 
 
         else if (cTime>=(mTime+20) && cTime<eTime){
-            BorPNamaj= "পরবর্তি নামাজ এশা";
+            BorPNamaj= "পরবর্তী নামাজ এশা";
             nextnamaj= "এশা";
 
             //////////////////////////////sesh somoy////////////////////////////
@@ -596,7 +596,7 @@ private AlertDialog.Builder alertDialogBuilder;
         }
 
         else if (cTime>=0 && cTime<fTime){
-            BorPNamaj= "পরবর্তি নামাজ ফজর";
+            BorPNamaj= "পরবর্তী নামাজ ফজর";
             nextnamaj= "ফজর";
 
             ////////sesh time fojor
