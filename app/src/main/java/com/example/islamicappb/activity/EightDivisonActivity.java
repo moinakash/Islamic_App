@@ -163,6 +163,7 @@ public class EightDivisonActivity extends AppCompatActivity {
                     in.putExtra("longitude", lonn);
                     in.putExtra("Locc", ""+locString);
                     startActivity(in);
+                    
 
                     if (JJ==1){
                         Toast.makeText(getApplicationContext(), "আপনার অবস্থান অনুযায়ী ওয়াক্তের সময় সফলভাবে হালনাগাদ করা হয়েছে", Toast.LENGTH_SHORT).show();
