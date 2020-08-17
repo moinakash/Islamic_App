@@ -56,7 +56,7 @@ public class EightDivisonActivity extends AppCompatActivity {
 
 
 
-    int lat, lon;
+    int JJ;
 
     TextView ibNextbutton;
 
@@ -98,6 +98,7 @@ public class EightDivisonActivity extends AppCompatActivity {
         if (ff.equals("1")){
 
 
+            JJ= Integer.parseInt(ff);
 
             sharedPrefMM = this.getSharedPreferences("mm",0);
 
@@ -139,8 +140,6 @@ public class EightDivisonActivity extends AppCompatActivity {
 
 
 
-
-
                 if (ContextCompat.checkSelfPermission(
                         getApplicationContext(), Manifest.permission.READ_EXTERNAL_STORAGE) ==
                         PackageManager.PERMISSION_GRANTED) {
@@ -165,8 +164,11 @@ public class EightDivisonActivity extends AppCompatActivity {
                     in.putExtra("Locc", ""+locString);
                     startActivity(in);
 
-                    Toast.makeText(getApplicationContext(), "আপনার অবস্থান অনুযায়ী নামাজের সময় সফলভাবে হালনাগাদ করা হয়েছে", Toast.LENGTH_SHORT).show();
-                    finish();
+                    if (JJ==1){
+                        Toast.makeText(getApplicationContext(), "আপনার অবস্থান অনুযায়ী নামাজের সময় সফলভাবে হালনাগাদ করা হয়েছে", Toast.LENGTH_SHORT).show();
+
+                    }
+                     finish();
 
 
                 }else {
