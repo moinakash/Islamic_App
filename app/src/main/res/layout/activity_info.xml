@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.InfoActivity"
+    android:orientation="vertical"
+    android:background="@drawable/tasbih_pattern">
+
+    <LinearLayout
+        android:layout_marginTop="120dp"
+    android:layout_gravity="center_horizontal"
+    android:gravity="center"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:layout_margin="10dp"
+        android:background="@drawable/logo"
+        android:layout_width="100dp"
+        android:layout_height="100dp"/>
+
+    <LinearLayout
+        android:padding="10dp"
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:text="আদ-দ্বীন"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/black"/>
+        <TextView
+            android:text="ভার্সন-১.০.০"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/black"/>
+
+    </LinearLayout>
+</LinearLayout>
+
+
+    <TextView
+        android:textSize="18sp"
+        android:padding="20dp"
+        android:gravity="center"
+        android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla dui arcu, sodales eu metus sed, suscipit gravida erat. Cras a orci iaculis, mollis urna ut, tempor lectus"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+
+    <TextView
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:text="Find Us"
+        android:textStyle="bold"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+   <LinearLayout
+
+       android:gravity="center"
+       android:orientation="vertical"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content">
+
+       <LinearLayout
+           android:layout_gravity="center_horizontal"
+           android:gravity="center"
+           android:layout_width="300dp"
+           android:layout_height="wrap_content"
+           android:orientation="horizontal">
+
+           <ImageView
+               android:layout_gravity="center"
+               android:layout_margin="10dp"
+               android:background="@drawable/facebook"
+               android:layout_width="30dp"
+               android:layout_height="30dp"/>
+
+           <TextView
+               android:layout_gravity="center"
+               android:textColor="@android:color/black"
+               android:gravity="left"
+               android:text="facebook.com/ad-din"
+               android:textSize="18sp"
+               android:textStyle="normal"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"/>
+
+
+       </LinearLayout>
+       <LinearLayout
+           android:translationY="-10dp"
+           android:layout_gravity="center_horizontal"
+           android:gravity="center"
+           android:layout_width="300dp"
+           android:layout_height="wrap_content"
+           android:orientation="horizontal">
+
+           <ImageView
+
+               android:layout_gravity="center"
+               android:layout_margin="10dp"
+               android:background="@drawable/world"
+               android:layout_width="30dp"
+               android:layout_height="30dp"/>
+
+           <TextView
+               android:textColor="@android:color/black"
+               android:gravity="left"
+               android:layout_gravity="center"
+               android:text="www.radissonbd.com/ad-din"
+               android:textSize="18sp"
+               android:textStyle="normal"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"/>
+
+
+       </LinearLayout>
+   </LinearLayout>
+
+    <RelativeLayout
+        android:layout_marginBottom="40dp"
+        android:gravity="bottom"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <LinearLayout
+
+        android:layout_gravity="bottom"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_margin="10dp"
+            android:background="@drawable/radissonbd_logo"
+            android:layout_width="50dp"
+            android:layout_height="50dp"/>
+
+        <TextView
+                android:textColor="@android:color/black"
+                android:gravity="left"
+                android:text="Radisson Digital\nTechnologies Ltd."
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+    </RelativeLayout>
+
+</LinearLayout>
