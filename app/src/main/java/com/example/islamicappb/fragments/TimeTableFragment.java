@@ -70,7 +70,7 @@ public class TimeTableFragment extends Fragment {
     
 
     public TimeTableFragment() {
-        // Required empty public constructor
+
     }
 
 
@@ -97,8 +97,6 @@ public class TimeTableFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-
         View view = inflater.inflate(R.layout.fragment_timetable, container, false);
 
 
@@ -143,11 +141,7 @@ public class TimeTableFragment extends Fragment {
 
         Locale locale = new Locale("bn");
         Locale.setDefault(locale);
-//        Configuration config =
-//                getContext().getResources().getConfiguration();
-//        config.setLocale(locale);
-//
-//        createConfigurationContext(config);
+
         Calendar cl = Calendar.getInstance(locale);
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd MMMM yyyy ");
         String dateTime = simpleDateFormat.format(cl.getTime());
@@ -163,25 +157,11 @@ public class TimeTableFragment extends Fragment {
 
 
 
-            ////////////////////////////////////////////////////////////////////////////////////
 
-            ///////////////////////////////////////////////////////////////////////////
 
             text = converterClass.covertS(text);
 
-//            text = text.replace("0", "০");
-//            text = text.replace("1", "১");
-//            text = text.replace("2", "২");
-//            text = text.replace("3", "৩");
-//            text = text.replace("4", "৪");
-//            text = text.replace("5", "৫");
-//            text = text.replace("6", "৬");
-//            text = text.replace("7", "৭");
-//            text = text.replace("8", "৮");
-//            text = text.replace("9", "৯");
 
-
-            //////////////////////////////////////////////////////
 
             text = text.replace("-০১-", ",মহরম,");
             text = text.replace("-০2-", "সফল");
@@ -290,20 +270,6 @@ public class TimeTableFragment extends Fragment {
 
         fojorTimeBangla = converterClass.covertS(fojorTimeBangla);
 
-//        fojorTimeBangla = fojorTimeBangla.replace("0", "০");
-//        fojorTimeBangla = fojorTimeBangla.replace("1", "১");
-//        fojorTimeBangla = fojorTimeBangla.replace("2", "২");
-//        fojorTimeBangla = fojorTimeBangla.replace("3", "৩");
-//        fojorTimeBangla = fojorTimeBangla.replace("4", "৪");
-//        fojorTimeBangla = fojorTimeBangla.replace("5", "৫");
-//        fojorTimeBangla = fojorTimeBangla.replace("6", "৬");
-//        fojorTimeBangla = fojorTimeBangla.replace("7", "৭");
-//        fojorTimeBangla = fojorTimeBangla.replace("8", "৮");
-//        fojorTimeBangla = fojorTimeBangla.replace("9", "৯");
-
-
-
-
 
         ////johor time bangla
         Character [] johorarray= new Character[johorerTime.length()];
@@ -322,26 +288,13 @@ public class TimeTableFragment extends Fragment {
 
 
 
-        //String SjHour = ""+array[0]+""+array[1];
+
         String SjMinute = ""+johorarray[3]+""+johorarray[4];
 
         final int jHour = jhInt;
         final int jMinute = Integer.parseInt(SjMinute);
 
         johorTimeBangla = converterClass.covertS(johorTimeBangla);
-//        johorTimeBangla= johorTimeBangla.replace("0", "০");
-//        johorTimeBangla= johorTimeBangla.replace("1", "১");
-//        johorTimeBangla= johorTimeBangla.replace("2", "২");
-//        johorTimeBangla= johorTimeBangla.replace("3", "৩");
-//        johorTimeBangla= johorTimeBangla.replace("4", "৪");
-//        johorTimeBangla= johorTimeBangla.replace("5", "৫");
-//        johorTimeBangla= johorTimeBangla.replace("6", "৬");
-//        johorTimeBangla= johorTimeBangla.replace("7", "৭");
-//        johorTimeBangla= johorTimeBangla.replace("8", "৮");
-//        johorTimeBangla= johorTimeBangla.replace("9", "৯");
-
-
-
 
         ////Asor time bangla
         Character [] asorarray= new Character[asorerTime.length()];
@@ -360,25 +313,13 @@ public class TimeTableFragment extends Fragment {
         asorTimeBangla = ""+aInt+""+asorarray[2]+""+asorarray[3]+""+asorarray[4];
 
 
-        //String SfHour = ""+array[0]+""+array[1];
+
         String SaMinute = ""+asorarray[3]+""+asorarray[4];
         final int aHour = asInt;
         final int aMinute = Integer.parseInt(SaMinute);
 
-       // String asorTimeBangla = ""+asorarray[0]+""+asorarray[1]+""+asorarray[2]+""+asorarray[3]+""+asorarray[4];
-
         asorTimeBangla = converterClass.covertS(asorTimeBangla);
 
-//        asorTimeBangla= asorTimeBangla.replace("0", "০");
-//        asorTimeBangla= asorTimeBangla.replace("1", "১");
-//        asorTimeBangla= asorTimeBangla.replace("2", "২");
-//        asorTimeBangla= asorTimeBangla.replace("3", "৩");
-//        asorTimeBangla= asorTimeBangla.replace("4", "৪");
-//        asorTimeBangla= asorTimeBangla.replace("5", "৫");
-//        asorTimeBangla= asorTimeBangla.replace("6", "৬");
-//        asorTimeBangla= asorTimeBangla.replace("7", "৭");
-//        asorTimeBangla= asorTimeBangla.replace("8", "৮");
-//        asorTimeBangla= asorTimeBangla.replace("9", "৯");
 
 
         ////magrib time bangla
@@ -397,23 +338,13 @@ public class TimeTableFragment extends Fragment {
 
       magribTimeBangla = ""+mInt+""+magribarray[2]+""+magribarray[3]+""+magribarray[4];
 
-        //String SfHour = ""+array[0]+""+array[1];
         String SmMinute = ""+magribarray[3]+""+magribarray[4];
         final int mHour = mgInt;
         final int mMinute = Integer.parseInt(SmMinute);
 
 
         magribTimeBangla = converterClass.covertS(magribTimeBangla);
-//        magribTimeBangla= magribTimeBangla.replace("0", "০");
-//        magribTimeBangla= magribTimeBangla.replace("1", "১");
-//        magribTimeBangla= magribTimeBangla.replace("2", "২");
-//        magribTimeBangla= magribTimeBangla.replace("3", "৩");
-//        magribTimeBangla= magribTimeBangla.replace("4", "৪");
-//        magribTimeBangla= magribTimeBangla.replace("5", "৫");
-//        magribTimeBangla= magribTimeBangla.replace("6", "৬");
-//        magribTimeBangla= magribTimeBangla.replace("7", "৭");
-//        magribTimeBangla= magribTimeBangla.replace("8", "৮");
-//        magribTimeBangla= magribTimeBangla.replace("9", "৯");
+
 
         ////Esha time bangla
         Character [] eshaarray= new Character[esharTime.length()];
@@ -431,7 +362,6 @@ public class TimeTableFragment extends Fragment {
 
         eshaTimeBangla = ""+eInt+""+eshaarray[2]+""+eshaarray[3]+""+eshaarray[4];
 
-       // String SfHour = ""+array[0]+""+array[1];
         String SeMinute = ""+eshaarray[3]+""+eshaarray[4];
         final int eHour = ehInt;
         final int eMinute = Integer.parseInt(SeMinute);
@@ -439,16 +369,7 @@ public class TimeTableFragment extends Fragment {
 
         eshaTimeBangla = converterClass.covertS(eshaTimeBangla);
 
-//        eshaTimeBangla= eshaTimeBangla.replace("0", "০");
-//        eshaTimeBangla= eshaTimeBangla.replace("1", "১");
-//        eshaTimeBangla= eshaTimeBangla.replace("2", "২");
-//        eshaTimeBangla= eshaTimeBangla.replace("3", "৩");
-//        eshaTimeBangla= eshaTimeBangla.replace("4", "৪");
-//        eshaTimeBangla= eshaTimeBangla.replace("5", "৫");
-//        eshaTimeBangla= eshaTimeBangla.replace("6", "৬");
-//        eshaTimeBangla= eshaTimeBangla.replace("7", "৭");
-//        eshaTimeBangla= eshaTimeBangla.replace("8", "৮");
-//        eshaTimeBangla= eshaTimeBangla.replace("9", "৯");
+
 
         tvfojor.setText("০"+fojorTimeBangla);
         tvjohor.setText(johorTimeBangla);
@@ -472,17 +393,9 @@ public class TimeTableFragment extends Fragment {
 
         editorWidget.commit();
 
-        Paper.book().write("FajorPB",tvfojor.getText().toString());
-        Paper.book().write("JohorPB",tvjohor.getText().toString());
-        Paper.book().write("AsorPB",tvasor.getText().toString());
-        Paper.book().write("MagribPB",tvmagrib.getText().toString());
-        Paper.book().write("IshaPB",tvesha.getText().toString());
 
 
-//        Intent intent = new Intent(getContext(), WidgetProvider.class);
-//        intent.putExtra("hello","102");
-//     //   intent.putExtra(NextActivity.PLAYERS, players);
-//        startActivity(intent);
+
 
         ibFojor.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -553,7 +466,7 @@ public class TimeTableFragment extends Fragment {
         tvNextTime.setText(""+BOrPNamajTime);
         tvCurrentNTime.setText(""+CurrentNamajTime);
         tvCurrentDate.setText(dateTime);
-      //  tvCurrentArbiDate.setText(text);
+
 
 
         //////////////////////////////////////////////////////////////////////////
@@ -588,7 +501,7 @@ public class TimeTableFragment extends Fragment {
             }
         });
 
-        ////////////////////////////////////////////////////////////////////////////
+
 
 
 
@@ -602,23 +515,19 @@ public class TimeTableFragment extends Fragment {
         String matchString = tvCurrentNTime.getText().toString();
 
 
-//        R.drawable.timetable_shape
 
 
         if (matchString.equals("ফজর")){
             tvNamajTimeNUmber.setText(""+fojorTimeBangla);
 
-           // Heading_background.setBackground(getContext().getResources().getDrawable(R.drawable.fajor_bg));
             Heading_background.setImageResource(R.drawable.fajor_bg);
 
-            //Heading_background = new GifDrawable( getResources(), R.drawable.fajor_bg );
 
             Fjr_stroke_bg.setBackground(getContext().getResources().getDrawable(R.drawable.timetable_shape));
             Jhr_stroke_bg.setBackground(getContext().getResources().getDrawable(R.drawable.time_table_gray));
             Asr_stroke_bg.setBackground(getContext().getResources().getDrawable(R.drawable.time_table_gray));
             Mgrb_stroke_bg.setBackground(getContext().getResources().getDrawable(R.drawable.time_table_gray));
             Isha_stroke_bg.setBackground(getContext().getResources().getDrawable(R.drawable.time_table_gray));
-           // tvCurrentNTime2.setText(tvCurrentNTime.getText().toString());
 
         } else if (matchString.equals("যোহর")){
             tvNamajTimeNUmber.setText(""+johorTimeBangla);
@@ -628,7 +537,6 @@ public class TimeTableFragment extends Fragment {
             Asr_stroke_bg.setBackground(getContext().getResources().getDrawable(R.drawable.time_table_gray));
             Mgrb_stroke_bg.setBackground(getContext().getResources().getDrawable(R.drawable.time_table_gray));
             Isha_stroke_bg.setBackground(getContext().getResources().getDrawable(R.drawable.time_table_gray));
-           // tvCurrentNTime2.setText(tvCurrentNTime.getText().toString());
 
         } else if (matchString.equals("আসর")){
             tvNamajTimeNUmber.setText(""+asorTimeBangla);
@@ -638,7 +546,6 @@ public class TimeTableFragment extends Fragment {
             Asr_stroke_bg.setBackground(getContext().getResources().getDrawable(R.drawable.timetable_shape));
             Mgrb_stroke_bg.setBackground(getContext().getResources().getDrawable(R.drawable.time_table_gray));
             Isha_stroke_bg.setBackground(getContext().getResources().getDrawable(R.drawable.time_table_gray));
-           // tvCurrentNTime2.setText(tvCurrentNTime.getText().toString());
 
         } else if (matchString.equals("মাগরিব")){
             tvNamajTimeNUmber.setText(""+magribTimeBangla);
@@ -648,7 +555,6 @@ public class TimeTableFragment extends Fragment {
             Asr_stroke_bg.setBackground(getContext().getResources().getDrawable(R.drawable.time_table_gray));
             Mgrb_stroke_bg.setBackground(getContext().getResources().getDrawable(R.drawable.timetable_shape));
             Isha_stroke_bg.setBackground(getContext().getResources().getDrawable(R.drawable.time_table_gray));
-           // tvCurrentNTime2.setText(tvCurrentNTime.getText().toString());
 
         } else if (matchString.equals("এশা")){
             tvNamajTimeNUmber.setText(""+eshaTimeBangla);
@@ -658,7 +564,6 @@ public class TimeTableFragment extends Fragment {
             Asr_stroke_bg.setBackground(getContext().getResources().getDrawable(R.drawable.time_table_gray));
             Mgrb_stroke_bg.setBackground(getContext().getResources().getDrawable(R.drawable.time_table_gray));
             Isha_stroke_bg.setBackground(getContext().getResources().getDrawable(R.drawable.timetable_shape));
-            //tvCurrentNTime2.setText(tvCurrentNTime.getText().toString());
 
         }
 
@@ -674,26 +579,7 @@ public class TimeTableFragment extends Fragment {
 
     }
 
-    public String getFojorTimeBangla(){
 
-        return fojorTimeBangla;
-    }
-    public String getJohorTimeBangla(){
-
-        return johorTimeBangla;
-    }
-    public String getAsorTimeBangla(){
-
-        return asorTimeBangla;
-    }
-    public String getMagribTimeBangla(){
-
-        return magribTimeBangla;
-    }
-    public String getEshaTimeBangla(){
-
-        return eshaTimeBangla;
-    }
 
 
 

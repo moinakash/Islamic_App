@@ -46,26 +46,12 @@ public class AllahNameActivity extends AppCompatActivity {
 
         ToolBar();
         list = findViewById( R.id.idAllahNamelist);
-
         db = new DatabaseHelper(this);
-
         allahNamePojoClassList = new ArrayList();
-
-
-
-
 
         fetchData();
         loadData();
 
-
-     /*   list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
-
-            }
-        });*/
     }
 
     public void fetchData()
@@ -84,15 +70,10 @@ public class AllahNameActivity extends AppCompatActivity {
 
     public void loadData(){
 
-
-
-
-
-
-        Cursor cursor = db.ShowAllahName();
+      Cursor cursor = db.ShowAllahName();
 
         if(cursor.getCount() == 0){
-//            Toast.makeText(this, "No data available", Toast.LENGTH_SHORT).show();
+
         }else {
             while (cursor.moveToNext()){
 
@@ -101,19 +82,12 @@ public class AllahNameActivity extends AppCompatActivity {
                         ""+cursor.getString(4)));
 
 
-                //    listData.add(cursor.getString(0)+" \t"+cursor.getString(1));
-//                listData.add(cursor.getString(0)+" \t"+cursor.getString(2));
-//                listData.add(cursor.getString(0)+" \t"+cursor.getString(3));
             }
         }
 
 
         allahNameAdapter = new AllahNameAdapter(this,R.layout.allahname_item_layout, allahNamePojoClassList);
         list.setAdapter(allahNameAdapter);
-
-
-//        final ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,R.layout.list_item,R.id.idTextView,listData);
-//        listView.setAdapter(adapter);
 
 
     }
@@ -153,12 +127,9 @@ public class AllahNameActivity extends AppCompatActivity {
             {
                 LayoutInflater vi = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
                 customView = vi.inflate(R.layout.allahname_item_layout, null);
-////////////////////////////////////
+
 
             }
-
-
-
 
             final AllahNamePojoClass allahNamePojoClass = allahNamePojoClassList.get(position);
 
@@ -214,9 +185,6 @@ public class AllahNameActivity extends AppCompatActivity {
                             e.printStackTrace();
                         }
 
-
-//                        mp.start();
-
                         PLayButton.setVisibility(View.GONE);
                         PLayButton2.setVisibility(View.VISIBLE);
 
@@ -227,10 +195,7 @@ public class AllahNameActivity extends AppCompatActivity {
 
                                 PLayButton2.setVisibility(View.GONE);
                                    PLayButton.setVisibility(View.VISIBLE);
-
-
-
-                            }
+     }
                         }, 3000);
 
 
@@ -255,12 +220,7 @@ public class AllahNameActivity extends AppCompatActivity {
         mToolbar = findViewById( R.id.AllahName_toolbar );
         TextView mTitle = (TextView) mToolbar.findViewById(R.id.toolbar_title);
 
-
-
-
-
-        //toolbar name ==>
-        mTitle.setText("আল্লাহর গুণবাচক নাম সমূহ");
+         mTitle.setText("আল্লাহর গুণবাচক নাম সমূহ");
         setSupportActionBar( mToolbar );
 
         getSupportActionBar().setDisplayShowTitleEnabled( false );

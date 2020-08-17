@@ -29,9 +29,6 @@ public class DatabaseHelper
     private SQLiteOpenHelper sqLiteOpenHelper;
 
 
-    public static final String
-            ALGO_TOPICS
-            = "algo_topics";
 
 
     public DatabaseHelper(Context context)
@@ -150,37 +147,7 @@ public class DatabaseHelper
     }
 
 
-    public List<String> getAlgorithmTopics(
-            Activity activity)
-    {
-        sqLiteOpenHelper
-                = new DatabaseHelper(activity);
-        SQLiteDatabase db
-                = sqLiteOpenHelper
-                .getWritableDatabase();
 
-        List<String> list
-                = new ArrayList<>();
-
-        // query help us to return all data
-        // the present in the ALGO_TOPICS table.
-       // String query = "SELECT * FROM " + "quran_verses" ;
-
-        String query = "SELECT * FROM sura ";
-
-
-
-        Cursor cursor = db.rawQuery(query, null);
-
-        if (cursor.moveToFirst()) {
-            do {
-                //list.add(cursor.getString(6)+"\n"+cursor.getString(8));
-                list.add(cursor.getString(1));
-               // list.add(cursor.getString(8));
-            } while (cursor.moveToNext());
-        }
-        return list;
-    }
 
     public Cursor showAllData()
     {
@@ -193,18 +160,12 @@ public class DatabaseHelper
     public Cursor ShowSura()
     {
         SQLiteDatabase db = this.getWritableDatabase();
-        String FullSura = "SELECT * FROM sura ";
 
         ReadSuraActivity readSuraActivity = new ReadSuraActivity();
 
 
-
-
         int valuee = readSuraActivity.getCategory();
 
-        Log.e("Johor",""+valuee);
-
-        //Toast.makeText(myContext, "check "+valuee, Toast.LENGTH_SHORT).show();
 
         String query = "SELECT * FROM quran_verses where sura_id ="+valuee;
 
@@ -216,12 +177,6 @@ public class DatabaseHelper
     public Cursor ShowAllahName()
     {
         SQLiteDatabase db = this.getWritableDatabase();
-       // String FullSura = "SELECT * FROM allah_names ";
-
-//        ReadSuraActivity readSuraActivity = new ReadSuraActivity();
-//
-//        int valuee = readSuraActivity.getCategory();
-//        //Toast.makeText(myContext, "check "+valuee, Toast.LENGTH_SHORT).show();
 
         String namequery = "SELECT * FROM allah_names ";
 
@@ -229,87 +184,6 @@ public class DatabaseHelper
         return FullSuraCursor;
     }
 
-
-    public Cursor showDiv(){
-        SQLiteDatabase db = this.getWritableDatabase();
-        String FullSura = "SELECT * FROM sura ";
-
-        String query = "SELECT * FROM divisions ";
-
-        Cursor FullSuraCursor = db.rawQuery(query,null);
-        return FullSuraCursor;
-    }
-
-    public Cursor showDhaka(){
-        SQLiteDatabase db = this.getWritableDatabase();
-
-        String query = "SELECT * FROM districts where division_id = 3";
-
-        Cursor FullSuraCursor = db.rawQuery(query,null);
-        return FullSuraCursor;
-    }
-
-    public Cursor showChit(){
-        SQLiteDatabase db = this.getWritableDatabase();
-
-        String query = "SELECT * FROM districts where division_id = 2";
-
-        Cursor FullSuraCursor = db.rawQuery(query,null);
-        return FullSuraCursor;
-    }
-
-    public Cursor showBari(){
-        SQLiteDatabase db = this.getWritableDatabase();
-
-        String query = "SELECT * FROM districts where division_id = 1";
-
-        Cursor FullSuraCursor = db.rawQuery(query,null);
-        return FullSuraCursor;
-    }
-
-    public Cursor shoeKhul(){
-        SQLiteDatabase db = this.getWritableDatabase();
-
-        String query = "SELECT * FROM districts where division_id = 4";
-
-        Cursor FullSuraCursor = db.rawQuery(query,null);
-        return FullSuraCursor;
-    }
-
-    public Cursor showRaj(){
-        SQLiteDatabase db = this.getWritableDatabase();
-
-        String query = "SELECT * FROM districts where division_id = 5";
-
-        Cursor FullSuraCursor = db.rawQuery(query,null);
-        return FullSuraCursor;
-    }
-
-    public Cursor showRong(){
-        SQLiteDatabase db = this.getWritableDatabase();
-
-        String query = "SELECT * FROM districts where division_id = 6";
-
-        Cursor FullSuraCursor = db.rawQuery(query,null);
-        return FullSuraCursor;
-    }
-
-    public Cursor showSy(int a){
-        SQLiteDatabase db = this.getWritableDatabase();
-
-        String query = "SELECT * FROM districts where division_id = "+a;
-
-        Cursor FullSuraCursor = db.rawQuery(query,null);
-        return FullSuraCursor;
-    }
-
-    public Cursor KalemaData(){
-
-        SQLiteDatabase db = this.getWritableDatabase();
-        String KQuery = "SELECT * FROM kalema ";
-        Cursor kaleName = db.rawQuery(KQuery,null);
-        return kaleName;
-    }
 
     public Cursor HadisData(){
 
@@ -327,28 +201,7 @@ public class DatabaseHelper
         return Hadis;
     }
 
-    public Cursor namajerNiom(){
 
-        SQLiteDatabase db = this.getWritableDatabase();
-        String HQuery = "SELECT * FROM namajerforojtwo ";
-        Cursor HadisName = db.rawQuery(HQuery,null);
-        return HadisName;
-    }
-
-    public Cursor taharat(){
-
-        SQLiteDatabase db = this.getWritableDatabase();
-        String HQuery = "SELECT * FROM taharat ";
-        Cursor HadisName = db.rawQuery(HQuery,null);
-        return HadisName;
-    }
-    public Cursor forojosunnot(){
-
-        SQLiteDatabase db = this.getWritableDatabase();
-        String HQuery = "SELECT * FROM namajerparthokko ";
-        Cursor HadisName = db.rawQuery(HQuery,null);
-        return HadisName;
-    }
 
     public Cursor amoldata(){
 

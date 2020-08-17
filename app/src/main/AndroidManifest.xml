@@ -30,7 +30,6 @@
         <activity
             android:name=".activity.BisheshNamajActivity"
             android:parentActivityName=".activity.KotlinActivity" />
-        <activity android:name=".activity.NamajerNiomActivity" />
         <activity
             android:name=".activity.KalimaActivity"
             android:parentActivityName=".activity.KotlinActivity" />

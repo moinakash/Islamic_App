@@ -38,7 +38,6 @@ public class SuraActivity
     public static List<String> data;
     DatabaseHelper db;
 
-    //  private ListView listView;
 
     ListView list;
     List<SuraNameListPojo> suraNameListPojoList;
@@ -62,7 +61,6 @@ public class SuraActivity
         SQLiteDatabase sqLiteDatabase = myDatabasehelper.getWritableDatabase();
         oncreate();
 
-        // listView = findViewById(R.id.idListView);
 
 
         list = findViewById( R.id.idListView);
@@ -76,7 +74,6 @@ public class SuraActivity
 
 
         defaultValue = sharedPref.getString("LastSuraName","         -");
-        //int highScore = sharedPref.getInt(getString(R.string.saved_high_score_key), defaultValue);
 
 
         tvLastSuraName.setText(""+defaultValue);
@@ -107,7 +104,6 @@ public class SuraActivity
         SharedPreferences.Editor editor = sharedPref.edit();
 
         String defaultValue = sharedPref.getString("LastSuraName","         -");
-        //int highScore = sharedPref.getInt(getString(R.string.saved_high_score_key), defaultValue);
 
 
         tvLastSuraName.setText(""+defaultValue);
@@ -152,7 +148,7 @@ public class SuraActivity
         }else {
             while (cursor.moveToNext()){
 
-                suraNameListPojoList.add(new SuraNameListPojo(""+cursor.getString(0),""+cursor.getString(1),""+cursor.getString(3),""+cursor.getString(2),"("+cursor.getString(7)+")",""+cursor.getString(9)));
+                suraNameListPojoList.add(new SuraNameListPojo(""+cursor.getString(0),""+cursor.getString(1),""+cursor.getString(3),""+cursor.getString(2),"("+cursor.getString(7)+")",""+cursor.getString(9),""+cursor.getString(12)));
 
 
             }
@@ -162,7 +158,7 @@ public class SuraActivity
         customSuraNameAdapter = new CustomSuraNameAdapter(this,R.layout.custom_suraname_layout, suraNameListPojoList);
         list.setAdapter(customSuraNameAdapter);
 
-        Helper.getListViewSize(list);
+     //   Helper.getListViewSize(list);
 
 
 
@@ -211,9 +207,6 @@ public class SuraActivity
                 TextView SuraName = (TextView) customView.findViewById(R.id.idSuraNumber);
                 SuraName.setText(suraNameListPojo.getSura_number());
 
-                // thumb image
-//            ImageView imageView = (ImageView) customView.findViewById(R.id.userImg);
-//            imageView.setImageResource(user.getImgRes());
 
                 TextView SuraNameBangla = (TextView) customView.findViewById(R.id.idSuraNameBangla);
                 SuraNameBangla.setText(suraNameListPojo.getSura_name_bangla());
@@ -238,11 +231,6 @@ public class SuraActivity
                         ////////////////////////////////////sharePref//////////////////////////
 
                         String LastRead = ""+suraNameListPojo.getSura_name_bangla();
-//
-//
-//                        editor.putString("LastSuraName",""+LastRead);
-//                        editor.apply();
-
 
                         SharedPreferences sharedPref = com.example.islamicappb.SuraActivity.this.getPreferences(Context.MODE_PRIVATE);
                         SharedPreferences.Editor editor = sharedPref.edit();
@@ -256,10 +244,6 @@ public class SuraActivity
                         intent.putExtra("position", ""+suraNameListPojo.getSura_number());
                         intent.putExtra("suraName", ""+suraNameListPojo.getSura_name_bangla());
                         startActivity(intent);
-
-
-                        //    startActivity(new Intent(getContext(),ReadSura.class).putExtra("items",suraNameListPojoList.get(position)));
-
 
                     }
                 });
@@ -293,7 +277,7 @@ public class SuraActivity
 
                 for(SuraNameListPojo temp : suraNameListPojoList)
                 {
-                    if (temp.sura_number.toLowerCase().contains( newText.toLowerCase() ))
+                    if (temp.sura_name_english.toLowerCase().contains( newText.toLowerCase() ))
                     { templist.add( temp ); }
                 }
 

@@ -32,17 +32,14 @@ public class HadisTypeActivity extends AppCompatActivity {
     public static List<String> data;
     DatabaseHelper db;
 
-    //  private ListView listView;
-
     ListView list;
     List<HadisTypePojoList> hadisTypePojoList2;
-
 
     CustomHadisTypeAdapter customHadisTypeAdapter;
 
     MyDatabasehelper myDatabasehelper;
     private Toolbar mToolbar;
-    int k;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,10 +51,6 @@ public class HadisTypeActivity extends AppCompatActivity {
 
         myDatabasehelper = new MyDatabasehelper(this);
         SQLiteDatabase sqLiteDatabase = myDatabasehelper.getWritableDatabase();
-
-
-        // listView = findViewById(R.id.idListView);
-
 
         list = findViewById( R.id.idListView);
 

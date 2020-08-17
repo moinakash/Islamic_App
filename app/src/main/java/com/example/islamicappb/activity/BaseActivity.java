@@ -37,9 +37,9 @@ public class BaseActivity extends AppCompatActivity {
 
     ConverterClass converterClass;
 
-private AlertDialog.Builder alertDialogBuilder;
 
-//    final String myString = "hello";
+
+
      String myString2;
 
     String fajarTime, johorTime, asorTime, magribTime, eshaTime, sunriseTime, nextnamaj, MiddleString;
@@ -57,7 +57,7 @@ private AlertDialog.Builder alertDialogBuilder;
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         setContentView(R.layout.activity_base);
 
-        Paper.init(this);
+
 
         converterClass = new ConverterClass(this);
 
@@ -78,10 +78,6 @@ private AlertDialog.Builder alertDialogBuilder;
 
 
 
-
-
-        myString2 = "hello2";
-
         fajarTime = getIntent().getExtras().getString("fajor");
         johorTime = getIntent().getExtras().getString("johor");
         asorTime = getIntent().getExtras().getString("asor");
@@ -89,15 +85,13 @@ private AlertDialog.Builder alertDialogBuilder;
         eshaTime = getIntent().getExtras().getString("esha");
         sunriseTime = getIntent().getExtras().getString("sunrise");
         LocString = getIntent().getExtras().getString("Location");
-        Log.e("Location",LocString);
+
 
 
         fajarTimeR = fajarTime.replace(":", "");
         fTime = Integer.parseInt(fajarTimeR);
         fTime= fTime/100;
         test = fTime;
-
-        Log.d("TAG", "onCreate: "+test);
 
 
 
@@ -165,24 +159,12 @@ private AlertDialog.Builder alertDialogBuilder;
 
             seShTime = converterClass.covertS(seShTime);
 
-//            seShTime= seShTime.replace("0", "০");
-//            seShTime= seShTime.replace("1", "১");
-//            seShTime= seShTime.replace("2", "২");
-//            seShTime= seShTime.replace("3", "৩");
-//            seShTime= seShTime.replace("4", "৪");
-//            seShTime= seShTime.replace("5", "৫");
-//            seShTime= seShTime.replace("6", "৬");
-//            seShTime= seShTime.replace("7", "৭");
-//            seShTime= seShTime.replace("8", "৮");
-//            seShTime= seShTime.replace("9", "৯");
 
         }
 
         else if (cTime>=sTime && cTime<(sTime+23)){
             BorPNamaj= "নামাজ পড়ার নিষিদ্ধ সময় চলছে";
             nextnamaj= "যোহর";
-
-            //MiddleString = "বর্তমান নামাজ ফজর";
 
             /////////////////////////////////Suru time add korte hobe////////////////////////
 
@@ -209,16 +191,6 @@ private AlertDialog.Builder alertDialogBuilder;
 
             seShTime = ""+convSt1+":"+sesh_time_johor_array[2]+""+sesh_time_johor_array[3];
 
-//            seShTime= seShTime.replace("0", "০");
-//            seShTime= seShTime.replace("1", "১");
-//            seShTime= seShTime.replace("2", "২");
-//            seShTime= seShTime.replace("3", "৩");
-//            seShTime= seShTime.replace("4", "৪");
-//            seShTime= seShTime.replace("5", "৫");
-//            seShTime= seShTime.replace("6", "৬");
-//            seShTime= seShTime.replace("7", "৭");
-//            seShTime= seShTime.replace("8", "৮");
-//            seShTime= seShTime.replace("9", "৯");
 
             seShTime = converterClass.covertS(seShTime);
 
@@ -251,16 +223,7 @@ private AlertDialog.Builder alertDialogBuilder;
 
             seShTime = converterClass.covertS(seShTime);
 
-//            seShTime= seShTime.replace("0", "০");
-//            seShTime= seShTime.replace("1", "১");
-//            seShTime= seShTime.replace("2", "২");
-//            seShTime= seShTime.replace("3", "৩");
-//            seShTime= seShTime.replace("4", "৪");
-//            seShTime= seShTime.replace("5", "৫");
-//            seShTime= seShTime.replace("6", "৬");
-//            seShTime= seShTime.replace("7", "৭");
-//            seShTime= seShTime.replace("8", "৮");
-//            seShTime= seShTime.replace("9", "৯");
+
 
         }
 
@@ -290,16 +253,6 @@ private AlertDialog.Builder alertDialogBuilder;
             seShTime = ""+convSt1+":"+sesh_time_johor_array[2]+""+sesh_time_johor_array[3];
             seShTime = converterClass.covertS(seShTime);
 
-//            seShTime= seShTime.replace("0", "০");
-//            seShTime= seShTime.replace("1", "১");
-//            seShTime= seShTime.replace("2", "২");
-//            seShTime= seShTime.replace("3", "৩");
-//            seShTime= seShTime.replace("4", "৪");
-//            seShTime= seShTime.replace("5", "৫");
-//            seShTime= seShTime.replace("6", "৬");
-//            seShTime= seShTime.replace("7", "৭");
-//            seShTime= seShTime.replace("8", "৮");
-//            seShTime= seShTime.replace("9", "৯");
 
         }
 
@@ -329,16 +282,7 @@ private AlertDialog.Builder alertDialogBuilder;
             seShTime = ""+convSt1+":"+sesh_time_johor_array[2]+""+sesh_time_johor_array[3];
             seShTime = converterClass.covertS(seShTime);
 
-//            seShTime= seShTime.replace("0", "০");
-//            seShTime= seShTime.replace("1", "১");
-//            seShTime= seShTime.replace("2", "২");
-//            seShTime= seShTime.replace("3", "৩");
-//            seShTime= seShTime.replace("4", "৪");
-//            seShTime= seShTime.replace("5", "৫");
-//            seShTime= seShTime.replace("6", "৬");
-//            seShTime= seShTime.replace("7", "৭");
-//            seShTime= seShTime.replace("8", "৮");
-//            seShTime= seShTime.replace("9", "৯");
+
 
         }
 
@@ -368,16 +312,7 @@ private AlertDialog.Builder alertDialogBuilder;
             seShTime = ""+convSt1+":"+sesh_time_asor_array[2]+""+sesh_time_asor_array[3];
             seShTime = converterClass.covertS(seShTime);
 
-//            seShTime= seShTime.replace("0", "০" );
-//            seShTime= seShTime.replace("1", "১");
-//            seShTime= seShTime.replace("2", "২");
-//            seShTime= seShTime.replace("3", "৩");
-//            seShTime= seShTime.replace("4", "৪");
-//            seShTime= seShTime.replace("5", "৫");
-//            seShTime= seShTime.replace("6", "৬");
-//            seShTime= seShTime.replace("7", "৭");
-//            seShTime= seShTime.replace("8", "৮");
-//            seShTime= seShTime.replace("9", "৯");
+
 
         }
 
@@ -407,16 +342,6 @@ private AlertDialog.Builder alertDialogBuilder;
             seShTime = ""+convSt1+":"+sesh_time_asor_array[2]+""+sesh_time_asor_array[3];
             seShTime = converterClass.covertS(seShTime);
 
-//            seShTime= seShTime.replace("0", "০");
-//            seShTime= seShTime.replace("1", "১");
-//            seShTime= seShTime.replace("2", "২");
-//            seShTime= seShTime.replace("3", "৩");
-//            seShTime= seShTime.replace("4", "৪");
-//            seShTime= seShTime.replace("5", "৫");
-//            seShTime= seShTime.replace("6", "৬");
-//            seShTime= seShTime.replace("7", "৭");
-//            seShTime= seShTime.replace("8", "৮");
-//            seShTime= seShTime.replace("9", "৯");
 
         }
 
@@ -464,16 +389,6 @@ private AlertDialog.Builder alertDialogBuilder;
             seShTime = ""+convSt1+":"+lastTwodigitString;
             seShTime = converterClass.covertS(seShTime);
 
-//            seShTime= seShTime.replace("0", "০");
-//            seShTime= seShTime.replace("1", "১");
-//            seShTime= seShTime.replace("2", "২");
-//            seShTime= seShTime.replace("3", "৩");
-//            seShTime= seShTime.replace("4", "৪");
-//            seShTime= seShTime.replace("5", "৫");
-//            seShTime= seShTime.replace("6", "৬");
-//            seShTime= seShTime.replace("7", "৭");
-//            seShTime= seShTime.replace("8", "৮");
-//            seShTime= seShTime.replace("9", "৯");
 
         }
 
@@ -521,16 +436,7 @@ private AlertDialog.Builder alertDialogBuilder;
             seShTime = ""+convSt1+":"+lastTwodigitString;
             seShTime = converterClass.covertS(seShTime);
 
-//            seShTime= seShTime.replace("0", "০");
-//            seShTime= seShTime.replace("1", "১");
-//            seShTime= seShTime.replace("2", "২");
-//            seShTime= seShTime.replace("3", "৩");
-//            seShTime= seShTime.replace("4", "৪");
-//            seShTime= seShTime.replace("5", "৫");
-//            seShTime= seShTime.replace("6", "৬");
-//            seShTime= seShTime.replace("7", "৭");
-//            seShTime= seShTime.replace("8", "৮");
-//            seShTime= seShTime.replace("9", "৯");
+
 
         }
 
@@ -561,16 +467,7 @@ private AlertDialog.Builder alertDialogBuilder;
             seShTime = ""+convSt1+":"+sesh_time_esha_array[2]+""+sesh_time_esha_array[3];
             seShTime = converterClass.covertS(seShTime);
 
-//            seShTime= seShTime.replace("0", "০");
-//            seShTime= seShTime.replace("1", "১");
-//            seShTime= seShTime.replace("2", "২");
-//            seShTime= seShTime.replace("3", "৩");
-//            seShTime= seShTime.replace("4", "৪");
-//            seShTime= seShTime.replace("5", "৫");
-//            seShTime= seShTime.replace("6", "৬");
-//            seShTime= seShTime.replace("7", "৭");
-//            seShTime= seShTime.replace("8", "৮");
-//            seShTime= seShTime.replace("9", "৯");
+
 
         }
 
@@ -601,16 +498,7 @@ private AlertDialog.Builder alertDialogBuilder;
             seShTime = ""+convSt1+":"+sesh_time_esha_array[2]+""+sesh_time_esha_array[3];
             seShTime = converterClass.covertS(seShTime);
 
-//            seShTime= seShTime.replace("0", "০");
-//            seShTime= seShTime.replace("1", "১");
-//            seShTime= seShTime.replace("2", "২");
-//            seShTime= seShTime.replace("3", "৩");
-//            seShTime= seShTime.replace("4", "৪");
-//            seShTime= seShTime.replace("5", "৫");
-//            seShTime= seShTime.replace("6", "৬");
-//            seShTime= seShTime.replace("7", "৭");
-//            seShTime= seShTime.replace("8", "৮");
-//            seShTime= seShTime.replace("9", "৯");
+
 
         }
 
@@ -631,16 +519,7 @@ private AlertDialog.Builder alertDialogBuilder;
             seShTime = ""+sesh_time_fojor_array[0]+":"+sesh_time_fojor_array[1]+""+sesh_time_fojor_array[2];
             seShTime = converterClass.covertS(seShTime);
 
-//            seShTime= seShTime.replace("0", "০");
-//            seShTime= seShTime.replace("1", "১");
-//            seShTime= seShTime.replace("2", "২");
-//            seShTime= seShTime.replace("3", "৩");
-//            seShTime= seShTime.replace("4", "৪");
-//            seShTime= seShTime.replace("5", "৫");
-//            seShTime= seShTime.replace("6", "৬");
-//            seShTime= seShTime.replace("7", "৭");
-//            seShTime= seShTime.replace("8", "৮");
-//            seShTime= seShTime.replace("9", "৯");
+
 
         }
 
@@ -721,35 +600,7 @@ private AlertDialog.Builder alertDialogBuilder;
         return LocString;
     }
 
-public int getTest(){
 
-        return test;
-}
-
-
-  public int getfTime(){
-
-   Log.d("TAG", "onUpdate: "+fTime);
-
-
-        return test;
-  }
-    public int getjTime(){
-
-        return jTime;
-    }
-    public int getaTime(){
-
-        return aTime;
-    }
-    public int getmTime(){
-
-        return mTime;
-    }
-    public int geteTime(){
-
-        return eTime;
-    }
 
     @Override
     public void onBackPressed() {
@@ -808,40 +659,5 @@ public int getTest(){
 
 
     }
-
-
-    /* alertDialogBuilder = new AlertDialog.Builder(BaseActivity.this);
-
-     *//*        //for setting title
-        alertDialogBuilder.setTitle("");*//*
-
-        //for setting the message
-        alertDialogBuilder.setMessage("আপনি কি প্রস্থান করতে চান");
-
-        //for setting the icon
-        *//*alertDialogBuilder.setIcon(R.drawable.trash);*//*
-
-        alertDialogBuilder.setCancelable(false);
-
-        alertDialogBuilder.setPositiveButton("হ্যা", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                //exit
-                finish();
-            }
-        });
-
-        alertDialogBuilder.setNegativeButton("না", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-
-                dialog.cancel();
-
-            }
-        });
-
-        AlertDialog alertDialog = alertDialogBuilder.create();
-        alertDialog.show();
-*/
 
 }

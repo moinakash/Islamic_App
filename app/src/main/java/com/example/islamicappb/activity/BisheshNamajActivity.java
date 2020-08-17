@@ -4,20 +4,18 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
-import android.database.Cursor;
+
 import android.graphics.Color;
-import android.os.Build;
+
 import android.os.Bundle;
-import android.text.Html;
-import android.text.Spanned;
-import android.util.Log;
+
 import android.view.View;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.widget.ExpandableListAdapter;
 import android.widget.ExpandableListView;
 import android.widget.ScrollView;
-import android.widget.TextView;
+
 
 import com.example.islamicappb.Adapters.kalimaExpandableAdapter;
 import com.example.islamicappb.DatabaseHelper;
@@ -40,7 +38,7 @@ public class BisheshNamajActivity extends AppCompatActivity {
 
     String ff;
 
-    TextView tvDetailss;
+
     ScrollView scrollView1;
     DatabaseHelper db;
     String str, kaja1;
@@ -51,14 +49,13 @@ public class BisheshNamajActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bishesh_namaj);
 
-//        tvDetailss = findViewById(R.id.idDetailsTv);
-//        scrollView1 = findViewById(R.id.idScrollView1);
+
         webView = findViewById(R.id.idWebView);
 
         Intent intent = getIntent();
         ff = intent.getExtras().getString("shoriot");
 
-        Log.e("tag",""+ff);
+
 
         kaja1 = getResources().getString(R.string.kaja1);
 
@@ -264,35 +261,6 @@ public class BisheshNamajActivity extends AppCompatActivity {
     private void ToolBar() {
 
         mToolbar = findViewById( R.id.kalima_toolbar );
- /*       TextView mTitle = (TextView) mToolbar.findViewById(R.id.toolbar_title);*/
-
-
-
-
-/*
-
-        //toolbar name ==>
-        if (ff.equals("1")){
-            mTitle.setText("বিশেষ নামাজ");
-        }
-        else if (ff.equals("2")){
-            mTitle.setText("মোনাজাতের নিয়ম");
-        }
-        else if (ff.equals("3")){
-            mTitle.setText("ফরজ ও সুন্নত নামাজের পার্থক্য");
-        }
-        else if (ff.equals("4")){
-            mTitle.setText("দোয়া ও দুরুদ");
-        }
-        else if (ff.equals("5")){
-            mTitle.setText("তাহারাত");
-        }
-        else if (ff.equals("6")){
-            mTitle.setText("শরীয়তের বিভিন্ন প্রয়োজনীয় শব্দ");
-        }else if (ff.equals("0")){
-            mTitle.setText("নামাজের নিয়ম");
-        }
-*/
 
         setSupportActionBar( mToolbar );
 
@@ -301,12 +269,5 @@ public class BisheshNamajActivity extends AppCompatActivity {
 
     }
 
-    private Spanned getSpannedText(String text) {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-            return Html.fromHtml(text, Html.FROM_HTML_MODE_COMPACT);
-        } else {
-            return Html.fromHtml(text);
-        }
-    }
 
 }

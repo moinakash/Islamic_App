@@ -24,11 +24,7 @@ import com.example.islamicappb.activity.EightDivisonActivity;
 import com.example.islamicappb.activity.InfoActivity;
 import com.example.islamicappb.pojo_classes.ConverterClass;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link DoaDurudFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
+
 public class DoaDurudFragment extends Fragment {
 
     LinearLayout btnNamajerNiom, btnBisheshNamaj, btnMonajaterNiom, btnForojOSunnot,btnDoaODurud, btnTaharat, btnShoriyot, btnGoLoc, btnRojarSomoy;
@@ -37,28 +33,19 @@ public class DoaDurudFragment extends Fragment {
 
     ConverterClass converterClass;
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
+
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
-    // TODO: Rename and change types of parameters
+
     private String mParam1;
     private String mParam2;
 
     public DoaDurudFragment() {
-        // Required empty public constructor
+
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment DoaDurudFragment.
-     */
-    // TODO: Rename and change types and number of parameters
+
     public static DoaDurudFragment newInstance(String param1, String param2) {
         DoaDurudFragment fragment = new DoaDurudFragment();
         Bundle args = new Bundle();
@@ -207,9 +194,6 @@ public class DoaDurudFragment extends Fragment {
 
 
 
-
-
-
         return view;
     }
 
@@ -219,10 +203,6 @@ public class DoaDurudFragment extends Fragment {
     void showDialog() {
 
 
-
-/*
-        final LayoutInflater inflater = LayoutInflater.from(getContext());
-        View view = inflater.inflate(R.layout.rojar_somoy_suchi_alert, null);*/
 
         final Dialog alertDialog = new Dialog(getContext());
 
@@ -257,16 +237,6 @@ public class DoaDurudFragment extends Fragment {
 
         fojorTimeBangla = converterClass.covertS(fojorTimeBangla);
 
-//        fojorTimeBangla = fojorTimeBangla.replace("0", "০");
-//        fojorTimeBangla = fojorTimeBangla.replace("1", "১");
-//        fojorTimeBangla = fojorTimeBangla.replace("2", "২");
-//        fojorTimeBangla = fojorTimeBangla.replace("3", "৩");
-//        fojorTimeBangla = fojorTimeBangla.replace("4", "৪");
-//        fojorTimeBangla = fojorTimeBangla.replace("5", "৫");
-//        fojorTimeBangla = fojorTimeBangla.replace("6", "৬");
-//        fojorTimeBangla = fojorTimeBangla.replace("7", "৭");
-//        fojorTimeBangla = fojorTimeBangla.replace("8", "৮");
-//        fojorTimeBangla = fojorTimeBangla.replace("9", "৯");
 
         Saharir_shesh_somoy.setText(""+fojorTimeBangla);
 
@@ -289,7 +259,7 @@ public class DoaDurudFragment extends Fragment {
 
         String magribTimeBangla = ""+mInt+""+magribarray[2]+""+magribarray[3]+""+magribarray[4];
 
-        //String SfHour = ""+array[0]+""+array[1];
+
         String SmMinute = ""+magribarray[3]+""+magribarray[4];
         final int mHour = mgInt;
         final int mMinute = Integer.parseInt(SmMinute);
@@ -297,16 +267,7 @@ public class DoaDurudFragment extends Fragment {
 
         magribTimeBangla = converterClass.covertS(magribTimeBangla);
 
-        magribTimeBangla= magribTimeBangla.replace("0", "০");
-        magribTimeBangla= magribTimeBangla.replace("1", "১");
-        magribTimeBangla= magribTimeBangla.replace("2", "২");
-        magribTimeBangla= magribTimeBangla.replace("3", "৩");
-        magribTimeBangla= magribTimeBangla.replace("4", "৪");
-        magribTimeBangla= magribTimeBangla.replace("5", "৫");
-        magribTimeBangla= magribTimeBangla.replace("6", "৬");
-        magribTimeBangla= magribTimeBangla.replace("7", "৭");
-        magribTimeBangla= magribTimeBangla.replace("8", "৮");
-        magribTimeBangla= magribTimeBangla.replace("9", "৯");
+
 
 
         Iftarir_somoy.setText(""+magribTimeBangla);

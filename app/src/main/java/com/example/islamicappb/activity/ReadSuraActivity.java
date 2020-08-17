@@ -22,6 +22,7 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ArrayAdapter;
 import android.widget.ImageButton;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.SeekBar;
 import android.widget.TextView;
@@ -57,7 +58,7 @@ public class ReadSuraActivity extends AppCompatActivity {
 
     public String seekvalue;
 
-    TextView tvBismillah;
+    LinearLayout tvBismillah;
 
 
 
@@ -67,7 +68,7 @@ public class ReadSuraActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         setContentView(R.layout.activity_read_sura);
-        tvBismillah = findViewById(R.id.idtvBismillah);
+        tvBismillah = (LinearLayout) findViewById(R.id.idBismillah);
         ToolBar();
         myDatabasehelper = new MyDatabasehelper(this);
         SQLiteDatabase sqLiteDatabase = myDatabasehelper.getWritableDatabase();
@@ -76,7 +77,7 @@ public class ReadSuraActivity extends AppCompatActivity {
 
 
         sessionId = getIntent().getStringExtra("position");
-        // Toast.makeText(this, "sId "+sessionId, Toast.LENGTH_SHORT).show();
+
         pvalue =  Integer.parseInt(sessionId);
 
 
@@ -103,7 +104,7 @@ public class ReadSuraActivity extends AppCompatActivity {
         }else {
             while (cursor.moveToNext()){
 
-                suraLinePartPojo1.add(new SuraLinePartPojo(""+cursor.getString(7),""+cursor.getString(9),""+cursor.getString(10),""+cursor.getString(4)));
+                suraLinePartPojo1.add(new SuraLinePartPojo(""+cursor.getString(6),""+cursor.getString(7),""+cursor.getString(8),""+cursor.getString(4)));
 
             }
         }
@@ -190,12 +191,11 @@ public class ReadSuraActivity extends AppCompatActivity {
                 if (sizeInt<12){
                     sizeInt = 12;
                 }
-                //SuraName.setTextSize(pxFromDp((sizeInt+3), ReadSuraActivity.this));
+
                 SuraName.setTextSize(dpToSp((sizeInt+3), ReadSuraActivity.this));
-//                AyatNumber.setTextSize(dpToSp(sizeInt, ReadSuraActivity.this));
+
                 SuraNameBangla.setTextSize(dpToSp(sizeInt, ReadSuraActivity.this));
                 SuraNameMeaning.setTextSize(dpToSp(sizeInt, ReadSuraActivity.this));
-               // SuraNameMeaning.setTextSize(pxFromDp(sizeInt, ReadSuraActivity.this));
 
                 floatingActionButton.setOnClickListener(new View.OnClickListener() {
                     //@RequiresApi(api = Build.VERSION_CODES.O)
@@ -307,15 +307,11 @@ public class ReadSuraActivity extends AppCompatActivity {
         final AlertDialog.Builder popDialog = new AlertDialog.Builder(this);
         final SeekBar seek = new SeekBar(this);
         seek.setMax(20);
-        //seek.setMin(5);
-        /*popDialog.setIcon(android.R.drawable.btn_star_big_on);*/
+
         popDialog.setTitle("ফন্ট সাইজ");
         popDialog.setView(seek);
 
-      /*  if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
-            seek.setOutlineSpotShadowColor(getResources().getColor(R.color.base_color));
-        }
-*/
+
         seek.getProgressDrawable().setColorFilter(getResources().getColor(R.color.base_color), PorterDuff.Mode.MULTIPLY);
         seek.getThumb().setColorFilter(getResources().getColor(R.color.bottom_nav_option), PorterDuff.Mode.SRC_ATOP);
 
@@ -328,7 +324,6 @@ public class ReadSuraActivity extends AppCompatActivity {
                 sizeInt = progress;
                 String kk;
                 kk = String.valueOf(sizeInt);
-                //SuraName.setTextSize(pxFromDp(sizeInt, ReadSuraActivity.this));
                 SharedPreferences spf = getSharedPreferences("SeekValueP",Context.MODE_PRIVATE);
                 SharedPreferences.Editor editor = spf.edit();
                 editor.putString("skv",kk);
@@ -369,7 +364,6 @@ public class ReadSuraActivity extends AppCompatActivity {
 
         String SuraName = getIntent().getStringExtra("suraName");
 
-        String name = ""+SuraName;
 
         //toolbar name ==>
         if (SuraName.equals("আল ফাতিহা"))

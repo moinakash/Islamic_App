@@ -60,25 +60,20 @@ public class ExampleAppWidgetProvider extends AppWidgetProvider {
         int maxWidth = appWidgetOptions.getInt(AppWidgetManager.OPTION_APPWIDGET_MAX_WIDTH);
         int minHeight = appWidgetOptions.getInt(AppWidgetManager.OPTION_APPWIDGET_MIN_HEIGHT);
         int maxHeight = appWidgetOptions.getInt(AppWidgetManager.OPTION_APPWIDGET_MAX_HEIGHT);
-//        if (maxHeight > 100) {
-////            views.setViewVisibility(R.id.example_widget_text, View.VISIBLE);
-////            views.setViewVisibility(R.id.example_widget_button, View.VISIBLE);
-//        } else {
-////            views.setViewVisibility(R.id.example_widget_text, View.GONE);
-////            views.setViewVisibility(R.id.example_widget_button, View.GONE);
-//        }
+
+
     }
     @Override
     public void onDeleted(Context context, int[] appWidgetIds) {
-//        Toast.makeText(context, "onDeleted", Toast.LENGTH_SHORT).show();
+
     }
     @Override
     public void onEnabled(Context context) {
-//        Toast.makeText(context, "onEnabled", Toast.LENGTH_SHORT).show();
+
     }
     @Override
     public void onDisabled(Context context) {
-//        Toast.makeText(context, "onDisabled", Toast.LENGTH_SHORT).show();
+
     }
     @Override
     public void onReceive(Context context, Intent intent) {

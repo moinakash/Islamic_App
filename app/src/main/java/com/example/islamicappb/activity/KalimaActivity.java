@@ -37,7 +37,7 @@ public class KalimaActivity extends AppCompatActivity {
 
 
         expandableListView.setAdapter(expandableListAdapter);
-       // Helper.getListViewSize(expandableListView);
+
 
         expandableListView.setOnGroupExpandListener( new ExpandableListView.OnGroupExpandListener() {
             @Override
@@ -49,29 +49,6 @@ public class KalimaActivity extends AppCompatActivity {
             }
         });
 
-        /**
-         expandableListView.setOnGroupCollapseListener(new ExpandableListView.OnGroupCollapseListener() {
-        @Override
-        public void onGroupCollapse(int groupPosition) {
-        Toast.makeText(getBaseContext(),"List Collapsed:" +
-        expandableListNombres.get(groupPosition),Toast.LENGTH_SHORT).show();
-        }
-        });
-
-
-         expandableListView.setOnChildClickListener(new ExpandableListView.OnChildClickListener() {
-        @Override
-        public boolean onChildClick(ExpandableListView parent, View v,
-        int groupPosition, int childPosition, long id) {
-
-        Toast.makeText(getBaseContext(),
-        expandableListNombres.get(groupPosition) +
-        " ---> " + listaContactos.get(expandableListNombres.get(groupPosition))
-        ,Toast.LENGTH_SHORT).show();
-        return false;
-        }
-        });
-         */
 
     }
 

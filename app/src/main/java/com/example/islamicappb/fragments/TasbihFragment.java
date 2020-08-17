@@ -23,6 +23,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.islamicappb.R;
+import com.example.islamicappb.pojo_classes.ConverterClass;
 
 
 public class TasbihFragment extends Fragment {
@@ -38,7 +39,7 @@ public class TasbihFragment extends Fragment {
 
     ImageView img_pearl, img_pearl_1, img_pearl_2, img_pearl_3, img_pearl_4, img_pearl_6, img_pearl_7, img_pearl_8, img_pearl_9;
 
-    ImageView ibbtn33img;
+    ConverterClass converterClass;
 
 
 
@@ -79,7 +80,6 @@ public class TasbihFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
 
-            Log.d("countset", "onClick: "+countset);
         }
     }
 
@@ -88,6 +88,8 @@ public class TasbihFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_tasbih, container, false);
 
+        converterClass = new ConverterClass(getContext());
+
 
 
 
@@ -95,7 +97,7 @@ public class TasbihFragment extends Fragment {
         btnReset = view.findViewById(R.id.idReset);
         tvCurrentCounter = view.findViewById(R.id.idCurrentCount);
         btn33 = view.findViewById(R.id.id33);
-        //btn99 = view.findViewById(R.id.id99);
+
         btnSound =  view.findViewById(R.id.idSound);
         tvSetCount = view.findViewById(R.id.idCountSet);
         tvTotalcount = view.findViewById(R.id.idtotalCount);
@@ -109,7 +111,7 @@ public class TasbihFragment extends Fragment {
         img_pearl_7 = view.findViewById(R.id.id_pearl_7);
         img_pearl_8 = view.findViewById(R.id.id_pearl_8);
         img_pearl_9 = view.findViewById(R.id.id_pearl_9);
-//        ibbtn33img = view.findViewById(R.id.idbtn33img);
+
 
 
 
@@ -135,67 +137,32 @@ public class TasbihFragment extends Fragment {
         }
 
 
-
-
-
         /////////////////////////////////////////////////////////
         String CC = String.valueOf(currentcounter);
 
-        CC= CC.replace("0", "০");
-        CC= CC.replace("1", "১");
-        CC= CC.replace("2", "২");
-        CC= CC.replace("3", "৩");
-        CC= CC.replace("4", "৪");
-        CC= CC.replace("5", "৫");
-        CC= CC.replace("6", "৬");
-        CC= CC.replace("7", "৭");
-        CC= CC.replace("8", "৮");
-        CC= CC.replace("9", "৯");
+        CC = converterClass.covertS(CC);
 
 
         tvCurrentCounter.setText(""+CC);
-        //tvCurrentCounter.setText(""+ currentcounter);
-        /////////////////////////////////////////////////////////////////////
 
         String tC = String.valueOf(totalcount);
 
-        tC= tC.replace("0", "০");
-        tC= tC.replace("1", "১");
-        tC= tC.replace("2", "২");
-        tC= tC.replace("3", "৩");
-        tC= tC.replace("4", "৪");
-        tC= tC.replace("5", "৫");
-        tC= tC.replace("6", "৬");
-        tC= tC.replace("7", "৭");
-        tC= tC.replace("8", "৮");
-        tC= tC.replace("9", "৯");
+        tC = converterClass.covertS(tC);
+
 
         tvTotalcount.setText(""+tC);
 
-        //tvTotalcount.setText(""+ totalcount);
-        //
-        // //////////////////////////////////////
+
 
         String cS = String.valueOf(countset);
 
-        cS= cS.replace("0", "০");
-        cS= cS.replace("1", "১");
-        cS= cS.replace("2", "২");
-        cS= cS.replace("3", "৩");
-        cS= cS.replace("4", "৪");
-        cS= cS.replace("5", "৫");
-        cS= cS.replace("6", "৬");
-        cS= cS.replace("7", "৭");
-        cS= cS.replace("8", "৮");
-        cS= cS.replace("9", "৯");
+        cS = converterClass.covertS(cS);
+
 
 
         tvSetCount.setText(""+cS);
 
 
-
-        //todo
-        //btn33.setText(""+cS);
 
         btnSound.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -204,16 +171,16 @@ public class TasbihFragment extends Fragment {
                     SoundInt = 1;
 
                     btnSound.setImageResource(R.drawable.sound_on_mode);
-                 //   btnSound.setText("Sound Mode");
+
 
                 }else if (SoundInt == 1){
                     SoundInt = 2;
                     btnSound.setImageResource(R.drawable.vibret_on_mode);
-                   // btnSound.setText("Vibrator Mode");
+
                 }else if (SoundInt == 2){
                     SoundInt = 0;
                     btnSound.setImageResource(R.drawable.sound_off_mode);
-                 //   btnSound.setText("sound off mode");
+
                 }
 
                 SharedPreferences sharedPref = getActivity().getPreferences(Context.MODE_PRIVATE);
@@ -248,16 +215,8 @@ public class TasbihFragment extends Fragment {
 
                             String CC = String.valueOf(currentcounter);
 
-                            CC= CC.replace("0", "০");
-                            CC= CC.replace("1", "১");
-                            CC= CC.replace("2", "২");
-                            CC= CC.replace("3", "৩");
-                            CC= CC.replace("4", "৪");
-                            CC= CC.replace("5", "৫");
-                            CC= CC.replace("6", "৬");
-                            CC= CC.replace("7", "৭");
-                            CC= CC.replace("8", "৮");
-                            CC= CC.replace("9", "৯");
+                            CC = converterClass.covertS(CC);
+
 
 
                             tvCurrentCounter.setText(""+CC);
@@ -266,7 +225,7 @@ public class TasbihFragment extends Fragment {
 
                     }
 
-                   // btn33.setText("৩৩");
+
 
 
                     countset = 33;
@@ -288,7 +247,7 @@ public class TasbihFragment extends Fragment {
 
 
                     tvSetCount.setText("৯৯");
-                   // btn33.setText("৯৯");
+
                     countset = 99;
                     SharedPreferences sharedPref = getActivity().getPreferences(Context.MODE_PRIVATE);
                     SharedPreferences.Editor editor = sharedPref.edit();
@@ -305,15 +264,6 @@ public class TasbihFragment extends Fragment {
             }
         });
 
-//        btn99.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//
-//
-//
-//
-//            }
-//        });
 
 
         mp = MediaPlayer.create(getActivity(), R.raw.metaltick);
@@ -365,11 +315,7 @@ public class TasbihFragment extends Fragment {
                 if (currentcounter == countset){
                     currentcounter = 0;
                 }
-                Log.d("countset", "onClick: "+countset);
 
-//                else if(currentcounter>countset){
-//                    currentcounter = currentcounter%countset;
-//                }
 
                 currentcounter = currentcounter +1;
                 totalcount = totalcount +1;
@@ -383,20 +329,10 @@ public class TasbihFragment extends Fragment {
                 editor.putInt("TotalCount", Integer.parseInt(""+ totalcount));
                 editor.commit();
 
-                //defaultValue = sharedPref.getString("LastSuraName","");
+            String CC = String.valueOf(currentcounter);
 
-                String CC = String.valueOf(currentcounter);
+                CC = converterClass.covertS(CC);
 
-                CC= CC.replace("0", "০");
-                CC= CC.replace("1", "১");
-                CC= CC.replace("2", "২");
-                CC= CC.replace("3", "৩");
-                CC= CC.replace("4", "৪");
-                CC= CC.replace("5", "৫");
-                CC= CC.replace("6", "৬");
-                CC= CC.replace("7", "৭");
-                CC= CC.replace("8", "৮");
-                CC= CC.replace("9", "৯");
 
                 tvCurrentCounter.setText(""+CC);
 
@@ -404,23 +340,16 @@ public class TasbihFragment extends Fragment {
 
                 String tC = String.valueOf(totalcount);
 
-                tC= tC.replace("0", "০");
-                tC= tC.replace("1", "১");
-                tC= tC.replace("2", "২");
-                tC= tC.replace("3", "৩");
-                tC= tC.replace("4", "৪");
-                tC= tC.replace("5", "৫");
-                tC= tC.replace("6", "৬");
-                tC= tC.replace("7", "৭");
-                tC= tC.replace("8", "৮");
-                tC= tC.replace("9", "৯");
+                tC = converterClass.covertS(tC);
+
+
 
                 tvTotalcount.setText(""+tC);
 
 
                 startAnimation();
 
-              //  thread();
+
 
             }
         });
@@ -437,20 +366,12 @@ public class TasbihFragment extends Fragment {
                 editor.putInt("Count", Integer.parseInt(""+ currentcounter));
                 editor.commit();
 
-                //defaultValue = sharedPref.getString("LastSuraName","");
+
 
                 String CC = String.valueOf(currentcounter);
+                CC = converterClass.covertS(CC);
 
-                CC= CC.replace("0", "০");
-                CC= CC.replace("1", "১");
-                CC= CC.replace("2", "২");
-                CC= CC.replace("3", "৩");
-                CC= CC.replace("4", "৪");
-                CC= CC.replace("5", "৫");
-                CC= CC.replace("6", "৬");
-                CC= CC.replace("7", "৭");
-                CC= CC.replace("8", "৮");
-                CC= CC.replace("9", "৯");
+
 
                 tvCurrentCounter.setText(""+CC);
 
@@ -475,17 +396,9 @@ public class TasbihFragment extends Fragment {
                 //defaultValue = sharedPref.getString("LastSuraName","");
 
                 String CC = String.valueOf(currentcounter);
+                CC = converterClass.covertS(CC);
 
-                CC= CC.replace("0", "০");
-                CC= CC.replace("1", "১");
-                CC= CC.replace("2", "২");
-                CC= CC.replace("3", "৩");
-                CC= CC.replace("4", "৪");
-                CC= CC.replace("5", "৫");
-                CC= CC.replace("6", "৬");
-                CC= CC.replace("7", "৭");
-                CC= CC.replace("8", "৮");
-                CC= CC.replace("9", "৯");
+
 
                 tvCurrentCounter.setText(""+CC);
                 tvTotalcount.setText(""+CC);
@@ -507,22 +420,6 @@ public class TasbihFragment extends Fragment {
 
     private void thread() {
 
-//        imageView.setVisibility(View.GONE);
-//
-//        gifImageView.setVisibility(View.VISIBLE);
-//
-//
-//        final Handler handler = new Handler();
-//        handler.postDelayed(new Runnable() {
-//            @Override
-//            public void run() {
-//                imageView.setVisibility(View.VISIBLE);
-//
-//                gifImageView.setVisibility(View.GONE);
-//
-//
-//            }
-//        }, 200);
 
     }
 

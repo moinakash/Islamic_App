@@ -34,8 +34,6 @@ public class CompusFragment extends Fragment implements SensorEventListener {
     private String mParam1;
     private String mParam2;
 
-//    private ImageView MainImageDialer,MainImageQiblat;
-//    private TextView Teks_bawah ,Teks_atas;
 
     ImageView ic_compus,imageView;
     private static SensorManager sensorManager;
@@ -82,12 +80,9 @@ public class CompusFragment extends Fragment implements SensorEventListener {
 
         }else
         {
-           /* Toast.makeText(getContext(), "দুঃখিত, আপনার মোবাইলে কম্পাস সেন্সর নেই।", Toast.LENGTH_SHORT).show();*/
 
             showDialog();
         }
-
-
 
 
         return view;
@@ -130,10 +125,6 @@ public class CompusFragment extends Fragment implements SensorEventListener {
     void showDialog() {
 
 
-
-/*
-        final LayoutInflater inflater = LayoutInflater.from(getContext());
-        View view = inflater.inflate(R.layout.rojar_somoy_suchi_alert, null);*/
 
         final Dialog alertDialog = new Dialog(getContext());
 

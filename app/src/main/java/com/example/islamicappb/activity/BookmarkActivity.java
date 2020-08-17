@@ -83,9 +83,6 @@ public class BookmarkActivity extends AppCompatActivity {
                         ""+cursor.getString(3),""+cursor.getString(4),
                         ""+cursor.getString(5)));
 
-                     /*         listData.add(cursor.getString(0)+" \t"+cursor.getString(1));
-                listData.add(cursor.getString(0)+" \t"+cursor.getString(2));
-                listData.add(cursor.getString(0)+" \t"+cursor.getString(3));*/
 
             }
         }
@@ -93,21 +90,6 @@ public class BookmarkActivity extends AppCompatActivity {
         bookmarkAdapter = new BookmarkAdapter(this,R.layout.bookmark_list_item, bookmarkPojoClasses);
         listView.setAdapter(bookmarkAdapter);
 
-
-
-//        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-//            @Override
-//            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-//
-//                String se = adapterView.getItemAtPosition(i).toString();
-//                //String selectedvalue = adapterView.getItematPosition(i).toString();
-//                Toast.makeText(getApplicationContext(), "Selected value : "+se, Toast.LENGTH_SHORT).show();
-//            }
-//        });
-
-
-//        String selectedvalue = adapterView.getrItematPosition(i).toString();
-//        Toast.makeText(getApplicationContext(), "Selected value : "+selectedvalue, Toast.LENGTH_SHORT).show();
 
 
     }

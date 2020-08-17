@@ -35,56 +35,27 @@ public class Amol_Activity extends AppCompatActivity {
 
     public static List<String> data;
     DatabaseHelper db;
-
-    //  private ListView listView;
-
     ListView list;
     List<AmolPojoClass> amolPojoClasses;
-
-
     CustomAmolAdapter customAmolAdapter;
-
     MyDatabasehelper myDatabasehelper;
-
     private Toolbar mToolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_amol);
-
         ToolBar();
-
         myDatabasehelper = new MyDatabasehelper(this);
-
-
         myDatabasehelper = new MyDatabasehelper(this);
         SQLiteDatabase sqLiteDatabase = myDatabasehelper.getWritableDatabase();
-
-
-        // listView = findViewById(R.id.idListView);
-
-
         list = findViewById( R.id.idListViewAmol);
-
-
-
         db = new DatabaseHelper(this);
-
         amolPojoClasses = new ArrayList();
-
-
         data = new ArrayList<>();
 
-
-
-
-
         fetchData();
-
         loadData();
-
-
 
     }
 
@@ -110,26 +81,19 @@ public class Amol_Activity extends AppCompatActivity {
 
         }else {
             while (cursor.moveToNext()){
-
                 amolPojoClasses.add(new AmolPojoClass(""+cursor.getString(1),""+cursor.getString(2),""+cursor.getString(3)));
-
-
             }
         }
-
-
         customAmolAdapter = new CustomAmolAdapter(this,R.layout.custom_amol_listview, amolPojoClasses);
         list.setAdapter(customAmolAdapter);
 
 
     }
 
-
     public class CustomAmolAdapter extends ArrayAdapter<AmolPojoClass> {
 
         private List<AmolPojoClass> amolPojoClasses;
         private Context context;
-
         public CustomAmolAdapter(@NonNull Context context, int textViewResourceId, List<AmolPojoClass> amolPojoClasses) {
             super(context, textViewResourceId, amolPojoClasses);
             this.context = context;
@@ -140,13 +104,10 @@ public class Amol_Activity extends AppCompatActivity {
         public int getCount() {
             return amolPojoClasses.size();
         }
-
-
         @Override
         public long getItemId(int position) {
             return position;
         }
-
         @NonNull
         @Override
         public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
@@ -218,23 +179,6 @@ public class Amol_Activity extends AppCompatActivity {
                 });
 
 
-
-
-
-       /*         customView.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        Log.e("main activity", "item clicked");
-
-                        Intent intent = new Intent(getBaseContext(), ReadHadisActivity.class);
-                        intent.putExtra("typename",""+hadisTypePojoList.getHadisType());
-                        intent.putExtra("position", ""+hadisTypePojoList.getHadisType_Id());
-                        startActivity(intent);
-
-
-                    }
-                });*/
-
             }
 
             return customView;
@@ -264,11 +208,6 @@ public class Amol_Activity extends AppCompatActivity {
 
         mToolbar = findViewById( R.id.SuraName_toolbar );
         TextView mTitle = (TextView) mToolbar.findViewById(R.id.toolbar_title);
-
-
-
-
-        //toolbar name ==>
         mTitle.setText("আমল সমূহ");
         setSupportActionBar( mToolbar );
 

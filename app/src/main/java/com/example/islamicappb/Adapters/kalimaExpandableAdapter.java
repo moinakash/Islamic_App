@@ -48,10 +48,6 @@ public class kalimaExpandableAdapter extends BaseExpandableListAdapter {
 
 
 
-//        Bitmap bitmap = BitmapFactory.decodeResource(context.getResources(), pojoClass.getImg());
-//        circleImageView.setImageBitmap(bitmap);
-
-
 
         final TextView textKalimaArbi = convertView.findViewById(R.id.idKalimaArbi);
         final TextView textKalimaUccharon = convertView.findViewById(R.id.idKalimaUccharon);
@@ -87,10 +83,8 @@ public class kalimaExpandableAdapter extends BaseExpandableListAdapter {
 
         }
 
-       // TextView KalimaName = convertView.findViewById(R.id.idKalimaName);
         TextView KalimaNaaam = convertView.findViewById(R.id.idKalimaNaaam);
 
-        //KalimaName.setText(number);
         KalimaNaaam.setText(pojoClassForKalima.getNumber());
 
         return convertView;

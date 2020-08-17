@@ -37,7 +37,6 @@ public class EightDivisonActivity extends AppCompatActivity {
     String ff;
 
 
-/*    Spinner  spDis;*/
 
     Spinner spDiv,spDis;
 
@@ -48,7 +47,7 @@ public class EightDivisonActivity extends AppCompatActivity {
     ArrayList<String>  arrayList_Moy, arrayList_Dhaka, arrayList_Chita, arrayList_bari, arrayList_Khul, arrayList_Raj, arrayList_Rang, arrayList_Sy, arrayList_lat, arrayList_lon;
 
     ArrayAdapter<String> arrayAdapter_Dis;
-    ArrayAdapter<String> arrayAdapter_Latlon;
+
 
     String placeName = "";
 
@@ -173,7 +172,7 @@ public class EightDivisonActivity extends AppCompatActivity {
 
 
                 }else {
-//                    Toast.makeText(getApplicationContext(), "No", Toast.LENGTH_SHORT).show();
+
                     checkPermission();
 
                 }
@@ -360,11 +359,10 @@ public class EightDivisonActivity extends AppCompatActivity {
 
 
 
-//                Toast.makeText(getApplicationContext(), ""+adapterView.getItemAtPosition(i).toString(), Toast.LENGTH_SHORT).show();
 
                placeName = ""+adapterView.getItemAtPosition(i).toString();
 
-       // placeName = ""+item;
+
 
 
 
@@ -724,13 +722,13 @@ public class EightDivisonActivity extends AppCompatActivity {
         PermissionListener permissionListener = new PermissionListener() {
             @Override
             public void onPermissionGranted() {
-//                Toast.makeText(EightDivisonActivity.this,"Permisson granted",Toast.LENGTH_SHORT).show();
+
             }
 
             @Override
             public void onPermissionDenied(List<String> deniedPermissions) {
 
-//                Toast.makeText(EightDivisonActivity.this, "Permission Denied", Toast.LENGTH_SHORT).show();
+
             }
         };
 

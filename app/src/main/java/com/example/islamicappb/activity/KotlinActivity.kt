@@ -31,7 +31,7 @@ class KotlinActivity : AppCompatActivity() {
         var Loc: String = intent.getStringExtra("Locc")
 
 
-        Log.e("locat", "" + Loc)
+
         /////////////////////////////////////////////////////////
 
 
@@ -51,8 +51,6 @@ class KotlinActivity : AppCompatActivity() {
         DriverManager.println("ISHA  --->" + prayerTimes.ishaa())
         DriverManager.println("day  --->" + today.day )
 
-        Log.d("msg",""+today.day)
-        Log.e("msg",""+today)
 
 
 
@@ -65,10 +63,9 @@ class KotlinActivity : AppCompatActivity() {
 
         var but = findViewById<Button>(R.id.idjavaa) as Button
 
-//        but.setOnClickListener {
-//            //Define intent
+
         var intent = Intent(applicationContext, BaseActivity::class.java)
-// Here "first" is key and 123 is value
+
         intent.putExtra("fajor", "" + prayerTimes.fajr())
         intent.putExtra("johor", "" + prayerTimes.thuhr())
         intent.putExtra("asor", "" + prayerTimes.assr())

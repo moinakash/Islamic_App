@@ -2,7 +2,6 @@ package com.example.islamicappb.pojo_classes;
 
 public class BookmarkPojoClass {
 
-//    int imgRes;
 
     String sura_name;
     String ayat_number;
@@ -12,7 +11,6 @@ public class BookmarkPojoClass {
 
 
     public BookmarkPojoClass(String sura_name, String ayat_number, String sura_arbi_line , String sura_spelling_line,String sura_meaning_line) {
-//        this.imgRes = imgRes;
 
         this.sura_name = sura_name;
         this.ayat_number = ayat_number;

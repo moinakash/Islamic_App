@@ -69,7 +69,6 @@ public class ReadHadisActivity extends AppCompatActivity {
 
 
         sessionId = getIntent().getStringExtra("position");
-        // Toast.makeText(this, "sId "+sessionId, Toast.LENGTH_SHORT).show();
         pvalue =  Integer.parseInt(sessionId);
 
 
@@ -86,7 +85,7 @@ public class ReadHadisActivity extends AppCompatActivity {
     public void loadData() {
 
         sessionId = getIntent().getStringExtra("position");
-        // Toast.makeText(this, "sId "+sessionId, Toast.LENGTH_SHORT).show();
+
         pvalue =  Integer.parseInt(sessionId);
 
         ArrayList<String> listData = new ArrayList<>();

@@ -12,9 +12,7 @@ import androidx.annotation.Nullable;
 
 public class MyDatabasehelper extends SQLiteOpenHelper {
 
-    //////////////////////////////////////////////////////////////////////
-//    String DB_PATH = null;
-//    private static String DB_NAME = "Students";
+
 
     private SQLiteDatabase myDataBase;
 
@@ -43,14 +41,6 @@ public class MyDatabasehelper extends SQLiteOpenHelper {
 
 
 
-
-
-
-//    @Override
-//    public void onCreate(SQLiteDatabase db){
-//
-//    }
-
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
 
@@ -60,8 +50,6 @@ public class MyDatabasehelper extends SQLiteOpenHelper {
         }catch (Exception e){
 
         }
-
-        
 
     }
 
@@ -96,24 +84,8 @@ public class MyDatabasehelper extends SQLiteOpenHelper {
         return rowId;
     }
 
-    public Cursor displayAllData(){
-        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
-        Cursor cursor = sqLiteDatabase.rawQuery(SELECT_ALL,null);
-        return cursor;
-    }
 
-    public boolean updateData(String id, String name, String age, String gender)
-    {
-        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
-        ContentValues contentValues = new ContentValues();
-        contentValues.put(ID,id);
-        contentValues.put(SURANAME,name);
-        contentValues.put(AYATNUMBER,age);
-        contentValues.put(ARBIAYAT,gender);
 
-         sqLiteDatabase.update(TABLE_NAME,contentValues,ID+" = ?",new String[]{id});
-        return true;
-    }
 
     public int deleteData(String id)
     {

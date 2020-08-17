@@ -38,18 +38,16 @@ public class ExampleWidgetService extends RemoteViewsService {
         }
         @Override
         public void onCreate() {
-            //connect to data source
+
         }
         @Override
         public void onDataSetChanged() {
-            //refresh data
+
 
             Date date = new Date();
             String timeFormatted = DateFormat.getTimeInstance(DateFormat.SHORT).format(date);
 
-//            SharedPreferences sharedPrefMM = getApplicationContext().getSharedPreferences("mm", Context.MODE_PRIVATE);
-//            String Fajr = sharedPrefMM.getString("fw","");
-//            Log.e("lkj",""+Fajr);
+
 
             SharedPreferences sharedPrefMM = context.getSharedPreferences("mm",Context.MODE_PRIVATE);
             String Fajr = sharedPrefMM.getString("fw","--");
@@ -69,7 +67,7 @@ public class ExampleWidgetService extends RemoteViewsService {
         }
         @Override
         public void onDestroy() {
-            //close data source
+
         }
         @Override
         public int getCount() {
