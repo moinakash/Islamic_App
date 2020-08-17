@@ -22,6 +22,7 @@ import com.example.islamicappb.activity.BaseActivity;
 import com.example.islamicappb.activity.BisheshNamajActivity;
 import com.example.islamicappb.activity.EightDivisonActivity;
 import com.example.islamicappb.activity.InfoActivity;
+import com.example.islamicappb.pojo_classes.ConverterClass;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -33,6 +34,8 @@ public class DoaDurudFragment extends Fragment {
     LinearLayout btnNamajerNiom, btnBisheshNamaj, btnMonajaterNiom, btnForojOSunnot,btnDoaODurud, btnTaharat, btnShoriyot, btnGoLoc, btnRojarSomoy;
 
     ImageView Info;
+
+    ConverterClass converterClass;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -89,6 +92,8 @@ public class DoaDurudFragment extends Fragment {
         btnGoLoc = view.findViewById(R.id.idGoLocation);
         btnRojarSomoy = view.findViewById(R.id.idRojar_somoy_suchi);
         Info = view.findViewById(R.id.idInformation);
+
+        converterClass = new ConverterClass(getContext());
 
 
         btnNamajerNiom.setOnClickListener(new View.OnClickListener() {
@@ -250,16 +255,18 @@ public class DoaDurudFragment extends Fragment {
         final int fMinute = Integer.parseInt(SfMinute);
 
 
-        fojorTimeBangla = fojorTimeBangla.replace("0", "০");
-        fojorTimeBangla = fojorTimeBangla.replace("1", "১");
-        fojorTimeBangla = fojorTimeBangla.replace("2", "২");
-        fojorTimeBangla = fojorTimeBangla.replace("3", "৩");
-        fojorTimeBangla = fojorTimeBangla.replace("4", "৪");
-        fojorTimeBangla = fojorTimeBangla.replace("5", "৫");
-        fojorTimeBangla = fojorTimeBangla.replace("6", "৬");
-        fojorTimeBangla = fojorTimeBangla.replace("7", "৭");
-        fojorTimeBangla = fojorTimeBangla.replace("8", "৮");
-        fojorTimeBangla = fojorTimeBangla.replace("9", "৯");
+        fojorTimeBangla = converterClass.covertS(fojorTimeBangla);
+
+//        fojorTimeBangla = fojorTimeBangla.replace("0", "০");
+//        fojorTimeBangla = fojorTimeBangla.replace("1", "১");
+//        fojorTimeBangla = fojorTimeBangla.replace("2", "২");
+//        fojorTimeBangla = fojorTimeBangla.replace("3", "৩");
+//        fojorTimeBangla = fojorTimeBangla.replace("4", "৪");
+//        fojorTimeBangla = fojorTimeBangla.replace("5", "৫");
+//        fojorTimeBangla = fojorTimeBangla.replace("6", "৬");
+//        fojorTimeBangla = fojorTimeBangla.replace("7", "৭");
+//        fojorTimeBangla = fojorTimeBangla.replace("8", "৮");
+//        fojorTimeBangla = fojorTimeBangla.replace("9", "৯");
 
         Saharir_shesh_somoy.setText(""+fojorTimeBangla);
 
@@ -287,6 +294,8 @@ public class DoaDurudFragment extends Fragment {
         final int mHour = mgInt;
         final int mMinute = Integer.parseInt(SmMinute);
 
+
+        magribTimeBangla = converterClass.covertS(magribTimeBangla);
 
         magribTimeBangla= magribTimeBangla.replace("0", "০");
         magribTimeBangla= magribTimeBangla.replace("1", "১");
