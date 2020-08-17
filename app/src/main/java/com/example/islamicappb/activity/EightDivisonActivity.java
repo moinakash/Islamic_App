@@ -16,6 +16,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.islamicappb.DatabaseHelper;
 import com.example.islamicappb.R;
@@ -139,6 +140,7 @@ public class EightDivisonActivity extends AppCompatActivity {
 
 
 
+
                 if (ContextCompat.checkSelfPermission(
                         getApplicationContext(), Manifest.permission.READ_EXTERNAL_STORAGE) ==
                         PackageManager.PERMISSION_GRANTED) {
@@ -163,6 +165,7 @@ public class EightDivisonActivity extends AppCompatActivity {
                     in.putExtra("Locc", ""+locString);
                     startActivity(in);
 
+                    Toast.makeText(getApplicationContext(), "আপনার অবস্থান অনুযায়ী নামাজের সময় সফলভাবে হালনাগাদ করা হয়েছে", Toast.LENGTH_SHORT).show();
                     finish();
 
 

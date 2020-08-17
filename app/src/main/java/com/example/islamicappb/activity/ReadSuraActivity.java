@@ -28,6 +28,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.islamicappb.DatabaseHelper;
+import com.example.islamicappb.Helper;
 import com.example.islamicappb.MyDatabasehelper;
 import com.example.islamicappb.R;
 import com.example.islamicappb.SuraLinePartPojo;
@@ -110,6 +111,8 @@ public class ReadSuraActivity extends AppCompatActivity {
 
         suraLineAdapter = new SuraLineAdapter(this,R.layout.custom_sura_part, suraLinePartPojo1);
         listView2.setAdapter(suraLineAdapter);
+
+        Helper.getListViewSize(listView2);
 
     }
 
