@@ -21,6 +21,7 @@ import com.example.islamicappb.activity.Amol_Activity;
 import com.example.islamicappb.activity.BaseActivity;
 import com.example.islamicappb.activity.BisheshNamajActivity;
 import com.example.islamicappb.activity.EightDivisonActivity;
+import com.example.islamicappb.activity.InfoActivity;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -30,6 +31,8 @@ import com.example.islamicappb.activity.EightDivisonActivity;
 public class DoaDurudFragment extends Fragment {
 
     LinearLayout btnNamajerNiom, btnBisheshNamaj, btnMonajaterNiom, btnForojOSunnot,btnDoaODurud, btnTaharat, btnShoriyot, btnGoLoc, btnRojarSomoy;
+
+    ImageView Info;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -85,6 +88,7 @@ public class DoaDurudFragment extends Fragment {
         btnShoriyot = view.findViewById(R.id.idShoriot);
         btnGoLoc = view.findViewById(R.id.idGoLocation);
         btnRojarSomoy = view.findViewById(R.id.idRojar_somoy_suchi);
+        Info = view.findViewById(R.id.idInformation);
 
 
         btnNamajerNiom.setOnClickListener(new View.OnClickListener() {
@@ -155,6 +159,15 @@ public class DoaDurudFragment extends Fragment {
             public void onClick(View v) {
 
                 showDialog();
+            }
+        });
+
+        Info.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent in = new Intent(getContext(), InfoActivity.class);
+
+                startActivity(in);
             }
         });
 

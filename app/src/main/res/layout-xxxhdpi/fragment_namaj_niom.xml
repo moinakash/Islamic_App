@@ -143,7 +143,7 @@
                 </LinearLayout>
 
                 <TextView
-                    android:text="string/bisesh_namaj"
+                    android:text="@string/bisesh_namaj"
                     android:textStyle="bold"
                     android:textSize="13sp"
                     android:layout_width="wrap_content"
