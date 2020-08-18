@@ -284,6 +284,7 @@ public class SuraActivity
 
                 CustomSuraNameAdapter adp = new CustomSuraNameAdapter( SuraActivity.this,R.layout.custom_suraname_layout,templist );
 
+
                 list.setAdapter( adp );
 
 
