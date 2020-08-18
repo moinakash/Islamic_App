@@ -44,7 +44,6 @@ public class SuraActivity
 
     TextView tvLastSuraName;
 
-
     CustomSuraNameAdapter customSuraNameAdapter;
 
     MyDatabasehelper myDatabasehelper;
@@ -245,6 +244,7 @@ public class SuraActivity
                         intent.putExtra("position", ""+suraNameListPojo.getSura_number());
                         intent.putExtra("suraName", ""+suraNameListPojo.getSura_name_bangla());
                         startActivity(intent);
+                        finish();
 
                     }
                 });
@@ -303,7 +303,18 @@ public class SuraActivity
     }
 
 
-
+//    @Override
+//    protected void onPause() {
+//        super.onPause();
+//
+//        oncreate();
+//    }
+//
+//    @Override
+//    protected void onPostResume() {
+//        super.onPostResume();
+//        oncreate();
+//    }
 
 
     private void ToolBar() {

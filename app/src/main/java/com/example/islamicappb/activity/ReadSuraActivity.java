@@ -32,6 +32,7 @@ import com.example.islamicappb.DatabaseHelper;
 import com.example.islamicappb.Helper;
 import com.example.islamicappb.MyDatabasehelper;
 import com.example.islamicappb.R;
+import com.example.islamicappb.SuraActivity;
 import com.example.islamicappb.SuraLinePartPojo;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
@@ -399,4 +400,11 @@ public class ReadSuraActivity extends AppCompatActivity {
         }
     }
 
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Intent back = new Intent(this, SuraActivity.class);
+        startActivity(back);
+        finish();
+    }
 }
