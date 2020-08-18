@@ -104,7 +104,7 @@ public class ReadSuraActivity extends AppCompatActivity {
         }else {
             while (cursor.moveToNext()){
 
-                suraLinePartPojo1.add(new SuraLinePartPojo(""+cursor.getString(6),""+cursor.getString(7),""+cursor.getString(8),""+cursor.getString(4)));
+                suraLinePartPojo1.add(new SuraLinePartPojo(""+cursor.getString(5),""+cursor.getString(7),""+cursor.getString(8),""+cursor.getString(4)));
 
             }
         }
@@ -113,7 +113,7 @@ public class ReadSuraActivity extends AppCompatActivity {
         suraLineAdapter = new SuraLineAdapter(this,R.layout.custom_sura_part, suraLinePartPojo1);
         listView2.setAdapter(suraLineAdapter);
 
-        Helper.getListViewSize(listView2);
+       // Helper.getListViewSize(listView2);
 
     }
 

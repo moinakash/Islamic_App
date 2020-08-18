@@ -8,7 +8,9 @@
     android:orientation="vertical"
     tools:context=".activity.ReadSuraActivity">
 
+
     <LinearLayout
+
         android:elevation="5dp"
         android:id="@+id/appbar"
         android:layout_width="match_parent"
@@ -17,204 +19,156 @@
             android:id="@+id/SuraName_toolbar"/>
     </LinearLayout>
 
-    <ScrollView
+
+   <!-- <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-   <RelativeLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-    <LinearLayout
-        android:id="@+id/idBismillah"
-        android:layout_marginTop="?android:attr/actionBarSize"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-
-        android:orientation="vertical">
+        android:layout_height="match_parent">-->
 
 
-        <LinearLayout
+
+
+
+        <RelativeLayout
+            android:layout_below="@id/appbar"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent">
 
-            android:orientation="vertical">
+            <LinearLayout
+                android:id="@+id/idBismillah"
 
-
-
-            <androidx.cardview.widget.CardView
-                android:layout_margin="10dp"
-
-                app:cardCornerRadius="10dp"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+
+                android:orientation="vertical">
+
 
                 <LinearLayout
-                    android:background="@color/CardViewColor"
-                    android:orientation="vertical"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
 
-         <!--           <LinearLayout
+                    android:orientation="vertical">
 
-                        android:orientation="horizontal"
+
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_margin="10dp"
+
+                        app:cardCornerRadius="10dp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
-                        <LinearLayout
 
-                            android:gravity="left"
-                            android:layout_marginTop="10dp"
-                            android:layout_marginBottom="7dp"
-                            android:layout_marginRight="20dp"
-                            android:orientation="horizontal"
-                            android:layout_width="wrap_content"
+                        <LinearLayout
+                            android:background="@color/CardViewColor"
+                            android:orientation="vertical"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content">
 
-                            <LinearLayout
-                                android:gravity="center"
-                                android:layout_gravity="center_vertical"
-                                android:background="@drawable/ayat_number_bg"
 
-                                android:layout_width="wrap_content"
+
+
+                            <LinearLayout
+                                android:orientation="vertical"
+                                android:layout_width="match_parent"
                                 android:layout_height="wrap_content">
 
-                                <TextView
+                                <LinearLayout
+                                    android:orientation="horizontal"
+                                    android:layout_marginTop="10dp"
+                                    android:layout_marginBottom="10dp"
+                                    android:layout_marginRight="20dp"
+                                    android:layout_marginLeft="20dp"
+                                    android:gravity="right"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+                                    <ImageView
+                                        android:layout_marginLeft="5dp"
+                                        android:layout_gravity="center"
+                                        android:gravity="left"
+                                        android:background="@drawable/line_break"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="50dp"  />
 
-                                    android:id="@+id/idAyatNumber"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_gravity="center"
-                                    android:gravity="center"
-                                    android:text="১"
-                                    android:textColor="@android:color/white"
-                                    android:textSize="13sp" />
+                                    <LinearLayout
+                                        android:layout_weight="1"
+                                        android:orientation="vertical"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content">
+
+                                        <TextView
+                                            android:textStyle="bold"
+                                            android:gravity="center"
+                                            android:textSize="25sp"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:text="بِسۡمِ اللهِ الرَّحۡمٰنِ الرَّحِيۡمِ"
+                                            android:textColor="#000"
+                                            />
+
+                                        <TextView
+                                            android:layout_marginTop="5dp"
+                                            android:layout_marginLeft="20dp"
+                                            android:layout_marginRight="20dp"
+                                            android:textStyle="bold"
+                                            android:gravity="center"
+                                            android:textSize="15sp"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:text="শুরু করছি আল্লাহর নামে যিনি পরম করুণাময়, অতি দয়ালু।"
+                                            android:textColor="#000"
+                                            />
+
+                                    </LinearLayout>
+
+
+
+
+                                    <ImageView
+
+                                        android:layout_marginLeft="5dp"
+                                        android:gravity="right"
+                                        android:layout_gravity="center"
+                                        android:background="@drawable/line_break"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="50dp"  />
+
+                                </LinearLayout>
+
 
 
                             </LinearLayout>
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_gravity="center"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="10dp"
-                            android:layout_marginRight="20dp"
-                            android:layout_marginBottom="7dp"
-                            android:gravity="right"
-                            android:orientation="horizontal">
-
-                            <ImageButton
-                                android:id="@+id/idSuraShare"
-                                android:layout_width="20dp"
-                                android:layout_height="20dp"
-                                android:layout_gravity="right"
-                                android:layout_marginRight="10dp"
-                                android:background="@drawable/share_icon" />
-
-
-                            <ImageButton
-                                android:layout_marginLeft="5dp"
-                                android:id="@+id/idSuraCopy"
-                                android:layout_width="20dp"
-                                android:layout_height="20dp"
-                                android:layout_gravity="right"
-                                android:layout_marginRight="10dp"
-                                android:background="@drawable/copy_icon" />
-
-
-                            <ImageButton
-                                android:layout_marginLeft="5dp"
-                                android:id="@+id/idSuraBookmark"
-                                android:layout_width="20dp"
-                                android:layout_height="20dp"
-                                android:layout_gravity="right"
-                                android:background="@drawable/bookmark_icon" />
 
 
                         </LinearLayout>
 
-                    </LinearLayout>
--->
 
 
-                    <LinearLayout
-                        android:orientation="vertical"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
-
-                        <LinearLayout
-                            android:orientation="horizontal"
-                            android:layout_marginTop="10dp"
-                            android:layout_marginBottom="10dp"
-                            android:layout_marginRight="20dp"
-                            android:layout_marginLeft="20dp"
-                            android:gravity="right"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
-                            <ImageView
-                                android:layout_marginTop="5dp"
-
-                                android:gravity="left"
-                                android:background="@drawable/line_break"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"  />
-
-
-                            <TextView
-
-                                android:layout_weight="1"
-                                android:textStyle="bold"
-                                android:gravity="center"
-
-
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="بِسۡمِ اللهِ الرَّحۡمٰنِ الرَّحِيۡمِ"
-                                android:textColor="#000"
-                                />
-
-                            <ImageView
-                                android:layout_marginTop="5dp"
-                                android:layout_marginLeft="5dp"
-                                android:gravity="right"
-                                android:background="@drawable/line_break"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"  />
-
-                        </LinearLayout>
-
-
-
-                    </LinearLayout>
+                    </androidx.cardview.widget.CardView>
 
                 </LinearLayout>
 
 
+                <!--  <TextView
+                      android:id="@+id/idtvBismillah"
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:gravity="center"
+                      android:textSize="30dp"
+                      android:text="بِسۡمِ اللهِ الرَّحۡمٰنِ الرَّحِيۡمِ"/>-->
+            </LinearLayout>
 
-            </androidx.cardview.widget.CardView>
+            <ListView
+                android:layout_below="@+id/idBismillah"
+                android:id="@+id/idListView2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:divider="#00FFFFFF"
+                android:dividerHeight="1dp">
 
-        </LinearLayout>
+            </ListView>
+        </RelativeLayout>
 
 
-      <!--  <TextView
-            android:id="@+id/idtvBismillah"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:textSize="30dp"
-            android:text="بِسۡمِ اللهِ الرَّحۡمٰنِ الرَّحِيۡمِ"/>-->
-    </LinearLayout>
-
-    <ListView
-       android:layout_below="@+id/idBismillah"
-        android:id="@+id/idListView2"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:divider="#00FFFFFF"
-        android:dividerHeight="1dp">
-
-    </ListView>
-    </RelativeLayout>
-    </ScrollView>
+<!--    </ScrollView>-->
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:elevation="5dp"
