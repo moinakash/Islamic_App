@@ -44,6 +44,7 @@ public class SuraActivity
 
     TextView tvLastSuraName;
 
+
     CustomSuraNameAdapter customSuraNameAdapter;
 
     MyDatabasehelper myDatabasehelper;
@@ -301,18 +302,7 @@ public class SuraActivity
     }
 
 
-    @Override
-    protected void onPause() {
-        super.onPause();
 
-        oncreate();
-    }
-
-    @Override
-    protected void onPostResume() {
-        super.onPostResume();
-        oncreate();
-    }
 
 
     private void ToolBar() {
