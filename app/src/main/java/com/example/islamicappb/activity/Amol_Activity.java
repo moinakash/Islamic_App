@@ -54,8 +54,18 @@ public class Amol_Activity extends AppCompatActivity {
         amolPojoClasses = new ArrayList();
         data = new ArrayList<>();
 
-        fetchData();
-        loadData();
+
+        try {
+            fetchData();
+            loadData();
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+            Toast.makeText(this, "Your phone does not support this feature", Toast.LENGTH_SHORT).show();
+        }
+
+//        fetchData();
+//        loadData();
 
     }
 

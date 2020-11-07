@@ -18,6 +18,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.islamicappb.pojo_classes.AllahNamePojoClass;
 import com.example.islamicappb.DatabaseHelper;
@@ -26,7 +27,7 @@ import com.example.islamicappb.R;
 import java.util.ArrayList;
 import java.util.List;
 
-public class AllahNameActivity extends AppCompatActivity {
+public class  AllahNameActivity extends AppCompatActivity {
 
     ListView list;
     List<AllahNamePojoClass> allahNamePojoClassList;
@@ -49,8 +50,14 @@ public class AllahNameActivity extends AppCompatActivity {
         db = new DatabaseHelper(this);
         allahNamePojoClassList = new ArrayList();
 
-        fetchData();
-        loadData();
+        try {
+            fetchData();
+            loadData();
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+            Toast.makeText(this, "Your phone does not support this feature", Toast.LENGTH_SHORT).show();
+        }
 
     }
 

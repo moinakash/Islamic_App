@@ -17,6 +17,7 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.islamicappb.DatabaseHelper;
 import com.example.islamicappb.Helper;
@@ -66,10 +67,14 @@ public class HadisTypeActivity extends AppCompatActivity {
 
 
 
-
-        fetchData();
-
-        loadData();
+        try {
+            fetchData();
+            loadData();
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+            Toast.makeText(this, "Your phone does not support this feature", Toast.LENGTH_SHORT).show();
+        }
     }
 
     public void fetchData()

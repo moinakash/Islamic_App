@@ -221,9 +221,12 @@ public class ReadSuraActivity extends AppCompatActivity {
 
                         Toast.makeText(getContext(), "অনুলিপি করা হয়েছে", Toast.LENGTH_SHORT).show();
 
+                        String SuraName = getIntent().getStringExtra("suraName");
+                        String ayatnumber = ""+ suraLinePartPojo1.getSura_number();
+
                         ClipboardManager cm = (ClipboardManager) context
                                 .getSystemService(Context.CLIPBOARD_SERVICE);
-                        cm.setText(""+ suraLinePartPojo1.getSura_bangla()+"\n"+""+ suraLinePartPojo1.getSura_arbi()+""+ suraLinePartPojo1.getSura_bangla_meaning());
+                        cm.setText(""+SuraName+" আয়াত নং-"+ayatnumber+"\n"+""+ suraLinePartPojo1.getSura_bangla()+"\n"+""+ suraLinePartPojo1.getSura_arbi()+"\n"+ suraLinePartPojo1.getSura_bangla_meaning());
 
                     }
                 });
@@ -238,9 +241,12 @@ public class ReadSuraActivity extends AppCompatActivity {
 
                         Share.startAnimation(myAnim);
 
+                        String SuraName = getIntent().getStringExtra("suraName");
+                        String ayatnumber = ""+ suraLinePartPojo1.getSura_number();
+
                         Intent sendIntent = new Intent();
                         sendIntent.setAction(Intent.ACTION_SEND);
-                        sendIntent.putExtra(Intent.EXTRA_TEXT, ""+ suraLinePartPojo1.getSura_arbi()+"\n"+ suraLinePartPojo1.getSura_bangla()+""+ suraLinePartPojo1.getSura_bangla_meaning());
+                        sendIntent.putExtra(Intent.EXTRA_TEXT, ""+SuraName+" আয়াত নং-"+ayatnumber+"\n"+""+ suraLinePartPojo1.getSura_arbi()+"\n"+ suraLinePartPojo1.getSura_bangla()+"\n"+ suraLinePartPojo1.getSura_bangla_meaning());
                         sendIntent.setType("text/plain");
 
                         Intent shareIntent = Intent.createChooser(sendIntent, null);

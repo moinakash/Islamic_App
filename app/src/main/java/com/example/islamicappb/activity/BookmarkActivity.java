@@ -235,7 +235,7 @@ public class BookmarkActivity extends AppCompatActivity {
 
                         ClipboardManager cm = (ClipboardManager) context
                                 .getSystemService(Context.CLIPBOARD_SERVICE);
-                        cm.setText(""+bookmarkPojoClass1.getSura_name()+" আয়াত নং- "+bookmarkPojoClass1.getAyat_number()+"\n"+""+bookmarkPojoClass1.getSura_arbi_line()+""+bookmarkPojoClass1.getSura_spelling_line()+""+bookmarkPojoClass1.getSura_meaning_line());
+                        cm.setText(""+bookmarkPojoClass1.getSura_name()+" আয়াত নং- "+bookmarkPojoClass1.getAyat_number()+"\n"+""+bookmarkPojoClass1.getSura_arbi_line()+"\n"+bookmarkPojoClass1.getSura_spelling_line()+"\n"+bookmarkPojoClass1.getSura_meaning_line());
 
                     }
                 });
@@ -252,7 +252,7 @@ public class BookmarkActivity extends AppCompatActivity {
 
                         Intent sendIntent = new Intent();
                         sendIntent.setAction(Intent.ACTION_SEND);
-                        sendIntent.putExtra(Intent.EXTRA_TEXT, ""+bookmarkPojoClass1.getSura_name()+" আয়াত নং- "+bookmarkPojoClass1.getAyat_number()+"\n"+""+bookmarkPojoClass1.getSura_arbi_line()+""+bookmarkPojoClass1.getSura_spelling_line()+""+bookmarkPojoClass1.getSura_meaning_line());
+                        sendIntent.putExtra(Intent.EXTRA_TEXT, ""+bookmarkPojoClass1.getSura_name()+" আয়াত নং- "+bookmarkPojoClass1.getAyat_number()+"\n"+""+bookmarkPojoClass1.getSura_arbi_line()+"\n"+bookmarkPojoClass1.getSura_spelling_line()+"\n"+bookmarkPojoClass1.getSura_meaning_line());
                         sendIntent.setType("text/plain");
 
                         Intent shareIntent = Intent.createChooser(sendIntent, null);

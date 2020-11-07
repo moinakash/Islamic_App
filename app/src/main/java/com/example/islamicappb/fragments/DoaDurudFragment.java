@@ -27,7 +27,7 @@ import com.example.islamicappb.pojo_classes.ConverterClass;
 
 public class DoaDurudFragment extends Fragment {
 
-    LinearLayout btnNamajerNiom, btnBisheshNamaj, btnMonajaterNiom, btnForojOSunnot,btnDoaODurud, btnTaharat, btnShoriyot, btnGoLoc, btnRojarSomoy;
+    LinearLayout btnNamajerNiom, btnBisheshNamaj, btnAmol, btnForojOSunnot,btnDoaODurud, btnTaharat, btnShoriyot, btnGoLoc, btnRojarSomoy;
 
     ImageView Info;
 
@@ -71,7 +71,7 @@ public class DoaDurudFragment extends Fragment {
 
         btnNamajerNiom = view.findViewById(R.id.idNamajerNiom);
         btnBisheshNamaj = view.findViewById(R.id.idBiseshNamaj);
-        btnMonajaterNiom = view.findViewById(R.id.idMonajaterNiom);
+        btnAmol = view.findViewById(R.id.idMonajaterNiom);
         btnForojOSunnot = view.findViewById(R.id.idForojOSunnot);
         btnDoaODurud = view.findViewById(R.id.idDoaoDurud);
         btnTaharat = view.findViewById(R.id.idTaharat);
@@ -101,7 +101,7 @@ public class DoaDurudFragment extends Fragment {
             }
         });
 
-        btnMonajaterNiom.setOnClickListener(new View.OnClickListener() {
+        btnAmol.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent in = new Intent(getContext(), Amol_Activity.class);

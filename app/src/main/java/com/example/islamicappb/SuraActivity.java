@@ -23,6 +23,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.SearchView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.islamicappb.activity.ReadSuraActivity;
 
@@ -86,9 +87,14 @@ public class SuraActivity
         data = new ArrayList<>();
 
 
-        fetchData();
-
-        loadData();
+        try {
+            fetchData();
+            loadData();
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+            Toast.makeText(this, "Your phone does not support this feature", Toast.LENGTH_SHORT).show();
+        }
 
     }
 
@@ -116,9 +122,14 @@ public class SuraActivity
         data = new ArrayList<>();
 
 
-        fetchData();
-
-        loadData();
+        try {
+            fetchData();
+            loadData();
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+            Toast.makeText(this, "Your phone does not support this feature", Toast.LENGTH_SHORT).show();
+        }
 
     }
 
@@ -244,7 +255,7 @@ public class SuraActivity
                         intent.putExtra("position", ""+suraNameListPojo.getSura_number());
                         intent.putExtra("suraName", ""+suraNameListPojo.getSura_name_bangla());
                         startActivity(intent);
-                        finish();
+                      //  finish();
 
                     }
                 });
