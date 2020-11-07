@@ -250,6 +250,7 @@ public class DatabaseHelper
         return Hadis;
     }
 
+    
 
 
     public Cursor amoldata(){
