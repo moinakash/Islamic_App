@@ -11,6 +11,7 @@ import android.util.Log;
 
 import com.example.islamicappb.activity.ReadSuraActivity;
 
+import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -38,6 +39,13 @@ public class DatabaseHelper
         this.myContext = context;
         DB_PATH = myContext.getDatabasePath(DB_NAME)
                 .toString();
+
+
+        if (!checkDataBase()) {
+            copyDB();
+        }
+        myDataBase = this.getWritableDatabase(); //Get the database when instantiating
+
     }
 
 
@@ -45,44 +53,85 @@ public class DatabaseHelper
             throws IOException
     {
 
-        boolean dbExist = checkDataBase();
-
-        if (dbExist) {
-
-        }
-        else {
-
-            this.getWritableDatabase();
-            try {
-                copyDataBase();
-            }
-            catch (IOException e) {
-                throw new Error(
-                        "Error copying database");
-            }
-        }
+//        boolean dbExist = checkDataBase();
+//
+//        if (dbExist) {
+//
+//        }
+//        else {
+//
+//            this.getWritableDatabase();
+//            try {
+//                copyDataBase();
+//            }
+//            catch (IOException e) {
+//                throw new Error(
+//                        "Error copying database");
+//            }
+//        }
     }
 
-    private boolean checkDataBase()
-    {
-        SQLiteDatabase checkDB = null;
+//    private boolean checkDataBase()
+//    {
+//        SQLiteDatabase checkDB = null;
+//        try {
+//            String myPath = DB_PATH;
+//            checkDB
+//                    = SQLiteDatabase
+//                    .openDatabase(
+//                            myPath, null,
+//                            SQLiteDatabase.OPEN_READONLY);
+//        }
+//        catch (SQLiteException e) {
+//
+//
+//            Log.e("message", "" + e);
+//        }
+//        if (checkDB != null) {
+//            checkDB.close();
+//        }
+//        return checkDB != null;
+//    }
+
+    private boolean checkDataBase() {
+        /**
+         * Does not open the database instead checks to see if the file exists
+         * also creates the databases directory if it does not exists
+         * (the real reason why the database is opened, which appears to result in issues)
+         */
+        File db = new File(myContext.getDatabasePath(DB_NAME).getPath()); //Get the file name of the database
+        Log.d("DBPATH","DB Path is " + db.getPath());
+        if (db.exists()) return true; // If it exists then return doing nothing
+
+        // Get the parent (directory in which the database file would be)
+        File dbdir = db.getParentFile();
+        // If the directory does not exist then make the directory (and higher level directories)
+        if (!dbdir.exists()) {
+            db.getParentFile().mkdirs();
+            dbdir.mkdirs();
+        }
+        return false;
+    }
+
+
+    public void copyDB() throws SQLiteException{
         try {
-            String myPath = DB_PATH;
-            checkDB
-                    = SQLiteDatabase
-                    .openDatabase(
-                            myPath, null,
-                            SQLiteDatabase.OPEN_READONLY);
-        }
-        catch (SQLiteException e) {
+            InputStream myInput = myContext.getAssets().open(DB_NAME);
+            String outputFileName = myContext.getDatabasePath(DB_NAME).getPath(); //<<<<<<<<<< changed
+            Log.d("LIFECYCLE", outputFileName);
+            OutputStream myOutput = new FileOutputStream(outputFileName);
 
-
-            Log.e("message", "" + e);
+            byte[] buffer = new byte[1024];
+            int length;
+            while( (length=myInput.read(buffer)) > 0 ){
+                myOutput.write(buffer, 0, length);
+            }
+            myOutput.flush();
+            myOutput.close();
+            myInput.close();
+        } catch ( IOException e) {
+            e.printStackTrace();
         }
-        if (checkDB != null) {
-            checkDB.close();
-        }
-        return checkDB != null;
     }
 
 
