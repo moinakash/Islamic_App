@@ -8,8 +8,18 @@
     android:orientation="vertical"
     android:background="@drawable/tasbih_pattern">
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
     <LinearLayout
-        android:layout_marginTop="120dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+    <LinearLayout
+        android:layout_marginTop="60dp"
     android:layout_gravity="center_horizontal"
     android:gravity="center"
     android:layout_width="match_parent"
@@ -47,10 +57,23 @@
 
 
     <TextView
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
         android:textSize="18sp"
-        android:padding="20dp"
         android:gravity="center"
-        android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla dui arcu, sodales eu metus sed, suscipit gravida erat. Cras a orci iaculis, mollis urna ut, tempor lectus"
+        android:text="@string/info1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:textSize="18sp"
+
+        android:gravity="center"
+        android:text="@string/info2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
@@ -158,5 +181,8 @@
 
     </LinearLayout>
     </RelativeLayout>
+
+    </LinearLayout>
+    </ScrollView>
 
 </LinearLayout>
