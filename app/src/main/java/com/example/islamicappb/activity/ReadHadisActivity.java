@@ -180,6 +180,8 @@ public class ReadHadisActivity extends AppCompatActivity {
                     @Override
                     public void onClick(View view) {
 
+                        String Source = getString(R.string.Credit);
+
                         final Animation myAnim = AnimationUtils.loadAnimation(getContext(), R.anim.bounce);
                         MyBounceInterpolator interpolator = new MyBounceInterpolator(.1, 12);
                         myAnim.setInterpolator(interpolator);
@@ -190,7 +192,7 @@ public class ReadHadisActivity extends AppCompatActivity {
 
                         ClipboardManager cm = (ClipboardManager) context
                                 .getSystemService(Context.CLIPBOARD_SERVICE);
-                        cm.setText(""+ hadisLinePartPojo1.getHadis_arbi()+"\n"+""+ hadisLinePartPojo1.getHadis_bangla()+""+ hadisLinePartPojo1.getHadis_utso());
+                        cm.setText(""+ hadisLinePartPojo1.getHadis_arbi()+"\n"+""+ hadisLinePartPojo1.getHadis_bangla()+""+ hadisLinePartPojo1.getHadis_utso()+Source);
 
                     }
                 });
@@ -199,6 +201,7 @@ public class ReadHadisActivity extends AppCompatActivity {
                     @Override
                     public void onClick(View view) {
 
+                        String Source = getString(R.string.Credit);
                         final Animation myAnim = AnimationUtils.loadAnimation(getContext(), R.anim.bounce);
                         MyBounceInterpolator interpolator = new MyBounceInterpolator(.1, 12);
                         myAnim.setInterpolator(interpolator);
@@ -207,7 +210,7 @@ public class ReadHadisActivity extends AppCompatActivity {
 
                         Intent sendIntent = new Intent();
                         sendIntent.setAction(Intent.ACTION_SEND);
-                        sendIntent.putExtra(Intent.EXTRA_TEXT, ""+ hadisLinePartPojo1.getHadis_arbi()+"\n"+ hadisLinePartPojo1.getHadis_bangla()+""+ hadisLinePartPojo1.getHadis_utso());
+                        sendIntent.putExtra(Intent.EXTRA_TEXT, ""+ hadisLinePartPojo1.getHadis_arbi()+"\n"+ hadisLinePartPojo1.getHadis_bangla()+""+ hadisLinePartPojo1.getHadis_utso()+Source);
                         sendIntent.setType("text/plain");
 
                         Intent shareIntent = Intent.createChooser(sendIntent, null);

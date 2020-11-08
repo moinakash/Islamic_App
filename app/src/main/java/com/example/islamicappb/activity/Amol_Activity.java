@@ -153,6 +153,8 @@ public class Amol_Activity extends AppCompatActivity {
                     @Override
                     public void onClick(View view) {
 
+                        String Source = getString(R.string.Credit);
+
                         final Animation myAnim = AnimationUtils.loadAnimation(getContext(), R.anim.bounce);
                         MyBounceInterpolator interpolator = new MyBounceInterpolator(.1, 12);
                         myAnim.setInterpolator(interpolator);
@@ -163,7 +165,7 @@ public class Amol_Activity extends AppCompatActivity {
 
                         ClipboardManager cm = (ClipboardManager) context
                                 .getSystemService(Context.CLIPBOARD_SERVICE);
-                        cm.setText(""+amolPojoClasses3.getAmol()+"\n"+""+amolPojoClasses3.getAmolSource());
+                        cm.setText(""+amolPojoClasses3.getAmol()+"\n"+""+amolPojoClasses3.getAmolSource()+Source);
 
                     }
                 });
@@ -171,6 +173,8 @@ public class Amol_Activity extends AppCompatActivity {
                 Share.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
+
+                        String Source = getString(R.string.Credit);
 
                         final Animation myAnim = AnimationUtils.loadAnimation(getContext(), R.anim.bounce);
                         MyBounceInterpolator interpolator = new MyBounceInterpolator(.1, 12);
@@ -180,7 +184,7 @@ public class Amol_Activity extends AppCompatActivity {
 
                         Intent sendIntent = new Intent();
                         sendIntent.setAction(Intent.ACTION_SEND);
-                        sendIntent.putExtra(Intent.EXTRA_TEXT, ""+amolPojoClasses3.getAmol()+"\n"+""+amolPojoClasses3.getAmolSource());
+                        sendIntent.putExtra(Intent.EXTRA_TEXT, ""+amolPojoClasses3.getAmol()+"\n"+""+amolPojoClasses3.getAmolSource()+Source);
                         sendIntent.setType("text/plain");
 
                         Intent shareIntent = Intent.createChooser(sendIntent, null);

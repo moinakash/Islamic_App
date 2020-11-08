@@ -224,9 +224,11 @@ public class ReadSuraActivity extends AppCompatActivity {
                         String SuraName = getIntent().getStringExtra("suraName");
                         String ayatnumber = ""+ suraLinePartPojo1.getSura_number();
 
+                        String Source = getString(R.string.Credit);
+
                         ClipboardManager cm = (ClipboardManager) context
                                 .getSystemService(Context.CLIPBOARD_SERVICE);
-                        cm.setText(""+SuraName+" আয়াত নং-"+ayatnumber+"\n"+""+ suraLinePartPojo1.getSura_bangla()+"\n"+""+ suraLinePartPojo1.getSura_arbi()+"\n"+ suraLinePartPojo1.getSura_bangla_meaning());
+                        cm.setText(""+SuraName+" আয়াত নং-"+ayatnumber+"\n"+""+ suraLinePartPojo1.getSura_bangla()+"\n"+""+ suraLinePartPojo1.getSura_arbi()+"\n"+ suraLinePartPojo1.getSura_bangla_meaning()+Source);
 
                     }
                 });
@@ -243,10 +245,11 @@ public class ReadSuraActivity extends AppCompatActivity {
 
                         String SuraName = getIntent().getStringExtra("suraName");
                         String ayatnumber = ""+ suraLinePartPojo1.getSura_number();
+                        String Source = getString(R.string.Credit);
 
                         Intent sendIntent = new Intent();
                         sendIntent.setAction(Intent.ACTION_SEND);
-                        sendIntent.putExtra(Intent.EXTRA_TEXT, ""+SuraName+" আয়াত নং-"+ayatnumber+"\n"+""+ suraLinePartPojo1.getSura_arbi()+"\n"+ suraLinePartPojo1.getSura_bangla()+"\n"+ suraLinePartPojo1.getSura_bangla_meaning());
+                        sendIntent.putExtra(Intent.EXTRA_TEXT, ""+SuraName+" আয়াত নং-"+ayatnumber+"\n"+""+ suraLinePartPojo1.getSura_arbi()+"\n"+ suraLinePartPojo1.getSura_bangla()+"\n"+ suraLinePartPojo1.getSura_bangla_meaning()+Source);
                         sendIntent.setType("text/plain");
 
                         Intent shareIntent = Intent.createChooser(sendIntent, null);

@@ -231,11 +231,13 @@ public class BookmarkActivity extends AppCompatActivity {
 
                         Copy.startAnimation(myAnim);
 
+                        String Source = getString(R.string.Credit);
+
                         Toast.makeText(getContext(), "অনুলিপি করা হয়েছে", Toast.LENGTH_SHORT).show();
 
                         ClipboardManager cm = (ClipboardManager) context
                                 .getSystemService(Context.CLIPBOARD_SERVICE);
-                        cm.setText(""+bookmarkPojoClass1.getSura_name()+" আয়াত নং- "+bookmarkPojoClass1.getAyat_number()+"\n"+""+bookmarkPojoClass1.getSura_arbi_line()+"\n"+bookmarkPojoClass1.getSura_spelling_line()+"\n"+bookmarkPojoClass1.getSura_meaning_line());
+                        cm.setText(""+bookmarkPojoClass1.getSura_name()+" আয়াত নং- "+bookmarkPojoClass1.getAyat_number()+"\n"+""+bookmarkPojoClass1.getSura_arbi_line()+"\n"+bookmarkPojoClass1.getSura_spelling_line()+"\n"+bookmarkPojoClass1.getSura_meaning_line()+Source);
 
                     }
                 });
@@ -243,6 +245,8 @@ public class BookmarkActivity extends AppCompatActivity {
                 Share.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
+
+                        String Source = getString(R.string.Credit);
 
                         final Animation myAnim = AnimationUtils.loadAnimation(getContext(), R.anim.bounce);
                         MyBounceInterpolator interpolator = new MyBounceInterpolator(.1, 12);
@@ -252,7 +256,7 @@ public class BookmarkActivity extends AppCompatActivity {
 
                         Intent sendIntent = new Intent();
                         sendIntent.setAction(Intent.ACTION_SEND);
-                        sendIntent.putExtra(Intent.EXTRA_TEXT, ""+bookmarkPojoClass1.getSura_name()+" আয়াত নং- "+bookmarkPojoClass1.getAyat_number()+"\n"+""+bookmarkPojoClass1.getSura_arbi_line()+"\n"+bookmarkPojoClass1.getSura_spelling_line()+"\n"+bookmarkPojoClass1.getSura_meaning_line());
+                        sendIntent.putExtra(Intent.EXTRA_TEXT, ""+bookmarkPojoClass1.getSura_name()+" আয়াত নং- "+bookmarkPojoClass1.getAyat_number()+"\n"+""+bookmarkPojoClass1.getSura_arbi_line()+"\n"+bookmarkPojoClass1.getSura_spelling_line()+"\n"+bookmarkPojoClass1.getSura_meaning_line()+Source);
                         sendIntent.setType("text/plain");
 
                         Intent shareIntent = Intent.createChooser(sendIntent, null);
