@@ -96,6 +96,7 @@
        android:layout_height="wrap_content">
 
        <LinearLayout
+           android:id="@+id/idFacebookLink"
            android:layout_gravity="center_horizontal"
            android:gravity="center"
            android:layout_width="300dp"
@@ -113,7 +114,7 @@
                android:layout_gravity="center"
                android:textColor="@android:color/black"
                android:gravity="left"
-               android:text="facebook.com/ad-din"
+               android:text="www.facebook.com/rdtl.info"
                android:textSize="18sp"
                android:textStyle="normal"
                android:layout_width="wrap_content"
@@ -122,6 +123,7 @@
 
        </LinearLayout>
        <LinearLayout
+           android:id="@+id/idWebsitLink"
            android:translationY="-10dp"
            android:layout_gravity="center_horizontal"
            android:gravity="center"
@@ -141,7 +143,7 @@
                android:textColor="@android:color/black"
                android:gravity="left"
                android:layout_gravity="center"
-               android:text="www.radissonbd.com/ad-din"
+               android:text="www.radissonbd.com"
                android:textSize="18sp"
                android:textStyle="normal"
                android:layout_width="wrap_content"
