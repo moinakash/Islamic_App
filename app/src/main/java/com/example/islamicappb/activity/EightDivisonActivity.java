@@ -9,6 +9,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
 import android.content.pm.PackageManager;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -202,7 +203,7 @@ public class EightDivisonActivity extends AppCompatActivity {
         arrayList_div.add("রংপুর");
         arrayList_div.add("ময়মনসিংহ");
 
-        arrayAdapter_div = new ArrayAdapter(this, R.layout.support_simple_spinner_dropdown_item, arrayList_div);
+        arrayAdapter_div = new ArrayAdapter(this, R.layout.spinner_item_list,R.id.text1, arrayList_div);
         spDiv.setAdapter(arrayAdapter_div);
 
 
@@ -305,36 +306,40 @@ public class EightDivisonActivity extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
 
+
+
                 if (i==1){
-                    arrayAdapter_Dis = new ArrayAdapter(getApplicationContext(), R.layout.support_simple_spinner_dropdown_item, arrayList_Dhaka);
+
+                    arrayAdapter_Dis = new ArrayAdapter(getApplicationContext(), R.layout.spinner_item_list,R.id.text1, arrayList_Dhaka);
+
                     spDis.setAdapter(arrayAdapter_Dis);
                 }
                 if (i==2){
-                    arrayAdapter_Dis = new ArrayAdapter(getApplicationContext(), R.layout.support_simple_spinner_dropdown_item, arrayList_Chita);
+                    arrayAdapter_Dis = new ArrayAdapter(getApplicationContext(), R.layout.spinner_item_list,R.id.text1, arrayList_Chita);
                     spDis.setAdapter(arrayAdapter_Dis);
                 }
                 if (i==3){
-                    arrayAdapter_Dis = new ArrayAdapter(getApplicationContext(), R.layout.support_simple_spinner_dropdown_item, (List) arrayList_Raj);
+                    arrayAdapter_Dis = new ArrayAdapter(getApplicationContext(), R.layout.spinner_item_list,R.id.text1, (List) arrayList_Raj);
                     spDis.setAdapter(arrayAdapter_Dis);
                 }
                 if (i==4){
-                    arrayAdapter_Dis = new ArrayAdapter(getApplicationContext(), R.layout.support_simple_spinner_dropdown_item, (List) arrayList_Khul);
+                    arrayAdapter_Dis = new ArrayAdapter(getApplicationContext(), R.layout.spinner_item_list,R.id.text1, (List) arrayList_Khul);
                     spDis.setAdapter(arrayAdapter_Dis);
                 }
                 if (i==5){
-                    arrayAdapter_Dis = new ArrayAdapter(getApplicationContext(), R.layout.support_simple_spinner_dropdown_item, (List) arrayList_bari);
+                    arrayAdapter_Dis = new ArrayAdapter(getApplicationContext(), R.layout.spinner_item_list,R.id.text1, (List) arrayList_bari);
                     spDis.setAdapter(arrayAdapter_Dis);
                 }
                 if (i==6){
-                    arrayAdapter_Dis = new ArrayAdapter(getApplicationContext(), R.layout.support_simple_spinner_dropdown_item, (List) arrayList_Sy);
+                    arrayAdapter_Dis = new ArrayAdapter(getApplicationContext(), R.layout.spinner_item_list,R.id.text1, (List) arrayList_Sy);
                     spDis.setAdapter(arrayAdapter_Dis);
                 }
                 if (i==7){
-                    arrayAdapter_Dis = new ArrayAdapter(getApplicationContext(), R.layout.support_simple_spinner_dropdown_item, (List) arrayList_Rang);
+                    arrayAdapter_Dis = new ArrayAdapter(getApplicationContext(), R.layout.spinner_item_list,R.id.text1, (List) arrayList_Rang);
                     spDis.setAdapter(arrayAdapter_Dis);
                 }
                 if (i==8){
-                    arrayAdapter_Dis = new ArrayAdapter(getApplicationContext(), R.layout.support_simple_spinner_dropdown_item, (List) arrayList_Moy);
+                    arrayAdapter_Dis = new ArrayAdapter(getApplicationContext(), R.layout.spinner_item_list,R.id.text1, (List) arrayList_Moy);
                     spDis.setAdapter(arrayAdapter_Dis);
                 }
             }
