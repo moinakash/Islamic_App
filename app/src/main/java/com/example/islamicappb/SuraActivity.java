@@ -255,7 +255,7 @@ public class SuraActivity
                         intent.putExtra("position", ""+suraNameListPojo.getSura_number());
                         intent.putExtra("suraName", ""+suraNameListPojo.getSura_name_bangla());
                         startActivity(intent);
-                      //  finish();
+                        finish();
 
                     }
                 });
