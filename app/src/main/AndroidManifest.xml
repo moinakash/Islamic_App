@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.islamicappb">
+    package="com.rdtl.ad_din">
 
     <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" />
+<!--    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" />-->
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
@@ -20,37 +20,37 @@
         android:roundIcon="@mipmap/logo_round_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.InfoActivity"></activity>
+        <activity android:name="com.rdtl.ad_din.activity.InfoActivity"></activity>
         <activity
-            android:name=".activity.Amol_Activity"
-            android:parentActivityName=".activity.KotlinActivity" />
+            android:name="com.rdtl.ad_din.activity.Amol_Activity"
+            android:parentActivityName="com.rdtl.ad_din.activity.KotlinActivity" />
         <activity
-            android:name=".activity.ReadHadisActivity"
-            android:parentActivityName=".activity.HadisTypeActivity" />
+            android:name="com.rdtl.ad_din.activity.ReadHadisActivity"
+            android:parentActivityName="com.rdtl.ad_din.activity.HadisTypeActivity" />
         <activity
-            android:name=".activity.BisheshNamajActivity"
-            android:parentActivityName=".activity.KotlinActivity" />
+            android:name="com.rdtl.ad_din.activity.BisheshNamajActivity"
+            android:parentActivityName="com.rdtl.ad_din.activity.KotlinActivity" />
         <activity
-            android:name=".activity.KalimaActivity"
-            android:parentActivityName=".activity.KotlinActivity" />
-        <activity android:name=".activity.KotlinActivity" />
+            android:name="com.rdtl.ad_din.activity.KalimaActivity"
+            android:parentActivityName="com.rdtl.ad_din.activity.KotlinActivity" />
+        <activity android:name="com.rdtl.ad_din.activity.KotlinActivity" />
         <activity
-            android:name=".activity.BookmarkActivity"
-            android:parentActivityName=".activity.KotlinActivity" />
+            android:name="com.rdtl.ad_din.activity.BookmarkActivity"
+            android:parentActivityName="com.rdtl.ad_din.activity.KotlinActivity" />
         <activity
-            android:name=".activity.AllahNameActivity"
-            android:parentActivityName=".activity.KotlinActivity" />
+            android:name="com.rdtl.ad_din.activity.AllahNameActivity"
+            android:parentActivityName="com.rdtl.ad_din.activity.KotlinActivity" />
         <activity
-            android:name=".activity.ReadSuraActivity"
-            android:parentActivityName=".SuraActivity" />
+            android:name="com.rdtl.ad_din.activity.ReadSuraActivity"
+            android:parentActivityName="com.rdtl.ad_din.SuraActivity" />
         <activity
-            android:name=".activity.HadisTypeActivity"
-            android:parentActivityName=".activity.KotlinActivity" />
+            android:name="com.rdtl.ad_din.activity.HadisTypeActivity"
+            android:parentActivityName="com.rdtl.ad_din.activity.KotlinActivity" />
         <activity
-            android:name=".SuraActivity"
-            android:parentActivityName=".activity.KotlinActivity" />
-        <activity android:name=".activity.BaseActivity" />
-        <activity android:name=".activity.EightDivisonActivity">
+            android:name="com.rdtl.ad_din.SuraActivity"
+            android:parentActivityName="com.rdtl.ad_din.activity.KotlinActivity" />
+        <activity android:name="com.rdtl.ad_din.activity.BaseActivity" />
+        <activity android:name="com.rdtl.ad_din.activity.EightDivisonActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -58,10 +58,10 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".MainActivity"
+            android:name="com.rdtl.ad_din.MainActivity"
             android:launchMode="singleTop" />
 
-        <receiver android:name=".ExampleAppWidgetProvider">
+        <receiver android:name="com.rdtl.ad_din.ExampleAppWidgetProvider">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
             </intent-filter>
@@ -71,14 +71,14 @@
                 android:resource="@xml/example_appwidget_info" />
         </receiver>
 
-        <activity android:name=".ExampleAppWidgetConfig">
+        <activity android:name="com.rdtl.ad_din.ExampleAppWidgetConfig">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_CONFIGURE" />
             </intent-filter>
         </activity>
 
         <service
-            android:name=".ExampleWidgetService"
+            android:name="com.rdtl.ad_din.ExampleWidgetService"
             android:permission="android.permission.BIND_REMOTEVIEWS" />
     </application>
 
