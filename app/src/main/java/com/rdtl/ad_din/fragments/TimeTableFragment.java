@@ -29,6 +29,7 @@ import com.rdtl.ad_din.pojo_classes.ConverterClass;
 import java.time.LocalDate;
 import java.time.chrono.HijrahChronology;
 import java.time.chrono.HijrahDate;
+import java.util.Date;
 import java.util.Locale;
 
 import io.paperdb.Paper;
@@ -44,7 +45,7 @@ public class TimeTableFragment extends Fragment {
     ImageButton ibFojor, ibJohor, ibAsor, ibMagrib, ibEsha;
 
     GifImageView Heading_background;
-    LinearLayout Fjr_stroke_bg, Jhr_stroke_bg,Asr_stroke_bg, Mgrb_stroke_bg,Isha_stroke_bg, timetablebg;
+    LinearLayout Fjr_stroke_bg, Jhr_stroke_bg,Asr_stroke_bg, Mgrb_stroke_bg,Isha_stroke_bg, timetablebg, dateFiled;
 
 
     String text;
@@ -54,6 +55,7 @@ public class TimeTableFragment extends Fragment {
     String year, month, day;
 
     String AlermSetToast;
+    String dateTime;
 
     int ii;
 
@@ -138,77 +140,93 @@ public class TimeTableFragment extends Fragment {
         ibMagrib = view.findViewById(R.id.idAlarmMagrib);
         ibEsha = view.findViewById(R.id.idAlarmEsha);
 
+        dateFiled = view.findViewById(R.id.id_date);
+
         Locale locale = new Locale("bn");
         Locale.setDefault(locale);
 
-        Calendar cl = Calendar.getInstance(locale);
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd MMMM yyyy ");
-        String dateTime = simpleDateFormat.format(cl.getTime());
+
+        if (android.os.Build.VERSION.SDK_INT < Build.VERSION_CODES.M ){
 
 
 
-        HijrahDate islamyDate = null;
-        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
-            islamyDate = HijrahChronology.INSTANCE.date(LocalDate.of(cl.get(Calendar.YEAR),cl.get(Calendar.MONTH)+1, cl.get(Calendar.DATE)));
-            text = islamyDate.toString();
-            text = text.replace("Hijrah-umalqura AH", "");
+        }else {
+
+            Calendar cl = Calendar.getInstance(locale);
+            SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd MMMM yyyy ");
+            dateTime = simpleDateFormat.format(cl.getTime());
 
 
 
-
-
-
-            text = converterClass.covertS(text);
-
-
-
-            text = text.replace("-০১-", ",মহরম,");
-            text = text.replace("-০2-", "সফল");
-            text = text.replace("-০৩-", "রবিউল আউয়াল");
-            text = text.replace("-০৪-", "রবিউস সানি");
-            text = text.replace("-০৫-", "জমাদিউল আউয়াল");
-            text = text.replace("-০৬-", "জমাদিউস সানি");
-            text = text.replace("-০৭-", "রজব");
-            text = text.replace("-০৮-", "শাবান");
-            text = text.replace("-০৯-", "রমজান");
-            text = text.replace("-১০-", "শওয়াল");
-            text = text.replace("-১১-", ",জিলক্বদ,");
-            text = text.replace("-১২-", "জিলহজ্জ");
+            HijrahDate islamyDate = null;
+            if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+                islamyDate = HijrahChronology.INSTANCE.date(LocalDate.of(cl.get(Calendar.YEAR),cl.get(Calendar.MONTH)+1, cl.get(Calendar.DATE)));
+                text = islamyDate.toString();
+                text = text.replace("Hijrah-umalqura AH", "");
 
 
 
 
 
-            Character [] text_array= new Character[text.length()];
 
-            int i;
-            for ( i = 0; i < text.length(); i++) {
-                text_array[i] = text.charAt(i);
-                ii = i;
+                text = converterClass.covertS(text);
+
+
+
+                text = text.replace("-০১-", ",মহরম,");
+                text = text.replace("-০2-", "সফল");
+                text = text.replace("-০৩-", "রবিউল আউয়াল");
+                text = text.replace("-০৪-", "রবিউস সানি");
+                text = text.replace("-০৫-", "জমাদিউল আউয়াল");
+                text = text.replace("-০৬-", "জমাদিউস সানি");
+                text = text.replace("-০৭-", "রজব");
+                text = text.replace("-০৮-", "শাবান");
+                text = text.replace("-০৯-", "রমজান");
+                text = text.replace("-১০-", "শওয়াল");
+                text = text.replace("-১১-", ",জিলক্বদ,");
+                text = text.replace("-১২-", "জিলহজ্জ");
+
+
+
+
+
+                Character [] text_array= new Character[text.length()];
+
+                int i;
+                for ( i = 0; i < text.length(); i++) {
+                    text_array[i] = text.charAt(i);
+                    ii = i;
+                }
+
+                year = ""+text_array[0]+""+text_array[1]+""+text_array[2]+""+text_array[3]+""+text_array[4];
+                day = ""+text_array[(ii-1)]+""+text_array[(ii)];
+
+                String txtf = "";
+                for ( i = 5; i < (ii-1); i++){
+
+
+                    txtf = ""+txtf+""+text_array[i];
+
+                }
+
+                tvCurrentArbiDate.setText(day+" "+txtf+""+year);
+
+
             }
 
-            year = ""+text_array[0]+""+text_array[1]+""+text_array[2]+""+text_array[3]+""+text_array[4];
-            day = ""+text_array[(ii-1)]+""+text_array[(ii)];
-
-            String txtf = "";
-            for ( i = 5; i < (ii-1); i++){
-
-
-                txtf = ""+txtf+""+text_array[i];
+            if (android.os.Build.VERSION.SDK_INT <= android.os.Build.VERSION_CODES.O) {
+                text = "Its only for android orio";
+                tvCurrentArbiDate.setVisibility(View.GONE);
+                MidBorber.setVisibility(View.GONE);
 
             }
-
-            tvCurrentArbiDate.setText(day+" "+txtf+""+year);
-
 
         }
 
-        if (android.os.Build.VERSION.SDK_INT <= android.os.Build.VERSION_CODES.O) {
-            text = "Its only for android orio";
-           tvCurrentArbiDate.setVisibility(View.GONE);
-           MidBorber.setVisibility(View.GONE);
 
-        }
+
+
+
 
 
 
@@ -464,7 +482,15 @@ public class TimeTableFragment extends Fragment {
 
         tvNextTime.setText(""+BOrPNamajTime);
         tvCurrentNTime.setText(""+CurrentNamajTime);
-        tvCurrentDate.setText(dateTime);
+
+        if (android.os.Build.VERSION.SDK_INT < Build.VERSION_CODES.M ){
+
+            dateFiled.setVisibility(View.GONE);
+
+        }else {
+            tvCurrentDate.setText(dateTime);
+        }
+
 
 
 
