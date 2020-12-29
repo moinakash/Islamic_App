@@ -17,6 +17,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -56,6 +57,8 @@ public class TimeTableFragment extends Fragment {
 
     String AlermSetToast;
     String dateTime;
+
+    ImageView locationButton;
 
     int ii;
 
@@ -128,6 +131,8 @@ public class TimeTableFragment extends Fragment {
         tvCurrentDate = view.findViewById(R.id.idCurrentDate);
         tvCurrentArbiDate = view.findViewById(R.id.idCurrentDateArbi);
         MidBorber = view.findViewById(R.id.idMidBorder);
+
+        locationButton = view.findViewById(R.id.imageView2);
 
         tvCurrentLocation = view.findViewById(R.id.idCurrentLocation);
         tvNextTime = view.findViewById(R.id.idNextNamaj);
@@ -509,6 +514,25 @@ public class TimeTableFragment extends Fragment {
 
         final SharedPreferences finalSharedPrefMM = sharedPrefMM;
         tvCurrentLocation.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+
+
+                String kk = "1";
+                SharedPreferences.Editor editor = finalSharedPrefMM.edit();
+                editor.putString("key", kk);
+
+                editor.commit();
+
+                Intent go = new Intent(getContext(), EightDivisonActivity.class);
+                startActivity(go);
+
+            }
+        });
+
+
+        locationButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
