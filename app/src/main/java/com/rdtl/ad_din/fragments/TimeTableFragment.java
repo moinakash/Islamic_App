@@ -3,8 +3,7 @@ package com.rdtl.ad_din.fragments;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.icu.text.SimpleDateFormat;
-import android.icu.util.Calendar;
+
 import android.os.Build;
 import android.os.Bundle;
 
@@ -27,12 +26,15 @@ import com.rdtl.ad_din.activity.BaseActivity;
 import com.rdtl.ad_din.activity.EightDivisonActivity;
 import com.rdtl.ad_din.pojo_classes.ConverterClass;
 
+
 import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.chrono.HijrahChronology;
 import java.time.chrono.HijrahDate;
+import java.util.Calendar;
 import java.util.Date;
-import java.util.Locale;
+
 
 import io.paperdb.Paper;
 import pl.droidsonroids.gif.GifImageView;
@@ -148,106 +150,191 @@ public class TimeTableFragment extends Fragment {
 
         dateFiled = view.findViewById(R.id.id_date);
 
-        Locale locale = new Locale("bn");
-        Locale.setDefault(locale);
+//        Locale locale = new Locale("bn");
+//        Locale.setDefault(locale);
+
+        //////////////////////////////////////////////////////////////////////////////new///////////////////////////////////////////////
+
+        Date date = new Date();
+        Calendar cl= Calendar.getInstance();
 
 
-        if (android.os.Build.VERSION.SDK_INT < Build.VERSION_CODES.M ){
-
-            DateFormat df = new java.text.SimpleDateFormat("dd MMM yyyy");
-            String dfT = converterClass.covertS(df.format(java.util.Calendar.getInstance().getTime()));
-
-            dfT = dfT.replace("Jan", "জানুয়ারি");
-            dfT = dfT.replace("Feb", "ফেব্রুয়ারি");
-            dfT = dfT.replace("Mar", "মার্চ");
-            dfT = dfT.replace("Apr", "এপ্রিল");
-            dfT = dfT.replace("May", "মে");
-            dfT = dfT.replace("Jun", "জুন");
-            dfT = dfT.replace("Jul", "জুলাই");
-            dfT = dfT.replace("Aug", "আগষ্ট");
-            dfT = dfT.replace("Sep", "সেপ্টেম্বর");
-            dfT = dfT.replace("Oct", "অক্টোবর");
-            dfT = dfT.replace("Nov", "নভেম্বর");
-            dfT = dfT.replace("Dec", "ডিসেম্বর");
-
-
-            dateTime = dfT;
+        ////////////////////////////////
 
 
 
-        }else {
+        cl.setTime(date);
 
-            Calendar cl = Calendar.getInstance(locale);
-            SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd MMMM yyyy ");
-            dateTime = simpleDateFormat.format(cl.getTime());
-
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd MMMM yyyy ");
+        dateTime = simpleDateFormat.format(cl.getTime());
 
 
-            HijrahDate islamyDate = null;
-            if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
-                islamyDate = HijrahChronology.INSTANCE.date(LocalDate.of(cl.get(Calendar.YEAR),cl.get(Calendar.MONTH)+1, cl.get(Calendar.DATE)));
-                text = islamyDate.toString();
-                text = text.replace("Hijrah-umalqura AH", "");
+
+        HijrahDate islamyDate = null;
+
+            islamyDate = HijrahChronology.INSTANCE.date(LocalDate.of(cl.get(Calendar.YEAR),cl.get(Calendar.MONTH)+1, (cl.get(Calendar.DATE)-1)));
+            text = islamyDate.toString();
+            text = text.replace("Hijrah-umalqura AH", "");
 
 
 
 
 
 
-                text = converterClass.covertS(text);
+            text = converterClass.covertS(text);
 
 
 
-                text = text.replace("-০১-", ",মহরম,");
-                text = text.replace("-০2-", "সফল");
-                text = text.replace("-০৩-", "রবিউল আউয়াল");
-                text = text.replace("-০৪-", "রবিউস সানি");
-                text = text.replace("-০৫-", "জমাদিউল আউয়াল");
-                text = text.replace("-০৬-", "জমাদিউস সানি");
-                text = text.replace("-০৭-", "রজব");
-                text = text.replace("-০৮-", "শাবান");
-                text = text.replace("-০৯-", "রমজান");
-                text = text.replace("-১০-", "শওয়াল");
-                text = text.replace("-১১-", ",জিলক্বদ,");
-                text = text.replace("-১২-", "জিলহজ্জ");
+            text = text.replace("-০১-", ",মহরম,");
+            text = text.replace("-০2-", "সফল");
+            text = text.replace("-০৩-", "রবিউল আউয়াল");
+            text = text.replace("-০৪-", "রবিউস সানি");
+            text = text.replace("-০৫-", "জমাদিউল আউয়াল");
+            text = text.replace("-০৬-", "জমাদিউস সানি");
+            text = text.replace("-০৭-", "রজব");
+            text = text.replace("-০৮-", "শাবান");
+            text = text.replace("-০৯-", "রমজান");
+            text = text.replace("-১০-", "শওয়াল");
+            text = text.replace("-১১-", ",জিলক্বদ,");
+            text = text.replace("-১২-", "জিলহজ্জ");
 
 
 
 
 
-                Character [] text_array= new Character[text.length()];
+            Character [] text_array= new Character[text.length()];
 
-                int i;
-                for ( i = 0; i < text.length(); i++) {
-                    text_array[i] = text.charAt(i);
-                    ii = i;
-                }
+            int i;
+            for ( i = 0; i < text.length(); i++) {
+                text_array[i] = text.charAt(i);
+                ii = i;
+            }
 
-                year = ""+text_array[0]+""+text_array[1]+""+text_array[2]+""+text_array[3]+""+text_array[4];
-                day = ""+text_array[(ii-1)]+""+text_array[(ii)];
+            year = ""+text_array[0]+""+text_array[1]+""+text_array[2]+""+text_array[3]+""+text_array[4];
+            day = ""+text_array[(ii-1)]+""+text_array[(ii)];
 
-                String txtf = "";
-                for ( i = 5; i < (ii-1); i++){
+            String txtf = "";
+            for ( i = 5; i < (ii-1); i++){
 
 
-                    txtf = ""+txtf+""+text_array[i];
-
-                }
-
-                tvCurrentArbiDate.setText(day+" "+txtf+""+year);
-
+                txtf = ""+txtf+""+text_array[i];
 
             }
 
-            if (android.os.Build.VERSION.SDK_INT <= android.os.Build.VERSION_CODES.O) {
-                text = "Its only for android orio";
-                tvCurrentArbiDate.setVisibility(View.GONE);
-                MidBorber.setVisibility(View.GONE);
+            tvCurrentArbiDate.setText(day+" "+txtf+""+year);
 
-            }
 
-        }
 
+
+
+
+
+        ///////////////////////////////////////////////////new finish///////////////////////////////////////////////////////////////////
+
+
+
+
+        ///////////////////////////////////////////////////////old start////////////////////////////////////////////////////////////
+
+
+//        if (android.os.Build.VERSION.SDK_INT < Build.VERSION_CODES.M ){
+//
+//            DateFormat df = new java.text.SimpleDateFormat("dd MMM yyyy");
+//            String dfT = converterClass.covertS(df.format(java.util.Calendar.getInstance().getTime()));
+//
+//            dfT = dfT.replace("Jan", "জানুয়ারি");
+//            dfT = dfT.replace("Feb", "ফেব্রুয়ারি");
+//            dfT = dfT.replace("Mar", "মার্চ");
+//            dfT = dfT.replace("Apr", "এপ্রিল");
+//            dfT = dfT.replace("May", "মে");
+//            dfT = dfT.replace("Jun", "জুন");
+//            dfT = dfT.replace("Jul", "জুলাই");
+//            dfT = dfT.replace("Aug", "আগষ্ট");
+//            dfT = dfT.replace("Sep", "সেপ্টেম্বর");
+//            dfT = dfT.replace("Oct", "অক্টোবর");
+//            dfT = dfT.replace("Nov", "নভেম্বর");
+//            dfT = dfT.replace("Dec", "ডিসেম্বর");
+//
+//
+//            dateTime = dfT;
+//
+//
+//
+//        }else {
+//
+//            Calendar cl = Calendar.getInstance(locale);
+//            SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd MMMM yyyy ");
+//            dateTime = simpleDateFormat.format(cl.getTime());
+//
+//
+//
+//            HijrahDate islamyDate = null;
+//            if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+//                islamyDate = HijrahChronology.INSTANCE.date(LocalDate.of(cl.get(Calendar.YEAR),cl.get(Calendar.MONTH)+1, cl.get(Calendar.DATE)));
+//                text = islamyDate.toString();
+//                text = text.replace("Hijrah-umalqura AH", "");
+//
+//
+//
+//
+//
+//
+//                text = converterClass.covertS(text);
+//
+//
+//
+//                text = text.replace("-০১-", ",মহরম,");
+//                text = text.replace("-০2-", "সফল");
+//                text = text.replace("-০৩-", "রবিউল আউয়াল");
+//                text = text.replace("-০৪-", "রবিউস সানি");
+//                text = text.replace("-০৫-", "জমাদিউল আউয়াল");
+//                text = text.replace("-০৬-", "জমাদিউস সানি");
+//                text = text.replace("-০৭-", "রজব");
+//                text = text.replace("-০৮-", "শাবান");
+//                text = text.replace("-০৯-", "রমজান");
+//                text = text.replace("-১০-", "শওয়াল");
+//                text = text.replace("-১১-", ",জিলক্বদ,");
+//                text = text.replace("-১২-", "জিলহজ্জ");
+//
+//
+//
+//
+//
+//                Character [] text_array= new Character[text.length()];
+//
+//                int i;
+//                for ( i = 0; i < text.length(); i++) {
+//                    text_array[i] = text.charAt(i);
+//                    ii = i;
+//                }
+//
+//                year = ""+text_array[0]+""+text_array[1]+""+text_array[2]+""+text_array[3]+""+text_array[4];
+//                day = ""+text_array[(ii-1)]+""+text_array[(ii)];
+//
+//                String txtf = "";
+//                for ( i = 5; i < (ii-1); i++){
+//
+//
+//                    txtf = ""+txtf+""+text_array[i];
+//
+//                }
+//
+//                tvCurrentArbiDate.setText(day+" "+txtf+""+year);
+//
+//
+//            }
+//
+//            if (android.os.Build.VERSION.SDK_INT <= android.os.Build.VERSION_CODES.O) {
+//                text = "Its only for android orio";
+//                tvCurrentArbiDate.setVisibility(View.GONE);
+//                MidBorber.setVisibility(View.GONE);
+//
+//            }
+//
+//        }
+
+
+        /////////////////////////////////////////////////old finish////////////////////////////////////////////////////////
 
 
 
@@ -299,7 +386,7 @@ public class TimeTableFragment extends Fragment {
         ////fojor time bangla
         Character [] array= new Character[fojorerTime.length()];
 
-        for (int i = 0; i < fojorerTime.length(); i++) {
+        for ( i = 0; i < fojorerTime.length(); i++) {
             array[i] = fojorerTime.charAt(i);
         }
         fojorTimeBangla = ""+array[0]+""+array[1]+""+array[2]+""+array[3];
@@ -316,7 +403,7 @@ public class TimeTableFragment extends Fragment {
         ////johor time bangla
         Character [] johorarray= new Character[johorerTime.length()];
 
-        for (int i = 0; i < johorerTime.length(); i++) {
+        for ( i = 0; i < johorerTime.length(); i++) {
             johorarray[i] = johorerTime.charAt(i);
         }
         String txtJohor = ""+johorarray[0]+""+johorarray[1];
@@ -341,7 +428,7 @@ public class TimeTableFragment extends Fragment {
         ////Asor time bangla
         Character [] asorarray= new Character[asorerTime.length()];
 
-        for (int i = 0; i < asorerTime.length(); i++) {
+        for ( i = 0; i < asorerTime.length(); i++) {
             asorarray[i] = asorerTime.charAt(i);
         }
 
@@ -367,7 +454,7 @@ public class TimeTableFragment extends Fragment {
         ////magrib time bangla
         Character [] magribarray= new Character[magriberTime.length()];
 
-        for (int i = 0; i < magriberTime.length(); i++) {
+        for ( i = 0; i < magriberTime.length(); i++) {
             magribarray[i] = magriberTime.charAt(i);
         }
 
@@ -391,7 +478,7 @@ public class TimeTableFragment extends Fragment {
         ////Esha time bangla
         Character [] eshaarray= new Character[esharTime.length()];
 
-        for (int i = 0; i < esharTime.length(); i++) {
+        for ( i = 0; i < esharTime.length(); i++) {
             eshaarray[i] = esharTime.charAt(i);
         }
 
@@ -508,20 +595,37 @@ public class TimeTableFragment extends Fragment {
         tvNextTime.setText(""+BOrPNamajTime);
         tvCurrentNTime.setText(""+CurrentNamajTime);
 
-        if (android.os.Build.VERSION.SDK_INT < Build.VERSION_CODES.M ){
+//        if (android.os.Build.VERSION.SDK_INT < Build.VERSION_CODES.M ){
+//
+//            //dateFiled.setVisibility(View.GONE);
+////            tvCurrentDate.setText(dateTime);
+////            tvCurrentArbiDate.setVisibility(View.GONE);
+//            MidBorber.setVisibility(View.GONE);
+//
+//
+//
+//        }else {
+//            tvCurrentDate.setText(dateTime);
+//        }
 
-            //dateFiled.setVisibility(View.GONE);
-            tvCurrentDate.setText(dateTime);
-            tvCurrentArbiDate.setVisibility(View.GONE);
-            MidBorber.setVisibility(View.GONE);
+        String dfT = dateTime;
 
+            dfT = dfT.replace("January", "জানুয়ারি");
+            dfT = dfT.replace("February", "ফেব্রুয়ারি");
+            dfT = dfT.replace("March", "মার্চ");
+            dfT = dfT.replace("April", "এপ্রিল");
+            dfT = dfT.replace("May", "মে");
+            dfT = dfT.replace("June", "জুন");
+            dfT = dfT.replace("July", "জুলাই");
+            dfT = dfT.replace("August", "আগষ্ট");
+            dfT = dfT.replace("September", "সেপ্টেম্বর");
+            dfT = dfT.replace("October", "অক্টোবর");
+            dfT = dfT.replace("November", "নভেম্বর");
+            dfT = dfT.replace("December", "ডিসেম্বর");
 
+        dfT = converterClass.covertS(dfT);
 
-        }else {
-            tvCurrentDate.setText(dateTime);
-        }
-
-
+        tvCurrentDate.setText(dfT);
 
 
         //////////////////////////////////////////////////////////////////////////
