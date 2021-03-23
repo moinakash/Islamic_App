@@ -27,6 +27,7 @@ import com.rdtl.ad_din.activity.BaseActivity;
 import com.rdtl.ad_din.activity.EightDivisonActivity;
 import com.rdtl.ad_din.pojo_classes.ConverterClass;
 
+import java.text.DateFormat;
 import java.time.LocalDate;
 import java.time.chrono.HijrahChronology;
 import java.time.chrono.HijrahDate;
@@ -152,6 +153,25 @@ public class TimeTableFragment extends Fragment {
 
 
         if (android.os.Build.VERSION.SDK_INT < Build.VERSION_CODES.M ){
+
+            DateFormat df = new java.text.SimpleDateFormat("dd MMM yyyy");
+            String dfT = converterClass.covertS(df.format(java.util.Calendar.getInstance().getTime()));
+
+            dfT = dfT.replace("Jan", "জানুয়ারি");
+            dfT = dfT.replace("Feb", "ফেব্রুয়ারি");
+            dfT = dfT.replace("Mar", "মার্চ");
+            dfT = dfT.replace("Apr", "এপ্রিল");
+            dfT = dfT.replace("May", "মে");
+            dfT = dfT.replace("Jun", "জুন");
+            dfT = dfT.replace("Jul", "জুলাই");
+            dfT = dfT.replace("Aug", "আগষ্ট");
+            dfT = dfT.replace("Sep", "সেপ্টেম্বর");
+            dfT = dfT.replace("Oct", "অক্টোবর");
+            dfT = dfT.replace("Nov", "নভেম্বর");
+            dfT = dfT.replace("Dec", "ডিসেম্বর");
+
+
+            dateTime = dfT;
 
 
 
@@ -490,7 +510,12 @@ public class TimeTableFragment extends Fragment {
 
         if (android.os.Build.VERSION.SDK_INT < Build.VERSION_CODES.M ){
 
-            dateFiled.setVisibility(View.GONE);
+            //dateFiled.setVisibility(View.GONE);
+            tvCurrentDate.setText(dateTime);
+            tvCurrentArbiDate.setVisibility(View.GONE);
+            MidBorber.setVisibility(View.GONE);
+
+
 
         }else {
             tvCurrentDate.setText(dateTime);
