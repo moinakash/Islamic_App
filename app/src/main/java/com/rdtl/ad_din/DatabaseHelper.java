@@ -32,7 +32,7 @@ public class DatabaseHelper
     public DatabaseHelper(Context context)
     {
 
-        super(context, DB_NAME, null, 1);
+        super(context, DB_NAME, null, 4);
         this.myContext = context;
         DB_PATH = myContext.getDatabasePath(DB_NAME)
                 .toString();
@@ -166,7 +166,7 @@ public class DatabaseHelper
         myDataBase = SQLiteDatabase
                 .openDatabase(
                         myPath, null,
-                        SQLiteDatabase.OPEN_READONLY);
+                        SQLiteDatabase.OPEN_READWRITE);
     }
 
     @Override
@@ -189,6 +189,22 @@ public class DatabaseHelper
                           int oldVersion,
                           int newVersion)
     {
+
+
+
+        Log.e("upp","up called");
+
+
+
+        try {
+            myContext.deleteDatabase(DB_NAME);
+            copyDB();
+        }
+        catch(Exception e) {
+
+        }
+
+
 
     }
 

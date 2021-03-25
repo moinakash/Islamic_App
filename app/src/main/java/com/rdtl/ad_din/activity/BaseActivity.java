@@ -15,6 +15,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.rdtl.ad_din.fragments.CompusFragment;
 import com.rdtl.ad_din.fragments.DoaDurudFragment;
@@ -30,13 +31,10 @@ import java.util.Calendar;
 
 public class BaseActivity extends AppCompatActivity {
 
-    ChipNavigationBar BottomNav;
+    ChipNavigationBar BottomNav, BottomNav2;
     FragmentManager fragmentManager;
 
     ConverterClass converterClass;
-
-
-
 
      String myString2;
 
@@ -68,6 +66,7 @@ public class BaseActivity extends AppCompatActivity {
 
 
         BottomNav = findViewById(R.id.bottom_nav);
+        BottomNav2 = findViewById(R.id.bottom_nav2);
 
         Fragment fragment = new TimeTableFragment();
 
@@ -110,6 +109,7 @@ public class BaseActivity extends AppCompatActivity {
         mTime= mTime/100;
 
 
+
         eshaTimeR = eshaTime.replace(":", "");
         eTime = Integer.parseInt(eshaTimeR);
         eTime= eTime/100;
@@ -123,9 +123,25 @@ public class BaseActivity extends AppCompatActivity {
 
         Calendar calendar = Calendar.getInstance();
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("HH mm ");
+        SimpleDateFormat sstt = new SimpleDateFormat("mm");
 
 
         String dateTime = simpleDateFormat.format(calendar.getTime());
+
+        int qwer = Integer.parseInt(sstt.format(calendar.getTime()));
+
+        //////////////////////////////////delete////////////////////
+
+
+        if (qwer%2==0){
+            BottomNav.setVisibility(View.VISIBLE);
+            BottomNav2.setVisibility(View.GONE);
+        }else {
+            BottomNav2.setVisibility(View.VISIBLE);
+            BottomNav.setVisibility(View.GONE);
+        }
+
+        ///////////////////////////////////////////////////////////
 
 
         dateTime = dateTime.replace(" ", "");
@@ -153,7 +169,18 @@ public class BaseActivity extends AppCompatActivity {
                 sesh_time_fojor_array[i] = fojorSeshTimeTxt.charAt(i);
             }
 
-            seShTime = ""+sesh_time_fojor_array[0]+":"+sesh_time_fojor_array[1]+""+sesh_time_fojor_array[2];
+            String xyz = ""+sesh_time_fojor_array[2];
+
+            int calculate99 = Integer.parseInt(xyz);
+
+            if (calculate99==9){
+                calculate99=5;
+            }else if (calculate99==8){
+                calculate99=4;
+            }
+
+
+            seShTime = ""+sesh_time_fojor_array[0]+":"+calculate99+""+sesh_time_fojor_array[2];
 
             seShTime = converterClass.covertS(seShTime);
 
@@ -187,7 +214,17 @@ public class BaseActivity extends AppCompatActivity {
 
             convSt1 = String.valueOf(convInt);
 
-            seShTime = ""+convSt1+":"+sesh_time_johor_array[2]+""+sesh_time_johor_array[3];
+            String xyz = ""+sesh_time_johor_array[2];
+
+            int calculate99 = Integer.parseInt(xyz);
+
+            if (calculate99==9){
+                calculate99=5;
+            }else if (calculate99==8){
+                calculate99=4;
+            }
+
+            seShTime = ""+convSt1+":"+calculate99+""+sesh_time_johor_array[3];
 
 
             seShTime = converterClass.covertS(seShTime);
@@ -217,7 +254,18 @@ public class BaseActivity extends AppCompatActivity {
 
             convSt1 = String.valueOf(convInt);
 
-            seShTime = ""+convSt1+":"+sesh_time_johor_array[2]+""+sesh_time_johor_array[3];
+            String xyz = ""+sesh_time_johor_array[2];
+
+            int calculate99 = Integer.parseInt(xyz);
+
+            if (calculate99==9){
+                calculate99=5;
+            }else if (calculate99==8){
+                calculate99=4;
+            }
+
+
+            seShTime = ""+convSt1+":"+calculate99+""+sesh_time_johor_array[3];
 
             seShTime = converterClass.covertS(seShTime);
 
@@ -248,7 +296,17 @@ public class BaseActivity extends AppCompatActivity {
 
             convSt1 = String.valueOf(convInt);
 
-            seShTime = ""+convSt1+":"+sesh_time_johor_array[2]+""+sesh_time_johor_array[3];
+            String xyz = ""+sesh_time_johor_array[2];
+
+            int calculate99 = Integer.parseInt(xyz);
+
+            if (calculate99==9){
+                calculate99=5;
+            }else if (calculate99==8){
+                calculate99=4;
+            }
+
+            seShTime = ""+convSt1+":"+calculate99+""+sesh_time_johor_array[3];
             seShTime = converterClass.covertS(seShTime);
 
 
@@ -277,7 +335,17 @@ public class BaseActivity extends AppCompatActivity {
 
             convSt1 = String.valueOf(convInt);
 
-            seShTime = ""+convSt1+":"+sesh_time_johor_array[2]+""+sesh_time_johor_array[3];
+            String xyz = ""+sesh_time_johor_array[2];
+
+            int calculate99 = Integer.parseInt(xyz);
+
+            if (calculate99==9){
+                calculate99=5;
+            }else if (calculate99==8){
+                calculate99=4;
+            }
+
+            seShTime = ""+convSt1+":"+calculate99+""+sesh_time_johor_array[3];
             seShTime = converterClass.covertS(seShTime);
 
 
@@ -307,7 +375,17 @@ public class BaseActivity extends AppCompatActivity {
 
             convSt1 = String.valueOf(convInt);
 
-            seShTime = ""+convSt1+":"+sesh_time_asor_array[2]+""+sesh_time_asor_array[3];
+            String xyz = ""+sesh_time_asor_array[2];
+
+            int calculate99 = Integer.parseInt(xyz);
+
+            if (calculate99==9){
+                calculate99=5;
+            }else if (calculate99==8){
+                calculate99=4;
+            }
+
+            seShTime = ""+convSt1+":"+calculate99+""+sesh_time_asor_array[3];
             seShTime = converterClass.covertS(seShTime);
 
 
@@ -337,7 +415,22 @@ public class BaseActivity extends AppCompatActivity {
 
             convSt1 = String.valueOf(convInt);
 
-            seShTime = ""+convSt1+":"+sesh_time_asor_array[2]+""+sesh_time_asor_array[3];
+            String xyz = ""+sesh_time_asor_array[2];
+
+            int calculate99 = Integer.parseInt(xyz);
+
+            if (calculate99==9){
+                calculate99=5;
+            }else if (calculate99==8){
+                calculate99=4;
+            }
+
+
+
+            seShTime = ""+convSt1+":"+calculate99+""+sesh_time_asor_array[3];
+
+
+
             seShTime = converterClass.covertS(seShTime);
 
 
@@ -462,7 +555,17 @@ public class BaseActivity extends AppCompatActivity {
 
             convSt1 = String.valueOf(convInt);
 
-            seShTime = ""+convSt1+":"+sesh_time_esha_array[2]+""+sesh_time_esha_array[3];
+            String xyz = ""+sesh_time_esha_array[2];
+
+            int calculate99 = Integer.parseInt(xyz);
+
+            if (calculate99==9){
+                calculate99=5;
+            }else if (calculate99==8){
+                calculate99=4;
+            }
+
+            seShTime = ""+convSt1+":"+calculate99+""+sesh_time_esha_array[3];
             seShTime = converterClass.covertS(seShTime);
 
 
@@ -493,7 +596,17 @@ public class BaseActivity extends AppCompatActivity {
 
             convSt1 = String.valueOf(convInt);
 
-            seShTime = ""+convSt1+":"+sesh_time_esha_array[2]+""+sesh_time_esha_array[3];
+            String xyz = ""+sesh_time_esha_array[2];
+
+            int calculate99 = Integer.parseInt(xyz);
+
+            if (calculate99==9){
+                calculate99=5;
+            }else if (calculate99==8){
+                calculate99=4;
+            }
+
+            seShTime = ""+convSt1+":"+calculate99+""+sesh_time_esha_array[3];
             seShTime = converterClass.covertS(seShTime);
 
 
@@ -514,12 +627,25 @@ public class BaseActivity extends AppCompatActivity {
                 sesh_time_fojor_array[i] = fojorSeshTimeTxt.charAt(i);
             }
 
-            seShTime = ""+sesh_time_fojor_array[0]+":"+sesh_time_fojor_array[1]+""+sesh_time_fojor_array[2];
+            String xyz = ""+sesh_time_fojor_array[2];
+
+            int calculate99 = Integer.parseInt(xyz);
+
+            if (calculate99==9){
+                calculate99=5;
+            }else if (calculate99==8){
+                calculate99=4;
+            }else if (calculate99==7) {
+                calculate99 = 3;
+            }
+
+            seShTime = ""+sesh_time_fojor_array[0]+":"+calculate99+""+sesh_time_fojor_array[2];
             seShTime = converterClass.covertS(seShTime);
 
 
 
         }
+
 
 
 
@@ -547,6 +673,46 @@ public class BaseActivity extends AppCompatActivity {
                         break;
                     case  R.id.account3:
                         fragment = new DoaDurudFragment();
+                        break;
+
+                }
+
+                if (fragment != null){
+                    fragmentManager = getSupportFragmentManager();
+                    fragmentManager.beginTransaction().replace(R.id.fragment_container, fragment).commit();
+                }else {
+                    Log.e("hi","fffff");
+                }
+            }
+        });
+
+
+        BottomNav2.setOnItemSelectedListener(new ChipNavigationBar.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(int id) {
+
+                Fragment fragment = null;
+
+                switch (id){
+                    case  R.id.home:
+                        fragment = new TimeTableFragment();
+                        break;
+
+                    case  R.id.discover:
+                        fragment = new CompusFragment();
+                        break;
+
+                    case  R.id.account:
+                        fragment = new QuranMajidFragment();
+                        break;
+                    case  R.id.account2:
+                        fragment = new TasbihFragment();
+                        break;
+                    case  R.id.account3:
+                        fragment = new DoaDurudFragment();
+                        break;
+                    case  R.id.account4:
+                        fragment = new QuranMajidFragment();
                         break;
 
                 }
