@@ -21,10 +21,13 @@ import com.rdtl.ad_din.fragments.CompusFragment;
 import com.rdtl.ad_din.fragments.DoaDurudFragment;
 import com.rdtl.ad_din.fragments.QuranMajidFragment;
 import com.rdtl.ad_din.R;
+import com.rdtl.ad_din.fragments.RamjanFragment;
 import com.rdtl.ad_din.fragments.TasbihFragment;
 import com.rdtl.ad_din.fragments.TimeTableFragment;
 import com.rdtl.ad_din.pojo_classes.ConverterClass;
 import com.ismaeldivita.chipnavigation.ChipNavigationBar;
+import com.rdtl.ad_din.pojo_classes.WaktoTimeInt;
+import com.rdtl.ad_din.pojo_classes.WaktoTimeMaintaining;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -35,6 +38,7 @@ public class BaseActivity extends AppCompatActivity {
     FragmentManager fragmentManager;
 
     ConverterClass converterClass;
+    WaktoTimeMaintaining wtm;
 
      String myString2;
 
@@ -56,6 +60,7 @@ public class BaseActivity extends AppCompatActivity {
 
 
         converterClass = new ConverterClass(this);
+        wtm = new WaktoTimeMaintaining(this);
 
 
         onCreateM();
@@ -88,6 +93,7 @@ public class BaseActivity extends AppCompatActivity {
         fajarTimeR = fajarTime.replace(":", "");
         fTime = Integer.parseInt(fajarTimeR);
         fTime= fTime/100;
+        fTime=converterClass.converI(fTime);
         test = fTime;
 
 
@@ -97,26 +103,31 @@ public class BaseActivity extends AppCompatActivity {
         johorTimeR = johorTime.replace(":", "");
         jTime = Integer.parseInt(johorTimeR);
         jTime= jTime/100;
+        jTime=converterClass.converI(jTime);
 
 
         asorTimeR = asorTime.replace(":", "");
         aTime = Integer.parseInt(asorTimeR);
         aTime= aTime/100;
+        aTime=converterClass.converI(aTime);
 
 
         magribTimeR = magribTime.replace(":", "");
         mTime = Integer.parseInt(magribTimeR);
         mTime= mTime/100;
+        mTime=converterClass.converI(mTime);
 
 
 
         eshaTimeR = eshaTime.replace(":", "");
         eTime = Integer.parseInt(eshaTimeR);
         eTime= eTime/100;
+        eTime=converterClass.converI(eTime);
 
         sunriseTimeR = sunriseTime.replace(":", "");
         sTime = Integer.parseInt(sunriseTimeR);
         sTime= sTime/100;
+        sTime=converterClass.converI(sTime);
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -171,6 +182,8 @@ public class BaseActivity extends AppCompatActivity {
 
             String xyz = ""+sesh_time_fojor_array[2];
 
+
+
             int calculate99 = Integer.parseInt(xyz);
 
             if (calculate99==9){
@@ -180,10 +193,11 @@ public class BaseActivity extends AppCompatActivity {
             }
 
 
-            seShTime = ""+sesh_time_fojor_array[0]+":"+calculate99+""+sesh_time_fojor_array[2];
+            seShTime = ""+sesh_time_fojor_array[0]+":"+sesh_time_fojor_array[1]+calculate99;
 
             seShTime = converterClass.covertS(seShTime);
 
+            Log.e("ssttnn",""+seShTime);
 
         }
 
@@ -488,8 +502,10 @@ public class BaseActivity extends AppCompatActivity {
             nextnamaj= "মাগরিব";
 
             //////////////////////////////sesh somoy////////////////////////////
+            WaktoTimeInt waktoTimeInt = new WaktoTimeInt(this);
+            int mTimw2 = waktoTimeInt.mtimewithaddm2(mTime);
 
-            String MagriberSeshTimeTxt = String.valueOf(mTime+20);
+            String MagriberSeshTimeTxt = ""+mTimw2;
 
             Character [] sesh_time_magrib_array= new Character[MagriberSeshTimeTxt.length()];
 
@@ -500,7 +516,10 @@ public class BaseActivity extends AppCompatActivity {
 
 
 
+
             String convSt1 = ""+sesh_time_magrib_array[0]+""+sesh_time_magrib_array[1];
+
+            Log.e("qq",""+MagriberSeshTimeTxt);
 
             int convInt = Integer.parseInt(convSt1);
             if (convInt>12){
@@ -621,6 +640,7 @@ public class BaseActivity extends AppCompatActivity {
 
             String fojorSeshTimeTxt = String.valueOf(sTime);
 
+
             Character [] sesh_time_fojor_array= new Character[fojorSeshTimeTxt.length()];
 
             for (int i = 0; i < fojorSeshTimeTxt.length(); i++) {
@@ -639,7 +659,7 @@ public class BaseActivity extends AppCompatActivity {
                 calculate99 = 3;
             }
 
-            seShTime = ""+sesh_time_fojor_array[0]+":"+calculate99+""+sesh_time_fojor_array[2];
+            seShTime = ""+sesh_time_fojor_array[0]+":"+sesh_time_fojor_array[1]+""+calculate99;
             seShTime = converterClass.covertS(seShTime);
 
 
@@ -712,7 +732,7 @@ public class BaseActivity extends AppCompatActivity {
                         fragment = new DoaDurudFragment();
                         break;
                     case  R.id.account4:
-                        fragment = new QuranMajidFragment();
+                        fragment = new RamjanFragment();
                         break;
 
                 }

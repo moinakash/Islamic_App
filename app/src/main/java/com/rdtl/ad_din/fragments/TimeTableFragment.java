@@ -25,6 +25,7 @@ import com.rdtl.ad_din.R;
 import com.rdtl.ad_din.activity.BaseActivity;
 import com.rdtl.ad_din.activity.EightDivisonActivity;
 import com.rdtl.ad_din.pojo_classes.ConverterClass;
+import com.rdtl.ad_din.pojo_classes.WaktoTimeMaintaining;
 
 
 import java.text.DateFormat;
@@ -66,6 +67,7 @@ public class TimeTableFragment extends Fragment {
     int ii;
 
     ConverterClass converterClass;
+    WaktoTimeMaintaining wtm;
 
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
@@ -110,6 +112,7 @@ public class TimeTableFragment extends Fragment {
         Paper.init(getContext());
 
         converterClass = new ConverterClass(getContext());
+        wtm = new WaktoTimeMaintaining(getContext());
 
         AlermSetToast = getResources().getString(R.string.Alerm_Set_Toast);
 
@@ -344,11 +347,18 @@ public class TimeTableFragment extends Fragment {
 
 
         BaseActivity activity = (BaseActivity) getActivity();
-        String fojorerTime = activity.fojorData();
-        String johorerTime = activity.johorData();
-        String asorerTime = activity.asorData();
-        String magriberTime = activity.magribData();
-        String esharTime = activity.eshaData();
+        String fojorerTime = wtm.ftimewithaddm(activity.fojorData());
+        String johorerTime = wtm.jtimewithaddm(activity.johorData());
+        String asorerTime = wtm.atimewithaddm(activity.asorData());
+        String magriberTime = wtm.mtimewithaddm(activity.magribData());
+        String esharTime = wtm.etimewithaddm(activity.eshaData());
+
+        int fjrt,jhrt,asrt,mgrt,esrt;
+//        fjrt = Integer.parseInt(fojorerTime);
+//        jhrt = Integer.parseInt(johorerTime);
+//        asrt = Integer.parseInt(asorerTime);
+//        mgrt = Integer.parseInt(magriberTime);
+//        esrt = Integer.parseInt(esharTime);
 
         String CurrentNamajTime = activity.currentNamajTime();
 
@@ -412,6 +422,7 @@ public class TimeTableFragment extends Fragment {
         if (jInt>12){
             jInt = jInt - 12;
         }
+
 
         johorTimeBangla = ""+jInt+""+johorarray[2]+""+johorarray[3]+""+johorarray[4];
 

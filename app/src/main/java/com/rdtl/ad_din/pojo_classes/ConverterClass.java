@@ -1,6 +1,8 @@
 package com.rdtl.ad_din.pojo_classes;
 
 import android.content.Context;
+import android.content.Intent;
+import android.util.Log;
 
 public class ConverterClass {
 
@@ -24,6 +26,19 @@ public class ConverterClass {
         seShTime= seShTime.replace("9", "৯");
         return seShTime;
     }
+
+
+    public Integer converI(int ct){
+
+        int wholeValue = ct;
+
+        int HR = wholeValue/100;
+        int MM = wholeValue%100;
+
+        return wholeValue;
+    }
+
+
 
 
 }

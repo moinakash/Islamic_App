@@ -43,8 +43,8 @@
         app:cnb_textColor="#fff" />
     <item
         android:id="@+id/account4"
-        android:icon="@drawable/home_pray"
-        android:title="নামাজ"
+        android:icon="@drawable/ramjan_ico"
+        android:title="রমজান"
         app:cnb_backgroundColor="@color/bottom_nav_option"
         app:cnb_iconColor="#fff"
         app:cnb_textColor="#fff" />

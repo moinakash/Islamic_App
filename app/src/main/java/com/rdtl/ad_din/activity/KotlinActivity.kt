@@ -56,7 +56,9 @@ class KotlinActivity : AppCompatActivity() {
         DriverManager.println("----------------------------------------")
 
         val TV = findViewById<TextView>(R.id.idTv).apply {
-            text = "Fajar: " + prayerTimes.fajr() + "\nJohor: " + prayerTimes.maghrib() + "\ntoday: " + today.day
+            text = "Fajar: " + prayerTimes.fajr() + "\nJohor: " + prayerTimes.shuruq() + "\ntoday: " + today.day +
+            "thuhr: " + prayerTimes.thuhr() + "\nassr: " + prayerTimes.assr() + "\ntoday: " + today.day +
+            "maghrib: " + prayerTimes.maghrib() + "\nishaa: " + prayerTimes.ishaa() + "\ntoday: " + today.day
         }
 
 

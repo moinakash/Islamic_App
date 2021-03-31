@@ -23,6 +23,7 @@ import com.rdtl.ad_din.activity.BisheshNamajActivity;
 import com.rdtl.ad_din.activity.EightDivisonActivity;
 import com.rdtl.ad_din.activity.InfoActivity;
 import com.rdtl.ad_din.pojo_classes.ConverterClass;
+import com.rdtl.ad_din.pojo_classes.WaktoTimeMaintaining;
 
 
 public class DoaDurudFragment extends Fragment {
@@ -32,6 +33,7 @@ public class DoaDurudFragment extends Fragment {
     ImageView Info;
 
     ConverterClass converterClass;
+    WaktoTimeMaintaining wtm;
 
 
     private static final String ARG_PARAM1 = "param1";
@@ -81,6 +83,7 @@ public class DoaDurudFragment extends Fragment {
         Info = view.findViewById(R.id.idInformation);
 
         converterClass = new ConverterClass(getContext());
+        wtm = new WaktoTimeMaintaining(getContext());
 
 
         btnNamajerNiom.setOnClickListener(new View.OnClickListener() {
@@ -219,7 +222,7 @@ public class DoaDurudFragment extends Fragment {
 
 
         BaseActivity activity = (BaseActivity) getActivity();
-        String fojorerTime = activity.fojorData();
+        String fojorerTime = ""+activity.fojorData();
 
 
         Character [] array= new Character[fojorerTime.length()];
@@ -242,7 +245,7 @@ public class DoaDurudFragment extends Fragment {
 
 
 
-        String magriberTime = activity.magribData();
+        String magriberTime = wtm.mtimewithaddm(activity.magribData());
 
         Character [] magribarray= new Character[magriberTime.length()];
 
