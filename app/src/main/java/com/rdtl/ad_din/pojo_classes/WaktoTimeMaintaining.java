@@ -1,6 +1,7 @@
 package com.rdtl.ad_din.pojo_classes;
 
 import android.content.Context;
+import android.util.Log;
 
 public class WaktoTimeMaintaining {
 
@@ -44,6 +45,8 @@ public class WaktoTimeMaintaining {
         }
 
         //actualtime = Integer.parseInt(finaltime);
+
+        Log.e("jhtt",""+finaltime);
 
         return  finaltime;
     }

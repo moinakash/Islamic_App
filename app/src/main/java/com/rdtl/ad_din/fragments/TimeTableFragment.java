@@ -49,11 +49,15 @@ public class TimeTableFragment extends Fragment {
 
     ImageButton ibFojor, ibJohor, ibAsor, ibMagrib, ibEsha;
 
+
+
     GifImageView Heading_background;
     LinearLayout Fjr_stroke_bg, Jhr_stroke_bg,Asr_stroke_bg, Mgrb_stroke_bg,Isha_stroke_bg, timetablebg, dateFiled;
 
 
     String text;
+
+    int hdcY, hdcM, hdcD;
 
     String fojorTimeBangla,johorTimeBangla,asorTimeBangla,magribTimeBangla,eshaTimeBangla;
 
@@ -175,7 +179,16 @@ public class TimeTableFragment extends Fragment {
 
         HijrahDate islamyDate = null;
 
-            islamyDate = HijrahChronology.INSTANCE.date(LocalDate.of(cl.get(Calendar.YEAR),cl.get(Calendar.MONTH)+1, (cl.get(Calendar.DATE)-1)));
+
+        hdcY = cl.get(Calendar.YEAR);
+        hdcM = cl.get(Calendar.MONTH)+1;
+        hdcD = cl.get(Calendar.DATE);
+
+        dateCalForHizri();
+
+        Log.e("hdc vl", "y"+hdcY+" m"+hdcM+" d"+hdcD);
+
+            islamyDate = HijrahChronology.INSTANCE.date(LocalDate.of(hdcY,hdcM,hdcD));
             text = islamyDate.toString();
             text = text.replace("Hijrah-umalqura AH", "");
 
@@ -422,6 +435,7 @@ public class TimeTableFragment extends Fragment {
         if (jInt>12){
             jInt = jInt - 12;
         }
+
 
 
         johorTimeBangla = ""+jInt+""+johorarray[2]+""+johorarray[3]+""+johorarray[4];
@@ -770,6 +784,109 @@ public class TimeTableFragment extends Fragment {
 
 
 
+    private void dateCalForHizri(){
+
+
+        int md;
+
+
+
+
+
+
+        if ((hdcD-1)<=0){
+
+
+            if((hdcM-1)<=0){
+
+                hdcY=hdcY-1;
+                hdcM=12;
+                md = funcM(hdcM);
+
+                hdcD = (hdcD+md)-1;
+            }
+            else{
+
+                hdcM = hdcM-1;
+                md = funcM(hdcM);
+                hdcD = (hdcD+md)-1;
+            }
+
+        }
+        else{
+
+            hdcD=hdcD-1;
+            hdcM=hdcM;
+            hdcY=hdcY;
+        }
+
+
+
+
+
+    }
+
+
+    private int funcM(int m){
+
+        switch(m)
+        {
+            case 1:
+                m = 31;
+                break;
+
+            case 2:
+                m = 28;
+                break;
+
+            case 3:
+                m = 31;
+                break;
+
+            case 4:
+                m = 30;
+                break;
+
+            case 5:
+                m = 31;
+                break;
+
+            case 6:
+                m = 30;
+                break;
+
+            case 7:
+                m = 31;
+                break;
+
+            case 8:
+                m = 31;
+                break;
+            case 9:
+                m = 30;
+                break;
+
+            case 10:
+                m = 31;
+                break;
+
+            case 11:
+                m = 30;
+                break;
+
+            case 12:
+                m = 31;
+                break;
+
+
+            // operator doesn't match any case constant +, -, *, /
+            default:
+                m=30;
+
+        }
+
+        return m;
+    }
 
 
 }
