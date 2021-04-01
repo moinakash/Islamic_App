@@ -143,6 +143,46 @@ public class WaktoTimeMaintaining {
     }
 
 
+    public String sheheritimewithsubm(String actualtimeS){
+
+        actualtimeS = actualtimeS.replace(":", "");
+        int actualtime= Integer.parseInt(actualtimeS);
+        actualtime = actualtime/100;
+        int mainHour = fulltimetohour(actualtime);
+        int mainMinute = fulltimetoMinute(actualtime);
+
+        Log.e("real",""+mainHour+" "+mainMinute);
+
+        if ((mainMinute-5)<0){
+            mainHour-=1;
+            mainMinute=((mainMinute+60)-5);
+            Log.e("1st if",""+mainHour+" "+mainMinute);
+        }else {
+            mainMinute-=5;
+            Log.e("1st el",""+mainHour+" "+mainMinute);
+        }
+
+        String finaltime;
+
+        if (mainMinute==0){
+            finaltime = ""+mainHour+":"+"00";
+            Log.e("2nd if",""+mainHour+" "+mainMinute);
+        }else if ((mainMinute/10)==0){
+            finaltime = ""+mainHour+":0"+mainMinute;
+            Log.e("if el",""+mainHour+" "+mainMinute);
+        }
+        else {
+            finaltime = ""+mainHour+":"+mainMinute;
+            Log.e("2nd el",""+mainHour+" "+mainMinute);
+        }
+
+        //actualtime = Integer.parseInt(finaltime);
+
+        Log.e("doa",""+finaltime);
+        return  finaltime;
+    }
+
+
     public Integer fulltimetohour(int fulltimeH){
         fulltimeH = fulltimeH/100;
         return fulltimeH;

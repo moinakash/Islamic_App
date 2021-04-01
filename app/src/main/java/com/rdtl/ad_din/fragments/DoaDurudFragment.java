@@ -222,7 +222,7 @@ public class DoaDurudFragment extends Fragment {
 
 
         BaseActivity activity = (BaseActivity) getActivity();
-        String fojorerTime = ""+activity.fojorData();
+        String fojorerTime = wtm.sheheritimewithsubm(""+activity.fojorData());
 
 
         Character [] array= new Character[fojorerTime.length()];

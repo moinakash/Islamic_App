@@ -245,9 +245,31 @@ public class BaseActivity extends AppCompatActivity {
 
         }
 
-        else if (cTime>=(sTime+23) && cTime<(jTime-5)){
-            BorPNamaj= "পরবর্তী নামাজ যোহর";
-            nextnamaj= "যোহর";
+        else if (cTime>=(sTime+23) && cTime<jTime+3){
+
+            Log.e("dfg",""+jTime+" c"+cTime);
+
+            if (jTime<1200){
+                if (cTime>(jTime-5) && cTime<jTime+3){
+                    BorPNamaj= "নামাজ পড়ার নিষিদ্ধ সময় চলছে";
+                    nextnamaj= "যোহর";
+                }else {
+                    BorPNamaj= "পরবর্তী নামাজ যোহর";
+                    nextnamaj= "যোহর";
+                }
+
+            }else if (jTime>=1200 && jTime<1204){
+                if (cTime>(jTime-40-5) && cTime<jTime+3){
+                    BorPNamaj= "নামাজ পড়ার নিষিদ্ধ সময় চলছে";
+                    nextnamaj= "যোহর";
+                }else {
+                    BorPNamaj= "পরবর্তী নামাজ যোহর";
+                    nextnamaj= "যোহর";
+                }
+            }
+
+            //BorPNamaj= "পরবর্তী নামাজ যোহর";
+            //nextnamaj= "যোহর";
 
             //////////////////////////////sesh somoy////////////////////////////
 
@@ -287,46 +309,93 @@ public class BaseActivity extends AppCompatActivity {
 
         }
 
-        else if (cTime>=(jTime-5) && cTime<jTime){
-            BorPNamaj= "নামাজ পড়ার নিষিদ্ধ সময় চলছে";
-            nextnamaj= "যোহর";
 
-            //////////////////////////////sesh somoy////////////////////////////
+        ////tetsing///
+//        else if (cTime>=(sTime+23) && cTime<(jTime-5)){
+//            BorPNamaj= "পরবর্তী নামাজ যোহর";
+//            nextnamaj= "যোহর";
+//
+//            //////////////////////////////sesh somoy////////////////////////////
+//
+//            String JohorSeshTimeTxt = String.valueOf(aTime);
+//
+//            Character [] sesh_time_johor_array= new Character[JohorSeshTimeTxt.length()];
+//
+//            for (int i = 0; i < JohorSeshTimeTxt.length(); i++) {
+//                sesh_time_johor_array[i] = JohorSeshTimeTxt.charAt(i);
+//            }
+//
+//            String convSt1 = ""+sesh_time_johor_array[0]+""+sesh_time_johor_array[1];
+//
+//            int convInt = Integer.parseInt(convSt1);
+//            if (convInt>12){
+//                convInt = convInt - 12;
+//            }
+//
+//            convSt1 = String.valueOf(convInt);
+//
+//            String xyz = ""+sesh_time_johor_array[2];
+//
+//            int calculate99 = Integer.parseInt(xyz);
+//
+//            if (calculate99==9){
+//                calculate99=5;
+//            }else if (calculate99==8){
+//                calculate99=4;
+//            }
+//
+//
+//            seShTime = ""+convSt1+":"+calculate99+""+sesh_time_johor_array[3];
+//
+//            seShTime = converterClass.covertS(seShTime);
+//
+//
+//
+//        }
+//
+//
+//        else if (cTime>=(jTime-5) && cTime<jTime+3){
+//            BorPNamaj= "নামাজ পড়ার নিষিদ্ধ সময় চলছে";
+//            nextnamaj= "যোহর";
+//
+//            //////////////////////////////sesh somoy////////////////////////////
+//
+//            String JohorSeshTimeTxt = String.valueOf(aTime);
+//
+//            Character [] sesh_time_johor_array= new Character[JohorSeshTimeTxt.length()];
+//
+//            for (int i = 0; i < JohorSeshTimeTxt.length(); i++) {
+//                sesh_time_johor_array[i] = JohorSeshTimeTxt.charAt(i);
+//            }
+//
+//            String convSt1 = ""+sesh_time_johor_array[0]+""+sesh_time_johor_array[1];
+//
+//            int convInt = Integer.parseInt(convSt1);
+//            if (convInt>12){
+//                convInt = convInt - 12;
+//            }
+//
+//            convSt1 = String.valueOf(convInt);
+//
+//            String xyz = ""+sesh_time_johor_array[2];
+//
+//            int calculate99 = Integer.parseInt(xyz);
+//
+//            if (calculate99==9){
+//                calculate99=5;
+//            }else if (calculate99==8){
+//                calculate99=4;
+//            }
+//
+//            seShTime = ""+convSt1+":"+calculate99+""+sesh_time_johor_array[3];
+//            seShTime = converterClass.covertS(seShTime);
+//
+//
+//        }
+///////////////////testing end///////////////////////
 
-            String JohorSeshTimeTxt = String.valueOf(aTime);
 
-            Character [] sesh_time_johor_array= new Character[JohorSeshTimeTxt.length()];
-
-            for (int i = 0; i < JohorSeshTimeTxt.length(); i++) {
-                sesh_time_johor_array[i] = JohorSeshTimeTxt.charAt(i);
-            }
-
-            String convSt1 = ""+sesh_time_johor_array[0]+""+sesh_time_johor_array[1];
-
-            int convInt = Integer.parseInt(convSt1);
-            if (convInt>12){
-                convInt = convInt - 12;
-            }
-
-            convSt1 = String.valueOf(convInt);
-
-            String xyz = ""+sesh_time_johor_array[2];
-
-            int calculate99 = Integer.parseInt(xyz);
-
-            if (calculate99==9){
-                calculate99=5;
-            }else if (calculate99==8){
-                calculate99=4;
-            }
-
-            seShTime = ""+convSt1+":"+calculate99+""+sesh_time_johor_array[3];
-            seShTime = converterClass.covertS(seShTime);
-
-
-        }
-
-        else if (cTime>=jTime && cTime<(aTime-20)){
+        else if (cTime>=jTime+3 && cTime<(aTime-20)){
             BorPNamaj= "বর্তমান নামাজ যোহর";
             nextnamaj= "যোহর";
 
@@ -366,7 +435,7 @@ public class BaseActivity extends AppCompatActivity {
 
         }
 
-        else if (cTime>=(aTime-20) && cTime<aTime){
+        else if (cTime>=(aTime-20) && cTime<aTime+1){
             BorPNamaj= "পরবর্তী নামাজ আসর";
             nextnamaj= "আসর";
 
@@ -406,7 +475,7 @@ public class BaseActivity extends AppCompatActivity {
 
         }
 
-        else if (cTime>=aTime && cTime<(mTime-10)){
+        else if (cTime>=aTime+1 && cTime<(mTime-10)){
             BorPNamaj= "বর্তমান নামাজ আসর";
             nextnamaj= "আসর";
 
@@ -450,7 +519,7 @@ public class BaseActivity extends AppCompatActivity {
 
         }
 
-        else if (cTime>=(mTime-10) && cTime<mTime){
+        else if (cTime>=(mTime-10) && cTime<mTime+3){
             BorPNamaj= "নামাজ পড়ার নিষিদ্ধ সময় চলছে";
             nextnamaj= "মাগরিব";
 
@@ -497,7 +566,7 @@ public class BaseActivity extends AppCompatActivity {
 
         }
 
-        else if (cTime>=mTime && cTime<(mTime+20)){
+        else if (cTime>=mTime && cTime<(mTime+20+3)){
             BorPNamaj= "বর্তমান নামাজ মাগরিব";
             nextnamaj= "মাগরিব";
 
