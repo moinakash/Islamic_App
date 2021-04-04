@@ -13,4 +13,25 @@
     <color name="CardViewColor">#f0fff8</color>
 
     <color name="gray_color">#F09E9D9D</color>
+
+
+
+    <color name="blackcolor">#000000</color>
+
+    <color name="mehedi">#338CC63F</color>
+
+    <color name="appbar_clr">#2AC17E</color>
+    <color name="selectedcolor">#DCB742</color>
+
+    <color name="afterprogress">#51EDA8</color>
+
+
+    <color name="arbittxtcolor">#9F6A03</color>
+    <color name="uccharontxtcolor">#006250</color>
+    <color name="ramajan_chart_heading_color">#2AC17E</color>
+    <color name="ramajan_chart_color">#37D28E</color>
+
+    <color name="countertxtcolor">#186623</color>
+
+
 </resources>

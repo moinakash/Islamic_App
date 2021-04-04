@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="#2AC17E"
+        android:text="নোটিফিকেশন"
+        android:gravity="center"
+        />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        android:background="@drawable/afternotification_bg">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="10dp"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="20sp"/>
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+
+
+                <TextView
+                    android:id="@+id/idSomoyName"
+                    android:padding="5dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="ইফতারের\nসময়"
+                    android:textColor="@color/blackcolor"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/sushm"
+                    android:gravity="right"
+                    android:layout_gravity="left"/>
+
+                <TextView
+                    android:id="@+id/idCountDownBox"
+                    android:padding="5dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="৫ঃ৪০"
+                    android:textSize="40sp"
+                    android:textStyle="bold"
+                    android:fontFamily="@font/sushmb"
+                    android:textColor="@color/countertxtcolor"
+                    android:gravity="center_vertical"
+                    android:layout_marginLeft="10dp"/>
+
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/idiftarerAge"
+                android:padding="5dp"
+                android:layout_marginTop="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/ifterer_age"
+                android:gravity="center"
+                android:fontFamily="@font/sushmb"
+                android:textColor="@color/blackcolor"
+                android:textSize="14sp"/>
+
+            <TextView
+                android:id="@+id/idiftarerAgeArbi"
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/arbitext_background"
+                android:text="@string/istegfar_arbi"
+                android:padding="10dp"
+                android:gravity="center"
+                android:textColor="@color/blackcolor"/>
+
+            <TextView
+                android:id="@+id/idIftarerAgeUccharon"
+                android:padding="5dp"
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/istegfar_uccharon"
+                android:gravity="center"
+                android:textSize="12sp"
+                android:fontFamily="@font/sushm"
+                android:textColor="@color/uccharontxtcolor"/>
+
+
+            <include layout="@layout/kirat_player"/>
+
+            <TextView
+                android:id="@+id/idIftarerSomoy"
+                android:padding="5dp"
+                android:layout_marginTop="25dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/iftar_doa_txt"
+                android:textColor="@color/blackcolor"
+                android:fontFamily="@font/sushmb"
+                android:gravity="center"/>
+
+            <TextView
+                android:id="@+id/idIftarerSomoyArbi"
+                android:padding="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/iftarer_doa_arbi"
+                android:gravity="center"
+                android:textColor="@color/blackcolor"
+                android:background="@drawable/arbitext_background"/>
+
+            <TextView
+                android:id="@+id/idIftarerSomoyUccharon"
+                android:padding="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/ifterer_doa_uccharon"
+                android:gravity="center"
+                android:textColor="@color/uccharontxtcolor"/>
+
+            <TextView
+                android:id="@+id/idIftarerSomoyOrtho"
+                android:padding="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/ifterer_doa_bangla"
+                android:gravity="center"
+                android:textColor="@color/uccharontxtcolor"/>
+
+            <TextView
+                android:id="@+id/idIftarerPor"
+                android:padding="5dp"
+                android:layout_marginTop="25dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/ifterer_por"
+                android:textColor="@color/blackcolor"
+                android:fontFamily="@font/sushmb"
+                android:gravity="center"/>
+
+            <TextView
+                android:id="@+id/idIftarerPorArbi"
+                android:padding="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/ifterer_por_arbi"
+                android:gravity="center"
+                android:textColor="@color/blackcolor"
+                android:background="@drawable/arbitext_background"/>
+
+            <TextView
+                android:id="@+id/idIftarerPorUccharon"
+                android:padding="10dp"
+                android:layout_marginTop="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/ifterer_por_arbi_uccha"
+                android:gravity="center"
+                android:textColor="@color/uccharontxtcolor"/>
+
+            <TextView
+                android:id="@+id/idIftarerPorOrtho"
+                android:padding="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/ifterer_por_arbi_ortho"
+                android:gravity="center"
+                android:textColor="@color/uccharontxtcolor"/>
+
+
+            <TextView
+                android:id="@+id/idIftarerPorDes"
+                android:padding="5dp"
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/ifterer_por_des"
+                android:gravity="center"
+                android:textColor="@color/blackcolor"/>
+
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+</LinearLayout>

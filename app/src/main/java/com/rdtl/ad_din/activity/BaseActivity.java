@@ -145,8 +145,8 @@ public class BaseActivity extends AppCompatActivity {
 
 
         if (qwer%2==0){
-            BottomNav.setVisibility(View.VISIBLE);
-            BottomNav2.setVisibility(View.GONE);
+            BottomNav.setVisibility(View.GONE);
+            BottomNav2.setVisibility(View.VISIBLE);
         }else {
             BottomNav2.setVisibility(View.VISIBLE);
             BottomNav.setVisibility(View.GONE);

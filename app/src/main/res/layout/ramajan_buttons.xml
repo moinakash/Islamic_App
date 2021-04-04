@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+
+    android:gravity="center">
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="20dp"/>
+
+    <Button
+        android:id="@+id/idRojarNiotBtn"
+        android:text="@string/rojarniot"
+        android:layout_margin="7dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/deep_green"
+        android:elevation="50dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:clickable="true"
+        />
+
+    <Button
+        android:visibility="gone"
+        android:id="@+id/idRojarFojilot"
+        android:text="@string/rojarfozilot"
+        android:layout_margin="7dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/light_green"
+        android:elevation="50dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:clickable="true"
+        />
+
+    <Button
+        android:id="@+id/idIfterASunnotKhabar"
+        android:text="@string/sunnotkhabar"
+        android:layout_margin="7dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/light_green"
+        android:elevation="50dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:clickable="true"
+        />
+
+    <Button
+        android:id="@+id/idSokriya"
+        android:text="@string/sokriya"
+        android:layout_margin="7dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/deep_green"
+        android:elevation="50dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:clickable="true"
+        />
+
+    <Button
+        android:id="@+id/idRojarCharkaj"
+        android:text="@string/chardoa"
+        android:layout_margin="7dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/light_green"
+        android:elevation="50dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:clickable="true"
+        />
+
+    <Button
+        android:id="@+id/idTarabirNioim"
+        android:text="@string/tarabirnamaj"
+        android:layout_margin="7dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/deep_green"
+        android:elevation="50dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:clickable="true"
+        />
+
+    <Button
+        android:id="@+id/idKaronChara"
+        android:text="@string/karonchara"
+        android:layout_margin="7dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/light_green"
+        android:elevation="50dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:clickable="true"
+        />
+
+    <Button
+        android:id="@+id/idRojavanga"
+        android:text="@string/vanga"
+        android:layout_margin="7dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/deep_green"
+        android:elevation="50dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:clickable="true"
+        />
+
+    <Button
+        android:id="@+id/idRojarkaffara"
+        android:text="@string/kaffara"
+        android:layout_margin="7dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/light_green"
+        android:elevation="50dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:clickable="true"
+        />
+
+    <Button
+        android:id="@+id/idVulDharona"
+        android:text="@string/vuldharona"
+        android:layout_margin="7dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/deep_green"
+        android:elevation="50dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:clickable="true"
+        />
+
+    <Button
+        android:id="@+id/idPastAndbrush"
+        android:text="@string/brash"
+        android:layout_margin="7dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/light_green"
+        android:elevation="50dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:clickable="true"
+        />
+
+    <Button
+        android:id="@+id/idRomankeRohomot"
+        android:text="@string/rohomot"
+        android:layout_margin="7dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/deep_green"
+        android:elevation="50dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:clickable="true"
+        />
+
+    <Button
+        android:id="@+id/idRojayDhan"
+        android:text="@string/danerfozilot"
+        android:layout_margin="7dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/light_green"
+        android:elevation="50dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:clickable="true"
+        />
+
+    <Button
+        android:id="@+id/idJannatJahannam"
+        android:text="@string/jannat_jahannam"
+        android:layout_margin="7dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/deep_green"
+        android:elevation="50dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:clickable="true"
+        />
+
+    <Button
+        android:id="@+id/idFitrah"
+        android:text="@string/fitra"
+        android:layout_margin="7dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/light_green"
+        android:elevation="50dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:clickable="true"
+        />
+
+    <Button
+        android:id="@+id/idRojayNirdesh"
+        android:text="@string/nirdes"
+        android:layout_margin="7dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/deep_green"
+        android:elevation="50dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:clickable="true"
+        />
+
+    <Button
+        android:id="@+id/idItekaf"
+        android:text="@string/itekaf"
+        android:layout_margin="7dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/light_green"
+        android:elevation="50dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:clickable="true"
+        />
+
+    <Button
+        android:id="@+id/idRojonMasherBorkot"
+        android:text="@string/rojobmash"
+        android:layout_margin="7dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/deep_green"
+        android:elevation="50dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:clickable="true"
+        />
+
+
+
+</LinearLayout>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:layout_marginTop="20dp"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:padding="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@drawable/green_bg_four">
+
+        <ImageView
+            android:id="@+id/idSuraPlayPause"
+            android:layout_gravity="center_vertical"
+            android:layout_width="52dp"
+            android:layout_height="52dp"
+            android:background="@drawable/btn_play"/>
+
+
+        <LinearLayout
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/idRunningSura"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="10sp"
+                android:text="     সূরা বাকারার শেষ তিন আয়াত বাংলা উচ্চারণ ও অর্থ সহ"/>
+
+            <SeekBar
+                android:id="@+id/idSeekbarofSure"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:max="100"
+                android:progress="0"
+                android:indeterminate="false"
+                android:thumb="@drawable/custom_thumb"
+                android:progressDrawable="@drawable/seekbar_background"
+                android:padding="6dp"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/idRunnigDuration"
+                    android:gravity="left"
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="     0:00"/>
+
+                <TextView
+                    android:id="@+id/idTotalDuration"
+                    android:gravity="right"
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="0:00     "/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+
+
+
+
+</LinearLayout>
