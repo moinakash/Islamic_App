@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "635736988432",
+    "project_id": "daily-islam-d6cd7",
+    "storage_bucket": "daily-islam-d6cd7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:635736988432:android:0988b4dc8d6e0b15bb2395",
+        "android_client_info": {
+          "package_name": "com.rdtl.ad_din"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "635736988432-7kbndtvhu044flvn3m1jdb21dc95ngar.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB-nITksQFHwtn_1DyDjwSqUT309_9CsZg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "635736988432-7kbndtvhu044flvn3m1jdb21dc95ngar.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

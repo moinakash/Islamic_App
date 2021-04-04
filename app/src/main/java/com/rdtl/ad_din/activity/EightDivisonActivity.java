@@ -18,10 +18,14 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.onesignal.OSNotificationOpenedResult;
+import com.onesignal.OneSignal;
 import com.rdtl.ad_din.DatabaseHelper;
 import com.rdtl.ad_din.R;
 import com.gun0912.tedpermission.PermissionListener;
 import com.gun0912.tedpermission.TedPermission;
+
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,6 +33,7 @@ import java.util.List;
 public class EightDivisonActivity extends AppCompatActivity {
 
 
+    private static final String ONESIGNAL_APP_ID = "539e785b-c727-45eb-a089-553a8914911f";
 
     String latt = "", lonn ="", locString ="";
 
@@ -69,6 +74,43 @@ public class EightDivisonActivity extends AppCompatActivity {
 
         spDiv = findViewById(R.id.idDivision);
         spDis = findViewById(R.id.idDistrict);
+
+        OneSignal.setLogLevel(OneSignal.LOG_LEVEL.VERBOSE, OneSignal.LOG_LEVEL.NONE);
+
+        // OneSignal Initialization
+        OneSignal.initWithContext(this);
+        OneSignal.setAppId(ONESIGNAL_APP_ID);
+
+
+
+
+
+        OneSignal.setNotificationOpenedHandler(new OneSignal.OSNotificationOpenedHandler() {
+            @Override
+            public void notificationOpened(OSNotificationOpenedResult result) {
+//                        String actionId = result.getAction().getActionId();
+//                        OSNotificationAction.ActionType type = result.getAction().getType(); // "ActionTaken" | "Opened"
+//
+//                        String title = result.getNotification().getTitle();
+                JSONObject data = result.getNotification().getAdditionalData();
+                if(data !=null && data.has("notification")){
+
+
+                    Toast.makeText(EightDivisonActivity.this, "Farhad", Toast.LENGTH_SHORT).show();
+
+                    Intent intent = new Intent(EightDivisonActivity.this, OurNotificationActivity.class);
+                    startActivity(intent);
+
+                }
+                if(data !=null && data.has("notification 2")){
+
+
+                    Toast.makeText(EightDivisonActivity.this, "Akash", Toast.LENGTH_SHORT).show();
+
+                }
+
+            }
+        });
 
 
         checkPermission();
