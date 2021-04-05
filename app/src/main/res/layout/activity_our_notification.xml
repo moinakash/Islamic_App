@@ -53,6 +53,7 @@
                     android:gravity="right"
                     android:layout_gravity="left"/>
 
+                
                 <TextView
                     android:id="@+id/idCountDownBox"
                     android:padding="5dp"
