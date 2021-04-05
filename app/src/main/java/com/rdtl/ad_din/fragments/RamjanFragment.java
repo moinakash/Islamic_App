@@ -1,6 +1,8 @@
 package com.rdtl.ad_din.fragments;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -11,12 +13,16 @@ import android.view.ViewGroup;
 import android.view.animation.AlphaAnimation;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.rdtl.ad_din.Adapters.Ramjan_chat_adapter;
 import com.rdtl.ad_din.R;
+import com.rdtl.ad_din.activity.BaseActivity;
 import com.rdtl.ad_din.activity.OurNotificationActivity;
 import com.rdtl.ad_din.activity.RamajanDetailsActivity;
+import com.rdtl.ad_din.pojo_classes.ConverterClass;
 import com.rdtl.ad_din.pojo_classes.FullLengthListView;
+import com.rdtl.ad_din.pojo_classes.WaktoTimeMaintaining;
 import com.rdtl.ad_din.pojo_classes.ramjan_chart_modelClass;
 
 import java.util.ArrayList;
@@ -39,11 +45,16 @@ public class RamjanFragment extends Fragment {
 
     FullLengthListView RahmatList,MagferatList,NajatList;
 
+    TextView tvUprTime, tvLwrTime, tvTodayRamjan, tvThisYear;
+
     ArrayList<ramjan_chart_modelClass> ramjan_chart_modelClasses_List;
     ArrayList<ramjan_chart_modelClass> ramjan_chart_modelClasses_List2;
     ArrayList<ramjan_chart_modelClass> ramjan_chart_modelClasses_List3;
 
     Intent in;
+
+    ConverterClass converterClass;
+    WaktoTimeMaintaining wtm;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -122,7 +133,18 @@ public class RamjanFragment extends Fragment {
         btnRojobMash = view.findViewById(R.id.idRojonMasherBorkot);
 
 
+        tvUprTime = view.findViewById(R.id.idAjkerUpperPartTime);
+        tvLwrTime = view.findViewById(R.id.idAjkerLowerPartTime);
+        tvTodayRamjan = view.findViewById(R.id.idTodayRamjan);
+        tvThisYear = view.findViewById(R.id.idThisYear);
+
+
+        converterClass = new ConverterClass(getContext());
+        wtm = new WaktoTimeMaintaining(getContext());
+
+
         listviews();
+        timesForSheheri();
 
 
 
@@ -388,6 +410,78 @@ public class RamjanFragment extends Fragment {
             }
         });
 
+    }
+
+
+
+    private void timesForSheheri(){
+
+
+
+        SharedPreferences prefForRamjan;
+        prefForRamjan = getActivity().getSharedPreferences("Ramjan",0);
+        String arabikYr = prefForRamjan.getString("arabikyr","১৪৪২");
+        String arabikDy = prefForRamjan.getString("arabikdy","১");
+        String engYr = prefForRamjan.getString("engyr","২০২১");
+
+
+        tvTodayRamjan.setText("আজ " + arabikDy + " তম \nরমজান");
+        tvThisYear.setText("মাহে রমজান\n"+converterClass.covertS(engYr)+" ("+arabikYr+")");
+
+
+        BaseActivity activity = (BaseActivity) getActivity();
+        String fojorerTime = wtm.sheheritimewithsubm(""+activity.fojorData());
+
+
+        Character [] array= new Character[fojorerTime.length()];
+
+        for (int i = 0; i < fojorerTime.length(); i++) {
+            array[i] = fojorerTime.charAt(i);
+        }
+        String fojorTimeBangla = ""+array[0]+""+array[1]+""+array[2]+""+array[3];
+
+        String SfHour = ""+array[0];
+        String SfMinute = ""+array[2]+""+array[3];
+        final int fHour = Integer.parseInt(SfHour);
+        final int fMinute = Integer.parseInt(SfMinute);
+
+
+        fojorTimeBangla = converterClass.covertS(fojorTimeBangla);
+
+
+        tvLwrTime.setText("পরবর্তী সেহরির শেষ সময় \n"+fojorTimeBangla);
+
+
+
+        String magriberTime = wtm.mtimewithaddm(activity.magribData());
+
+        Character [] magribarray= new Character[magriberTime.length()];
+
+        for (int i = 0; i < magriberTime.length(); i++) {
+            magribarray[i] = magriberTime.charAt(i);
+        }
+
+        String txtMagrib = ""+magribarray[0]+""+magribarray[1];
+        int mInt = Integer.parseInt(txtMagrib);
+        int mgInt = mInt;
+        if (mInt>12){
+            mInt = mInt - 12;
+        }
+
+        String magribTimeBangla = ""+mInt+""+magribarray[2]+""+magribarray[3]+""+magribarray[4];
+
+
+        String SmMinute = ""+magribarray[3]+""+magribarray[4];
+        final int mHour = mgInt;
+        final int mMinute = Integer.parseInt(SmMinute);
+
+
+        magribTimeBangla = converterClass.covertS(magribTimeBangla);
+
+
+
+
+        tvUprTime.setText("আজকের ইফতারের সময় \n"+magribTimeBangla);
     }
 
 

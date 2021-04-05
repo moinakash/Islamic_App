@@ -1,6 +1,7 @@
 package com.rdtl.ad_din.Adapters;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -32,6 +33,12 @@ public class Ramjan_chat_adapter extends ArrayAdapter<ramjan_chart_modelClass> {
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
 
+        SharedPreferences prefForRamjan;
+        prefForRamjan = getContext().getSharedPreferences("Ramjan",0);
+        String arabikYr = prefForRamjan.getString("arabikyr","১৪৪২");
+        String arabikDy = prefForRamjan.getString("arabikdy","১");
+        String engYr = prefForRamjan.getString("engyr","২০২১");
+
         View customView = convertView;
         if (customView == null) {
             LayoutInflater vi = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -56,7 +63,7 @@ public class Ramjan_chat_adapter extends ArrayAdapter<ramjan_chart_modelClass> {
             Ramjan_chart_date.setText(""+ramjan_chart_modelClass_obj.getDate());
 
 
-            if (ramjan_chart_modelClass_obj.getNumber().equals("১৮")){
+            if (ramjan_chart_modelClass_obj.getNumber().equals(""+arabikDy)){
 
                 llparent.setBackgroundColor(Color.parseColor("#DCB742"));
             }else {

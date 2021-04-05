@@ -27,6 +27,21 @@ public class ConverterClass {
         return seShTime;
     }
 
+    public String covertE(String seShTime)
+    {
+        seShTime= seShTime.replace( "০","0");
+        seShTime= seShTime.replace( "১","1");
+        seShTime= seShTime.replace( "২","2");
+        seShTime= seShTime.replace( "৩","3");
+        seShTime= seShTime.replace("৪","4");
+        seShTime= seShTime.replace( "৫","5");
+        seShTime= seShTime.replace( "৬","6");
+        seShTime= seShTime.replace( "৭","7");
+        seShTime= seShTime.replace( "৮","8");
+        seShTime= seShTime.replace("৯","9");
+        return seShTime;
+    }
+
 
     public Integer converI(int ct){
 

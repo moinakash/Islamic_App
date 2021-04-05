@@ -229,7 +229,17 @@ public class TimeTableFragment extends Fragment {
             year = ""+text_array[0]+""+text_array[1]+""+text_array[2]+""+text_array[3]+""+text_array[4];
             day = ""+text_array[(ii-1)]+""+text_array[(ii)];
 
-            String txtf = "";
+            SharedPreferences prefForRamjan;
+            prefForRamjan = getActivity().getSharedPreferences("Ramjan",0);
+            SharedPreferences.Editor forramjan = prefForRamjan.edit();
+            forramjan.putString("arabikyr", ""+year);
+            forramjan.putString("arabikdy", ""+day);
+            forramjan.putString("engyr", ""+hdcY);
+
+            forramjan.commit();
+
+
+        String txtf = "";
             for ( i = 5; i < (ii-1); i++){
 
 
