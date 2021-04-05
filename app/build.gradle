@@ -19,6 +19,11 @@ android {
     }
 
 
+    lintOptions {
+
+        checkReleaseBuilds false
+
+    }
 
     buildTypes {
         release {
