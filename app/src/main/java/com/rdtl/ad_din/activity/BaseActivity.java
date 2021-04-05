@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
 import android.app.AlertDialog;
+import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.util.Log;
@@ -17,6 +18,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.rdtl.ad_din.Api.Audio_api;
+import com.rdtl.ad_din.Api.Retrofit;
 import com.rdtl.ad_din.fragments.CompusFragment;
 import com.rdtl.ad_din.fragments.DoaDurudFragment;
 import com.rdtl.ad_din.fragments.QuranMajidFragment;
@@ -24,6 +27,7 @@ import com.rdtl.ad_din.R;
 import com.rdtl.ad_din.fragments.RamjanFragment;
 import com.rdtl.ad_din.fragments.TasbihFragment;
 import com.rdtl.ad_din.fragments.TimeTableFragment;
+import com.rdtl.ad_din.pojo_classes.Audio_list_modelCLass;
 import com.rdtl.ad_din.pojo_classes.ConverterClass;
 import com.ismaeldivita.chipnavigation.ChipNavigationBar;
 import com.rdtl.ad_din.pojo_classes.WaktoTimeInt;
@@ -31,6 +35,11 @@ import com.rdtl.ad_din.pojo_classes.WaktoTimeMaintaining;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class BaseActivity extends AppCompatActivity {
 
@@ -48,6 +57,10 @@ public class BaseActivity extends AppCompatActivity {
     int  cTime, fTime, jTime, aTime, mTime, eTime, sTime;
 
     int test;
+
+    String final_Audio;
+
+    Retrofit retrofit;
 
 
 
@@ -69,6 +82,8 @@ public class BaseActivity extends AppCompatActivity {
 
     public void onCreateM(){
 
+        retrofit = new Retrofit();
+        AudioApi();
 
         BottomNav = findViewById(R.id.bottom_nav);
         BottomNav2 = findViewById(R.id.bottom_nav2);
@@ -908,6 +923,62 @@ public class BaseActivity extends AppCompatActivity {
 
 
         alertDialog.show();
+
+
+
+    }
+
+
+    public void AudioApi(){
+
+
+        Call<List<Audio_list_modelCLass>> call = retrofit.getService(Audio_api.class).getAudio("2");
+
+        call.enqueue(new Callback<List<Audio_list_modelCLass>>() {
+            @Override
+            public void onResponse(Call<List<Audio_list_modelCLass>> call, Response<List<Audio_list_modelCLass>> response) {
+
+
+                if (!response.isSuccessful()) {
+                    Toast.makeText(BaseActivity.this, "Code: " + response.code(), Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                if (response.isSuccessful()){
+
+                    Toast.makeText(BaseActivity.this, "Success", Toast.LENGTH_SHORT).show();
+
+                }
+
+                List<Audio_list_modelCLass> posts = response.body();
+
+                final_Audio = "https://c6c45255a326.ngrok.io/"+posts.get(0).getAudio();
+
+
+                SharedPreferences pref = BaseActivity.this.getSharedPreferences("Api_Audio",MODE_PRIVATE);
+                SharedPreferences.Editor editor = pref.edit();
+                editor.putString("sp_Audio_Url", final_Audio);
+                editor.commit();
+
+
+                Toast.makeText(BaseActivity.this, ""+final_Audio, Toast.LENGTH_SHORT).show();
+
+
+            }
+
+            @Override
+            public void onFailure(Call<List<Audio_list_modelCLass>> call, Throwable t) {
+
+           /*     SharedPreferences pref = BaseActivity.this.getSharedPreferences("Api_Audio",MODE_PRIVATE);
+                SharedPreferences.Editor editor = pref.edit();
+                editor.putString("sp_Audio_Url", "http://soundflux.islamicfinder.org/if-soundflux/api/v1/stream//quran/rahman-sudais/001.mp3");
+                editor.commit();*/
+
+
+              //  Toast.makeText(BaseActivity.this, "http://soundflux.islamicfinder.org/if-soundflux/api/v1/stream//quran/rahman-sudais/001.mp3", Toast.LENGTH_SHORT).show();
+
+            }
+        });
 
 
 

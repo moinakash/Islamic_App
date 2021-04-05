@@ -2,6 +2,7 @@ package com.rdtl.ad_din.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.SharedPreferences;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Handler;
@@ -14,6 +15,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.rdtl.ad_din.R;
+
+
+
 
 public class OurNotificationActivity extends AppCompatActivity {
 
@@ -30,6 +34,7 @@ public class OurNotificationActivity extends AppCompatActivity {
 
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,6 +46,7 @@ public class OurNotificationActivity extends AppCompatActivity {
         textViewWorks();
 
     }
+
 
 
 
@@ -104,8 +110,13 @@ public class OurNotificationActivity extends AppCompatActivity {
 
     private void preparMediaPlayer() {
         try {
+
+            SharedPreferences pref = OurNotificationActivity.this.getSharedPreferences("Api_Audio",MODE_PRIVATE);
+            String url = pref.getString("sp_Audio_Url","http://soundflux.islamicfinder.org/if-soundflux/api/v1/stream//quran/rahman-sudais/001.mp3");
+
             //suraMediaPlayer.setDataSource("http://infinityandroid.com/music/good_times.mp3");
-            suraMediaPlayer.setDataSource("http://soundflux.islamicfinder.org/if-soundflux/api/v1/stream//quran/rahman-sudais/001.mp3");
+           // suraMediaPlayer.setDataSource("http://soundflux.islamicfinder.org/if-soundflux/api/v1/stream//quran/rahman-sudais/001.mp3");
+            suraMediaPlayer.setDataSource(""+url);
             suraMediaPlayer.prepare();
             tvTotalDuration.setText(miliSecondsToTimer(suraMediaPlayer.getDuration())+"     ");
         }catch (Exception e){
