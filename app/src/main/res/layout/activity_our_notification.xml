@@ -58,7 +58,7 @@
                     android:padding="5dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="৫ঃ৪০"
+                    android:text="৬ঃ৪০"
                     android:textSize="40sp"
                     android:textStyle="bold"
                     android:fontFamily="@font/sushmb"
@@ -161,6 +161,17 @@
                 android:gravity="center"/>
 
             <TextView
+                android:id="@+id/idIftarerPorDes"
+                android:padding="5dp"
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/ifterer_por_des"
+                android:gravity="center"
+                android:textColor="@color/blackcolor"
+                android:textStyle="italic"/>
+
+            <TextView
                 android:id="@+id/idIftarerPorArbi"
                 android:padding="10dp"
                 android:layout_marginTop="10dp"
@@ -192,15 +203,7 @@
                 android:textColor="@color/uccharontxtcolor"/>
 
 
-            <TextView
-                android:id="@+id/idIftarerPorDes"
-                android:padding="5dp"
-                android:layout_marginTop="10dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/ifterer_por_des"
-                android:gravity="center"
-                android:textColor="@color/blackcolor"/>
+
 
 
         </LinearLayout>
