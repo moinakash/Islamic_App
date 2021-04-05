@@ -118,7 +118,9 @@ public class OurNotificationActivity extends AppCompatActivity {
            // suraMediaPlayer.setDataSource("http://soundflux.islamicfinder.org/if-soundflux/api/v1/stream//quran/rahman-sudais/001.mp3");
             suraMediaPlayer.setDataSource(""+url);
             suraMediaPlayer.prepare();
+
             tvTotalDuration.setText(miliSecondsToTimer(suraMediaPlayer.getDuration())+"     ");
+           // suraMediaPlayer.prepareAsync();
         }catch (Exception e){
             Toast.makeText(this,e.getMessage(),Toast.LENGTH_SHORT).show();
         }
