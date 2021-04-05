@@ -941,24 +941,36 @@ public class BaseActivity extends AppCompatActivity {
 
                 if (!response.isSuccessful()) {
                     Toast.makeText(BaseActivity.this, "Code: " + response.code(), Toast.LENGTH_SHORT).show();
-                    return;
+                    //return;
+
+                    final_Audio = "No";
+                    SharedPreferences pref = BaseActivity.this.getSharedPreferences("Api_Audio",MODE_PRIVATE);
+                    SharedPreferences.Editor editor = pref.edit();
+                    editor.putString("sp_Audio_Url", final_Audio);
+                    editor.commit();
                 }
 
                 if (response.isSuccessful()){
 
+                    List<Audio_list_modelCLass> posts = response.body();
+
+                    final_Audio = "https://757761ead02f.ngrok.io/"+posts.get(0).getAudio();
+
                     Toast.makeText(BaseActivity.this, "Success", Toast.LENGTH_SHORT).show();
+                    SharedPreferences pref = BaseActivity.this.getSharedPreferences("Api_Audio",MODE_PRIVATE);
+                    SharedPreferences.Editor editor = pref.edit();
+                    editor.putString("sp_Audio_Url", final_Audio);
+                    editor.commit();
 
                 }
 
-                List<Audio_list_modelCLass> posts = response.body();
-
-                final_Audio = "https://757761ead02f.ngrok.io/"+posts.get(0).getAudio();
 
 
-                SharedPreferences pref = BaseActivity.this.getSharedPreferences("Api_Audio",MODE_PRIVATE);
-                SharedPreferences.Editor editor = pref.edit();
-                editor.putString("sp_Audio_Url", final_Audio);
-                editor.commit();
+
+
+
+
+
 
 
                 Toast.makeText(BaseActivity.this, ""+final_Audio, Toast.LENGTH_SHORT).show();
@@ -976,6 +988,12 @@ public class BaseActivity extends AppCompatActivity {
 
 
               //  Toast.makeText(BaseActivity.this, "http://soundflux.islamicfinder.org/if-soundflux/api/v1/stream//quran/rahman-sudais/001.mp3", Toast.LENGTH_SHORT).show();
+
+                final_Audio = "No";
+                SharedPreferences pref = BaseActivity.this.getSharedPreferences("Api_Audio",MODE_PRIVATE);
+                SharedPreferences.Editor editor = pref.edit();
+                editor.putString("sp_Audio_Url", final_Audio);
+                editor.commit();
 
             }
         });

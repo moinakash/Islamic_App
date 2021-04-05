@@ -25,7 +25,9 @@ import com.rdtl.ad_din.pojo_classes.FullLengthListView;
 import com.rdtl.ad_din.pojo_classes.WaktoTimeMaintaining;
 import com.rdtl.ad_din.pojo_classes.ramjan_chart_modelClass;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -417,6 +419,23 @@ public class RamjanFragment extends Fragment {
     private void timesForSheheri(){
 
 
+        Calendar calendar = Calendar.getInstance();
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("HH mm ");
+        SimpleDateFormat sstt = new SimpleDateFormat("mm");
+
+
+        String dateTime = simpleDateFormat.format(calendar.getTime());
+        dateTime = dateTime.replace(" ", "");
+        int cTime = Integer.parseInt(dateTime);
+
+
+
+
+
+
+        //cTime = Integer.parseInt(dateTime);
+
+
 
         SharedPreferences prefForRamjan;
         prefForRamjan = getActivity().getSharedPreferences("Ramjan",0);
@@ -449,7 +468,7 @@ public class RamjanFragment extends Fragment {
         fojorTimeBangla = converterClass.covertS(fojorTimeBangla);
 
 
-        tvLwrTime.setText("পরবর্তী সেহরির শেষ সময় \n"+fojorTimeBangla);
+
 
 
 
@@ -480,8 +499,18 @@ public class RamjanFragment extends Fragment {
 
 
 
+        if (cTime<=1130){
+            tvUprTime.setText("আজকের সেহরির শেষ সময় \n"+fojorTimeBangla);
+            tvLwrTime.setText("আজকের ইফতারের সময় \n"+magribTimeBangla);
+        }else {
+            tvLwrTime.setText("পরবর্তী সেহরির শেষ সময় \n"+fojorTimeBangla);
+            tvUprTime.setText("আজকের ইফতারের সময় \n"+magribTimeBangla);
+        }
 
-        tvUprTime.setText("আজকের ইফতারের সময় \n"+magribTimeBangla);
+
+
+
+
     }
 
 

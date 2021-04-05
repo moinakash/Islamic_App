@@ -103,7 +103,7 @@
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_marginStart="4dp"
-            android:layout_marginBottom="57dp"
+            android:layout_marginBottom="54dp"
             android:background="@drawable/ad_din_for_ramadan_star"
             app:layout_constraintBottom_toBottomOf="@+id/idAjkerLowerPartTime"
             app:layout_constraintEnd_toEndOf="parent"

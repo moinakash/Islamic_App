@@ -3,8 +3,11 @@ package com.rdtl.ad_din.activity;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import android.content.Context;
 import android.content.SharedPreferences;
+import android.content.res.AssetFileDescriptor;
 import android.media.MediaPlayer;
+import android.net.ConnectivityManager;
 import android.os.Bundle;
 import android.os.Handler;
 import android.text.Html;
@@ -118,11 +121,38 @@ public class OurNotificationActivity extends AppCompatActivity {
         try {
 
             SharedPreferences pref = OurNotificationActivity.this.getSharedPreferences("Api_Audio",MODE_PRIVATE);
-            String url = pref.getString("sp_Audio_Url","http://soundflux.islamicfinder.org/if-soundflux/api/v1/stream//quran/rahman-sudais/001.mp3");
+            String url = pref.getString("sp_Audio_Url","file:///android_asset/sura_bakara_first_ttysvn.mp3");
 
             //suraMediaPlayer.setDataSource("http://infinityandroid.com/music/good_times.mp3");
            // suraMediaPlayer.setDataSource("http://soundflux.islamicfinder.org/if-soundflux/api/v1/stream//quran/rahman-sudais/001.mp3");
-            suraMediaPlayer.setDataSource(""+url);
+
+            if(!isNetworkAvailable(this)) {
+
+                //off
+                AssetFileDescriptor afd = getAssets().openFd("sura_bakara_first_ttysvn.mp3");
+
+                suraMediaPlayer.setDataSource(afd.getFileDescriptor(), afd.getStartOffset(), afd.getLength());
+            }
+            else {
+                //on
+                if (url.equals("No")){
+                    //mediaPlayer =
+
+                    //suraMediaPlayer = MediaPlayer.create(getApplicationContext(), R.raw.sura_bakara_first_ttysvn);
+
+                    AssetFileDescriptor afd = getAssets().openFd("sura_bakara_first_ttysvn.mp3");
+
+                    suraMediaPlayer.setDataSource(afd.getFileDescriptor(), afd.getStartOffset(), afd.getLength());
+
+
+                }else {
+                    suraMediaPlayer.setDataSource(""+url);
+                }
+            }
+
+
+
+
             suraMediaPlayer.prepare();
 
             tvTotalDuration.setText(miliSecondsToTimer(suraMediaPlayer.getDuration())+"     ");
@@ -222,5 +252,16 @@ public class OurNotificationActivity extends AppCompatActivity {
 
     }
 
+    public static boolean isNetworkAvailable(Context context) {
+        ConnectivityManager conMan = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
+        if(conMan.getActiveNetworkInfo() != null && conMan.getActiveNetworkInfo().isConnected())
+            return true;
+        else
+            return false;
+    }
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+    }
 }
