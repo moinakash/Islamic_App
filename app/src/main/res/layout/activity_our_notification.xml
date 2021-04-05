@@ -6,13 +6,21 @@
     android:orientation="vertical"
     >
 
-    <TextView
+  <!--  <TextView
         android:layout_width="match_parent"
         android:layout_height="45dp"
         android:background="#2AC17E"
         android:text="নোটিফিকেশন"
         android:gravity="center"
-        />
+        />-->
+
+    <LinearLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <include layout="@layout/app_bar_layout"
+            android:id="@+id/ramjan_notification_toolbar"/>
+    </LinearLayout>
 
     <ScrollView
         android:layout_width="match_parent"

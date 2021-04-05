@@ -20,8 +20,13 @@
         android:roundIcon="@mipmap/logo_round_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.OurNotificationActivity"></activity>
-        <activity android:name=".activity.RamajanDetailsActivity" />
+
+        <activity android:name=".activity.OurNotificationActivity"
+            android:parentActivityName=".activity.KotlinActivity"></activity>
+
+        <activity android:name=".activity.RamajanDetailsActivity"
+            android:parentActivityName=".activity.KotlinActivity"/>
+
         <activity android:name=".activity.InfoActivity" />
         <activity
             android:name=".activity.Amol_Activity"

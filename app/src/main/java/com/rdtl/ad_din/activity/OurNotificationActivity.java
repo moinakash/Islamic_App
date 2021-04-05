@@ -1,6 +1,7 @@
 package com.rdtl.ad_din.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.content.SharedPreferences;
 import android.media.MediaPlayer;
@@ -22,6 +23,9 @@ import com.rdtl.ad_din.R;
 public class OurNotificationActivity extends AppCompatActivity {
 
 
+    private Toolbar mToolbar;
+
+
     TextView tvRunnigSuraName, tvCurrentDuratuin, tvTotalDuration;
     SeekBar sbRunningS;
     ImageView ivPlayPause;
@@ -39,6 +43,8 @@ public class OurNotificationActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_our_notification);
+
+        ToolBar();
 
         initIds();
         initForPlayer();
@@ -198,6 +204,21 @@ public class OurNotificationActivity extends AppCompatActivity {
         tvIftarerPorOrtho.setText(Html.fromHtml(iftarerPorOrtho));
 
 
+
+    }
+
+
+    private void ToolBar() {
+
+        mToolbar = findViewById( R.id.ramjan_notification_toolbar );
+
+        TextView mTitle = (TextView) mToolbar.findViewById(R.id.toolbar_title);
+
+        setSupportActionBar( mToolbar );
+        mTitle.setText("নোটিফিকেশন");
+
+        getSupportActionBar().setDisplayShowTitleEnabled( false );
+        getSupportActionBar().setDisplayHomeAsUpEnabled( true );
 
     }
 

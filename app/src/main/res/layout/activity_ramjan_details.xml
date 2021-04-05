@@ -1,15 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/afternotification_bg"
-    tools:context=".activity.RamajanDetailsActivity">
+    tools:context=".activity.RamajanDetailsActivity"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <include layout="@layout/app_bar_layout_transparent"
+            android:id="@+id/ramjan_details_toolbar"/>
+    </LinearLayout>
 
     <WebView
+        android:translationY="-10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+
         android:id="@+id/idWebViewOfRamjan"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

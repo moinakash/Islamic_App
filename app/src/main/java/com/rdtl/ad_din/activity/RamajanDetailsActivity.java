@@ -1,6 +1,7 @@
 package com.rdtl.ad_din.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
 import android.graphics.Color;
@@ -15,7 +16,7 @@ public class RamajanDetailsActivity extends AppCompatActivity {
 
     WebView webView;
     String webname;
-
+    private Toolbar mToolbar;
 
 
     @Override
@@ -23,6 +24,7 @@ public class RamajanDetailsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ramjan_details);
 
+        ToolBar();
 
         webView = findViewById(R.id.idWebViewOfRamjan);
 
@@ -137,5 +139,17 @@ public class RamajanDetailsActivity extends AppCompatActivity {
 //                        | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
 //                        | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);
 //    }
+
+
+    private void ToolBar() {
+
+        mToolbar = findViewById( R.id.ramjan_details_toolbar );
+
+        setSupportActionBar( mToolbar );
+
+        getSupportActionBar().setDisplayShowTitleEnabled( false );
+        getSupportActionBar().setDisplayHomeAsUpEnabled( true );
+
+    }
 
 }
