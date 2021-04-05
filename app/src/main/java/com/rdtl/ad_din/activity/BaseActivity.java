@@ -952,7 +952,7 @@ public class BaseActivity extends AppCompatActivity {
 
                 List<Audio_list_modelCLass> posts = response.body();
 
-                final_Audio = "https://c6c45255a326.ngrok.io/"+posts.get(0).getAudio();
+                final_Audio = "https://b96e851e0424.ngrok.io/"+posts.get(0).getAudio();
 
 
                 SharedPreferences pref = BaseActivity.this.getSharedPreferences("Api_Audio",MODE_PRIVATE);
