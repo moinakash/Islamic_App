@@ -102,7 +102,7 @@ public class EightDivisonActivity extends AppCompatActivity {
 
 
         retrofit = new Retrofit();
-        AudioApi();
+
         BottombarApi();
         ListviewApi();
         ExtraValueApi();
@@ -814,81 +814,7 @@ public class EightDivisonActivity extends AppCompatActivity {
 
 
 
-    public void AudioApi(){
 
-
-        Call<List<Audio_list_modelCLass>> call = retrofit.getService(Audio_api.class).getAudio("2");
-
-        call.enqueue(new Callback<List<Audio_list_modelCLass>>() {
-            @Override
-            public void onResponse(Call<List<Audio_list_modelCLass>> call, Response<List<Audio_list_modelCLass>> response) {
-
-
-                if (!response.isSuccessful()) {
-                    Toast.makeText(EightDivisonActivity.this, "Code: " + response.code(), Toast.LENGTH_SHORT).show();
-                    //return;
-
-                    final_Audio = "No";
-                    SharedPreferences pref = EightDivisonActivity.this.getSharedPreferences("Api_Audio",MODE_PRIVATE);
-                    SharedPreferences.Editor editor = pref.edit();
-                    editor.putString("sp_Audio_Url", final_Audio);
-                    editor.commit();
-                }
-
-                if (response.isSuccessful()){
-
-                    List<Audio_list_modelCLass> posts = response.body();
-
-                    final_Audio = "https://74df4133c550.ngrok.io/"+posts.get(0).getAudio();
-
-                    final_Audio_title = ""+posts.get(0).getName();
-
-                    //Toast.makeText(BaseActivity.this, "Success title "+final_Audio_title, Toast.LENGTH_SHORT).show();
-
-                    SharedPreferences.Editor editor = prefAudio.edit();
-                    editor.putString("sp_Audio_Url", final_Audio);
-                    editor.putString("sp_Audio_Url_title",final_Audio_title);
-                    editor.commit();
-
-                }
-
-
-
-
-
-
-
-
-
-
-                //Toast.makeText(EightDivisonActivity.this, ""+final_Audio, Toast.LENGTH_SHORT).show();
-
-
-            }
-
-            @Override
-            public void onFailure(Call<List<Audio_list_modelCLass>> call, Throwable t) {
-
-           /*     SharedPreferences pref = BaseActivity.this.getSharedPreferences("Api_Audio",MODE_PRIVATE);
-                SharedPreferences.Editor editor = pref.edit();
-                editor.putString("sp_Audio_Url", "http://soundflux.islamicfinder.org/if-soundflux/api/v1/stream//quran/rahman-sudais/001.mp3");
-                editor.commit();*/
-
-
-                //  Toast.makeText(BaseActivity.this, "http://soundflux.islamicfinder.org/if-soundflux/api/v1/stream//quran/rahman-sudais/001.mp3", Toast.LENGTH_SHORT).show();
-
-                final_Audio = "No";
-                SharedPreferences pref = EightDivisonActivity.this.getSharedPreferences("Api_Audio",MODE_PRIVATE);
-                SharedPreferences.Editor editor = pref.edit();
-                editor.putString("sp_Audio_Url", final_Audio);
-                editor.commit();
-
-            }
-        });
-
-
-
-    }
 
 
 
