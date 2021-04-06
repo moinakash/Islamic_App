@@ -4,7 +4,15 @@
     app:cnb_unselectedColor="#fff">
 
     <item
-        android:id="@+id/home"
+        android:id="@+id/idMenuRamjan"
+        android:icon="@drawable/ramjan_ic_white"
+        android:title="রমজান"
+        app:cnb_backgroundColor="@color/bottom_nav_option"
+        app:cnb_iconColor="#fff"
+        app:cnb_textColor="#fff" />
+
+    <item
+        android:id="@+id/idMenuSomoy"
         android:icon="@drawable/home"
         android:title="সময়"
         app:cnb_backgroundColor="@color/bottom_nav_option"
@@ -12,7 +20,7 @@
         app:cnb_textColor="#fff" />
 
     <item
-        android:id="@+id/discover"
+        android:id="@+id/idMenuKibla"
         android:icon="@drawable/kaba"
         android:title="কিবলা"
         app:cnb_backgroundColor="@color/bottom_nav_option"
@@ -20,7 +28,7 @@
         app:cnb_textColor="#fff" />
 
     <item
-        android:id="@+id/account"
+        android:id="@+id/idMenuKoran"
         android:icon="@drawable/quran_w"
         android:title="কুরআন"
         app:cnb_backgroundColor="@color/bottom_nav_option"
@@ -28,24 +36,18 @@
         app:cnb_textColor="#fff" />
 
     <item
-        android:id="@+id/account2"
+        android:id="@+id/idMenuTasbih"
         android:icon="@drawable/tasbih"
         android:title="তসবিহ"
         app:cnb_backgroundColor="@color/bottom_nav_option"
         app:cnb_iconColor="#fff"
         app:cnb_textColor="#fff"/>
     <item
-        android:id="@+id/account3"
+        android:id="@+id/idMenuNamaj"
         android:icon="@drawable/home_pray"
         android:title="নামাজ"
         app:cnb_backgroundColor="@color/bottom_nav_option"
         app:cnb_iconColor="#fff"
         app:cnb_textColor="#fff" />
-    <item
-        android:id="@+id/account4"
-        android:icon="@drawable/ramjan_ic_white"
-        android:title="রমজান"
-        app:cnb_backgroundColor="@color/bottom_nav_option"
-        app:cnb_iconColor="#fff"
-        app:cnb_textColor="#fff" />
+
 </menu>

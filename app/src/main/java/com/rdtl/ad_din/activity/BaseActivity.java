@@ -809,24 +809,24 @@ public class BaseActivity extends AppCompatActivity {
                 Fragment fragment = null;
 
                 switch (id){
-                    case  R.id.home:
+                    case  R.id.idMenuSomoy:
                         fragment = new TimeTableFragment();
                         break;
 
-                    case  R.id.discover:
+                    case  R.id.idMenuKibla:
                         fragment = new CompusFragment();
                         break;
 
-                    case  R.id.account:
+                    case  R.id.idMenuKoran:
                         fragment = new QuranMajidFragment();
                         break;
-                    case  R.id.account2:
+                    case  R.id.idMenuTasbih:
                         fragment = new TasbihFragment();
                         break;
-                    case  R.id.account3:
+                    case  R.id.idMenuNamaj:
                         fragment = new DoaDurudFragment();
                         break;
-                    case  R.id.account4:
+                    case  R.id.idMenuRamjan:
                         fragment = new RamjanFragment();
                         break;
 
