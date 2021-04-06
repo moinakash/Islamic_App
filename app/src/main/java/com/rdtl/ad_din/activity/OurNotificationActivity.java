@@ -141,6 +141,7 @@ public class OurNotificationActivity extends AppCompatActivity {
 
             SharedPreferences pref = OurNotificationActivity.this.getSharedPreferences("Api_Audio",MODE_PRIVATE);
             String url = pref.getString("sp_Audio_Url","file:///android_asset/sura_bakara_first_ttysvn.mp3");
+            String url_title = pref.getString("sp_Audio_Url_title","          সূরা বাকারার প্রথম সাতাস আয়াত তিলাওয়াত হচ্ছে");
 
             //suraMediaPlayer.setDataSource("http://infinityandroid.com/music/good_times.mp3");
            // suraMediaPlayer.setDataSource("http://soundflux.islamicfinder.org/if-soundflux/api/v1/stream//quran/rahman-sudais/001.mp3");
@@ -166,6 +167,7 @@ public class OurNotificationActivity extends AppCompatActivity {
 
                 }else {
                     suraMediaPlayer.setDataSource(""+url);
+                    tvRunnigSuraName.setText("     "+url_title);
                 }
             }
 

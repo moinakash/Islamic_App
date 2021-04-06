@@ -968,6 +968,7 @@ public class BaseActivity extends AppCompatActivity {
 
                     SharedPreferences.Editor editor = pref.edit();
                     editor.putString("sp_Audio_Url", final_Audio);
+                    editor.putString("sp_Audio_Url_title",final_Audio_title);
                     editor.commit();
 
                 }
