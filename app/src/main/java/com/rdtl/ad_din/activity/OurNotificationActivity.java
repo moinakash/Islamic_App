@@ -9,6 +9,7 @@ import android.content.res.AssetFileDescriptor;
 import android.media.MediaPlayer;
 import android.net.ConnectivityManager;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.os.Handler;
 import android.text.Html;
 import android.view.MotionEvent;
@@ -24,6 +25,7 @@ import com.rdtl.ad_din.pojo_classes.WaktoTimeMaintaining;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Locale;
 
 
 public class OurNotificationActivity extends AppCompatActivity {
@@ -42,9 +44,19 @@ public class OurNotificationActivity extends AppCompatActivity {
     TextView tvIftarerSomoy, tvIftarerSomoyArbi, tvIftarerSomoyrUccharon, tvIftarerSomoyOrtho;
     TextView tvIftarerPor, tvIftarerPorArbi, tvIftarerPorUccharon, tvIftarerPorOrtho, tvIftarerPorDes;
 
+    TextView tvCb1, tvCb2;
 
     ConverterClass converterClass;
     WaktoTimeMaintaining wtm;
+
+
+    private CountDownTimer mCountDownTimer;
+    private boolean mTimerRunning;
+    private static final long START_TIME_IN_MILLIS = 6000;
+    private long mTimeLeftInMillis = START_TIME_IN_MILLIS;
+
+    int t2Hour, t2Minute, mm;
+    int minutes3=0;
 
 
     @Override
@@ -62,6 +74,37 @@ public class OurNotificationActivity extends AppCompatActivity {
 
         textViewWorks();
 
+        startTimer();
+
+    }
+
+    private void startTimer() {
+        mCountDownTimer = new CountDownTimer(mTimeLeftInMillis, 1000) {
+            @Override
+            public void onTick(long millisUntilFinished) {
+                mTimeLeftInMillis = millisUntilFinished;
+                updateCountDownText();
+            }
+            @Override
+            public void onFinish() {
+                mTimerRunning = false;
+                //mButtonStartPause.setText("Start");
+              //  mButtonStartPause.setVisibility(View.INVISIBLE);
+                //mButtonReset.setVisibility(View.VISIBLE);
+               // Toast.makeText(MainActivity.this, "Done", Toast.LENGTH_SHORT).show();
+            }
+        }.start();
+        mTimerRunning = true;
+        //mButtonStartPause.setText("pause");
+        //mButtonReset.setVisibility(View.INVISIBLE);
+    }
+
+    private void updateCountDownText() {
+        minutes3 = (int) (mTimeLeftInMillis / 1000) / 60;
+        int seconds = (int) (mTimeLeftInMillis / 1000) % 60;
+        String timeLeftFormatted = String.format(Locale.getDefault(), "%02d:%02d", minutes3, seconds);
+        //mTextViewCountDown.setText(timeLeftFormatted);
+        //calculateRtime();
     }
 
 
@@ -83,6 +126,9 @@ public class OurNotificationActivity extends AppCompatActivity {
         tvIftarerPorUccharon = findViewById(R.id.idIftarerPorUccharon);
         tvIftarerPorOrtho = findViewById(R.id.idIftarerPorOrtho);
         tvIftarerPorDes = findViewById(R.id.idIftarerPorDes);
+
+        tvCb1 = findViewById(R.id.idCountDownBox1_1);
+        tvCb2 = findViewById(R.id.idCountDownBox1_2);
     }
 
     private void initForPlayer(){

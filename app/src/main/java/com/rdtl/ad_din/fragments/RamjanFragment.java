@@ -518,16 +518,6 @@ public class RamjanFragment extends Fragment {
     }
 
 
-    private void hiddingAll(){
-
-        RahmatList.setVisibility(View.GONE);
-        MagferatList.setVisibility(View.GONE);
-        NajatList.setVisibility(View.GONE);
-        ivBell.setVisibility(View.GONE);
-        ivUpperFrame.setVisibility(View.GONE);
-        btnRojarNiot.setVisibility(View.GONE);
-
-    }
 
 
 

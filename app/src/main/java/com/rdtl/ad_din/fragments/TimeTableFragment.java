@@ -21,9 +21,12 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.rdtl.ad_din.Api.Audio_api;
+import com.rdtl.ad_din.Api.Retrofit;
 import com.rdtl.ad_din.R;
 import com.rdtl.ad_din.activity.BaseActivity;
 import com.rdtl.ad_din.activity.EightDivisonActivity;
+import com.rdtl.ad_din.pojo_classes.Audio_list_modelCLass;
 import com.rdtl.ad_din.pojo_classes.ConverterClass;
 import com.rdtl.ad_din.pojo_classes.WaktoTimeMaintaining;
 
@@ -35,10 +38,16 @@ import java.time.chrono.HijrahChronology;
 import java.time.chrono.HijrahDate;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
 
 
 import io.paperdb.Paper;
 import pl.droidsonroids.gif.GifImageView;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
+import static android.content.Context.MODE_PRIVATE;
 
 
 public class TimeTableFragment extends Fragment {
@@ -72,6 +81,12 @@ public class TimeTableFragment extends Fragment {
 
     ConverterClass converterClass;
     WaktoTimeMaintaining wtm;
+
+    Retrofit retrofit;
+
+    String final_Audio;
+    String final_Audio_title;
+    SharedPreferences prefAudio;
 
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
@@ -111,6 +126,9 @@ public class TimeTableFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_timetable, container, false);
+
+        retrofit = new Retrofit();
+        prefAudio = getContext().getSharedPreferences("Api_Audio",MODE_PRIVATE);
 
 
         Paper.init(getContext());
@@ -393,10 +411,10 @@ public class TimeTableFragment extends Fragment {
 
 
         ///////////////////////////////////////////////////////////////////////////////////////////
-        SharedPreferences sharedPref = getActivity().getPreferences(Context.MODE_PRIVATE);
+        SharedPreferences sharedPref = getActivity().getPreferences(MODE_PRIVATE);
 
         if (!LocatString.isEmpty()){
-            sharedPref = getActivity().getPreferences(Context.MODE_PRIVATE);
+            sharedPref = getActivity().getPreferences(MODE_PRIVATE);
             SharedPreferences.Editor editor = sharedPref.edit();
             editor.putString("sthan", ""+LocatString);
             editor.commit();
@@ -606,6 +624,7 @@ public class TimeTableFragment extends Fragment {
 
 
 
+        AudioApi();
 
 
         ibFojor.setOnClickListener(new View.OnClickListener() {
@@ -943,6 +962,85 @@ public class TimeTableFragment extends Fragment {
         }
 
         return m;
+    }
+
+
+    public void AudioApi(){
+
+
+        Call<List<Audio_list_modelCLass>> call = retrofit.getService(Audio_api.class).getAudio(""+Integer.parseInt(converterClass.covertE(day)));
+
+        Toast.makeText(getContext(), ""+day, Toast.LENGTH_SHORT).show();
+
+        call.enqueue(new Callback<List<Audio_list_modelCLass>>() {
+            @Override
+            public void onResponse(Call<List<Audio_list_modelCLass>> call, Response<List<Audio_list_modelCLass>> response) {
+
+
+                if (!response.isSuccessful()) {
+                    Toast.makeText(getContext(), "Code: " + response.code(), Toast.LENGTH_SHORT).show();
+                    //return;
+
+                    final_Audio = "No";
+                    SharedPreferences pref = getContext().getSharedPreferences("Api_Audio",MODE_PRIVATE);
+                    SharedPreferences.Editor editor = pref.edit();
+                    editor.putString("sp_Audio_Url", final_Audio);
+                    editor.commit();
+                }
+
+                if (response.isSuccessful()){
+
+                    List<Audio_list_modelCLass> posts = response.body();
+
+                    final_Audio = "https://35cd9753b142.ngrok.io/"+posts.get(0).getAudio();
+
+                    final_Audio_title = ""+posts.get(0).getName();
+
+                    //Toast.makeText(BaseActivity.this, "Success title "+final_Audio_title, Toast.LENGTH_SHORT).show();
+
+                    SharedPreferences.Editor editor = prefAudio.edit();
+                    editor.putString("sp_Audio_Url", final_Audio);
+                    editor.putString("sp_Audio_Url_title",final_Audio_title);
+                    editor.commit();
+
+                }
+
+
+
+
+
+
+
+
+
+
+                //Toast.makeText(EightDivisonActivity.this, ""+final_Audio, Toast.LENGTH_SHORT).show();
+
+
+            }
+
+            @Override
+            public void onFailure(Call<List<Audio_list_modelCLass>> call, Throwable t) {
+
+           /*     SharedPreferences pref = BaseActivity.this.getSharedPreferences("Api_Audio",MODE_PRIVATE);
+                SharedPreferences.Editor editor = pref.edit();
+                editor.putString("sp_Audio_Url", "http://soundflux.islamicfinder.org/if-soundflux/api/v1/stream//quran/rahman-sudais/001.mp3");
+                editor.commit();*/
+
+
+                //  Toast.makeText(BaseActivity.this, "http://soundflux.islamicfinder.org/if-soundflux/api/v1/stream//quran/rahman-sudais/001.mp3", Toast.LENGTH_SHORT).show();
+
+                final_Audio = "No";
+                SharedPreferences pref = getContext().getSharedPreferences("Api_Audio",MODE_PRIVATE);
+                SharedPreferences.Editor editor = pref.edit();
+                editor.putString("sp_Audio_Url", final_Audio);
+                editor.commit();
+
+            }
+        });
+
+
+
     }
 
 

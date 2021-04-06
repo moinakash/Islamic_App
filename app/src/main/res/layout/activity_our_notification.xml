@@ -46,37 +46,106 @@
 
 
             <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+
+
+            <TextView
+                android:id="@+id/idSomoyName"
+                android:padding="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="ইফতারের\nসময়"
+                android:textColor="@color/blackcolor"
+                android:textSize="14sp"
+                android:fontFamily="@font/sushm"
+                android:gravity="right"
+                android:layout_gravity="left"/>
+
+
+            <TextView
+                android:id="@+id/idCountDownBox"
+                android:padding="5dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:text="৬ঃ৪০"
+                android:textSize="40sp"
+                android:textStyle="bold"
+                android:fontFamily="@font/sushmb"
+                android:textColor="@color/countertxtcolor"
+                android:gravity="center_vertical"
+                android:layout_marginLeft="10dp"/>
+
+
+        </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
 
 
 
                 <TextView
-                    android:id="@+id/idSomoyName"
+                    android:id="@+id/idSomoyName2"
                     android:padding="5dp"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:text="ইফতারের\nসময়"
+                    android:text="ইফতারের\nসময় বাকিঃ "
                     android:textColor="@color/blackcolor"
                     android:textSize="14sp"
                     android:fontFamily="@font/sushm"
-                    android:gravity="right"
-                    android:layout_gravity="left"/>
+                    android:gravity="center_vertical|right"
+                    />
 
 
                 <TextView
-                    android:id="@+id/idCountDownBox"
-                    android:padding="5dp"
+                    android:id="@+id/idCountDownBox1_1"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp"
+                    android:paddingTop="10dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="৬ঃ৪০"
+                    android:text="০৬"
                     android:textSize="40sp"
                     android:textStyle="bold"
                     android:fontFamily="@font/sushmb"
-                    android:textColor="@color/countertxtcolor"
-                    android:gravity="center_vertical"
-                    android:layout_marginLeft="10dp"/>
+                    android:textColor="@color/whitecolor"
+                    android:gravity="center"
+                    android:layout_marginLeft="1dp"
+                    android:background="@drawable/counterbg"/>
+
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=":"
+                    android:textSize="60sp"
+                    android:textStyle="bold"
+                    android:fontFamily="@font/sushmb"
+                    android:textColor="#006250"
+                    android:gravity="center"
+                    />
+
+                <TextView
+                    android:id="@+id/idCountDownBox1_2"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp"
+                    android:paddingTop="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="৪০"
+                    android:textSize="40sp"
+                    android:textStyle="bold"
+                    android:fontFamily="@font/sushmb"
+                    android:textColor="@color/whitecolor"
+                    android:gravity="center"
+                    android:layout_marginLeft="10dp"
+                    android:background="@drawable/counterbg"
+                    android:translationX="-5dp"/>
 
 
             </LinearLayout>
