@@ -115,6 +115,16 @@ public class OurNotificationActivity extends AppCompatActivity {
                 return false;
             }
         });
+
+        suraMediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                // do whatever you want
+                sbRunningS.setProgress(0);
+                ivPlayPause.setBackgroundResource(R.drawable.btn_play);
+                tvCurrentDuratuin.setText("     0:00");
+            }
+        });
     }
 
     private void preparMediaPlayer() {
@@ -170,6 +180,9 @@ public class OurNotificationActivity extends AppCompatActivity {
             updateSeekBar();
             long currentDuration = suraMediaPlayer.getCurrentPosition();
             tvCurrentDuratuin.setText("     "+miliSecondsToTimer(currentDuration));
+
+
+
         }
     };
 
@@ -177,6 +190,8 @@ public class OurNotificationActivity extends AppCompatActivity {
         if (suraMediaPlayer.isPlaying()){
             sbRunningS.setProgress((int)(((float) suraMediaPlayer.getCurrentPosition() / suraMediaPlayer.getDuration()) * 100));
             handler.postDelayed(updater, 1000);
+
+
         }
     }
 
@@ -263,5 +278,26 @@ public class OurNotificationActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
+    }
+
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        suraMediaPlayer.pause();
+        ivPlayPause.setBackgroundResource(R.drawable.play_button);
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        suraMediaPlayer.stop();
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        suraMediaPlayer.stop();
+        finish();
     }
 }
