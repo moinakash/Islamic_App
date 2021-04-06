@@ -114,6 +114,18 @@
                 android:fontFamily="@font/sushm"
                 android:textColor="@color/uccharontxtcolor"/>
 
+            <TextView
+                android:visibility="gone"
+                android:id="@+id/idIftarerAgeBangla"
+                android:padding="5dp"
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textSize="12sp"
+                android:fontFamily="@font/sushm"
+                android:textColor="@color/uccharontxtcolor"/>
+
 
             <include layout="@layout/kirat_player"/>
 

@@ -459,10 +459,7 @@ public class RamjanFragment extends Fragment {
         }
         String fojorTimeBangla = ""+array[0]+""+array[1]+""+array[2]+""+array[3];
 
-        String SfHour = ""+array[0];
-        String SfMinute = ""+array[2]+""+array[3];
-        final int fHour = Integer.parseInt(SfHour);
-        final int fMinute = Integer.parseInt(SfMinute);
+
 
 
         fojorTimeBangla = converterClass.covertS(fojorTimeBangla);

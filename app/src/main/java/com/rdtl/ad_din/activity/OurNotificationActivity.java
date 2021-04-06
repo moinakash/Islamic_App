@@ -19,8 +19,11 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.rdtl.ad_din.R;
+import com.rdtl.ad_din.pojo_classes.ConverterClass;
+import com.rdtl.ad_din.pojo_classes.WaktoTimeMaintaining;
 
-
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 
 
 public class OurNotificationActivity extends AppCompatActivity {
@@ -35,17 +38,22 @@ public class OurNotificationActivity extends AppCompatActivity {
     MediaPlayer suraMediaPlayer;
     Handler handler = new Handler();
 
-    TextView tvSomoyName, tvCountDownBox, tvIftarerAge, tvIftarerAgeArbi, tvIftarerAgeUccharon;
+    TextView tvSomoyName, tvCountDownBox, tvIftarerAge, tvIftarerAgeArbi, tvIftarerAgeUccharon, tviftarerAgeBangla;
     TextView tvIftarerSomoy, tvIftarerSomoyArbi, tvIftarerSomoyrUccharon, tvIftarerSomoyOrtho;
     TextView tvIftarerPor, tvIftarerPorArbi, tvIftarerPorUccharon, tvIftarerPorOrtho, tvIftarerPorDes;
 
 
+    ConverterClass converterClass;
+    WaktoTimeMaintaining wtm;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_our_notification);
+
+        converterClass = new ConverterClass(this);
+        wtm = new WaktoTimeMaintaining(this);
 
         ToolBar();
 
@@ -65,6 +73,7 @@ public class OurNotificationActivity extends AppCompatActivity {
         tvIftarerAge = findViewById(R.id.idiftarerAge);
         tvIftarerAgeArbi = findViewById(R.id.idiftarerAgeArbi);
         tvIftarerAgeUccharon = findViewById(R.id.idIftarerAgeUccharon);
+        tviftarerAgeBangla = findViewById(R.id.idIftarerAgeBangla);
         tvIftarerSomoy = findViewById(R.id.idIftarerSomoy);
         tvIftarerSomoyArbi = findViewById(R.id.idIftarerSomoyArbi);
         tvIftarerSomoyrUccharon = findViewById(R.id.idIftarerSomoyUccharon);
@@ -249,6 +258,7 @@ public class OurNotificationActivity extends AppCompatActivity {
         tvIftarerPorOrtho.setText(Html.fromHtml(iftarerPorOrtho));
 
 
+        textViewmaintaining();
 
     }
 
@@ -300,4 +310,63 @@ public class OurNotificationActivity extends AppCompatActivity {
         suraMediaPlayer.stop();
         finish();
     }
+
+    private void textViewmaintaining(){
+
+        SharedPreferences prefForRamjan;
+        prefForRamjan = getApplication().getSharedPreferences("mm",0);
+        String sheheritime = prefForRamjan.getString("sheheri","০৪ঃ৪২");
+        String iftartime = prefForRamjan.getString("iftar","০৬ঃ৪২");
+
+
+
+
+        Calendar calendar = Calendar.getInstance();
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("HH mm ");
+
+
+
+        String dateTime = simpleDateFormat.format(calendar.getTime());
+        dateTime = dateTime.replace(" ", "");
+        int cTime = Integer.parseInt(dateTime);
+
+        if (cTime <=1130){
+            if (cTime<=600){
+                tvSomoyName.setText("সেহরির শেষ\nসময়");
+                tvCountDownBox.setText(""+sheheritime);
+            }else {
+                tvSomoyName.setText("ইফতারের\nসময়");
+                tvCountDownBox.setText(""+iftartime);
+            }
+
+            String rojarnioarbi, rojarniouccharon, rojarniotortho;
+            rojarnioarbi = ""+getApplication().getResources().getText(R.string.rojarniot_arbi).toString();
+            rojarniouccharon = "<b>" + "উচ্চারণঃ  " +"</b>"+getApplication().getResources().getText(R.string.rojarniot_bangla).toString();
+            rojarniotortho = "<b>" + "অর্থঃ  "+"</b>"+getApplication().getResources().getText(R.string.rojarniot_orth).toString();
+
+            tvIftarerAge.setText(""+getApplication().getResources().getText(R.string.rojaniot).toString());
+            tvIftarerAgeArbi.setText(Html.fromHtml(rojarnioarbi));
+            tvIftarerAgeUccharon.setText(Html.fromHtml(rojarniouccharon));
+            tviftarerAgeBangla.setText(Html.fromHtml(rojarniotortho));
+
+            tvIftarerPorDes.setText(""+getApplication().getResources().getText(R.string.rojades).toString());
+
+
+            tviftarerAgeBangla.setVisibility(View.VISIBLE);
+
+            tvIftarerSomoy.setVisibility(View.GONE);
+            tvIftarerSomoyArbi.setVisibility(View.GONE);
+            tvIftarerSomoyrUccharon.setVisibility(View.GONE);
+            tvIftarerSomoyOrtho.setVisibility(View.GONE);
+            tvIftarerPor.setVisibility(View.GONE);
+            tvIftarerPorArbi.setVisibility(View.GONE);
+            tvIftarerPorUccharon.setVisibility(View.GONE);
+            tvIftarerPorOrtho.setVisibility(View.GONE);
+            //tvIftarerPorDes.setVisibility(View.GONE);
+
+        }
+
+
+    }
+
 }

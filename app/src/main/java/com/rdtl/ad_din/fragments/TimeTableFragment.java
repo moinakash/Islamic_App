@@ -541,6 +541,50 @@ public class TimeTableFragment extends Fragment {
         tvmagrib.setText("০"+magribTimeBangla);
         tvesha.setText("০"+eshaTimeBangla);
 
+
+        /////////////////////////////////////shehri & ifter/////////////////////////////
+
+        String fojorerTimeForSheri = wtm.sheheritimewithsubm(""+activity.fojorData());
+
+
+        Character [] arrayForSheri= new Character[fojorerTimeForSheri.length()];
+
+        for (i = 0; i < fojorerTimeForSheri.length(); i++) {
+            arrayForSheri[i] = fojorerTimeForSheri.charAt(i);
+        }
+        String fojorTimeBanglaForSheri = ""+arrayForSheri[0]+""+arrayForSheri[1]+""+arrayForSheri[2]+""+arrayForSheri[3];
+
+
+
+        fojorTimeBanglaForSheri = converterClass.covertS(fojorTimeBanglaForSheri);
+
+
+
+
+
+
+        String magriberTimeForIfter = wtm.mtimewithaddm(activity.magribData());
+
+        Character [] magribarrayForIfter= new Character[magriberTimeForIfter.length()];
+
+        for (i = 0; i < magriberTimeForIfter.length(); i++) {
+            magribarrayForIfter[i] = magriberTimeForIfter.charAt(i);
+        }
+
+        String txtMagribForIfter = ""+magribarrayForIfter[0]+""+magribarrayForIfter[1];
+        int mIntif = Integer.parseInt(txtMagribForIfter);
+
+        if (mIntif>12){
+            mIntif = mIntif - 12;
+        }
+
+        String magribTimeBanglaForIfter = ""+mIntif+""+magribarrayForIfter[2]+""+magribarrayForIfter[3]+""+magribarrayForIfter[4];
+
+        magribTimeBanglaForIfter = converterClass.covertS(magribTimeBanglaForIfter);
+
+
+        //////////////////////////////////////////sheri & ifter Finish //////////////////////////////////////
+
         SharedPreferences sharedPrefWidget = getActivity().getSharedPreferences("WidgetMM",0);
 
         sharedPrefWidget = getActivity().getSharedPreferences("mm",0);
@@ -554,6 +598,9 @@ public class TimeTableFragment extends Fragment {
         editorWidget.putString("mw", "০"+magribTimeBangla);
         editorWidget.putString("ew", "০"+eshaTimeBangla);
         editorWidget.putString("lc", ""+LocatString);
+
+        editorWidget.putString("sheheri","০"+fojorTimeBanglaForSheri);
+        editorWidget.putString("iftar","০"+magribTimeBanglaForIfter);
 
         editorWidget.commit();
 
