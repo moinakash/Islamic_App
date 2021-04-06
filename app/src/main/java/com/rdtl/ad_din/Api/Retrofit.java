@@ -8,7 +8,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class Retrofit {
    // String baseUrl = "http://127.0.0.1:8000/";
-    String baseUrl = "https://757761ead02f.ngrok.io/";
+    String baseUrl = "https://cb027f7c69bb.ngrok.io/";
 
 
 

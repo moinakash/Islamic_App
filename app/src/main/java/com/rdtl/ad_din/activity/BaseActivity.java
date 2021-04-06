@@ -30,6 +30,7 @@ import com.rdtl.ad_din.fragments.TimeTableFragment;
 import com.rdtl.ad_din.pojo_classes.Audio_list_modelCLass;
 import com.rdtl.ad_din.pojo_classes.ConverterClass;
 import com.ismaeldivita.chipnavigation.ChipNavigationBar;
+import com.rdtl.ad_din.pojo_classes.Value_modelClass;
 import com.rdtl.ad_din.pojo_classes.WaktoTimeInt;
 import com.rdtl.ad_din.pojo_classes.WaktoTimeMaintaining;
 
@@ -59,6 +60,7 @@ public class BaseActivity extends AppCompatActivity {
     int test;
 
     String final_Audio;
+    String final_Audio_title;
 
     Retrofit retrofit;
 
@@ -84,6 +86,9 @@ public class BaseActivity extends AppCompatActivity {
 
         retrofit = new Retrofit();
         AudioApi();
+        BottombarApi();
+        ListviewApi();
+        ExtraValueApi();
 
         BottomNav = findViewById(R.id.bottom_nav);
         BottomNav2 = findViewById(R.id.bottom_nav2);
@@ -932,7 +937,7 @@ public class BaseActivity extends AppCompatActivity {
     public void AudioApi(){
 
 
-        Call<List<Audio_list_modelCLass>> call = retrofit.getService(Audio_api.class).getAudio("1");
+        Call<List<Audio_list_modelCLass>> call = retrofit.getService(Audio_api.class).getAudio("2");
 
         call.enqueue(new Callback<List<Audio_list_modelCLass>>() {
             @Override
@@ -954,10 +959,13 @@ public class BaseActivity extends AppCompatActivity {
 
                     List<Audio_list_modelCLass> posts = response.body();
 
-                    final_Audio = "https://757761ead02f.ngrok.io/"+posts.get(0).getAudio();
+                    final_Audio = "https://cb027f7c69bb.ngrok.io/"+posts.get(0).getAudio();
 
-                    Toast.makeText(BaseActivity.this, "Success", Toast.LENGTH_SHORT).show();
+                    final_Audio_title = ""+posts.get(0).getName();
+
+                    Toast.makeText(BaseActivity.this, "Success title "+final_Audio_title, Toast.LENGTH_SHORT).show();
                     SharedPreferences pref = BaseActivity.this.getSharedPreferences("Api_Audio",MODE_PRIVATE);
+
                     SharedPreferences.Editor editor = pref.edit();
                     editor.putString("sp_Audio_Url", final_Audio);
                     editor.commit();
@@ -994,6 +1002,153 @@ public class BaseActivity extends AppCompatActivity {
                 SharedPreferences.Editor editor = pref.edit();
                 editor.putString("sp_Audio_Url", final_Audio);
                 editor.commit();
+
+            }
+        });
+
+
+
+    }
+
+
+
+    public void BottombarApi(){
+
+
+        Call<List<Value_modelClass>> call2 = retrofit.getService(Audio_api.class).getValue("btm_bar");
+
+
+        call2.enqueue(new Callback<List<Value_modelClass>>() {
+            @Override
+            public void onResponse(Call<List<Value_modelClass>> call, Response<List<Value_modelClass>> response) {
+
+
+
+
+                if (!response.isSuccessful()) {
+                    Toast.makeText(BaseActivity.this, "Code: " + response.code(), Toast.LENGTH_SHORT).show();
+                    //return;
+
+
+                }
+
+                if (response.isSuccessful()){
+
+                    List<Value_modelClass> posts = response.body();
+
+
+                    Toast.makeText(BaseActivity.this, "btm_bar = "+ posts.get(0).getValue(), Toast.LENGTH_SHORT).show();
+
+
+                }
+
+
+
+
+
+            }
+
+            @Override
+            public void onFailure(Call<List<Value_modelClass>> call, Throwable t) {
+
+                Toast.makeText(BaseActivity.this, "Not Success btm_bar", Toast.LENGTH_SHORT).show();
+
+            }
+        });
+
+
+
+    }
+
+
+    public void ListviewApi(){
+
+
+        Call<List<Value_modelClass>> call3 = retrofit.getService(Audio_api.class).getValue("lv_visibility");
+
+
+
+        call3.enqueue(new Callback<List<Value_modelClass>>() {
+            @Override
+            public void onResponse(Call<List<Value_modelClass>> call, Response<List<Value_modelClass>> response) {
+
+
+
+
+                if (!response.isSuccessful()) {
+                    Toast.makeText(BaseActivity.this, "Code: " + response.code(), Toast.LENGTH_SHORT).show();
+                    //return;
+
+
+                }
+
+                if (response.isSuccessful()){
+
+                    List<Value_modelClass> posts = response.body();
+
+
+                    Toast.makeText(BaseActivity.this, "lv_visibility = "+ posts.get(0).getValue(), Toast.LENGTH_SHORT).show();
+
+
+                }
+
+
+
+            }
+
+            @Override
+            public void onFailure(Call<List<Value_modelClass>> call, Throwable t) {
+
+                Toast.makeText(BaseActivity.this, "Not Success lv_visibility", Toast.LENGTH_SHORT).show();
+
+            }
+        });
+
+
+
+    }
+
+
+
+    public void ExtraValueApi(){
+
+
+        Call<List<Value_modelClass>> call3 = retrofit.getService(Audio_api.class).getValue("extra_value");
+
+
+
+        call3.enqueue(new Callback<List<Value_modelClass>>() {
+            @Override
+            public void onResponse(Call<List<Value_modelClass>> call, Response<List<Value_modelClass>> response) {
+
+
+
+
+                if (!response.isSuccessful()) {
+                    Toast.makeText(BaseActivity.this, "Code: " + response.code(), Toast.LENGTH_SHORT).show();
+                    //return;
+
+
+                }
+
+                if (response.isSuccessful()){
+
+                    List<Value_modelClass> posts = response.body();
+
+
+                    Toast.makeText(BaseActivity.this, "extra_value = "+ posts.get(0).getValue(), Toast.LENGTH_SHORT).show();
+
+
+                }
+
+
+
+            }
+
+            @Override
+            public void onFailure(Call<List<Value_modelClass>> call, Throwable t) {
+
+                Toast.makeText(BaseActivity.this, "Not Success extra_value", Toast.LENGTH_SHORT).show();
 
             }
         });
