@@ -22,6 +22,7 @@ import com.rdtl.ad_din.Api.Audio_api;
 import com.rdtl.ad_din.Api.Retrofit;
 import com.rdtl.ad_din.fragments.CompusFragment;
 import com.rdtl.ad_din.fragments.DoaDurudFragment;
+import com.rdtl.ad_din.fragments.EidFragment;
 import com.rdtl.ad_din.fragments.QuranMajidFragment;
 import com.rdtl.ad_din.R;
 import com.rdtl.ad_din.fragments.RamjanFragment;
@@ -827,7 +828,16 @@ public class BaseActivity extends AppCompatActivity {
                         fragment = new DoaDurudFragment();
                         break;
                     case  R.id.idMenuRamjan:
-                        fragment = new RamjanFragment();
+                        prefAudio = BaseActivity.this.getSharedPreferences("Api_Audio",MODE_PRIVATE);
+                        lvV = prefAudio.getString("lvValue","1");
+
+                        if (!lvV.equals("0")){
+                            fragment = new RamjanFragment();
+                        }else {
+                            fragment = new EidFragment();
+                        }
+
+
                         break;
 
                 }

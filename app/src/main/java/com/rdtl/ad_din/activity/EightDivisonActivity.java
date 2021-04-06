@@ -844,8 +844,8 @@ public class EightDivisonActivity extends AppCompatActivity {
                     List<Value_modelClass> posts = response.body();
 
 
-                    SharedPreferences pref = EightDivisonActivity.this.getSharedPreferences("Api_Audio",MODE_PRIVATE);
-                    SharedPreferences.Editor editor = pref.edit();
+                    //SharedPreferences pref = EightDivisonActivity.this.getSharedPreferences("Api_Audio",MODE_PRIVATE);
+                    SharedPreferences.Editor editor = prefAudio.edit();
                     editor.putString("bottomValue", ""+posts.get(0).getValue());
                     editor.commit();
 
@@ -901,6 +901,10 @@ public class EightDivisonActivity extends AppCompatActivity {
 
                     Toast.makeText(EightDivisonActivity.this, "lv_visibility = "+ posts.get(0).getValue(), Toast.LENGTH_SHORT).show();
 
+
+                    SharedPreferences.Editor editor = prefAudio.edit();
+                    editor.putString("lvValue", ""+posts.get(0).getValue());
+                    editor.commit();
 
                 }
 
