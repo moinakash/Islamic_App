@@ -29,6 +29,8 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 
+import static android.content.Context.MODE_PRIVATE;
+
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link RamjanFragment#newInstance} factory method to
@@ -54,6 +56,9 @@ public class RamjanFragment extends Fragment {
     ArrayList<ramjan_chart_modelClass> ramjan_chart_modelClasses_List3;
 
     Intent in;
+
+    String lvV;
+    SharedPreferences prefAudio;
 
     ConverterClass converterClass;
     WaktoTimeMaintaining wtm;
@@ -103,6 +108,8 @@ public class RamjanFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_ramjan, container, false);
+
+
 
         buttonClick = new AlphaAnimation(1F, 0.8F);
 
@@ -507,6 +514,18 @@ public class RamjanFragment extends Fragment {
 
 
 
+
+    }
+
+
+    private void hiddingAll(){
+
+        RahmatList.setVisibility(View.GONE);
+        MagferatList.setVisibility(View.GONE);
+        NajatList.setVisibility(View.GONE);
+        ivBell.setVisibility(View.GONE);
+        ivUpperFrame.setVisibility(View.GONE);
+        btnRojarNiot.setVisibility(View.GONE);
 
     }
 
