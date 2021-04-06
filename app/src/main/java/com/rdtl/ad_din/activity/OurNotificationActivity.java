@@ -139,9 +139,9 @@ public class OurNotificationActivity extends AppCompatActivity {
     private void preparMediaPlayer() {
         try {
 
-            SharedPreferences pref = OurNotificationActivity.this.getSharedPreferences("Api_Audio",MODE_PRIVATE);
-            String url = pref.getString("sp_Audio_Url","file:///android_asset/sura_bakara_first_ttysvn.mp3");
-            String url_title = pref.getString("sp_Audio_Url_title","          সূরা বাকারার প্রথম সাতাস আয়াত তিলাওয়াত হচ্ছে");
+            SharedPreferences prefAudio = OurNotificationActivity.this.getSharedPreferences("Api_Audio",MODE_PRIVATE);
+            String url = prefAudio.getString("sp_Audio_Url","file:///android_asset/sura_bakara_first_ttysvn.mp3");
+            String url_title = prefAudio.getString("sp_Audio_Url_title","          সূরা বাকারার প্রথম সাতাস আয়াত তিলাওয়াত হচ্ছে");
 
             //suraMediaPlayer.setDataSource("http://infinityandroid.com/music/good_times.mp3");
            // suraMediaPlayer.setDataSource("http://soundflux.islamicfinder.org/if-soundflux/api/v1/stream//quran/rahman-sudais/001.mp3");

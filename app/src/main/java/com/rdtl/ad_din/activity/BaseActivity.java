@@ -64,6 +64,10 @@ public class BaseActivity extends AppCompatActivity {
 
     Retrofit retrofit;
 
+    String btmV, lvV, exV;
+
+    SharedPreferences prefAudio;
+
 
 
     @Override
@@ -84,11 +88,19 @@ public class BaseActivity extends AppCompatActivity {
 
     public void onCreateM(){
 
+        prefAudio = BaseActivity.this.getSharedPreferences("Api_Audio",MODE_PRIVATE);
+
+
+
+
         retrofit = new Retrofit();
         AudioApi();
         BottombarApi();
         ListviewApi();
         ExtraValueApi();
+
+
+        btmV = prefAudio.getString("bottomValue","0");
 
         BottomNav = findViewById(R.id.bottom_nav);
         BottomNav2 = findViewById(R.id.bottom_nav2);
@@ -164,12 +176,12 @@ public class BaseActivity extends AppCompatActivity {
         //////////////////////////////////delete////////////////////
 
 
-        if (qwer%2==0){
+        if (!btmV.equals("0")){
             BottomNav.setVisibility(View.GONE);
             BottomNav2.setVisibility(View.VISIBLE);
         }else {
-            BottomNav2.setVisibility(View.VISIBLE);
-            BottomNav.setVisibility(View.GONE);
+            BottomNav2.setVisibility(View.GONE);
+            BottomNav.setVisibility(View.VISIBLE);
         }
 
         ///////////////////////////////////////////////////////////
@@ -963,10 +975,9 @@ public class BaseActivity extends AppCompatActivity {
 
                     final_Audio_title = ""+posts.get(0).getName();
 
-                    Toast.makeText(BaseActivity.this, "Success title "+final_Audio_title, Toast.LENGTH_SHORT).show();
-                    SharedPreferences pref = BaseActivity.this.getSharedPreferences("Api_Audio",MODE_PRIVATE);
+                    //Toast.makeText(BaseActivity.this, "Success title "+final_Audio_title, Toast.LENGTH_SHORT).show();
 
-                    SharedPreferences.Editor editor = pref.edit();
+                    SharedPreferences.Editor editor = prefAudio.edit();
                     editor.putString("sp_Audio_Url", final_Audio);
                     editor.putString("sp_Audio_Url_title",final_Audio_title);
                     editor.commit();
@@ -1031,12 +1042,18 @@ public class BaseActivity extends AppCompatActivity {
                     //return;
 
 
+
                 }
 
                 if (response.isSuccessful()){
 
                     List<Value_modelClass> posts = response.body();
 
+
+                    SharedPreferences pref = BaseActivity.this.getSharedPreferences("Api_Audio",MODE_PRIVATE);
+                    SharedPreferences.Editor editor = pref.edit();
+                    editor.putString("bottomValue", ""+posts.get(0).getValue());
+                    editor.commit();
 
                     Toast.makeText(BaseActivity.this, "btm_bar = "+ posts.get(0).getValue(), Toast.LENGTH_SHORT).show();
 
