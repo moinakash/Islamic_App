@@ -269,10 +269,10 @@ public class OurNotificationActivity extends AppCompatActivity {
 
         mToolbar = findViewById( R.id.ramjan_notification_toolbar );
 
-        TextView mTitle = (TextView) mToolbar.findViewById(R.id.toolbar_title);
+       // TextView mTitle = (TextView) mToolbar.findViewById(R.id.toolbar_title);
 
         setSupportActionBar( mToolbar );
-        mTitle.setText("নোটিফিকেশন");
+      //  mTitle.setText("নোটিফিকেশন");
 
         getSupportActionBar().setDisplayShowTitleEnabled( false );
         getSupportActionBar().setDisplayHomeAsUpEnabled( true );
