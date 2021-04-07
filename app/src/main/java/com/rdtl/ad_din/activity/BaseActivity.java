@@ -860,6 +860,21 @@ public class BaseActivity extends AppCompatActivity {
             startActivity(goint);
         }
 
+        String notiUpdate = prefAudio.getString("notificationUpdate","0");
+
+        Toast.makeText(this, "notival "+notival, Toast.LENGTH_SHORT).show();
+
+        if (!notiUpdate.equals("0")){
+
+            Toast.makeText(this, "update your app", Toast.LENGTH_SHORT).show();
+            //Alart dialog
+
+            SharedPreferences.Editor editorA = prefAudio.edit();
+            editorA.putString("notificationUpdate", "0");
+            editorA.commit();
+
+        }
+
 
     }
 

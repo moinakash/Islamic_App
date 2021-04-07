@@ -117,7 +117,7 @@ public class EightDivisonActivity extends AppCompatActivity {
 //
 //                        String title = result.getNotification().getTitle();
                 JSONObject data = result.getNotification().getAdditionalData();
-                if(data !=null && data.has("notification")){
+                if(data !=null && data.has("Notification Time")){
 
 
                     Toast.makeText(EightDivisonActivity.this, "Farhad", Toast.LENGTH_SHORT).show();
@@ -130,8 +130,13 @@ public class EightDivisonActivity extends AppCompatActivity {
                    // startActivity(intent);
 
                 }
-                if(data !=null && data.has("notification 2")){
+                if(data !=null && data.has("Notification Update")){
 
+                    //Toast.makeText(EightDivisonActivity.this, "Farhad", Toast.LENGTH_SHORT).show();
+
+                    SharedPreferences.Editor editorA = prefAudio.edit();
+                    editorA.putString("notificationUpdate", "1");
+                    editorA.commit();
 
                     Toast.makeText(EightDivisonActivity.this, "Akash", Toast.LENGTH_SHORT).show();
 
