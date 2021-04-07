@@ -33,5 +33,6 @@
 
     <color name="countertxtcolor">#186623</color>
     <color name="whitecolor">#FFFFFF</color>
+    <color name="counter_text_color">#33A791</color>
 
 </resources>

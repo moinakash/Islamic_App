@@ -46,6 +46,7 @@
 
 
             <LinearLayout
+
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
@@ -81,7 +82,111 @@
 
         </LinearLayout>
 
+
+
             <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:id="@+id/idSomoyName2"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginRight="10dp"
+                    android:padding="5dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="ইফতারের\nসময় বাকি"
+                    android:textColor="@color/blackcolor"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/sushm"
+                    android:gravity="center_vertical|right"
+                    />
+
+
+
+                <RelativeLayout
+                    android:layout_width="60dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/countbg">
+
+
+                    <TextView
+                        android:id="@+id/idCountDownBox1_1"
+                        android:layout_marginTop="10dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="০৬"
+
+                        android:textSize="30sp"
+                        android:textStyle="bold"
+                        android:fontFamily="@font/sushmb"
+                        android:textColor="@color/whitecolor"
+                        android:gravity="center"
+
+                        />
+
+                 <!--   <ImageView
+                        android:layout_centerInParent="true"
+                        android:background="@drawable/countbg_line"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"/>-->
+
+
+                </RelativeLayout>
+
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=":"
+                    android:textSize="60sp"
+                    android:textStyle="bold"
+                    android:fontFamily="@font/sushmb"
+                    android:textColor="@color/counter_text_color"
+                    android:gravity="center"
+                    />
+
+                <RelativeLayout
+                    android:layout_width="60dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/countbg">
+
+
+                    <TextView
+                        android:id="@+id/idCountDownBox1_2"
+                        android:layout_marginTop="10dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="৪০"
+                        android:textSize="30sp"
+                        android:textStyle="bold"
+                        android:fontFamily="@font/sushmb"
+                        android:textColor="@color/whitecolor"
+                        android:gravity="center"
+
+                        />
+
+                 <!--   <ImageView
+                        android:layout_centerInParent="true"
+                        android:background="@drawable/countbg_line"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"/>-->
+
+
+                </RelativeLayout>
+
+
+
+
+            </LinearLayout>
+
+          <!--  <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
@@ -90,7 +195,7 @@
 
 
                 <TextView
-                    android:id="@+id/idSomoyName2"
+
                     android:padding="5dp"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
@@ -103,7 +208,7 @@
 
 
                 <TextView
-                    android:id="@+id/idCountDownBox1_1"
+
                     android:paddingLeft="5dp"
                     android:paddingRight="5dp"
                     android:paddingTop="10dp"
@@ -131,7 +236,7 @@
                     />
 
                 <TextView
-                    android:id="@+id/idCountDownBox1_2"
+
                     android:paddingLeft="5dp"
                     android:paddingRight="5dp"
                     android:paddingTop="10dp"
@@ -148,7 +253,7 @@
                     android:translationX="-5dp"/>
 
 
-            </LinearLayout>
+            </LinearLayout>-->
 
             <TextView
                 android:id="@+id/idiftarerAge"

@@ -982,8 +982,8 @@ public class TimeTableFragment extends Fragment {
                     //return;
 
                     final_Audio = "No";
-                    SharedPreferences pref = getContext().getSharedPreferences("Api_Audio",MODE_PRIVATE);
-                    SharedPreferences.Editor editor = pref.edit();
+                    //SharedPreferences pref = getContext().getSharedPreferences("Api_Audio",MODE_PRIVATE);
+                    SharedPreferences.Editor editor = prefAudio.edit();
                     editor.putString("sp_Audio_Url", final_Audio);
                     editor.commit();
                 }
@@ -992,11 +992,11 @@ public class TimeTableFragment extends Fragment {
 
                     List<Audio_list_modelCLass> posts = response.body();
 
-                    final_Audio = "http://dailyislam.amaderkagoj.com/"+posts.get(0).getAudio();
+                    final_Audio = "https://dailyislam.amaderkagoj.com/"+posts.get(0).getAudio();
 
                     final_Audio_title = ""+posts.get(0).getName();
 
-                    //Toast.makeText(BaseActivity.this, "Success title "+final_Audio_title, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getContext(), "Success title "+final_Audio, Toast.LENGTH_SHORT).show();
 
                     SharedPreferences.Editor editor = prefAudio.edit();
                     editor.putString("sp_Audio_Url", final_Audio);
