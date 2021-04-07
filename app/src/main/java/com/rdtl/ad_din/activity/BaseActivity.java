@@ -7,9 +7,13 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
 import android.app.AlertDialog;
+import android.app.Dialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -853,7 +857,7 @@ public class BaseActivity extends AppCompatActivity {
 
         String notival = prefAudio.getString("notificationValue","0");
 
-        Toast.makeText(this, "notival "+notival, Toast.LENGTH_SHORT).show();
+      //  Toast.makeText(this, "notival "+notival, Toast.LENGTH_SHORT).show();
 
         if (!notival.equals("0")){
             Intent goint = new Intent(BaseActivity.this,OurNotificationActivity.class);
@@ -862,12 +866,15 @@ public class BaseActivity extends AppCompatActivity {
 
         String notiUpdate = prefAudio.getString("notificationUpdate","0");
 
-        Toast.makeText(this, "notival "+notival, Toast.LENGTH_SHORT).show();
+       // Toast.makeText(this, "notival "+notival, Toast.LENGTH_SHORT).show();
 
         if (!notiUpdate.equals("0")){
 
-            Toast.makeText(this, "update your app", Toast.LENGTH_SHORT).show();
+         //   Toast.makeText(this, "update your app", Toast.LENGTH_SHORT).show();
             //Alart dialog
+
+
+            UpdateMsgDialog();
 
             SharedPreferences.Editor editorA = prefAudio.edit();
             editorA.putString("notificationUpdate", "0");
@@ -964,6 +971,55 @@ public class BaseActivity extends AppCompatActivity {
             }
         });
 
+
+
+        alertDialog.show();
+
+
+
+    }
+
+
+    void UpdateMsgDialog() {
+
+
+
+        final Dialog alertDialog = new Dialog(this);
+
+        alertDialog.setContentView(R.layout.update_pop_up);
+
+        alertDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+
+        TextView Exit = alertDialog.findViewById(R.id.exit);
+
+        Button updateBtn = alertDialog.findViewById(R.id.idUpdateBtn);
+
+
+
+        updateBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+
+
+                final String appPackageName = getPackageName(); // getPackageName() from Context or Activity object
+                try {
+                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=" + appPackageName)));
+                } catch (android.content.ActivityNotFoundException anfe) {
+                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=" + appPackageName)));
+                }
+
+            }
+        });
+
+
+        Exit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                alertDialog.cancel();
+            }
+        });
 
 
         alertDialog.show();

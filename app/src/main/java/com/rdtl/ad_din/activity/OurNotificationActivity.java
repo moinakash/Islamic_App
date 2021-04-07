@@ -115,7 +115,7 @@ public class OurNotificationActivity extends AppCompatActivity {
                     //mButtonStartPause.setText("Start");
                     //mButtonStartPause.setVisibility(View.INVISIBLE);
                     //mButtonReset.setVisibility(View.VISIBLE);
-                    Toast.makeText(OurNotificationActivity.this, "Done", Toast.LENGTH_SHORT).show();
+                  //  Toast.makeText(OurNotificationActivity.this, "Done", Toast.LENGTH_SHORT).show();
                     //TODO
                     //show alart dialog
 
@@ -155,7 +155,7 @@ public class OurNotificationActivity extends AppCompatActivity {
         hourOfDay = iftartimeConInt/100;
         minute = iftartimeConInt%100;
 
-        Toast.makeText(this, "iftartimeCon "+iftartimeCon, Toast.LENGTH_SHORT).show();
+      //  Toast.makeText(this, "iftartimeCon "+iftartimeCon, Toast.LENGTH_SHORT).show();
 
         if (hourOfDay==0){
             hourOfDay = 24;
@@ -321,7 +321,7 @@ public class OurNotificationActivity extends AppCompatActivity {
             tvTotalDuration.setText(miliSecondsToTimer(suraMediaPlayer.getDuration())+"     ");
            // suraMediaPlayer.prepareAsync();
         }catch (Exception e){
-            Toast.makeText(this,e.getMessage(),Toast.LENGTH_SHORT).show();
+         //   Toast.makeText(this,e.getMessage(),Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -465,7 +465,7 @@ public class OurNotificationActivity extends AppCompatActivity {
         String sheheritime = prefAudio.getString("sheheri","০৪ঃ৪২");
         String iftartime = prefAudio.getString("iftar","০৬ঃ৪২");
 
-        Toast.makeText(this, "iftarrrrr"+iftartime, Toast.LENGTH_SHORT).show();
+        //Toast.makeText(this, "iftarrrrr"+iftartime, Toast.LENGTH_SHORT).show();
 
 
         Calendar calendar = Calendar.getInstance();

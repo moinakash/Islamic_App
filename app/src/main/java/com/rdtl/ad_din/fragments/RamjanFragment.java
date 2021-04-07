@@ -437,7 +437,7 @@ public class RamjanFragment extends Fragment {
         int cTime = Integer.parseInt(dateTime);
 
 
-        Toast.makeText(getContext(), "CTimeeeee"+cTime, Toast.LENGTH_SHORT).show();
+      //  Toast.makeText(getContext(), "CTimeeeee"+cTime, Toast.LENGTH_SHORT).show();
 
         if (cTime>1600 && cTime<2000){
             ivBell.setBackgroundResource(R.drawable.bell_with_red);

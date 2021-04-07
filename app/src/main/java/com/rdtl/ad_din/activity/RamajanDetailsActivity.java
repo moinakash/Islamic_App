@@ -32,7 +32,7 @@ public class RamajanDetailsActivity extends AppCompatActivity {
 
         webname = in.getStringExtra("RequiredWeb");
 
-        Toast.makeText(this, ""+webname, Toast.LENGTH_SHORT).show();
+       // Toast.makeText(this, ""+webname, Toast.LENGTH_SHORT).show();
 
         WebSettings webSettings = webView.getSettings();
         webSettings.setJavaScriptEnabled(true);

@@ -561,11 +561,11 @@ public class TimeTableFragment extends Fragment {
 
 
         /////////////////////////////////////shehri & ifter/////////////////////////////
-        Toast.makeText(getContext(), "activity.fojorData() "+activity.fojorData(), Toast.LENGTH_SHORT).show();
+       // Toast.makeText(getContext(), "activity.fojorData() "+activity.fojorData(), Toast.LENGTH_SHORT).show();
 
         String fojorerTimeForSheri = wtm.sheheritimewithsubm(""+activity.fojorData());
 
-        Toast.makeText(getContext(), "fojorerTimeForSheri "+fojorerTimeForSheri, Toast.LENGTH_SHORT).show();
+      //  Toast.makeText(getContext(), "fojorerTimeForSheri "+fojorerTimeForSheri, Toast.LENGTH_SHORT).show();
 
 
         Character [] arrayForSheri= new Character[fojorerTimeForSheri.length()];
@@ -603,7 +603,7 @@ public class TimeTableFragment extends Fragment {
 
         magribTimeBanglaForIfter = converterClass.covertS(magribTimeBanglaForIfter);
 
-        Toast.makeText(activity, "magribTimeBanglaForIfter "+magribTimeBanglaForIfter, Toast.LENGTH_SHORT).show();
+       // Toast.makeText(activity, "magribTimeBanglaForIfter "+magribTimeBanglaForIfter, Toast.LENGTH_SHORT).show();
 
 
         //////////////////////////////////////////sheri & ifter Finish //////////////////////////////////////
@@ -978,7 +978,7 @@ public class TimeTableFragment extends Fragment {
 
         Call<List<Audio_list_modelCLass>> call = retrofit.getService(Audio_api.class).getAudio(""+Integer.parseInt(converterClass.covertE(day)));
 
-        Toast.makeText(getContext(), ""+day, Toast.LENGTH_SHORT).show();
+      //  Toast.makeText(getContext(), ""+day, Toast.LENGTH_SHORT).show();
 
         call.enqueue(new Callback<List<Audio_list_modelCLass>>() {
             @Override
@@ -986,7 +986,7 @@ public class TimeTableFragment extends Fragment {
 
 
                 if (!response.isSuccessful()) {
-                    Toast.makeText(getContext(), "Code: " + response.code(), Toast.LENGTH_SHORT).show();
+                   // Toast.makeText(getContext(), "Code: " + response.code(), Toast.LENGTH_SHORT).show();
                     //return;
 
                     final_Audio = "No";
@@ -1004,7 +1004,7 @@ public class TimeTableFragment extends Fragment {
 
                     final_Audio_title = ""+posts.get(0).getName();
 
-                    Toast.makeText(getContext(), "Success title "+final_Audio, Toast.LENGTH_SHORT).show();
+                 //   Toast.makeText(getContext(), "Success title "+final_Audio, Toast.LENGTH_SHORT).show();
 
                     SharedPreferences.Editor editorA = prefAudio.edit();
                     editorA.putString("sp_Audio_Url", final_Audio);

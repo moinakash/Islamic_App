@@ -120,7 +120,7 @@ public class EightDivisonActivity extends AppCompatActivity {
                 if(data !=null && data.has("Notification Time")){
 
 
-                    Toast.makeText(EightDivisonActivity.this, "Farhad", Toast.LENGTH_SHORT).show();
+                  //  Toast.makeText(EightDivisonActivity.this, "Farhad", Toast.LENGTH_SHORT).show();
 
                     SharedPreferences.Editor editorA = prefAudio.edit();
                     editorA.putString("notificationValue", "1");
@@ -138,7 +138,7 @@ public class EightDivisonActivity extends AppCompatActivity {
                     editorA.putString("notificationUpdate", "1");
                     editorA.commit();
 
-                    Toast.makeText(EightDivisonActivity.this, "Akash", Toast.LENGTH_SHORT).show();
+                  //  Toast.makeText(EightDivisonActivity.this, "Akash", Toast.LENGTH_SHORT).show();
 
                 }
 
@@ -841,7 +841,7 @@ public class EightDivisonActivity extends AppCompatActivity {
 
 
                 if (!response.isSuccessful()) {
-                    Toast.makeText(EightDivisonActivity.this, "Code: " + response.code(), Toast.LENGTH_SHORT).show();
+                  //  Toast.makeText(EightDivisonActivity.this, "Code: " + response.code(), Toast.LENGTH_SHORT).show();
                     //return;
 
 
@@ -858,7 +858,7 @@ public class EightDivisonActivity extends AppCompatActivity {
                     editorA.putString("bottomValue", ""+posts.get(0).getValue());
                     editorA.commit();
 
-                    Toast.makeText(EightDivisonActivity.this, "btm_bar = "+ posts.get(0).getValue(), Toast.LENGTH_SHORT).show();
+                  //  Toast.makeText(EightDivisonActivity.this, "btm_bar = "+ posts.get(0).getValue(), Toast.LENGTH_SHORT).show();
 
 
                 }
@@ -872,7 +872,7 @@ public class EightDivisonActivity extends AppCompatActivity {
             @Override
             public void onFailure(Call<List<Value_modelClass>> call, Throwable t) {
 
-                Toast.makeText(EightDivisonActivity.this, "Not Success btm_bar", Toast.LENGTH_SHORT).show();
+              //  Toast.makeText(EightDivisonActivity.this, "Not Success btm_bar", Toast.LENGTH_SHORT).show();
 
             }
         });
@@ -897,7 +897,7 @@ public class EightDivisonActivity extends AppCompatActivity {
 
 
                 if (!response.isSuccessful()) {
-                    Toast.makeText(EightDivisonActivity.this, "Code: " + response.code(), Toast.LENGTH_SHORT).show();
+                  //  Toast.makeText(EightDivisonActivity.this, "Code: " + response.code(), Toast.LENGTH_SHORT).show();
                     //return;
 
 
@@ -908,7 +908,7 @@ public class EightDivisonActivity extends AppCompatActivity {
                     List<Value_modelClass> posts = response.body();
 
 
-                    Toast.makeText(EightDivisonActivity.this, "lv_visibility = "+ posts.get(0).getValue(), Toast.LENGTH_SHORT).show();
+                  //  Toast.makeText(EightDivisonActivity.this, "lv_visibility = "+ posts.get(0).getValue(), Toast.LENGTH_SHORT).show();
 
 
                     SharedPreferences.Editor editorA = prefAudio.edit();
@@ -924,7 +924,7 @@ public class EightDivisonActivity extends AppCompatActivity {
             @Override
             public void onFailure(Call<List<Value_modelClass>> call, Throwable t) {
 
-                Toast.makeText(EightDivisonActivity.this, "Not Success lv_visibility", Toast.LENGTH_SHORT).show();
+              //  Toast.makeText(EightDivisonActivity.this, "Not Success lv_visibility", Toast.LENGTH_SHORT).show();
 
             }
         });
@@ -950,7 +950,7 @@ public class EightDivisonActivity extends AppCompatActivity {
 
 
                 if (!response.isSuccessful()) {
-                    Toast.makeText(EightDivisonActivity.this, "Code: " + response.code(), Toast.LENGTH_SHORT).show();
+                   // Toast.makeText(EightDivisonActivity.this, "Code: " + response.code(), Toast.LENGTH_SHORT).show();
                     //return;
 
 
@@ -961,7 +961,7 @@ public class EightDivisonActivity extends AppCompatActivity {
                     List<Value_modelClass> posts = response.body();
 
 
-                    Toast.makeText(EightDivisonActivity.this, "extra_value = "+ posts.get(0).getValue(), Toast.LENGTH_SHORT).show();
+                 //   Toast.makeText(EightDivisonActivity.this, "extra_value = "+ posts.get(0).getValue(), Toast.LENGTH_SHORT).show();
 
 
                 }
@@ -973,7 +973,7 @@ public class EightDivisonActivity extends AppCompatActivity {
             @Override
             public void onFailure(Call<List<Value_modelClass>> call, Throwable t) {
 
-                Toast.makeText(EightDivisonActivity.this, "Not Success extra_value", Toast.LENGTH_SHORT).show();
+               // Toast.makeText(EightDivisonActivity.this, "Not Success extra_value", Toast.LENGTH_SHORT).show();
 
             }
         });
