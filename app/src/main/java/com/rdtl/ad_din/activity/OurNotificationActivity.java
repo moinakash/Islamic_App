@@ -3,10 +3,13 @@ package com.rdtl.ad_din.activity;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.AssetFileDescriptor;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.media.MediaPlayer;
 import android.net.ConnectivityManager;
 import android.os.Bundle;
@@ -115,6 +118,9 @@ public class OurNotificationActivity extends AppCompatActivity {
                     Toast.makeText(OurNotificationActivity.this, "Done", Toast.LENGTH_SHORT).show();
                     //TODO
                     //show alart dialog
+
+                    showDialog();
+
                     llCounter.setVisibility(View.GONE);
                     llStillTime.setVisibility(View.VISIBLE);
                 }
@@ -520,6 +526,40 @@ public class OurNotificationActivity extends AppCompatActivity {
         SharedPreferences.Editor editorA = prefAudio.edit();
         editorA.putString("notificationValue", "0");
         editorA.commit();
+    }
+
+
+
+
+    void showDialog() {
+
+
+
+        final Dialog alertDialog = new Dialog(this);
+
+        alertDialog.setContentView(R.layout.iftari_pop_up);
+
+        alertDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+
+        TextView Exit = alertDialog.findViewById(R.id.exit);
+
+
+
+
+
+        Exit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                alertDialog.cancel();
+            }
+        });
+
+
+        alertDialog.show();
+
+
+
     }
 
 }
