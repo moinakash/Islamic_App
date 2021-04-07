@@ -85,7 +85,7 @@
 
 
             <LinearLayout
-                
+
                 android:id="@+id/idLiniarCounter"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -125,7 +125,7 @@
 
                         android:textSize="30sp"
                         android:textStyle="bold"
-                        android:fontFamily="@font/sushmb"
+                        android:fontFamily="@font/counterfont"
                         android:textColor="@color/whitecolor"
                         android:gravity="center"
 
@@ -161,17 +161,16 @@
 
                     <TextView
                         android:id="@+id/idCountDownBox1_2"
-                        android:layout_marginTop="10dp"
-                        android:layout_centerHorizontal="true"
-                        android:layout_centerVertical="true"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/counterfont"
+                        android:gravity="center"
                         android:text="৪০"
+                        android:textColor="@color/whitecolor"
                         android:textSize="30sp"
                         android:textStyle="bold"
-                        android:fontFamily="@font/sushmb"
-                        android:textColor="@color/whitecolor"
-                        android:gravity="center"
 
                         />
 
