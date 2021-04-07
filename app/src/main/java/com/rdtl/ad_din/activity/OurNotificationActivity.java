@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.AssetFileDescriptor;
 import android.media.MediaPlayer;
@@ -112,6 +113,10 @@ public class OurNotificationActivity extends AppCompatActivity {
                     //mButtonStartPause.setVisibility(View.INVISIBLE);
                     //mButtonReset.setVisibility(View.VISIBLE);
                     Toast.makeText(OurNotificationActivity.this, "Done", Toast.LENGTH_SHORT).show();
+                    //TODO
+                    //show alart dialog
+                    llCounter.setVisibility(View.GONE);
+                    llStillTime.setVisibility(View.VISIBLE);
                 }
             }.start();
             mTimerRunning = true;
@@ -131,7 +136,20 @@ public class OurNotificationActivity extends AppCompatActivity {
         int hourOfDay = 6, minute = 25;
 
 
+        SharedPreferences prefAudio = OurNotificationActivity.this.getSharedPreferences("Api_Audio",MODE_PRIVATE);
+        SharedPreferences.Editor editorA = prefAudio.edit();
+        String iftartimeCon = prefAudio.getString("iftar","০৬ঃ৪২");
 
+        iftartimeCon = iftartimeCon.replace("ঃ","");
+        iftartimeCon = iftartimeCon.replace(":","");
+        iftartimeCon = converterClass.covertE(iftartimeCon);
+
+        int iftartimeConInt = Integer.parseInt(iftartimeCon);
+
+        hourOfDay = iftartimeConInt/100;
+        minute = iftartimeConInt%100;
+
+        Toast.makeText(this, "iftartimeCon "+iftartimeCon, Toast.LENGTH_SHORT).show();
 
         if (hourOfDay==0){
             hourOfDay = 24;

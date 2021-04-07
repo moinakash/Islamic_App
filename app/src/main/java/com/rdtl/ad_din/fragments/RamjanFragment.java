@@ -14,6 +14,7 @@ import android.view.animation.AlphaAnimation;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.rdtl.ad_din.Adapters.Ramjan_chat_adapter;
 import com.rdtl.ad_din.R;
@@ -436,13 +437,13 @@ public class RamjanFragment extends Fragment {
         int cTime = Integer.parseInt(dateTime);
 
 
-
+        Toast.makeText(getContext(), "CTimeeeee"+cTime, Toast.LENGTH_SHORT).show();
 
         if (cTime>1600 && cTime<2000){
-            ivBell.setBackgroundResource(R.drawable.bell_only_green);
+            ivBell.setBackgroundResource(R.drawable.bell_with_red);
         }
         if (cTime>400 && cTime <700){
-            ivBell.setBackgroundResource(R.drawable.bell_only_green);
+            ivBell.setBackgroundResource(R.drawable.bell_with_red);
         }
 
 
