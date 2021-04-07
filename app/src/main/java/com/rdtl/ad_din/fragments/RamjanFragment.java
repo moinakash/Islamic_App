@@ -438,6 +438,12 @@ public class RamjanFragment extends Fragment {
 
 
 
+        if (cTime>1600 && cTime<2000){
+            ivBell.setBackgroundResource(R.drawable.bell_only_green);
+        }
+        if (cTime>400 && cTime <700){
+            ivBell.setBackgroundResource(R.drawable.bell_only_green);
+        }
 
 
         //cTime = Integer.parseInt(dateTime);
