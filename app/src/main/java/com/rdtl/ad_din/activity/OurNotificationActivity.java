@@ -15,6 +15,7 @@ import android.text.Html;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -58,6 +59,10 @@ public class OurNotificationActivity extends AppCompatActivity {
     int t2Hour, t2Minute, mm;
     int minutes3=0;
 
+    String timeCheckerfornoti;
+
+    LinearLayout llStillTime, llCounter;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,40 +77,102 @@ public class OurNotificationActivity extends AppCompatActivity {
         initIds();
         initForPlayer();
 
+
+        extraCode();
+
         textViewWorks();
 
-        startTimer();
+        if (minutes3<=15 && minutes3>=0){
+            startTimer();
+            llCounter.setVisibility(View.VISIBLE);
+            llStillTime.setVisibility(View.GONE);
+        }else {
+            llCounter.setVisibility(View.GONE);
+            llStillTime.setVisibility(View.VISIBLE);
+        }
+
+        //startTimer();
 
     }
 
-    private void startTimer() {
-        mCountDownTimer = new CountDownTimer(mTimeLeftInMillis, 1000) {
-            @Override
-            public void onTick(long millisUntilFinished) {
-                mTimeLeftInMillis = millisUntilFinished;
-                updateCountDownText();
+
+        private void startTimer() {
+            mCountDownTimer = new CountDownTimer(mTimeLeftInMillis, 1000) {
+                @Override
+                public void onTick(long millisUntilFinished) {
+                    mTimeLeftInMillis = millisUntilFinished;
+                    updateCountDownText();
+                }
+                @Override
+                public void onFinish() {
+                    mTimerRunning = false;
+                    //mButtonStartPause.setText("Start");
+                    //mButtonStartPause.setVisibility(View.INVISIBLE);
+                    //mButtonReset.setVisibility(View.VISIBLE);
+                    Toast.makeText(OurNotificationActivity.this, "Done", Toast.LENGTH_SHORT).show();
+                }
+            }.start();
+            mTimerRunning = true;
+            //mButtonStartPause.setText("pause");
+            //mButtonReset.setVisibility(View.INVISIBLE);
+        }
+
+
+
+    public void extraCode(){
+
+        Calendar calendar = Calendar.getInstance();
+        final int hour2 = calendar.get(Calendar.HOUR);
+        final int minute2 = calendar.get(Calendar.MINUTE);
+
+
+        int hourOfDay = 6, minute = 25;
+
+
+
+
+        if (hourOfDay==0){
+            hourOfDay = 24;
+            if (hourOfDay>hour2){
+                mm = (minute+60)-minute2;
             }
-            @Override
-            public void onFinish() {
-                mTimerRunning = false;
-                //mButtonStartPause.setText("Start");
-              //  mButtonStartPause.setVisibility(View.INVISIBLE);
-                //mButtonReset.setVisibility(View.VISIBLE);
-               // Toast.makeText(MainActivity.this, "Done", Toast.LENGTH_SHORT).show();
+            else {
+                mm = minute-minute2;
             }
-        }.start();
-        mTimerRunning = true;
-        //mButtonStartPause.setText("pause");
-        //mButtonReset.setVisibility(View.INVISIBLE);
+        }else {
+            if (hourOfDay>hour2){
+                mm = (minute+60)-minute2;
+            }
+            else {
+                mm = minute-minute2;
+            }
+        }
+
+
+        mTimeLeftInMillis = mm * 60000;
+
+
+        updateCountDownText();
+        //SimpleDateFormat f24hours = new SimpleDateFormat("HH:MM");
+
+        //mPickerTV.setText(time);
     }
 
     private void updateCountDownText() {
         minutes3 = (int) (mTimeLeftInMillis / 1000) / 60;
         int seconds = (int) (mTimeLeftInMillis / 1000) % 60;
-        String timeLeftFormatted = String.format(Locale.getDefault(), "%02d:%02d", minutes3, seconds);
-        //mTextViewCountDown.setText(timeLeftFormatted);
+        String timeLeftFormatted = String.format(Locale.getDefault(), "%02d", minutes3);
+        String timeLeftFormatted2 = String.format(Locale.getDefault(), "%02d", seconds);
+
+
+
+        tvCb1.setText(timeLeftFormatted);
+        tvCb2.setText(timeLeftFormatted2);
+
+       // mTextViewCountDown.setText(timeLeftFormatted);
         //calculateRtime();
     }
+
 
 
 
@@ -129,6 +196,9 @@ public class OurNotificationActivity extends AppCompatActivity {
 
         tvCb1 = findViewById(R.id.idCountDownBox1_1);
         tvCb2 = findViewById(R.id.idCountDownBox1_2);
+
+        llCounter = findViewById(R.id.idLiniarCounter);
+        llStillTime = findViewById(R.id.idLiniarStillTime);
     }
 
     private void initForPlayer(){

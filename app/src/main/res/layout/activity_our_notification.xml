@@ -46,7 +46,7 @@
 
 
             <LinearLayout
-
+                android:id="@+id/idLiniarStillTime"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
@@ -85,6 +85,8 @@
 
 
             <LinearLayout
+                
+                android:id="@+id/idLiniarCounter"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
@@ -148,6 +150,7 @@
                     android:fontFamily="@font/sushmb"
                     android:textColor="@color/counter_text_color"
                     android:gravity="center"
+                    android:layout_marginRight="1dp"
                     />
 
                 <RelativeLayout
