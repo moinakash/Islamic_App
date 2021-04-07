@@ -93,6 +93,8 @@ public class OurNotificationActivity extends AppCompatActivity {
 
         //startTimer();
 
+        notificationValChange();
+
     }
 
 
@@ -256,7 +258,7 @@ public class OurNotificationActivity extends AppCompatActivity {
         try {
 
             SharedPreferences prefAudio = OurNotificationActivity.this.getSharedPreferences("Api_Audio",MODE_PRIVATE);
-            String url = prefAudio.getString("sp_Audio_Url","file:///android_asset/sura_bakara_first_ttysvn.mp3");
+            String url = prefAudio.getString("sp_Audio_Url"," nai");
             String url_title = prefAudio.getString("sp_Audio_Url_title","          সূরা বাকারার প্রথম সাতাস আয়াত তিলাওয়াত হচ্ছে");
 
             //suraMediaPlayer.setDataSource("http://infinityandroid.com/music/good_times.mp3");
@@ -485,6 +487,16 @@ public class OurNotificationActivity extends AppCompatActivity {
         }
 
 
+    }
+
+
+    private void notificationValChange(){
+
+
+       SharedPreferences prefAudio = OurNotificationActivity.this.getSharedPreferences("Api_Audio",MODE_PRIVATE);
+        SharedPreferences.Editor editor = prefAudio.edit();
+        editor.putString("notificationValue", "1");
+        editor.commit();
     }
 
 }

@@ -122,6 +122,10 @@ public class EightDivisonActivity extends AppCompatActivity {
 
                     Toast.makeText(EightDivisonActivity.this, "Farhad", Toast.LENGTH_SHORT).show();
 
+                    SharedPreferences.Editor editor = prefAudio.edit();
+                    editor.putString("notificationValue", "1");
+                    editor.commit();
+
                     Intent intent = new Intent(EightDivisonActivity.this, OurNotificationActivity.class);
                     startActivity(intent);
 

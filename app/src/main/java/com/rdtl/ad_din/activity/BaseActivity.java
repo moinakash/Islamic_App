@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
 import android.app.AlertDialog;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
@@ -849,6 +850,13 @@ public class BaseActivity extends AppCompatActivity {
             }
         });
 
+
+        String notival = prefAudio.getString("notificationValue","0");
+
+        if (!notival.equals("0")){
+            Intent goint = new Intent(BaseActivity.this,OurNotificationActivity.class);
+            startActivity(goint);
+        }
 
 
     }
