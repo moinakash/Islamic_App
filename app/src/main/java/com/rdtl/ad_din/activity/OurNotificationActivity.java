@@ -495,7 +495,7 @@ public class OurNotificationActivity extends AppCompatActivity {
 
        SharedPreferences prefAudio = OurNotificationActivity.this.getSharedPreferences("Api_Audio",MODE_PRIVATE);
         SharedPreferences.Editor editor = prefAudio.edit();
-        editor.putString("notificationValue", "1");
+        editor.putString("notificationValue", "0");
         editor.commit();
     }
 

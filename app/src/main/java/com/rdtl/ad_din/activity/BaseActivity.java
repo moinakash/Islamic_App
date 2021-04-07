@@ -853,6 +853,8 @@ public class BaseActivity extends AppCompatActivity {
 
         String notival = prefAudio.getString("notificationValue","0");
 
+        Toast.makeText(this, "notival "+notival, Toast.LENGTH_SHORT).show();
+
         if (!notival.equals("0")){
             Intent goint = new Intent(BaseActivity.this,OurNotificationActivity.class);
             startActivity(goint);

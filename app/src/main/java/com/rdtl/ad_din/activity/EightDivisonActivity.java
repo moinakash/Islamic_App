@@ -126,8 +126,8 @@ public class EightDivisonActivity extends AppCompatActivity {
                     editor.putString("notificationValue", "1");
                     editor.commit();
 
-                    Intent intent = new Intent(EightDivisonActivity.this, OurNotificationActivity.class);
-                    startActivity(intent);
+                    //Intent intent = new Intent(EightDivisonActivity.this, OurNotificationActivity.class);
+                   // startActivity(intent);
 
                 }
                 if(data !=null && data.has("notification 2")){
