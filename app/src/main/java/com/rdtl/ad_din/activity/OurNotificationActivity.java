@@ -433,12 +433,15 @@ public class OurNotificationActivity extends AppCompatActivity {
 
     private void textViewmaintaining(){
 
-        SharedPreferences prefForRamjan;
-        prefForRamjan = getApplication().getSharedPreferences("mm",0);
-        String sheheritime = prefForRamjan.getString("sheheri","০৪ঃ৪২");
-        String iftartime = prefForRamjan.getString("iftar","০৬ঃ৪২");
 
 
+        SharedPreferences prefAudio = OurNotificationActivity.this.getSharedPreferences("Api_Audio",MODE_PRIVATE);
+        SharedPreferences.Editor editorA = prefAudio.edit();
+        editorA.putString("notificationValue", "0");
+        String sheheritime = prefAudio.getString("sheheri","০৪ঃ৪২");
+        String iftartime = prefAudio.getString("iftar","০৬ঃ৪২");
+
+        Toast.makeText(this, "iftarrrrr"+iftartime, Toast.LENGTH_SHORT).show();
 
 
         Calendar calendar = Calendar.getInstance();
@@ -484,6 +487,8 @@ public class OurNotificationActivity extends AppCompatActivity {
             tvIftarerPorOrtho.setVisibility(View.GONE);
             //tvIftarerPorDes.setVisibility(View.GONE);
 
+        }else {
+            tvCountDownBox.setText(iftartime);
         }
 
 
@@ -494,9 +499,9 @@ public class OurNotificationActivity extends AppCompatActivity {
 
 
        SharedPreferences prefAudio = OurNotificationActivity.this.getSharedPreferences("Api_Audio",MODE_PRIVATE);
-        SharedPreferences.Editor editor = prefAudio.edit();
-        editor.putString("notificationValue", "0");
-        editor.commit();
+        SharedPreferences.Editor editorA = prefAudio.edit();
+        editorA.putString("notificationValue", "0");
+        editorA.commit();
     }
 
 }

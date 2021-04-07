@@ -561,8 +561,11 @@ public class TimeTableFragment extends Fragment {
 
 
         /////////////////////////////////////shehri & ifter/////////////////////////////
+        Toast.makeText(getContext(), "activity.fojorData() "+activity.fojorData(), Toast.LENGTH_SHORT).show();
 
         String fojorerTimeForSheri = wtm.sheheritimewithsubm(""+activity.fojorData());
+
+        Toast.makeText(getContext(), "fojorerTimeForSheri "+fojorerTimeForSheri, Toast.LENGTH_SHORT).show();
 
 
         Character [] arrayForSheri= new Character[fojorerTimeForSheri.length()];
@@ -600,6 +603,8 @@ public class TimeTableFragment extends Fragment {
 
         magribTimeBanglaForIfter = converterClass.covertS(magribTimeBanglaForIfter);
 
+        Toast.makeText(activity, "magribTimeBanglaForIfter "+magribTimeBanglaForIfter, Toast.LENGTH_SHORT).show();
+
 
         //////////////////////////////////////////sheri & ifter Finish //////////////////////////////////////
 
@@ -617,12 +622,15 @@ public class TimeTableFragment extends Fragment {
         editorWidget.putString("ew", "০"+eshaTimeBangla);
         editorWidget.putString("lc", ""+LocatString);
 
-        editorWidget.putString("sheheri","০"+fojorTimeBanglaForSheri);
-        editorWidget.putString("iftar","০"+magribTimeBanglaForIfter);
+
 
         editorWidget.commit();
 
 
+        SharedPreferences.Editor editorA = prefAudio.edit();
+        editorA.putString("sheheri","০"+fojorTimeBanglaForSheri);
+        editorA.putString("iftar","০"+magribTimeBanglaForIfter);
+        editorA.commit();
 
         AudioApi();
 
@@ -983,9 +991,9 @@ public class TimeTableFragment extends Fragment {
 
                     final_Audio = "No";
                     //SharedPreferences pref = getContext().getSharedPreferences("Api_Audio",MODE_PRIVATE);
-                    SharedPreferences.Editor editor = prefAudio.edit();
-                    editor.putString("sp_Audio_Url", final_Audio);
-                    editor.commit();
+                    SharedPreferences.Editor editorA = prefAudio.edit();
+                    editorA.putString("sp_Audio_Url", final_Audio);
+                    editorA.commit();
                 }
 
                 if (response.isSuccessful()){
@@ -998,10 +1006,10 @@ public class TimeTableFragment extends Fragment {
 
                     Toast.makeText(getContext(), "Success title "+final_Audio, Toast.LENGTH_SHORT).show();
 
-                    SharedPreferences.Editor editor = prefAudio.edit();
-                    editor.putString("sp_Audio_Url", final_Audio);
-                    editor.putString("sp_Audio_Url_title",final_Audio_title);
-                    editor.commit();
+                    SharedPreferences.Editor editorA = prefAudio.edit();
+                    editorA.putString("sp_Audio_Url", final_Audio);
+                    editorA.putString("sp_Audio_Url_title",final_Audio_title);
+                    editorA.commit();
 
                 }
 

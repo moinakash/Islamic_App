@@ -122,9 +122,9 @@ public class EightDivisonActivity extends AppCompatActivity {
 
                     Toast.makeText(EightDivisonActivity.this, "Farhad", Toast.LENGTH_SHORT).show();
 
-                    SharedPreferences.Editor editor = prefAudio.edit();
-                    editor.putString("notificationValue", "1");
-                    editor.commit();
+                    SharedPreferences.Editor editorA = prefAudio.edit();
+                    editorA.putString("notificationValue", "1");
+                    editorA.commit();
 
                     //Intent intent = new Intent(EightDivisonActivity.this, OurNotificationActivity.class);
                    // startActivity(intent);
@@ -849,9 +849,9 @@ public class EightDivisonActivity extends AppCompatActivity {
 
 
                     //SharedPreferences pref = EightDivisonActivity.this.getSharedPreferences("Api_Audio",MODE_PRIVATE);
-                    SharedPreferences.Editor editor = prefAudio.edit();
-                    editor.putString("bottomValue", ""+posts.get(0).getValue());
-                    editor.commit();
+                    SharedPreferences.Editor editorA = prefAudio.edit();
+                    editorA.putString("bottomValue", ""+posts.get(0).getValue());
+                    editorA.commit();
 
                     Toast.makeText(EightDivisonActivity.this, "btm_bar = "+ posts.get(0).getValue(), Toast.LENGTH_SHORT).show();
 
@@ -906,9 +906,9 @@ public class EightDivisonActivity extends AppCompatActivity {
                     Toast.makeText(EightDivisonActivity.this, "lv_visibility = "+ posts.get(0).getValue(), Toast.LENGTH_SHORT).show();
 
 
-                    SharedPreferences.Editor editor = prefAudio.edit();
-                    editor.putString("lvValue", ""+posts.get(0).getValue());
-                    editor.commit();
+                    SharedPreferences.Editor editorA = prefAudio.edit();
+                    editorA.putString("lvValue", ""+posts.get(0).getValue());
+                    editorA.commit();
 
                 }
 
