@@ -455,7 +455,20 @@ public class RamjanFragment extends Fragment {
         prefForRamjan = getActivity().getSharedPreferences("Ramjan",0);
         String arabikYr = prefForRamjan.getString("arabikyr","১৪৪২");
         String arabikDy = prefForRamjan.getString("arabikdy","১");
+        String arabikMn = prefForRamjan.getString("arabikmn","১");
         String engYr = prefForRamjan.getString("engyr","২০২১");
+
+        if (arabikMn.equals("রমজান")){
+//            RahmatList.setVisibility(View.VISIBLE);
+//            MagferatList.setVisibility(View.VISIBLE);
+//            NajatList.setVisibility(View.VISIBLE);
+            tvTodayRamjan.setVisibility(View.VISIBLE);
+        }else {
+//            RahmatList.setVisibility(View.GONE);
+//            MagferatList.setVisibility(View.GONE);
+//            NajatList.setVisibility(View.GONE);
+            tvTodayRamjan.setVisibility(View.GONE);
+        }
 
 
         tvTodayRamjan.setText("আজ " + arabikDy + " তম \nরমজান");

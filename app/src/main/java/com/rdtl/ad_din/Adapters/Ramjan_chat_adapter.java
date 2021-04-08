@@ -37,6 +37,7 @@ public class Ramjan_chat_adapter extends ArrayAdapter<ramjan_chart_modelClass> {
         prefForRamjan = getContext().getSharedPreferences("Ramjan",0);
         String arabikYr = prefForRamjan.getString("arabikyr","১৪৪২");
         String arabikDy = prefForRamjan.getString("arabikdy","১");
+        String arabikMn = prefForRamjan.getString("arabikmn","১");
         String engYr = prefForRamjan.getString("engyr","২০২১");
 
         View customView = convertView;
@@ -63,14 +64,19 @@ public class Ramjan_chat_adapter extends ArrayAdapter<ramjan_chart_modelClass> {
             Ramjan_chart_date.setText(""+ramjan_chart_modelClass_obj.getDate());
 
 
-            if (ramjan_chart_modelClass_obj.getNumber().equals(""+arabikDy)){
+            if (arabikMn.equals("রমজান")){
 
-                llparent.setBackgroundColor(Color.parseColor("#DCB742"));
-            }else {
+                if (ramjan_chart_modelClass_obj.getNumber().equals(""+arabikDy)){
 
-                llparent.setBackgroundColor(Color.TRANSPARENT);
+                    llparent.setBackgroundColor(Color.parseColor("#DCB742"));
+                }else {
 
+                    llparent.setBackgroundColor(Color.TRANSPARENT);
+
+                }
             }
+
+
 
         }
 

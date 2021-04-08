@@ -938,7 +938,8 @@ public class EightDivisonActivity extends AppCompatActivity {
     public void ExtraValueApi(){
 
 
-        Call<List<Value_modelClass>> call3 = retrofit.getService(Audio_api.class).getValue("extra_value");
+        Call<List<Value_modelClass>> call3 = retrofit.getService(Audio_api.class).getValue("a_date_manage");
+
 
 
 
@@ -963,6 +964,7 @@ public class EightDivisonActivity extends AppCompatActivity {
 
                  //   Toast.makeText(EightDivisonActivity.this, "extra_value = "+ posts.get(0).getValue(), Toast.LENGTH_SHORT).show();
 
+                    //Toast.makeText(EightDivisonActivity.this, ""+posts.get(0).getValue(), Toast.LENGTH_SHORT).show();
 
                 }
 
