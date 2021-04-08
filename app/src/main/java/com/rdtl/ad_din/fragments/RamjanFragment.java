@@ -523,13 +523,20 @@ public class RamjanFragment extends Fragment {
 
 
 
-        if (cTime<=1130){
+        if (cTime<=630){
             tvUprTime.setText("আজকের সেহরির শেষ সময় \n"+fojorTimeBangla);
             tvLwrTime.setText("আজকের ইফতারের সময় \n"+magribTimeBangla);
-        }else {
+        }else if (cTime>=630 && cTime<=2000){
             tvLwrTime.setText("পরবর্তী সেহরির শেষ সময় \n"+fojorTimeBangla);
             tvUprTime.setText("আজকের ইফতারের সময় \n"+magribTimeBangla);
+        }else {
+            tvUprTime.setText("পরবর্তী সেহরির শেষ সময় \n"+fojorTimeBangla);
+            tvLwrTime.setText("পরবর্তী ইফতারের সময় \n"+magribTimeBangla);
         }
+
+        //if (cTime>=630)
+
+        //Toast.makeText(activity, ""+cTime, Toast.LENGTH_SHORT).show();
 
 
 
