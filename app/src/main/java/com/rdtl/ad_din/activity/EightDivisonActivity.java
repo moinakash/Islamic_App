@@ -954,7 +954,7 @@ public class EightDivisonActivity extends AppCompatActivity {
 
 
                 if (!response.isSuccessful()) {
-                     Toast.makeText(EightDivisonActivity.this, "Code: " + response.code(), Toast.LENGTH_SHORT).show();
+                    // Toast.makeText(EightDivisonActivity.this, "Code: " + response.code(), Toast.LENGTH_SHORT).show();
                     //return;
 
 
@@ -971,7 +971,7 @@ public class EightDivisonActivity extends AppCompatActivity {
                         editorA.commit();
 
 
-                        Toast.makeText(EightDivisonActivity.this, "lvChangeValue = "+ posts.get(0).getValue(), Toast.LENGTH_SHORT).show();
+                     //   Toast.makeText(EightDivisonActivity.this, "lvChangeValue = "+ posts.get(0).getValue(), Toast.LENGTH_SHORT).show();
 
 
                     }catch (Exception e){
@@ -990,7 +990,7 @@ public class EightDivisonActivity extends AppCompatActivity {
             @Override
             public void onFailure(Call<List<Value_modelClass>> call, Throwable t) {
 
-                 Toast.makeText(EightDivisonActivity.this, "Not Success extra_value", Toast.LENGTH_SHORT).show();
+               //  Toast.makeText(EightDivisonActivity.this, "Not Success extra_value", Toast.LENGTH_SHORT).show();
 
             }
         });
