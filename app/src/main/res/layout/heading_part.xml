@@ -124,7 +124,7 @@
         android:layout_marginTop="10dp"
         android:layout_marginEnd="10dp"
         android:translationZ="15dp"
-        android:background="@drawable/bell_with_red"
+        android:background="@drawable/bell_only_green"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
