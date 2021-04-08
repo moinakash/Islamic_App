@@ -12,17 +12,18 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:background="@drawable/green_bg_four">
+        android:background="@drawable/green_bg_four_two">
 
         <ImageView
             android:id="@+id/idSuraPlayPause"
             android:layout_gravity="center_vertical"
             android:layout_width="52dp"
             android:layout_height="52dp"
-            android:background="@drawable/btn_play"/>
+            android:background="@drawable/btn_play_two"/>
 
 
         <LinearLayout
+            android:layout_gravity="center_vertical"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
             android:layout_width="match_parent"
