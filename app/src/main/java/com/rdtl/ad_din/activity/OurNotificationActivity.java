@@ -321,7 +321,7 @@ public class OurNotificationActivity extends AppCompatActivity {
             public void onCompletion(MediaPlayer mp) {
                 // do whatever you want
                 sbRunningS.setProgress(0);
-                ivPlayPause.setBackgroundResource(R.drawable.btn_play);
+                ivPlayPause.setBackgroundResource(R.drawable.btn_play_two);
                 tvCurrentDuratuin.setText("     0:00");
             }
         });
