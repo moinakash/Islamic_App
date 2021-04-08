@@ -127,7 +127,7 @@ public class OurNotificationActivity extends AppCompatActivity {
             } else {
                 llCounter.setVisibility(View.GONE);
                 llStillTime.setVisibility(View.VISIBLE);
-                
+
             }
 
         }else {
