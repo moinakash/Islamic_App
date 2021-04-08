@@ -4,13 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/eidfragmentpng"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".fragments.EidFragment">
+    tools:context=".fragments.EidFragment"
+>
 
-    <!-- TODO: Update blank fragment layout -->
-    <ImageView
+
+<!--    <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:srcCompat="@drawable/eidfragmentpng"/>
+        app:srcCompat="@drawable/eidfragmentpng"/>-->
 
 </LinearLayout>
