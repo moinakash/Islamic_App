@@ -483,7 +483,7 @@ public class OurNotificationActivity extends AppCompatActivity {
     protected void onPause() {
         super.onPause();
         suraMediaPlayer.pause();
-        ivPlayPause.setBackgroundResource(R.drawable.play_button);
+        ivPlayPause.setBackgroundResource(R.drawable.btn_play_two);
     }
 
     @Override
