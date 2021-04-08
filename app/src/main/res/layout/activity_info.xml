@@ -19,6 +19,7 @@
 
 
     <LinearLayout
+        android:orientation="vertical"
         android:layout_marginTop="60dp"
     android:layout_gravity="center_horizontal"
     android:gravity="center"
@@ -32,22 +33,26 @@
         android:layout_height="100dp"/>
 
     <LinearLayout
-        android:padding="10dp"
+        android:padding="5dp"
         android:orientation="vertical"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
 
         <TextView
-            android:text="ডেইলি ইসলাম"
-            android:textSize="25sp"
+            android:text="ডেইলি ইসলাম | Daily Islam"
+            android:textSize="18sp"
             android:textStyle="bold"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@android:color/black"/>
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="5dp"/>
         <TextView
+            android:layout_gravity="center"
             android:text="ভার্সন-২.০.০"
-            android:textSize="25sp"
-            android:textStyle="bold"
+            android:textSize="20sp"
+            android:textStyle="normal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@android:color/black"/>
@@ -64,7 +69,8 @@
         android:gravity="center"
         android:text="@string/info1"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:justificationMode="inter_word"/>
 
     <TextView
         android:layout_marginTop="20dp"
@@ -75,7 +81,8 @@
         android:gravity="center"
         android:text="@string/info2"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:justificationMode="inter_word"/>
 
 
     <TextView

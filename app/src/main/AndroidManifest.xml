@@ -14,10 +14,10 @@
     <application
         android:allowBackup="true"
         android:hardwareAccelerated="true"
-        android:icon="@drawable/logo"
+        android:icon="@mipmap/app_icon_daily_islam"
         android:label="@string/app_name"
         android:largeHeap="true"
-        android:roundIcon="@mipmap/logo_round_round"
+        android:roundIcon="@mipmap/app_icon_daily_islam_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
