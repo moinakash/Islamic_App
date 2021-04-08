@@ -294,10 +294,10 @@ public class OurNotificationActivity extends AppCompatActivity {
                 if (suraMediaPlayer.isPlaying()) {
                     handler.removeCallbacks(updater);
                     suraMediaPlayer.pause();
-                    ivPlayPause.setBackgroundResource(R.drawable.btn_play);
+                    ivPlayPause.setBackgroundResource(R.drawable.btn_play_two);
                 } else {
                     suraMediaPlayer.start();
-                    ivPlayPause.setBackgroundResource(R.drawable.btn_pause);
+                    ivPlayPause.setBackgroundResource(R.drawable.btn_pause_two);
                     updateSeekBar();
                 }
             }
