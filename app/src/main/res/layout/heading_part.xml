@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="265dp"
-    android:background="@drawable/design_on_white_in_bg">
+    android:background="@drawable/design_on_white_in_bg_two">
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -13,7 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="10dp"
-        android:background="@drawable/green_back"
+        android:background="@drawable/green_back_two"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -91,9 +91,12 @@
         <ImageView
 
             android:id="@+id/idUpperFrame"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/only_stars"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/only_stars_two"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -103,7 +106,7 @@
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_marginStart="4dp"
-            android:layout_marginBottom="54dp"
+            android:layout_marginBottom="42dp"
             android:background="@drawable/ad_din_for_ramadan_star"
             app:layout_constraintBottom_toBottomOf="@+id/idAjkerLowerPartTime"
             app:layout_constraintEnd_toEndOf="parent"

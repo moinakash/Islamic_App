@@ -27,7 +27,7 @@
 
 
         <LinearLayout
-            android:background="@drawable/updatebg"
+            android:background="@drawable/updatebg_t"
             android:layout_margin="10dp"
             android:orientation="vertical"
             android:layout_width="300dp"
@@ -38,10 +38,11 @@
 
 
             <ImageView
-                android:background="@drawable/update_logo"
-                android:layout_width="120dp"
-                android:layout_height="120dp"
-                android:layout_marginBottom="20dp"/>
+                android:layout_marginRight="5dp"
+                android:background="@drawable/update_logo_t"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginBottom="15dp"/>
 
 
 
@@ -59,7 +60,27 @@
                 android:textStyle="bold"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="এ্যাপ টি আপডেট করুন।"
+                android:text="অ্যাপটি আপডেট করুন।"
+                />
+
+
+            <TextView
+
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginTop="12dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+
+                android:textColor="@android:color/white"
+                android:layout_below="@+id/iftari"
+                android:textSize="12sp"
+
+
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/UpdateTxt2"
                 />
 
             <Button
@@ -67,11 +88,11 @@
                 android:background="@drawable/update_btn"
                 android:id="@+id/idUpdateBtn"
                 android:textSize="15sp"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="15dp"
                 android:layout_gravity="center"
                 android:text="আপডেট"
-                android:layout_width="100dp"
-                android:layout_height="wrap_content"/>
+                android:layout_width="120dp"
+                android:layout_height="30dp"/>
 
 
         </LinearLayout>

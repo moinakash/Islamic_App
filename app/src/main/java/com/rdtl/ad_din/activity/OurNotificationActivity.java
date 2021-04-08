@@ -176,6 +176,8 @@ public class OurNotificationActivity extends AppCompatActivity {
 
                 showDialog();
 
+
+
                 llCounter.setVisibility(View.GONE);
                 llStillTime.setVisibility(View.VISIBLE);
             }

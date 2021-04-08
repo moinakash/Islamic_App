@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">আদ-দ্বীন</string>
+    <string name="app_name">ডেইলি ইসলাম</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
@@ -14,7 +14,7 @@
     <string name="taharat">তাহারাত\n(পবিত্রতা)</string>
     <string name="roajr_somoysuchi">রোজার সময়\nসূচী</string>
     <string name="locationText">অবস্থান\nনির্বাচন</string>
-    <string name="App_Widget_Confrm_Text">আদ-দ্বীন এপ্লিকেশনের Widget টি আপনার অবস্থান অনুযায়ী প্রতি ওয়াক্তের নামাজের সময়
+    <string name="App_Widget_Confrm_Text">ডেইলি ইসলাম এপ্লিকেশনের Widget টি আপনার অবস্থান অনুযায়ী প্রতি ওয়াক্তের নামাজের সময়
         প্রদর্শন করে এবং প্রতি ৩০ মিনিট অন্তর-অন্তর হালনাগাদ হয়।</string>
 
 
@@ -311,10 +311,10 @@
     <string name="doyaekunut3">হে আল্লাহ! আমরা তোমারই সাহায্য চাই, তোমারই কাছে ক্ষমা চাই, তোমারই প্রতি বিশ্বাস রাখি, তোমারই ওপর ভরসা করি এবং সকল মঙ্গল তোমারই দিকে ন্যস্ত করি। আমরা তোমার কৃতজ্ঞ হয়ে চলি, অকৃতজ্ঞ হই না। হে আল্লাহ! আমরা তোমারই দাসত্ব করি, তোমারই জন্য নামাজ পড়ি, তোমাকেই সিজদাহ করি, তোমারই দিকে দৌড়াই ও এগিয়ে চলি। আমরা তোমারই রহমত আশা করি এবং তোমার আযাবকে ভয় করি, আর তোমার আযাবতো কাফেরদের জন্যই র্নিধারিত।</string>
 
 
-    <string name="info1"><b>\"আদ-দ্বীন\"</b> is a dynamic multi-purpose Islamic app for the convenience of Muslim religious people. This app is regionally based on Bangladesh.The prayer time shown by <b>\"আদ-দ্বীন\"</b> is according to <b>University of Islamic Science Karachi.</b></string>
-    <string name="info2"><b>\"আদ-দ্বীন\"</b> app name and its database are solely collected (typed/written) from <b>Quran</b> and the digital database of <b>\"আদ-দ্বীন\"</b> (only) is the property of <b>Radission Digital Technologies Ltd.</b> This database is maintained and copyrighted by <b>Radission Digital Technologies Ltd.</b> Any kind of use and/or modification of the digital database without the permission of <b>Radission Digital Technologies Ltd.</b> is strictly prohibited.</string>
+    <string name="info1"><b>\"ডেইলি ইসলাম\"</b> is a dynamic multi-purpose Islamic app for the convenience of Muslim religious people. This app is regionally based on Bangladesh.The prayer time shown by <b>\"ডেইলি ইসলাম\"</b> is according to <b>University of Islamic Science Karachi.</b></string>
+    <string name="info2"><b>\"ডেইলি ইসলাম\"</b> app name and its database are solely collected (typed/written) from <b>Quran</b> and the digital database of <b>\"ডেইলি ইসলাম\"</b> (only) is the property of <b>Radission Digital Technologies Ltd.</b> This database is maintained and copyrighted by <b>Radission Digital Technologies Ltd.</b> Any kind of use and/or modification of the digital database without the permission of <b>Radission Digital Technologies Ltd.</b> is strictly prohibited.</string>
 
-    <string name="Credit">\n- \"Shared By আদ-দ্বীন App\nজীবন হোক দ্বীনের পথে।\"</string>
+    <string name="Credit">\n- \"Shared By ডেইলি ইসলাম App\nজীবন হোক দ্বীনের পথে।\"</string>
 
 
     //////////////////ramjan//////////////
@@ -379,7 +379,12 @@
     <string name="rojarniot_orth">হে আল্লাহ! আমি আগামীকাল পবিত্র রমজানের তোমার পক্ষ থেকে নির্ধারিত ফরজ রোজা রাখার ইচ্ছা পোষণ (নিয়্যত) করলাম। অতএব তুমি আমার পক্ষ থেকে (আমার রোযা তথা পানাহার থেকে বিরত থাকাকে) কবুল কর, নিশ্চয়ই তুমি সর্বশ্রোতা ও সর্বজ্ঞানী।</string>
 
     <string name="rojades">আল্লাহ্‌ আমাদের সকলকে সুষ্ঠ ও সফল ভাবে রোজা রাখার তৌফিক দান করক। (আমিন)</string>
+
     <string name="iftarisomoyTxt">সাহল বিন সাদ (রাঃ) থেকে বর্ণিত আছে যে, রাসূলুল্লাহ্‌ সাল্লাল্লাহু আলাইহি ওয়া সাল্লাম বলেছেন: "মানুষ ততদিন কল্যাণে থাকবে যতদিন তারা অবিলম্বে ইফতার করবে"।[সহিহ বুখারী (১৮৫৬) ও সহিহ মুসলিম (১০৯৮)]</string>
+
+
+    <string name="UpdateTxt2">দ্বীন ও আলোর পথের দিশারী হয়ে ইসলামিক অ্যাপ “ডেইলি ইসলাম” আরো নতুন সব ফিচার নিয়ে আসছে এপস্টোরে</string>
+
 
 </resources>
 
