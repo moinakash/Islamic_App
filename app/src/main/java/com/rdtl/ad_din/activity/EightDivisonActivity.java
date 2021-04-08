@@ -26,7 +26,6 @@ import com.rdtl.ad_din.DatabaseHelper;
 import com.rdtl.ad_din.R;
 import com.gun0912.tedpermission.PermissionListener;
 import com.gun0912.tedpermission.TedPermission;
-import com.rdtl.ad_din.pojo_classes.Audio_list_modelCLass;
 import com.rdtl.ad_din.pojo_classes.Value_modelClass;
 
 import org.json.JSONObject;
@@ -105,7 +104,8 @@ public class EightDivisonActivity extends AppCompatActivity {
 
         BottombarApi();
         ListviewApi();
-        ExtraValueApi();
+        ArbiDateMange();
+        ListChangeApi();
 
 
 
@@ -908,6 +908,7 @@ public class EightDivisonActivity extends AppCompatActivity {
                     List<Value_modelClass> posts = response.body();
 
 
+
                   //  Toast.makeText(EightDivisonActivity.this, "lv_visibility = "+ posts.get(0).getValue(), Toast.LENGTH_SHORT).show();
 
 
@@ -937,7 +938,69 @@ public class EightDivisonActivity extends AppCompatActivity {
 
 
 
-    public void ExtraValueApi(){
+    public void ListChangeApi(){
+
+
+        Call<List<Value_modelClass>> call5 = retrofit.getService(Audio_api.class).getValue("list_change");
+
+
+
+
+        call5.enqueue(new Callback<List<Value_modelClass>>() {
+            @Override
+            public void onResponse(Call<List<Value_modelClass>> call, Response<List<Value_modelClass>> response) {
+
+
+
+
+                if (!response.isSuccessful()) {
+                     Toast.makeText(EightDivisonActivity.this, "Code: " + response.code(), Toast.LENGTH_SHORT).show();
+                    //return;
+
+
+                }
+
+                if (response.isSuccessful()){
+
+                    try{
+
+                        List<Value_modelClass> posts = response.body();
+
+                        SharedPreferences.Editor editorA = prefAudio.edit();
+                        editorA.putString("lvChangeValue", ""+posts.get(0).getValue());
+                        editorA.commit();
+
+
+                        Toast.makeText(EightDivisonActivity.this, "lvChangeValue = "+ posts.get(0).getValue(), Toast.LENGTH_SHORT).show();
+
+
+                    }catch (Exception e){
+
+                    }
+
+
+
+
+                }
+
+
+
+            }
+
+            @Override
+            public void onFailure(Call<List<Value_modelClass>> call, Throwable t) {
+
+                 Toast.makeText(EightDivisonActivity.this, "Not Success extra_value", Toast.LENGTH_SHORT).show();
+
+            }
+        });
+
+
+
+    }
+
+
+    public void ArbiDateMange(){
 
 
         Call<List<Value_modelClass>> call3 = retrofit.getService(Audio_api.class).getValue("a_date_manage");
@@ -974,9 +1037,6 @@ public class EightDivisonActivity extends AppCompatActivity {
 
 
 
-                 //   Toast.makeText(EightDivisonActivity.this, "extra_value = "+ posts.get(0).getValue(), Toast.LENGTH_SHORT).show();
-
-                    //Toast.makeText(EightDivisonActivity.this, ""+posts.get(0).getValue(), Toast.LENGTH_SHORT).show();
 
                 }
 

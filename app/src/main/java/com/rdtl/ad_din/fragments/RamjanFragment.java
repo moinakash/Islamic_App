@@ -153,7 +153,28 @@ public class RamjanFragment extends Fragment {
         wtm = new WaktoTimeMaintaining(getContext());
 
 
-        listviews();
+        prefAudio = getContext().getSharedPreferences("Api_Audio",MODE_PRIVATE);
+        lvV = prefAudio.getString("lvChangeValue","1");
+
+
+        if(lvV.equals("1")){
+
+            listviews();
+
+        }
+
+        if(lvV.equals("0")){
+
+            listviews0();
+
+        }
+
+        if(lvV.equals("2")){
+
+            listviews2();
+
+        }
+
         timesForSheheri();
 
 
@@ -176,6 +197,7 @@ public class RamjanFragment extends Fragment {
 
 
     private void listviews() {
+
 
 
 
@@ -241,6 +263,164 @@ public class RamjanFragment extends Fragment {
         ramjan_chart_modelClasses_List3.add(new ramjan_chart_modelClass(8,"২৮","১১ মে"));
         ramjan_chart_modelClasses_List3.add(new ramjan_chart_modelClass(9,"২৯","১২ মে"));
         ramjan_chart_modelClasses_List3.add(new ramjan_chart_modelClass(10,"৩০","১৩ মে"));
+
+
+        Ramjan_chat_adapter ramjan_chat_adapter3 = new Ramjan_chat_adapter(getContext(), R.layout.chart_items, ramjan_chart_modelClasses_List3);
+
+        NajatList.setAdapter(ramjan_chat_adapter3);
+
+
+
+
+
+    }
+
+    private void listviews0() {
+
+
+
+
+
+
+        ramjan_chart_modelClasses_List = new ArrayList<ramjan_chart_modelClass>();
+
+        ramjan_chart_modelClasses_List.add(new ramjan_chart_modelClass(1,"০১","১৩ এপ্রিল"));
+        ramjan_chart_modelClasses_List.add(new ramjan_chart_modelClass(2,"০২","১৪ এপ্রিল"));
+        ramjan_chart_modelClasses_List.add(new ramjan_chart_modelClass(3,"০৩","১৫ এপ্রিল"));
+        ramjan_chart_modelClasses_List.add(new ramjan_chart_modelClass(4,"০৪","১৬ এপ্রিল"));
+        ramjan_chart_modelClasses_List.add(new ramjan_chart_modelClass(5,"০৫","১৭ এপ্রিল"));
+        ramjan_chart_modelClasses_List.add(new ramjan_chart_modelClass(6,"০৬","১৮ এপ্রিল"));
+        ramjan_chart_modelClasses_List.add(new ramjan_chart_modelClass(7,"০৭","১৯ এপ্রিল"));
+        ramjan_chart_modelClasses_List.add(new ramjan_chart_modelClass(8,"০৮","২০ এপ্রিল"));
+        ramjan_chart_modelClasses_List.add(new ramjan_chart_modelClass(9,"০৯","২১ এপ্রিল"));
+        ramjan_chart_modelClasses_List.add(new ramjan_chart_modelClass(10,"১০","২২ এপ্রিল"));
+
+
+        Ramjan_chat_adapter ramjan_chat_adapter = new Ramjan_chat_adapter(getContext(), R.layout.chart_items, ramjan_chart_modelClasses_List);
+
+        RahmatList.setAdapter(ramjan_chat_adapter);
+
+
+
+
+
+
+
+
+
+
+        ramjan_chart_modelClasses_List2 = new ArrayList<ramjan_chart_modelClass>();
+
+        ramjan_chart_modelClasses_List2.add(new ramjan_chart_modelClass(1,"১১","২৩ এপ্রিল"));
+        ramjan_chart_modelClasses_List2.add(new ramjan_chart_modelClass(2,"১২","২৪ এপ্রিল"));
+        ramjan_chart_modelClasses_List2.add(new ramjan_chart_modelClass(3,"১৩","২৫ এপ্রিল"));
+        ramjan_chart_modelClasses_List2.add(new ramjan_chart_modelClass(4,"১৪","২৬ এপ্রিল"));
+        ramjan_chart_modelClasses_List2.add(new ramjan_chart_modelClass(5,"১৫","২৭ এপ্রিল"));
+        ramjan_chart_modelClasses_List2.add(new ramjan_chart_modelClass(6,"১৬","২৮ এপ্রিল"));
+        ramjan_chart_modelClasses_List2.add(new ramjan_chart_modelClass(7,"১৭","২৯ এপ্রিল"));
+        ramjan_chart_modelClasses_List2.add(new ramjan_chart_modelClass(8,"১৮","৩০ মে"));
+        ramjan_chart_modelClasses_List2.add(new ramjan_chart_modelClass(9,"১৯","০১ মে"));
+        ramjan_chart_modelClasses_List2.add(new ramjan_chart_modelClass(10,"২০","০২ মে"));
+
+
+        Ramjan_chat_adapter ramjan_chat_adapter2 = new Ramjan_chat_adapter(getContext(), R.layout.chart_items, ramjan_chart_modelClasses_List2);
+
+        MagferatList.setAdapter(ramjan_chat_adapter2);
+
+
+
+
+        ramjan_chart_modelClasses_List3 = new ArrayList<ramjan_chart_modelClass>();
+
+        ramjan_chart_modelClasses_List3.add(new ramjan_chart_modelClass(1,"২১","০৩ মে"));
+        ramjan_chart_modelClasses_List3.add(new ramjan_chart_modelClass(2,"২২","০৪ মে"));
+        ramjan_chart_modelClasses_List3.add(new ramjan_chart_modelClass(3,"২৩","০৫ মে"));
+        ramjan_chart_modelClasses_List3.add(new ramjan_chart_modelClass(4,"২৪","০৬ মে"));
+        ramjan_chart_modelClasses_List3.add(new ramjan_chart_modelClass(5,"২৫","০৭ মে"));
+        ramjan_chart_modelClasses_List3.add(new ramjan_chart_modelClass(6,"২৬","০৮ মে"));
+        ramjan_chart_modelClasses_List3.add(new ramjan_chart_modelClass(7,"২৭","০৯ মে"));
+        ramjan_chart_modelClasses_List3.add(new ramjan_chart_modelClass(8,"২৮","১০ মে"));
+        ramjan_chart_modelClasses_List3.add(new ramjan_chart_modelClass(9,"২৯","১১ মে"));
+        ramjan_chart_modelClasses_List3.add(new ramjan_chart_modelClass(10,"৩০","১২ মে"));
+
+
+        Ramjan_chat_adapter ramjan_chat_adapter3 = new Ramjan_chat_adapter(getContext(), R.layout.chart_items, ramjan_chart_modelClasses_List3);
+
+        NajatList.setAdapter(ramjan_chat_adapter3);
+
+
+
+
+
+    }
+
+    private void listviews2() {
+
+
+
+
+
+
+        ramjan_chart_modelClasses_List = new ArrayList<ramjan_chart_modelClass>();
+
+        ramjan_chart_modelClasses_List.add(new ramjan_chart_modelClass(1,"০১","১৫ এপ্রিল"));
+        ramjan_chart_modelClasses_List.add(new ramjan_chart_modelClass(2,"০২","১৬ এপ্রিল"));
+        ramjan_chart_modelClasses_List.add(new ramjan_chart_modelClass(3,"০৩","১৭ এপ্রিল"));
+        ramjan_chart_modelClasses_List.add(new ramjan_chart_modelClass(4,"০৪","১৮ এপ্রিল"));
+        ramjan_chart_modelClasses_List.add(new ramjan_chart_modelClass(5,"০৫","১৯ এপ্রিল"));
+        ramjan_chart_modelClasses_List.add(new ramjan_chart_modelClass(6,"০৬","২০ এপ্রিল"));
+        ramjan_chart_modelClasses_List.add(new ramjan_chart_modelClass(7,"০৭","২১ এপ্রিল"));
+        ramjan_chart_modelClasses_List.add(new ramjan_chart_modelClass(8,"০৮","২২ এপ্রিল"));
+        ramjan_chart_modelClasses_List.add(new ramjan_chart_modelClass(9,"০৯","২৩ এপ্রিল"));
+        ramjan_chart_modelClasses_List.add(new ramjan_chart_modelClass(10,"১০","২৪ এপ্রিল"));
+
+
+        Ramjan_chat_adapter ramjan_chat_adapter = new Ramjan_chat_adapter(getContext(), R.layout.chart_items, ramjan_chart_modelClasses_List);
+
+        RahmatList.setAdapter(ramjan_chat_adapter);
+
+
+
+
+
+
+
+
+
+
+        ramjan_chart_modelClasses_List2 = new ArrayList<ramjan_chart_modelClass>();
+
+        ramjan_chart_modelClasses_List2.add(new ramjan_chart_modelClass(1,"১১","২৫ এপ্রিল"));
+        ramjan_chart_modelClasses_List2.add(new ramjan_chart_modelClass(2,"১২","২৬ এপ্রিল"));
+        ramjan_chart_modelClasses_List2.add(new ramjan_chart_modelClass(3,"১৩","২৭ এপ্রিল"));
+        ramjan_chart_modelClasses_List2.add(new ramjan_chart_modelClass(4,"১৪","২৮ এপ্রিল"));
+        ramjan_chart_modelClasses_List2.add(new ramjan_chart_modelClass(5,"১৫","২৯ এপ্রিল"));
+        ramjan_chart_modelClasses_List2.add(new ramjan_chart_modelClass(6,"১৬","৩০ এপ্রিল"));
+        ramjan_chart_modelClasses_List2.add(new ramjan_chart_modelClass(7,"১৭","০১ এপ্রিল"));
+        ramjan_chart_modelClasses_List2.add(new ramjan_chart_modelClass(8,"১৮","০২ মে"));
+        ramjan_chart_modelClasses_List2.add(new ramjan_chart_modelClass(9,"১৯","০৩ মে"));
+        ramjan_chart_modelClasses_List2.add(new ramjan_chart_modelClass(10,"২০","০৪ মে"));
+
+
+        Ramjan_chat_adapter ramjan_chat_adapter2 = new Ramjan_chat_adapter(getContext(), R.layout.chart_items, ramjan_chart_modelClasses_List2);
+
+        MagferatList.setAdapter(ramjan_chat_adapter2);
+
+
+
+
+        ramjan_chart_modelClasses_List3 = new ArrayList<ramjan_chart_modelClass>();
+
+        ramjan_chart_modelClasses_List3.add(new ramjan_chart_modelClass(1,"২১","০৫ মে"));
+        ramjan_chart_modelClasses_List3.add(new ramjan_chart_modelClass(2,"২২","০৬ মে"));
+        ramjan_chart_modelClasses_List3.add(new ramjan_chart_modelClass(3,"২৩","০৭ মে"));
+        ramjan_chart_modelClasses_List3.add(new ramjan_chart_modelClass(4,"২৪","০৮ মে"));
+        ramjan_chart_modelClasses_List3.add(new ramjan_chart_modelClass(5,"২৫","০৯ মে"));
+        ramjan_chart_modelClasses_List3.add(new ramjan_chart_modelClass(6,"২৬","১০ মে"));
+        ramjan_chart_modelClasses_List3.add(new ramjan_chart_modelClass(7,"২৭","১১ মে"));
+        ramjan_chart_modelClasses_List3.add(new ramjan_chart_modelClass(8,"২৮","১২ মে"));
+        ramjan_chart_modelClasses_List3.add(new ramjan_chart_modelClass(9,"২৯","১৩ মে"));
+        ramjan_chart_modelClasses_List3.add(new ramjan_chart_modelClass(10,"৩০","১৪ মে"));
 
 
         Ramjan_chat_adapter ramjan_chat_adapter3 = new Ramjan_chat_adapter(getContext(), R.layout.chart_items, ramjan_chart_modelClasses_List3);
@@ -546,97 +726,5 @@ public class RamjanFragment extends Fragment {
 
 
 
-
-
-//    @Override
-//    public void onClick(View v) {
-//        Intent in;
-//
-//        switch(v.getId()){
-//            case R.id.idRojarNiotBtn:
-//
-//                break;
-//            case R.id.idRojarFojilot:
-//
-//                break;
-//            case R.id.idIfterASunnotKhabar:
-//
-//                break;
-//            case R.id.idSokriya:
-//
-//                break;
-//            case R.id.idRojarCharkaj:
-//
-//                break;
-//            case R.id.idTarabirNioim:
-//
-//                break;
-//            case R.id.idKaronChara:
-//
-//                break;
-//            case R.id.idRojavanga:
-//
-//                break;
-//            case R.id.idRojarkaffara:
-//
-//                break;
-//            case R.id.idVulDharona:
-//                in = new Intent(getContext(), RamajanDetailsActivity.class);
-//                in.putExtra("RequiredWeb", "webVulDharona");
-//                startActivity(in);
-//                btnvulDharona.startAnimation(buttonClick);
-//                break;
-//            case R.id.idPastAndbrush:
-//                in = new Intent(getContext(), RamajanDetailsActivity.class);
-//                in.putExtra("RequiredWeb", "webPastAndbrush");
-//                startActivity(in);
-//                btnPastAndMeswak.startAnimation(buttonClick);
-//                break;
-//            case R.id.idRomankeRohomot:
-//                in = new Intent(getContext(), RamajanDetailsActivity.class);
-//                in.putExtra("RequiredWeb", "webRomankeRohomot");
-//                startActivity(in);
-//                btnRomjanKRohomot.startAnimation(buttonClick);
-//                break;
-//            case R.id.idRojayDhan:
-//                in = new Intent(getContext(), RamajanDetailsActivity.class);
-//                in.putExtra("RequiredWeb", "webRojayDhan");
-//                startActivity(in);
-//                btnRojayDhan.startAnimation(buttonClick);
-//                break;
-//            case R.id.idJannatJahannam:
-//                in = new Intent(getContext(), RamajanDetailsActivity.class);
-//                in.putExtra("RequiredWeb", "webJannatJahannam");
-//                startActivity(in);
-//                btnJannatJahannam.startAnimation(buttonClick);
-//                break;
-//            case R.id.idFitrah:
-//                in = new Intent(getContext(), RamajanDetailsActivity.class);
-//                in.putExtra("RequiredWeb", "webFitrah");
-//                startActivity(in);
-//                btnFitra.startAnimation(buttonClick);
-//                break;
-//            case R.id.idRojayNirdesh:
-//                in = new Intent(getContext(), RamajanDetailsActivity.class);
-//                in.putExtra("RequiredWeb", "webRojayNirdesh");
-//                startActivity(in);
-//                btnRojarNirdesh.startAnimation(buttonClick);
-//                break;
-//            case R.id.idItekaf:
-//                in = new Intent(getContext(), RamajanDetailsActivity.class);
-//                in.putExtra("RequiredWeb", "webItekaf");
-//                startActivity(in);
-//                btnItekaf.startAnimation(buttonClick);
-//                break;
-//            case R.id.idRojonMasherBorkot:
-//                in = new Intent(getContext(), RamajanDetailsActivity.class);
-//                in.putExtra("RequiredWeb", "webRojonMasherBorkot");
-//                startActivity(in);
-//                btnRojobMash.startAnimation(buttonClick);
-//                break;
-//            default:
-//                break;
-//        }
-//    }
 
 }

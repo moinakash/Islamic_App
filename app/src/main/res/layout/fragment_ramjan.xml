@@ -44,7 +44,10 @@
                     android:orientation="horizontal">
 
                     <LinearLayout
-                        android:padding="5dp"
+                        android:paddingTop="5dp"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="8dp"
+                        android:paddingBottom="5dp"
                         android:orientation="horizontal"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -55,7 +58,8 @@
                         android:background="@color/ramajan_chart_heading_color">
 
                         <TextView
-                            android:gravity="center"
+
+                            android:gravity="left"
                             android:text="রোজা"
                             android:textSize="15dp"
                             android:textColor="@android:color/white"
@@ -64,8 +68,9 @@
                             android:layout_height="wrap_content"/>
 
                         <TextView
-                            android:gravity="center"
-                            android:text="মাস"
+
+                            android:gravity="right"
+                            android:text="তারিখ"
                             android:textSize="15dp"
                             android:textColor="@android:color/white"
                             android:layout_weight="1"
@@ -75,7 +80,10 @@
                     </LinearLayout>
 
                     <LinearLayout
-                        android:padding="5dp"
+                        android:paddingTop="5dp"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="8dp"
+                        android:paddingBottom="5dp"
                         android:orientation="horizontal"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -86,7 +94,8 @@
                         android:background="@color/ramajan_chart_heading_color">
 
                         <TextView
-                            android:gravity="center"
+
+                            android:gravity="left"
                             android:text="রোজা"
                             android:textSize="15dp"
                             android:textColor="@android:color/white"
@@ -95,8 +104,9 @@
                             android:layout_height="wrap_content"/>
 
                         <TextView
-                            android:gravity="center"
-                            android:text="মাস"
+
+                            android:gravity="right"
+                            android:text="তারিখ"
                             android:textSize="15dp"
                             android:textColor="@android:color/white"
                             android:layout_weight="1"
@@ -106,7 +116,11 @@
                     </LinearLayout>
 
                     <LinearLayout
-                        android:padding="5dp"
+
+                        android:paddingTop="5dp"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="8dp"
+                        android:paddingBottom="5dp"
                         android:orientation="horizontal"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -117,7 +131,9 @@
                         android:background="@color/ramajan_chart_heading_color">
 
                         <TextView
-                            android:gravity="center"
+
+
+                            android:gravity="left"
                             android:text="রোজা"
                             android:textSize="15dp"
                             android:textColor="@android:color/white"
@@ -126,8 +142,9 @@
                             android:layout_height="wrap_content"/>
 
                         <TextView
-                            android:gravity="center"
-                            android:text="মাস"
+
+                            android:gravity="right"
+                            android:text="তারিখ"
                             android:textSize="15dp"
                             android:textColor="@android:color/white"
                             android:layout_weight="1"
