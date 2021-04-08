@@ -26,8 +26,10 @@ import com.rdtl.ad_din.Api.Retrofit;
 import com.rdtl.ad_din.R;
 import com.rdtl.ad_din.activity.BaseActivity;
 import com.rdtl.ad_din.activity.EightDivisonActivity;
+import com.rdtl.ad_din.activity.OurNotificationActivity;
 import com.rdtl.ad_din.pojo_classes.Audio_list_modelCLass;
 import com.rdtl.ad_din.pojo_classes.ConverterClass;
+import com.rdtl.ad_din.pojo_classes.Value_modelClass;
 import com.rdtl.ad_din.pojo_classes.WaktoTimeMaintaining;
 
 
@@ -879,11 +881,15 @@ public class TimeTableFragment extends Fragment {
         int md;
 
 
+        SharedPreferences prefAudio = getContext().getSharedPreferences("Api_Audio", MODE_PRIVATE);
+        String addsubS = prefAudio.getString("datemanageArbi", "1");
+        //String iftartime = prefAudio.getString("iftar", "০৬ঃ৪২");
+        int addsubInt = Integer.parseInt(addsubS);
 
 
 
 
-        if ((hdcD-1)<=0){
+        if ((hdcD-addsubInt)<=0){
 
 
             if((hdcM-1)<=0){
@@ -892,19 +898,19 @@ public class TimeTableFragment extends Fragment {
                 hdcM=12;
                 md = funcM(hdcM);
 
-                hdcD = (hdcD+md)-1;
+                hdcD = (hdcD+md)-addsubInt;
             }
             else{
 
                 hdcM = hdcM-1;
                 md = funcM(hdcM);
-                hdcD = (hdcD+md)-1;
+                hdcD = (hdcD+md)-addsubInt;
             }
 
         }
         else{
 
-            hdcD=hdcD-1;
+            hdcD=hdcD-addsubInt;
             hdcM=hdcM;
             hdcY=hdcY;
         }

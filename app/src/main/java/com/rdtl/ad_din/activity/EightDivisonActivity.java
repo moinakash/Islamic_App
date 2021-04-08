@@ -926,6 +926,8 @@ public class EightDivisonActivity extends AppCompatActivity {
 
               //  Toast.makeText(EightDivisonActivity.this, "Not Success lv_visibility", Toast.LENGTH_SHORT).show();
 
+
+
             }
         });
 
@@ -959,7 +961,17 @@ public class EightDivisonActivity extends AppCompatActivity {
 
                 if (response.isSuccessful()){
 
-                    List<Value_modelClass> posts = response.body();
+                    try {
+                        List<Value_modelClass> posts = response.body();
+                        SharedPreferences.Editor editorA = prefAudio.edit();
+                        editorA.putString("datemanageArbi", ""+posts.get(0).getValue());
+                        editorA.commit();
+                    }catch (Exception e){
+
+                    }
+
+
+
 
 
                  //   Toast.makeText(EightDivisonActivity.this, "extra_value = "+ posts.get(0).getValue(), Toast.LENGTH_SHORT).show();
