@@ -247,14 +247,7 @@ public class TimeTableFragment extends Fragment {
             year = ""+text_array[0]+""+text_array[1]+""+text_array[2]+""+text_array[3]+""+text_array[4];
             day = ""+text_array[(ii-1)]+""+text_array[(ii)];
 
-            SharedPreferences prefForRamjan;
-            prefForRamjan = getActivity().getSharedPreferences("Ramjan",0);
-            SharedPreferences.Editor forramjan = prefForRamjan.edit();
-            forramjan.putString("arabikyr", ""+year);
-            forramjan.putString("arabikdy", ""+day);
-            forramjan.putString("engyr", ""+hdcY);
 
-            forramjan.commit();
 
 
         String txtf = "";
@@ -266,6 +259,18 @@ public class TimeTableFragment extends Fragment {
             }
 
             tvCurrentArbiDate.setText(day+" "+txtf+""+year);
+
+        SharedPreferences prefForRamjan;
+        prefForRamjan = getActivity().getSharedPreferences("Ramjan",0);
+        SharedPreferences.Editor forramjan = prefForRamjan.edit();
+        forramjan.putString("arabikyr", ""+year);
+        forramjan.putString("arabikdy", ""+day);
+        forramjan.putString("arabikmn", ""+txtf);
+        forramjan.putString("engyr", ""+hdcY);
+
+        //Toast.makeText(getContext(), ""+txtf, Toast.LENGTH_SHORT).show();
+
+        forramjan.commit();
 
 
 
@@ -998,18 +1003,24 @@ public class TimeTableFragment extends Fragment {
 
                 if (response.isSuccessful()){
 
-                    List<Audio_list_modelCLass> posts = response.body();
+                    try {
+                        List<Audio_list_modelCLass> posts = response.body();
 
-                    final_Audio = "https://dailyislam.amaderkagoj.com/"+posts.get(0).getAudio();
+                        final_Audio = "https://dailyislam.amaderkagoj.com/"+posts.get(0).getAudio();
 
-                    final_Audio_title = ""+posts.get(0).getName();
+                        final_Audio_title = ""+posts.get(0).getName();
 
-                 //   Toast.makeText(getContext(), "Success title "+final_Audio, Toast.LENGTH_SHORT).show();
+                        //   Toast.makeText(getContext(), "Success title "+final_Audio, Toast.LENGTH_SHORT).show();
 
-                    SharedPreferences.Editor editorA = prefAudio.edit();
-                    editorA.putString("sp_Audio_Url", final_Audio);
-                    editorA.putString("sp_Audio_Url_title",final_Audio_title);
-                    editorA.commit();
+                        SharedPreferences.Editor editorA = prefAudio.edit();
+                        editorA.putString("sp_Audio_Url", final_Audio);
+                        editorA.putString("sp_Audio_Url_title",final_Audio_title);
+                        editorA.commit();
+                    }catch (Exception ex){
+
+                    }
+
+
 
                 }
 

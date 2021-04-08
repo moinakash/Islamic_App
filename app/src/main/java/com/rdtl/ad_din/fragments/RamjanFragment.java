@@ -459,7 +459,7 @@ public class RamjanFragment extends Fragment {
 
 
         tvTodayRamjan.setText("আজ " + arabikDy + " তম \nরমজান");
-        tvThisYear.setText("মাহে রমজান\n"+converterClass.covertS(engYr)+" ("+arabikYr+")");
+        tvThisYear.setText("মাহে রমজান\n"+converterClass.covertS(engYr)+" ("+arabikYr+" )");
 
 
         BaseActivity activity = (BaseActivity) getActivity();

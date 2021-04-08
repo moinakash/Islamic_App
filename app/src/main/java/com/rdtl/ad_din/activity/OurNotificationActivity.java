@@ -61,11 +61,21 @@ public class OurNotificationActivity extends AppCompatActivity {
     private long mTimeLeftInMillis = START_TIME_IN_MILLIS;
 
     int t2Hour, t2Minute, mm;
-    int minutes3=0;
+    int minutes3 = 0;
 
     String timeCheckerfornoti;
 
     LinearLayout llStillTime, llCounter;
+
+    int hour2;
+    int minute2;
+
+
+    int hourOfDay = 6, minute = 25;
+    int iftartimeConInt;
+
+    int tstm1, tsth1;
+    int ampm;
 
 
     @Override
@@ -86,14 +96,57 @@ public class OurNotificationActivity extends AppCompatActivity {
 
         textViewWorks();
 
-        if (minutes3<=15 && minutes3>=0){
-            startTimer();
-            llCounter.setVisibility(View.VISIBLE);
-            llStillTime.setVisibility(View.GONE);
+        //Toast.makeText(this, "" + hourOfDay + " ll" + minute, Toast.LENGTH_SHORT).show();
+
+
+        if ((minute - 15) < 0) {
+            tsth1 = hourOfDay - 1;
+            tstm1 = (minute + 16) - 1;
+        } else {
+            tsth1 = hourOfDay;
+            tstm1 = minute - 15;
+        }
+
+        if (ampm == 1) {
+
+            if (hour2 >= tsth1 && hour2 <= hourOfDay) {
+                if (minute2 >= tstm1 && minute2 <= minute) {
+
+                    if (minutes3 <= 15 && minutes3 >= 0) {
+                        startTimer();
+                        llCounter.setVisibility(View.VISIBLE);
+                        llStillTime.setVisibility(View.GONE);
+                    } else {
+                        llCounter.setVisibility(View.GONE);
+                        llStillTime.setVisibility(View.VISIBLE);
+                    }
+                }else {
+                    llCounter.setVisibility(View.GONE);
+                    llStillTime.setVisibility(View.VISIBLE);
+                }
+            } else {
+                llCounter.setVisibility(View.GONE);
+                llStillTime.setVisibility(View.VISIBLE);
+            }
+
         }else {
             llCounter.setVisibility(View.GONE);
             llStillTime.setVisibility(View.VISIBLE);
         }
+
+
+
+        //Toast.makeText(this, "" + hour2 + "--" + minute2, Toast.LENGTH_SHORT).show();
+
+
+//        if (minutes3<=15 && minutes3>=0){
+//            startTimer();
+//            llCounter.setVisibility(View.VISIBLE);
+//            llStillTime.setVisibility(View.GONE);
+//        }else {
+//            llCounter.setVisibility(View.GONE);
+//            llStillTime.setVisibility(View.VISIBLE);
+//        }
 
         //startTimer();
 
@@ -102,75 +155,72 @@ public class OurNotificationActivity extends AppCompatActivity {
     }
 
 
-        private void startTimer() {
-            mCountDownTimer = new CountDownTimer(mTimeLeftInMillis, 1000) {
-                @Override
-                public void onTick(long millisUntilFinished) {
-                    mTimeLeftInMillis = millisUntilFinished;
-                    updateCountDownText();
-                }
-                @Override
-                public void onFinish() {
-                    mTimerRunning = false;
-                    //mButtonStartPause.setText("Start");
-                    //mButtonStartPause.setVisibility(View.INVISIBLE);
-                    //mButtonReset.setVisibility(View.VISIBLE);
-                  //  Toast.makeText(OurNotificationActivity.this, "Done", Toast.LENGTH_SHORT).show();
-                    //TODO
-                    //show alart dialog
+    private void startTimer() {
+        mCountDownTimer = new CountDownTimer(mTimeLeftInMillis, 1000) {
+            @Override
+            public void onTick(long millisUntilFinished) {
+                mTimeLeftInMillis = millisUntilFinished;
+                updateCountDownText();
+            }
 
-                    showDialog();
+            @Override
+            public void onFinish() {
+                mTimerRunning = false;
+                //mButtonStartPause.setText("Start");
+                //mButtonStartPause.setVisibility(View.INVISIBLE);
+                //mButtonReset.setVisibility(View.VISIBLE);
+                //  Toast.makeText(OurNotificationActivity.this, "Done", Toast.LENGTH_SHORT).show();
+                //TODO
+                //show alart dialog
 
-                    llCounter.setVisibility(View.GONE);
-                    llStillTime.setVisibility(View.VISIBLE);
-                }
-            }.start();
-            mTimerRunning = true;
-            //mButtonStartPause.setText("pause");
-            //mButtonReset.setVisibility(View.INVISIBLE);
-        }
+                showDialog();
+
+                llCounter.setVisibility(View.GONE);
+                llStillTime.setVisibility(View.VISIBLE);
+            }
+        }.start();
+        mTimerRunning = true;
+        //mButtonStartPause.setText("pause");
+        //mButtonReset.setVisibility(View.INVISIBLE);
+    }
 
 
-
-    public void extraCode(){
+    public void extraCode() {
 
         Calendar calendar = Calendar.getInstance();
-        final int hour2 = calendar.get(Calendar.HOUR);
-        final int minute2 = calendar.get(Calendar.MINUTE);
+        hour2 = calendar.get(Calendar.HOUR);
+        minute2 = calendar.get(Calendar.MINUTE);
+        ampm = calendar.get(Calendar.AM_PM);
+        //Toast.makeText(this, "" + ampm, Toast.LENGTH_SHORT).show();
 
 
-        int hourOfDay = 6, minute = 25;
-
-
-        SharedPreferences prefAudio = OurNotificationActivity.this.getSharedPreferences("Api_Audio",MODE_PRIVATE);
+        SharedPreferences prefAudio = OurNotificationActivity.this.getSharedPreferences("Api_Audio", MODE_PRIVATE);
         SharedPreferences.Editor editorA = prefAudio.edit();
-        String iftartimeCon = prefAudio.getString("iftar","০৬ঃ৪২");
+        String iftartimeCon = prefAudio.getString("iftar", "০৬ঃ৪২");
 
-        iftartimeCon = iftartimeCon.replace("ঃ","");
-        iftartimeCon = iftartimeCon.replace(":","");
+        iftartimeCon = iftartimeCon.replace("ঃ", "");
+        iftartimeCon = iftartimeCon.replace(":", "");
         iftartimeCon = converterClass.covertE(iftartimeCon);
 
-        int iftartimeConInt = Integer.parseInt(iftartimeCon);
+        iftartimeConInt = Integer.parseInt(iftartimeCon);
 
-        hourOfDay = iftartimeConInt/100;
-        minute = iftartimeConInt%100;
+        hourOfDay = iftartimeConInt / 100;
+        minute = iftartimeConInt % 100;
 
-      //  Toast.makeText(this, "iftartimeCon "+iftartimeCon, Toast.LENGTH_SHORT).show();
+        //  Toast.makeText(this, "iftartimeCon "+iftartimeCon, Toast.LENGTH_SHORT).show();
 
-        if (hourOfDay==0){
+        if (hourOfDay == 0) {
             hourOfDay = 24;
-            if (hourOfDay>hour2){
-                mm = (minute+60)-minute2;
+            if (hourOfDay > hour2) {
+                mm = (minute + 60) - minute2;
+            } else {
+                mm = minute - minute2;
             }
-            else {
-                mm = minute-minute2;
-            }
-        }else {
-            if (hourOfDay>hour2){
-                mm = (minute+60)-minute2;
-            }
-            else {
-                mm = minute-minute2;
+        } else {
+            if (hourOfDay > hour2) {
+                mm = (minute + 60) - minute2;
+            } else {
+                mm = minute - minute2;
             }
         }
 
@@ -191,19 +241,15 @@ public class OurNotificationActivity extends AppCompatActivity {
         String timeLeftFormatted2 = String.format(Locale.getDefault(), "%02d", seconds);
 
 
-
         tvCb1.setText(timeLeftFormatted);
         tvCb2.setText(timeLeftFormatted2);
 
-       // mTextViewCountDown.setText(timeLeftFormatted);
+        // mTextViewCountDown.setText(timeLeftFormatted);
         //calculateRtime();
     }
 
 
-
-
-
-    private void initIds(){
+    private void initIds() {
         tvSomoyName = findViewById(R.id.idSomoyName);
         tvCountDownBox = findViewById(R.id.idCountDownBox);
         tvIftarerAge = findViewById(R.id.idiftarerAge);
@@ -227,7 +273,7 @@ public class OurNotificationActivity extends AppCompatActivity {
         llStillTime = findViewById(R.id.idLiniarStillTime);
     }
 
-    private void initForPlayer(){
+    private void initForPlayer() {
         tvRunnigSuraName = findViewById(R.id.idRunningSura);
         tvCurrentDuratuin = findViewById(R.id.idRunnigDuration);
         tvTotalDuration = findViewById(R.id.idTotalDuration);
@@ -242,11 +288,11 @@ public class OurNotificationActivity extends AppCompatActivity {
         ivPlayPause.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (suraMediaPlayer.isPlaying()){
+                if (suraMediaPlayer.isPlaying()) {
                     handler.removeCallbacks(updater);
                     suraMediaPlayer.pause();
                     ivPlayPause.setBackgroundResource(R.drawable.btn_play);
-                }else {
+                } else {
                     suraMediaPlayer.start();
                     ivPlayPause.setBackgroundResource(R.drawable.btn_pause);
                     updateSeekBar();
@@ -260,9 +306,9 @@ public class OurNotificationActivity extends AppCompatActivity {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
                 SeekBar seekBar = (SeekBar) v;
-                int playPosition = (suraMediaPlayer.getDuration()/100) * seekBar.getProgress();
+                int playPosition = (suraMediaPlayer.getDuration() / 100) * seekBar.getProgress();
                 suraMediaPlayer.seekTo(playPosition);
-                tvCurrentDuratuin.setText("     "+miliSecondsToTimer(suraMediaPlayer.getCurrentPosition()));
+                tvCurrentDuratuin.setText("     " + miliSecondsToTimer(suraMediaPlayer.getCurrentPosition()));
                 return false;
             }
         });
@@ -281,23 +327,22 @@ public class OurNotificationActivity extends AppCompatActivity {
     private void preparMediaPlayer() {
         try {
 
-            SharedPreferences prefAudio = OurNotificationActivity.this.getSharedPreferences("Api_Audio",MODE_PRIVATE);
-            String url = prefAudio.getString("sp_Audio_Url"," nai");
-            String url_title = prefAudio.getString("sp_Audio_Url_title","          সূরা বাকারার প্রথম সাতাস আয়াত তিলাওয়াত হচ্ছে");
+            SharedPreferences prefAudio = OurNotificationActivity.this.getSharedPreferences("Api_Audio", MODE_PRIVATE);
+            String url = prefAudio.getString("sp_Audio_Url", " nai");
+            String url_title = prefAudio.getString("sp_Audio_Url_title", "          সূরা বাকারার প্রথম সাতাস আয়াত তিলাওয়াত হচ্ছে");
 
             //suraMediaPlayer.setDataSource("http://infinityandroid.com/music/good_times.mp3");
-           // suraMediaPlayer.setDataSource("http://soundflux.islamicfinder.org/if-soundflux/api/v1/stream//quran/rahman-sudais/001.mp3");
+            // suraMediaPlayer.setDataSource("http://soundflux.islamicfinder.org/if-soundflux/api/v1/stream//quran/rahman-sudais/001.mp3");
 
-            if(!isNetworkAvailable(this)) {
+            if (!isNetworkAvailable(this)) {
 
                 //off
                 AssetFileDescriptor afd = getAssets().openFd("sura_bakara_first_ttysvn.mp3");
 
                 suraMediaPlayer.setDataSource(afd.getFileDescriptor(), afd.getStartOffset(), afd.getLength());
-            }
-            else {
+            } else {
                 //on
-                if (url.equals("No")){
+                if (url.equals("No")) {
                     //mediaPlayer =
 
                     //suraMediaPlayer = MediaPlayer.create(getApplicationContext(), R.raw.sura_bakara_first_ttysvn);
@@ -307,24 +352,21 @@ public class OurNotificationActivity extends AppCompatActivity {
                     suraMediaPlayer.setDataSource(afd.getFileDescriptor(), afd.getStartOffset(), afd.getLength());
 
 
-                }else {
-                    suraMediaPlayer.setDataSource(""+url);
-                    tvRunnigSuraName.setText("     "+url_title);
+                } else {
+                    suraMediaPlayer.setDataSource("" + url);
+                    tvRunnigSuraName.setText("     " + url_title);
                 }
             }
 
 
-
-
             suraMediaPlayer.prepare();
 
-            tvTotalDuration.setText(miliSecondsToTimer(suraMediaPlayer.getDuration())+"     ");
-           // suraMediaPlayer.prepareAsync();
-        }catch (Exception e){
-         //   Toast.makeText(this,e.getMessage(),Toast.LENGTH_SHORT).show();
+            tvTotalDuration.setText(miliSecondsToTimer(suraMediaPlayer.getDuration()) + "     ");
+            // suraMediaPlayer.prepareAsync();
+        } catch (Exception e) {
+            //   Toast.makeText(this,e.getMessage(),Toast.LENGTH_SHORT).show();
         }
     }
-
 
 
     private Runnable updater = new Runnable() {
@@ -332,16 +374,15 @@ public class OurNotificationActivity extends AppCompatActivity {
         public void run() {
             updateSeekBar();
             long currentDuration = suraMediaPlayer.getCurrentPosition();
-            tvCurrentDuratuin.setText("     "+miliSecondsToTimer(currentDuration));
-
+            tvCurrentDuratuin.setText("     " + miliSecondsToTimer(currentDuration));
 
 
         }
     };
 
-    private  void updateSeekBar(){
-        if (suraMediaPlayer.isPlaying()){
-            sbRunningS.setProgress((int)(((float) suraMediaPlayer.getCurrentPosition() / suraMediaPlayer.getDuration()) * 100));
+    private void updateSeekBar() {
+        if (suraMediaPlayer.isPlaying()) {
+            sbRunningS.setProgress((int) (((float) suraMediaPlayer.getCurrentPosition() / suraMediaPlayer.getDuration()) * 100));
             handler.postDelayed(updater, 1000);
 
 
@@ -349,29 +390,29 @@ public class OurNotificationActivity extends AppCompatActivity {
     }
 
 
-    private String miliSecondsToTimer(long miliSeconds){
+    private String miliSecondsToTimer(long miliSeconds) {
         String timerString = "";
         String secondsString;
 
-        int hours = (int) (miliSeconds / (1000 * 60 *60));
+        int hours = (int) (miliSeconds / (1000 * 60 * 60));
         int minutes = (int) (miliSeconds % (1000 * 60 * 60)) / (1000 * 60);
         int seconds = (int) ((miliSeconds % (1000 * 60 * 60)) % (1000 * 60) / 1000);
 
-        if (hours > 0){
+        if (hours > 0) {
             timerString = hours + ":";
         }
-        if (seconds<10){
+        if (seconds < 10) {
             secondsString = "0" + seconds;
-        }else {
+        } else {
             secondsString = "" + seconds;
         }
 
-        timerString = timerString + minutes + ":" +secondsString;
-        return  timerString;
+        timerString = timerString + minutes + ":" + secondsString;
+        return timerString;
     }
 
 
-    private void textViewWorks(){
+    private void textViewWorks() {
 
         String uccharon = getApplication().getResources().getText(R.string.uccharon).toString();
         String ortho = getApplication().getResources().getText(R.string.ortho).toString();
@@ -382,7 +423,7 @@ public class OurNotificationActivity extends AppCompatActivity {
 
         String iftarerSomoy = getApplication().getResources().getText(R.string.iftar_doa_txt).toString();
         String iftarerSomoyArbi = getApplication().getResources().getText(R.string.iftarer_doa_arbi).toString();
-        String iftarerSomoyUccharon = "<b>" + uccharon + "</b> " +  getApplication().getResources().getText(R.string.ifterer_doa_uccharon).toString();
+        String iftarerSomoyUccharon = "<b>" + uccharon + "</b> " + getApplication().getResources().getText(R.string.ifterer_doa_uccharon).toString();
         String iftarerSomoyOrtho = "<b>" + ortho + "</b> " + getApplication().getResources().getText(R.string.ifterer_doa_bangla).toString();
 
 
@@ -409,21 +450,21 @@ public class OurNotificationActivity extends AppCompatActivity {
 
     private void ToolBar() {
 
-        mToolbar = findViewById( R.id.ramjan_notification_toolbar );
+        mToolbar = findViewById(R.id.ramjan_notification_toolbar);
 
-       // TextView mTitle = (TextView) mToolbar.findViewById(R.id.toolbar_title);
+        // TextView mTitle = (TextView) mToolbar.findViewById(R.id.toolbar_title);
 
-        setSupportActionBar( mToolbar );
-      //  mTitle.setText("নোটিফিকেশন");
+        setSupportActionBar(mToolbar);
+        //  mTitle.setText("নোটিফিকেশন");
 
-        getSupportActionBar().setDisplayShowTitleEnabled( false );
-        getSupportActionBar().setDisplayHomeAsUpEnabled( true );
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
     }
 
     public static boolean isNetworkAvailable(Context context) {
         ConnectivityManager conMan = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
-        if(conMan.getActiveNetworkInfo() != null && conMan.getActiveNetworkInfo().isConnected())
+        if (conMan.getActiveNetworkInfo() != null && conMan.getActiveNetworkInfo().isConnected())
             return true;
         else
             return false;
@@ -455,15 +496,14 @@ public class OurNotificationActivity extends AppCompatActivity {
         finish();
     }
 
-    private void textViewmaintaining(){
+    private void textViewmaintaining() {
 
 
-
-        SharedPreferences prefAudio = OurNotificationActivity.this.getSharedPreferences("Api_Audio",MODE_PRIVATE);
+        SharedPreferences prefAudio = OurNotificationActivity.this.getSharedPreferences("Api_Audio", MODE_PRIVATE);
         SharedPreferences.Editor editorA = prefAudio.edit();
         editorA.putString("notificationValue", "0");
-        String sheheritime = prefAudio.getString("sheheri","০৪ঃ৪২");
-        String iftartime = prefAudio.getString("iftar","০৬ঃ৪২");
+        String sheheritime = prefAudio.getString("sheheri", "০৪ঃ৪২");
+        String iftartime = prefAudio.getString("iftar", "০৬ঃ৪২");
 
         //Toast.makeText(this, "iftarrrrr"+iftartime, Toast.LENGTH_SHORT).show();
 
@@ -472,31 +512,30 @@ public class OurNotificationActivity extends AppCompatActivity {
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("HH mm ");
 
 
-
         String dateTime = simpleDateFormat.format(calendar.getTime());
         dateTime = dateTime.replace(" ", "");
         int cTime = Integer.parseInt(dateTime);
 
-        if (cTime <=1130){
-            if (cTime<=600){
+        if (cTime <= 1130) {
+            if (cTime <= 600) {
                 tvSomoyName.setText("সেহরির শেষ\nসময়");
-                tvCountDownBox.setText(""+sheheritime);
-            }else {
+                tvCountDownBox.setText("" + sheheritime);
+            } else {
                 tvSomoyName.setText("ইফতারের\nসময়");
-                tvCountDownBox.setText(""+iftartime);
+                tvCountDownBox.setText("" + iftartime);
             }
 
             String rojarnioarbi, rojarniouccharon, rojarniotortho;
-            rojarnioarbi = ""+getApplication().getResources().getText(R.string.rojarniot_arbi).toString();
-            rojarniouccharon = "<b>" + "উচ্চারণঃ  " +"</b>"+getApplication().getResources().getText(R.string.rojarniot_bangla).toString();
-            rojarniotortho = "<b>" + "অর্থঃ  "+"</b>"+getApplication().getResources().getText(R.string.rojarniot_orth).toString();
+            rojarnioarbi = "" + getApplication().getResources().getText(R.string.rojarniot_arbi).toString();
+            rojarniouccharon = "<b>" + "উচ্চারণঃ  " + "</b>" + getApplication().getResources().getText(R.string.rojarniot_bangla).toString();
+            rojarniotortho = "<b>" + "অর্থঃ  " + "</b>" + getApplication().getResources().getText(R.string.rojarniot_orth).toString();
 
-            tvIftarerAge.setText(""+getApplication().getResources().getText(R.string.rojaniot).toString());
+            tvIftarerAge.setText("" + getApplication().getResources().getText(R.string.rojaniot).toString());
             tvIftarerAgeArbi.setText(Html.fromHtml(rojarnioarbi));
             tvIftarerAgeUccharon.setText(Html.fromHtml(rojarniouccharon));
             tviftarerAgeBangla.setText(Html.fromHtml(rojarniotortho));
 
-            tvIftarerPorDes.setText(""+getApplication().getResources().getText(R.string.rojades).toString());
+            tvIftarerPorDes.setText("" + getApplication().getResources().getText(R.string.rojades).toString());
 
 
             tviftarerAgeBangla.setVisibility(View.VISIBLE);
@@ -511,7 +550,7 @@ public class OurNotificationActivity extends AppCompatActivity {
             tvIftarerPorOrtho.setVisibility(View.GONE);
             //tvIftarerPorDes.setVisibility(View.GONE);
 
-        }else {
+        } else {
             tvCountDownBox.setText(iftartime);
         }
 
@@ -519,20 +558,17 @@ public class OurNotificationActivity extends AppCompatActivity {
     }
 
 
-    private void notificationValChange(){
+    private void notificationValChange() {
 
 
-       SharedPreferences prefAudio = OurNotificationActivity.this.getSharedPreferences("Api_Audio",MODE_PRIVATE);
+        SharedPreferences prefAudio = OurNotificationActivity.this.getSharedPreferences("Api_Audio", MODE_PRIVATE);
         SharedPreferences.Editor editorA = prefAudio.edit();
         editorA.putString("notificationValue", "0");
         editorA.commit();
     }
 
 
-
-
     void showDialog() {
-
 
 
         final Dialog alertDialog = new Dialog(this);
@@ -542,9 +578,6 @@ public class OurNotificationActivity extends AppCompatActivity {
         alertDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
 
         TextView Exit = alertDialog.findViewById(R.id.exit);
-
-
-
 
 
         Exit.setOnClickListener(new View.OnClickListener() {
@@ -557,7 +590,6 @@ public class OurNotificationActivity extends AppCompatActivity {
 
 
         alertDialog.show();
-
 
 
     }

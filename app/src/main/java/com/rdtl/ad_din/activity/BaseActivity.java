@@ -834,11 +834,14 @@ public class BaseActivity extends AppCompatActivity {
                         prefAudio = BaseActivity.this.getSharedPreferences("Api_Audio",MODE_PRIVATE);
                         lvV = prefAudio.getString("lvValue","1");
 
+
                         if (!lvV.equals("0")){
                             fragment = new RamjanFragment();
                         }else {
                             fragment = new EidFragment();
                         }
+
+
 
 
                         break;
