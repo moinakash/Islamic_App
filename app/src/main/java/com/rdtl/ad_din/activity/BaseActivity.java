@@ -288,14 +288,28 @@ public class BaseActivity extends AppCompatActivity {
                     nextnamaj= "যোহর";
                 }
 
-            }else if (jTime>=1200 && jTime<1204){
+            }else if (jTime>=1200 && jTime<=1204){
                 if (cTime>(jTime-40-5) && cTime<jTime+3){
                     BorPNamaj= "নামাজ পড়ার নিষিদ্ধ সময় চলছে";
                     nextnamaj= "যোহর";
-                }else {
+                }
+                else {
                     BorPNamaj= "পরবর্তী নামাজ যোহর";
                     nextnamaj= "যোহর";
                 }
+            }else if (jTime>1204 && jTime<=aTime-20){
+
+                if (cTime>(jTime-5) && cTime<jTime+3){
+                    BorPNamaj= "নামাজ পড়ার নিষিদ্ধ সময় চলছে";
+                    nextnamaj= "যোহর";
+                }
+                else {
+                    BorPNamaj= "পরবর্তী নামাজ যোহর";
+                    nextnamaj= "যোহর";
+                }
+
+//                BorPNamaj= "পরবর্তী নামাজ যোহর";
+//                nextnamaj= "যোহর";
             }
 
             //BorPNamaj= "পরবর্তী নামাজ যোহর";
