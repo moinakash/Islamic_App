@@ -35,7 +35,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="10sp"
-                android:text="     সূরা বাকারার প্রথম সাতাস আয়াত তিলাওয়াত হচ্ছে"/>
+                android:text="     সূরা আর রহমান তিলাওয়াত হচ্ছে"/>
 
             <SeekBar
                 android:id="@+id/idSeekbarofSure"

@@ -312,7 +312,7 @@ public class BaseActivity extends AppCompatActivity {
 //                nextnamaj= "যোহর";
             }
 
-            
+
             //BorPNamaj= "পরবর্তী নামাজ যোহর";
             //nextnamaj= "যোহর";
 

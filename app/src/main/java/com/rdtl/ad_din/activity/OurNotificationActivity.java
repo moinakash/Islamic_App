@@ -332,7 +332,7 @@ public class OurNotificationActivity extends AppCompatActivity {
 
             SharedPreferences prefAudio = OurNotificationActivity.this.getSharedPreferences("Api_Audio", MODE_PRIVATE);
             String url = prefAudio.getString("sp_Audio_Url", " nai");
-            String url_title = prefAudio.getString("sp_Audio_Url_title", "          সূরা বাকারার প্রথম সাতাস আয়াত তিলাওয়াত হচ্ছে");
+            String url_title = prefAudio.getString("sp_Audio_Url_title", "          সূরা আর রহমান তিলাওয়াত হচ্ছে");
 
             //suraMediaPlayer.setDataSource("http://infinityandroid.com/music/good_times.mp3");
             // suraMediaPlayer.setDataSource("http://soundflux.islamicfinder.org/if-soundflux/api/v1/stream//quran/rahman-sudais/001.mp3");
@@ -340,7 +340,7 @@ public class OurNotificationActivity extends AppCompatActivity {
             if (!isNetworkAvailable(this)) {
 
                 //off
-                AssetFileDescriptor afd = getAssets().openFd("sura_bakara_first_ttysvn.mp3");
+                AssetFileDescriptor afd = getAssets().openFd("ar_rahman.mp3");
 
                 suraMediaPlayer.setDataSource(afd.getFileDescriptor(), afd.getStartOffset(), afd.getLength());
             } else {
@@ -350,7 +350,7 @@ public class OurNotificationActivity extends AppCompatActivity {
 
                     //suraMediaPlayer = MediaPlayer.create(getApplicationContext(), R.raw.sura_bakara_first_ttysvn);
 
-                    AssetFileDescriptor afd = getAssets().openFd("sura_bakara_first_ttysvn.mp3");
+                    AssetFileDescriptor afd = getAssets().openFd("ar_rahman.mp3");
 
                     suraMediaPlayer.setDataSource(afd.getFileDescriptor(), afd.getStartOffset(), afd.getLength());
 
