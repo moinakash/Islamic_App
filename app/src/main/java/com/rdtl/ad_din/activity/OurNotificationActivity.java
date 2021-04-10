@@ -303,7 +303,9 @@ public class OurNotificationActivity extends AppCompatActivity {
             }
         });
 
-        preparMediaPlayer();
+        startcountforscreenshot();
+
+
 
         sbRunningS.setOnTouchListener(new View.OnTouchListener() {
             @Override
@@ -596,5 +598,32 @@ public class OurNotificationActivity extends AppCompatActivity {
 
 
     }
+
+    public void startcountforscreenshot() {
+
+
+        new CountDownTimer(2 * 1000, 1000) {
+
+            public void onTick(long millisUntilFinished) {
+
+
+            }
+
+            public void onFinish() {
+
+                try {
+                    preparMediaPlayer();
+                }catch (Exception e){
+
+                }
+
+
+
+            }
+
+        }.start();
+
+    }
+
 
 }
